@@ -1052,9 +1052,7 @@ HTML;
 
     // 编辑商品
     public function goods_edit()
-    {
-        $this->db->Autocommit_start();
-        
+    {   
         $shopid = intval($this->segment(4));
         
         $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$shopid' and `qishu` order by `qishu` DESC LIMIT 1 for update");
@@ -1137,11 +1135,6 @@ HTML;
                 $xsjx_time = '0';
             }
             
-            if ($maxqishu > 65535) {
-                
-                _message("最大期数不能超过65535期");
-            }
-            
             if ($maxqishu < $shopinfo['qishu']) {
                 
                 _message("最期数不能小于当前期数！");
@@ -1179,19 +1172,9 @@ HTML;
 
 			";
             
-            $s_sid = $shopinfo['sid'];
-            
-            $this->db->Query("UPDATE `@#_shoplist` SET `maxqishu` = '$maxqishu' where `sid` = '$s_sid'");
-            
             if ($this->db->Query($sql)) {
-                
-                $this->db->Autocommit_commit();
-                
                 _message("修改成功!");
-            } else {
-                
-                $this->db->Autocommit_rollback();
-                
+            } else {    
                 _message("修改失败!");
             }
         }
@@ -1368,11 +1351,6 @@ HTML;
                 $xsjx_time = '0';
             }
             
-            if ($maxqishu > 65535) {
-                
-                _message("最大期数不能超过65535期");
-            }
-            
             if ($money < $yunjiage)
                 _message("商品价格不能小于购买价格");
             
@@ -1389,36 +1367,13 @@ HTML;
             
             $time = time(); // 商品添加时间
             
-            $this->db->Autocommit_start();
-            
             $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`, `zongrenshu`, `canyurenshu`,`shenyurenshu`, `qishu`,`maxqishu`,`thumb`, `picarr`, `content`,`xsjx_time`,`renqi`,`pos`, `time`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage', '$zongrenshu', '$canyurenshu','$shenyurenshu', '1','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$time')");
             
             $shopid = $this->db->insert_id();
             
-            System::load_app_fun("content");
-            
-            $query_table = content_get_codes_table();
-            
-            if (! $query_table) {
-                
-                $this->db->Autocommit_rollback();
-                
-                _message("云购码仓库不正确!");
-            }
-            
-            $query_2 = content_get_go_codes($zongrenshu, 3000, $shopid);
-            
-            $query_3 = $this->db->Query("UPDATE `@#_shoplist` SET `codes_table` = '$query_table',`sid` = '$shopid',`def_renshu` = '$canyurenshu' where `id` = '$shopid'");
-            
-            if ($query_1 && $query_2 && $query_3) {
-                
-                $this->db->Autocommit_commit();
-                
+            if ($shopid) {
                 _message("商品添加成功!");
             } else {
-                
-                $this->db->Autocommit_rollback();
-                
                 _message("商品添加失败!");
             }
             

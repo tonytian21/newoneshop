@@ -9,17 +9,18 @@ class category extends admin {
 		parent::__construct();
 		System::load_app_fun('global',G_ADMIN_DIR);
 		$this->db=$this->DB('category_model',ROUTE_M);
-		$this->ment=array(
-						array("lists","栏目管理",ROUTE_M.'/'.ROUTE_C."/lists"),
-						array("addcate","添加栏目",ROUTE_M.'/'.ROUTE_C."/addcate/def"),
-						array("addcate","添加单网页",ROUTE_M.'/'.ROUTE_C."/addcate/danweb"),
-						array("addcate","添加外部链接",ROUTE_M.'/'.ROUTE_C."/addcate/link"),
-		);
 	}
 
 	//栏目列表
 	public function lists(){
+		$this->ment=array(
+						array("lists","栏目管理",ROUTE_M.'/'.ROUTE_C."/lists/".$this->segment(4)),
+						array("addcate","添加栏目",ROUTE_M.'/'.ROUTE_C."/addcate/def/".$this->segment(4)),
+						array("addcate","添加单网页",ROUTE_M.'/'.ROUTE_C."/addcate/danweb/".$this->segment(4)),
+						array("addcate","添加外部链接",ROUTE_M.'/'.ROUTE_C."/addcate/link/".$this->segment(4)),
+		);
 		$cate_type=$this->segment(4);
+
 		if(!$cate_type){
 			$cate_where='1';
 		}
@@ -41,19 +42,19 @@ class category extends admin {
 		foreach($categorys as $v){
 			$v['typename']=cattype($v['model']);		
 			if($v['model']==-1){
-				$v['addsun']=G_ADMIN_PATH.'/'.ROUTE_C.'/addcate/danweb/';
+				$v['addsun']=G_ADMIN_PATH.'/'.ROUTE_C.'/addcate/danweb/'.$this->segment(4).'/';
 			}
 			if($v['model']==-2){
-				$v['addsun']=G_ADMIN_PATH.'/'.ROUTE_C.'/addcate/link/';
+				$v['addsun']=G_ADMIN_PATH.'/'.ROUTE_C.'/addcate/link/'.$this->segment(4).'/';
 			}
 			if($v['model']>0){
-				$v['addsun']=G_ADMIN_PATH.'/'.ROUTE_C.'/addcate/def/';
+				$v['addsun']=G_ADMIN_PATH.'/'.ROUTE_C.'/addcate/def/'.$this->segment(4).'/';
 				$v['model']=$models[$v['model']]['name'];
 			}else{
 				$v['model']='';
 			}		
-			$v['editcate']=G_ADMIN_PATH.'/'.ROUTE_C.'/editcate/';
-			$v['delcate']=G_ADMIN_PATH.'/'.ROUTE_C.'/delcate/';			
+			$v['editcate']=G_ADMIN_PATH.'/'.ROUTE_C.'/editcate/'.$this->segment(4).'/';
+			$v['delcate']=G_ADMIN_PATH.'/'.ROUTE_C.'/delcate/'.$this->segment(4).'/';			
 			$categorys[$v['cateid']]=$v;
 		}	
 		$html=<<<HTML
@@ -74,14 +75,38 @@ HTML;
 
 		$tree->init($categorys);
 		$html=$tree->get_tree(0,$html);		
+
 		include $this->tpl(ROUTE_M,'category.list');		
 	}
 	
 
 	//添加栏目
 	public function addcate(){
+		$this->ment=array(
+						array("lists","栏目管理",ROUTE_M.'/'.ROUTE_C."/lists/".$this->segment(5)),
+						array("addcate","添加栏目",ROUTE_M.'/'.ROUTE_C."/addcate/def/".$this->segment(5)),
+						array("addcate","添加单网页",ROUTE_M.'/'.ROUTE_C."/addcate/danweb/".$this->segment(5)),
+						array("addcate","添加外部链接",ROUTE_M.'/'.ROUTE_C."/addcate/link/".$this->segment(5)),
+		);
 		$catetype=$this->segment(4);			//类型	
-		$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE 1 order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+		$model_id = $this->segment(5);
+
+		if($model_id=='article'){
+			$model_id="2";
+		}
+		if($model_id=='goods'){
+			$model_id="1";
+		}
+		if($model_id=='single'){
+			$model_id="-1";
+		}
+
+		if($model_id){
+			$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE `model` = '$model_id' order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+		}else{
+			$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE 1 order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+		}
+
 		$models=$this->db->GetList("SELECT * FROM `@#_model` WHERE 1",array('key'=>'modelid'));
 		$tree=System::load_sys_class('tree');
 		$tree->icon = array('│ ','├─ ','└─ ');
@@ -89,8 +114,9 @@ HTML;
 		$categoryshtml="<option value='\$cateid'>\$spacer\$name</option>";
 		$tree->init($categorys);
 		$categoryshtml=$tree->get_tree(0,$categoryshtml);
+
 		$topmodel='';
-		if($topcat=intval($this->segment(5))){
+		if($topcat=intval($this->segment(6))){
 			$topcat=$this->db->GetOne("SELECT * FROM `@#_category` WHERE `cateid` = '$topcat' LIMIT 1");
 			if(!$topcat)_message("参数错误");		
 			$categoryshtml.="<option value='$topcat[cateid]' selected>≡ $topcat[name] ≡</option>";
@@ -134,7 +160,7 @@ HTML;
 				
 				$this->db->Query($sql);			
 				if($this->db->affected_rows()){				
-					_message("栏目添加成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists');
+					_message("栏目添加成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(5));
 				}else{
 					_message("栏目添加失败!");
 				}
@@ -171,7 +197,7 @@ HTML;
 					";		
 				$this->db->Query($sql);			
 				if($this->db->affected_rows()){
-					_message("栏目添加成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists');
+					_message("栏目添加成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(5));
 				}else{
 					_message("栏目添加失败!");
 				}
@@ -189,7 +215,7 @@ HTML;
 					('$info[parentid]', '0','$info[modelid]','$info[name]', '$info[url]','1')";				
 					$this->db->Query($sql);			
 					if($this->db->affected_rows()){
-						_message("栏目添加成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists');
+						_message("栏目添加成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(5));
 					}else{
 						_message("栏目添加失败!");
 					}
@@ -205,12 +231,36 @@ HTML;
 	
 	//编辑
 	public function editcate(){
-			$cateid=$this->segment(4);		
+			$this->ment=array(
+							array("lists","栏目管理",ROUTE_M.'/'.ROUTE_C."/lists/".$this->segment(5)),
+							array("addcate","添加栏目",ROUTE_M.'/'.ROUTE_C."/addcate/def/".$this->segment(5)),
+							array("addcate","添加单网页",ROUTE_M.'/'.ROUTE_C."/addcate/danweb/".$this->segment(5)),
+							array("addcate","添加外部链接",ROUTE_M.'/'.ROUTE_C."/addcate/link/".$this->segment(5)),
+			);
+			$cateid=$this->segment(5);		
 			if(!intval($cateid)){_message("参数错误");exit;}			
 			$cateinfo=$this->db->GetOne("SELECT * FROM `@#_category` WHERE `cateid` = '$cateid' LIMIT 1");
 			if(!$cateinfo)_message("没有这个栏目");	
-			$cateinfo['info']=unserialize($cateinfo['info']);	
-			$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE 1 order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+			$cateinfo['info']=unserialize($cateinfo['info']);
+
+			$model_id = $this->segment(4);
+
+			if($model_id=='article'){
+				$model_id="2";
+			}
+			if($model_id=='goods'){
+				$model_id="1";
+			}
+			if($model_id=='single'){
+				$model_id="-1";
+			}
+
+			if($model_id){
+				$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE `model` = '$model_id' order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+			}else{
+				$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE 1 order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+			}
+
 			$models=$this->db->GetList("SELECT * FROM `@#_model` WHERE 1",array('key'=>'modelid'));
 			$tree=System::load_sys_class('tree');
 			$tree->icon = array('│ ','├─ ','└─ ');
@@ -259,7 +309,7 @@ HTML;
 						 ";		
 						$this->db->Query($sql);			
 						if($this->db->affected_rows()){
-							_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/');
+							_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(4));
 						}else{
 							_message("操作失败!");
 						}
@@ -290,7 +340,7 @@ HTML;
 						 ";		
 						$this->db->Query($sql);			
 						if($this->db->affected_rows()){
-							_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/');
+							_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(4));
 						}else{
 							_message("操作失败!");
 						}					
@@ -305,7 +355,7 @@ HTML;
 						$sql="UPDATE `@#_category` SET `parentid`='$info[parentid]',`name`='$info[name]', `url`='$info[url]' WHERE (`cateid`='$cateid')";				
 						$this->db->Query($sql);			
 						if($this->db->affected_rows()){
-							_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/');
+							_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(4));
 						}else{
 							_message("操作失败!");
 						}
@@ -333,11 +383,11 @@ HTML;
 		
 	//ajax删除栏目
 	public function delcate(){			
-			$cateid=$this->segment(4);		
+			$cateid=$this->segment(5);		
 			if(!intval($cateid)){echo "no";exit;}
 			$this->db->Query("DELETE FROM `@#_category` WHERE (`cateid`='$cateid') LIMIT 1");
 			if($this->db->affected_rows()){			
-				echo WEB_PATH.'/'.ROUTE_M.'/category/lists/';
+				echo WEB_PATH.'/'.ROUTE_M.'/category/lists/'.$this->segment(4);
 			}else{
 				echo "no";	
 			}	

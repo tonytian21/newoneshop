@@ -31,7 +31,7 @@ class brand extends admin {
 
 	//品牌管理入库
 	public function insert(){
-		$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE 1 order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+		$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE `model`='1' order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
 		$tree=System::load_sys_class('tree');
 		$tree->icon = array('│ ','├─ ','└─ ');
 		$tree->nbsp = '&nbsp;';
@@ -43,8 +43,9 @@ class brand extends admin {
 			$info['cateid']=intval($_POST['cateid']);
 			if(!$info['cateid'])_message("请选择所属栏目");
 			$info['name']=htmlspecialchars($_POST['name']);
+			$info['nameen']=htmlspecialchars($_POST['nameen']);
 			$info['order']=intval($_POST['order']) ? intval($_POST['order']) : 1;
-			$sql="INSERT INTO `@#_brand` (`cateid`, `name`,`order`) VALUES ('$info[cateid]', '$info[name]','$info[order]')";			
+			$sql="INSERT INTO `@#_brand` (`cateid`, `name`,`nameen`,`order`) VALUES ('$info[cateid]', '$info[name]', '$info[nameen]','$info[order]')";			
 			$this->db->Query($sql);
 			if($this->db->affected_rows()){			
 				_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/brand/lists');
@@ -60,7 +61,7 @@ class brand extends admin {
 		$brandid=intval($this->segment(4));		
 		$brands=$this->db()->Getone("select * from `@#_brand` where id='$brandid'");
 		if(!$brands)_message("参数错误!");
-		$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE 1 order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
+		$categorys=$this->db->GetList("SELECT * FROM `@#_category` WHERE `model`='1' order by `parentid` ASC,`cateid` ASC",array('key'=>'cateid'));
 		$tree=System::load_sys_class('tree');
 		$tree->icon = array('│ ','├─ ','└─ ');
 		$tree->nbsp = '&nbsp;';
@@ -74,8 +75,9 @@ class brand extends admin {
 			$info['cateid']=intval($_POST['cateid']);
 			if(!$info['cateid'])_message("请选择所属栏目");
 			$info['name']=htmlspecialchars($_POST['name']);
+			$info['nameen']=htmlspecialchars($_POST['nameen']);
 			$info['order']=intval($_POST['order']) ? intval($_POST['order']) : 1;
-			$sql="UPDATE `@#_brand` SET `cateid`='$info[cateid]', `name`='$info[name]', `order`='$info[order]' WHERE (`id`='$brandid') LIMIT 1";			
+			$sql="UPDATE `@#_brand` SET `cateid`='$info[cateid]', `name`='$info[name]', `nameen`='$info[nameen]', `order`='$info[order]' WHERE (`id`='$brandid') LIMIT 1";			
 			$this->db->Query($sql);
 			if($this->db->affected_rows()){			
 				_message("操作成功!",WEB_PATH.'/'.ROUTE_M.'/brand/lists');

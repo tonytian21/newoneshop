@@ -50,7 +50,7 @@ input.button{ display:inline-block}
 		 <select name="info[modelid]" class="wid150" onChange="">
          <option value="">≡ 请选择模型 ≡</option>
          <?php foreach($models as $model){ ?>
-         <option value="<?php echo $model['modelid']; ?>"><?php echo $model['name']; ?></option>
+         <option value="<?php echo $model['modelid'] ?>" <?php if($model['modelid'] == $model_id) echo 'selected'; ?>><?php echo $model['name']; ?></option>
          <?php } ?>
          <?php echo $topmodel; ?>
          </select>
@@ -67,13 +67,13 @@ input.button{ display:inline-block}
       </tr>     
       <tr>
         <th>栏目名称：</th>
-        <td><input type="text" name="info[name]" class="input-text wid140" onKeyUp="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\_]/g,'')">
+        <td><input type="text" name="info[name]" class="input-text wid140“>
         	<span><font color="#0c0">※ </font>请输入栏目名称</span>
 		</td>
       </tr>
 	<tr>
       <th>英文名称：</th>
-        <td><input type="text" name="info[catdir]"  onKeyUp="value=value.replace(/[^\w]/ig,'')" class="input-text wid140">
+        <td><input type="text" name="info[catdir]" class="input-text wid140">
         <span><font color="#0c0">※ </font>请输入英文名称,请保证唯一性</span> 
       </tr>
       

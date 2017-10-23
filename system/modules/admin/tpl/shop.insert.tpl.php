@@ -44,10 +44,8 @@ $(function(){
 
 function CheckForm(){
 	var money = parseInt($("#money").val());
-		if(money >= 100000){
-			window.parent.message("价格大于10万，商品添加会很慢,请耐心等待，不要关闭窗口!",1,5);
-		}	
-		return true;
+		
+	return true;
 }
 </script>
 <div class="header lr10">

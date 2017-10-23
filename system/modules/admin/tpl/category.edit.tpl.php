@@ -50,7 +50,7 @@ input.button{ display:inline-block}
 		 <select name="info[modelid]" disabled="false" style="background:#eee;" class="wid150"onChange="">
          <option value="<?php echo $cateinfo['model']; ?>"><?php echo $models[$cateinfo['model']]['name']; ?></option>
          <?php foreach($models as $model){ ?>
-         <option value="<?php echo $model['modelid']; ?>"><?php echo $model['name']; ?></option>
+         <option value="<?php echo $model['modelid'] ?>" <?php if($model['modelid'] == $cateinfo['model']) echo 'selected';  ?>><?php echo $model['name']; ?></option>
          <?php } ?>
          </select>
          <span><font color="#0c0">※ </font>请选择栏目模型</span>

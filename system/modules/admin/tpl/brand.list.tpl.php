@@ -24,6 +24,7 @@
             <th width="90">排序</th>
             <th width="100">id</th>
             <th align='center'>品牌名称</th>
+            <th align='center'>英文名称</th>
             <th align='center' width='70'>所属栏目</th>
 			<th align='center'>管理操作</th>
             </tr>
@@ -35,6 +36,7 @@
          <td align='center'><input name='listorders[<?php echo $brand['id']; ?>]' type='text' size='3' value='<?php echo $brand['order']; ?>' class='input-text-c'></td>        
          <td align='center'><?php echo $brand['id']; ?></td>
          <td align='center'><?php echo $brand['name']; ?></td>
+         <td align='center'><?php echo $brand['nameen']; ?></td>
          <td align='center' width='70'><?php if(isset($categorys[$brand['cateid']]['name']))echo $categorys[$brand['cateid']]['name']; ?></td>
 		 <td align='center'>
          	<a href="<?php echo G_ADMIN_PATH; ?>/brand/edit/<?php echo $brand['id']; ?>">修改</a><span class='span_fenge lr5'>|</span>

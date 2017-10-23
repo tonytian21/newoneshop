@@ -573,10 +573,6 @@ function api_off_on_open(key){
 
     	<a href="javascript:;" onClick="btn_iframef5();" class="system_button"><span>刷新框架</span></a>
 
-            <a href="https://shop143036786.taobao.com" target="_blank" class="system_button"><span>短信平台</span></a>
-
-	<a href="http://kf.oo17.cn" target="_blank" class="system_button"><span>提交工单</span></a>		
-
             <a href="javascript:;" onClick="btn_map('<?php echo G_MODULE_PATH; ?>/index/map');" class="system_button"><span>后台地图</span></a>
 
         </ul>
