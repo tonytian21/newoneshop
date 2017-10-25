@@ -32,7 +32,7 @@ class member extends admin {
 
 						array("insert","未注册成功会员",ROUTE_M.'/'.ROUTE_C."/noregmember"),
 
-						array("insert","快捷及微信注册会员",ROUTE_M.'/'.ROUTE_C."/otherregmember"),
+						array("insert","快捷及FaceBook注册会员",ROUTE_M.'/'.ROUTE_C."/otherregmember"),
 
 						array("insert","批量导入的会员(虚假会员)",ROUTE_M.'/'.ROUTE_C."/daorumember"),
 

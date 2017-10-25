@@ -23,11 +23,7 @@ class user extends memberbase {
 		if($user){
 			header("Location:".WEB_PATH."/mobile/home/");exit;
 		}
-		if(!$_GET['wxid']){
-			if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
-				header("Location: ".WEB_PATH."/api/wxlogin");exit;
-			}			
-		}
+		
 		include templates("mobile/user","login");
 
 	}
@@ -59,25 +55,26 @@ class user extends memberbase {
 
 	public function mobilecheck(){
 	    $webname=$this->_cfg['web_name'];
-		$title="验证手机";
+		$title="验证邮箱";
 		$time=3000;
 		$name=$this->segment(4);
-		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
-		 //var_dump($member);exit;
+		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$name' LIMIT 1");
+		 
 		if(!$member)_message("参数不正确!");
 		if($member['mobilecode']==1){
 			_message("该账号验证成功",WEB_PATH."/mobile/mobile");
 		}
-		if($member['mobilecode']==-1){
-			$sendok = send_mobile_reg_code($name,$member['uid']);
+
+/*
+		if($member['emailcode']==-1){
+			$sendok = send_email_reg($name,$member['uid']);
 			if($sendok[0]!=1){
 					_message($sendok[1]);
 			}
 			header("location:".WEB_PATH."/mobile/user/mobilecheck/".$member['mobile']);
 			exit;
 		}
-
-
+*/
 		$enname=substr($name,0,3).'****'.substr($name,7,10);
 		$time=120;
 		include templates("mobile/user","mobilecheck");

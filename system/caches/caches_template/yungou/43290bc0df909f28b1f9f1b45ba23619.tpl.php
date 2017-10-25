@@ -74,12 +74,12 @@
 				<span class="line_r"></span>
 			</h2>
                     <div class="fastInfo" style="margin-top: 20px;">
-                        <a href="<?php echo WEB_PATH; ?>/api/qqlogin">
+                        <!--a href="<?php echo WEB_PATH; ?>/api/qqlogin">
 					<?php if($conn_cfg['qq']['off']): ?>
 					<img src="<?php echo G_TEMPLATES_IMAGE; ?>/mobile/qq.png" alt="" class="user_login_q"><?php endif; ?></a>
                         <a href="<?php echo WEB_PATH; ?>/api/wxlogin">
 					<?php if($conn_cfg['weixin']['off']): ?>
-					<img src="<?php echo G_TEMPLATES_IMAGE; ?>/mobile/wx.png" alt="" class="user_login_w"><?php endif; ?></a>
+					<img src="<?php echo G_TEMPLATES_IMAGE; ?>/mobile/wx.png" alt="" class="user_login_w"><?php endif; ?></a-->
                     </div>
                 </div>
             </div>

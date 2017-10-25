@@ -387,7 +387,7 @@ function _strlen($str = '')
  *
  */
 function templates($module = '', $template = '', $StyleTheme = '')
-{
+{   
     if (empty($StyleTheme)) {
         $style = G_STYLE . DIRECTORY_SEPARATOR . G_STYLE_HTML;
     } 

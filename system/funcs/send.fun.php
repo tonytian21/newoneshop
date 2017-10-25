@@ -69,6 +69,7 @@ function send_mobile_shop_code($mobile = null, $uid = null, $code = null)
 // 发送微信中奖通知
 function send_wx_shop_code($openid = null, $uid = null, $gid = null)
 {
+    /*
     if (! $uid)
         _message("发送用户手机获奖短信,用户ID不能为空！");
     if (! $openid)
@@ -106,6 +107,7 @@ function send_wx_shop_code($openid = null, $uid = null, $gid = null)
         )
     );
     return json_encode($data);
+    */
 }
 
 /**

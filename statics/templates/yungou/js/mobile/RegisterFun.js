@@ -34,19 +34,19 @@ $(function() {
 
         var l = {
 
-            txtStr: "请输入您的手机号码",
+            txtStr: "请输入您的邮箱",
 
-            ishad: "已被注册，请更换手机号码",
+            ishad: "已被注册，请更换邮箱",
 
-            error: "请输入正确的手机号码",
+            error: "请输入正确的邮箱",
 
             many: "验证码请求次数过多，请稍后再试",
 
             retry: "验证码发送失败，请重试",
 
-            msgerror: "系统短息配置不正确",
+            msgerror: "系统配置不正确",
 
-            ok: "该号码可以注册"
+            ok: "该邮箱可以注册"
 
         };
 
@@ -211,7 +211,6 @@ $(function() {
         var r = "";
 
         var s = function() {
-
             if (r != c.val()) {
 
                 if (q(c.val()) || c.val() == "") {
@@ -237,7 +236,6 @@ $(function() {
         c.bind("focus",
 
         function() {
-
             $(this).attr("style", "color:#666666");
 
             checkSwitch = true;

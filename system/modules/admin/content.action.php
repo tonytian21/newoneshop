@@ -634,7 +634,7 @@ HTML;
             
             if ($cateid == 'renqi') {
                 
-                $list_where = "`renqi` = '1' and `q_uid` is null";
+                $list_where = "`renqi` = '1'";
             }
             
             if ($cateid == 'xianshi') {
@@ -644,7 +644,7 @@ HTML;
             
             if ($cateid == 'qishu') {
                 
-                $list_where = "1 and `q_uid` is null order by `qishu` DESC";
+                $list_where = "1 order by `qishu` DESC";
                 
                 $this->ment[4][1] = "期数正序";
                 
@@ -653,7 +653,7 @@ HTML;
             
             if ($cateid == 'qishuasc') {
                 
-                $list_where = "1 and `q_uid` is null order by `qishu` ASC";
+                $list_where = "1 order by `qishu` ASC";
                 
                 $this->ment[4][1] = "期数倒序";
                 
@@ -662,7 +662,7 @@ HTML;
             
             if ($cateid == 'danjia') {
                 
-                $list_where = "1  and `q_uid` is null order by `yunjiage` DESC";
+                $list_where = "1 order by `yunjiage` DESC";
                 
                 $this->ment[5][1] = "单价正序";
                 
@@ -671,7 +671,7 @@ HTML;
             
             if ($cateid == 'danjiaasc') {
                 
-                $list_where = "1 and `q_uid` is null order by `yunjiage` ASC";
+                $list_where = "1 order by `yunjiage` ASC";
                 
                 $this->ment[5][1] = "单价倒序";
                 
@@ -680,7 +680,7 @@ HTML;
             
             if ($cateid == 'money') {
                 
-                $list_where = "1 and `q_uid` is null order by `money` DESC";
+                $list_where = "1 order by `money` DESC";
                 
                 $this->ment[6][1] = "商品价格正序";
                 
@@ -689,7 +689,7 @@ HTML;
             
             if ($cateid == 'moneyasc') {
                 
-                $list_where = "1 and `q_uid` is null order by `money` ASC";
+                $list_where = " 1 order by `money` ASC";
                 
                 $this->ment[6][1] = "商品价格倒序";
                 
@@ -698,16 +698,16 @@ HTML;
             
             if ($cateid == '') {
                 
-                $list_where = "`q_uid` is null  order by `id` DESC";
+                $list_where = " 1 order by A.`id` DESC";
             }
             
             if (intval($cateid)) {
                 
-                $list_where = "`cateid` = '$cateid'";
+                $list_where = " `cateid` = '$cateid'";
             }
         } else {
             
-            $list_where = "`q_uid` is null  order by `id` DESC";
+            $list_where = " 1 order by A.`id` DESC";
         }
         
         if (isset($_POST['sososubmit'])) {
@@ -820,7 +820,7 @@ HTML;
                     
                     $sosotext = intval($sosotext);
                     
-                    $list_where = "`id` = '$sosotext'";
+                    $list_where = "A.`id` = '$sosotext'";
                 }
             } else {
                 
@@ -831,7 +831,7 @@ HTML;
         
         $num = 20;
         
-        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` WHERE $list_where");
+        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.id=B.sid WHERE $list_where");
         
         $page = System::load_sys_class('page');
         
@@ -843,7 +843,7 @@ HTML;
         
         $page->config($total, $num, $pagenum, "0");
         
-        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` WHERE $list_where ", array(
+        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.id=B.sid WHERE $list_where ", array(
             "num" => $num,
             "page" => $pagenum,
             "type" => 1,
@@ -1055,7 +1055,7 @@ HTML;
     {   
         $shopid = intval($this->segment(4));
         
-        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$shopid' and `qishu` order by `qishu` DESC LIMIT 1 for update");
+        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A left join `@#_shoplist_en` B on A.id=B.gid WHERE A.`id` = '$shopid' and `qishu` order by `qishu` DESC LIMIT 1 for update");
         
         if ($shopinfo['q_end_time'])
             _message("该商品已经揭晓,不能修改!", G_MODULE_PATH . '/content/goods_list');
@@ -1139,6 +1139,10 @@ HTML;
                 
                 _message("最期数不能小于当前期数！");
             }
+
+            $recharge = intval($_POST['recharge']);
+            $robot_buy_ratio = intval($_POST['robot_buy_ratio']);
+            $robot_win = intval($_POST['robot_win']);
             
             $sql = "UPDATE `@#_shoplist` SET `cateid` = '$cateid',
 
@@ -1166,15 +1170,49 @@ HTML;
 
 										   `xsjx_time` = '$xsjx_time',
 
-										   `pos` = '$goods_key_pos'
+										   `pos` = '$goods_key_pos',
+                                           `recharge` = '$recharge',
+                                           `robot_buy_ratio` = '$robot_buy_ratio',
+                                           `robot_win` = '$robot_win'
 
 											WHERE `id`='$shopid'
 
 			";
+
+            $titleen = htmlspecialchars($_POST['titleen']);
+            $title2en = htmlspecialchars($_POST['title2en']);
+            $keywordsen = htmlspecialchars($_POST['keywordsen']);
+            $descriptionen = htmlspecialchars($_POST['descriptionen']);
+            $contenten = editor_safe_replace(stripslashes($_POST['contenten']));    
+           
+            $this->db->Autocommit_start();
             
             if ($this->db->Query($sql)) {
+                $shopeninfo = $this->db->GetOne("SELECT `id` FROM `@#_shoplist_en` where `gid`='$shopid'");
+
+                if($shopeninfo){
+                    $this->db->Query("update `@#_shoplist_en` SET 
+                                           `titleen` = '$titleen',
+
+                                           `title2en` = '$title2en',
+
+                                           `keywordsen`='$keywordsen',
+
+                                           `descriptionen`='$descriptionen',
+
+                                           `contenten` = '$contenten'
+
+                                            WHERE `gid`='$shopid'");
+                }
+                else{
+                    $this->db->Query("INSERT INTO `@#_shoplist_en` (`gid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$shopid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
+                }
+                
+
+                $this->db->Autocommit_commit();
                 _message("修改成功!");
             } else {    
+                $this->db->Autocommit_rollback();
                 _message("修改失败!");
             }
         }
@@ -1306,6 +1344,10 @@ HTML;
             $goods_key_pos = isset($_POST['goods_key']['pos']) ? 1 : 0;
             
             $goods_key_renqi = isset($_POST['goods_key']['renqi']) ? 1 : 0;
+
+            $recharge = intval($_POST['recharge']);
+            $robot_buy_ratio = intval($_POST['robot_buy_ratio']);
+            $robot_win = intval($_POST['robot_win']);
             
             if (! $cateid)
                 _message("请选择栏目");
@@ -1366,14 +1408,25 @@ HTML;
             }
             
             $time = time(); // 商品添加时间
-            
-            $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`, `zongrenshu`, `canyurenshu`,`shenyurenshu`, `qishu`,`maxqishu`,`thumb`, `picarr`, `content`,`xsjx_time`,`renqi`,`pos`, `time`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage', '$zongrenshu', '$canyurenshu','$shenyurenshu', '1','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$time')");
+
+            $titleen = htmlspecialchars($_POST['titleen']);
+            $title2en = htmlspecialchars($_POST['title2en']);
+            $keywordsen = htmlspecialchars($_POST['keywordsen']);
+            $descriptionen = htmlspecialchars($_POST['descriptionen']);
+            $contenten = editor_safe_replace(stripslashes($_POST['contenten'])); 
+           
+            $this->db->Autocommit_start();
+
+            $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`,`qishu`,`maxqishu`,`thumb`, `picarr`, `content`,`xsjx_time`,`renqi`,`pos`,`recharge`,`robot_buy_ratio`,`robot_win`, `time`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage', '1','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$recharge','$robot_buy_ratio','$robot_win','$time')");
             
             $shopid = $this->db->insert_id();
-            
+
             if ($shopid) {
+                $this->db->Query("INSERT INTO `@#_shoplist_en` (`gid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$shopid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
+                $this->db->Autocommit_commit();
                 _message("商品添加成功!");
             } else {
+                $this->db->Autocommit_rollback();
                 _message("商品添加失败!");
             }
             

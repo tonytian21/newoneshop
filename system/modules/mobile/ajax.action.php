@@ -719,7 +719,7 @@ public function delCartItem_jf(){
 
 		}
 
-		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
+		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$name' LIMIT 1");
 
 		if(is_array($member)){
 
@@ -729,7 +729,7 @@ public function delCartItem_jf(){
 
 			}else{
 
-			  $sql="DELETE from`@#_member` WHERE `mobile` = '$name'";
+			  $sql="DELETE from`@#_member` WHERE `email` = '$name'";
 
 			  $this->db->Query($sql);
 
@@ -775,7 +775,7 @@ public function delCartItem_jf(){
 
 		//邮箱验证 -1 代表未验证， 1 验证成功 都不等代表等待验证
 
-		$sql="INSERT INTO `@#_member`(`mobile`,password,img,emailcode,mobilecode,yaoqing,time)VALUES('$name','$pass','photo/member.jpg','-1','-1','$decode','$time')";
+		$sql="INSERT INTO `@#_member`(`email`,password,img,emailcode,mobilecode,yaoqing,time)VALUES('$name','$pass','photo/member.jpg','-1','-1','$decode','$time')";
 
 		if(!$name || $this->db->Query($sql)){
 

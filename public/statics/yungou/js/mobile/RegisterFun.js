@@ -17,16 +17,12 @@ $(function() {
         var psv = "";
 
         var q = function(u) {
-
-            var t = /^\d+$/;
-
-            return t.test(u)
-
+            return true;
         };
 
         var m = function(u) {
 
-            var t = /^1\d{10}$/;
+            var t = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
 
             return t.test(u)
 
@@ -34,11 +30,11 @@ $(function() {
 
         var l = {
 
-            txtStr: "请输入您的手机号码",
+            txtStr: "请输入您的邮箱",
 
-            ishad: "已被注册，请更换手机号码",
+            ishad: "已被注册，请更换邮箱",
 
-            error: "请输入正确的手机号码",
+            error: "请输入正确的邮箱",
 
             many: "验证码请求次数过多，请稍后再试",
 
@@ -54,7 +50,7 @@ $(function() {
 
             txtStr: "下一步",
 
-            checkNO: "正在验证手机号",
+            checkNO: "正在验证邮箱",
 
             sendCode: "正在发送验证码"
 
@@ -84,7 +80,7 @@ $(function() {
 
                 if (v.state == 0) {
 
-                    location.replace(Gobal.Webpath+"/mobile/user/mobilecheck/" + u);
+                    location.replace(Gobal.Webpath+"/mobile/user/mobilecheck/" + escape(u));
 
                     return
 
@@ -190,7 +186,7 @@ $(function() {
 
             } else {
 
-                if ((h.length < 11 || h.length >= 11) && !m(h)) {
+                if (!m(h)) {
 
                     i(l.error)
 

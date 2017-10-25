@@ -105,19 +105,19 @@ class param {
 		
 		$this->route_url = explode ($this->expstr, trim ( $path, $this->expstr ) );
 		
-		
-		
-		
 		array_unshift ( $this->route_url, NULL );
 	
 		unset ( $this->route_url [0] );
 		
+		/*
 		
 		$end = end ( $this->route_url );
+
 		if (stripos ( $end, '.' ) !== false) {
 			$end = explode ( '.', $end );
 			$this->route_url [count ( $this->route_url )] = $end [0];
 		}
+		*/
 		
 		/*
 		 * preg_match_all("/p(.*)/i", $path,$matches,PREG_SET_ORDER);

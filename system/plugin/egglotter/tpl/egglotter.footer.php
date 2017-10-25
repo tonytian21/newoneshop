@@ -46,12 +46,7 @@
               <ul class="mt10 ml10">
               <li><a href="">
                             <img src="<?php echo G_TEMPLATES_STYLE; ?>/images/code.jpg" height="75" width="75"></a></li>
-              <li>
-              <dl>
-                           <dt><a href=""><i class="u-icons"></i>关注官方微信</a></dt>
-                            <dd><a href=""><b class="u-icons"></b></a></dd>
-                        </dl>
-                    </li>
+          
                 </ul>
             </div>
 			<div class="m-ser u-ser3">

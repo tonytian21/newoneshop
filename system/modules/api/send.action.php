@@ -43,6 +43,7 @@
 				$ret_send = true;
 			}		
 		}
+		/*
 		if($type=='2'){
 			if(!empty($member['mobile'])){
 				send_mobile_shop_code($member['mobile'],$uid,$info['q_user_code']);
@@ -124,6 +125,7 @@
 				$ret_send = true;
 			}			
 		}
+		*/
 		if($ret_send){			
 			$this->send_insert($uid,$gid,$username,$info['title'],$type);
 		}

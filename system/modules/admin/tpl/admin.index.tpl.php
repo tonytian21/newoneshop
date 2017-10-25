@@ -308,8 +308,6 @@ function api_off_on_open(key){
              <li class="normal"><a href="#" onClick="secBoard('nav',4,'template','界面管理');">界面管理</a></li>
 
             <li class="normal"><a href="#" onClick="secBoard('nav',5,'yunapp','云应用');">云应用</a></li>
-
-            <li class="normal"><a href="#" onClick="secBoard('nav',6,'wechat','微信商城');">微信商城</a></li>
 <li class="normal"><a href="<?php echo G_WEB_PATH; ?>" target="_blank" onClick="secBoard('nav',7,'zyxztd','网站首页');">网站首页</a></li>
 
             <li class="normal"><a href="#" onClick="secBoard('nav',8,'huangc','清除缓存');">清除缓存</a></li>
@@ -526,36 +524,6 @@ function api_off_on_open(key){
                         <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/czk/vote_admin/">充值卡管理</a></li>
 
     </ul>
-
-         <ul class="left_date" id="wechat">
-
-            <li class="head">微信基本设置</li>
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/wechatcfg">微信接口</a></li> 
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/cfg">微信设置</a></li> 
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/menu">微信菜单</a></li> 
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/reply">关注回复内容</a></li>
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/keywordlists">关键词自动回复</a></li>
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/huiyuan">红包设置</a></li>
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/hblist">红包列表</a></li>
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/hdcfg">互动积分</a></li>
-            
-             <li class="head">微信高级功能</li>
-
-             <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/share">分享拿现金</a></li>
-
-            <!-- <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/setting/watermark">发货提醒</a></li> -->
-
-            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/wechat/cjlist">场景二维码</a></li>
-
-        </ul>
 
 </div><!--left end-->
 

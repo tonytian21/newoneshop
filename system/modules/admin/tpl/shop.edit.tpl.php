@@ -58,7 +58,6 @@ $(function(){
 				<br />
 				总价格 <b style="color:red"><?php echo $shopinfo['money']; ?></b>&nbsp;&nbsp;&nbsp;
 				单次云购价格	<b style="color:red"><?php echo $shopinfo['yunjiage']; ?></b>&nbsp;&nbsp;&nbsp;
-				已参与 <b style="color:red"><?php echo $shopinfo['canyurenshu']; ?></b> 人次&nbsp;&nbsp;&nbsp;
 				期数 <b style="color:red"><?php echo $shopinfo['qishu']; ?>/<?php echo $shopinfo['maxqishu']; ?></b>&nbsp;&nbsp;&nbsp;
             </td>
 			
@@ -91,10 +90,19 @@ $(function(){
            
             </td>
 		</tr>
-        <tr>
+		<tr>
+			<td align="right" style="width:120px">商品英文标题：</td>
+			<td>
+            <input  type="text" id="titleen" value="<?php echo $shopinfo['titleen']; ?>" 
+             name="titleen" onKeyUp="return gbcount(this,100,'texttitleen');"  class="input-text wid400 bg">
+            <span style="margin-left:10px">还能输入<b id="texttitleen">100</b>个字符</span>
+           
+            </td>
+		</tr>
+		 <tr>
 			<td align="right" style="width:120px">副标题：</td>
 			<td><input  type="text" value="<?php echo $shopinfo['title2']; ?>" style="<?php echo $shopinfo['title_style']; ?>" name="title2" id="title2" onKeyUp="return gbcount(this,100,'texttitle2');"  class="input-text wid400">
-			             <input type="hidden"  value="<?php echo $title_color; ?>"   name="title_style_color" id="title_style_color"/>
+				<input type="hidden"  value="<?php echo $title_color; ?>"   name="title_style_color" id="title_style_color"/>
             <input type="hidden" value="<?php echo $title_bold; ?>"  name="title_style_bold" id="title_style_bold"/>
             <script src="<?php echo G_GLOBAL_STYLE; ?>/global/js/colorpicker.js"></script>
             <img src="<?php echo G_GLOBAL_STYLE; ?>/global/image/colour.png" width="15" height="16" onClick="colorpicker('title_colorpanel','set_title_color');" style="cursor:hand"/>
@@ -103,8 +111,21 @@ $(function(){
             </td>
 		</tr>
         <tr>
+			<td align="right" style="width:120px">英文副标题：</td>
+			<td><input  type="text" value="<?php echo $shopinfo['title2en']; ?>" style="<?php echo $shopinfo['title_style']; ?>" name="title2en" id="title2en" onKeyUp="return gbcount(this,100,'texttitle2en');"  class="input-text wid400">
+			             
+            <span class="lr10">还能输入<b id="texttitle2en">100</b>个字符</span>
+            </td>
+		</tr>
+        <tr>
 			<td align="right" style="width:120px">关键字：</td>
-			<td><input type="text" value="<?php echo $shopinfo['keywords']; ?>" name="keywords"  name="title"  class="input-text wid300" />
+			<td><input type="text" value="<?php echo $shopinfo['keywords']; ?>" name="keywords"  name="keywords"  class="input-text wid300" />
+            <span class="lr10">多个关键字请用   ,  号分割开</span>
+            </td>
+		</tr>
+		<tr>
+			<td align="right" style="width:120px">英文关键字：</td>
+			<td><input type="text" value="<?php echo $shopinfo['keywordsen']; ?>" name="keywordsen"  name="keywordsen"  class="input-text wid300" />
             <span class="lr10">多个关键字请用   ,  号分割开</span>
             </td>
 		</tr>
@@ -113,6 +134,11 @@ $(function(){
 			<td><textarea name="description" class="wid400"  onKeyUp="gbcount(this,250,'textdescription');" style="height:60px"><?php echo $shopinfo['description']; ?></textarea><br /> <span>还能输入<b id="textdescription">250</b>个字符</span>
             </td>
 		</tr>	
+		<tr>
+			<td align="right" style="width:120px">英文商品描述：</td>
+			<td><textarea name="descriptionen" class="wid400"  onKeyUp="gbcount(this,250,'textdescriptionen');" style="height:60px"><?php echo $shopinfo['descriptionen']; ?></textarea><br /> <span>还能输入<b id="textdescriptionen">250</b>个字符</span>
+            </td>
+		</tr>
         <tr>      
 			<td align="right" style="width:120px">最大期数：</td>     
             <td><input type="text" name="maxqishu" value="<?php echo $shopinfo['maxqishu'];?>" class="input-text" style="width:50px; text-align:center" onKeyUp="value=value.replace(/\D/g,'')">期,	&nbsp;&nbsp;&nbsp;期数上限为65535期,每期揭晓后会根据此值自动添加新一期商品！</td>
@@ -159,7 +185,25 @@ $(function(){
                 <input type="text" name="sub_text_len" class="input-text" value="250" size="3">字符至内容摘要<label>         
             	</div>                
             </td>                   
-		</tr>         
+		</tr>   
+		<tr>
+         <td height="300" style="width:120px"  align="right"><font color="red">*</font>商品英文内容详情：</td>
+			<td><script name="contenten" id="myeditoren" type="text/plain"><?php echo $shopinfo['contenten']; ?></script>
+            	<style>
+				.content_attr {
+					border: 1px solid #CCC;
+					padding: 5px 8px;
+					background: #FFC;
+					margin-top: 6px;
+					width:915px;
+				}
+				</style>
+                <div class="content_attr">                
+                <label><input name="sub_text_des" type="checkbox"  value="off" checked>是否截取内容</label>
+                <input type="text" name="sub_text_len" class="input-text" value="250" size="3">字符至内容摘要<label>         
+            	</div>                
+            </td>                   
+		</tr>       
         <tr>
         	<td align="right" style="width:120px">商品属性：</td>
             <td width="900">
@@ -187,6 +231,26 @@ $(function(){
              <span class="lr10">&nbsp;</span>	<b>不选择时间则不参与限时揭晓, 本期揭晓后自动添加的下一期不是限时揭晓商品！</b>
             </td>        
 		</tr>
+		<tr>
+			<td align="right" style="width:120px">虚拟充值商品：</td>
+			<td>
+             <label><input name="recharge" type="radio" value="0"  <?php if(!$shopinfo['recharge']){echo "checked";}?>> 否 </label>           
+             <label><input name="recharge" type="radio" value="1" <?php if($shopinfo['recharge']){echo "checked";}?>> 是 </label>     
+            </td>        
+		</tr>
+		<tr>
+			<td align="right" style="width:120px">最大自购比例：</td>
+			<td>
+            <input  type="text" id="robot_buy_ratio"  name="robot_buy_ratio" value="<?php echo $shopinfo['robot_buy_ratio'] ?>" class="input-text wid400">%
+            </td>
+		</tr>
+		<tr>
+			<td align="right" style="width:120px">机器人必中：</td>
+			<td>
+             <label><input name="robot_win" type="radio" value="0" <?php if(!$shopinfo['robot_win']){echo "checked";}?>> 否 </label>           
+             <label><input name="robot_win" type="radio" value="1" <?php if($shopinfo['robot_win']){echo "checked";}?>> 是 </label>     
+            </td>        
+		</tr>
         <tr height="60px">
 			<td align="right" style="width:120px"></td>
 			<td><input type="submit" name="dosubmit" class="button" value="修改商品" /></td>
@@ -200,6 +264,11 @@ $(function(){
     var ue = UE.getEditor('myeditor');
 
     ue.addListener('ready',function(){
+        this.focus()
+    });
+    var ueen = UE.getEditor('myeditoren');
+
+    ueen.addListener('ready',function(){
         this.focus()
     });
     function getContent() {

@@ -80,20 +80,44 @@ function CheckForm(){
            
             </td>
 		</tr>
-        <tr>
+		<tr>
+			<td align="right" style="width:120px">商品英文标题：</td>
+			<td>
+            <input  type="text" id="titleen"  name="titleen" onKeyUp="return gbcount(this,100,'texttitleen');"  class="input-text wid400 bg">
+
+            <span style="margin-left:10px">还能输入<b id="texttitleen">100</b>个字符</span>
+           
+            </td>
+		</tr>
+		<tr>
 			<td align="right" style="width:120px">副标题：</td>
-			<td><input  type="text" id="title2" name="title2" onKeyUp="return gbcount(this,100,'texttitle2');"  class="input-text wid400">
-			<input type="hidden" name="title_style_color" id="title_style_color"/>
+			<td>
+            <input  type="text" id="title2"  name="title2" onKeyUp="return gbcount(this,100,'texttitle2');"  class="input-text wid400 bg">
+				<input type="hidden" name="title_style_color" id="title_style_color"/>
             <input type="hidden" name="title_style_bold" id="title_style_bold"/>
             <script src="<?php echo G_GLOBAL_STYLE; ?>/global/js/colorpicker.js"></script>
             <img src="<?php echo G_GLOBAL_STYLE; ?>/global/image/colour.png" width="15" height="16" onClick="colorpicker('title_colorpanel','set_title_color');" style="cursor:hand"/>
              <img src="<?php echo G_GLOBAL_STYLE; ?>/global/image/bold.png" onClick="set_title_bold();" style="cursor:hand"/>
-            <span class="lr10">还能输入<b id="texttitle2">100</b>个字符</span>
+            <span style="margin-left:10px">还能输入<b id="texttitle2">100</b>个字符</span>
+           
+            </td>
+		</tr>
+        <tr>
+			<td align="right" style="width:120px">英文副标题：</td>
+			<td><input  type="text" id="title2en" name="title2en" onKeyUp="return gbcount(this,100,'texttitle2en');"  class="input-text wid400">
+			
+            <span class="lr10">还能输入<b id="texttitle2en">100</b>个字符</span>
             </td>
 		</tr>
         <tr>
 			<td align="right" style="width:120px">关键字：</td>
-			<td><input type="text" name="keywords"  name="title"  class="input-text wid300" />
+			<td><input type="text" name="keywords"  class="input-text wid300" />
+            <span class="lr10">多个关键字请用   ,  号分割开</span>
+            </td>
+		</tr>
+		<tr>
+			<td align="right" style="width:120px">英文关键字：</td>
+			<td><input type="text" name="keywordsen" class="input-text wid300" />
             <span class="lr10">多个关键字请用   ,  号分割开</span>
             </td>
 		</tr>
@@ -102,11 +126,16 @@ function CheckForm(){
 			<td><textarea name="description" class="wid400" onKeyUp="gbcount(this,250,'textdescription');" style="height:60px"></textarea><br /> <span>还能输入<b id="textdescription">250</b>个字符</span>
             </td>
 		</tr>      
+		<tr>
+			<td align="right" style="width:120px">英文商品描述：</td>
+			<td><textarea name="descriptionen" class="wid400" onKeyUp="gbcount(this,250,'textdescriptionen');" style="height:60px"></textarea><br /> <span>还能输入<b id="textdescriptionen">250</b>个字符</span>
+            </td>
+		</tr>
 		<tr style="background-color:#FFC">
 			<td style="width:120px"></td>
 			<td>
 				<b>提示：</b> <font color="red">商品总价格请不要填写100，2300,5000这样的整数,整数价格计算出的云购码可能就为10000001</font><br />
-				<b>提示：</b> 商品价格过大，添加商品会变慢，请耐心等待！
+				
 			</td>
 		</tr>
 		<tr>
@@ -161,6 +190,24 @@ function CheckForm(){
             	</div>
             </td>        
 		</tr> 
+		<tr>
+        	<td height="300" style="width:120px"  align="right"><font color="red">*</font>商品英文内容详情：</td>
+			<td><script name="contenten" id="myeditoren" type="text/plain"></script>
+            	<style>
+				.content_attr {
+					border: 1px solid #CCC;
+					padding: 5px 8px;
+					background: #FFC;
+					margin-top: 6px;
+					width:915px;
+				}
+				</style>
+                <div class="content_attr">
+                <label><input name="sub_text_desen" type="checkbox"  value="off" checked>是否截取内容</label>
+                <input type="text" name="sub_text_lenen" class="input-text" value="250" size="3">字符至内容摘要<label>         
+            	</div>
+            </td>        
+		</tr> 
         <tr>
         	<td align="right" style="width:120px">商品属性：</td>
             <td width="900">
@@ -190,6 +237,26 @@ function CheckForm(){
               <span class="lr10">&nbsp;</span>	<b>不选择时间则不参与限时揭晓, 本期揭晓后自动添加的下一期不是限时揭晓商品！</b>         
             </td>        
 		</tr>
+		<tr>
+			<td align="right" style="width:120px">虚拟充值商品：</td>
+			<td>
+             <label><input name="recharge" type="radio" value="0" checked> 否 </label>           
+             <label><input name="recharge" type="radio" value="1"> 是 </label>     
+            </td>        
+		</tr>
+		<tr>
+			<td align="right" style="width:120px">最大自购比例：</td>
+			<td>
+            <input  type="text" id="robot_buy_ratio"  name="robot_buy_ratio" value="0" class="input-text wid400">%
+            </td>
+		</tr>
+		<tr>
+			<td align="right" style="width:120px">机器人必中：</td>
+			<td>
+             <label><input name="robot_win" type="radio" value="0" checked> 否 </label>           
+             <label><input name="robot_win" type="radio" value="1"> 是 </label>     
+            </td>        
+		</tr>
         <tr height="60px">
 			<td align="right" style="width:120px"></td>
 			<td><input type="submit" name="dosubmit" class="button" value="添加商品" /></td>
@@ -203,6 +270,12 @@ function CheckForm(){
     var ue = UE.getEditor('myeditor');
 
     ue.addListener('ready',function(){
+        this.focus()
+    });
+
+    var ueen = UE.getEditor('myeditoren');
+
+    ueen.addListener('ready',function(){
         this.focus()
     });
     function getContent() {

@@ -80,7 +80,7 @@ class auto_register extends admin {
 }	
 
 public function read($filename,$encode='utf-8'){
-	include_once(dirname(dirname(dirname(dirname(__FILE__)))).'/plugin/PHPexcel/PHPExcel.php');
+	include_once(dirname(dirname(dirname(dirname(__FILE__)))).'/libs/PHPexcel/PHPExcel.php');
           $objReader = PHPExcel_IOFactory::createReader('Excel5');
           $objReader->setReadDataOnly(true);
           $objPHPExcel = $objReader->load($filename);

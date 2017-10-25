@@ -25,10 +25,7 @@ tr{height:40px;line-height:40px}
 <body>
 <div class="header-title lr10">
        <h3>登陆设置</h3><span class="span_fenge lr5"></span>
-              <a href="<?php echo WEB_PATH.'/api/qqlogin/qq_set_config'?>">QQ登陆</a>&nbsp;<span>|</span>
-             <a href="<?php echo WEB_PATH.'/api/weibologin/weibo_set_config'?>">微博登陆</a>&nbsp;<span>|</span>
-              <a href="<?php echo WEB_PATH.'/api/wxlogin/wx_set_config'?>">微信登陆</a>&nbsp;<span>|</span>
-              <a href="<?php echo WEB_PATH.'/api/wxloginpc/wxpc_set_config'?>">PC微信登陆</a>&nbsp;<span>|</span>
+              <a href="<?php echo WEB_PATH.'/api/qqlogin/qq_set_config'?>">facebook登陆</a>
 </div>
 
 <div class="bk10"></div>
@@ -41,7 +38,7 @@ tr{height:40px;line-height:40px}
 
   <tr>
 
-    <td width="100">开启QQ登陆</td>
+    <td width="100">开启facebook登陆</td>
 
     <td>
 
@@ -59,7 +56,7 @@ tr{height:40px;line-height:40px}
 
   <tr>
 
-    <td>QQ App id</td>
+    <td>App id</td>
 
     <td><input type="text" class="input-text wid150" name="id" value="<?php echo $config['id']; ?>"/></td>
 
@@ -67,11 +64,9 @@ tr{height:40px;line-height:40px}
 
   <tr>
 
-    <td>QQ App key</td>
+    <td>App key</td>
 
     <td><input type="text" class="input-text wid250" name="key"  value="<?php echo $config['key']; ?>"/>
-
-	<a href="http://connect.qq.com/"  target="_blank" >点击注册</a>	
 
 	</td>
 

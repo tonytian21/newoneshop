@@ -28,6 +28,6 @@ return array(
 'goods_end_time' => '30',//开奖动画秒数(单位秒) 
 'xianshi' => '1',//手机端限时揭晓是否显示 
 'web_verify' => '1',//验证码是否开启 
-'sendmobile' => '1',//发货微信提醒 
+'sendmobile' => '0',//发货微信提醒 
 ); 
  ?>
