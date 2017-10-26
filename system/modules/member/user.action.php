@@ -182,10 +182,15 @@ class user extends base {
 
 			}
 
-			if(!(_checkmobile($name) or _checkemail($name))){
+			/*if(!(_checkmobile($name) or _checkemail($name))){
 
 				_message("帐号不是手机或邮箱",null,3);
 
+			}*/
+			if(! _checkemail($name)){
+			    
+			    _message("帐号不是邮箱",null,3);
+			    
 			}
 
 			if(strlen($userpassword)<6 || strlen($userpassword)>20){
