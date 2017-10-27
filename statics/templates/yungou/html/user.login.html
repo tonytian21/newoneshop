@@ -53,8 +53,7 @@ $(function(){
 		</div>
 	</div>
 	<div class="login_bg">
-		<!--
-		<div id="loadingPicBlock" class="login_banner"><img src="{G_TEMPLATES_STYLE}/images/20120628180933540.jpg" width="542" height="360"></div>-->
+	
 		<div class="login_box" id="LoginForm">
 		<div class="login_box_guding">
 		<div class="login_box_guding1"></div>
@@ -62,7 +61,7 @@ $(function(){
 			<h3><span style="display:block;float: left;">用户登录</span><a id="hylinkRegisterPage" style="padding:0px 10px;display: block;float: right;font-size: 16px;color: #f60;" tabindex="4" class="reg" href="{WEB_PATH}/register">免费注册>></a></h3>
 			<ul>				
 				<li class="click">
-					<input style="color: #666;" placeholder="手机号码/邮箱地址" class="text_password" name="username" type="text"  />
+					<input style="color: #666;" placeholder="邮箱地址" class="text_password" name="username" type="text"  />
 					<b class="passport-icon"></b>
 				</li>
 				<li class="click1">				
@@ -88,13 +87,14 @@ $(function(){
 			{wc:php:start}
 				$conn_cfg = System::load_app_config("connect",'','api');
             {wc:php:end}
-            {wc:if $conn_cfg['qq']['off']}
+            {wc:if $conn_cfg['qq']['off'] or $conn_cfg['weixinpc']['off'] or $conn_cfg['facebook']['off']}
  			<div class="loginQQ">
  				<span id="qq_login_btn">
  					使用其它方式快捷登录：
  				</span>
- 				<a class="qqdenglu" href="{G_WEB_PATH}/index.php/api/qqlogin/"><b class="passport-icon1 transparent-png"></b></a>
- 				<a class="weixindenglu" href="{G_WEB_PATH}/index.php/api/wxloginpc/"><b style="background-position: 8px -149px!important;" class="passport-icon1 transparent-png"></b></a>
+ 				{wc:if $conn_cfg['facebook']['off']}<a class="facebookdenglu" style="background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 5px center; padding-left:26px; background-size: auto 70%;" href="{G_WEB_PATH}/index.php/api/facebooklogin/"><b></b>FaceBook</a>{wc:if:end}
+  				{wc:if $conn_cfg['qq']['off']}<a class="qqdenglu" href="{G_WEB_PATH}/index.php/api/qqlogin/"><b class="passport-icon1 transparent-png"></b></a> {wc:if:end}	
+  				{wc:if $conn_cfg['weixinpc']['off']}<a class="weixindenglu" href="{G_WEB_PATH}/index.php/api/wxloginpc/"><b style="background-position: 8px -149px!important;" class="passport-icon1 transparent-png"></b></a>{wc:if:end}	
  			</div>
 
             {wc:if:end}			

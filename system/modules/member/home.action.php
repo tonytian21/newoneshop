@@ -1165,6 +1165,11 @@ class home extends base {
 		$member=$this->userinfo;
 		include templates("member","qqclock");
 	}
+	//facebook绑定
+	public function facebookclock(){
+	    $member=$this->userinfo;
+	    include templates("member","facebookclock");
+	}
 }
 
 ?>

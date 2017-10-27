@@ -24,11 +24,7 @@ tr{height:40px;line-height:40px}
 
 <body>
 <div class="header-title lr10">
-       <h3>登陆设置</h3><span class="span_fenge lr5"></span>
-               <a href="<?php echo WEB_PATH.'/api/qqlogin/qq_set_config'?>">QQ登陆</a>&nbsp;<span>|</span>
-             <a href="<?php echo WEB_PATH.'/api/weibologin/weibo_set_config'?>">微博登陆</a>&nbsp;<span>|</span>
-              <a href="<?php echo WEB_PATH.'/api/wxlogin/wx_set_config'?>">微信登陆</a>&nbsp;<span>|</span>
-              <a href="<?php echo WEB_PATH.'/api/wxlogin/wxpc_set_config'?>">PC微信登陆</a>&nbsp;<span>|</span>
+       <h3>facebook登陆设置</h3><span class="span_fenge lr5"></span>
 </div>
 
 <div class="bk10"></div>
@@ -41,7 +37,7 @@ tr{height:40px;line-height:40px}
 
   <tr>
 
-    <td width="100">开启qq登陆</td>
+    <td width="100">开启facebook登陆</td>
 
     <td>
 
