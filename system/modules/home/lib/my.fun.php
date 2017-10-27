@@ -33,7 +33,7 @@ function coo($id){
 }
 function yunjl($id,$n=1){
 	$mysql_model=System::load_sys_class('model');
-	$shop=$mysql_model->GetOne("select * from `@#_shoplist` where `id`='".$id."'");
+	$shop=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `tid`='".$id."'");
 	$img=explode(',',$shop['img']);
 	if($n==1){
 		return $img[0];

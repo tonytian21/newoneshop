@@ -622,7 +622,7 @@ class home extends base
             $sd_photolist = $pic;
             $sd_time = time();
             $sd_ip = _get_ip_dizhi();
-            $qishu = $this->db->GetOne("select `qishu`, `id` from `@#_shoplist` where `id`='$sd_shopid'");
+            $qishu = $this->db->GetOne("select `qishu`, `id` from `@#_shoplist_term` where `id`='$sd_shopid'");
             $qs = $qishu['qishu'];
             $ids = $qishu['id'];
             $this->db->Query("INSERT INTO `@#_shaidan`(`sd_userid`,`sd_shopid`,`sd_qishu`,`sd_ip`,`sd_title`,`sd_thumbs`,`sd_content`,`sd_photolist`,`sd_time`)VALUES ('$sd_userid','$ids','$qs','$sd_ip','$sd_title','$sd_thumbs','$sd_content','$sd_photolist','$sd_time')");
@@ -648,7 +648,7 @@ class home extends base
         if (! $shaidan) {
             _messagemobile("该商品您不可晒单!");
         }
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` where `id`='$shaidan[shopid]' LIMIT 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$shaidan[shopid]' LIMIT 1");
         if (! $ginfo) {
             _messagemobile("该商品已不存在!");
         }

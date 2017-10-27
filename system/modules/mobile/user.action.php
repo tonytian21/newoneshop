@@ -86,7 +86,7 @@ class user extends memberbase {
 	 $member=$this->userinfo;
 	 $itemid=intval($this->segment(4));
 
-	 $itemlist=$this->db->GetList("select *,a.time as timego,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' and b.id='$itemid' group by a.id order by a.time" );
+	 $itemlist=$this->db->GetList("select *,a.time as timego,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid where a.uid='$member[uid]' and b.id='$itemid' group by a.id order by a.time" );
 	 if(!empty($itemlist)){
 		 if($itemlist[0]['q_end_time']!=''){
 	   //商品已揭晓

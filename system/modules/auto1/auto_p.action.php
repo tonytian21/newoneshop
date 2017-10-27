@@ -19,11 +19,11 @@ class auto_p extends SystemAction {
 			$p = 1;
 		}
 		$num=20;
-		$total=$this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` WHERE `q_uid` is null  order by `id` DESC"); 
+		$total=$this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_uid` is null  order by `id` DESC"); 
 		$page=System::load_sys_class('page');
 		#if(isset($_GET['p'])){$pagenum=$_GET['p'];}else{$pagenum=1;}	
 		$page->config($total,$num,1,"0");
-		$shoplist=$this->db->GetPage("SELECT * FROM `@#_shoplist` WHERE `q_uid` is null  order by `id` DESC ",array("num"=>$num,"page"=>$p,"type"=>1,"cache"=>0));
+		$shoplist=$this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_uid` is null  order by `id` DESC ",array("num"=>$num,"page"=>$p,"type"=>1,"cache"=>0));
 		#获取配置文件信息
 		$xml = $this->getxml();
 		$times = $xml->times;//时间
@@ -184,10 +184,10 @@ class auto_p extends SystemAction {
 			if($autoadd == 1 ){
 				#需要进入下一期
 				#添加下一期的商品ID值
-				$shoptem  = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$shopid'  LIMIT 1");
+				$shoptem  = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` = '$shopid'  LIMIT 1");
 				$nextshopsid = $shoptem['sid'];
 				
-				$nextshopinfo  = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `sid` = '$nextshopsid' ORDER BY  `qishu` DESC LIMIT 1");
+				$nextshopinfo  = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `sid` = '$nextshopsid' ORDER BY  `qishu` DESC LIMIT 1");
 				if($nextshopinfo['qishu'] < $nextshopinfo['maxqishu']){
 					if($xml->shopid == null || $xml->shopid == ""){
 						$xml->shopid = $nextshopinfo['id'];
@@ -235,13 +235,13 @@ class auto_p extends SystemAction {
 					for($i=0;$i<count($shopid);$i++){
 						$id = $shopid[$i];
 						#查询商品信息
-						$shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$id' LIMIT 1");
+						$shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` = '$id' LIMIT 1");
 						$this->buyshop($xml,$shopinfo,$member);
 					}
 				}else{
 					$shopid = $this->getshopid($xml,0);
 					$id = $shopid[0];
-					$shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$id' LIMIT 1");
+					$shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` = '$id' LIMIT 1");
 					$this->buyshop($xml,$shopinfo,$member);
 				}
 			}else{

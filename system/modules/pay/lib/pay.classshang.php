@@ -67,7 +67,7 @@ class pay {
 	
 		$shoplist=array();		//商品信息	
 		if($shopids!=NULL){
-			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` where `id` in($shopids) and `q_uid` is null for update",array("key"=>"id"));
+			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` in($shopids) and `q_uid` is null for update",array("key"=>"id"));
 		}else{			
 			$this->db->Autocommit_rollback();
 			return '购物车内没有商品!';
@@ -312,10 +312,10 @@ class pay {
 		$goods_count_num = 0;
 		foreach($this->shoplist as $shop):			
 			if($shop['canyurenshu'] >= $shop['zongrenshu'] && $shop['maxqishu'] >= $shop['qishu']){
-					$this->db->Query("UPDATE `@#_shoplist` SET `canyurenshu`=`zongrenshu`,`shenyurenshu` = '0' where `id` = '$shop[id]'");
+					$this->db->Query("UPDATE `@#_shoplist_term` SET `canyurenshu`=`zongrenshu`,`shenyurenshu` = '0' where `id` = '$shop[id]'");
 			}else{					
 				$shenyurenshu = $shop['zongrenshu'] - $shop['canyurenshu'];			
-				$query = $this->db->Query("UPDATE `@#_shoplist` SET `canyurenshu` = '$shop[canyurenshu]',`shenyurenshu` = '$shenyurenshu' WHERE `id`='$shop[id]'");				
+				$query = $this->db->Query("UPDATE `@#_shoplist_term` SET `canyurenshu` = '$shop[canyurenshu]',`shenyurenshu` = '$shenyurenshu' WHERE `id`='$shop[id]'");				
 				if(!$query)$query_5=false;
 			}
 			$goods_count_num += $shop['goods_count_num'];
@@ -339,7 +339,7 @@ class pay {
 								}else{
 									$this->db->Autocommit_commit();								
 								}
-								$this->db->Query("UPDATE `@#_shoplist` SET `canyurenshu`=`zongrenshu`,`shenyurenshu` = '0' where `id` = '$shop[id]'");
+								$this->db->Query("UPDATE `@#_shoplist_term` SET `canyurenshu`=`zongrenshu`,`shenyurenshu` = '0' where `id` = '$shop[id]'");
 						}
 					endforeach;
 				return true;
@@ -363,7 +363,7 @@ class pay {
 		$this->db=System::load_sys_class('model');		
 		$this->db->Autocommit_start();
 		$member = $this->db->GetOne("select * from `@#_member` where `uid` = '$uid' for update");
-		$goodinfo = $this->db->GetOne("select * from `@#_shoplist` where `id` = '$gid' and `shenyurenshu` != '0' for update");
+		$goodinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' and `shenyurenshu` != '0' for update");
 		if($goodinfo['shenyurenshu'] < $num){
 			$num = $goodinfo['shenyurenshu'];
 		}

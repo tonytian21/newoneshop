@@ -12,12 +12,12 @@ function hueisd_id($sd_id,$leixin=null){
 
 function shopimg($shopid){
 	$mysql_model=System::load_sys_class('model');
-	$shop=$mysql_model->GetOne("select * from `@#_shoplist` where `id`='$shopid'");
+	$shop=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$shopid'");
 	return $shop['thumb'];
 }
 function shoplisext($id,$zd){
 	$mysql_model=System::load_sys_class('model');
-	$shop=$mysql_model->GetOne("select * from `@#_shoplist` where `id`='$id'");
+	$shop=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$id'");
 	return $shop[$zd];
 
 }
@@ -69,7 +69,7 @@ function coo($id){
 }
 function yunjl($id,$n=1){
 	$mysql_model=System::load_sys_class('model');
-	$shop=$mysql_model->GetOne("select * from `@#_shoplist` where `id`='".$id."'");
+	$shop=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='".$id."'");
 	return $shop['thumb'];
 }
 function microt($time,$x=null){
@@ -121,7 +121,7 @@ function yunma($ma,$html="span"){
 //判断商品是否揭晓
 function get_shop_if_jiexiao($shopid=null){
 	$db=System::load_sys_class('model');
-	$record=$db->GetOne("select * from `@#_shoplist` where `id`='$shopid' and `q_showtime` = 'N' LIMIT 1");
+	$record=$db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$shopid' and `q_showtime` = 'N' LIMIT 1");
 	if(!$record) return false;
 	if($record['q_user']){
 		$record['q_user'] = unserialize($record['q_user']);

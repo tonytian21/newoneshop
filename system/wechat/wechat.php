@@ -725,7 +725,7 @@ class wechatCallbackapiTest
 			echo $resultStr;
 			exit;
 		}elseif($keyword == 'new'){
-			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` WHERE `q_user` = '' AND `qishu` < 5 ORDER BY `time`  DESC LIMIT 0 , 5");
+			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_user` = '' AND `qishu` < 5 ORDER BY `time`  DESC LIMIT 0 , 5");
 			$ArticleCount = count($ret);
 			if($ArticleCount >= 1){
 				foreach($ret as $v){
@@ -745,7 +745,7 @@ class wechatCallbackapiTest
 			echo $resultStr;
 			exit;
 		}elseif($keyword == 'renqi'){
-			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` WHERE `q_user` = '' AND `renqi` = 1 ORDER BY `time` DESC LIMIT 0 , 5");
+			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_user` = '' AND `renqi` = 1 ORDER BY `time` DESC LIMIT 0 , 5");
 			$ArticleCount = count($ret);
 			if($ArticleCount >= 1){
 				foreach($ret as $v){
@@ -765,7 +765,7 @@ class wechatCallbackapiTest
 			echo $resultStr;
 			exit;
 		}elseif($keyword == 'tuijian'){
-			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` WHERE `q_user` = '' AND `pos` = 1 ORDER BY `time` DESC LIMIT 0 , 5");
+			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_user` = '' AND `pos` = 1 ORDER BY `time` DESC LIMIT 0 , 5");
 			$ArticleCount = count($ret);
 			if($ArticleCount >= 1){
 				foreach($ret as $v){
@@ -851,7 +851,7 @@ class wechatCallbackapiTest
 			}
 		}elseif(!empty($keyword)){
 			$goods_name = $keyword;
-			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` WHERE  `title` LIKE '%$goods_name%' AND `q_user` = '' LIMIT 0,5");
+			$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE  `title` LIKE '%$goods_name%' AND `q_user` = '' LIMIT 0,5");
 			$ArticleCount = count($ret);
 			if($ArticleCount >= 1){
 				foreach($ret as $v){
@@ -885,7 +885,7 @@ class wechatCallbackapiTest
 	}
 	/*****获取推荐商品********/
 	protected function plusTj($base_url,$fromUsername){
-		$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` WHERE  `q_user` = ''");
+		$ret = $this->db -> GetList("SELECT * FROM  `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE  `q_user` = ''");
 		$tj_count = count($ret);
 		$tj_key = mt_rand(0, $tj_count);
 		$tj_goods = $ret[$tj_key];

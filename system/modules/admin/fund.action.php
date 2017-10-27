@@ -68,7 +68,7 @@ class fund extends admin {
 			$userid = intval($_POST['userid']);
 			$time = time();
 			$appoint = $this->db->GetOne("SELECT * from `@#_appoint` WHERE `shopid` ='$shopid' LIMIT 1");
-			$goods =  $this->db->GetOne("SELECT * from `@#_shoplist` WHERE `id` ='$shopid' LIMIT 1");
+			$goods =  $this->db->GetOne("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` ='$shopid' LIMIT 1");
 			$user =  $this->db->GetOne("SELECT * from `@#_member` WHERE `uid` ='$userid' LIMIT 1");
 			$ex_info=$this->db->GetOne("select * from `@#_member_go_record` where `shopid` = '$shopid' and `uid`='{$userid}'");
 			if(empty($user)){
@@ -119,7 +119,7 @@ class fund extends admin {
 		$id=intval($this->segment(4));
 		$appoint = $this->db->GetOne("SELECT * from `@#_appoint` WHERE `id` ='$id' LIMIT 1");
 		//查询商品的sid
-		$shopinfo = $this->db->GetOne("SELECT * from `@#_shoplist` WHERE `id` ='{$appoint['shopid']}' LIMIT 1");
+		$shopinfo = $this->db->GetOne("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` ='{$appoint['shopid']}' LIMIT 1");
 		$res = $this->db->Query("DELETE FROM `@#_appoint` WHERE (`id`='$id') LIMIT 1");
 		$res1 = $this->db->Query("UPDATE `@#_shoplist` SET `zhiding` = 0 WHERE `sid`='{$shopinfo['sid']}' AND `q_uid` is Null");
 			if($res>0 && $res1>0){			

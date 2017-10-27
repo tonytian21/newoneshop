@@ -54,7 +54,7 @@ class cart extends base {
 
 		if($shopids!=NULL){
 
-			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` where `id` in($shopids) limit 5",array("key"=>"id"));
+			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `tid` in($shopids) limit 5",array("key"=>"id"));
 
 		}
 
@@ -136,7 +136,7 @@ class cart extends base {
 
 		if($shopids!=NULL){
 
-			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` where `id` in($shopids) limit 7",array("key"=>"id"));
+			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `tid` in($shopids) limit 7",array("key"=>"id"));
 
 		}	
 
@@ -266,7 +266,7 @@ class cart extends base {
 
 		if($shopids!=NULL){
 
-			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` where `id` in($shopids)",array("key"=>"id"));
+			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` in($shopids)",array("key"=>"id"));
 
 		}
 
@@ -348,7 +348,7 @@ class cart extends base {
 
 		if($shopids!=NULL){
 
-			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` where `id` in($shopids)",array("key"=>"id"));
+			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` in($shopids)",array("key"=>"id"));
 
 		}
 
@@ -648,7 +648,7 @@ class cart extends base {
 
 			$id = $_GET['shopid'];
 
-			$shoplist=$this->db->GetOne("SELECT zongrenshu,canyurenshu,yunjiage as price, title as cg_title FROM `@#_shoplist` where `id` = $id");
+			$shoplist=$this->db->GetOne("SELECT zongrenshu,canyurenshu,yunjiage as price, title as cg_title FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = $id");
 
 			//用户账户金额
 

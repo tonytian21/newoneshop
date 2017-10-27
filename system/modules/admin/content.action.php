@@ -831,7 +831,7 @@ HTML;
         
         $num = 20;
         
-        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.id=B.sid WHERE $list_where");
+        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE $list_where");
         
         $page = System::load_sys_class('page');
         
@@ -843,7 +843,7 @@ HTML;
         
         $page->config($total, $num, $pagenum, "0");
         
-        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.id=B.sid WHERE $list_where ", array(
+        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE $list_where ", array(
             "num" => $num,
             "page" => $pagenum,
             "type" => 1,
@@ -867,7 +867,7 @@ HTML;
             $post_userdisp = $_POST["userdisp"];
         }
         if (strlen($post_clearassign) > 0) {
-            $query_clear = $this->db->Query("UPDATE `@#_shoplist` SET 
+            $query_clear = $this->db->Query("UPDATE `@#_shoplist_term` SET 
                         `zhiding` = NULL
                          where `id` = '$gid'");
             if ($query_clear) {
@@ -881,7 +881,7 @@ HTML;
             $u_info = $this->db->GetOne("select * from `@#_member` where `uid` = '$post_uid'");
             $q_user = serialize($u_info);
             
-            $query_assign = $this->db->Query("UPDATE `@#_shoplist` SET 
+            $query_assign = $this->db->Query("UPDATE `@#_shoplist_term` SET 
 			`zhiding` = '$post_uid' 
 	        where `id` = '$gid'");
             
@@ -896,7 +896,7 @@ HTML;
             // echo "NO POST";
         }
         
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` where `id` = '$gid' limit 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' limit 1");
         
         if (! $ginfo)
             _message("没有找到这个商品");
@@ -943,7 +943,7 @@ HTML;
     public function goods_one_okt()
     {
         $gid = intval($this->segment(4));
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` where `id` = '$gid' limit 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' limit 1");
         if (! $ginfo)
             _message("没有找到这个商品");
         $jinri_time = time();
@@ -972,7 +972,7 @@ HTML;
     {
         $gid = intval($this->segment(4));
         
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` where `id` = '$gid' limit 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' limit 1");
         
         if (! $ginfo)
             _message("没有找到这个商品");

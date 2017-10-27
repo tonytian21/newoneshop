@@ -98,8 +98,9 @@ function content_add_position(){}
 */
 function content_add_shop_install($info=null){
 	
+	
 	$db = System::load_sys_class("model");
-	$db->Autocommit_start();
+	/*$db->Autocommit_start();
 	
 	unset($info['id']);
 	unset($info['q_uid']);
@@ -141,6 +142,9 @@ function content_add_shop_install($info=null){
 		$db->Autocommit_rollback();
 		return false;
 	}
+	*/
+	$db->Query("update `@#_shoplist` set qishu = qishu + 1 where `id`=".$info['id']);
+	return true;
 	
 }//
 

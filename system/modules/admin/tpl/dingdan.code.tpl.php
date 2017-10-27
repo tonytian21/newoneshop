@@ -59,7 +59,7 @@ select{height: 30px; padding-left: 15px; padding-right: 15px; border-radius: 5px
 
 			$shopid= $record['shopid'];		
 
-			$shop = $this->db->GetOne("SELECT * FROM `@#_shoplist` where `id`='$shopid'");
+			$shop = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$shopid'");
 
 			
 

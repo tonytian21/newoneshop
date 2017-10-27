@@ -26,7 +26,7 @@
 		if($sendinfo)exit(0);
 		$member = $db->GetOne("SELECT * FROM `@#_member` WHERE `uid` = '$uid'");
 		if(!$member)exit(0);
-		$info = $db->GetOne("SELECT id,q_user_code,q_end_time,title,q_user FROM `@#_shoplist` WHERE `id` = '$gid' and `q_uid` = '$uid'");
+		$info = $db->GetOne("SELECT id,q_user_code,q_end_time,title,q_user FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` = '$gid' and `q_uid` = '$uid'");
 		if(!$info)exit(0);
 		$member_band = $db->GetOne("SELECT * FROM `@#_member_band` WHERE `b_uid` = '$uid' AND `b_type` = 'weixin'");
 		$type = System::load_sys_config("send","type");

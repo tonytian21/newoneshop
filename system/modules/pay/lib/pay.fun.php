@@ -195,7 +195,7 @@ function pay_insert_shop($shop='',$type=''){
 
 	if($shop['xsjx_time'] != '0'){
 
-		return $db->Query("UPDATE `@#_shoplist` SET `canyurenshu`=`zongrenshu`,	`shenyurenshu` = '0' where `id` = '$shop[id]'");
+		return $db->Query("UPDATE `@#_shoplist_term` SET `canyurenshu`=`zongrenshu`,	`shenyurenshu` = '0' where `id` = '$shop[id]'");
 
 	}
 
@@ -326,7 +326,7 @@ function pay_insert_shop($shop='',$type=''){
 		}
 
 
-		$sqlss = "UPDATE `@#_shoplist` SET
+		$sqlss = "UPDATE `@#_shoplist_term` SET
 
 							`canyurenshu`=`zongrenshu`,
 
@@ -405,7 +405,7 @@ function pay_insert_shop($shop='',$type=''){
 
 		if($shop['qishu'] < $shop['maxqishu']){
 
-			$maxinfo = $db->GetOne("select * from `@#_shoplist` where `sid` = '$shop[sid]' order by `qishu` DESC LIMIT 1");
+			$maxinfo = $db->GetOne("select * from `@#_shoplist_term` where `sid` = '$shop[sid]' order by `qishu` DESC LIMIT 1");
 
 			if(!$maxinfo){
 

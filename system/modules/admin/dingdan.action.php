@@ -313,7 +313,7 @@ class dingdan extends admin
         if (empty($template_id['cfg_value'])) {
             return false;
         }
-        $info = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$gid'");
+        $info = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` = '$gid'");
         $member_band = $this->db->GetOne("SELECT * FROM `@#_member_band` WHERE `b_uid` = '{$info['q_uid']}' AND `b_type` = 'weixin'");
         if (empty($member_band)) {
             return false;

@@ -75,7 +75,7 @@ class shaidan extends base {
 		$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sd_id'");
 		$shaidanname=$this->db->GetOne("select * from `@#_member` where `uid`='$shaidan[sd_userid]'");
 		if(!empty($shaidan['sd_shopid'])){
-			$goods = $this->db->GetOne("select * from `@#_shoplist` where `sid` = '$shaidan[sd_shopid]' order by `qishu` DESC");
+			$goods = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid` = '$shaidan[sd_shopid]' order by `qishu` DESC");
 		}else{
 			$goods = $this->db->GetOne("select * from `@#_jf_shoplist` where `sid` = '$shaidan[sd_shopid]' order by `qishu` DESC");
 		}

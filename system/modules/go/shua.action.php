@@ -78,9 +78,9 @@ class shua extends base
             // 判断是否进入下一期数
             if ($autoadd == 1) {
                 // 需要进入下一期 #添加下一期的商品ID值
-                $shoptem = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$shopid'  LIMIT 1");
+                $shoptem = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `tid` = '$shopid'  LIMIT 1");
                 $nextshopsid = $shoptem['sid'];
-                $nextshopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `sid` = '$nextshopsid' ORDER BY  `qishu` DESC LIMIT 1");
+                $nextshopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `sid` = '$nextshopsid' ORDER BY  `qishu` DESC LIMIT 1");
                 if ($nextshopinfo['qishu'] < $nextshopinfo['maxqishu']) {
                     if ($data['shopid'] == "") {
                         $data['shopid'] = $nextshopinfo['id'];
@@ -136,13 +136,13 @@ class shua extends base
                     for ($i = 0; $i < count($shopid); $i ++) {
                         $id = $shopid[$i];
                         // 查询商品信息
-                        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$id' LIMIT 1");
+                        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `tid` = '$id' LIMIT 1");
                         $this->buyshop($id, $shopinfo, $member);
                     }
                 } else {
                     $shopid = $this->getshopid($data['shopid'], 0);
                     $id = $shopid[0];
-                    $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$id' LIMIT 1");
+                    $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `tid` = '$id' LIMIT 1");
                     $this->buyshop($id, $shopinfo, $member);
                 }
             } else {

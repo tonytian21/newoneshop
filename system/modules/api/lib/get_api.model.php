@@ -36,7 +36,7 @@ class get_api extends model {
 				$info = $this->GetOne("SELECT * FROM `@#_position_data` where `pos_id` = '$pos_info[pos_id]' LIMIT 1");
 			}else{
 				$info = $this->GetOne("SELECT * FROM `@#_position_data` where `pos_id` = '$pos_info[pos_id]' LIMIT 1");				
-				$info = $this->GetOne("SELECT * FROM `@#_shoplist` where `id` = '$info[con_id]' LIMIT 1");	
+				$info = $this->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$info[con_id]' LIMIT 1");	
 				//$info = $this->GetOne("SELECT * FROM `@#_$info[mod_name]` where `id` = '$info[con_id]' LIMIT 1");	
 			}		
 		}

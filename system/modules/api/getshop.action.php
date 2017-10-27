@@ -21,9 +21,9 @@ class getshop extends SystemAction
         $gid = trim($gid, ',');
         
         if (! $gid) {
-            $info = $db->GetOne("select qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` where `q_showtime` = 'Y' order by `q_end_time` ASC");
+            $info = $db->GetOne("select qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_showtime` = 'Y' order by `q_end_time` ASC");
         } else {
-            $infos = $db->GetList("select  qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` where `q_showtime` = 'Y' order by `q_end_time` ASC limit 0,4");
+            $infos = $db->GetList("select  qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_showtime` = 'Y' order by `q_end_time` ASC limit 0,4");
             $gid = @explode('_', $gid);
             $info = false;
             foreach ($infos as $infov) {
@@ -55,7 +55,7 @@ class getshop extends SystemAction
         $q_time = substr($info['q_end_time'], 0, 10);
         
         if ($q_time <= time()) {
-            $db->Query("update `@#_shoplist` SET `q_showtime` = 'N' where `id` = '$info[id]' and `q_showtime` = 'Y' and `q_uid` is not null");
+            $db->Query("update `@#_shoplist_term` SET `q_showtime` = 'N' where `id` = '$info[id]' and `q_showtime` = 'Y' and `q_uid` is not null");
             echo json_encode(array(
                 "error" => '-1'
             ));
@@ -100,7 +100,7 @@ class getshop extends SystemAction
             }
             $q_time = intval(substr($info['q_end_time'], 0, 10));
             if ($q_time <= time()) {
-                $db->Query("update `@#_shoplist` SET `q_showtime` = 'N' where `id` = '$info[id]' and `q_showtime` = 'Y' and `q_uid` is not null");
+                $db->Query("update `@#_shoplist_term` SET `q_showtime` = 'N' where `id` = '$info[id]' and `q_showtime` = 'Y' and `q_uid` is not null");
             }
             echo $q_time - time();
             exit();
@@ -114,7 +114,7 @@ class getshop extends SystemAction
             $db = System::load_sys_class('model');
             $times = (int) System::load_sys_config('system', 'goods_end_time');
             $gid = isset($_POST['gid']) ? abs(intval($_POST['gid'])) : exit();
-            $info = $db->GetOne("select id,xsjx_time,thumb,title,q_uid,q_user,q_end_time from `@#_shoplist` where `id` ='$gid'");
+            $info = $db->GetOne("select id,xsjx_time,thumb,title,q_uid,q_user,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` ='$gid'");
             
             if (! $info || empty($info['q_end_time'])) {
                 echo '0';
@@ -127,7 +127,7 @@ class getshop extends SystemAction
             $q_time = substr($info['q_end_time'], 0, 10);
             $q = false;
             if (time() >= $q_time) {
-                $q = $db->Query("update `@#_shoplist` SET `q_showtime` = 'N' where `id` = '$gid' and `q_showtime` = 'Y' and `q_uid` is not null");
+                $q = $db->Query("update `@#_shoplist_term` SET `q_showtime` = 'N' where `id` = '$gid' and `q_showtime` = 'Y' and `q_uid` is not null");
             }
             if ($q) {
                 
@@ -147,8 +147,8 @@ class getshop extends SystemAction
             $db = System::load_sys_class('model');
             $times = (int) System::load_sys_config('system', 'goods_end_time');
             $gid = isset($_POST['gid']) ? abs(intval($_POST['gid'])) : exit();
-            $info = $db->GetOne("SELECT * FROM `@#_shoplist` where `id` ='$gid'");
-            $q = $db->Query("update `@#_shoplist` SET `q_showtime` = 'N' where `id` = '$gid' and `q_showtime` = 'Y' and `q_uid` is not null");
+            $info = $db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` ='$gid'");
+            $q = $db->Query("update `@#_shoplist_term` SET `q_showtime` = 'N' where `id` = '$gid' and `q_showtime` = 'Y' and `q_uid` is not null");
             $extinfo = unserialize($info['q_user']);
             $info['uid'] = $info['q_uid'];
             $info['qishu'] = '(第' . $info['qishu'] . '期)';

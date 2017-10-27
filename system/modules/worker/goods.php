@@ -58,7 +58,7 @@ function AutoAddTerm($goods_id){
         $complatetime = 0;
         $q_uid = 0;
         
-        $sql = "insert into go_shoplist_term (`sid`,`term_num`,`robot_buy_ratio`,`robot_win`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`complate`,`complatetime`,`q_uid`) values ('$sid','$term_num','$robot_buy_ratio','$robot_win','$zongrenshu','$canyurenshu','$shenyurenshu','$complate','$complatetime','$q_uid')";
+        $sql = "insert into go_shoplist_term (`sid`,`term_num`,`t_robot_buy_ratio`,`t_robot_win`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`complate`,`complatetime`,`q_uid`) values ('$sid','$term_num','$robot_buy_ratio','$robot_win','$zongrenshu','$canyurenshu','$shenyurenshu','$complate','$complatetime','$q_uid')";
 
         $db->Query($sql);
 
