@@ -1508,28 +1508,24 @@ div.pageDialog {
 .registerCon .fastInfo a {
     display: inline-block;
     text-align: center;
-    width: 32%;
+  
     height: 40px;
+    width: 40px;
+    background-size:100%!important;
+    border-radius: 20px;
+    margin: 0 20px
 }
 
 .registerCon .fastInfo .user_login_q {
-    display: block;
-    height: 40px;
-    width: 40px;
     background: url(../../images/mobile/qq.png) 0px 0px no-repeat;
-    float: left;
-    margin-left: 10%;
-    border-radius: 20px;
 }
 
 .registerCon .fastInfo .user_login_w {
-    display: block;
-    height: 40px;
-    width: 40px;
-    background: url(../../images/mobile/qq.png) -50px 0px no-repeat;
-    float: right;
-    margin-right: 10%;
-    border-radius: 20px;
+    background: url(../../images/mobile/wx.png) 0px 0px no-repeat;
+}
+
+.registerCon .fastInfo .user_login_f {
+    background: url(../../images/mobile/facebook.png) 0px 0px no-repeat;
 }
 
 .R-content .info .registerform {

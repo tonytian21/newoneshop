@@ -31,7 +31,7 @@ $(function(){
 	<div class="info">
 	<form class="registerform" method="post" action="{WEB_PATH}/member/home/usermodify" style="float: none;">
 		<table border="0" cellpadding="0" cellspacing="8">
-			<tr>
+			<!-- <tr>
 				{wc:if $member['mobile']!=null && $member['mobilecode']=='1'}		
 				<td align="right"><em><font>*</font><label>手机：</label></em></td>
 				<td>
@@ -44,7 +44,7 @@ $(function(){
 					<a style="margin-left:0;" href="{WEB_PATH}/member/home/mobilechecking" title="绑定手机">绑定手机</a>
 				</td>
 				{wc:if:end}
-			</tr>
+			</tr> -->
 			<tr>
 				{wc:if $member['email']!=null && $member['emailcode']=='1'}		
 				<td align="right"><em><font>*</font><label>邮箱：</label></em></td>
@@ -59,7 +59,7 @@ $(function(){
 				</td>
 				{wc:if:end}
 			</tr>
-			<tr>
+			<!-- <tr>
 				{wc:if $member_qq['b_id']!=null || $member_qq['b_type']=='qq'}		
 				<td align="right"><em><font>*</font><label>QQ：</label></em></td>
 				<td>
@@ -71,7 +71,22 @@ $(function(){
 					<a style="margin-left:0;" href="{WEB_PATH}/member/home/qqclock" title="请绑定qq">请绑定qq</a>
 				</td>
 				{wc:if:end}
+			</tr> -->
+			
+			<tr>
+				{wc:if $member_facebook['b_id']!=null || $member_qq['b_type']=='facebook'}		
+				<td align="right"><em><font>*</font><label>facebook：</label></em></td>
+				<td>
+					 已绑定
+				</td>
+				{wc:else}
+				<td align="right"><em><font>*</font><label>facebook：</label></em></td>
+				<td>
+					<a style="margin-left:0;" href="{WEB_PATH}/member/home/facebookclock" title="请绑定qq">请绑定facebook</a>
+				</td>
+				{wc:if:end}
 			</tr>
+			
 			<tr>
 				<td align="right"><em><font>*</font><label>昵称：</label></em></td>
 				<td>

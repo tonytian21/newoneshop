@@ -76,7 +76,7 @@ class user extends base {
 
 			$logintype='';
 
-			if(strpos($username,'@')==false){
+			/*if(strpos($username,'@')==false){
 
 				//手机				
 
@@ -100,6 +100,14 @@ class user extends base {
 
 				}
 
+			}*/
+			
+			$logintype='email';
+			
+			if(!_checkemail($username)){
+			    
+			    _message("邮箱格式不正确!");
+			    
 			}
 
 	

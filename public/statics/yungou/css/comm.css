@@ -874,18 +874,20 @@ login .login_bg .login_banner a,.login .login_bg .login_banner img {
 	display:block;
 	float:left;
 }
-.login .login_bg .login_box .loginQQ .qqdenglu,.login .login_bg .login_box .loginQQ .weixindenglu{
+.login .login_bg .login_box .loginQQ .qqdenglu,.login .login_bg .login_box .loginQQ .weixindenglu,.loginQQ .facebookdenglu{
 	background-color: #7accff;
 	border-radius: 2px;
     cursor: pointer;
     display: block;
     height: 23px;
-    margin-left: 20px;
+    margin-left: 10px;
     position: relative;
     top: -2px;
     vertical-align: middle;
-    width: 60px;
     float: left;
+    color: #fff;
+    line-height: 24px;
+    padding:0px 5px;
 }
 .login .login_bg .login_box .loginQQ .weixindenglu{
 	background-color: #97db84;

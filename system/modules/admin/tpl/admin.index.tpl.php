@@ -511,7 +511,7 @@ function api_off_on_open(key){
 
 		<li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/api/plugin/admin/egglotter/listlotter">游戏设置</a></li> 
 
-		<li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/api/qqlogin/qq_set_config">登陆设置</a></li> 
+		<li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/api/facebooklogin/set_config">登陆设置</a></li> 
 
 		<li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admin/fund/fundset">公益基金</a></li>
 
