@@ -1,16 +1,16 @@
 <?php
 
 /**
- *	发送用户手机认证码短信
+ *	发送用户手机认证码邮件
  *	mobile @用户手机号
  *   uid    @用户的ID
  */
 function send_mobile_reg_code($mobile = null, $uid = null)
 {
     if (! $uid)
-        _message("发送用户手机认证码,用户ID不能为空！");
+        _message("发送用户邮箱认证码,用户ID不能为空！");
     if (! $mobile)
-        _message("发送用户手机认证码,手机号码不能为空!");
+        _message("发送用户邮箱认证码,邮箱号码不能为空!");
     $db = System::load_sys_class('model');
     $checkcodes = rand(100000, 999999) . '|' . time(); // 验证码
     $db->Query("UPDATE `@#_member` SET mobilecode='$checkcodes' where `uid`='$uid'");
@@ -18,10 +18,10 @@ function send_mobile_reg_code($mobile = null, $uid = null)
     $template = $db->GetOne("select * from `@#_caches` where `key` = 'template_mobile_reg'");
     
     if (! $template) {
-        $content = "你在" . _cfg("web_name") . "的短信验证码是:" . strtolower($checkcodes[0]);
+        $content = "你在" . _cfg("web_name") . "的邮件验证码是:" . strtolower($checkcodes[0]);
     }
     if (empty($template['value'])) {
-        $content = "你在" . _cfg("web_name") . "的短信验证码是:" . strtolower($checkcodes[0]);
+        $content = "你在" . _cfg("web_name") . "的邮件验证码是:" . strtolower($checkcodes[0]);
     } else {
         if (strpos($template['value'], "000000") == true) {
             $content = str_ireplace("000000", strtolower($checkcodes[0]), $template['value']);
@@ -30,11 +30,13 @@ function send_mobile_reg_code($mobile = null, $uid = null)
         }
     }
     
-    return _sendmobile($mobile, $content);
+    $title = _cfg("web_name") . '邮箱验证码';
+    
+    return _sendemailex($mobile, '', $title, $content);
 }
 
 /**
- * 发送用户手机获奖短信
+ * 发送用户手机获奖邮件
  * mobile @用户手机号
  * uid @用户的ID
  * code @中奖码
@@ -42,11 +44,11 @@ function send_mobile_reg_code($mobile = null, $uid = null)
 function send_mobile_shop_code($mobile = null, $uid = null, $code = null)
 {
     if (! $uid)
-        _message("发送用户手机获奖短信,用户ID不能为空！");
+        _message("发送用户邮箱获奖邮件,用户ID不能为空！");
     if (! $mobile)
-        _message("发送用户手机获奖短信,手机号码不能为空!");
+        _message("发送用户邮箱获奖邮件,邮箱号码不能为空!");
     if (! $code)
-        _message("发送用户手机获奖短信,中奖码不能为空!");
+        _message("发送用户邮箱获奖邮件,中奖码不能为空!");
     $db = System::load_sys_class('model');
     $template = $db->GetOne("select * from `@#_caches` where `key` = 'template_mobile_shop'");
     
@@ -63,7 +65,10 @@ function send_mobile_shop_code($mobile = null, $uid = null, $code = null)
             $content = $template['value'] . $code;
         }
     }
-    return _sendmobile($mobile, $content);
+   
+    $title = _cfg("web_name") . '获奖信息';
+    
+    return _sendemailex($mobile, '', $title, $content);
 }
 
 // 发送微信中奖通知
@@ -71,7 +76,7 @@ function send_wx_shop_code($openid = null, $uid = null, $gid = null)
 {
     /*
     if (! $uid)
-        _message("发送用户手机获奖短信,用户ID不能为空！");
+        _message("发送用户手机获奖邮件,用户ID不能为空！");
     if (! $openid)
         _message("发送用户未绑定微信账号，不能发送微信通知!");
     if (! $gid)
@@ -120,6 +125,7 @@ function send_email_reg($email = null, $uid = null)
     $db = System::load_sys_class('model');
     $checkcode = _getcode(10);
     $checkcode_sql = $checkcode['code'] . '|' . $checkcode['time'];
+    
     $check_code = serialize(array(
         "email" => $email,
         "code" => $checkcode['code'],
@@ -137,6 +143,7 @@ function send_email_reg($email = null, $uid = null)
     $url .= $clickurl . '">';
     $url .= $clickurl . "</a>";
     $template['value'] = str_ireplace("{地址}", $url, $template['value']);
+    
     return _sendemail($email, '', $title, $template['value']);
 }
 
@@ -168,23 +175,23 @@ function send_email_code($email = null, $username = null, $uid = null, $code = n
 function send_mobile_fid_code($mobile = null)
 {
     if (! $mobile)
-        _message("发送验证码手机号码不能为空");
+        _message("发送验证码邮箱号码不能为空");
     $db = System::load_sys_class('model');
     $checkcodes = rand(100000, 999999) . '|' . time(); // 验证码
     $db->Query("UPDATE `@#_member` SET mobilecode='$checkcodes' where `mobile`='$mobile'");
     $checkcodes = explode("|", $checkcodes);
     $template = $db->GetOne("select * from `@#_caches` where `key` = 'template_mobile_reg'");
     if (! $template) {
-        $content = "你正在" . _cfg("web_name") . "的找回密码的短信验证码是:" . strtolower($checkcodes[0]);
+        $content = "你正在" . _cfg("web_name") . "的找回密码的邮件验证码是:" . strtolower($checkcodes[0]);
     }
     if (empty($template['value'])) {
-        $content = "你正在" . _cfg("web_name") . "的找回密码的短信验证码是:" . strtolower($checkcodes[0]);
+        $content = "你正在" . _cfg("web_name") . "的找回密码的邮件验证码是:" . strtolower($checkcodes[0]);
     } else {
         if (strpos($template['value'], "000000") == true) {
             $content = str_ireplace("000000", strtolower($checkcodes[0]), $template['value']);
             $content = str_ireplace("注册", "找回密码", $content);
         } else {
-            $content = "你正在" . _cfg("web_name") . "的找回密码的短信验证码是:" . strtolower($checkcodes[0]);
+            $content = "你正在" . _cfg("web_name") . "的找回密码的邮件验证码是:" . strtolower($checkcodes[0]);
         }
     }
     

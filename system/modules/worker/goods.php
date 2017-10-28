@@ -53,8 +53,9 @@ function AutoAddTerm($goods_id){
     $canyurenshu = 0;
     $shenyurenshu = $zongrenshu;
     $time = time();
+    $xsjx_time = $goodsInfo['g_xsjx_time'];
     
-    $query_3 = "insert into go_shoplist_term (`sid`,`term_num`,`zongrenshu`,`canyurenshu`,`qishu`,`shenyurenshu`,`time`) values ('$sid','$term_num','$zongrenshu','$canyurenshu','1','$shenyurenshu','$time')";
+    $query_3 = "insert into go_shoplist_term (`sid`,`term_num`,`zongrenshu`,`canyurenshu`,`qishu`,`shenyurenshu`,`time`,`codes_table`,`xsjx_time`) values ('$sid','$term_num','$zongrenshu','$canyurenshu','1','$shenyurenshu','$time','$query_table','$xsjx_time')";
 
     $db->Query($query_3);
 }

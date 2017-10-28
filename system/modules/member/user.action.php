@@ -259,7 +259,7 @@ class user extends base {
 
 			$userpassword=md5($userpassword);
 
-			$codetype=$regtype.'code';			
+			$codetype=$regtype.'code';		
 
 			$decode=_encrypt($this->segment(4),"DECODE");
 
@@ -302,9 +302,6 @@ class user extends base {
 	/* 用户注册邮箱验证 */
 
 	public function emailcheck(){
-
-	
-
 		$title="邮箱验证 -"._cfg("web_name");
 
 		$check_code = _encrypt($this->segment(4),"DECODE");
@@ -316,10 +313,6 @@ class user extends base {
 			_message("参数不正确或者验证已过期!",WEB_PATH.'/register');
 
 		}		
-
-		
-
-		
 
 		$info=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `reg_key` = '$check_code[name]' and `time` = '$check_code[time]' LIMIT 1");
 

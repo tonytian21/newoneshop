@@ -1168,7 +1168,7 @@ HTML;
 
 										   `renqi` = '$goods_key_renqi',
 
-										   `xsjx_time` = '$xsjx_time',
+										   `g_xsjx_time` = '$xsjx_time',
 
 										   `pos` = '$goods_key_pos',
                                            `recharge` = '$recharge',
@@ -1417,13 +1417,18 @@ HTML;
            
             $this->db->Autocommit_start();
 
-            $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`,`maxqishu`,`thumb`, `picarr`, `content`,`xsjx_time`,`renqi`,`pos`,`recharge`,`robot_buy_ratio`,`robot_win`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$recharge','$robot_buy_ratio','$robot_win')");
+            $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`,`maxqishu`,`thumb`, `picarr`, `content`,`g_xsjx_time`,`renqi`,`pos`,`recharge`,`robot_buy_ratio`,`robot_win`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$recharge','$robot_buy_ratio','$robot_win')");
             
             $shopid = $this->db->insert_id();
 
             if ($shopid) {
                 $this->db->Query("INSERT INTO `@#_shoplist_en` (`gid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$shopid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
                 $this->db->Autocommit_commit();
+
+                //添加商品的编号写入redis
+                $redis = new predis();
+                $redis->lpush('GOODS:ADDTERM',$shopid);
+
                 _message("商品添加成功!");
             } else {
                 $this->db->Autocommit_rollback();

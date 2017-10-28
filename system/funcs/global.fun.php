@@ -705,6 +705,47 @@ function _sendemail($email, $username = null, $title = '', $content = '', $yes =
     }
 }
 
+function _sendemailex($email, $username = null, $title = '', $content = '')
+{
+    System::load_sys_class("email", 'sys', "no");
+    
+    $config = System::load_sys_config('email');
+    
+    if (! $username)
+        $username = "";
+
+    if (! _checkemail($email)) {
+        return array(
+            '-1',
+            '邮箱格式错误!'
+        );
+    }
+    
+    email::config($config);
+    
+    if (is_array($email)) {
+        
+        email::adduser($email);
+    } else {
+        
+        email::adduser($email, $username);
+    }
+    
+    $if = email::send($title, $content);
+    
+    if ($if) {
+        return array(
+            '1',
+            '邮箱发送成功!'
+        );
+    } else {
+        return array(
+            '-1',
+            '邮箱发送失败!'
+        );
+    }
+}
+
 /*
  *
  * 发送短信

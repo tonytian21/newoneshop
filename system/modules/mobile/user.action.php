@@ -14,6 +14,7 @@ class user extends memberbase {
 	public function cook_end(){
 		_setcookie("uid","",time()-3600);
 		_setcookie("ushell","",time()-3600);
+		
 		header("location: ".WEB_PATH."/mobile/mobile/");
 	}
 	//返回登录页面
@@ -39,10 +40,48 @@ class user extends memberbase {
 		}
 		
 		if (strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {
-				header("Location: ".WEB_PATH."/mobile/home");exit;
+			header("Location: ".WEB_PATH."/mobile/home");exit;
 		}else{
 			include templates("/mobile/user","register");
 		}
+	}
+
+	public function userinfo(){
+	    $webname=$this->_cfg['web_name'];
+
+	    if(isset($_POST['dosubmit'])){
+	    	$uid = $_POST['uid'];
+	    	$guojia = $_POST['guojia'];
+	    	$sheng = $_POST['sheng'];
+	    	$shi = $_POST['shi'];
+	    	$jiedao = $_POST['jiedao'];
+	    	$shouhuoren = $_POST['shouhuoren'];
+	    	$mobile = $_POST['mobile'];
+	    	$time = time();
+	    	$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `uid` = '$uid' LIMIT 1");
+	    	if(!$member){
+	    		echo json_encode(['success'=>0,'message'=>'参数错误']);
+	    		exit;
+	    	};
+
+	    	$this->db->Query("update `@#_member` set `country`='$guojia',`province`='$sheng',`city`='$shi',`district`='$jiedao',`mobile`='$mobile' where `uid`='$uid'");
+
+	    	$this->db->Query("insert into `@#_member_dizhi` (`uid`,`sheng`,`shi`,`jiedao`,`shouhuoren`,`mobile`,`country`,`time`) values ('$uid','$sheng','$shi','$jiedao','$shouhuoren','$mobile','$guojia','$time')");
+
+	    	_setcookie("uid",_encrypt($member['uid']),60*60*24*7);	
+			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
+	    	
+	    	echo json_encode(['success'=>1,'message'=>'']);
+			exit;
+	    }
+
+		$email = $this->segment(4);
+
+		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$email' LIMIT 1");
+
+		if(!$member)_message("参数不正确!");
+
+		include templates("/mobile/user","userinfo");
 	}
 
 	//返回发送验证码页面
@@ -65,16 +104,17 @@ class user extends memberbase {
 			_message("该账号验证成功",WEB_PATH."/mobile/mobile");
 		}
 
-/*
-		if($member['emailcode']==-1){
-			$sendok = send_email_reg($name,$member['uid']);
+
+		if($member['mobilecode']==-1){
+			$sendok = send_mobile_reg_code($name,$member['uid']);
+
 			if($sendok[0]!=1){
-					_message($sendok[1]);
+				_message($sendok[1]);
 			}
 			header("location:".WEB_PATH."/mobile/user/mobilecheck/".$member['mobile']);
 			exit;
 		}
-*/
+
 		$enname=substr($name,0,3).'****'.substr($name,7,10);
 		$time=120;
 		include templates("mobile/user","mobilecheck");

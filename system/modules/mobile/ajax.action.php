@@ -645,15 +645,16 @@ public function delCartItem_jf(){
 			$user['num']=-2;
 			echo json_encode($user);die;
 		}
-		if($member[$logintype.'code'] != 1){
-			$user['state']=2; //未验证
-			echo json_encode($user);die;
-		}
+		
 		if(!$member){
 			//帐号或密码错误
 			$user['state']=1;
 			$user['num']=-1;
 		}else{
+			if($member[$logintype.'code'] != 1){
+				$user['state']=2; //未验证
+				echo json_encode($user);die;
+			}
 		   //登录成功
 			_setcookie("uid",_encrypt($member['uid']),60*60*24*7);
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
@@ -805,7 +806,7 @@ public function delCartItem_jf(){
 
 
 
-		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$mobile' LIMIT 1");
+		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$mobile' LIMIT 1");
 
 
 
@@ -839,7 +840,7 @@ public function delCartItem_jf(){
 
 
 
-			$this->db->Query("UPDATE `@#_member` SET mobilecode='1' where `uid`='$member[uid]'");
+			$this->db->Query("UPDATE `@#_member` SET mobilecode='1',emailcode='1' where `uid`='$member[uid]'");
 
 
 
@@ -869,7 +870,7 @@ public function delCartItem_jf(){
 
 	  		$name=$this->segment(4);
 
-			$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
+			$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$name' LIMIT 1");
 
 			if(!$member){
 
@@ -883,14 +884,11 @@ public function delCartItem_jf(){
 
 		    }
 
-			$checkcode=explode("|",$member['mobilecode']);
+			$checkcode=explode("|",$member['emailcode']);
 
 			$times=time()-$checkcode[1];
 
 			if($times > 120){
-
-
-
 				$sendok = send_mobile_reg_code($name,$member['uid']);
 
 				if($sendok[0]!=1){

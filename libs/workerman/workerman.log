@@ -4477,3 +4477,6 @@ Stack trace:
 2017-10-28 11:47:24 pid:1348 Workerman[goods.php] Stopping ...
 2017-10-28 11:47:24 pid:1348 Workerman[goods.php] has been stopped
 2017-10-28 11:47:25 pid:1414 Workerman[goods.php] start in DEBUG mode
+2017-10-28 12:05:59 pid:1414 Workerman[goods.php] Stopping ...
+2017-10-28 12:05:59 pid:1414 Workerman[goods.php] has been stopped
+2017-10-28 12:06:00 pid:2128 Workerman[goods.php] start in DEBUG mode
