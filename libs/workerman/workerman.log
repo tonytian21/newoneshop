@@ -4450,3 +4450,30 @@ Stack trace:
 2017-10-25 23:08:10 pid:2046 Workerman[goods.php] Stopping ...
 2017-10-25 23:08:10 pid:2046 Workerman[goods.php] has been stopped
 2017-10-25 23:09:53 pid:2063 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:24:09 pid:1194 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:26:54 pid:1194 Workerman[goods.php] Stopping ...
+2017-10-28 11:26:54 pid:1194 Workerman[goods.php] has been stopped
+2017-10-28 11:26:55 pid:1226 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:29:23 pid:1226 Workerman[goods.php] Stopping ...
+2017-10-28 11:29:23 pid:1226 Workerman[goods.php] has been stopped
+2017-10-28 11:29:23 pid:1241 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:33:37 pid:1241 Workerman[goods.php] Stopping ...
+2017-10-28 11:33:37 pid:1241 Workerman[goods.php] has been stopped
+2017-10-28 11:33:38 pid:1265 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:33:41 pid:1268 Worker[1268] process terminated
+2017-10-28 11:39:13 pid:1265 Workerman[goods.php] Stopping ...
+2017-10-28 11:39:13 pid:1265 Workerman[goods.php] has been stopped
+2017-10-28 11:39:13 pid:1300 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:39:15 pid:1303 Worker[1303] process terminated
+2017-10-28 11:40:37 pid:1300 Workerman[goods.php] Stopping ...
+2017-10-28 11:40:37 pid:1300 Workerman[goods.php] has been stopped
+2017-10-28 11:40:38 pid:1316 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:41:18 pid:1316 Workerman[goods.php] Stopping ...
+2017-10-28 11:41:18 pid:1316 Workerman[goods.php] has been stopped
+2017-10-28 11:41:18 pid:1331 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:42:40 pid:1331 Workerman[goods.php] Stopping ...
+2017-10-28 11:42:40 pid:1331 Workerman[goods.php] has been stopped
+2017-10-28 11:42:40 pid:1348 Workerman[goods.php] start in DEBUG mode
+2017-10-28 11:47:24 pid:1348 Workerman[goods.php] Stopping ...
+2017-10-28 11:47:24 pid:1348 Workerman[goods.php] has been stopped
+2017-10-28 11:47:25 pid:1414 Workerman[goods.php] start in DEBUG mode

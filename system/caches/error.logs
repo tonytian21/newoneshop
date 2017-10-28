@@ -1,0 +1,795 @@
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 55
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/go/lib/user.fun.php on line 58
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: sq in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 275
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: sq in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 277
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/go/lib/user.fun.php on line 53
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:56:49 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 55
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/go/lib/user.fun.php on line 58
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: sq in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 275
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: sq in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 277
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/go/lib/user.fun.php on line 53
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:56:54 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:57:09 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:57:24 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:57:39 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:57:54 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'gg11' in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:58:09 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'gg11' in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:58:24 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'gg11' in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[27-Oct-2017 23:58:39 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[27-Oct-2017 23:58:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:23 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:25 Asia/Shanghai] PHP Notice:  Undefined variable: shoplistrenqi in /Users/tonytian/project/PHP/yyg/system/modules/mobile/mobile.action.php on line 56
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 170
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 171
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 177
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 178
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 184
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 185
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 191
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 192
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 198
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 199
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 205
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 206
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/be87dd3f71eab5759452a81f60cab5b7.tpl.php on line 425
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:26 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[27-Oct-2017 23:59:30 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:05:43 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:05:43 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:05:43 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:05:43 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:05:43 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:05:43 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:05:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:05:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:05:53 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:05:53 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:05:53 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:05:53 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:05:53 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:05:53 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[28-Oct-2017 11:06:00 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[28-Oct-2017 11:06:09 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[28-Oct-2017 11:06:18 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[28-Oct-2017 11:06:31 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:06:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:06:58 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:07:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:07:34 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/admin/tpl/shop.lists.tpl.php on line 379
+[28-Oct-2017 11:07:34 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:07:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:07:44 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/admin/tpl/shop.lists.tpl.php on line 379
+[28-Oct-2017 11:24:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:24:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:25:00 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:25:00 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:25:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:25:09 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:27:00 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:29:31 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:29:31 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:29:34 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:31:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:31:30 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:31:30 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:31:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:33:41 Asia/Shanghai] PHP Notice:  Use of undefined constant ROUTE_M - assumed 'ROUTE_M' in /Users/tonytian/project/PHP/yyg/system/libs/system.class.php on line 160
+[28-Oct-2017 11:39:15 Asia/Shanghai] PHP Notice:  Undefined index: HTTP_HOST in /Users/tonytian/project/PHP/yyg/system/libs/param.class.php on line 46
+[28-Oct-2017 11:39:15 Asia/Shanghai] PHP Notice:  Undefined index: HTTP_USER_AGENT in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 959
+[28-Oct-2017 11:39:15 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/modules/worker/goods.php on line 42
+[28-Oct-2017 11:40:40 Asia/Shanghai] PHP Notice:  Undefined variable: i in /Users/tonytian/project/PHP/yyg/system/modules/worker/goods.php on line 52
+[28-Oct-2017 11:40:40 Asia/Shanghai] PHP Notice:  Undefined variable: lenth in /Users/tonytian/project/PHP/yyg/system/modules/worker/goods.php on line 52
+[28-Oct-2017 11:41:20 Asia/Shanghai] PHP Notice:  Undefined variable: lenth in /Users/tonytian/project/PHP/yyg/system/modules/worker/goods.php on line 52
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:43:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:43:49 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:43:58 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:43:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:44:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:13 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:13 Asia/Shanghai] PHP Notice:  Undefined variable: shoplistrenqi in /Users/tonytian/project/PHP/yyg/system/modules/mobile/mobile.action.php on line 56
+[28-Oct-2017 11:44:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 170
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 171
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 177
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 178
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 184
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 185
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 191
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 192
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 198
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 199
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 205
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 206
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/be87dd3f71eab5759452a81f60cab5b7.tpl.php on line 425
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:17 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:22 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:32 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:32 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:32 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:32 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:44:32 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:32 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:34 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:41 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:45 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:44:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/f9aadbaddcca9ff718d4b166e795c30b.tpl.php on line 203
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:45:02 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:06 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:45 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:45:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:06 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:36 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:46:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:48 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:48 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:48 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:48 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:48 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:48 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:47:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: shoplistrenqi in /Users/tonytian/project/PHP/yyg/system/modules/mobile/mobile.action.php on line 56
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 170
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 171
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 177
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 178
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 184
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 185
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 191
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 192
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 198
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 199
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 205
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Undefined variable: key in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/3176a68d21faae4581743bec3ecf27e1.tpl.php on line 206
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/be87dd3f71eab5759452a81f60cab5b7.tpl.php on line 425
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:47:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:03 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:06 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:15 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:25 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:30 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:30 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:30 Asia/Shanghai] PHP Notice:  Undefined variable: fen1 in /Users/tonytian/project/PHP/yyg/system/modules/mobile/mobile.action.php on line 313
+[28-Oct-2017 11:48:30 Asia/Shanghai] PHP Notice:  Undefined variable: fen1 in /Users/tonytian/project/PHP/yyg/system/modules/mobile/mobile.action.php on line 319
+[28-Oct-2017 11:48:31 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:33 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:48:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:45 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:50 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:52 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:53 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:53 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:54 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Warning:  Division by zero in /Users/tonytian/project/PHP/yyg/system/modules/go/index.action.php on line 60
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/250b182403a4e8f84311ab0dcd93b571.tpl.php on line 148
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Use of undefined constant G_PARAM_URL - assumed 'G_PARAM_URL' in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 213
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 546
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 578
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Undefined offset: 0 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 579
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 580
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 581
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Undefined variable: ln in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/c4c1ae83529a0b5e55fb7d3225aab0fd.tpl.php on line 683
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:48:55 Asia/Shanghai] PHP Notice:  Array to string conversion in /Users/tonytian/project/PHP/yyg/system/caches/caches_template/yungou/8138ee4216da0862987f732fa2771506.tpl.php on line 151
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:57 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:48:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:02 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:02 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:06 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:08 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:08 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:14 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:20 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:21 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:28 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:28 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:34 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:34 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:36 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:42 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:42 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:47 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:47 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:51 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:55 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:49:55 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:49:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:01 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:01 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:50:06 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:07 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:07 Asia/Shanghai] PHP Warning:  Invalid argument supplied for foreach() in /Users/tonytian/project/PHP/yyg/system/modules/mobile/ajax.action.php on line 1203
+[28-Oct-2017 11:50:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:11 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:15 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:18 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:22 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:22 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/funcs/global.fun.php on line 412
+[28-Oct-2017 11:50:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:24 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:50 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:50:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:05 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:20 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:29 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:35 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:44 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:50 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:51:59 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[28-Oct-2017 11:52:06 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Notice:  Only variables should be assigned by reference in /Users/tonytian/project/PHP/yyg/system/libs/application.class.php on line 7
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 65
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Warning:  db_mysqli::GetErrno(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 127
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Warning:  db_mysqli::GetVersion(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 113
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Notice:  Undefined offset: 1 in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 116
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 147
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Notice:  Undefined variable: list in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 228
+[28-Oct-2017 11:52:14 Asia/Shanghai] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /Users/tonytian/project/PHP/yyg/system/libs/db_mysqli.class.php on line 108

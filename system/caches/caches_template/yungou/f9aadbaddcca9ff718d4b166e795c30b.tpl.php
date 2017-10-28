@@ -53,7 +53,7 @@
 				<ul class="collect fr">
 
 					<li class="fr">
-						<a style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("qq"); ?>&site=qq&menu=yes" target="_blank">离线留言</a>
+						<a style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("qq"); ?>&site=qq&menu=yes" target="_blank">在线客服</a>
 					</li>
 					<li class="fr">
 						<a href="<?php echo WEB_PATH; ?>/help/1">帮助</a>

@@ -1417,7 +1417,7 @@ HTML;
            
             $this->db->Autocommit_start();
 
-            $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`,`qishu`,`maxqishu`,`thumb`, `picarr`, `content`,`xsjx_time`,`renqi`,`pos`,`recharge`,`robot_buy_ratio`,`robot_win`, `time`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage', '1','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$recharge','$robot_buy_ratio','$robot_win','$time')");
+            $query_1 = $this->db->Query("INSERT INTO `@#_shoplist` (`cateid`, `brandid`, `title`, `title_style`, `title2`, `keywords`, `description`, `money`, `yunjiage`,`maxqishu`,`thumb`, `picarr`, `content`,`xsjx_time`,`renqi`,`pos`,`recharge`,`robot_buy_ratio`,`robot_win`) VALUES ('$cateid', '$brandid', '$title', '$title_style', '$title2', '$keywords', '$description', '$money', '$yunjiage','$maxqishu', '$thumb', '$picarr', '$content','$xsjx_time','$goods_key_renqi', '$goods_key_pos','$recharge','$robot_buy_ratio','$robot_win')");
             
             $shopid = $this->db->insert_id();
 
