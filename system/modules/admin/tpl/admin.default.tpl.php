@@ -499,11 +499,11 @@ $(function() {
 
 	$tj_article=$this->db->GetList("SELECT * FROM `@#_article`");
 
-	$tj_shoplist=$this->db->GetList("SELECT id FROM `@#_shoplist`");	
+	$tj_shoplist=$this->db->GetList("SELECT id FROM `@#_shoplist_term`");	
 
 	$time=time();
 
-	$tj_shoplist_xsjx=$this->db->GetList("SELECT id FROM `@#_shoplist` where `xsjx_time`>'$time'");
+	$tj_shoplist_xsjx=$this->db->GetList("SELECT id FROM `@#_shoplist_term` where `xsjx_time`>'$time'");
 
 	$tj_member=$this->db->GetList("SELECT uid FROM `@#_member`");
 
@@ -513,7 +513,7 @@ $(function() {
 
 	$tj_member_new=$this->db->GetList("SELECT uid FROM `@#_member` where `time`>'$tm' ");
 
-	$tj_shoplist_new=$this->db->GetList("SELECT id FROM `@#_shoplist` where `time`>'$tm' ");
+	$tj_shoplist_new=$this->db->GetList("SELECT id FROM `@#_shoplist_term` where `time`>'$tm' ");
 
 	$tj_member_account=$this->db->GetList("SELECT money FROM `@#_member_account` where `pay`='账户' and `type`=1 and `time`>'$tm'");
 

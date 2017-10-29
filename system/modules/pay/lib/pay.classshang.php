@@ -67,7 +67,7 @@ class pay {
 	
 		$shoplist=array();		//商品信息	
 		if($shopids!=NULL){
-			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` in($shopids) and `q_uid` is null for update",array("key"=>"id"));
+			$shoplist=$this->db->GetList("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id` in($shopids) and `q_uid` is null for update",array("key"=>"id"));
 		}else{			
 			$this->db->Autocommit_rollback();
 			return '购物车内没有商品!';
@@ -363,7 +363,7 @@ class pay {
 		$this->db=System::load_sys_class('model');		
 		$this->db->Autocommit_start();
 		$member = $this->db->GetOne("select * from `@#_member` where `uid` = '$uid' for update");
-		$goodinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' and `shenyurenshu` != '0' for update");
+		$goodinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$gid' and `shenyurenshu` != '0' for update");
 		if($goodinfo['shenyurenshu'] < $num){
 			$num = $goodinfo['shenyurenshu'];
 		}

@@ -17,9 +17,9 @@ class qishu extends admin {
 	//期数列表
 	public function qishu_list(){	
 		$shopid=intval($this->segment(4));	
-		$info = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B On A.gid=B.sid where `id` = '$shopid' LIMIT 1");		
+		$info = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B On A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid   where `sid` = '$shopid' LIMIT 1");		
 		$num=20;
-		$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid` = '$info[sid]'");		
+		$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid` = '$info[sid]'");		
 		$page=System::load_sys_class('page');
 		if(isset($_GET['p'])){
 			$pagenum=$_GET['p'];
@@ -28,7 +28,7 @@ class qishu extends admin {
 		if($pagenum>$page->page){
 			$pagenum=$page->page;
 		}		
-		$qishu=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid` = '$info[sid]' order by `qishu` DESC",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));		
+		$qishu=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid   where `sid` = '$info[sid]' order by `qishu` DESC",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));		
 		$cateid = $qishu[0]['cateid'];
 		$cate_name = $this->db->GetOne("select * from `@#_category` where `cateid` = '$cateid' LIMIT 1");
 		$cate_name = $cate_name['name'];

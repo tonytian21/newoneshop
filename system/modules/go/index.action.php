@@ -17,15 +17,15 @@ db=System::load_sys_class('model');
 	
 	public function init(){		
 		//最新商品
-		$new_shop=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `pos` = '1' and `q_uid` is null ORDER BY `id` DESC LIMIT 8");
+		$new_shop=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `pos` = '1' and `q_uid` is null ORDER BY `id` DESC LIMIT 8");
 		//顶部推荐2个
-		$tj_shop=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `cateid` = '147' and `q_uid` is null LIMIT 2");
+		$tj_shop=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `cateid` = '147' and `q_uid` is null LIMIT 2");
 		//即将揭晓
-		$shoplist=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is null ORDER BY `shenyurenshu` ASC LIMIT 24");
+		$shoplist=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_uid` is null ORDER BY `shenyurenshu` ASC LIMIT 24");
 		//热门推荐
-		$shoplistrenqi=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `renqi`='1' and `q_uid` is null ORDER BY id DESC LIMIT 8");
+		$shoplistrenqi=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `renqi`='1' and `q_uid` is null ORDER BY id DESC LIMIT 8");
 		//首页开奖数量
-		$total=$this->db->GetCount("select id from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is not null and `q_showtime` = 'N'");
+		$total=$this->db->GetCount("select id from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_uid` is not null and `q_showtime` = 'N'");
 
 													
 		$max_renqi_qishu = 1;
@@ -49,9 +49,9 @@ db=System::load_sys_class('model');
 		//圈子获取
         $quanzi=$this->db->GetList("select * from `@#_quanzi` where 1 ORDER BY time DESC LIMIT 4 "); 
 		//他们正在云购	
-		$go_record=$this->db->GetList("SELECT m.`uid`,m.`username`,m.`email`,m.`mobile`,m.`img`,mg.`shopid`,mg.`gonumber`, mg.`shopname`, mg.`time`,t.`zongrenshu`,t.`canyurenshu` FROM `@#_member_go_record` AS mg LEFT JOIN `@#_member` AS m ON m.`uid` = mg.`uid` LEFT JOIN `@#_shoplist` AS s  ON  s.`id` = mg.`shopid` left join `@#_shoplist_term` t on s.id=t.sid WHERE mg.`status` LIKE '%已付款%'  ORDER BY mg.`time` DESC LIMIT 0,7");
+		$go_record=$this->db->GetList("SELECT m.`uid`,m.`username`,m.`email`,m.`mobile`,m.`img`,mg.`shopid`,mg.`gonumber`, mg.`shopname`, mg.`time`,t.`zongrenshu`,t.`canyurenshu` FROM `@#_member_go_record` AS mg LEFT JOIN `@#_member` AS m ON m.`uid` = mg.`uid` LEFT JOIN `@#_shoplist` AS s  ON  s.`id` = mg.`shopid` left join `@#_shoplist_term` t on s.id=t.sid left join `@#_shoplist_en` sen on sen.egid=s.gid  WHERE mg.`status` LIKE '%已付款%'  ORDER BY mg.`time` DESC LIMIT 0,7");
 		//最新揭晓
-		$shopqishu = $this->db->GetList("select id,sid,thumb,title,zongrenshu,qishu,money,q_uid,q_user from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_end_time` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC LIMIT 5");
+		$shopqishu = $this->db->GetList("select id,sid,thumb,title,zongrenshu,qishu,money,q_uid,q_user from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC LIMIT 5");
 		foreach ($shopqishu as &$v) {
 			$v['q_user'] = unserialize($v['q_user']);
 			$v['tou'] = $this->_touzi($v['q_uid'],$v['id']);
@@ -122,11 +122,11 @@ db=System::load_sys_class('model');
 		//分页
 		$num=20;
 		if($fen1 and $fen2){
-			$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_uid` is null and `brandid`='$fen2'");
+			$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_uid` is null and `brandid`='$fen2'");
 		}else if($fen1){
-			$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_uid` is null and `cateid`='$fen1'");
+			$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_uid` is null and `cateid`='$fen1'");
 		}else{
-			$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_uid` is null");
+			$total=$this->db->GetCount("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_uid` is null");
 		}
 		
 		$page=System::load_sys_class('page');
@@ -164,11 +164,11 @@ db=System::load_sys_class('model');
 		}
 		
 		if($fen1 and $fen2){			
-			$shoplist=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is null and `brandid`='$fen2' $select_w",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
+			$shoplist=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null and `brandid`='$fen2' $select_w",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
 		}else if($fen1){		
-			$shoplist=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is null and (`cateid`='$fen1' || `cateid` ='".$categ_br['cateid']."')$select_w",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
+			$shoplist=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null and (`cateid`='$fen1' || `cateid` ='".$categ_br['cateid']."')$select_w",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
 		}else{			
-			$shoplist=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is null $select_w",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
+			$shoplist=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
 		}
 		
 		$max_renqi_qishu = 1;
@@ -199,7 +199,7 @@ db=System::load_sys_class('model');
 	public function item(){
 		$mysql_model=System::load_sys_class('model');
 		$itemid=abs(intval(safe_replace($this->segment(4))));	
-		$item=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='".$itemid."' LIMIT 1");
+		$item=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='".$itemid."' LIMIT 1");
 		if(!$item)_message("没有这个商品！",WEB_PATH,3);
 		$q_showtime = (isset($item['q_showtime']) && $item['q_showtime'] == 'N') ? 'N' : 'Y';
 		
@@ -211,7 +211,7 @@ db=System::load_sys_class('model');
 	
 		
 		$sid=$item['sid'];
-		$sid_code=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid`='$sid' order by `id` DESC LIMIT 1,1");
+		$sid_code=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid`='$sid' order by `id` DESC LIMIT 1,1");
 		if($item['id'] == $sid_code['id']){
 			$sid_code = null;
 		}
@@ -236,7 +236,7 @@ db=System::load_sys_class('model');
 		
 		
 		//期数显示
-		$itemlist = $this->db->GetList("select id,qishu,q_uid from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid`='$item[sid]' order by `qishu` DESC");		
+		$itemlist = $this->db->GetList("select id,qishu,q_uid from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid`='$item[sid]' order by `qishu` DESC");		
 
 		$loopqishu='
 <ul class="Period_list bb_gray">
@@ -313,7 +313,7 @@ db=System::load_sys_class('model');
 	public function dataserver(){	
 	
 		$itemid=abs(intval(safe_replace($this->segment(4))));	
-		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$itemid' and `q_uid` is not null LIMIT 1");
+		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid' and `q_uid` is not null LIMIT 1");
 		if(!$item){
 			_message("没有这个商品!");
 		}
@@ -378,10 +378,10 @@ db=System::load_sys_class('model');
 		$description = $item['description'];
 		
 		$go_record_list = $this->db->GetList("select * from `@#_member_go_record` where `shopid` = '$item[id]' and `shopqishu` = '$item[qishu]' order by `id` DESC limit 50");
-		$itemzx=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid`='$item[sid]' and `qishu`>'$item[qishu]' order by `qishu` DESC LIMIT 1");
+		$itemzx=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid`='$item[sid]' and `qishu`>'$item[qishu]' order by `qishu` DESC LIMIT 1");
 		
 		//期数显示
-		$itemlist = $this->db->GetList("select id,sid,q_uid,qishu from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid`='$item[sid]' order by `qishu` DESC");
+		$itemlist = $this->db->GetList("select id,sid,q_uid,qishu from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid`='$item[sid]' order by `qishu` DESC");
 		$loopqishu='
 	<ul class="Period_list bb_gray">
 		';
@@ -446,7 +446,7 @@ db=System::load_sys_class('model');
 	public function lottery(){	
 		//最新揭晓
 		$page=System::load_sys_class('page');		
-		$total=$this->db->GetCount("select id from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is not null and `q_showtime` = 'N'");
+		$total=$this->db->GetCount("select id from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_uid` is not null and `q_showtime` = 'N'");
 		if(isset($_GET['p'])){
 			$pagenum=$_GET['p'];
 		}else{
@@ -454,8 +454,8 @@ db=System::load_sys_class('model');
 		}
 		$num=21;
 		$page->config($total,$num,$pagenum,"0");
-		$shopqishu=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
-		$shoplist=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_uid` is null  ORDER BY `canyurenshu` DESC LIMIT 4");
+		$shopqishu=$this->db->GetPage("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0));
+		$shoplist=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_uid` is null  ORDER BY `canyurenshu` DESC LIMIT 4");
 		$member_record=$this->db->GetList("select * from `@#_member_go_record` order by id DESC limit 6");		
 		include templates("index","lottery");
 	}

@@ -21,9 +21,9 @@ class getshop extends SystemAction
         $gid = trim($gid, ',');
         
         if (! $gid) {
-            $info = $db->GetOne("select qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_showtime` = 'Y' order by `q_end_time` ASC");
+            $info = $db->GetOne("select qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_showtime` = 'Y' order by `q_end_time` ASC");
         } else {
-            $infos = $db->GetList("select  qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `q_showtime` = 'Y' order by `q_end_time` ASC limit 0,4");
+            $infos = $db->GetList("select  qishu,xsjx_time,id,zongrenshu,thumb,title,q_uid,q_user,q_user_code,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid   where `q_showtime` = 'Y' order by `q_end_time` ASC limit 0,4");
             $gid = @explode('_', $gid);
             $info = false;
             foreach ($infos as $infov) {
@@ -90,7 +90,7 @@ class getshop extends SystemAction
             $db = System::load_sys_class('model');
             $times = (int) System::load_sys_config('system', 'goods_end_time');
             $gid = isset($_POST['gid']) ? abs(intval($_POST['gid'])) : exit();
-            $info = $db->GetOne("select id,xsjx_time,q_end_time from `@#_shoplist` where `id` ='$gid' and `q_showtime` = 'Y'");
+            $info = $db->GetOne("select id,xsjx_time,q_end_time from `@#_shoplist_term` where `id` ='$gid' and `q_showtime` = 'Y'");
             if (! $info) {
                 echo "no";
                 exit();
@@ -114,7 +114,7 @@ class getshop extends SystemAction
             $db = System::load_sys_class('model');
             $times = (int) System::load_sys_config('system', 'goods_end_time');
             $gid = isset($_POST['gid']) ? abs(intval($_POST['gid'])) : exit();
-            $info = $db->GetOne("select id,xsjx_time,thumb,title,q_uid,q_user,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` ='$gid'");
+            $info = $db->GetOne("select id,xsjx_time,thumb,title,q_uid,q_user,q_end_time from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid   where `id` ='$gid'");
             
             if (! $info || empty($info['q_end_time'])) {
                 echo '0';
@@ -147,7 +147,7 @@ class getshop extends SystemAction
             $db = System::load_sys_class('model');
             $times = (int) System::load_sys_config('system', 'goods_end_time');
             $gid = isset($_POST['gid']) ? abs(intval($_POST['gid'])) : exit();
-            $info = $db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` ='$gid'");
+            $info = $db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid   where `id` ='$gid'");
             $q = $db->Query("update `@#_shoplist_term` SET `q_showtime` = 'N' where `id` = '$gid' and `q_showtime` = 'Y' and `q_uid` is not null");
             $extinfo = unserialize($info['q_user']);
             $info['uid'] = $info['q_uid'];

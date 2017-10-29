@@ -17,11 +17,11 @@ class auto extends admin {
 			$p = 1;
 		}
 		$num=50;
-		$total=$this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE B.`q_uid` is null  order by A.`id` DESC"); 
+		$total=$this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE `q_uid` is null  order by `id` DESC"); 
 		$page=System::load_sys_class('page');
 		if(isset($_GET['p'])){$pagenum=$_GET['p'];}else{$pagenum=1;}	
 		$page->config($total,$num,1,"0");
-		$shoplist=$this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_uid` is null  order by `id` DESC ",array("num"=>$num,"page"=>$p,"type"=>1,"cache"=>0));
+		$shoplist=$this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_uid` is null  order by `id` DESC ",array("num"=>$num,"page"=>$p,"type"=>1,"cache"=>0));
 		$data  = $this->db->GetOne("SELECT `cfg_value` FROM `@#_wxch_cfg` WHERE  `cfg_name` = 'auto'  LIMIT 1");
 		$data = unserialize($data['cfg_value']);
 		$times = intval($data['mintime']);  //最小间隔时间

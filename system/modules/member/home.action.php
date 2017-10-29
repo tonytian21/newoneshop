@@ -37,7 +37,7 @@ class home extends base {
 	}
 	public function qkgm(){
          $shopid = $this->segment(4);
-		 $shopinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='".$shopid."'");
+		 $shopinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='".$shopid."'");
 		 $money = $this->userinfo['money'];
 		 if($this->segment(5)=="mobile"){
 			 include templates("mobile/user","qkgm"); 
@@ -91,7 +91,7 @@ class home extends base {
 		$uid = $this->userinfo['uid'];
 		$username = $this->userinfo['username'];
 		$time=time();
-		$shopinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='".$shopid."'");
+		$shopinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='".$shopid."'");
 		$umoney = $this->userinfo['money'];
 		if($umoney<$shopinfo['qmoney']){_message("账户余额不足");}
 		$ods = date("YmdHis").rand(1000,9999)."(全)";
@@ -580,7 +580,7 @@ class home extends base {
 		if(!$record){
 			_message("页面错误",WEB_PATH."/member/home/userbuylist",3);
 		}
-		$shopinfo=$mysql_model->GetOne("select thumb from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$record[shopid]' LIMIT 1");
+		$shopinfo=$mysql_model->GetOne("select thumb from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='$record[shopid]' LIMIT 1");
 		$record['thumb'] = $shopinfo['thumb'];
 		if($crodid>0){
 			include templates("member","userbuydetail");
@@ -776,7 +776,7 @@ class home extends base {
 			$sd_shopid=$_POST['shopid'];
 			$sd_title=$_POST['title'];
 			//根据晒单的商品id查询期数
-			$qishu= $this->db->GetOne("select qishu from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$sd_shopid'");
+			$qishu= $this->db->GetOne("select qishu from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='$sd_shopid'");
 			$qs = $qishu['qishu'];
 			$sd_thumbs=$thumbs;
 			$sd_content=addslashes($_POST['content']);

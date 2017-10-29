@@ -47,7 +47,7 @@ class index extends SystemAction
         $search = str_ireplace("/**/", '', $search);
         
         $title = $search . ' - ' . _cfg('web_name');
-        $shoplist = $mysql_model->GetList("SELECT `thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `q_user`  = '' AND `title` LIKE '%" . $search . "%'");
+        $shoplist = $mysql_model->GetList("SELECT `thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_user`  = '' AND `title` LIKE '%" . $search . "%'");
         
         $list = count($shoplist);
         

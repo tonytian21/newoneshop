@@ -69,7 +69,7 @@ class user extends memberbase {
 	    	$this->db->Query("insert into `@#_member_dizhi` (`uid`,`sheng`,`shi`,`jiedao`,`shouhuoren`,`mobile`,`country`,`time`) values ('$uid','$sheng','$shi','$jiedao','$shouhuoren','$mobile','$guojia','$time')");
 
 	    	_setcookie("uid",_encrypt($member['uid']),60*60*24*7);	
-			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
+			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$mobile.$member['email'])),60*60*24*7);
 	    	
 	    	echo json_encode(['success'=>1,'message'=>'']);
 			exit;
@@ -111,7 +111,7 @@ class user extends memberbase {
 			if($sendok[0]!=1){
 				_message($sendok[1]);
 			}
-			header("location:".WEB_PATH."/mobile/user/mobilecheck/".$member['mobile']);
+			header("location:".WEB_PATH."/mobile/user/mobilecheck/".$member['email']);
 			exit;
 		}
 
@@ -126,7 +126,7 @@ class user extends memberbase {
 	 $member=$this->userinfo;
 	 $itemid=intval($this->segment(4));
 
-	 $itemlist=$this->db->GetList("select *,a.time as timego,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid where a.uid='$member[uid]' and b.id='$itemid' group by a.id order by a.time" );
+	 $itemlist=$this->db->GetList("select *,a.time as timego,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid left join `@#_shoplist_en` sen on sen.egid=c.gid  where a.uid='$member[uid]' and b.id='$itemid' group by a.id order by a.time" );
 	 if(!empty($itemlist)){
 		 if($itemlist[0]['q_end_time']!=''){
 	   //商品已揭晓

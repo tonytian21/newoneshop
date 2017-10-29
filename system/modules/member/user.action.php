@@ -375,10 +375,38 @@ class user extends base {
 
 
 	public function emailok(){	
+		$error = '';
+		if(isset($_POST['dosubmit'])){
+			$uid = $_POST['uid'];
+	    	$guojia = $_POST['guojia'];
+	    	$sheng = $_POST['sheng'];
+	    	$shi = $_POST['shi'];
+	    	$jiedao = $_POST['jiedao'];
+	    	$shouhuoren = $_POST['shouhuoren'];
+	    	$mobile = $_POST['mobile'];
+	    	$time = time();
+	    	$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `uid` = '$uid' LIMIT 1");
+	    	if(!$member){
+	    		$title="完善个人信息";
 
-	
+				$tiebu="验证失败";
 
-		$check_code = _encrypt($this->segment(4),"DECODE");
+				$error="未知的来源!";
+
+				include templates("user","emailok");
+				exit;
+	    	};
+
+	    	$this->db->Query("update `@#_member` set `country`='$guojia',`province`='$sheng',`city`='$shi',`district`='$jiedao',`mobile`='$mobile' where `uid`='$uid'");
+
+	    	$this->db->Query("insert into `@#_member_dizhi` (`uid`,`sheng`,`shi`,`jiedao`,`shouhuoren`,`mobile`,`country`,`time`) values ('$uid','$sheng','$shi','$jiedao','$shouhuoren','$mobile','$guojia','$time')");
+
+	    	_setcookie("uid",_encrypt($member['uid']),60*60*24*7);	
+			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$mobile.$member['email'])),60*60*24*7);
+	    	
+	    	_message("保存成功",G_WEB_PATH);
+		}else{
+			$check_code = _encrypt($this->segment(4),"DECODE");
 
 		$check_code = @unserialize($check_code);
 
@@ -390,28 +418,15 @@ class user extends base {
 
 		}
 
-				
-
-		
-
 		$sql_code = $check_code['code'].'|'.$check_code['time'];
-
-		
-
-		
 
 		$member=$this->db->GetOne("select * from `@#_member` where `reg_key`='$check_code[email]' AND `emailcode`= '$sql_code' LIMIT 1");
 
 		if(!$member)_message("未知的来源!",WEB_PATH,'/register');
 
-		
-
 		$timec=time() - $check_code['time'];			
 
 		if($timec < (3600*24)){
-
-				
-
 				$title="邮件激活成功";
 
 				$tiebu="完成注册";
@@ -458,13 +473,9 @@ class user extends base {
 
 					include templates("user","emailok");
 
-			}			
-
+			}
+		}
 	}
-
-	
-
-
 
 	//重发手机验证码
 
@@ -613,10 +624,6 @@ class user extends base {
 		include templates("user","mobilecheck");
 
 	}
-
-
-
-
 
 	public function codeCheck(){
 

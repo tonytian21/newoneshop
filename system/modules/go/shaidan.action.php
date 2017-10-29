@@ -66,7 +66,7 @@ class shaidan extends base {
 		$member=$this->userinfo;	
 		$sd_id=abs(intval($this->segment(4)));
 		$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sd_id'");
-		$goods = $this->db->GetOne("select tid as id,qishu,money,q_uid,maxqishu,thumb,title from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid` = '$shaidan[sd_shopid]' order by `qishu` DESC");
+		$goods = $this->db->GetOne("select id,qishu,money,q_uid,maxqishu,thumb,title from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$shaidan[sd_shopid]' order by `qishu` DESC");
 			
 		if(isset($_POST['submit'])){			
 			$sdhf_id=$shaidan['sd_id'];
@@ -121,9 +121,9 @@ class shaidan extends base {
 	
 		$itemid=safe_replace($this->segment(4));
 
-		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `tid`='$itemid' LIMIT 1");
+		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid' LIMIT 1");
 
-		$shop_sid=$this->db->GetList("select id from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `sid`='$item[sid]' and `tid` != '$itemid'");
+		$shop_sid=$this->db->GetList("select id from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$item[sid]' and `id` != '$itemid'");
 
 		$shop_sid_str='';
 		for($i=0;$i<count($shop_sid);$i++){
@@ -171,7 +171,7 @@ class shaidan extends base {
 	
 		$itemid=safe_replace($this->segment(4));
 
-		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `tid`='$itemid' LIMIT 1");
+		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid' LIMIT 1");
 		$ids =  $item['id'];
 		$qs = $item['qishu'];
 		$shaidan=$this->db->GetList("select * from `@#_shaidan` where `sd_shopid`= $ids and  `sd_qishu`= $qs");

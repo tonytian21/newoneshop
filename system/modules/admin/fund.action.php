@@ -68,7 +68,7 @@ class fund extends admin {
 			$userid = intval($_POST['userid']);
 			$time = time();
 			$appoint = $this->db->GetOne("SELECT * from `@#_appoint` WHERE `shopid` ='$shopid' LIMIT 1");
-			$goods =  $this->db->GetOne("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE `id` ='$shopid' LIMIT 1");
+			$goods =  $this->db->GetOne("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE `id` ='$shopid' LIMIT 1");
 			$user =  $this->db->GetOne("SELECT * from `@#_member` WHERE `uid` ='$userid' LIMIT 1");
 			$ex_info=$this->db->GetOne("select * from `@#_member_go_record` where `shopid` = '$shopid' and `uid`='{$userid}'");
 			if(empty($user)){

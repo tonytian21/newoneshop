@@ -97,10 +97,8 @@ function content_add_position(){}
  使用此函数注意传进来的的商品期数不等于最大期数
 */
 function content_add_shop_install($info=null){
-	
-	
 	$db = System::load_sys_class("model");
-	/*$db->Autocommit_start();
+	$db->Autocommit_start();
 	
 	unset($info['id']);
 	unset($info['q_uid']);
@@ -131,7 +129,7 @@ function content_add_shop_install($info=null){
 	$keys.= ')';
 	$vals.= ')';
 	
-	$sql = "INSERT INTO `@#_shoplist` ".$keys." VALUES ".$vals;
+	$sql = "INSERT INTO `@#_shoplist_term` ".$keys." VALUES ".$vals;
 	$q1 = $db->Query($sql);
 	$id = $db->insert_id();	
 	$q2 = content_get_go_codes($info['zongrenshu'],3000,$id);
@@ -142,13 +140,5 @@ function content_add_shop_install($info=null){
 		$db->Autocommit_rollback();
 		return false;
 	}
-	*/
-	$db->Query("update `@#_shoplist` set qishu = qishu + 1 where `id`=".$info['id']);
-	return true;
-	
-}//
-
-
-
-
+}
 ?>

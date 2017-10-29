@@ -698,7 +698,7 @@ HTML;
             
             if ($cateid == '') {
                 
-                $list_where = " 1 order by A.`id` DESC";
+                $list_where = " 1 order by `id` DESC";
             }
             
             if (intval($cateid)) {
@@ -707,7 +707,7 @@ HTML;
             }
         } else {
             
-            $list_where = " 1 order by A.`id` DESC";
+            $list_where = " 1 order by `id` DESC";
         }
         
         if (isset($_POST['sososubmit'])) {
@@ -820,7 +820,7 @@ HTML;
                     
                     $sosotext = intval($sosotext);
                     
-                    $list_where = "A.`id` = '$sosotext'";
+                    $list_where = "`id` = '$sosotext'";
                 }
             } else {
                 
@@ -831,7 +831,7 @@ HTML;
         
         $num = 20;
         
-        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE $list_where");
+        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE $list_where");
         
         $page = System::load_sys_class('page');
         
@@ -843,13 +843,13 @@ HTML;
         
         $page->config($total, $num, $pagenum, "0");
         
-        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE $list_where ", array(
+        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE $list_where ", array(
             "num" => $num,
             "page" => $pagenum,
             "type" => 1,
             "cache" => 0
         ));
-        
+
         include $this->tpl(ROUTE_M, 'shop.lists');
     }
 
@@ -896,7 +896,7 @@ HTML;
             // echo "NO POST";
         }
         
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' limit 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$gid' limit 1");
         
         if (! $ginfo)
             _message("没有找到这个商品");
@@ -943,7 +943,7 @@ HTML;
     public function goods_one_okt()
     {
         $gid = intval($this->segment(4));
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' limit 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$gid' limit 1");
         if (! $ginfo)
             _message("没有找到这个商品");
         $jinri_time = time();
@@ -972,7 +972,7 @@ HTML;
     {
         $gid = intval($this->segment(4));
         
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$gid' limit 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$gid' limit 1");
         
         if (! $ginfo)
             _message("没有找到这个商品");
@@ -1028,7 +1028,7 @@ HTML;
         
         $num = 20;
         
-        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist_del` WHERE 1");
+        $total = $this->db->GetCount("SELECT COUNT(*) FROM `@#_shoplist` A inner join `@#_shoplist_term_del` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE 1");
         
         $page = System::load_sys_class('page');
         
@@ -1040,7 +1040,7 @@ HTML;
         
         $page->config($total, $num, $pagenum, "0");
         
-        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist_del` WHERE 1", array(
+        $shoplist = $this->db->GetPage("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term_del` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE 1", array(
             "num" => $num,
             "page" => $pagenum,
             "type" => 1,
@@ -1055,7 +1055,7 @@ HTML;
     {   
         $shopid = intval($this->segment(4));
         
-        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A left join `@#_shoplist_en` B on A.id=B.gid WHERE A.`id` = '$shopid' and `qishu` order by `qishu` DESC LIMIT 1 for update");
+        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `id` = '$shopid' and `qishu` order by `qishu` DESC LIMIT 1 for update");
         
         if ($shopinfo['q_end_time'])
             _message("该商品已经揭晓,不能修改!", G_MODULE_PATH . '/content/goods_list');
@@ -1144,40 +1144,46 @@ HTML;
             $robot_buy_ratio = intval($_POST['robot_buy_ratio']);
             $robot_win = intval($_POST['robot_win']);
             
-            $sql = "UPDATE `@#_shoplist` SET `cateid` = '$cateid',
-
-										   `brandid` = '$brandid',
-
-										   `title` = '$title',
-
-										   `title_style` = '$title_style',
-
-										   `title2` = '$title2',
-
-										   `keywords`='$keywords',
-
-										   `description`='$description',
-
-										   `thumb` = '$thumb',
-
-										   `picarr` = '$picarr',
-
-										   `content` = '$content',										  
-
-										   `maxqishu` = '$maxqishu',
-
-										   `renqi` = '$goods_key_renqi',
-
-										   `g_xsjx_time` = '$xsjx_time',
-
-										   `pos` = '$goods_key_pos',
-                                           `recharge` = '$recharge',
-                                           `robot_buy_ratio` = '$robot_buy_ratio',
-                                           `robot_win` = '$robot_win'
+            $sql = "UPDATE `@#_shoplist_term` SET 
+										   `xsjx_time` = '$xsjx_time'
 
 											WHERE `id`='$shopid'
 
 			";
+
+            $goodsid = $shopinfo['gid'];
+            $sql1 = "UPDATE `@#_shoplist` SET `cateid` = '$cateid',
+
+                                           `brandid` = '$brandid',
+
+                                           `title` = '$title',
+
+                                           `title_style` = '$title_style',
+
+                                           `title2` = '$title2',
+
+                                           `keywords`='$keywords',
+
+                                           `description`='$description',
+
+                                           `thumb` = '$thumb',
+
+                                           `picarr` = '$picarr',
+
+                                           `content` = '$content',                                        
+
+                                           `maxqishu` = '$maxqishu',
+
+                                           `renqi` = '$goods_key_renqi',
+                                           `g_xsjx_time` = '$xsjx_time',
+                                           `pos` = '$goods_key_pos',
+                                           `recharge` = '$recharge',
+                                           `robot_buy_ratio` = '$robot_buy_ratio',
+                                           `robot_win` = '$robot_win'
+
+                                            WHERE `gid`='$goodsid'
+
+            ";
 
             $titleen = htmlspecialchars($_POST['titleen']);
             $title2en = htmlspecialchars($_POST['title2en']);
@@ -1187,8 +1193,8 @@ HTML;
            
             $this->db->Autocommit_start();
             
-            if ($this->db->Query($sql)) {
-                $shopeninfo = $this->db->GetOne("SELECT `id` FROM `@#_shoplist_en` where `gid`='$shopid'");
+            if ($this->db->Query($sql) && $this->db->Query($sql1)) {
+                $shopeninfo = $this->db->GetOne("SELECT `enid` FROM `@#_shoplist_en` where `egid`='$goodsid'");
 
                 if($shopeninfo){
                     $this->db->Query("update `@#_shoplist_en` SET 
@@ -1202,10 +1208,10 @@ HTML;
 
                                            `contenten` = '$contenten'
 
-                                            WHERE `gid`='$shopid'");
+                                            WHERE `egid`='$goodsid'");
                 }
                 else{
-                    $this->db->Query("INSERT INTO `@#_shoplist_en` (`gid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$shopid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
+                    $this->db->Query("INSERT INTO `@#_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$goodsid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
                 }
                 
 
@@ -1555,9 +1561,9 @@ HTML;
         
         $this->db->Autocommit_start();
         
-        $q1 = $this->db->Query("INSERT INTO `@#_shoplist_del` select * from `@#_shoplist` where `id` = '$shopid'");
+        $q1 = $this->db->Query("INSERT INTO `@#_shoplist_term_del` select * from `@#_shoplist_term` where `id` = '$shopid'");
         
-        $q2 = $this->db->Query("DELETE FROM `@#_shoplist` WHERE `id` = '$shopid' LIMIT 1");
+        $q2 = $this->db->Query("DELETE FROM `@#_shoplist_term` WHERE `id` = '$shopid' LIMIT 1");
         
         if ($q1 && $q2) {
             
@@ -1587,9 +1593,9 @@ HTML;
             
             $this->db->Autocommit_start();
             
-            $q1 = $this->db->Query("INSERT INTO `@#_shoplist` select * from `@#_shoplist_del` where `id` = '$shopid' LIMIT 1");
+            $q1 = $this->db->Query("INSERT INTO `@#_shoplist_term` select * from `@#_shoplist_term_del` where `id` = '$shopid' LIMIT 1");
             
-            $q2 = $this->db->Query("DELETE FROM `@#_shoplist_del` WHERE `id` = '$shopid' LIMIT 1");
+            $q2 = $this->db->Query("DELETE FROM `@#_shoplist_term_del` WHERE `id` = '$shopid' LIMIT 1");
             
             if (! $q1 || ! $q2) {
                 
@@ -1608,7 +1614,7 @@ HTML;
         
         if ($key == 'no') {
             
-            $this->db->Query("DELETE FROM `@#_shoplist_del` WHERE `id` = '$shopid' LIMIT 1");
+            $this->db->Query("DELETE FROM `@#_shoplist_term_del` WHERE `id` = '$shopid' LIMIT 1");
             
             _message("操作成功");
         }
@@ -1731,7 +1737,7 @@ HTML;
             exit();
         }
         
-        $info = $this->db->GetOne("SELECT * FROM `@#_shoplist` where `id` = '$gid' and `q_end_time` is not null");
+        $info = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid where `gid` = '$gid' and `q_end_time` is not null");
         
         if (! $info || ($info['qishu'] != $info['maxqishu'])) {
             
@@ -1753,7 +1759,7 @@ HTML;
             exit();
         }
         
-        $ret = $this->db->Query("UPDATE `@#_shoplist` SET `maxqishu` = '$qishu' where `sid` = '$info[sid]'");
+        $ret = $this->db->Query("UPDATE `@#_shoplist` SET `maxqishu` = '$qishu' where `gid` = '$info[sid]'");
         
         if (! $ret) {
             
@@ -1864,7 +1870,7 @@ HTML;
         
         $gid = abs(intval($this->segment(4)));
         
-        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` where `id` = '$gid' for update");
+        $shopinfo = $this->db->GetOne("SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid where `id` = '$gid' for update");
         
         if (! $shopinfo || ! empty($shopinfo['q_uid'])) {
             
@@ -1920,21 +1926,26 @@ HTML;
             
             $q3 = content_get_go_codes($zongrenshu, 3000, $gid);
             
-            $q4 = $this->db->Query("UPDATE `@#_shoplist` SET 
+            $q4 = $this->db->Query("UPDATE `@#_shoplist_term` SET 
 
 			`canyurenshu` = '0',
 
 			`zongrenshu` = '$zongrenshu', 
 
-			`money` = '$new_money', 
-
-			`yunjiage` = '$new_one_m', 
-
 			`shenyurenshu` = `zongrenshu`
 
 			where `id` = '$gid'");
+
+            $goodsid = $shopinfo['gid'];
+            $q5 = $this->db->Query("UPDATE `@#_shoplist` SET 
+
+            `money` = '$new_money', 
+
+            `yunjiage` = '$new_one_m'
+
+            where `gid` = '$goodsid'");
             
-            if ($q1 && $q2 && $q3 && $q4) {
+            if ($q1 && $q2 && $q3 && $q4 && $q5) {
                 
                 $this->db->Autocommit_commit();
                 

@@ -23,7 +23,7 @@ function gopay($member,$shopu,$shoprc,$shopid){
 		for($i=1;$i<$countid;$i++){
 			$goucode="";
 			$code="";
-			$shoptitle=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='".$shopid[$i]."'");
+			$shoptitle=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='".$shopid[$i]."'");
 			$recordx=$mysql_model->GetList("select * from `@#_member_go_record` where `shopid`='".$shopid[$i]."' and `shopqishu`='".$shoptitle['qishu']."'");								
 			$recordxuid=$mysql_model->GetOne("select * from `@#_member_go_record` where `shopid`='".$shopid[$i]."' and `shopqishu`='".$shoptitle['qishu']."' and `uid`='".$uid."'");								
 			foreach($recordx as $recordx2){
@@ -107,7 +107,7 @@ function tencord($time,$num,$shopid,$qishu,$shoptitle,$shopmoney,$shopjiage){
 		}
 	}
 	$qishu=$qishu+1;
-	$mysql_model->Query("UPDATE `@#_shoplist` SET qishu='$qishu',canyurenshu='0' where id='$shopid'");			
+	$mysql_model->Query("UPDATE `@#_shoplist_term` SET qishu='$qishu',canyurenshu='0' where id='$shopid'");			
 
 }
 ?>

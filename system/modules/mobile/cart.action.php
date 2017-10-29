@@ -30,7 +30,7 @@
 		  // echo $shopids;
 		  $shoplist = array ();
 		  if ($shopids != NULL) {
-$shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` in($shopids)", array ("key" => "id" ) );}
+$shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` in($shopids)", array ("key" => "id" ) );}
 		  if (! empty ( $shoparr )) {
 			  foreach ( $shoparr as $key => $val ) {
 				  if ($val ['q_end_time'] == '' || $val ['q_end_time'] == NULL) {
@@ -143,7 +143,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		  
 		  $shoplist = array ();
 		  if ($shopids != NULL) {
-			  $shoplist = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` in($shopids)", array (
+			  $shoplist = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` in($shopids)", array (
 					  "key" => "id" 
 			  ) );
 		  }

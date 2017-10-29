@@ -39,8 +39,6 @@ class base extends SystemAction {
 
 		if($ushell!=$shell)$this->userinfo=false;
 
-
-
 		global $_cfg;		
 
 		$_cfg['userinfos']=$this->userinfo;

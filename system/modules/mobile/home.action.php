@@ -648,7 +648,7 @@ class home extends base
         if (! $shaidan) {
             _messagemobile("该商品您不可晒单!");
         }
-        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id`='$shaidan[shopid]' LIMIT 1");
+        $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$shaidan[shopid]' LIMIT 1");
         if (! $ginfo) {
             _messagemobile("该商品已不存在!");
         }

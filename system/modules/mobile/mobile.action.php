@@ -36,7 +36,7 @@ class mobile extends base
         // 即将揭晓
         // $shoplist=$this->db->GetList("select * from `@#_shoplist` where `q_end_time` is null ORDER BY `shenyurenshu` ASC LIMIT 8");
         // 最新揭晓
-        $shopqishu = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_end_time` !='' ORDER BY B.`q_end_time` DESC LIMIT 4");
+        $shopqishu = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_end_time` !='' ORDER BY `q_end_time` DESC LIMIT 4");
         
         // 获取轮播
         $shop_ad = $this->db->GetList("select * from `@#_wap`");
@@ -146,29 +146,29 @@ class mobile extends base
         $star = ($p - 1) * $end;
         $select_w = '';
         if ($select == 10) {
-            $select_w = 'order by B.`shenyurenshu` asc';
+            $select_w = 'order by `shenyurenshu` asc';
         }
         if ($select == 20) {
-            $select_w = 'order by A.`qishu` desc';
+            $select_w = 'order by `qishu` desc';
         }
         if ($select == 30) {
-            $select_w = 'order by A.`money` desc';
+            $select_w = 'order by `money` desc';
         }
         if ($select == 40) {
-            $select_w = 'order by A.`money` asc';
+            $select_w = 'order by `money` asc';
         }
         
         if ($select == '10') {
-            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w");
+            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w");
         } elseif ($select == '20') {
-            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w");
+            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w");
         } elseif ($select == '30') {
-            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w");
+            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w");
         } elseif ($select == '40') {
-            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w");
+            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w");
         }
         
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w limit $star,$end");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w limit $star,$end");
         $max_renqi_qishu = 1;
         $max_renqi_qishu_id = 1;
         
@@ -216,7 +216,7 @@ class mobile extends base
         $webname = $this->_cfg['web_name'];
         $title = "$fenname[name]" . _cfg("web_name");
         $key = $fenname[name];
-        $shoplist = $this->db->GetList("SELECT A.`qishu`,A.`thumb`,A.`title`,A.`id`,B.`sid`,B.`zongrenshu`,B.`canyurenshu`,B.`shenyurenshu`,A.`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE B.`q_user`  = '' AND A.`cateid`='$fenid' order by B.`canyurenshu` DESC");
+        $shoplist = $this->db->GetList("SELECT `qishu`,`thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE `q_user`  = '' AND `cateid`='$fenid' order by `canyurenshu` DESC");
         $list = count($shoplist);
         include templates("mobile/index", "fen");
     }
@@ -246,7 +246,7 @@ class mobile extends base
         $search = htmlspecialchars($this->segment(4));
         $title = $search . ' - ' . _cfg('web_name');
         $key = "商品搜索";
-        $shoplist = $this->db->GetList("SELECT A.`qishu`,A.`thumb`,A.`title`,A.`id`,A.`sid`,B.`zongrenshu`,B.`canyurenshu`,B.`shenyurenshu`,A.`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE B.`q_user`  = '' AND A.`title` LIKE '%" . $search . "%' order by B.`canyurenshu` DESC");
+        $shoplist = $this->db->GetList("SELECT `qishu`,`thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_user`  = '' AND `title` LIKE '%" . $search . "%' order by `canyurenshu` DESC");
         $list = count($shoplist);
         include templates("mobile/index", "search");
     }
@@ -292,34 +292,34 @@ class mobile extends base
         $star = ($p - 1) * $end;
         $select_w = '';
         if ($select == 10) {
-            $select_w = 'order by B.`canyurenshu` desc';
+            $select_w = 'order by `canyurenshu` desc';
         }
         if ($select == 20) {
-            $select_w = "and A.`renqi` = '1'";
+            $select_w = "and `renqi` = '1'";
         }
         if ($select == 30) {
-            $select_w = 'order by B.`canyurenshu` desc';
+            $select_w = 'order by `canyurenshu` desc';
         }
         if ($select == 40) {
-            $select_w = 'order by A.`time` DESC';
+            $select_w = 'order by `time` DESC';
         }
         if ($select == 50) {
-            $select_w = 'order by A.`money` DESC';
+            $select_w = 'order by `money` DESC';
         }
         if ($select == 60) {
-            $select_w = 'order by A.`money` ASC';
+            $select_w = 'order by `money` ASC';
         }
         
         if ($fen1) {
-            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null and A.`cateid`='$fen1' $select_w");
+            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null and `cateid`='$fen1' $select_w");
         } else {
-            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w");
+            $count = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w");
         }
 
         if ($fen1) {
-            $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null and A.`cateid`='$fen1' $select_w limit $star,$end");
+            $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null and `cateid`='$fen1' $select_w limit $star,$end");
         } else {
-            $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_uid` is null $select_w limit $star,$end");
+            $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `q_uid` is null $select_w limit $star,$end");
         }
         $max_renqi_qishu = 1;
         $max_renqi_qishu_id = 1;
@@ -452,7 +452,7 @@ class mobile extends base
         $mysql_model = System::load_sys_class('model');
         $itemid = safe_replace($this->segment(4));
         
-        $item = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='" . $itemid . "' LIMIT 1");
+        $item = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='" . $itemid . "' LIMIT 1");
         if (! $item)
             _messagemobile("商品不存在！");
         if ($item['q_end_time']) {
@@ -460,7 +460,7 @@ class mobile extends base
             exit();
         }
         $sid = $item['sid'];
-        $sid_code = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$sid' order by A.`id` DESC LIMIT 1,1");
+        $sid_code = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$sid' order by `id` DESC LIMIT 1,1");
         $sid_go_record = $mysql_model->GetOne("select * from `@#_member_go_record` where `shopid`='$sid_code[sid]' and `uid`='$sid_code[q_uid]' order by `id` DESC LIMIT 1");
         
         $category = $mysql_model->GetOne("select * from `@#_category` where `cateid` = '$item[cateid]' LIMIT 1");
@@ -474,7 +474,7 @@ class mobile extends base
         
         // $us2=$mysql_model->GetList("select * from `@#_member_go_record` where `shopid`='".$itemid."' AND `shopqishu`='".$item['qishu']."'ORDER BY id DESC");
         
-        $itemlist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$item[sid]' and B.`q_end_time` is not null order by A.`qishu` DESC");
+        $itemlist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$item[sid]' and `q_end_time` is not null order by `qishu` DESC");
         
         // 期数显示
         $loopqishu = '';
@@ -510,8 +510,8 @@ class mobile extends base
         $shopitem = 'itemfun';
         
         // 晒单数
-        $shopid = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='$itemid'");
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$shopid[sid]'");
+        $shopid = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid'");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$shopid[sid]'");
         $shop = '';
         foreach ($shoplist as $list) {
             $shop .= $list['id'] . ',';
@@ -625,7 +625,7 @@ class mobile extends base
     {
         $mysql_model = System::load_sys_class('model');
         $itemid = safe_replace($this->segment(4));
-        $item = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='" . $itemid . "' LIMIT 1");
+        $item = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='" . $itemid . "' LIMIT 1");
         $uid = $mysql_model->GetOne("select * from `@#_member` where `uid`='" . $item['q_uid'] . "' LIMIT 1");
         $mysql_model->Query("UPDATE `@#_shoplist_term` B SET `q_showtime`='N' where `id`= $itemid");
         $temp = array();
@@ -727,7 +727,7 @@ class mobile extends base
         $webname = $this->_cfg['web_name'];
         $key = "揭晓结果";
         $itemid = intval($this->segment(4));
-        $item = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='$itemid'  LIMIT 1");
+        $item = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid'  LIMIT 1");
         if (! $item) {
             _messagemobile("商品不存在！");
         }
@@ -740,7 +740,7 @@ class mobile extends base
             _messagemobile("该商品正在进行中...");
         }
         
-        $itemlist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$item[sid]' order by A.`qishu` DESC");
+        $itemlist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$item[sid]' order by `qishu` DESC");
         $category = $this->db->GetOne("select * from `@#_category` where `cateid` = '$item[cateid]' LIMIT 1");
         $brand = $this->db->GetOne("select * from `@#_brand` where `id` = '$item[brandid]' LIMIT 1");
         $zjtx = $this->db->GetOne("select * from `@#_member` where `uid` = '$item[q_uid]' LIMIT 1");
@@ -797,7 +797,7 @@ class mobile extends base
         $item['picarr'] = unserialize($item['picarr']);
         
         // 记录
-        $itemzx = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$item[sid]' and A.`qishu`>'$item[qishu]' and B.`q_end_time` is null order by A.`qishu` DESC LIMIT 1");
+        $itemzx = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid`='$item[sid]' and `qishu`>'$item[qishu]' and `q_end_time` is null order by `qishu` DESC LIMIT 1");
         
         $gorecode = $this->db->GetOne("select * from `@#_member_go_record` where `shopid`='" . $itemid . "' AND `shopqishu`='" . $item['qishu'] . "' and `uid`= '$item[q_uid]' and huode!=0 LIMIT 1");
         $gorecode_count = $this->db->GetOne("select sum(gonumber) as count from `@#_member_go_record` where `shopid`='" . $itemid . "' AND `shopqishu`='" . $item['qishu'] . "' and `uid`= '$item[q_uid]'");
@@ -806,8 +806,8 @@ class mobile extends base
         $shopitem = 'dataserverfun';
         $curtime = time();
         // 晒单数
-        $shopid = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='$itemid'");
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$shopid[sid]'");
+        $shopid = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid'");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$shopid[sid]'");
         $shop = '';
         foreach ($shoplist as $list) {
             $shop .= $list['id'] . ',';
@@ -869,9 +869,9 @@ class mobile extends base
     {
         $webname = $this->_cfg['web_name'];
         // 最新揭晓
-        $shopqishu = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_end_time` is not null ORDER BY B.`q_end_time` DESC LIMIT 0,4");
+        $shopqishu = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` is not null ORDER BY `q_end_time` DESC LIMIT 0,4");
         
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where 1 ORDER BY B.`canyurenshu` DESC LIMIT 4");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where 1 ORDER BY `canyurenshu` DESC LIMIT 4");
         $member_record = $this->db->GetList("select * from `@#_member_go_record` order by id DESC limit 6");
         $key = "最新揭晓";
         include templates("mobile/index", "lottery");
@@ -894,7 +894,7 @@ class mobile extends base
         $webname = $this->_cfg['web_name'];
         $key = "图文详情";
         $itemid = intval($this->segment(4));
-        $desc = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='$itemid'");
+        $desc = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid'");
         if (! $desc) {
             _messagemobile('页面错误!');
         }
@@ -907,7 +907,7 @@ class mobile extends base
         $webname = $this->_cfg['web_name'];
         $key = "晒单评论";
         $itemid = intval($this->segment(4));
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`sid`='$itemid'");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='$itemid'");
         if (! $shoplist) {
             _messagemobile('页面错误!');
         }
@@ -988,7 +988,7 @@ class mobile extends base
     public function calResult()
     {
         $itemid = intval($this->segment(4));
-        $item = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='$itemid' LIMIT 1");
+        $item = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid' LIMIT 1");
         
         $h = abs(date("H", $item['q_end_time']));
         $i = date("i", $item['q_end_time']);

@@ -148,7 +148,7 @@ class ajax extends base {
 
 		$w_minri_time = strtotime(date('Y-m-d',strtotime("+1 day")));
 
-		$jinri_shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`xsjx_time` > '$w_jinri_time' and A.`xsjx_time` < '$w_minri_time' order by A.xsjx_time limit 0,3 ");
+		$jinri_shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `xsjx_time` > '$w_jinri_time' and `xsjx_time` < '$w_minri_time' order by xsjx_time limit 0,3 ");
 
 
 
@@ -178,7 +178,7 @@ class ajax extends base {
 
 		//最新揭晓
 
-		$shopqishu=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_end_time` !='' ORDER BY B.`q_end_time` DESC LIMIT 4");
+		$shopqishu=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` !='' ORDER BY `q_end_time` DESC LIMIT 4");
 
 
 
@@ -610,7 +610,7 @@ public function delCartItem_jf(){
 
 	  $itemid=safe_replace($this->segment(4));
 
-	  $item=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='".$itemid."' LIMIT 1");
+	  $item=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='".$itemid."' LIMIT 1");
 
 
 
@@ -937,13 +937,13 @@ public function delCartItem_jf(){
 
 
 
-	   $shopsum=$this->db->GetOne("SELECT count(*) AS total FROM `@#_shoplist` A inner join `@#_shoplist_term` WHERE B.`q_uid` is not null AND B.`q_showtime` = 'N'");
+	   $shopsum=$this->db->GetOne("SELECT count(*) AS total FROM `@#_shoplist` A inner join `@#_shoplist_term` on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_uid` is not null AND `q_showtime` = 'N'");
 
 
 
 	   //最新揭晓
 
-		$shoplist['listItems']=$this->db->GetList("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE B.`q_uid` is not null AND B.`q_showtime` = 'N' ORDER BY B.`q_end_time` DESC limit $FIdx,$EIdx");
+		$shoplist['listItems']=$this->db->GetList("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_uid` is not null AND `q_showtime` = 'N' ORDER BY `q_end_time` DESC limit $FIdx,$EIdx");
 
 		if(empty($shoplist['listItems'])){
 
@@ -1006,31 +1006,31 @@ public function delCartItem_jf(){
 
           //参与云购的商品 全部...
 
-		  $shoplist=$this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist` b on a.shopid=b.id where a.uid='$uid' GROUP BY shopid ");
+		  $shoplist=$this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#shoplist_en` d on c.gid=d.egid where a.uid='$uid' GROUP BY shopid ");
 
 
 
-		  $shop['listItems']=$this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist` b on a.shopid=b.id where a.uid='$uid' GROUP BY shopid order by a.time desc limit $FIdx,$EIdx " );
+		  $shop['listItems']=$this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#shoplist_en` d on c.gid=d.egid  where a.uid='$uid' GROUP BY shopid order by a.time desc limit $FIdx,$EIdx " );
 
 		 }elseif($type==1){
 
 		   //获得奖品
 
-		    $shoplist=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  where B.q_uid='$uid' " );
+		    $shoplist=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid   left join `@#_shoplist_en` sen on sen.egid=A.gid where B.q_uid='$uid' " );
 
 
 
-		    $shop['listItems']=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  where B.q_uid='$uid' order by B.q_end_time desc limit $FIdx,$EIdx" );
+		    $shop['listItems']=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid  where B.q_uid='$uid' order by B.q_end_time desc limit $FIdx,$EIdx" );
 
 		 }elseif($type==2){
 
 		   //晒单记录
 
-		    $shoplist=$this->db->GetList("select * from `@#_shaidan` a left join `@#_shoplist` b on a.sd_shopid=b.id where a.sd_userid='$uid' " );
+		    $shoplist=$this->db->GetList("select * from `@#_shaidan` a left join `@#_shoplist_term` b on a.sd_shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#shoplist_en` d on c.gid=d.egid   where a.sd_userid='$uid' " );
 
 
 
-		    $shop['listItems']=$this->db->GetList("select * from `@#_shaidan` a left join `@#_shoplist` b on a.sd_shopid=b.id where a.sd_userid='$uid' order by a.sd_time desc limit $FIdx,$EIdx" );
+		    $shop['listItems']=$this->db->GetList("select * from `@#_shaidan` a left join `@#_shoplist_term` b on a.sd_shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#shoplist_en` d on c.gid=d.egid  where a.sd_userid='$uid' order by a.sd_time desc limit $FIdx,$EIdx" );
 
 
 
@@ -1090,7 +1090,7 @@ public function delCartItem_jf(){
 
 
 
-		 $item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where A.`id`='$itemid' and B.`q_end_time` is not null LIMIT 1");
+		 $item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='$itemid' and `q_end_time` is not null LIMIT 1");
 
 
 
@@ -1196,7 +1196,7 @@ public function delCartItem_jf(){
 
 		$time = time();
 
-		$list = $this->db->getlist("select A.qishu,A.xsjx_time,A.id,A.thumb,A.title,B.q_uid,B.q_user,B.q_end_time,A.money from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where B.`q_showtime` = 'Y' AND A.id > '$maxSeconds' order by B.`q_end_time` DESC");
+		$list = $this->db->getlist("select A.qishu,A.xsjx_time,A.id,A.thumb,A.title,B.q_uid,B.q_user,B.q_end_time,A.money from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_showtime` = 'Y' AND A.id > '$maxSeconds' order by `q_end_time` DESC");
 
 		foreach($list as $item) {
 
@@ -1245,7 +1245,7 @@ public function delCartItem_jf(){
 	public function BarcodernoInfo(){
 		$itemid = intval($this->segment(4));
 		$res = $this->db->Query("UPDATE `@#_shoplist_term` SET `q_showtime`='N' where `id`= $itemid");
-		$list = $this->db->GetOne("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid WHERE A.`id`= $itemid");
+		$list = $this->db->GetOne("SELECT * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `id`= $itemid");
 		$num=$this->db->GetOne("SELECT `gonumber` FROM `@#_member_go_record` WHERE `uid` ='$list[q_uid]'  AND `shopid`='$list[id]'");
 		$lists = $this->db->GetOne("SELECT * FROM `@#_member` WHERE `uid`='$list[q_uid]'");
 		$result = array();

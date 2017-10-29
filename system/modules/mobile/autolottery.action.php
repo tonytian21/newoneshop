@@ -27,7 +27,7 @@ class autolottery extends SystemAction
         $w_jinri_time = strtotime(date('Y-m-d'));
         $w_minri_time = strtotime(date('Y-m-d', strtotime("+1 day")));
         
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `xsjx_time` > '$w_jinri_time' and `xsjx_time` < '$w_minri_time' order by `xsjx_time`  limit 0,3");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `xsjx_time` > '$w_jinri_time' and `xsjx_time` < '$w_minri_time' order by `xsjx_time`  limit 0,3");
         
         // 获奖者本次总云购次数
         $user_shop_number = array();
@@ -68,7 +68,7 @@ class autolottery extends SystemAction
         $w_minri_time = strtotime(date('Y-m-d', strtotime("+1 day")));
         $w_hinri_time = strtotime(date('Y-m-d', strtotime("+2 day")));
         
-        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `xsjx_time` > '$w_minri_time' and `xsjx_time` < '$w_hinri_time' order by `xsjx_time` limit 0,3");
+        $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `xsjx_time` > '$w_minri_time' and `xsjx_time` < '$w_hinri_time' order by `xsjx_time` limit 0,3");
         $count = count($shoplist);
         $titlets = '抱歉，明日还没有发布限时揭晓商品！';
         $date = 'next';
@@ -161,7 +161,7 @@ class autolottery extends SystemAction
         file_put_contents('./system/modules/mobile/tpl/id.text', $_POST);
         $id = intval(file_get_contents('./system/modules/mobile/tpl/id.text'));
         $this->db->Autocommit_start();
-        $shop_info = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid where `id` = '$id' for update");
+        $shop_info = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$id' for update");
         
         if (! $shop_info) {
             
