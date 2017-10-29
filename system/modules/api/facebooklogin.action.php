@@ -1,47 +1,94 @@
 <?php
 defined('G_IN_SYSTEM')or exit("no");
-include dirname(__FILE__).'/lib/qq/qqConnectAPI.php';
+include dirname(__FILE__).'/lib/Facebook/autoload.php';
 class facebooklogin extends SystemAction {
-	public $ment;
-	private $qc;
 	private $db;
-	private $qq_openid;
 	protected $userinfo=NULL;
+	private $conf;
+	private $openid;
+	private $open_name;
+	private $open_cover;
 	public function __construct(){
-		$this->qc = new QC();
 		$uid=intval(_encrypt(_getcookie("uid"),'DECODE'));
 		$this->userinfo=$this->DB()->GetOne("SELECT * from `@#_member` where `uid` = '$uid'");
+		$this->conf = System::load_app_config("connect");
 	}
-	//qq登录
+
 	public function init(){
-		$this->qc->qq_login();	 
+		$this->facebook_login();	 
 	}
+	//facebook登录
+	public function facebook_login(){
+		 $fb = new Facebook\Facebook([
+		  'app_id' => $this->conf['facebook']['id'],
+		  'app_secret' => $this->conf['facebook']['key'],
+		  'default_graph_version' => 'v2.10',
+		  ]);
+
+		$helper = $fb->getRedirectLoginHelper();
+
+		$permissions = ['email','public_profile']; // Optional permissions
+		$loginUrl = $helper->getLoginUrl(WEB_PATH."/api/facebooklogin/callback", $permissions);
+
+		header("Location:$loginUrl");
+	}
+
 	//qq回调
+	/*
+	id
+	cover
+	name
+	first_name
+	last_name
+	age_range
+	link
+	gender
+	locale
+	picture
+	timezone
+	updated_time
+	verified
+	 */
 	public function callback(){	
-		$qq_asc = $this->qc->qq_callback();
-		$qq_openid = $this->qc->get_openid();		
-		$this->qc = new QC($qq_asc,$qq_openid);
-		$this->db = System::load_sys_class("model");
-		if(empty($qq_openid)){
+		$fb = new Facebook\Facebook([
+		  'app_id' => $this->conf['facebook']['id'],
+		  'app_secret' => $this->conf['facebook']['key'],
+		  'default_graph_version' => 'v2.10',
+		  ]);
+
+		$helper = $fb->getRedirectLoginHelper();
+
+		try {
+		   $accessToken = $helper->getAccessToken();
+		} catch(Exception $e) {} 
+
+		if(!$accessToken){
 			header("Location:".G_WEB_PATH);exit;
 		}
-		$this->qq_openid = $qq_openid;
-		$go_user_info = $this->db->GetOne("select * from `@#_member_band` where `b_code` = '$qq_openid' and `b_type` = 'qq' LIMIT 1");
+
+		try {
+		  $response = $fb->get('/me?fields=id,name,cover', $accessToken->getValue());
+		} catch(Exception $e){}
+		
+		$user = $response->getGraphUser();
+		$this->open_name = $user['name'];
+		$this->openid = $user['id'];
+		$this->open_cover = $user['cover'];
+		$faceopenid = $user['id'];
+
+		$this->db = System::load_sys_class("model");
+		
+		$go_user_info = $this->db->GetOne("select * from `@#_member_band` where `b_code` = '$faceopenid' and `b_type` = 'facebook' LIMIT 1");
 		if(!$go_user_info){
-			$this->qq_add_member();
+			$this->facebook_add_member();
 		}else{
 			$uid = intval($go_user_info['b_uid']);
-			$this->qq_set_member($uid,'login_bind');
+			$this->facebook_set_member($uid,'login_bind');
 		}
 
 	}
 
-
-
 	private function facebook_add_member(){
-
-		$go_user_info = $this->qc->get_user_info();
-
 		$member_db=System::load_app_class('base','member');
 
 		$memberone=$member_db->get_user_info();
@@ -50,13 +97,13 @@ class facebooklogin extends SystemAction {
 
 			$go_user_id = $memberone['uid'];
 
-			$qq_openid    = $this->qq_openid;
+			$openid    = $this->openid;
 
 			$go_user_time = time();
 
-			$this->db->Query("INSERT INTO `@#_member_band` (`b_uid`, `b_type`, `b_code`, `b_time`) VALUES ('$go_user_id', 'qq', '$qq_openid', '$go_user_time')");
+			$this->db->Query("INSERT INTO `@#_member_band` (`b_uid`, `b_type`, `b_code`, `b_time`) VALUES ('$go_user_id', 'facebook', '$openid', '$go_user_time')");
 			if(_is_mobile()){
-				_messagemobile("QQ账号绑定成功",WEB_PATH."/mobile/home",3);
+				_messagemobile("facebook账号绑定成功",WEB_PATH."/mobile/home",3);
 				return;
 			}else{
 				return;
@@ -67,7 +114,7 @@ class facebooklogin extends SystemAction {
 
 		$go_user_time = time();
 
-		if(!$go_user_info)$go_user_info=array('nickname'=>'QU'.$go_user_time.rand(0,9));
+		$go_user_info=array('nickname'=>$this->open_name);
 
 		$go_y_user = $this->db->GetOne("select * from `@#_member` where `username` = '$go_user_info[nickname]' LIMIT 1");
 
@@ -75,13 +122,13 @@ class facebooklogin extends SystemAction {
 
 		$go_user_name = $go_user_info['nickname'];
 
-		$go_user_himg  = $go_user_info['figureurl_qq_2'];
+		$go_user_himg  = $this->open_cover;
 
-		$go_user_img  = 'photo/member.jpg';
+		$go_user_img  = $this->open_cover;
 
 		$go_user_pass = md5('123456');
 
-		$qq_openid    = $this->qq_openid;
+		$openid    = $this->openid;
 
 		$this->db->Autocommit_start();
 
@@ -89,7 +136,7 @@ class facebooklogin extends SystemAction {
 
 		$go_user_id = $this->db->insert_id();
 
-		$q2 = $this->db->Query("INSERT INTO `@#_member_band` (`b_uid`, `b_type`, `b_code`, `b_time`) VALUES ('$go_user_id', 'qq', '$qq_openid', '$go_user_time')");
+		$q2 = $this->db->Query("INSERT INTO `@#_member_band` (`b_uid`, `b_type`, `b_code`, `b_time`) VALUES ('$go_user_id', 'facebook', '$openid', '$go_user_time')");
 
 		if($q1 && $q2){
 
@@ -106,7 +153,7 @@ class facebooklogin extends SystemAction {
 
 
 
-	private function qq_set_member($uid=null,$type='bind_add_login'){	
+	private function facebook_set_member($uid=null,$type='bind_add_login'){	
 
 		$member_db=System::load_app_class('base','member');
 
@@ -114,9 +161,9 @@ class facebooklogin extends SystemAction {
 
 		if($memberone){
 			if(_is_mobile()){
-				_messagemobile("该QQ号已经被其他用户所绑定！操作失败",WEB_PATH."/mobile/home",3);
+				_messagemobile("该facebook号已经被其他用户所绑定！操作失败",WEB_PATH."/mobile/home",3);
 			}else{
-				_message("该QQ号已经被其他用户所绑定！",WEB_PATH.'/login');
+				_message("该facebook号已经被其他用户所绑定！",WEB_PATH.'/login');
 			}		
 		}
 		$member = $this->db->GetOne("select uid,password,mobile,email from `@#_member` where `uid` = '$uid' LIMIT 1");	
@@ -133,19 +180,12 @@ class facebooklogin extends SystemAction {
 
 		$s2 = _setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
 
-	
-
-		
-
 		if($s1 && $s2){
 			if(_is_mobile()){
 				header("location:".WEB_PATH.'/mobile/home');
 			}else{
 				header("location:".WEB_PATH.'/member/home');
 			}
-
-			
-
 		}else{
 
 			_message("登录失败请检查cookie!",G_WEB_PATH);
