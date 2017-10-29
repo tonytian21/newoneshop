@@ -1634,3 +1634,10 @@ div.pageDialog {
     margin: 0;
     padding: 0;
 }
+
+
+
+.-mob-share-list li{min-width: 40px!important;height: 40px!important;margin:0 5px!important; display: inline-block!important; background-size:auto 100% !important; border: none!important;}
+.-mob-share-facebook{background: url("../../images/sicon_f.png") no-repeat center;}
+.-mob-share-twitter{background: url("../../images/sicon_t.png") no-repeat center;}
+.-mob-share-linkedin{background: url("../../images/sicon_l.png") no-repeat center;}

@@ -211,10 +211,10 @@ $(function(){
 	$("#btnMsgCancel").click(function(){
 		$("#pageDialog").hide();
 	});
-	$("#shareType li").click(function(){
+	/* $("#shareType li").click(function(){
 		var n=$(this).index();
 		$(".jiathis_style a").eq(n).click();
-	});
+	}); */
 })
 </script>
 </div>
@@ -231,18 +231,30 @@ $(function(){
 <div id="pageDialog" class="pageDialog" style="width:300px; height:100px; position: fixed; display: none;">
 	<div class="clearfix m-round f-share-tips"><div class="f-share-tit">请选择以下方式分享</div>
 	<a id="btnMsgCancel" href="javascript:void(0)" class="f-share-Close"></a>
-	<ul id="shareType" class="f-share-li">
-		<li><a href="javascript:void(0);"><b class="z-sina"><s></s></b><em>新浪微博</em></a></li>
-		<li><a href="javascript:void(0);"><b class="z-qq"><s></s></b><em>腾讯微博</em></a></li>
-		<li><a href="javascript:void(0);"><b class="z-qzone"><s></s></b><em>QQ空间</em></a></li>
-	</ul>
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style" style="display:none;">	
-		<a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_tqq"></a>
-		<a class="jiathis_button_qzone"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1383891407386925" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-	</div> 
+	
+	<ul class="-mob-share-list" style="text-align: center;">
+							<li class="-mob-share-facebook"></li>
+							<li class="-mob-share-twitter"></li>
+							<li class="-mob-share-linkedin"></li>
+						</ul>
+	
+	
+	
 </div>
+
+<script id="-mob-share"
+	src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21f30d1b7ccb5"></script>
+<script>
+window.shareParams = {
+	}
+window.shareParams.title=$(".m-share-con h2").text().replace(/(^\s*)|(\s*$)/g, "");
+window.shareParams.description = $(".m-share-con p").text().replace(/(^\s*)|(\s*$)/g, "");
+window.shareParams.pic = $(".m-share-con img").attr("src");
+
+
+mobShare.config( {
+    debug: false, // 开启调试，将在浏览器的控制台输出调试信息
+    appkey: '21f30d1b7ccb5', // appkey
+    params: window.shareParams,
+} );
+</script>
