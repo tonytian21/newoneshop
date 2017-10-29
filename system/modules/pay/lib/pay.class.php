@@ -248,6 +248,7 @@ class pay {
 			}
 			$sql="INSERT INTO `@#_member_go_record` (`code`,`code_tmp`,`uid`,`username`,`uphoto`,`shopid`,`shopname`,`shopqishu`,`gonumber`,`moneycount`,`goucode`,`pay_type`,`ip`,`status`,`time`) VALUES ";
 			$sql.=trim($insert_html,',');
+			
 			if(empty($insert_html)){
 				return false;
 			}
@@ -261,7 +262,6 @@ class pay {
 	*	开始支付
 	**/
 	public function go_pay($pay_checkbox){
-
 		if($this->members['money'] >= $this->MoenyCount){
 			$uid=$this->members['uid'];
 			$pay_1 =  $this->pay_bag();
@@ -279,6 +279,7 @@ class pay {
 		}else{
 			$scookie= '0';
 		}
+
 		if($pay_checkbox){
 			$money = $this->MoenyCount - $this->members['money'];
 			return $this->addmoney_record($money,$scookie);
@@ -323,6 +324,7 @@ class pay {
 
 
 		$goods_count_num = 0;
+
 		foreach($this->shoplist as $shop):
 			if($shop['canyurenshu'] >= $shop['zongrenshu'] && $shop['maxqishu'] >= $shop['qishu']){
 					$this->db->Query("UPDATE `@#_shoplist_term` SET `canyurenshu`=`zongrenshu`,`shenyurenshu` = '0' where `id` = '$shop[id]'");

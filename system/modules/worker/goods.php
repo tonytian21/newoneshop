@@ -44,10 +44,7 @@ function AutoAddTerm($goods_id){
     $codes_len = ceil($zongrenshu / 3000);
 
     System::load_app_fun("content","admin");
-            
     $query_table = content_get_codes_table();
-    $query_2 = content_get_go_codes($zongrenshu, 3000, $goods_id);
-    
     $sid = $goods_id;
     $term_num = date('Ymd',time()).$goods_id.str_pad('1',strlen($goodsInfo['maxqishu']),'0',STR_PAD_LEFT);
     $canyurenshu = 0;
@@ -57,5 +54,7 @@ function AutoAddTerm($goods_id){
     
     $query_3 = "insert into go_shoplist_term (`sid`,`term_num`,`zongrenshu`,`canyurenshu`,`qishu`,`shenyurenshu`,`time`,`codes_table`,`xsjx_time`) values ('$sid','$term_num','$zongrenshu','$canyurenshu','1','$shenyurenshu','$time','$query_table','$xsjx_time')";
 
-    $db->Query($query_3);
+    $termid = $db->Query($query_3);
+
+    $query_2 = content_get_go_codes($zongrenshu, 3000, $termid);
 }
