@@ -95,3 +95,24 @@
 
 
 
+2017-10-29 15:53:43------>array (
+  0 => 'INSERT INTO `go_appoint` SET `shopid` = \'398\',`userid` = \'330\',`time` = \'1509263623\'',
+  1 => 'UPDATE `go_shoplist_term` SET `zhiding` = \'330\' WHERE `id`=\'398\'',
+) 
+
+
+
+2017-10-29 15:53:52------>array (
+  0 => 'INSERT INTO `go_appoint` SET `shopid` = \'403\',`userid` = \'725\',`time` = \'1509263632\'',
+  1 => 'UPDATE `go_shoplist_term` SET `zhiding` = \'725\' WHERE `id`=\'403\'',
+) 
+
+
+
+2017-10-29 15:55:05------>array (
+  0 => 'INSERT INTO `go_appoint` SET `shopid` = \'408\',`userid` = \'330\',`time` = \'1509263705\'',
+  1 => 'UPDATE `go_shoplist_term` SET `zhiding` = \'330\' WHERE `id`=\'408\'',
+) 
+
+
+
