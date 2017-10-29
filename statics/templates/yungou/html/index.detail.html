@@ -54,7 +54,9 @@
 				</div> 
 			</div>
 			<div class="share_content">
-				<p class="content-pad">{wc:$shaidan['sd_content']}</p>
+				<p class="content-pad">
+				{wc:$shaidan['sd_content']}
+				</p>
 				{wc:loop $sd_photolist $sdimg}
 				<p><img src="{G_UPLOAD_PATH}/{wc:$sdimg}" border="0"></p>
 				{wc:loop:end}
@@ -69,21 +71,18 @@
 					</div>
 					<div class="share">
 						<span class="fen fl">分享到：</span>
-						<!-- Baidu Button BEGIN -->
-						<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="margin-top:4px;">
-						<a class="bds_qzone"></a>
-						<a class="bds_tsina"></a>
-						<a class="bds_tqq"></a>
-						<a class="bds_renren"></a>
-						<a class="bds_t163"></a>
-						<span class="bds_more"></span>
-						</div>
-						<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=671207" ></script>
-						<script type="text/javascript" id="bdshell_js"></script>
+						
+						<ul class="-mob-share-list">
+							<li class="-mob-share-facebook"></li>
+							<li class="-mob-share-twitter"></li>
+							<li class="-mob-share-linkedin"></li>
+						</ul>
 						<script type="text/javascript">
-						document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+						window.shareParams.description = $(".share_content p").text().replace(/(^\s*)|(\s*$)/g, "");
+						window.shareParams.pic = $(".share_content img").attr("src");
+						
 						</script>
-						<!-- Baidu Button END -->
+						
 					</div>
 				</div>
 			</div>

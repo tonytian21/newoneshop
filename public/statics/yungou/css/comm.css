@@ -1799,5 +1799,10 @@ a.login {
 }
 
 
+.-mob-share-list li{min-width: 24px!important;height: 24px!important;margin:0 5px!important; display: inline-block!important; background-size:auto 100% !important; border: none!important;}
+.-mob-share-facebook{background: url("../images/sicon_f.png") no-repeat center;}
+.-mob-share-twitter{background: url("../images/sicon_t.png") no-repeat center;}
+.-mob-share-linkedin{background: url("../images/sicon_l.png") no-repeat center;}
+
 
 
