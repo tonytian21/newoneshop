@@ -141,7 +141,7 @@ function show_date_time(endTime,obj){
 }
 
 $(function(){
-	new MyajaxSetup({async:false});
+	$.ajaxSetup({async:false});
 	$.post("{WEB_PATH}/api/getshop/lottery_shop_get",{"lottery_shop_get":true,"gid":{wc:$item['id']},"times":Math.random()},function(sdata){	
 	if(sdata!='no'){show_date_time((new Date().getTime())+(parseInt(sdata))*1000,null);}});});
 </script>
