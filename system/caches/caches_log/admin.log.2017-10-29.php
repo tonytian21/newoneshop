@@ -116,3 +116,28 @@
 
 
 
+2017-10-29 21:30:13------>array (
+  0 => 'UPDATE `go_admin` SET `logintime`=\'1509283813\' WHERE (`uid`=\'1\')',
+  1 => 'UPDATE `go_admin` SET `loginip`=\'127.0.0.1\' WHERE (`uid`=\'1\')',
+) 
+
+
+
+2017-10-29 21:33:52------>array (
+  0 => 'UPDATE `go_pay` SET `pay_name` = \'MolPay\',`pay_thumb` = \'\',`pay_type` = \'0\',`pay_des` = \'MolPay\',`pay_start` = \'1\',`pay_key` = \'a:2:{s:2:"id";a:2:{s:4:"name";s:9:"商户号";s:3:"val";s:12:"sduisudiauso";}s:3:"key";a:2:{s:4:"name";s:6:"密匙";s:3:"val";s:18:"djusoaiudjoasdjaso";}}\' where `pay_id` = \'12\'',
+) 
+
+
+
+2017-10-29 21:34:33------>array (
+  0 => 'UPDATE `go_pay` SET `pay_name` = \'MolPay\',`pay_thumb` = \'\',`pay_type` = \'0\',`pay_des` = \'MolPay\',`pay_start` = \'1\',`pay_key` = \'a:2:{s:2:"id";a:2:{s:4:"name";s:9:"商户号";s:3:"val";s:12:"sduisudiauso";}s:3:"key";a:2:{s:4:"name";s:6:"密匙";s:3:"val";s:18:"djusoaiudjoasdjaso";}}\' where `pay_id` = \'12\'',
+) 
+
+
+
+2017-10-29 21:35:23------>array (
+  0 => 'UPDATE `go_pay` SET `pay_name` = \'MolPay\',`pay_thumb` = \'photo/molpay-logo.png\',`pay_type` = \'0\',`pay_des` = \'MolPay\',`pay_start` = \'1\',`pay_key` = \'a:2:{s:2:"id";a:2:{s:4:"name";s:9:"商户号";s:3:"val";s:12:"sduisudiauso";}s:3:"key";a:2:{s:4:"name";s:6:"密匙";s:3:"val";s:18:"djusoaiudjoasdjaso";}}\' where `pay_id` = \'12\'',
+) 
+
+
+

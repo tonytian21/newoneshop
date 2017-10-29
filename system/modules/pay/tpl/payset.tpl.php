@@ -62,7 +62,11 @@ tr{height:40px;line-height:40px}
 			<input type="radio" name="pay_type" value="1" checked="checked" />及时到账
 			</td>
 			<?php } ?>
-
+			<?php if($pay['pay_class'] == 'molpay'){ ?>
+			<td>
+			<input type="radio" name="pay_type" value="1" checked="checked" />及时到账
+			</td>
+			<?php } ?>
 		</tr>
 		<tr>
 			<td width="220" height="80" align="right">图片：</td>

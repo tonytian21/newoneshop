@@ -22,6 +22,7 @@ class pay {
 	//初始化类数据
 	//$addmoney 充值金额
 	public function init($uid=null,$pay_type=null,$fukuan_type='',$addmoney=''){
+
 		$this->db=System::load_sys_class('model');
 		$this->db->Autocommit_start();
 		$this->members = $this->db->GetOne("SELECT * FROM `@#_member` where `uid` = '$uid' for update");
@@ -177,6 +178,7 @@ class pay {
 		}
 
 		$pay_type = $this->pay_type;
+
 		$paydb = System::load_app_class($pay_type['pay_class'],'pay');
 		$pay_type['pay_key'] = unserialize($pay_type['pay_key']);
 
@@ -198,6 +200,8 @@ class pay {
 
 		$config['code'] = $dingdancode;
 		$config['pay_type_data'] = $pay_type['pay_key'];
+		$config['uid'] = $uid;
+		$config['member'] = $this->members;
 
 		$paydb->config($config);
 		$paydb->send_pay();

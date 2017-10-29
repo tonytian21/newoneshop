@@ -599,7 +599,6 @@ class cart extends base {
 	//充值
 
 	public function addmoney(){
-
 		parent::__construct();	
 
 		if(!isset($_POST['submit'])){	
@@ -631,10 +630,6 @@ class cart extends base {
 			_message("未选择支付平台");
 
 		}
-
-
-
-		
 
 	}
 

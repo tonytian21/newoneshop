@@ -9,7 +9,7 @@
 				`cateid`='$help[cateid]'",array("type"=>1,"key"=>'',"cache"=>0)); ?> <?php 
 				foreach($article as $art){ echo "
 				<dd>
-					<a href='".WEB_PATH.' /help/'.$art['id']."' target='_blank'>".$art['title'].'</a>
+					<a href='".WEB_PATH.'/help/'.$art['id']."' target='_blank'>".$art['title'].'</a>
 				</dd>
 				';}  ?>
 			</dl>
@@ -35,14 +35,12 @@
 			<!-- //底部短连接 -->
 			<div class="g-links">
 				<?php echo Getheader('foot'); ?>
-				<script src="http://s22.cnzz.com/stat.php?id=4535640&web_id=4535640"
+				<script
+					src="https://s19.cnzz.com/z_stat.php?id=1266470257&web_id=1266470257"
 					language="JavaScript"></script>
 			</div>
 			<div class="g-copyright">
-				<?php echo _cfg('web_copyright'); ?><br /> <a
-					href="http://webscan.360.cn/index/checkwebsite/url/www.zyxztd.com"><img
-					border="0"
-					src="http://img.webscan.360.cn/status/pai/hash/95ea6031ca4686b86b6d9bb740e1ddcc/?size=74x27" /></a>
+				<?php echo _cfg('web_copyright'); ?><br />
 			</div>
 
 		</div>
@@ -77,34 +75,13 @@
 						<a
 							style="color: #fff; height: 32; line-height: 16px; width: 25px; padding-top: 12px; display: block; padding-left: 6px;"
 							id="btnRigQQ" target="_blank" class="quick_serviceA">好友分享</a>
-						<div
-							style="position: absolute; left: -94px; background: #fff; border: 1px solid #dcdcdc; width: 92px; height: 56px; text-align: center; top: 0px;">
 
-							<!-- JiaThis Button BEGIN -->
-							<div class="jiathis_style">
-								<a class="jiathis_button_fb"></a> <a
-									class="jiathis_button_linkedin"></a> <a
-									class="jiathis_button_twitter"></a>
-
-							</div>
-							<style>
-.jiathis_style .jtico {
-	padding: 0px !important;
-	display: block !important;
-	margin: 20px 5px !important;
-	width: 17px !important;
-	height: 17px !important;
-}
-
-</style>
-							<script type="text/javascript"
-								src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
-							<!-- JiaThis Button END -->
-
-
-
-						</div>
-
+						<ul class="-mob-share-list"
+							style="position: absolute; left: -152px; background: #fff; border: 1px solid #dcdcdc; width: 150px; padding: 15px 0; text-align: center; top: 0px;">
+							<li class="-mob-share-facebook"></li>
+							<li class="-mob-share-twitter"></li>
+							<li class="-mob-share-linkedin"></li>
+						</ul>
 					</div>
 				</div>
 			</li>
@@ -149,7 +126,7 @@
 							style="color: #fff; height: 32; line-height: 16px; width: 25px; padding-top: 12px; display: block; padding-left: 6px;"
 							id="btnRigQQ"
 							href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("
-							qq"); ?>&site=qq&menu=yes " target="_blank" class="quick_serviceA">在线客服</a>
+							qq"); ?>&site=qq&menu=yes " target="_blank" class="quick_serviceA livechatinc">在线客服</a>
 					</div>
 				</div>
 			</li>
@@ -258,16 +235,16 @@ $(function(){
 	)
 	*/
 });
-//云购基金
-//new Myajax({
-//	url:"<?php echo WEB_PATH; ?>/api/fund/get",
-//	success:function(msg){
-//		$("#indexFundMoney").text(msg);
-//	}
-//});
 </script>
 
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"<?php echo _cfg("web_name"); ?>，收获惊喜的网站！1元就购iphone6S","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"100"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
+<script id="-mob-share"
+	src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21f30d1b7ccb5"></script>
+<script>
+mobShare.config( {
+    debug: false, // 开启调试，将在浏览器的控制台输出调试信息
+    appkey: '21f30d1b7ccb5', // appkey
+    params: window.shareParams,
+} );
+</script>
 </body>
 </html>
