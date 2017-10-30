@@ -15,7 +15,7 @@ db=System::load_sys_class('model');
 	
 	
 	
-	public function init(){		
+	public function init(){	
 		//最新商品
 		$new_shop=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `pos` = '1' and `q_uid` is null ORDER BY `id` DESC LIMIT 8");
 		//顶部推荐2个

@@ -35,6 +35,7 @@ final class template_cache {
 	private function template_parse(){	
 		$stag=base64_decode('d2M=');
 		$etag=base64_decode('ZW5k');
+
 		$foreach=base64_decode('bG9vcA==');
 		$this->content = preg_replace ( "/<\\?php(.*)/i", "&lt;?php\\1",$this->content);
 		$this->content = preg_replace ( "/<\\?=(.*)\\?>/is", "&lt;?=\\1&gt;",$this->content);
@@ -65,7 +66,8 @@ final class template_cache {
 		//变量标签
 				
 		$this->content = preg_replace ( "/\{$stag:(\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\}/",
-										"<?php echo \\1; ?>", $this->content );		
+										"<?php echo \\1; ?>", $this->content );			
+
 		$this->content = preg_replace ( "/\{$stag:(\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\s*([\+\-\*\/])\s*(\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)\}/",
 										"<?php echo \\1\\2\\3; ?>", $this->content );										
 		$this->content = preg_replace_callback ("/\{$stag:(\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)([\$a-zA-Z_0-9\[\]\'\"\$\x7f-\xff]+)\}/s",
@@ -85,8 +87,11 @@ final class template_cache {
 										"<?php echo \\1--; ?>", $this->content);	
 		$this->content = preg_replace ( "/\{$stag:(\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)++\}/",
 										"<?php echo \\1++; ?>", $this->content);
+
 		
-		
+		$this->content = preg_replace ( "/\{$stag:([\$]this->[^}]*)\}+/",
+										"<?php echo \\1; ?>", $this->content );	
+
 		$this->content = preg_replace ( "/\{$stag:php:start\}/","<?php ", $this->content);
 		$this->content = preg_replace ( "/\{$stag:php:$etag\}/"," ?>", $this->content);
 		

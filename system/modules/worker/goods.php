@@ -54,7 +54,8 @@ function AutoAddTerm($goods_id){
     
     $query_3 = "insert into go_shoplist_term (`sid`,`term_num`,`zongrenshu`,`canyurenshu`,`qishu`,`shenyurenshu`,`time`,`codes_table`,`xsjx_time`) values ('$sid','$term_num','$zongrenshu','$canyurenshu','1','$shenyurenshu','$time','$query_table','$xsjx_time')";
 
-    $termid = $db->Query($query_3);
+    $db->Query($query_3);
+    $termid = $db->insert_id();
 
     $query_2 = content_get_go_codes($zongrenshu, 3000, $termid);
 }

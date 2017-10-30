@@ -1,12 +1,11 @@
 <?php
-
 /**
  *		action.class.php  基础操作动作类
  *
  */
+
 class SystemAction
 {
-
     private static $route_url;
 
     final protected function DB($model = 'model', $module = 'sys')

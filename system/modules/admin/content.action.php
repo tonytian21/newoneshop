@@ -73,7 +73,7 @@ class content extends admin
             $position_arr = isset($_POST['position']) ? $_POST['position'] : false;
             
             if (empty($title)) {
-                _message("标题不能为空");
+                _message($global_lang['标题不能为空']);
             }
             
             if (! $cateid) {

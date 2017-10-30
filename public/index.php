@@ -50,7 +50,6 @@ define ( 'G_APP_PATH', G_WEB_DIR_PATH.'..'.DIRECTORY_SEPARATOR );
 include G_APP_PATH . $system_path . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'global.php';
 
 require_once(dirname(dirname(__FILE__)).'/system/libs/predis.class.php');
-
 /*
  * --------------------------------------------------------------
  * APP START
