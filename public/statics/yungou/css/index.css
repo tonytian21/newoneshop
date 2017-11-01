@@ -63,7 +63,7 @@ margin-top:10px;
 }
 .logo_yungou a img{
 	height: 65px;
-	width: 246px;
+	width: auto;
 }
 .head_search{
 	border: 1px solid #bbb !important;
