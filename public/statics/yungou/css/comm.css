@@ -18,11 +18,11 @@ body{font-size:12px;}
 }
 .login_header .login_top h1 img{
 	height: 65px;
-	width: 246px;
+	/* width: 246px; */
 }
 .logo .logo_pic img{
 	height: 65px;
-	width: 246px;
+	/* width: 246px; */
 }
 
 #MaCenter1{
