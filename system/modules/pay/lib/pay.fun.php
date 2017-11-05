@@ -216,6 +216,35 @@ function pay_insert_shop($shop='',$type=''){
 	$counttime = $tocode->count_time;
 
 	//20140901新增，判断是否指定中奖//
+	//判断是否制定了机器人必中
+	$goodsInfo = $db->GetOne("select * from `@#_shoplist` where gid='$shop[sid]'");
+
+	if($goodsInfo && $goodsInfo['robot_win']){
+		//机器人购买比例，如果机器人必中，且机器人购买比例大于中奖最小比例，且没有指定中奖人，则随机指定一个机器人中奖
+		$buycount = $db->GetOne("select sum(ifnull(gonumber,0)) as autobuycount from go_member_go_record A
+                INNER join go_member B on A.uid=B.uid 
+                where B.auto_user='1' and A.shopid='".$shop['id']."'");
+
+		$robot_win = true;
+		if($buycount){
+            $now_buy_ratio = $buycount['autobuycount'] / $shopinfo['zongrenshu'] * 100;
+            
+            if($now_buy_ratio < _cfg['autobuy']){
+            	$robot_win = false;
+            }
+        }
+
+        if($robot_win && !$shop['zhiding']){
+    		//随机获取已购买该商品的机器人
+    		$robot_user = $db->GetOne("select A.uid from go_member_go_record A
+                INNER join go_member B on A.uid=B.uid 
+                where B.auto_user='1' and A.shopid='".$shop['id']."' order by rand()");
+
+    		if($robot_user){
+    			$shop['zhiding'] = $robot_user['uid'];
+    		}
+        }
+	}
 
 	if($shop['zhiding']){
 
@@ -255,10 +284,6 @@ function pay_insert_shop($shop='',$type=''){
 
 			//将指定中奖会员的购买记录中的code换成系统计算出来的中奖吗
 
-			
-
-
-
 			//添加时间校准
 
 			if(!empty($chazhi)){
@@ -293,15 +318,9 @@ function pay_insert_shop($shop='',$type=''){
 
 	/////////////////
 
-
-
 	$u_go_info = $db->GetOne("select * from `@#_member_go_record` where `shopid` = '$shop[id]' and `shopqishu` = '$shop[qishu]' and `goucode` LIKE  '%$code%'");
 
 	$u_info = $db->GetOne("select uid,username,email,mobile,img from `@#_member` where `uid` = '$u_go_info[uid]'");
-
-
-
-
 
 	//更新商品
 
@@ -349,12 +368,15 @@ function pay_insert_shop($shop='',$type=''){
 							 where `id` = '$shop[id]'";
 
 
-
-
-
-
 		$q = $db->Query($sqlss);
 		if(!$q)$query = false;
+
+		//如果是虚拟商品则直接给用户充值。
+		if($goodsInfo && $goodsInfo['recharge']){
+			$time = time();
+			$db->Query("UPDATE `@#_member` SET `money`=`money` + $goodsInfo[money] WHERE (`uid`='$u_info[uid]')");	
+			$db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$u_info[uid]', '1', '账户', '中奖充值', '$goodsInfo[money]', '$time')");
+		}
 		
 		//如果没有中奖短信就强制在发送一遍--E
 		if($q){
@@ -394,9 +416,6 @@ function pay_insert_shop($shop='',$type=''){
 
 
 	/******************************/
-
-
-
 
 
 	/*新建*/

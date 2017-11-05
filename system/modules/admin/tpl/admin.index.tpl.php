@@ -517,7 +517,7 @@ function api_off_on_open(key){
 
                         <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admin/fund/specifylist">指定中奖人</a></li>
 
-                        <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admin/auto/show">新版自动购买</a></li>
+                        <!--li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admin/auto/show">新版自动购买</a></li-->
 
                         <li><span></span><a href="javascript:void(0);" src="<?php echo G_ADMIN_PATH; ?>/auto_register/show">批量注册</a></li>
 

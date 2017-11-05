@@ -237,6 +237,13 @@ tr{height:40px;line-height:40px}
 			<td><textarea name="web_off_text" class="wid300" style="height:80px"><?php echo $web['web_off_text']; ?></textarea></td>
 
 		</tr>
+		<tr>
+
+			<td width="220" align="right">自购比例小于:</td>
+
+			<td><input type="text" name="autobuy" value="<?php echo $web['autobuy']; ?>"  class="input-text">%，正常开奖</td>
+
+		</tr>
 
         <tr>
 

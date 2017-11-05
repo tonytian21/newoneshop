@@ -4484,3 +4484,82 @@ Stack trace:
 2017-10-30 00:33:50 pid:2843 Workerman[goods.php] Stopping ...
 2017-10-30 00:33:50 pid:2843 Workerman[goods.php] has been stopped
 2017-10-30 00:33:50 pid:2870 Workerman[goods.php] start in DEBUG mode
+2017-11-05 14:25:59 pid:2975 Workerman[shua.php] start in DEBUG mode
+2017-11-05 14:26:06 pid:2975 Workerman[shua.php] Stopping ...
+2017-11-05 14:26:08 pid:2975 worker[none:2976] exit with status 9
+2017-11-05 14:26:08 pid:2975 Workerman[shua.php] has been stopped
+2017-11-05 14:26:39 pid:2985 Workerman[shua.php] start in DEBUG mode
+2017-11-05 14:26:46 pid:2986 Worker[2986] process terminated
+2017-11-05 14:26:50 pid:2985 Workerman[shua.php] Stopping ...
+2017-11-05 14:26:50 pid:2990 Worker[2990] process terminated
+2017-11-05 14:26:50 pid:2985 Workerman[shua.php] has been stopped
+2017-11-05 14:28:36 pid:3007 Workerman[shua.php] start in DEBUG mode
+2017-11-05 14:28:37 pid:3008 Worker[3008] process terminated with ERROR: E_ERROR "Uncaught Error: Using $this when not in object context in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php:90
+Stack trace:
+#0 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(59): buyshop(Array, Array)
+#1 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(22): AutoBuy()
+#2 [internal function]: {closure}()
+#3 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(431): Workerma in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php on line 90"
+2017-11-05 14:28:37 pid:3007 worker[none:3008] exit with status 65280
+2017-11-05 14:28:38 pid:3009 Worker[3009] process terminated with ERROR: E_ERROR "Uncaught Error: Using $this when not in object context in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php:90
+Stack trace:
+#0 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(59): buyshop(Array, Array)
+#1 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(22): AutoBuy()
+#2 [internal function]: {closure}()
+#3 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1143): Workerm in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php on line 90"
+2017-11-05 14:28:38 pid:3007 worker[none:3009] exit with status 65280
+2017-11-05 14:28:39 pid:3010 Worker[3010] process terminated with ERROR: E_ERROR "Uncaught Error: Using $this when not in object context in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php:90
+Stack trace:
+#0 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(59): buyshop(Array, Array)
+#1 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(22): AutoBuy()
+#2 [internal function]: {closure}()
+#3 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1143): Workerm in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php on line 90"
+2017-11-05 14:28:39 pid:3007 worker[none:3010] exit with status 65280
+2017-11-05 14:28:39 pid:3007 Workerman[shua.php] Stopping ...
+2017-11-05 14:28:39 pid:3007 Workerman[shua.php] has been stopped
+2017-11-05 14:29:16 pid:3020 Workerman[shua.php] start in DEBUG mode
+2017-11-05 14:29:34 pid:3021 Worker[3021] process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function Query() on null in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php:90
+Stack trace:
+#0 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(59): buyshop(Array, Array)
+#1 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(22): AutoBuy()
+#2 [internal function]: {closure}()
+#3 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(431): Worke in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php on line 90"
+2017-11-05 14:29:34 pid:3020 worker[none:3021] exit with status 65280
+2017-11-05 14:29:39 pid:3020 Workerman[shua.php] Stopping ...
+2017-11-05 14:29:39 pid:3025 Worker[3025] process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function Query() on null in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php:90
+Stack trace:
+#0 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(59): buyshop(Array, Array)
+#1 /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php(22): AutoBuy()
+#2 [internal function]: {closure}()
+#3 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/tonytian/project/PHP/yyg/libs/workerman/workerman/Worker.php(1143): Work in /Users/tonytian/project/PHP/yyg/system/modules/worker/shua.php on line 90"
+2017-11-05 14:29:39 pid:3020 worker[none:3025] exit with status 65280
+2017-11-05 14:29:39 pid:3020 Workerman[shua.php] has been stopped
+2017-11-05 14:30:02 pid:3033 Workerman[shua.php] start in DEBUG mode
+2017-11-05 14:32:51 pid:3033 Workerman[shua.php] Stopping ...
+2017-11-05 14:32:53 pid:3033 worker[none:3034] exit with status 9
+2017-11-05 14:32:53 pid:3033 Workerman[shua.php] has been stopped

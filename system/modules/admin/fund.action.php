@@ -89,7 +89,7 @@ class fund extends admin {
 	}
 
 	public function specifylist(){
-		$list_where = " where B.zhiding = 0 And B.q_uid is Null And A.huode = '0' And B.q_user_code is null ";
+		$list_where = " where B.zhiding = 0 And B.q_uid is Null And A.huode = '0' And B.q_user_code is null And C.auto_user = '0' ";
 		$num = 20;
         
         $username = htmlspecialchars($_POST['username']);

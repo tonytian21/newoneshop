@@ -263,6 +263,8 @@ class setting extends admin {
 
 			$cell=htmlspecialchars($_POST['cell']);
 
+			$autobuy = htmlspecialchars($_POST['autobuy']);
+
 			$goods_end_time = intval($_POST['goods_end_time']);
 
 			if($goods_end_time < 30 && $goods_end_time != 0){
@@ -313,6 +315,7 @@ class setting extends admin {
 
 			$this->db->Query("UPDATE `@#_config` SET `value`='$sendmobile' WHERE (`name`='sendmobile')");
 
+			$this->db->Query("UPDATE `@#_config` SET `value`='$autobuy' WHERE (`name`='autobuy')");
 			
 
 			$admindir_one = dirname(__FILE__);	
