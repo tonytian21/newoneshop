@@ -46,8 +46,8 @@
 			<li class="top">
 				<span class="name">商品名称</span>
 				<span class="moneys">次数</span>
-				<span class="money">乐购价</span>
-				<span class="num1">乐购人次</span>
+				<span class="money">单价</span>
+				<span class="num1">人次</span>
 				<span class="all">我的次数</span>
 			</li>           
 			{wc:loop $shoplist $shops}
@@ -56,22 +56,22 @@
                		<a class="blue" href="{WEB_PATH}/goods/{wc:$shops['id']}">{wc:$shops['title']}</a>
                 </span>
 				<span class="moneyss">{wc:$shops['money']}</span>
-				<span class="moneyss"><span class="color"><b>{wc:$shops['yunjiage']}</b>乐购币</span></span>
+				<span class="moneyss"><span class="color"><b>{wc:$shops['yunjiage']}</b>OneShop币</span></span>
 				<span class="num1 orange Fb">{wc:$shops['cart_gorenci']}</span>
 				<span class="alls">{wc:$shops['cart_xiaoji']}</span>
 			</li>
 			{wc:loop:end}           
 			<li class="payment_Total">
 				<div class="payment_List_Lc"><a href="{WEB_PATH}/member/cart/cartlist" class="form_ReturnBut">返回购物车修改订单</a></div>
-				<p class="payment_List_Rc">商品合计：<span class="orange F20">{wc:$MoenyCount}</span>乐币</p>
+				<p class="payment_List_Rc">商品合计：<span class="orange F20">{wc:$MoenyCount}</span>OneShop币</p>
 			</li>
 			<!-- 积分 -->
             {wc:if $fufen_dikou}
 			 <li id="liPayByPoints" class="point_out">
 					<div class="payment_List_Lc">
 					<input type="checkbox" class="input_choice" id="shop_score" name="shop_score" value="1"/>使用积分抵扣现金：您的积分({wc:$member['score']})本次消费最多可抵扣现金
-                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>乐币)，我要使用 
-                    <input type="text" maxlength="8" class="pay_input_text_gray" id="shop_score_num" value="0" money="{wc:$fufen['fufen_yuan']}" name="shop_score_num"/> 积分, 1乐币 = {wc:$fufen['fufen_yuan']} 积分</div>
+                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>OneShop币)，我要使用 
+                    <input type="text" maxlength="8" class="pay_input_text_gray" id="shop_score_num" value="0" money="{wc:$fufen['fufen_yuan']}" name="shop_score_num"/> 积分, 1OneShop币 = {wc:$fufen['fufen_yuan']} 积分</div>
                     <p id="pPointsTip" class="pay_Value" style="display:none;"></p>
                     <p class="payment_List_Rc"></p>
              </li>
@@ -79,7 +79,7 @@
               <li id="liPayByPoints" class="point_out point_gray">
 					<div class="payment_List_Lc">
 					<input type="checkbox" class="input_choice" disabled="disabled"/>使用积分抵扣现金：您的积分({wc:$member['score']})本次消费最多可抵扣现金
-                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>乐币)，我要使用 
+                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>OneShop币)，我要使用 
                     <input type="text" maxlength="8" class="pay_input_text_gray" name="costPoint"  disabled="disabled"/> 积分</div>
                     <p id="pPointsTip" class="pay_Value" style="display:none;"></p>
                     <p class="payment_List_Rc"></p>
@@ -91,19 +91,19 @@
 			<li class="point_in" id="liPayByBalance">
 				<div class="payment_List_Lc">					
 					<input type="checkbox" name="moneycheckbox" id="MoneyCheckbox" class="input_choice"/>使用账户余额支付，账户余额：
-					<span class="green F18">{wc:$Money}</span>乐币
+					<span class="green F18">{wc:$Money}</span>OneShop币
 				</div>
 				<p style="" class="pay_Value" id="pBalanceTip">
 				<span>◆</span><em>◆</em>账户余额支付更快捷，
 				<a class="blue" target="_blank" href="{WEB_PATH}/member/home/userrecharge">立即充值</a></p>
-				<p class="payment_List_Rc">余额支付：<span id="pay_money" class="orange F20">0.00</span> 乐币</p>
+				<p class="payment_List_Rc">余额支付：<span id="pay_money" class="orange F20">0.00</span> OneShop币</p>
 			</li>
             <!-- 余额支付 end--> 
 		
 			<li id="liPayByOther" class="point_in point_bank" style="display:list-item;">
-				<div class="payment_List_Lc gary01 Fb">您的账户乐币不足，请选择以下方式完成支付</div>
-				<div class="payment_List_Lc gary01 Fb" style=" color:#f60;">1云币等于1元，请谨慎充值</div>
-				<p class="payment_List_Rc">网银支付：<span id="pay_bankmoney" class="orange F20">0.00</span> 乐币</p>
+				<div class="payment_List_Lc gary01 Fb">您的账户OneShop币不足，请选择以下方式完成支付</div>
+				<div class="payment_List_Lc gary01 Fb" style=" color:#f60;">1OneShop币等于1元，请谨慎充值</div>
+				<p class="payment_List_Rc">网银支付：<span id="pay_bankmoney" class="orange F20">0.00</span> OneShop币</p>
 			</li>
 			
             
@@ -179,16 +179,13 @@
 			<input type="submit" id="submit_ok" class="shop_pay_but" name="submit" value="确认支付，下一步">
 	</div>
     </form>
-	<div class="answer">
+	<!-- <div class="answer">
 		<h6><span></span>付款遇到问题</h6>
 		<ul class="answer_list">
-			<li>1、如您未开通网上银行，即可以使用储蓄卡快捷支付轻松完成付款；</li>
-			<li>2、如果您没有网银，可以使用银联在线支付，银联有支持无需开通网银的快捷支付和储值卡支付；</li>
-			<li>3、如果您有财付通或快钱、手机支付账户，可将款项先充入相应账户内，然后使用账户余额进行一次性支付；</li>
-			<li>4、如果银行卡已经扣款，但您的账户中没有显示，有可能因为网络原因导致，将在第二个工作日恢复。</li>
-			<li class="more"><a href="{WEB_PATH}/help/liaojie">更多帮助</a>&nbsp;&nbsp;<a href="{WEB_PATH}/member/home">进入我的乐购中心&gt;&gt;</a></li>
+			
+			<li class="more"><a href="{WEB_PATH}/help/liaojie">更多帮助</a>&nbsp;&nbsp;<a href="{WEB_PATH}/member/home">进入个人中心&gt;&gt;</a></li>
 		</ul>
-	</div>
+	</div> -->
     
 </div><!--payment_Con end-->
 <script>

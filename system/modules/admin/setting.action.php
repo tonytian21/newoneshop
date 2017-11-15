@@ -30,7 +30,7 @@ class setting extends admin {
 
 						array("email","邮箱配置",ROUTE_M.'/'.ROUTE_C."/email"),
 
-						array("mobile","短信配置",ROUTE_M.'/'.ROUTE_C."/mobile"),
+// 						array("mobile","短信配置",ROUTE_M.'/'.ROUTE_C."/mobile"),
 
 						array("payset","支付方式","pay/pay/pay_list"),						
 

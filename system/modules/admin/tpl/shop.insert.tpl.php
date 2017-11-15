@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>自由乐购后台管理系统</title>
+<title>OneShop后台管理系统</title>
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/style.css" type="text/css">
 <script src="<?php echo G_GLOBAL_STYLE; ?>/global/js/jquery-1.8.3.min.js"></script>
@@ -134,7 +134,7 @@ function CheckForm(){
 		<tr style="background-color:#FFC">
 			<td style="width:120px"></td>
 			<td>
-				<b>提示：</b> <font color="red">商品总价格请不要填写100，2300,5000这样的整数,整数价格计算出的云购码可能就为10000001</font><br />
+				<b>提示：</b> <font color="red">商品总价格请不要填写100，2300,5000这样的整数,整数价格计算出的OneShop码可能就为10000001</font><br />
 				
 			</td>
 		</tr>
@@ -143,7 +143,7 @@ function CheckForm(){
 			<td><input type="text" id="money"  name="money" onKeyUp="value=value.replace(/\D/g,'')" style="width:65px; padding-left:0px; text-align:center" class="input-text">元</td>
 		</tr>
 		<tr>
-			<td align="right" style="width:120px"><font color="red">*</font>云购单次价格：</td>
+			<td align="right" style="width:120px"><font color="red">*</font>OneShop单次价格：</td>
 			<td><input type="text" name="yunjiage" onKeyUp="value=value.replace(/\D/g,'')" style="width:65px;padding-left:0px;text-align:center" class="input-text" value="1">元</td>
 		</tr>
         <tr>      

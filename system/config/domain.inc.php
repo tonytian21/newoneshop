@@ -1,7 +1,7 @@
 <?php 
 
 return array (
-  '0.0.0.0:8092' => 
+  '127.0.0.1:8092' => 
   array (
     'm' => 'mobile',
     'c' => 'mobile',

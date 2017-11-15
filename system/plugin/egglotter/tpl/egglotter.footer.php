@@ -215,7 +215,7 @@ $(function(){
 		}
 	)
 });
-//云购基金
+//OneShop基金
 $.ajax({
 	url:"<?php echo WEB_PATH; ?>/api/fund/get",
 	success:function(msg){

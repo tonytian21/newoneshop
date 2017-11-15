@@ -60,7 +60,7 @@ font-family: "宋体";
 							
 							</a>
 							<p style="margin-left: 0px;width: 195px;">获得者：<a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank">{wc:fun:get_user_name($qishu['q_user'])}</a></p>
-							<p style="margin-left: 0px;width: auto;">云购：<em class="c_red Fb">{wc:fun:get_user_goods_num($qishu['q_uid'],$qishu['id'])}</em>人次</p>					
+							<p style="margin-left: 0px;width: auto;">OneShop：<em class="c_red Fb">{wc:fun:get_user_goods_num($qishu['q_uid'],$qishu['id'])}</em>人次</p>					
 						</div>
 						<div class="publishC-tit">
 							<h3><a href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank" class="gray01">(第{wc:$qishu['qishu']}期){wc:$qishu['title']}</a></h3>
@@ -68,7 +68,7 @@ font-family: "宋体";
 							<p class="Announced-time gray02">揭晓时间：{wc:fun:microt($qishu['q_end_time'],'r')}</p>
 						</div>
 						<div class="details bg_pink">
-							<p class="fl details-Code">幸运云购码：<em class="c_red Fb">{wc:$qishu['q_user_code']}</em></p>
+							<p class="fl details-Code">幸运OneShop码：<em class="c_red Fb">{wc:$qishu['q_user_code']}</em></p>
 							<a class="fl details-A c_red" href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" rel="nofollow" target="_blank">查看详情</a>
 							
 						</div>
@@ -85,7 +85,7 @@ font-family: "宋体";
 	<!--
 	<div class="W-right fr" style="width:235px;border:none">
 		<div class="Newpublishbor b_gray">
-			<div class="Rtitle gray01">TA们正在云购 </div>
+			<div class="Rtitle gray01">TA们正在OneShop </div>
 			<div class="Rcenter buylistH">
 				<ul id="buyList" style="margin-top: 0px;">
 					{wc:loop $member_record $record}

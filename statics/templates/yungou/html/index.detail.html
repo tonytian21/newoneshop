@@ -26,12 +26,12 @@
 					
 					<div class="share-getinfo">
 						<p style="width: auto;" class="getinfo-name">幸运获得者：<a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($shaidan['sd_userid'])}" target="_blank">{wc:fun:get_user_name($shaidan['sd_userid'],'username')}</a></p>
-						<p>总共云购：<b class="orange">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>人次</p>
+						<p>总共OneShop：<b class="orange">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>人次</p>
 						{wc:php:start}
 						$jikxiao = get_shop_if_jiexiao($shaidan['sd_shopid']);						
 						{wc:php:end}
 						{wc:if $jikxiao['q_uid']}
-						<p>幸运云购码：{wc:$jikxiao['q_user_code']}	</p>
+						<p>幸运OneShop码：{wc:$jikxiao['q_user_code']}	</p>
 						<p>揭晓时间：{wc:fun:microt($jikxiao['q_end_time'])}</p>
 						{wc:if:end}
 					</div>
@@ -41,7 +41,7 @@
 					<img src="{G_UPLOAD_PATH}/{wc:$goods['thumb']}" border="0"></a>
 					<div class="share-getinfo">
 						<p class="getinfo-title"><a class="gray01" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">(第{wc:$goods['qishu']}期){wc:$goods['title']}</a></p>
-						<p>价值：{wc:$goods['money']}云币</p>
+						<p>价值：{wc:$goods['money']}OneShop币</p>
 						<p id="GoToBuy">
 						<a class="getbut-a c_red b_gray" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">
 						{wc:if !empty($goods['q_uid'])}

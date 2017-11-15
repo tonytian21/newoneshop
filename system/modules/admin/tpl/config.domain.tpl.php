@@ -10,8 +10,7 @@
 </head>
 <body>
 <div class="header lr10">
-	<?php echo $this->headerment();?><a
-href="javascript:void(0)" onClick="remove()()">删除</a>
+	<?php echo $this->headerment();?>
 </div>
 
 <div class="bk10"></div>

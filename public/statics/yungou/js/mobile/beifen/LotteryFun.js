@@ -66,7 +66,7 @@ $(function() {
 
                     for (var q = 0; q < t; q++) {
 
-                        var v = '<ul id="' + r[q].codeID + '"><li class="revConL">' + (r[q].codeType == 1 ? '<span class="z-limit-tips">限时揭晓</span>': "") + '<img src="' + Gobal.LoadPic + '" src2="http://mimg.1yyg.com/goodspic/pic-200-200/' + r[q].codeGoodsPic + '"></li><li class="revConR"><dl><dd><img name="uImg" uweb="' + r[q].userWeb + '" src="http://faceimg.1yyg.com/UserFace/' + r[q].userPhoto + '"></dd><dd><span>获得者<strong>：</strong><a name="uName" uweb="' + r[q].userWeb + '" class="rUserName blue">' + r[q].userName + '</a></span>本期云购<strong>：</strong><em class="orange arial">' + r[q].codeRUserBuyCount + '</em>人次</dd></dl><dt>幸运云购码：<em class="orange arial">' + r[q].codeRNO + '</em><br/>揭晓时间：<em class="c9 arial">' + r[q].codeRTime + '</em></dt><b class="fr z-arrow"></b></li></ul>';
+                        var v = '<ul id="' + r[q].codeID + '"><li class="revConL">' + (r[q].codeType == 1 ? '<span class="z-limit-tips">限时揭晓</span>': "") + '<img src="' + Gobal.LoadPic + '" src2="http://mimg.1yyg.com/goodspic/pic-200-200/' + r[q].codeGoodsPic + '"></li><li class="revConR"><dl><dd><img name="uImg" uweb="' + r[q].userWeb + '" src="http://faceimg.1yyg.com/UserFace/' + r[q].userPhoto + '"></dd><dd><span>获得者<strong>：</strong><a name="uName" uweb="' + r[q].userWeb + '" class="rUserName blue">' + r[q].userName + '</a></span>本期OneShop<strong>：</strong><em class="orange arial">' + r[q].codeRUserBuyCount + '</em>人次</dd></dl><dt>幸运OneShop码：<em class="orange arial">' + r[q].codeRNO + '</em><br/>揭晓时间：<em class="c9 arial">' + r[q].codeRTime + '</em></dt><b class="fr z-arrow"></b></li></ul>';
 
                         var u = $(v);
 

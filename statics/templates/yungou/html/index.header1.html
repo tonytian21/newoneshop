@@ -31,43 +31,6 @@
 	<script type="text/javascript">
 	window.shareParams={};
 	
-	var LC_API = LC_API || {};
-	LC_API.on_after_load = function() {
-	  alert("ok");
-	};
-	
-	
-	window.__lc = window.__lc || {};
-
-	/**
-	 * LiveChat license number
-	 */
-	window.__lc.license = 278126012;
-
-	window.__lc.group = 1;
-
-	window.__lc.chat_between_groups = false;
-
-	
-	window.__lc.ga_version = 'ga';
-
-	
-	window.__lc.visitor = {
-	  name: 'Joe Public',
-	  email: 'joe.public@gmail.com'
-	};
-
-	window.__lc.params = [
-	  { name: 'Login', value: 'joe_public' },
-	  { name: 'Account ID', value: 'ABCD1234' },
-	  { name: 'Total order value', value: '$123' }
-	];
-
-	(function() {
-	  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-	  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-	})();
 	
 	
 	
@@ -87,15 +50,15 @@
 					</li>
 					<li class="fr"><a href="{WEB_PATH}/member/home/userrecharge">快速充值</a>
 						<span>|</span></li>
-					<li class="fr yu_ff"><a href="{WEB_PATH}/home/member">我的云购</a>
+					<li class="fr yu_ff"><a href="{WEB_PATH}/home/member">个人中心</a>
 						<span>|</span>
 						<div class="h_1yyg_eject">
 							<dl>
 								<dd>
-									<a href="{WEB_PATH}/member/home">我的云购</a>
+									<a href="{WEB_PATH}/member/home">个人中心</a>
 								</dd>
 								<dd>
-									<a href="{WEB_PATH}/member/home/userbuylist">云购记录</a>
+									<a href="{WEB_PATH}/member/home/userbuylist">夺宝记录</a>
 								</dd>
 								<dd>
 									<a href="{WEB_PATH}/member/home/orderlist">获得商品</a>
@@ -123,13 +86,13 @@
 						onclick="AddFavorite(window.location,document.title)">{wc:$this->_lang["收藏"]}</a> <!--<span>|</span>-->
 					</li>
 					<!--<li class="fl mobile" style="position:relative;width: 50px;padding:0 25px;">
-						<a target="_blank"  style="margin:0;" href="{G_WEB_PATH}/app/index.html">手机云购</a>
+						<a target="_blank"  style="margin:0;" href="{G_WEB_PATH}/app/index.html">手机OneShop</a>
 						<s style="left: 80px;"></s>
 						<span  class="shouji"></span>
 						<div class="h_mobile" style="padding:0 25px;width: 50px;height: 140px;z-index: 9999;">
 							<dl>
 								<li class="fl mobile">
-									<a target="_blank"  style="margin:0;color: #ff6600;" href="{G_WEB_PATH}/app/index.html">手机云购</a>
+									<a target="_blank"  style="margin:0;color: #ff6600;" href="{G_WEB_PATH}/app/index.html">手机OneShop</a>
 									<s style="left: 80px;"></s>
 									<span class="shouji" style="background-position: -45px -34px;"></span>
 								</li>

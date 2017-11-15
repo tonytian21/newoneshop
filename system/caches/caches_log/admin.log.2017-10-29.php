@@ -30,40 +30,40 @@
 
 2017-10-29 10:44:52------>array (
   0 => 'UPDATE `go_shoplist_term` SET `xsjx_time` = \'0\'	WHERE `id`=\'530\'',
-  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品2\', `title_style` = \'\', `title2` = \'测试商品2\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
-  2 => 'INSERT INTO `go_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES (\'532\', \'测试商品2\', \'测试商品2\', \'测试商品2\', \'测试商品2\', \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\')',
+  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品2\', `title_style` = \'\', `title2` = \'测试商品2\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
+  2 => 'INSERT INTO `go_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES (\'532\', \'测试商品2\', \'测试商品2\', \'测试商品2\', \'测试商品2\', \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\')',
 ) 
 
 
 
 2017-10-29 10:45:06------>array (
   0 => 'UPDATE `go_shoplist_term` SET `xsjx_time` = \'0\'	WHERE `id`=\'530\'',
-  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
-  2 => 'INSERT INTO `go_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES (\'532\', \'测试商品22\', \'测试商品22\', \'测试商品2\', \'测试商品2\', \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\')',
+  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
+  2 => 'INSERT INTO `go_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES (\'532\', \'测试商品22\', \'测试商品22\', \'测试商品2\', \'测试商品2\', \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\')',
 ) 
 
 
 
 2017-10-29 10:47:25------>array (
   0 => 'UPDATE `go_shoplist_term` SET `xsjx_time` = \'0\'	WHERE `id`=\'530\'',
-  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
-  2 => 'INSERT INTO `go_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES (\'532\', \'\', \'\', \'\', \'\', \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\')',
+  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
+  2 => 'INSERT INTO `go_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES (\'532\', \'\', \'\', \'\', \'\', \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\')',
 ) 
 
 
 
 2017-10-29 10:47:41------>array (
   0 => 'UPDATE `go_shoplist_term` SET `xsjx_time` = \'0\'	WHERE `id`=\'530\'',
-  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
-  2 => 'update `go_shoplist_en` SET `titleen` = \'测试商品22\', `title2en` = \'测试商品22\', `keywordsen`=\'测试商品22\', `descriptionen`=\'\', `contenten` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\' WHERE `egid`=\'532\'',
+  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
+  2 => 'update `go_shoplist_en` SET `titleen` = \'测试商品22\', `title2en` = \'测试商品22\', `keywordsen`=\'测试商品22\', `descriptionen`=\'\', `contenten` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\' WHERE `egid`=\'532\'',
 ) 
 
 
 
 2017-10-29 10:47:49------>array (
   0 => 'UPDATE `go_shoplist_term` SET `xsjx_time` = \'0\'	WHERE `id`=\'530\'',
-  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
-  2 => 'update `go_shoplist_en` SET `titleen` = \'测试商品22\', `title2en` = \'测试商品22\', `keywordsen`=\'测试商品22\', `descriptionen`=\'\', `contenten` = \'<p>欢迎使用云购系统，请注意字符长度限制哦~!</p>\' WHERE `egid`=\'532\'',
+  1 => 'UPDATE `go_shoplist` SET `cateid` = \'5\', `brandid` = \'1\', `title` = \'测试商品22\', `title_style` = \'\', `title2` = \'测试商品22\', `keywords`=\'测试商品2\', `description`=\'测试商品2\', `thumb` = \'photo/goods.jpg\', `picarr` = \'a:0:{}\', `content` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\', `maxqishu` = \'100\', `renqi` = \'1\', `g_xsjx_time` = \'0\', `pos` = \'1\', `recharge` = \'0\', `robot_buy_ratio` = \'50\', `robot_win` = \'0\' WHERE `gid`=\'532\'',
+  2 => 'update `go_shoplist_en` SET `titleen` = \'测试商品22\', `title2en` = \'测试商品22\', `keywordsen`=\'测试商品22\', `descriptionen`=\'\', `contenten` = \'<p>欢迎使用OneShop系统，请注意字符长度限制哦~!</p>\' WHERE `egid`=\'532\'',
 ) 
 
 

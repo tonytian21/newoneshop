@@ -57,22 +57,22 @@ tbody tr{ line-height:30px; height:30px;}
 			
 			?>
 			>通过网络充值</option>
-			<option value="使用佣金充值到云购账户"
+			<option value="使用佣金充值到OneShop账户"
 			<?php 
 				if(isset($chongzhi)){
-					echo ($chongzhi=='使用佣金充值到云购账户')?'selected':'';
+					echo ($chongzhi=='使用佣金充值到OneShop账户')?'selected':'';
 				}
 			
 			?>
-			>使用佣金充值到云购账户</option>
-			<option value="使用余额宝充值到云购账户" 
+			>使用佣金充值到OneShop账户</option>
+			<option value="使用余额宝充值到OneShop账户" 
 			<?php 
 				if(isset($chongzhi)){
-					echo ($chongzhi=='使用余额宝充值到云购账户')?'selected':'';
+					echo ($chongzhi=='使用余额宝充值到OneShop账户')?'selected':'';
 				}
 			
 			?>
-			>使用余额宝充值到云购账户</option>
+			>使用余额宝充值到OneShop账户</option>
 			</select>
 			<select name="yonghu">
 			<option value="请选择用户类型" 

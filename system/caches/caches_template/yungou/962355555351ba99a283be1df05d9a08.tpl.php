@@ -17,15 +17,15 @@
 	</div>
 	<div class="sidebar-nav">
 		<p class="sid-line"></p>
-		<h2 class="sid-icon01"><a href="<?php echo WEB_PATH; ?>/member/home"><b></b>我的乐购</a></h2>
+		<h2 class="sid-icon01"><a href="<?php echo WEB_PATH; ?>/member/home"><b></b>个人中心</a></h2>
 		<p class="sid-line"></p>
 		<h3 class="sid-icon09" ><a href="<?php echo WEB_PATH; ?>/member/home/modify"><b></b>个人设置</a></h3>		
 		<p class="sid-line"></p>
 		<h3 class="sid-icon02">
-			<a href="javascript:void();"><b></b>我的乐购 <s class="sid_ss" title="收起"></s></a>
+			<a href="javascript:void();"><b></b>个人中心<s class="sid_ss" title="收起"></s></a>
 		</h3>
 		<ul>
-			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/userbuylist">乐购记录</a></li>
+			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/userbuylist">夺宝记录</a></li>
 			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/orderlist">获得的商品</a></li>
 			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/singlelist">晒单</a></li>
 		</ul>
@@ -44,8 +44,7 @@
 		<ul>
 			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/invitefriends">邀请好友</a></li>
 			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/commissions">佣金明细</a></li>
-			<!--<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/cashout">申请提现</a></li>
-			<li class=""><a href="<?php echo WEB_PATH; ?>/member/home/record">提现记录</a></li>-->
+			
 		</ul>
 		<p class="sid-line"></p>		
 		<h3 class="sid-icon05 " >

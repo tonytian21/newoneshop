@@ -13,7 +13,7 @@
   array (
     'mid' => 'haode',
     'mpass' => '123456',
-    'mqianming' => '【自由乐购】',
+    'mqianming' => '【OneShop】',
   ),
   'cfg_mobile_on' => 2,
   'cfg_mobile_3' => 

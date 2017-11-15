@@ -127,7 +127,7 @@
 							style="color: #fff; height: 32; line-height: 16px; width: 25px; padding-top: 12px; display: block; padding-left: 6px;"
 							id="btnRigQQ"
 							href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg("
-							qq")}&site=qq&menu=yes " target="_blank" class="quick_serviceA livechatinc">在线客服</a>
+							qq")}&site=qq&menu=yes" target="_blank" class="quick_serviceA livechatinc">在线客服</a>
 					</div>
 				</div>
 			</li>
@@ -246,6 +246,65 @@ mobShare.config( {
     appkey: '21f30d1b7ccb5', // appkey
     params: window.shareParams,
 } );
+
+
+
+
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+
+
+var LC_API = LC_API || {};
+LC_API.on_after_load = function() {
+  alert("ok");
+};
+
+
+window.__lc = window.__lc || {};
+
+/**
+ * LiveChat license number
+ */
+window.__lc.license = 9174730;
+//window.__lc.group = 1;
+
+window.__lc.chat_between_groups = false;
+
+
+window.__lc.ga_version = 'ga';
+
+
+window.__lc.visitor = {
+  name: 'Joe Public',
+  email: 'joe.public@gmail.com'
+};
+
+/* window.__lc.params = [
+  { name: 'Login', value: 'joe_public' },
+  { name: 'Account ID', value: 'ABCD1234' },
+  { name: 'Total order value', value: '$123' }
+]; */
+
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+
+
+
+/* 
+window.__lc = window.__lc || {};
+window.__lc.license = 9174730;
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();  */
+
+<!-- End of LiveChat code -->
+
+
+
 </script>
 </body>
 </html>

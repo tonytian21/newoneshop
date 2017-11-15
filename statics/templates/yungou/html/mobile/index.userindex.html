@@ -68,17 +68,17 @@
                     {wc:else}
                         {G_UPLOAD_PATH}/{wc:$touxiang}
                     {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>积分：{wc:$member['score']}<br/>经验值：{wc:$member['jingyan']}
-                    <span class="{wc:if $member['yungoudj']=='云购新手'}
+                    <span class="{wc:if $member['yungoudj']=='OneShop新手'}
                     z-class-icon01
-                {wc:elseif $member['yungoudj']=='云购小将'}
+                {wc:elseif $member['yungoudj']=='OneShop小将'}
                     z-class-icon02
-                {wc:elseif $member['yungoudj']=='云购中将'}
+                {wc:elseif $member['yungoudj']=='OneShop中将'}
                     z-class-icon03
-                {wc:elseif $member['yungoudj']=='云购上将'}
+                {wc:elseif $member['yungoudj']=='OneShop上将'}
                     z-class-icon04
-                {wc:elseif $member['yungoudj']=='云购大将'}
+                {wc:elseif $member['yungoudj']=='OneShop大将'}
                     z-class-icon05
-                {wc:elseif $member['yungoudj']=='云购将军'}
+                {wc:elseif $member['yungoudj']=='OneShop将军'}
                     z-class-icon06
                 {wc:if:end}"><s></s>{wc:$member['yungoudj']}</span></li>
                     

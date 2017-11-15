@@ -18,7 +18,7 @@ class home extends base {
 	}
 	public function init(){
 		$member=$this->userinfo;
-		$title="我的云购中心";	
+		$title="我的OneShop中心";	
 		$quanzi=$this->db->GetList("select * from `@#_quanzi_tiezi` order by id DESC LIMIT 5");
 		
 		$jingyan = $member['jingyan'];
@@ -555,12 +555,12 @@ class home extends base {
 			echo _message("密码修改成功",null,3);
 		}
 	}
-	//云购记录
+	//OneShop记录
 	public function userbuylist(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title="云购记录 - "._cfg("web_name");		
+		$title="OneShop记录 - "._cfg("web_name");		
 		
 		$total=$this->db->GetCount("select * from `@#_member_go_record` where `uid`='$uid' order by `id` DESC");
 		$page=System::load_sys_class('page');
@@ -570,11 +570,11 @@ class home extends base {
 		
 		include templates("member","userbuylist");
 	}
-	//云购记录详细
+	//OneShop记录详细
 	public function userbuydetail(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="云购详情";
+		$title="OneShop详情";
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if(!$record){
@@ -641,7 +641,7 @@ class home extends base {
 	public function userrecharge(){
 		$member=$this->userinfo;
 		$title="账户充值";
-		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1' AND pay_mobile != 1");
+		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1' AND pay_mobile = 1");
 		include templates("member","userrecharge");
 	}	
     
@@ -933,7 +933,7 @@ class home extends base {
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;		 
 		$uid=_getcookie('uid');
-		$notinvolvednum=0;  //未参加云购的人数
+		$notinvolvednum=0;  //未参加OneShop的人数
 		$involvednum=0;     //参加预购的人数
 		$involvedtotal=0;   //邀请人数		 
 		
@@ -957,10 +957,10 @@ class home extends base {
 		//判断哪个好友有消费		
 		 if(empty($accounts[$sqluid])){
 		    $notinvolvednum +=1;
-		    $records[$sqluid]='未参与云购';
+		    $records[$sqluid]='未参与OneShop';
 		 }else{
 		    $involvednum +=1;
-		    $records[$sqluid]='已参与云购';
+		    $records[$sqluid]='已参与OneShop';
 		 }
 		
 		
@@ -1113,7 +1113,7 @@ class home extends base {
 		  $type       = 1;
 		  $pay        ="佣金";
 		  $time       =time();
-		  $content    ="使用佣金充值到云购账户";
+		  $content    ="使用佣金充值到OneShop账户";
 		  
 		 if($money <= 0 || $money > $total){
 			  _message("佣金金额输入不正确！");exit;

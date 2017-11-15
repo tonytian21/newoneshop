@@ -22,7 +22,7 @@
         <font color="red">{地址}</font> 是发送的地址！</font>
     </tr>
     <tr>
-    	<td width="150">用户云购获奖邮件模板：</td> 
+    	<td width="150">用户OneShop获奖邮件模板：</td> 
    		<td><textarea name="m_shop_temp" style=" height:50px; width:450px" class="input-text"><?php echo $temp_shop['value']; ?></textarea>
         <font color="red">{用户名}</font> 是用户名称！<font color="red">{中奖码}</font> 是乐购码！
         <font color="red">{商品名称}</font> 是乐购的商品名称！ 

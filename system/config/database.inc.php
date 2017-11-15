@@ -9,7 +9,7 @@ return array (
 				
 				'username' => 'root', // 数据库账户
 				
-				'password' => '', // 数据库密码
+				'password' => 'root', // 数据库密码
 				
 				'tablepre' => 'go_',
 				

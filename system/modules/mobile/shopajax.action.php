@@ -36,7 +36,7 @@ class shopajax extends base
         }
         
         $member = $this->userinfo;
-        $title = "我的云购中心";
+        $title = "我的OneShop中心";
         
         $user['code'] = 1;
         $user['username'] = get_user_name($member['uid']);
@@ -48,7 +48,7 @@ class shopajax extends base
         echo json_encode($user);
     }
 
-    // 我的云购记录
+    // 我的OneShop记录
     public function getUserBuyList()
     {
         $member = $this->userinfo;
@@ -58,17 +58,17 @@ class shopajax extends base
         $state = safe_replace($this->segment(7));
         
         if ($state == - 1) {
-            // 参与云购的商品 全部...
+            // 参与OneShop的商品 全部...
             $shoplist = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid left join `@#_shoplist_en` sen on sen.egid=c.gid  where a.uid='$member[uid]' GROUP BY shopid ");
             
             $shoplistall['listItems'] = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid left join `@#_shoplist_en` sen on sen.egid=c.gid  where a.uid='$member[uid]' GROUP BY shopid order by a.time desc limit $FIdx,$EIdx ");
         } elseif ($state == 1) {
-            // 参与云购的商品 进行中...
+            // 参与OneShop的商品 进行中...
             $shoplist = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid left join `@#_shoplist_en` sen on sen.egid=c.gid  where a.uid='$member[uid]' and b.q_end_time is null GROUP BY shopid  ");
             
             $shoplistall['listItems'] = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on b.sid=c.gid left join `@#_shoplist_en` sen on sen.egid=c.gid  where a.uid='$member[uid]' and b.q_end_time is null GROUP BY shopid order by a.time desc limit $FIdx,$EIdx ");
         } else {
-            // 参与云购的商品 已揭晓...
+            // 参与OneShop的商品 已揭晓...
             $shoplist = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#_shoplist_en` sen on sen.egid=c.gid  where a.uid='$member[uid]' and b.q_end_time is not null GROUP BY shopid ");
             
             $shoplistall['listItems'] = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#_shoplist_en` sen on sen.egid=c.gid where a.uid='$member[uid]' and b.q_end_time is not null GROUP BY shopid order by a.time desc limit $FIdx,$EIdx ");
@@ -104,7 +104,7 @@ class shopajax extends base
         echo json_encode($shoplistall);
     }
 
-    // 我的云购记录
+    // 我的OneShop记录
     public function getUserBuyList_jf()
     {
         $member = $this->userinfo;
@@ -114,17 +114,17 @@ class shopajax extends base
         $state = safe_replace($this->segment(7));
         
         if ($state == - 1) {
-            // 参与云购的商品 全部...
+            // 参与OneShop的商品 全部...
             $shoplist = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_jf_record` a left join `@#_jf_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' GROUP BY shopid ");
             
             $shoplistall['listItems'] = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_jf_record` a left join `@#_jf_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' GROUP BY shopid order by a.time desc limit $FIdx,$EIdx ");
         } elseif ($state == 1) {
-            // 参与云购的商品 进行中...
+            // 参与OneShop的商品 进行中...
             $shoplist = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_jf_record` a left join `@#_jf_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' and b.q_end_time is null GROUP BY shopid  ");
             
             $shoplistall['listItems'] = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_jf_record` a left join `@#_jf_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' and b.q_end_time is null GROUP BY shopid order by a.time desc limit $FIdx,$EIdx ");
         } else {
-            // 参与云购云购的商品 已揭晓...
+            // 参与OneShopOneShop的商品 已揭晓...
             $shoplist = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_jf_record` a left join `@#_jf_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' and b.q_end_time is not null GROUP BY shopid ");
             
             $shoplistall['listItems'] = $this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_jf_record` a left join `@#_jf_shoplist` b on a.shopid=b.id where a.uid='$member[uid]' and b.q_end_time is not null GROUP BY shopid order by a.time desc limit $FIdx,$EIdx ");

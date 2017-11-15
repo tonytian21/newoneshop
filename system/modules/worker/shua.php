@@ -12,7 +12,6 @@ use workerman\Worker;
 use Workerman\Lib\Timer;
 
 $task = new Worker();
-
 $task->count = 1;
 $task->onWorkerStart = function($task)
 {

@@ -41,8 +41,8 @@
 				<span class="goods">商品</span>
 				<span class="name">名称</span>
 				<span class="moneys">价值</span>
-				<span class="money">乐购价</span>
-				<span class="num">乐购人次</span>
+				<span class="money">单价</span>
+				<span class="num">人次</span>
 				<span class="xj">小计</span>
 				<span class="do">操作</span>
 			</li>
@@ -59,8 +59,8 @@
                       	   <span class="gorenci">{wc:$shops['cart_shenyu']}</span> 人次
                     </p>
 				</span>
-				<span class="moneys">{wc:$shops['money']}乐购币</span>
-				<span class="money"><span class="color"><b>{wc:$shops['yunjiage']}乐购币</b></span></span>
+				<span class="moneys">{wc:$shops['money']}OneShop币</span>
+				<span class="money"><span class="color"><b>{wc:$shops['yunjiage']}OneShop币</b></span></span>
 				<span class="num">
 				<a href="JavaScript:;" val="{wc:$shops['id']}" class="jia">+</a>				
 					<dl class="add">					
@@ -76,12 +76,12 @@
 			</li>		
 			{wc:loop:end}
 			<li class="ts">
-				<p class="right">总计:<span id="moenyCount"  style="color: #f60;">{wc:$MoenyCount}</span>乐币</p>
+				<p class="right">总计:<span id="moenyCount"  style="color: #f60;">{wc:$MoenyCount}</span>OneShop币</p>
 			</li>
 		</ul>
 	</div>
 	<h5>
-		<a href="{WEB_PATH}" id="but_on">返回继续乐购</a>
+		<a href="{WEB_PATH}" id="but_on">返回继续OneShop</a>
 		<input id="but_ok" type="button" value="去结算"  name="submit"/>
 	</h5>
 </div>  
@@ -139,13 +139,13 @@ num.keyup(function(){
 	var shopid=$(this).attr("val");
 	var zindex=num.index(this);	
 	if($(this).val() > info[shopid]['shenyu']){
-		message.eq(zindex).text("乐购次数不能超过"+info[shopid]['shenyu']+"次");		
+		message.eq(zindex).text("OneShop次数不能超过"+info[shopid]['shenyu']+"次");		
 		$(this).val(info[shopid]['shenyu']);
 		UpdataMoney(shopid,$(this).val(),zindex);		
 		return;
 	}
 	if($(this).val()<1){
-		message.eq(zindex).text("乐购次数不能少于1次");
+		message.eq(zindex).text("OneShop次数不能少于1次");
 		$(this).val(1);
 		UpdataMoney(shopid,$(this).val(),zindex);
 		return;
@@ -157,7 +157,7 @@ numberadd.click(function(){
 	var zindex=numberadd.index(this);
 	var thisnum=num.eq(zindex);	
 		if(info[shopid]['num'] >= info[shopid]['shenyu']){
-			message.eq(zindex).text("乐购次数不能超过"+info[shopid]['shenyu']+"次");
+			message.eq(zindex).text("OneShop次数不能超过"+info[shopid]['shenyu']+"次");
 			return;
 		}
 		var number=info[shopid]['num']+1;			
@@ -169,7 +169,7 @@ numbersub.click(function(){
 	var zindex=numbersub.index(this);
 	var thisnum=num.eq(zindex);	
 		if(info[shopid]['num'] <=1){
-			message.eq(zindex).text("乐购次数不能少于1次");
+			message.eq(zindex).text("OneShop次数不能少于1次");
 			return;
 		}
 		var number=info[shopid]['num']-1;			

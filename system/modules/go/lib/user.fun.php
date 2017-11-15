@@ -73,7 +73,7 @@ function uidcookie($get_name=null){
 	}
 }
 
-//总云购人次
+//总OneShop人次
 function go_count_renci(){
 	$mysql_model=System::load_sys_class('model');	
 	$recordx=$mysql_model->GetOne("select * from `@#_caches` where `key` = 'goods_count_num'");	

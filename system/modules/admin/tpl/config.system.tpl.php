@@ -157,15 +157,7 @@ tr{height:40px;line-height:40px}
 
 		</tr>	
 
-		<tr>
-
-			<td width="220" align="right">QQ群：</td>
-
-			<td><textarea name="qq_qun" class="wid300" style="height:80px"><?php echo $web['qq_qun']; ?></textarea>
-
-			多个QQ群请用 | 号分割开</td>
-
-		</tr>
+		
 
 		<tr>
 

@@ -88,15 +88,15 @@
 
 		<li class="fr yu_ff">
 
-			<a  href="<?php echo WEB_PATH; ?>/home/member">我的云购</a><span>|</span>
+			<a  href="<?php echo WEB_PATH; ?>/home/member">我的OneShop</a><span>|</span>
 
 			<div class="h_1yyg_eject">
 
 				<dl>							
 
-				<dd><a  href="<?php echo WEB_PATH; ?>/member/home">我的云购</a></dd>
+				<dd><a  href="<?php echo WEB_PATH; ?>/member/home">我的OneShop</a></dd>
 
-				<dd><a  href="<?php echo WEB_PATH; ?>/member/home/userbuylist">云购记录</a></dd>
+				<dd><a  href="<?php echo WEB_PATH; ?>/member/home/userbuylist">OneShop记录</a></dd>
 
 				<dd><a  href="<?php echo WEB_PATH; ?>/member/home">获得的商品</a></dd>
 
@@ -156,11 +156,11 @@
 
 	<li class="fl"><a href="javascript:;" onclick="AddFavorite(window.location,document.title)">收藏</a><span>|</span></li>
 
-	<li class="fl mobile" style="position:relative;"><a href="">手机云购</a><s></s><span></span>
+	<li class="fl mobile" style="position:relative;"><a href="">手机OneShop</a><s></s><span></span>
 
 	<div class="h_mobile">
 
-		<dl><li class="fl"><a href="">手机云购</a><s></s><span></span></li></dl>                        
+		<dl><li class="fl"><a href="">手机OneShop</a><s></s><span></span></li></dl>                        
 
 	              <img src="<?php echo G_TEMPLATES_STYLE; ?>/images/code.jpg" height="75" width="75">
 
