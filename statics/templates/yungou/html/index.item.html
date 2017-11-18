@@ -389,25 +389,7 @@ $.fn.CloudZoom.defaults = {
 				$sid_code['q_user'] = unserialize($sid_code['q_user']);
 			{wc:php:end}
 			{wc:if $sid_code['q_showtime']=='N'}
-			<!--
-			<div class="Pro_GetPrize">				
-				<h2>上期获得者</h2>
-				<div class="GetPrize">				    
-					<dl>
-						<dt><a rel="nofollow" href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank"><img width="80" height="80" alt="" src="{G_UPLOAD_PATH}/{wc:$sid_code['q_user']['img']}"></a></dt>
-						<dd class="gray02">
-							<p>恭喜 <a href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank" class="blue">{wc:fun:get_user_name($sid_code['q_uid'])}</a>获得了本商品</p>
-							{wc:if $sid_go_record['ip']}
-							{wc:fun:get_ip($sid_go_record['id'],'ipcity')}
-							{wc:if:end}
-							<p>揭晓时间：{wc:fun:microt($sid_code['q_end_time'])}</p>
-							<p>购买时间：{wc:fun:microt($sid_go_record['time'])}</p>
-							<p>幸运OneShop码：<em class="orange Fb">{wc:$sid_code['q_user_code']}</em></p>
-						</dd>
-					</dl>				
-				</div>
-			</div>
-			-->
+			
 			{wc:if:end}
 			{wc:if:end}
 		</div>
@@ -424,13 +406,7 @@ $.fn.CloudZoom.defaults = {
 			{wc:else}
 				{wc:templates "index","item_contents"}
 			{wc:if:end}	
-            <!-- <div id="divBuy" class="Det_button">
-
-				<a href="javascript:;" class="Det_Shopbut">立即夺宝</a>
-
-				<a href="javascript:;" class="Det_Cart"><i></i>加入购物车</a>							
-
-			</div>
+           
 			<!--显示揭晓动画 end-->		
 			<div class="Security">
 				<ul>
@@ -628,8 +604,7 @@ $.fn.CloudZoom.defaults = {
 
 
 
-					<!--<li class="Explain orange">什么是1元OneShop？</li>-->
-
+					
 
 
 				</ul>
@@ -708,33 +683,7 @@ $.fn.CloudZoom.defaults = {
 
 
 
-						<!--
-
-
-
-						{wc:if $user['ip']}
-
-
-
-						({wc:fun:get_ip($user['id'],'ipcity')}) 
-
-
-
-						{wc:if:end}
-
-
-
-
-
-
-
-						{wc:fun:_put_time($user['time'])} OneShop了
-
-
-
-						-->	
-
-
+						
 
 						<em class="Fb gray01" style="color: #f60;">{wc:$user['gonumber']}</em>人次</li>
 
@@ -824,27 +773,6 @@ $.fn.CloudZoom.defaults = {
 
 
 
-				<!--
-
-
-
-				<div class="Newest_Con hide" style="display:none;">
-
-
-
-					<p class="MsgIntro">{wc:fun:_cfg("web_name_two")}购是指只需1元就有机会买到想要的商品。即每件商品被平分成若干“等份”出售，每份1元，当一件商品所有“等份”售出后，根据OneShop规则产生一名幸运者，该幸运者即可获得此商品。</p>
-
-
-
-					<p class="MsgIntro1">{wc:fun:_cfg("web_name_two")}以“快乐OneShop，惊喜无限”为宗旨，力求打造一个100%公平公正、100%正品保障、寄娱乐与购物一体化的新型购物网站。<a href="{WEB_PATH}/help/1" class="blue" target="_blank">查看详情&gt;&gt;</a></p>
-
-
-
-				</div>
-
-
-
-				-->
 
 
 
@@ -1157,97 +1085,6 @@ shopnum.ready(function(){
 
 
 
-
-
-
-/*shopnum.keyup(function(){
-
-
-
-	if(isNaN(shopnum.val())){					
-
-
-
-	 shopnum.val(1);
-
-
-
-	}else{
-
-
-
-		if(shopnum.val()<=0){					
-
-
-
-		 shopnum.val(1);	
-
-
-
-		} 
-
-
-
-		if(shopnum.val()>syrs){
-
-
-
-			shopnum.val(syrs);
-
-
-
-		}
-
-
-
-			var numshop=shopnum.val();
-
-
-
-			if(numshop==69){
-
-
-
-				var baifenbi='100%';
-
-
-
-			}else{
-
-
-
-				var showbaifen=numshop/69;
-
-
-
-				var baifenbi=baifenshua(showbaifen,2);
-
-
-
-			}
-
-
-
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");   		
-
-
-
-	}	
-
-
-
-  
-
-
-
-});	*/
-
-
-
-
-
-
-
 $("#shopadd").click(function(){
 
 
@@ -1283,24 +1120,6 @@ $("#shopadd").click(function(){
 					resshopnump=parseInt(shopnum.val())+1;
 
 
-
-					// shopnum.val(resshopnump);	
-
-
-
-					// if(shopnum.val()>=syrs){
-
-
-
-					// 	resshopnump=shopinfo['shenyu'];
-
-
-
-					// 	shopnum.val(resshopnump);
-
-
-
-					// }
 
 
 

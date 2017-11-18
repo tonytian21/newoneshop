@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head><title>
-	帐户充值 - {wc:$webname}触屏版
+	帐户充值 - {wc:$webname}
 </title>
 <meta content="app-id=518966501" name="apple-itunes-app" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
@@ -54,32 +54,6 @@
     <div class="g-Total gray9" style="padding-top: 55px;">您的当前OneShop币：<span class="orange arial">{wc:$member['money']}</span>OneShop币</div>
  <div>
     
-            <!--section>
-                <div class="registerCon">
-                    <form action="{WEB_PATH}/member/cart/card_addmoney" method="post">
-                        <ul>
-                            <li class="accAndPwd">
-                                <dl><input id="txtAccount" type="text" placeholder="请输入卡号" class="lEmail" name="czknum" maxlength="20"><s class="rs4"></s></dl>
-                                <dl>
-                                    <input type="password" id="txtPassword" class="lPwd" placeholder="请输入卡密" name="password" maxlength="20">
-                                    <s class="rs3"></s>
-                                </dl>
-                            </li>
-                            <li><input type="submit" value=" 确认充值" /></li>
-                    </form>
-                    <li class="rSelect" style="width: 40%;">淘宝充值卡购买</li>
-                    <li class="rSelect" style="width: 80%;"> 
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">1OneShop币充值卡购买</a> | 
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">10OneShop币充值卡购买</a>
-                    </li><li class="rSelect" style="width: 80%;">
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">50OneShop币充值卡购买</a>  | 
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">100OneShop币充值卡购买</a>  
-                    </li><li class="rSelect" style="width: 80%;">
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">500OneShop币充值卡购买</a></li>
-                    </ul>
-                </div>
-            </section-->
-     
      
     <section class="clearfix g-member">
         <div class="g-Recharge">
@@ -141,7 +115,7 @@
             </style>
 	     <article class="clearfix mt10 m-round g-pay-ment g-bank-ct">
 	        <ul id="ulBankList">
-			     <li class="gray6"  style="height:36px;">选择平台充值<em class="orange">10.00</em>OneShop币</li>
+			     <li class="gray6"  style="height:36px;">选择充值平台<em class="orange">10.00</em>OneShop币</li>
 			{wc:loop $paylist $pay}
 			     <li class="gray9" urm="{wc:$pay['pay_id']}">
 			         <i class="z-bank-Round"><s></s></i>{wc:$pay['pay_name']}<!-- CMBCHINA-WAP -->

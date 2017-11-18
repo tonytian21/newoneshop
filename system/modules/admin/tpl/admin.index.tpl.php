@@ -397,11 +397,7 @@ function api_off_on_open(key){
 
         <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/content/lists">管理内容</a></li>	
 
-        <li class="head">其他</li>
-
-        <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/content/model">内容模型</a></li>
-
-        <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/category/lists">栏目管理</a></li>
+        
 
         <li class="head">模块管理</li>
 

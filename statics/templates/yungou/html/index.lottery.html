@@ -82,52 +82,7 @@ font-family: "宋体";
 			{wc:if:end}
 		</div>
 	</div>
-	<!--
-	<div class="W-right fr" style="width:235px;border:none">
-		<div class="Newpublishbor b_gray">
-			<div class="Rtitle gray01">TA们正在OneShop </div>
-			<div class="Rcenter buylistH">
-				<ul id="buyList" style="margin-top: 0px;">
-					{wc:loop $member_record $record}
-					<li><a href="{WEB_PATH}/uname/{wc:fun:idjia($record['uid'])}" target="_blank" class="pic">						
-						{wc:if userid($record['uid'],'img')==null}
-						<img src="{G_TEMPLATES_STYLE}/images/prmimg.jpg" width="50" height="50" />
-						{wc:else}
-						<img id="imgUserPhoto" src="{G_UPLOAD_PATH}/{wc:fun:userid($record['uid'],'img')}" width="50" height="50" border="0"/>
-						{wc:if:end}	
-						</a>
-						<p class="Rtagou"><a class="blue" href="{WEB_PATH}/uname/{wc:fun:idjia($record['uid'])}" target="_blank">{wc:fun:userid($record['uid'],'username')}</a>刚刚夺得了</p>
-						<p class="Rintro"><a class="gray01" href="{WEB_PATH}/goods/{wc:$record['shopid']}" target="_blank">{wc:fun:_strcut($record['shopname'],28)}</a></p>
-					</li>
-					{wc:loop:end}
-				</ul>
-			</div>
-		</div>
-		<div class="blank10"></div>
-		<div class="Newpublishbor b_gray">
-			<div class="Rtitle gray01">人气排行 </div>
-			<div class="Rcenter RcenterPH">
-				<ul class="RcenterH" id="RcenterH">						
-					{wc:loop $shoplist $list}
-					<li>
-						<div name="simpleinfo">
-							<span class="pic"><a href="{WEB_PATH}/goods/{wc:$list['id']}" target="_blank">
-							{wc:if shopimg($list['id'])!=''}
-								<img src="{G_UPLOAD_PATH}/{wc:fun:shopimg($list['id'])}">
-							{wc:else}
-								<img src="{G_UPLOAD_PATH}/photo/member.jpg_30.jpg">
-							{wc:if:end}
-							</a></span>
-							<p class="Rintro gray01"><a href="{WEB_PATH}/goods/{wc:$list['id']}" target="_blank">{wc:fun:_strcut($list['title'],28)}</a></p>
-							<p><i>剩余人次</i><em>{wc:$list['zongrenshu']-$list['canyurenshu']}</em></p>
-						</div>
-					</li>
-					{wc:loop:end}
-				</ul>
-			</div>
-		</div>
-	</div>
-	-->
+	
 	<div class="clear"></div>
 </div>
 	</div>

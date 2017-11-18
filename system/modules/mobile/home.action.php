@@ -316,11 +316,11 @@ class home extends base
             
             $this->db->Query("INSERT INTO `@#_qiandao` SET `time` = $t, `uid` = $uid,`sum` = 1, `lianxu` = 1");
             
-            // 签到送100福分，同时送1元钱
+            // 签到送100积分，同时送1元钱
             
             $this->db->Query("UPDATE `@#_member` SET `score` = `score`+100, `money` =`money`+0 WHERE `uid` = $uid");
             
-            _messagemobile("签到成功，初次签到，系统会赠送您100福分！同时积分还可以兑换现金哦", WEB_PATH . "/mobile/home/userqiandao");
+            _messagemobile("签到成功，初次签到，系统会赠送您100积分！同时积分还可以兑换现金哦", WEB_PATH . "/mobile/home/userqiandao");
         }
         
         if ($qiandao['time'] > 0) {
@@ -554,7 +554,7 @@ class home extends base
                     'ok' => true,
                     'round' => 0,
                     'left' => $left,
-                    'desc' => '真遗憾，您没有中奖哦！剩余福分' . $lefts
+                    'desc' => '真遗憾，您没有中奖哦！剩余积分' . $lefts
                 );
                 echo json_encode($res);
                 die();

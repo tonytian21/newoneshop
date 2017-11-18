@@ -127,24 +127,7 @@
 						href="javascript:;"
 						onclick="AddFavorite(window.location,document.title)">收藏</a> <!--<span>|</span>-->
 					</li>
-					<!--<li class="fl mobile" style="position:relative;width: 50px;padding:0 25px;">
-						<a target="_blank" style="margin:0;" href="<?php echo G_WEB_PATH; ?>/app/index.html">手机OneShop</a>
-						<s style="left: 80px;"></s>
-						<span  class="shouji"></span>
-						<div class="h_mobile" style="padding:0 25px;width: 50px;height: 140px;z-index: 9999;">
-							<dl>
-								<li class="fl mobile">
-									<a target="_blank"  style="margin:0;color: #ff6600;" href="<?php echo G_WEB_PATH; ?>/app/index.html">手机OneShop</a>
-									<s style="left: 80px;"></s>
-									<span class="shouji" style="background-position: -45px -34px;"></span>
-								</li>
-							</dl>
-							<a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html">
-								<img style="position: absolute;left: 5px;top: 30px;" src="<?php echo G_TEMPLATES_STYLE; ?>/images/code.jpg" height="90" width="90">
-							</a>
-							<span style="line-height: 15px;color: #ff6600!important;display: block;position: absolute;top: 120px;left: 20px;"><a target="_blank" style="line-height: 18px;margin: 0;" href="<?php echo G_WEB_PATH; ?>/app/index.html">下载客户端</a></span>
-						</div>
-					</li>-->
+					
 				</ul>
 
 			</div>
@@ -404,7 +387,7 @@ $(function(){
 
 			{
 
-				alert("您可以通过快捷键Ctrl+D进行添加");
+				alert("您可以通过快捷键Ctrl+D进行添加收藏");
 
 			}
 

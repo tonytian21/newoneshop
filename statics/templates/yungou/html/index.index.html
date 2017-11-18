@@ -305,7 +305,7 @@
             </li>
             <li>
                 <h1 class="c_red">然后</h1>
-                <p>支付OneShop币参与OneShop，每一个OneShop币可参与一次OneShop</p>
+                <p>支付OneShop币参与夺宝，每一个OneShop币可参与一次夺宝</p>
             </li>
             <li>
                 <h1 class="c_red">最后</h1>
@@ -335,17 +335,11 @@
                     <a style="color: #2af;font-weight: normal;" class="c_yellow" href="{WEB_PATH}/uname/{wc:fun:idjia($gorecord['uid'])}" target="_blank">{wc:fun:get_user_name($gorecord)}</a> <!--&nbsp;于{wc:fun:_put_time($gorecord['time'])}-->
                 </p>
                 <div class="fl li_r"  style="margin-top: 5px;margin-left: 7px;">
-                    <!--<p>
-				花费
-				<span class="c_red">{wc:$gorecord['gonumber']}</span>
-				人次
-			</p>
-			-->
+                 
                     <a href="{WEB_PATH}/goods/{wc:$gorecord['shopid']}" target="_blank">
                         <span style="color: #6b6b6b; font-weight: normal;" class="c_red">{wc:$gorecord['shopname']}</span>
                     </a>
-                    <!--<p style="margin-top:-2px;">总需：{wc:$gorecord['zongrenshu']} 人次</p>
-		-->
+                   
                 </div>
             </li>
             {wc:loop:end}
@@ -368,10 +362,7 @@
                 <p class="name">
                     <a "{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:$renqi['title']}</a>
                 </p>
-               <!-- <p class="money">
-                    价值：
-                    <span class="rmb">{wc:$renqi['money']}</span> OneShop币
-                </p>-->
+              
                 <p class="money">
                     总需：
                     <span class="rmb">{wc:$renqi['zongrenshu']}</span> 人次
@@ -384,9 +375,7 @@
                         <li class="P-bar01">
                             <em class="c_red">{wc:$renqi['canyurenshu']}</em> 已参与人次
                         </li>
-                        <!--<li class="P-bar02">
-                            <em>{wc:$renqi['zongrenshu']}</em> 总需人次
-                        </li>-->
+                       
                         <li class="P-bar03">
                             <em>{wc:$renqi['zongrenshu']-$renqi['canyurenshu']}</em> 剩余人次
                         </li>

@@ -3,7 +3,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>注册 - {wc:$webname}触屏版</title>
+    <title>注册 - {wc:$webname}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -74,28 +74,7 @@
                     <li><a style="text-align: right;line-height: 32px;" href="/index.php/mobile/user/login">已有帐号，点击登陆</a></li>
                     <li><span id="isCheck"><em></em>我已阅读并同意</span><a href="{WEB_PATH}/mobile/mobile/terms">用户协议</a></li>
                 </ul>
-                <!--
-            <div class="fastLogin">
-            {wc:php:start}
-                    $conn_cfg = System::load_app_config("connect",'','api');
-            {wc:php:end}  
-                              <h2>        
-                                  <span class="line_l"></span> 一键登录<span class="line_r"></span>
-                                </h2>     
-                                <div class="fastInfo">
-                                      <a  href="{WEB_PATH}/mobile/user/qqlogin">
-                                {wc:if $conn_cfg['qq']['off']}   
-                                          <img src="" alt="" class="user_login_q">
-                                {wc:if:end} 
-                                          </a>
-                                          <a  href="{WEB_PATH}/api/wxlogin">
-                                {wc:if $conn_cfg['weixin']['off']}   
-                                          <img src="" alt="" class="user_login_w">
-                                {wc:if:end} 
-                                      </a>
-                                 </div>
-              </div>
-              -->
+               
             </div>
         </section>
         {wc:templates "mobile/index","footer"}

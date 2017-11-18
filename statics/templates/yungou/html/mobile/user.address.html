@@ -19,10 +19,6 @@
 					<a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">收货地址</a>
 				</span>
 
-				<!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
-				-->
-				<!--<img src="{G_TEMPLATES_IMAGE}/sjlogo.png"/>
-				-->
 			</h1>
 
 			<a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">
@@ -214,7 +210,7 @@
 							<div class="s1">
 								<ul>
 									<li>收&nbsp&nbsp货&nbsp&nbsp人：</li>
-									<li>收&nbsp&nbsp货QQ：</li>
+									
 									<li>手机号码：</li>
 									<li>收货地址：</li>
 								</ul>
@@ -222,7 +218,7 @@
 							<div class="s2">
 								<ul>
 									<li>{wc:$dz['shouhuoren']}</li>
-									<li>{wc:$dz['qq']}</li>
+
 									<li>{wc:$dz['mobile']}</li>
 									<li class="dizhis" id="dizh_{wc:$dz['id']}">
 										{wc:$dz['sheng']},{wc:$dz['shi']},{wc:$dz['xian']},{wc:$dz['jiedao']}
@@ -269,13 +265,7 @@
 									<input datatype="*1-100" class="input" nullmsg="请填街道地址！" errormsg="范围在100之间！" name="jiedao" type="text" class="street" maxlength="100" /> <em id="ship_address_valid_msg" class="red">*</em>
 								</td>
 							</tr>
-							<tr class="hanggao">
-								<td>
-									<label>收&nbsp&nbsp货QQ：</label>
-								</td>
-								<td>
-									<input  class="input"  errormsg="QQ号不符合常理" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="qq" type="text" id="txt_ship_qq" value="" class="inputTxt" maxlength="13"></td>
-							</tr>
+							
 							<tr class="hanggao">
 								<td>
 									<label>邮政编码：</label>
@@ -307,7 +297,7 @@
 							</td>
 							<td>
 								<input type="radio" name="shifoufahuo" value="1" />
-								是，马上收货&nbsp;&nbsp;&nbsp;
+								是，马上发货&nbsp;&nbsp;&nbsp;
 								<input type="radio" name="shifoufahuo" value="0" checked="checked" />
 								否，暂时别发货
 							</td>
@@ -354,13 +344,7 @@
 								<em id="ship_address_valid_msg" class="red">*</em>
 							</td>
 						</tr>
-						<tr class="hanggao">
-							<td>
-								<label>收&nbsp&nbsp货QQ：</label>
-							</td>
-							<td>
-								<input id="qqnb2" class="input" errormsg="QQ号不符合常理" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="qq" type="text" value="" class="inputTxt" maxlength="13"></td>
-						</tr>
+						
 						<tr class="hanggao">
 							<td>
 								<label>邮政编码：</label>
@@ -392,7 +376,7 @@
 						</td>
 						<td colspan="2">
 							<input type="radio" id="sffh21" name="shifoufahuo" value="1" />
-							是，马上收货&nbsp;
+							是，马上发货&nbsp;
                         &nbsp;&nbsp;
 							<input type="radio" id="sffh22" name="shifoufahuo" value="0" />
 							否，暂时别发货
