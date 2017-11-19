@@ -929,7 +929,7 @@ HTML;
 
 			}
 
-			if(empty($chongzhi) || $chongzhi=='请选择充值来源') $content=" AND (`content`='充值' or `content`='使用佣金充值到OneShop账户' or `content`='使用余额宝充值到OneShop账户')";
+			if(empty($chongzhi) || $chongzhi=='请选择充值来源') $content=" AND (`content`='充值' or `content`='使用佣金充值到账户' or `content`='使用余额宝充值到账户')";
 
 			
 
@@ -1042,9 +1042,9 @@ HTML;
 		$num=20;
 		if(empty($wheres)){
 
-			$total=$this->db->GetCount("SELECT count(*) FROM `@#_member_account` WHERE (`content`='充值' or `content`='使用佣金充值到OneShop账户' or `content`='使用余额宝充值到OneShop账户' OR `content`='通过微信公众号充值' or `content`='中奖充值') AND `type`='1'"); 
+			$total=$this->db->GetCount("SELECT count(*) FROM `@#_member_account` WHERE (`content`='充值' or `content`='使用佣金充值到账户' or `content`='使用余额宝充值到账户' OR `content`='通过微信公众号充值' or `content`='中奖充值') AND `type`='1'"); 
 
-			$summoeny=$this->db->GetOne("SELECT sum(money) sum_money FROM `@#_member_account` WHERE (`content`='充值' or `content`='使用佣金充值到OneShop账户' or `content`='使用余额宝充值到OneShop账户' OR `content`='通过微信公众号充值'or `content`='中奖充值') AND `type`='1'"); 
+			$summoeny=$this->db->GetOne("SELECT sum(money) sum_money FROM `@#_member_account` WHERE (`content`='充值' or `content`='使用佣金充值到账户' or `content`='使用余额宝充值到账户' OR `content`='通过微信公众号充值'or `content`='中奖充值') AND `type`='1'"); 
 
 		}else{
 
@@ -1062,7 +1062,7 @@ HTML;
 
 		if(empty($wheres)){
 
-			$recharge=$this->db->GetPage("SELECT * FROM `@#_member_account` WHERE (`content`='充值' or `content`='使用佣金充值到OneShop账户' or `content`='使用余额宝充值到OneShop账户' OR `content`='通过微信公众号充值'or `content`='中奖充值') AND `type`='1' order by `time` desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
+			$recharge=$this->db->GetPage("SELECT * FROM `@#_member_account` WHERE (`content`='充值' or `content`='使用佣金充值到账户' or `content`='使用余额宝充值到账户' OR `content`='通过微信公众号充值'or `content`='中奖充值') AND `type`='1' order by `time` desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
 		}else{
 

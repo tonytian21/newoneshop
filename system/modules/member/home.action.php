@@ -1113,7 +1113,7 @@ class home extends base {
 		  $type       = 1;
 		  $pay        ="佣金";
 		  $time       =time();
-		  $content    ="使用佣金充值到OneShop账户";
+		  $content    ="使用佣金充值到账户";
 		  
 		 if($money <= 0 || $money > $total){
 			  _message("佣金金额输入不正确！");exit;
