@@ -19,7 +19,7 @@
 	<div class="help-left-part">
 		<div class="help-nav">
 			<h3>帮助中心</h3>			
-            {wc:getlist sql="select * from `@#_category` where `parentid`='1'" return="category"}
+            {wc:getlist sql="select * from `@#_category` where `parentid`='3'" return="category"}
 			{wc:loop $category $help}
 			<h4>{wc:$help['name']}</h4>
 			<ul>
