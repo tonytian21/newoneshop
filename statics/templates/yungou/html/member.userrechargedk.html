@@ -31,19 +31,19 @@ $(function(){
 </script>
 <form id="toPayForm" name="toPayForm" action="{WEB_PATH}/cardrecharge/cardrcg/" method="post">
 <div class="R-content">
-	<div class="member-t"><h2>账户充值</h2></div>
+	<div class="member-t"><h2>{wc:fun:lang::get_lang('账户充值')}</h2></div>
 	<div class="select">
-		<input id="submit_ok" class="bluebut imm" type="button" onclick="location.href='{WEB_PATH}/member/home/userrecharge'" name="submit" value="在线充值" title="在线充值">
+		<input id="submit_ok" class="bluebut imm" type="button" onclick="location.href='{WEB_PATH}/member/home/userrecharge'" name="submit" value="{wc:fun:lang::get_lang('在线充值')}" title="{wc:fun:lang::get_lang('在线充值')}">
 		<ul id="ulMoneyList">
 		<input name="type" type="hidden" placeholder="" value="pc" style="padding-left: 50px;">
-			<li class="custom"><label for="rdOther">充值卡号：</label><input style="" name="code" type="text" class="enter"/></li>
-			<li class="custom"><label for="rdOther">充值密码：</label><input value="" name="codepwd" type="text" class="enter"/></li>
+			<li class="custom"><label for="rdOther">{wc:fun:lang::get_lang('充值卡号：')}</label><input style="" name="code" type="text" class="enter"/></li>
+			<li class="custom"><label for="rdOther">{wc:fun:lang::get_lang('充值密码：')}</label><input value="" name="codepwd" type="text" class="enter"/></li>
 		</ul>
 	</div>			
 				<input type="hidden" id="hidPayName" name="payName" value="">
 				<input type="hidden" id="hidPayBank" name="payBank" value="0">
 				<input type="hidden" id="hidMoney" name="money" value="10">
-				<input id="submit_ok" class="bluebut imm" type="submit" name="recharge" value="立即充值" title="立即充值">
+				<input id="submit_ok" class="bluebut imm" type="submit" name="recharge" value="{wc:fun:lang::get_lang('立即充值')}" title="{wc:fun:lang::get_lang('立即充值')}">
 			</form>
 		</div>
 	</div>  

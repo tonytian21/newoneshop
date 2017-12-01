@@ -3,7 +3,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>注册 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('注册')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -17,13 +17,13 @@
 
 <body style="background: #f4f4f4;">
     <div class="h5-1yyg-v1" id="content">
-        <!-- 栏目页面顶部 -->
-        <!-- 内页顶部 -->
+        <!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
+        <!-- {wc:fun:lang::get_lang('内页顶部')} -->
         <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
             <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
     <span style="display: block;height: 49px;line-height: 49px;">
       <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-        帐号注册
+        {wc:fun:lang::get_lang('帐号注册')}
       </a>
     </span>
 
@@ -44,11 +44,11 @@
             <div class="registerCon" style="padding-top: 49px;">
                 <ul>
                     <li>
-                        <input id="userMobile" type="tel" placeholder="请输入您的邮箱" class="rText">
+                        <input id="userMobile" type="tel" placeholder="{wc:fun:lang::get_lang('请输入您的邮箱')}" class="rText">
                         <s class="rs1"></s>
                     </li>
                     <li>
-                        <input type="password" id="txtPassword" placeholder="密码" class="rText">
+                        <input type="password" id="txtPassword" placeholder="{wc:fun:lang::get_lang('密码')}" class="rText">
                         <s style="margin-left: 0;" class="rs3"></s>
                     </li>
                     <li style="height: 45px;clear:both;">
@@ -67,12 +67,12 @@
                             background-size: 20px auto;
                         }
                         </style>
-                        <input id="yanzhengs" type="text" ajaxurl="{WEB_PATH}/member/user/codeCheck" placeholder="验证码" ajaxurl="{WEB_PATH}/member/user/codeCheck" class="inputxt" name="captcha" type="text" style="padding-left: 30px;width: 70%;float: left;" />
+                        <input id="yanzhengs" type="text" ajaxurl="{WEB_PATH}/member/user/codeCheck" placeholder="{wc:fun:lang::get_lang('验证码')}" ajaxurl="{WEB_PATH}/member/user/codeCheck" class="inputxt" name="captcha" type="text" style="padding-left: 30px;width: 70%;float: left;" />
                         <span class="fog" style="display: block;width: 20%;float: left;height: 45px;"><img style="border-radius: 5px; margin-left: 5px;margin-top: 10px;" id="checkcode" src="{WEB_PATH}/api/checkcode/image/80_27/"/></span>
                     </li>
-                    <li><a id="btnNext" class="nextBtn  orgBtn">下一步</a></li>
-                    <li><a style="text-align: right;line-height: 32px;" href="/index.php/mobile/user/login">已有帐号，点击登陆</a></li>
-                    <li><span id="isCheck"><em></em>我已阅读并同意</span><a href="{WEB_PATH}/mobile/mobile/terms">用户协议</a></li>
+                    <li><a id="btnNext" class="nextBtn  orgBtn">{wc:fun:lang::get_lang('下一步')}</a></li>
+                    <li><a style="text-align: right;line-height: 32px;" href="/index.php/mobile/user/login">{wc:fun:lang::get_lang('已有帐号，点击登陆')}</a></li>
+                    <li><span id="isCheck"><em></em>{wc:fun:lang::get_lang('我已阅读并同意')}</span><a href="{WEB_PATH}/mobile/mobile/terms">{wc:fun:lang::get_lang('用户协议')}</a></li>
                 </ul>
                 <!--
             <div class="fastLogin">
@@ -80,7 +80,7 @@
                     $conn_cfg = System::load_app_config("connect",'','api');
             {wc:php:end}  
                               <h2>        
-                                  <span class="line_l"></span> 一键登录<span class="line_r"></span>
+                                  <span class="line_l"></span> {wc:fun:lang::get_lang('一键登录')}<span class="line_r"></span>
                                 </h2>     
                                 <div class="fastInfo">
                                       <a  href="{WEB_PATH}/mobile/user/qqlogin">

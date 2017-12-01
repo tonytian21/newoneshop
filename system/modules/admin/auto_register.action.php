@@ -32,10 +32,12 @@ class auto_register extends admin {
 	         _message( '上传失败！');
 	      }
 	      $res = $this->read($savePath . $file_name);
+	      
 	      unset($res[1]);
 	}else{
 		 _message( '附件不能为空！');
 	}
+
 	$tems  = 0;     
 	foreach ($res as $k => $v) {
 		$username = $v[0];//用户名
@@ -60,16 +62,20 @@ class auto_register extends admin {
 				$member_m=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$mobile' LIMIT 1");
 			}
 		}
+
+		//获取随机头像
+		$imageUrl = 'photo/20171127/20171127'.str_pad(mt_rand(1,1334),5,"0",STR_PAD_LEFT).'.jpg';
+
 		if(is_array($member_e)){
 			if(!is_array($member_m)){
-				$this->db->Query("INSERT INTO `@#_member`(username,password,mobile,img,emailcode,mobilecode,time,auto_user)VALUES('$username','$password','$mobile','photo/member.jpg','-1','1','$time','1')");
+				$this->db->Query("INSERT INTO `@#_member`(username,password,mobile,img,emailcode,mobilecode,time,auto_user)VALUES('$username','$password','$mobile','$imageUrl','-1','1','$time','1')");
 				$tems++;
 			}
 		}else{
 			if(is_array($member_m)){
-				$this->db->Query("INSERT INTO `@#_member`(username,password,email,img,emailcode,mobilecode,time,auto_user)VALUES('$username','$password','$email','photo/member.jpg','1','-1','$time','1')");
+				$this->db->Query("INSERT INTO `@#_member`(username,password,email,img,emailcode,mobilecode,time,auto_user)VALUES('$username','$password','$email','$imageUrl','1','-1','$time','1')");
 			}else{
-				$this->db->Query("INSERT INTO `@#_member`(username,password,email,mobile,img,emailcode,mobilecode,time,auto_user) VALUES ('$username','$password','$email','$mobile','photo/member.jpg','1','1','$time','1')");
+				$this->db->Query("INSERT INTO `@#_member`(username,password,email,mobile,img,emailcode,mobilecode,time,auto_user) VALUES ('$username','$password','$email','$mobile','$imageUrl','1','1','$time','1')");
 			}
 			
 			$tems++;

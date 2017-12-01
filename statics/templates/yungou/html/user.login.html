@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>登录-{wc:fun:_cfg("web_name")}</title>
+<title>{wc:fun:lang::get_lang('登录')}-{wc:fun:_cfg("web_name")}</title>
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/comm.css"/>
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/index.css"/>
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/color.css"/>
@@ -15,17 +15,17 @@
 <!--
 <script>
 $(function(){
-    var select_form = $('input:text,textarea'); //选择需要添加提示文字的表单
+    var select_form = $('input:text,textarea'); //{wc:fun:lang::get_lang('选择需要添加提示文字的表单')}
     for(i=0;i<select_form.length;i++){          
-        select_form.eq(i).val(select_form.eq(i).attr('fs')).css('color','#999');//设置表单的值为一个属性值为“fs”的值    
+        select_form.eq(i).val(select_form.eq(i).attr('fs')).css('color','#999');//{wc:fun:lang::get_lang('设置表单的值为一个属性值为“')}fs{wc:fun:lang::get_lang('”的值')}    
     }  
-    select_form.focus(function(){   //获得焦点
+    select_form.focus(function(){   //{wc:fun:lang::get_lang('获得焦点')}
         if($(this).val()==$(this).attr('fs')){
           $(this).val('');
           $(this).css('color','#333');
         }    
     })
-    select_form.blur(function(){    //失去焦点  
+    select_form.blur(function(){    //{wc:fun:lang::get_lang('失去焦点')}  
         if($(this).val()==''){
            $(this).val($(this).attr('fs'));
            $(this).css('color','#999');
@@ -49,7 +49,7 @@ $(function(){
 	<div class="login_header">
 		<div class="login_top">
 			<h1><a rel="nofollow" href="{G_WEB_PATH}"><img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"></a></h1>
-			<p><a rel="nofollow" href="{G_WEB_PATH}" class="back_home">返回首页</a><a href="{WEB_PATH}/help/1" target="_blank" class="help">帮助中心</a></p>
+			<p><a rel="nofollow" href="{G_WEB_PATH}" class="back_home">{wc:fun:lang::get_lang('返回首页')}</a><a href="{WEB_PATH}/help/1" target="_blank" class="help">{wc:fun:lang::get_lang('帮助中心')}</a></p>
 		</div>
 	</div>
 	<div class="login_bg">
@@ -58,17 +58,17 @@ $(function(){
 		<div class="login_box_guding">
 		<div class="login_box_guding1"></div>
 		<form class="registerform" method="post" action="">
-			<h3><span style="display:block;float: left;">用户登录</span><a id="hylinkRegisterPage" style="padding:0px 10px;display: block;float: right;font-size: 16px;color: #f60;" tabindex="4" class="reg" href="{WEB_PATH}/register">免费注册>></a></h3>
+			<h3><span style="display:block;float: left;">{wc:fun:lang::get_lang('用户登录')}</span><a id="hylinkRegisterPage" style="padding:0px 10px;display: block;float: right;font-size: 16px;color: #f60;" tabindex="4" class="reg" href="{WEB_PATH}/register">{wc:fun:lang::get_lang('免费注册')}>></a></h3>
 			<ul>				
 				<li class="click">
-					<input style="color: #666;" placeholder="邮箱地址" class="text_password" name="username" type="text"  />
+					<input style="color: #666;" placeholder="{wc:fun:lang::get_lang('邮箱地址')}" class="text_password" name="username" type="text"  />
 					<b class="passport-icon"></b>
 				</li>
 				<li class="click1">				
-					<input style="color: #666;" class="text_password" name="password" type="password" placeholder="密码" />
+					<input style="color: #666;" class="text_password" name="password" type="password" placeholder="{wc:fun:lang::get_lang('密码')}" />
 					<b class="passport-icon" style="top:31px;height: 20px;background-position: 0 -25px;"></b>
 				</li>
-				<li class="fog" style="height: 25px;line-height: 25px;text-align:right;width: 300px;"><a href="{WEB_PATH}/member/finduser/findpassword">忘记密码？</a></li> 								
+				<li class="fog" style="height: 25px;line-height: 25px;text-align:right;width: 300px;"><a href="{WEB_PATH}/member/finduser/findpassword">{wc:fun:lang::get_lang('忘记密码？')}</a></li> 								
 				</li>
 				 <li class="yanzheng">
 				     <input style="color: #666;" class="text_verify" ajaxurl="{WEB_PATH}/member/user/codeCheck"
@@ -77,7 +77,7 @@ $(function(){
 				 </li>
 	
 				<li class="end">
-				<span><input name="submit" type="submit" value="登&nbsp&nbsp录" class="login_init" ></span>
+				<span><input name="submit" type="submit" value="{wc:fun:lang::get_lang('登')}&nbsp&nbsp{wc:fun:lang::get_lang('录')}" class="login_init" ></span>
 				 
 
 				</li>
@@ -90,7 +90,7 @@ $(function(){
             {wc:if $conn_cfg['qq']['off'] or $conn_cfg['weixinpc']['off'] or $conn_cfg['facebook']['off']}
  			<div class="loginQQ">
  				<span id="qq_login_btn">
- 					使用其它方式快捷登录：
+ 					{wc:fun:lang::get_lang('使用其它方式快捷登录：')}
  				</span>
  				{wc:if $conn_cfg['facebook']['off']}<a class="facebookdenglu" style="background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 5px center; padding-left:26px; background-size: auto 70%;" href="{G_WEB_PATH}/index.php/api/facebooklogin/"><b></b>FaceBook</a>{wc:if:end}
   				{wc:if $conn_cfg['qq']['off']}<a class="qqdenglu" href="{G_WEB_PATH}/index.php/api/qqlogin/"><b class="passport-icon1 transparent-png"></b></a> {wc:if:end}	
@@ -104,11 +104,11 @@ $(function(){
 		</div>
 	</div>
 </div>
-<!--login 结束-->
+<!--login {wc:fun:lang::get_lang('结束')}-->
 <div class="g-copyrightCon" style="padding-top: 50px;">
 	<div class="w1190">
 		<div class="g-links">
-			<a href="{WEB_PATH}">首页</a>
+			<a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a>
 			<s></s>
 				{wc:fun:Getheader('foot')}
   		</div>
@@ -120,10 +120,10 @@ $(function(){
 
 $("#registerform").Validform({
 		tiptype:function(msg,o,cssctl){
-			//msg：提示信息;
-			//o:{obj:*,type:*,curform:*}, obj指向的是当前验证的表单元素（或表单对象），type指示提示的状态，值为1、2、3、4， 1：正在检测/提交数据，2：通过验证，3：验证失败，4：提示ignore状态, curform为当前form对象;
-			//cssctl:内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象 和 当前提示的状态（既形参o中的type）;
-			if(!o.obj.is("form")){//验证表单元素时o.obj为该表单元素，全部验证通过提交表单时o.obj为该表单对象;
+			//msg{wc:fun:lang::get_lang('：提示信息')};
+			//o:{obj:*,type:*,curform:*}, obj{wc:fun:lang::get_lang('指向的是当前验证的表单元素（或表单对象），')}type{wc:fun:lang::get_lang('指示提示的状态，值为')}1{wc:fun:lang::get_lang('、')}2{wc:fun:lang::get_lang('、')}3{wc:fun:lang::get_lang('、')}4{wc:fun:lang::get_lang('，')} 1{wc:fun:lang::get_lang('：正在检测')}/{wc:fun:lang::get_lang('提交数据，')}2{wc:fun:lang::get_lang('：通过验证，')}3{wc:fun:lang::get_lang('：验证失败，')}4{wc:fun:lang::get_lang('：提示')}ignore{wc:fun:lang::get_lang('状态')}, curform{wc:fun:lang::get_lang('为当前')}form{wc:fun:lang::get_lang('对象')};
+			//cssctl:{wc:fun:lang::get_lang('内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象')} {wc:fun:lang::get_lang('和')} {wc:fun:lang::get_lang('当前提示的状态（既形参')}o{wc:fun:lang::get_lang('中的')}type{wc:fun:lang::get_lang('）')};
+			if(!o.obj.is("form")){//{wc:fun:lang::get_lang('验证表单元素时')}o.obj{wc:fun:lang::get_lang('为该表单元素，全部验证通过提交表单时')}o.obj{wc:fun:lang::get_lang('为该表单对象')};
 				//var objtip=o.obj.siblings(".Validform_checktip");
 				var objtip=o.obj.parent().next().find(".Validform_checktip");
 				cssctl(objtip,o.type);

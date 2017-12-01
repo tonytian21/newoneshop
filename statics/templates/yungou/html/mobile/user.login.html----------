@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>登录 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('登录')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -16,16 +16,16 @@
 <body>
     <div class="h5-1yyg-v1" id="content">
         
-<!-- 栏目页面顶部 -->
+<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
 
 
-<!-- 内页顶部 -->
+<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 
     <header class="g-header">
         <div class="head-l">
-	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
+	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>{wc:fun:lang::get_lang('返回')}</b></a>
         </div>
-        <h2>登录</h2>
+        <h2>{wc:fun:lang::get_lang('登录')}</h2>
         <div class="head-r">
 	        <a href="{WEB_PATH}/mobile/mobile" class="z-Home"></a>
         </div>
@@ -35,20 +35,20 @@
 	        <div class="registerCon">
     	        <ul>
         	        <li class="accAndPwd">
-            	        <dl><input id="txtAccount" type="text" placeholder="请输入您的手机号码/邮箱" class="lEmail"><s class="rs4"></s></dl>
+            	        <dl><input id="txtAccount" type="text" placeholder="{wc:fun:lang::get_lang('请输入您的手机号码')}/{wc:fun:lang::get_lang('邮箱')}" class="lEmail"><s class="rs4"></s></dl>
                         <dl>
-                            <input type="password" id="txtPassword" class="lPwd" placeholder="密码">
+                            <input type="password" id="txtPassword" class="lPwd" placeholder="{wc:fun:lang::get_lang('密码')}">
                             <s class="rs3"></s>
                         </dl>
                         <dl style="display:none">
-                            <input type="hidden" id="txtVerify" class="lVerify" placeholder="验证码" value="123456"><span class="fog"></span>
+                            <input type="hidden" id="txtVerify" class="lVerify" placeholder="{wc:fun:lang::get_lang('验证码')}" value="123456"><span class="fog"></span>
                             <s class="rs3"></s>
                         </dl>
-              <dl style="text-align: center"><a href="{WEB_PATH}/mobile/user/step1">忘记密码？</a></dl>
+              <dl style="text-align: center"><a href="{WEB_PATH}/mobile/user/step1">{wc:fun:lang::get_lang('忘记密码？')}</a></dl>
                     </li>
                     <li>
-                      <a href="javascript:;" id="btnLogin" class="nextBtn orgBtn" style="width:40%; float:left;">登 录</a>
-                      <a href="{WEB_PATH}/mobile/user/register" class="nextBtn orgBtn" style="width:40%; float:right;">注册</a>
+                      <a href="javascript:;" id="btnLogin" class="nextBtn orgBtn" style="width:40%; float:left;">{wc:fun:lang::get_lang('登')} {wc:fun:lang::get_lang('录')}</a>
+                      <a href="{WEB_PATH}/mobile/user/register" class="nextBtn orgBtn" style="width:40%; float:right;">{wc:fun:lang::get_lang('注册')}</a>
                       <input name="hidLoginForward" type="hidden" id="hidLoginForward" value="{WEB_PATH}/mobile/home" /></li>
 			</li>
                     <li class="rSelect"></li>
@@ -58,7 +58,7 @@
                         $conn_cfg = System::load_app_config("connect",'','api');
                 {wc:php:end}  
                                   <h2>        
-                                      <span class="line_l"></span> 一键登录<span class="line_r"></span>
+                                      <span class="line_l"></span> {wc:fun:lang::get_lang('一键登录')}<span class="line_r"></span>
                                     </h2>     
                                     <div class="fastInfo">
                                           <a  href="{WEB_PATH}/api/qqlogin">

@@ -83,21 +83,21 @@
             <div class="banner_top" style="margin-top: 10px;">
                 <ul>
                     <li class="qian">
-                        <a href="{WEB_PATH}/mobile/home/userqiandao"> <em>签到</em>
+                        <a href="{WEB_PATH}/mobile/home/userqiandao"> <em>{wc:fun:lang::get_lang('签到')}</em>
                         </a>
                     </li>
                     <li class="shai">
-                        <a href="{WEB_PATH}/mobile/shaidan/"> <em>晒单</em>
+                        <a href="{WEB_PATH}/mobile/shaidan/"> <em>{wc:fun:lang::get_lang('晒单')}</em>
                         </a>
                     </li>
                     <li class="chong">
                         <a href="{WEB_PATH}/mobile/home/userrecharge">
-                            <em>充值</em>
+                            <em>{wc:fun:lang::get_lang('充值')}</em>
                         </a>
                     </li>
                     <li class="new">
                         <a href="{WEB_PATH}/mobile/mobile/about">
-                            <em>帮助</em>
+                            <em>{wc:fun:lang::get_lang('帮助')}</em>
                         </a>
                     </li>
                 </ul>
@@ -117,7 +117,7 @@
                         <div id="demo2"></div>
                     </div>
                     <div style="position: absolute;width: 40px;right: 3px;top: 9px;">
-                        <a style="color: #666;" href="{WEB_PATH}/mobile/mobile/gonggao/">更多>></a>
+                        <a style="color: #666;" href="{WEB_PATH}/mobile/mobile/gonggao/">{wc:fun:lang::get_lang('更多')}>></a>
                     </div>
                 </div>
                 <script>
@@ -143,8 +143,8 @@
                 }
                 </script>
                 <a style="border-bottom: 1px solid #dcdcdc;" href="{WEB_PATH}/mobile/mobile/lottery">
-                    最新揭晓
-                    <label style="position:absolute; right:1rem; cursor:pointer;">显示全部&nbsp;></label>
+                    {wc:fun:lang::get_lang('最新揭晓')}
+                    <label style="position:absolute; right:1rem; cursor:pointer;">{wc:fun:lang::get_lang('显示全部')}&nbsp;></label>
                 </a>
                 <ul class="ul" style="border-right: 1px solid #dcdcdc;">
                     <script>
@@ -182,8 +182,8 @@
                                 <h6>{wc:fun:_strcut($qishu['title'],30)}</h6>
                                 <div class="zj">
                                     <div style="text-align:left;white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color:#f04900;padding:0.4rem 0 0 0;">
-                                        <time class="countdown" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;font-size: 1rem;line-height: 2rem;height: 2rem;" data-dom_id="#r{wc:$qishu['id']}" data-sec="{wc:fun:ceil($qishu['q_end_time']-time())}" data-text="正在揭晓..." data-delay="1000" data-callback="DuoBao.refresh_prize">开始倒计时</time>
-                                        <div id="daojishi">倒计时</div>
+                                        <time class="countdown" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;font-size: 1rem;line-height: 2rem;height: 2rem;" data-dom_id="#r{wc:$qishu['id']}" data-sec="{wc:fun:ceil($qishu['q_end_time']-time())}" data-text="{wc:fun:lang::get_lang('正在揭晓')}..." data-delay="1000" data-callback="DuoBao.refresh_prize">{wc:fun:lang::get_lang('开始倒计时')}</time>
+                                        <div id="daojishi">{wc:fun:lang::get_lang('倒计时')}</div>
                                     </div>
                                 </div>
                             </div>
@@ -206,23 +206,23 @@
                 -->
                     <ul class="lbul" id="divGoodsNav">
                         <li id="jiexiaos" class="current" order="10">
-                            <a href="javascript:;">即将揭晓</a>
+                            <a href="javascript:;">{wc:fun:lang::get_lang('即将揭晓')}</a>
                         </li>
                         <li class="" order="20">
-                            <a href="javascript:;">最快</a>
+                            <a href="javascript:;">{wc:fun:lang::get_lang('最快')}</a>
                         </li>
                         <li class="" order="30">
-                            <a href="javascript:;">高价</a>
+                            <a href="javascript:;">{wc:fun:lang::get_lang('高价')}</a>
                         </li>
                         <li class="" order="40">
-                            <a href="javascript:;">低价</a>
+                            <a href="javascript:;">{wc:fun:lang::get_lang('低价')}</a>
                         </li>
                         <li class="fenlel" style="border-left: 1px solid #dcdcdc;" order="">
-                    <a style="color: #999;" href="javascript:;"><span class="sh"><i></i><i style="margin-top: 3px;"></i><i style="margin-top: 3px;"></i></span>分类</a>
+                    <a style="color: #999;" href="javascript:;"><span class="sh"><i></i><i style="margin-top: 3px;"></i><i style="margin-top: 3px;"></i></span>{wc:fun:lang::get_lang('分类')}</a>
                     <dl style="display:none;background: #fff;">
                         <div class="jiantou"></div>
                         <!--<dd type="0" class="sOrange"><a style="text-align: center;" href="{WEB_PATH}/mobile/mobile/glist">全部</a></dd>-->
-                        <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">全部分类</a></dd>
+                        <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">{wc:fun:lang::get_lang('全部分类<')}/a></dd>
                     {wc:getlist sql="select `cateid`,`name`,`pic_url` from `@#_category` where `model`='1' and `parentid` = '0' order by `order` desc"}
                             {wc:loop $data $categoryx}
                             <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/fen/{wc:$categoryx['cateid']}"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}"><span>{wc:$categoryx['name']}</span></a></dd>
@@ -235,10 +235,10 @@
                 <div class="goodsList" style="clear: both;">
                     <div id="divGoodsLoading" class="loading" style="display:none;height: 80px;">
                     </div>
-                    <a id="btnLoadMore" class="loading" href="javascript:;" style="display:none;border: none!important;"> <i class="jiazai"></i> 正在加载...
+                    <a id="btnLoadMore" class="loading" href="javascript:;" style="display:none;border: none!important;"> <i class="jiazai"></i> {wc:fun:lang::get_lang('正在加载')} ...
                     </a>
-                    <a id="btnLoadMore2" class="loading" style="display:none; padding-top: 0px;">~~木有更多商品了~~</a>
-                    <a id="btnLoadMore3" class="loading" style="display:none; padding-top: 0px;">~~木有更多商品了~~</a>
+                    <a id="btnLoadMore2" class="loading" style="display:none; padding-top: 0px;">~~{wc:fun:lang::get_lang('木有更多商品了')}~~</a>
+                    <a id="btnLoadMore3" class="loading" style="display:none; padding-top: 0px;">~~{wc:fun:lang::get_lang('木有更多商品了')}~~</a>
                 </div>
             </div>
             <input id="urladdress" value="" type="hidden" />
@@ -274,16 +274,16 @@ window.onload=function(){
                 $("#pagenum").val(data[0].page);
                 for (var i = 0; i < data.length; i++) {
                     var ul = '<ul><li>';
-                    ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">价值：￥' + data[i].money + '</div></span>';
+                    ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">{wc:fun:lang::get_lang('离线留言')}价值：￥' + data[i].money + '</div></span>';
                     ul += '<div style="margin-top:15px;" class="goodsListR">';
-                    ul += '<h2 id="' + data[i].id + '">(第' + data[i].qishu + '期)' + data[i].title + '</h2>';
+                    ul += '<h2 id="' + data[i].id + '">{wc:fun:lang::getlang('第%s期',$val['qishu'])}' + data[i].title + '</h2>';
                     ul += '</div>';
                     ul += '<div class="pRate item_bottom_container">';
                     ul += '<div class="Progress-bar jdt_container" id="' + data[i].id + '">';
                     ul += '<div style="color:#646464;margin-top:2px;">';
                     var num =(data[i].canyurenshu / data[i].zongrenshu) * 100;
                     num = num.toFixed(2);
-                    ul += '进度&nbsp;<label class="color_blue" id="jd">'+num+'%</label>';
+                    ul += '{wc:fun:lang::get_lang('进度')}&nbsp;<label class="color_blue" id="jd">'+num+'%</label>';
                     ul += '</div>';
                     ul += '<p class="u-progress jdt" style="margin-left:0;"><span class="pgbar" style="width:' +num+ '%;"><span class="pging"></span></span></p></div>';
                     ul += '<div class="buy_container"><div class="btn_buy">';
@@ -369,9 +369,9 @@ window.onload=function(){
         var codeid=$(this).attr('codeid');
         $.getJSON('{WEB_PATH}/mobile/ajax/addShopCart/'+codeid+'/1',function(data){
             if(data.code==1){
-                addsuccess('添加失败');
+                addsuccess('{wc:fun:lang::get_lang('添加失败')}');
             }else if(data.code==0){
-                addsuccess('添加成功');             
+                addsuccess('{wc:fun:lang::get_lang('添加成功')}');             
             }return false;
         });
     });
@@ -444,33 +444,33 @@ window.onload=function(){
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
+        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
         link: n, // 分享链接
         imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareAppMessage({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        desc: "以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想", // 分享描述
+        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
+        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
          success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareQQ({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        desc: "以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想", // 分享描述
+        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
+        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
         success: function () { 
@@ -481,15 +481,15 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareWeibo({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        desc: "以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想", // 分享描述
+        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
+        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
 });

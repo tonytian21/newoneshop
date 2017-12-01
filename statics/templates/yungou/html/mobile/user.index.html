@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
-	<title>我的{wc:fun:_cfg('web_name_two')} - {wc:$webname}触屏版</title>
+	<title>{wc:fun:lang::get_lang('我的')}{wc:fun:_cfg('web_name_two')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
 	<meta content="yes" name="apple-mobile-web-app-capable" />
 	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
 	<meta content="telephone=no" name="format-detection" />
@@ -15,14 +15,14 @@
 <body>
 	<div class="h5-1yyg-v11">
 
-		<!-- 栏目页面顶部 -->
+		<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
 
-		<!-- 内页顶部 -->
+		<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 		<header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
 
 			<h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
 				<span style="display: block;height: 49px;line-height: 49px;">
-					<a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">我的乐购</a>
+					<a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">{wc:fun:lang::get_lang('我的乐购')}</a>
 				</span>
 
 				<!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
@@ -160,17 +160,17 @@
                     	{G_UPLOAD_PATH}/{wc:$touxiang}
                     {wc:if:end}" border=0>
 				</a>
-				<span class="{wc:if $member['yungoudj']=='云购新手'}
+				<span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('云购新手')}'}
 					z-class-icon01
-				{wc:elseif $member['yungoudj']=='云购小将'}
+				{wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购小将')}'}
 					z-class-icon02
-				{wc:elseif $member['yungoudj']=='云购中将'}
+				{wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购中将')}'}
 					z-class-icon03
-				{wc:elseif $member['yungoudj']=='云购上将'}
+				{wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购上将')}'}
 					z-class-icon04
-				{wc:elseif $member['yungoudj']=='云购大将'}
+				{wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购大将')}'}
 					z-class-icon05
-				{wc:elseif $member['yungoudj']=='云购将军'}
+				{wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购将军')}'}
 					z-class-icon06
 				{wc:if:end} gray02">
 					<s></s>
@@ -190,7 +190,7 @@
 					{wc:else} 
 					<em>
 					<a href="{WEB_PATH}/mobile/user/mobile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
-					绑定手机
+					{wc:fun:lang::get_lang('绑定手机')}
 					</a>
 					</em> 
 					{wc:if:end}
@@ -199,7 +199,7 @@
 					{wc:else} 
 					<em>
 					<a href="{WEB_PATH}/mobile/user/profile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
-					绑定昵称
+					{wc:fun:lang::get_lang('绑定昵称')}
 					</a>
 					</em> 
 					{wc:if:end}
@@ -207,17 +207,17 @@
 				</p>
 				<ul class="clearfix u-mbr-info">
 					<li>
-						可用积分
+						{wc:fun:lang::get_lang('可用积分')}
 						<span class="orange">{wc:$member['score']}</span>
 					</li>
 					<li>
-						经验值
+						{wc:fun:lang::get_lang('经验值')}
 						<span class="orange">{wc:$member['jingyan']}</span>
 					</li>
 					<li>
-						可用乐币
-						<span class="orange">：{wc:$member['money']}</span>
-						<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">去充值</a>
+						{wc:fun:lang::get_lang('可用乐币')}
+						<span class="orange">{wc:fun:lang::get_lang('：')}{wc:$member['money']}</span>
+						<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
 					</li>
 				</ul>
 			</div>
@@ -226,117 +226,117 @@
 			<ul id="ulFun">
 				<li>
 					<a href="{WEB_PATH}/mobile/home/userqiandao"> <b class="z-arrow qiandao"></b>
-						每日签到
+						{wc:fun:lang::get_lang('每日签到')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/home/userbuylist">
 						<b class="z-arrow jilu"></b>
-						乐购记录
+						{wc:fun:lang::get_lang('乐购记录')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/home/orderlist">
 						<b class="z-arrow huode"></b>
-						中奖记录
+						{wc:fun:lang::get_lang('中奖记录')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/home/singlelist">
 						<b style="width: 26px;" class="z-arrow shaidan"></b>
-						我的晒单
+						{wc:fun:lang::get_lang('我的晒单')}
 					</a>
 				</li>
 				<!--
 				<li>
 					<a href="{WEB_PATH}/mobile/home/choujiang">
 						<b class="z-arrow chongzhi"></b>
-						充值抽奖
+						{wc:fun:lang::get_lang('充值抽奖')}
 					</a>
 				</li>
 				-->
 				<li>
 					<a href="{WEB_PATH}/mobile/home/userbalance">
 						<b class="z-arrow mingxi"></b>
-						帐户明细
+						{wc:fun:lang::get_lang('帐户明细')}
 					</a>
 				</li>
 
 				<li>
 					<a href="{WEB_PATH}/mobile/home/invite">
 						<b style="width: 35px;background-position: -1441px 0;" class="z-arrow yaoqing"></b>
-						邀请管理
+						{wc:fun:lang::get_lang('邀请管理')}
 					</a>
 				</li>
 				<!--
 				<li>
 					<a href="{WEB_PATH}/mobile/invite/commissions">
 						<b class="z-arrow1 fenxiang"></b>
-						佣金明细
+						{wc:fun:lang::get_lang('佣金明细')}
 					</a>
 				</li>
 
 				<li>
 					<a href="{WEB_PATH}/mobile/invite/cashout">
 						<b class="z-arrow yongjin"></b>
-						佣金提现
+						{wc:fun:lang::get_lang('佣金提现')}
 					</a>
 				</li>
 				-->
 				<li>
 					<a href="{WEB_PATH}/mobile/home/zhuanzhang">
 						<b class="z-arrow1 zhuanzhang"></b>
-						用户转账
+						{wc:fun:lang::get_lang('用户转账')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/invite/mycode">
 						<b style="width: 26px;" class="z-arrow1 erweima"></b>
-						二维码推广
+						{wc:fun:lang::get_lang('二维码推广')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/home/inviteshare">
 						<b class="z-arrow1 gouwuzhinan"></b>
-						购物指南
+						{wc:fun:lang::get_lang('购物指南')}
 					</a>
 				</li>
-				<div class="member_wz">资料编辑</div>
+				<div class="member_wz">{wc:fun:lang::get_lang('资料编辑')}</div>
 				<li>
 					<a href="{WEB_PATH}/mobile/user/profile">
 						<b class="z-arrow qq"></b>
-						绑定QQ
+						{wc:fun:lang::get_lang('绑定')}QQ
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/user/profile">
 						<b class="z-arrow ziliao"></b>
-						修改资料
+						{wc:fun:lang::get_lang('修改资料')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/user/headimg">
 						<b style="width: 24px;" class="z-arrow touxiang"></b>
-						修改头像
+						{wc:fun:lang::get_lang('修改头像')}
 					</a>
 				</li>
 
 				<li>
 					<a href="{WEB_PATH}/mobile/home/address">
 						<b style="width: 30px;" class="z-arrow dizhi"></b>
-						地址管理
+						{wc:fun:lang::get_lang('地址管理')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/user/password">
 						<b class="z-arrow gaimi"></b>
-						修改密码
+						{wc:fun:lang::get_lang('修改密码')}
 					</a>
 				</li>
 				<li>
 					<a href="{WEB_PATH}/mobile/user/cook_end">
 						<b class="z-arrow1 tuichu"></b>
-						安全退出
+						{wc:fun:lang::get_lang('安全退出')}
 					</a>
 				</li>
 			</ul>
@@ -366,52 +366,52 @@ Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js');
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
+        title: "{wc:fun:lang::get_lang('梦想还是要有的')},{wc:fun:lang::get_lang('万一实现了呢')}?", // {wc:fun:lang::get_lang('分享标题')}
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // {wc:fun:lang::get_lang('分享图标')}
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareAppMessage({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        desc: "以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
-        type: '', // 分享类型,music、video或link，不填默认为link
-        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        title: "{wc:fun:lang::get_lang('梦想还是要有的')},{wc:fun:lang::get_lang('万一实现了呢')}?", // {wc:fun:lang::get_lang('分享标题')}
+        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // {wc:fun:lang::get_lang('分享描述')}
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // {wc:fun:lang::get_lang('分享图标')}
+        type: '', // {wc:fun:lang::get_lang('分享类型')},music{wc:fun:lang::get_lang('、')}video{wc:fun:lang::get_lang('或')}link{wc:fun:lang::get_lang('，不填默认为')}link
+        dataUrl: '', // {wc:fun:lang::get_lang('如果')}type{wc:fun:lang::get_lang('是')}music{wc:fun:lang::get_lang('或')}video{wc:fun:lang::get_lang('，则要提供数据链接，默认为空')}
          success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareQQ({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        desc: "以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
+        title: "{wc:fun:lang::get_lang('梦想还是要有的')},{wc:fun:lang::get_lang('万一实现了呢')}?", // {wc:fun:lang::get_lang('分享标题')}
+        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // {wc:fun:lang::get_lang('分享描述')}
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // {wc:fun:lang::get_lang('分享图标')}
         success: function () { 
-           // 用户确认分享后执行的回调函数
+           // {wc:fun:lang::get_lang('用户确认分享后执行的回调函数')}
         },
         cancel: function () { 
-           // 用户取消分享后执行的回调函数
+           // {wc:fun:lang::get_lang('用户取消分享后执行的回调函数')}
         }
     });
     wx.onMenuShareWeibo({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
-        desc: "以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
+        title: "{wc:fun:lang::get_lang('梦想还是要有的')},{wc:fun:lang::get_lang('万一实现了呢')}?", // {wc:fun:lang::get_lang('分享标题')}
+        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // {wc:fun:lang::get_lang('分享描述')}
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // {wc:fun:lang::get_lang('分享图标')}
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
 });

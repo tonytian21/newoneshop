@@ -3,20 +3,20 @@
 {wc:templates "member","left"}
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.message.css"/>
               <div class="R-content">
-            <div class="member-t"><h2>佣金明细</h2></div>
+            <div class="member-t"><h2>{wc:fun:lang::get_lang('佣金明细')}</h2></div>
        	<div class="total f12 b_pink bg_pink">
         	    <dt>
-            	    </dt><dd>累计收入：<b class="c_red">{wc:$shourutotal}</b>元</dd>  <dd>累计(提现/充值)：<b class="c_red">{wc:$zhichutotal}</b>元</dd> <dd>佣金余额：<b class="c_red">{wc:$total}</b>元</dd><dd><!--<a href="{WEB_PATH}/member/home/cashout" title="申请提现" class="bluebut">申请提现</a>--><a href="{WEB_PATH}/member/home/cashout" title="充值到云购账户" class="bluebut">充值到云购账户</a></dd>
+            	    </dt><dd>{wc:fun:lang::get_lang('累计收入：')}<b class="c_red">{wc:$shourutotal}</b>{wc:fun:lang::get_lang('元')}</dd>  <dd>{wc:fun:lang::get_lang('累计')}({wc:fun:lang::get_lang('提现')}/{wc:fun:lang::get_lang('充值')}){wc:fun:lang::get_lang('：')}<b class="c_red">{wc:$zhichutotal}</b>{wc:fun:lang::get_lang('元')}</dd> <dd>{wc:fun:lang::get_lang('佣金余额：')}<b class="c_red">{wc:$total}</b>{wc:fun:lang::get_lang('元')}</dd><dd><!--<a href="{WEB_PATH}/member/home/cashout" title="{wc:fun:lang::get_lang('申请提现')}" class="bluebut">{wc:fun:lang::get_lang('申请提现')}</a>--><a href="{WEB_PATH}/member/home/cashout" title="{wc:fun:lang::get_lang('充值到云购账户')}" class="bluebut">{wc:fun:lang::get_lang('充值到云购账户')}</a></dd>
                 
-                <dd class="gray02">佣金余额可实时充值到您的云购帐户。</dd>
+                <dd class="gray02">{wc:fun:lang::get_lang('佣金余额可实时充值到您的云购帐户。')}</dd>
 		    </div>
            <div class="record-tit">
 			    <div class="record-tab">
-				    <a href="javascript:void();" class="record-cur">全部</a><a href="javascript:void();">今天</a><a href="javascript:void();">本周</a><a href="javascript:void();">本月</a><a href="javascript:void();">最近三个月</a>
+				    <a href="javascript:void();" class="record-cur">{wc:fun:lang::get_lang('全部')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('今天')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('本周')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('本月')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('最近三个月')}</a>
 			    </div>
 			    
 		    </div>
-            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w140">用户</li><li class="w150">时间</li><li class="w280">描述</li><li class="w90">云购金额(元)</li><li class="w90">佣金(元)</li></ul>
+            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w140">{wc:fun:lang::get_lang('用户')}</li><li class="w150">{wc:fun:lang::get_lang('时间')}</li><li class="w280">{wc:fun:lang::get_lang('描述')}</li><li class="w90">{wc:fun:lang::get_lang('云购金额')}({wc:fun:lang::get_lang('元')})</li><li class="w90">{wc:fun:lang::get_lang('佣金')}({wc:fun:lang::get_lang('元')})</li></ul>
 			{wc:if $recodetotal!=0}
 				{wc:loop $recodearr $key $val}
 			<ul>
@@ -26,7 +26,7 @@
 			{wc:loop:end}
 			{wc:else}
 			</div>
-			 <div class="tips-con"><i></i>您还未有邀请谁哦</div></div>
+			 <div class="tips-con"><i></i>{wc:fun:lang::get_lang('您还未有邀请谁哦')}</div></div>
 			 {wc:if:end}
             <div id="divPageNav" class="page_nav"></div>
         </div>
@@ -56,23 +56,23 @@ $(function(){
 	});
 })
 function shaidan(id){
-	if(confirm("您确认要删除该条信息吗？")){
+	if(confirm("{wc:fun:lang::get_lang('您确认要删除该条信息吗？')}")){
 		window.location.href="{WEB_PATH}/member/home/shaidandel/"+id;
 	}
-	//FixedConfirm('你确定要删除？',240);
+	//FixedConfirm('{wc:fun:lang::get_lang('你确定要删除？')}',240);
 }
 /*$("#btnShow6").click(function(){
-		FixedConfirm('你确定要删除？',240);
+		FixedConfirm('{wc:fun:lang::get_lang('你确定要删除？')}',240);
 });*/
 function FixedConfirm(content,minwidth){
 	var div=FixedStar();
 		div+='<div id="foucs_close"></div>';
 		div+='<div id="foucs_main">';
-		div+='<div class="title" style="display:black">提示</div>';
+		div+='<div class="title" style="display:black">{wc:fun:lang::get_lang('提示')}</div>';
 		div+='<div class="content"><div class="PopMsgC"  style="display:black"><s></s>'+content+'</div>';
 		div+='<div class="PopMsgbtn" style="display:black">';
-		div+='<a class="orangebut" id="btnMsgOK" href="javascript:;">确认</a>&nbsp;&nbsp;';
-		div+='<a class="cancelBtn" id="btnMsgCancel" href="javascript:;">取消</a>';
+		div+='<a class="orangebut" id="btnMsgOK" href="javascript:;">{wc:fun:lang::get_lang('确认')}</a>&nbsp;&nbsp;';
+		div+='<a class="cancelBtn" id="btnMsgCancel" href="javascript:;">{wc:fun:lang::get_lang('取消')}</a>';
 		div+='</div></div></div>';
 		div+='</div>';	
 	$("body").append(div);
@@ -84,7 +84,7 @@ $(function(){
 		Fixed();
 	})
 })
-//关闭弹窗
+//{wc:fun:lang::get_lang('关闭弹窗')}
 function FixedClose(){
 	$("#foucs_close,#page_close,#btnMsgCancel").click(function(){		
 		$("#foucs_big,#foucs_min,#w3foucs").fadeOut(200,function(){

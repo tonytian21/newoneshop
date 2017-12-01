@@ -55,7 +55,7 @@ class member extends admin {
 
 		$page->config($total,$num,$pagenum,"0");	
 
-		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE `emailcode` <> '1' and `mobilecode` <> '1' and `auto_user` != 1 and (`email` !='' OR `mobile` !='')",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
+		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE `emailcode` <> '1' and `mobilecode` <> '1' and `auto_user` != 1 and (`email` !='' OR `mobile` !='') order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
 		
 
@@ -77,7 +77,7 @@ class member extends admin {
 
 		$page->config($total,$num,$pagenum,"0");	
 
-		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE `emailcode` <> '1' and `mobilecode` <> '1' and `auto_user` != 1 and (`email` ='' AND `mobile` ='')",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
+		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE `emailcode` <> '1' and `mobilecode` <> '1' and `auto_user` != 1 and (`email` ='' AND `mobile` ='') order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
 		
 
@@ -99,7 +99,7 @@ class member extends admin {
 
 		$page->config($total,$num,$pagenum,"0");	
 
-		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE  `auto_user`= 1",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
+		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE  `auto_user`= 1 order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
 		
 
@@ -112,10 +112,7 @@ class member extends admin {
 	//显示会员
 
 	public function lists(){
-
-	
-
-		$where = $this->segment(4);		
+		$where = $this->segment(4);	
 
 		if($where == 'del'){
 
@@ -193,7 +190,7 @@ class member extends admin {
 
 		$page->config($total,$num,$pagenum,"0");		
 
-		$members=$this->db->GetPage("SELECT * FROM `$table` WHERE (`emailcode` = '1' or `mobilecode` = '1' ) and `auto_user` != 1",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
+		$members=$this->db->GetPage("SELECT * FROM `$table` WHERE (`emailcode` = '1' or `mobilecode` = '1' ) and `auto_user` != 1 order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
 		include $this->tpl(ROUTE_M,'member.lists');	
 

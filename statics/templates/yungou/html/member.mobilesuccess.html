@@ -15,22 +15,22 @@ $(function(){
 </script>
 
 <div class="R-content">
-	<div class="member-t"><h2>手机验证</h2><a href="javascript:history.go(-1);" class="blue">&lt;&lt; 返回</a></div>
+	<div class="member-t"><h2>{wc:fun:lang::get_lang('手机验证')}</h2><a href="javascript:history.go(-1);" class="blue">&lt;&lt; {wc:fun:lang::get_lang('返回')}</a></div>
 	<div class="tel_verification">
-		<div class="prompt orange">请完成手机验证，验证手机不仅能加强账户安全，快速找回密码，还会在您成功获得商品后及时通知您！<em></em></div>	
+		<div class="prompt orange">{wc:fun:lang::get_lang('请完成手机验证，验证手机不仅能加强账户安全，快速找回密码，还会在您成功获得商品后及时通知您！')}<em></em></div>	
 		<div id="divChecking" class="verification_code" style="display: block;">
-			<h4 id="sendok">验证短信已发送到您的手机<span>{wc:$member['mobile']}</span>，请注意查收。<a href="{WEB_PATH}/member/home/mobilechecking">更换手机号</a></h4>
+			<h4 id="sendok">{wc:fun:lang::get_lang('验证短信已发送到您的手机')}<span>{wc:$member['mobile']}</span>{wc:fun:lang::get_lang('，请注意查收。')}<a href="{WEB_PATH}/member/home/mobilechecking">{wc:fun:lang::get_lang('更换手机号')}</a></h4>
 			<div class="text_verification_code">
 			<form method="post" action="{WEB_PATH}/member/home/mobilecheck">
-				<span class="text">输入验证码：</span>
+				<span class="text">{wc:fun:lang::get_lang('输入验证码：')}</span>
 				<input id="txtMobileSN" type="text" name="mobile" class="tel" maxlength="11">
 				<div class="back">
 					<p>
-						2分钟后未收到手机验证码，请点击重新发送</p>
-					<input id="btnSendSN" onclick="javascript:sendmobile();" type="button" value="重新发送{wc:$time}" disabled=1>
+						2{wc:fun:lang::get_lang('分钟后未收到手机验证码，请点击重新发送')}</p>
+					<input id="btnSendSN" onclick="javascript:sendmobile();" type="button" value="{wc:fun:lang::get_lang('重新发送')}{wc:$time}" disabled=1>
 				</div>
 				<div class="value">
-					<input id="butSaveSubmit" type="submit" name="submit" value="提交" class="bluebut">
+					<input id="butSaveSubmit" type="submit" name="submit" value="{wc:fun:lang::get_lang('提交')}" class="bluebut">
 				</div>
 			</form>
 			</div>
@@ -41,7 +41,7 @@ $(function(){
 var i = {wc:$time};
 var senda=document.getElementById('btnSendSN');
 setInterval(function(){if(i>0){
-	senda.value = '重新发送'+i;i--;}else{senda.value = '重新发送';senda.disabled=0;}
+	senda.value = '{wc:fun:lang::get_lang('重新发送')}'+i;i--;}else{senda.value = '{wc:fun:lang::get_lang('重新发送')}';senda.disabled=0;}
 },1000);
 
 function sendmobile(){

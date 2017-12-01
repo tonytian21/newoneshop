@@ -13,12 +13,12 @@ $(function(){
 })
 </script>
 <div class="R-content">
-	<div class="member-t" style="border-bottom: 1px solid #dfdfdf;"><h2>Facebook绑定</h2><a href="javascript:history.go(-1);" class="blue">&lt;&lt; 返回</a></div>
+	<div class="member-t" style="border-bottom: 1px solid #dfdfdf;"><h2>Facebook{wc:fun:lang::get_lang('绑定')}</h2><a href="javascript:history.go(-1);" class="blue">&lt;&lt; {wc:fun:lang::get_lang('返回')}</a></div>
 	<div class="tel_verification">
-		<div class="prompt orange" style="float: none;">请完成Facebook绑定，Facebook绑定可以方便您快速登录！<em></em></div>
+		<div class="prompt orange" style="float: none;">{wc:fun:lang::get_lang('请完成')}Facebook{wc:fun:lang::get_lang('绑定，')}Facebook{wc:fun:lang::get_lang('绑定可以方便您快速登录！')}<em></em></div>
 		<form method="post" action="{wc:WEB_PATH}/member/home/mobilesuccess">
 		<div class="oauth-list" id="divSend" style="display: block; padding-top:20px;">
-			<a href="{WEB_PATH}/api/facebooklogin" style="border-radius:6px; padding:10px 10px 10px 60px;  color:#fff; font-size:18px; background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 10px center; background-size: auto 70%; ">FaceBook登录
+			<a href="{WEB_PATH}/api/facebooklogin" style="border-radius:6px; padding:10px 10px 10px 60px;  color:#fff; font-size:18px; background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 10px center; background-size: auto 70%; ">FaceBook{wc:fun:lang::get_lang('登录')}
 			</a>
 		<div class="Validform_checktip"></div>
 		</div>

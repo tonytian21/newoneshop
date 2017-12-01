@@ -9,11 +9,11 @@
 			</div>
 			<div class="detail-HC"><div class="detail-Htit gray03">
 				<h2><a id="thisGroupName" href="{WEB_PATH}/group/show/{wc:$quanzi['id']}" class="orange">{wc:$quanzi['title']}</a></h2> 
-				<span class="return"><a href="{WEB_PATH}/group/show/{wc:$quanzi['id']}" class="gray02">&lt;&lt; 返回圈子</a></span>
+				<span class="return"><a href="{WEB_PATH}/group/show/{wc:$quanzi['id']}" class="gray02">&lt;&lt; {wc:fun:lang::get_lang('返回圈子')}</a></span>
 				</div>
-				<p class="detail-Hinfo gray02">成员：
-				<span class="gray01">{wc:$quanzi['chengyuan']}</span>&nbsp;&nbsp;&nbsp;话题：
-				<span class="gray01">{wc:$quanzi['tiezi']}</span>&nbsp;&nbsp;&nbsp;创建时间：
+				<p class="detail-Hinfo gray02">{wc:fun:lang::get_lang('成员：')}
+				<span class="gray01">{wc:$quanzi['chengyuan']}</span>&nbsp;&nbsp;&nbsp;{wc:fun:lang::get_lang('话题：')}
+				<span class="gray01">{wc:$quanzi['tiezi']}</span>&nbsp;&nbsp;&nbsp;{wc:fun:lang::get_lang('创建时间：')}
 				<span class="gray01">{wc:fun:date("Y-m-d H:i:s",$quanzi['time'])}</span></p>
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 					<div class="detail-Ctit gray03"><a href="{WEB_PATH}/uname/{wc:fun:idjia($tiezi['hueiyuan'])}" class="blue" type="showCard">{wc:fun:userid($tiezi['hueiyuan'],'username')}</a> 
 						<span class="class-icon07"></span> 
 						<span class="time gray02">{wc:fun:date("Y-m-d H:i:s",$tiezi['time'])}</span>&nbsp;&nbsp;
-						<span class="gray03">人气({wc:$tiezi['dianji']})</span>
+						<span class="gray03">{wc:fun:lang::get_lang('人气')}({wc:$tiezi['dianji']})</span>
 					</div>
 				</div>
 			</div>
@@ -46,17 +46,17 @@
 		</div>
 
 		<div id="divAdminPower" class="detail-admin" style="display:none;">
-			<a href="javascript:;" id="btnSetGood" class="blue Control01"><s></s>话题加精</a>
-			<a id="btnUnshow" href="javascript:;" class="blue Control02"><s></s>屏蔽该话题</a>
-			<a href="javascript:;" id="btnCancelGood" class="blue Control03" style="display:none;"><s></s>取消加精</a>
+			<a href="javascript:;" id="btnSetGood" class="blue Control01"><s></s>{wc:fun:lang::get_lang('话题加精')}</a>
+			<a id="btnUnshow" href="javascript:;" class="blue Control02"><s></s>{wc:fun:lang::get_lang('屏蔽该话题')}</a>
+			<a href="javascript:;" id="btnCancelGood" class="blue Control03" style="display:none;"><s></s>{wc:fun:lang::get_lang('取消加精')}</a>
 		</div>
 		<div class="Comment_main" id="commentMain" style="display: block;">
 			<div class="Comment-date">
-				<span class="gray02">共 <i id="totalNum" class="orange">{wc:$total}</i> 条回复</span> 
-				<em><a href="javascript:;" class="blue">回复</a></em>
+				<span class="gray02">{wc:fun:lang::get_lang('共')} <i id="totalNum" class="orange">{wc:$total}</i> {wc:fun:lang::get_lang('条回复')}</span> 
+				<em><a href="javascript:;" class="blue">{wc:fun:lang::get_lang('回复')}</a></em>
 			</div>
 			{wc:if $total==0}
-			<div class="tips-con"><i></i>暂无回复，快抢沙发吧！</div>
+			<div class="tips-con"><i></i>{wc:fun:lang::get_lang('暂无回复，快抢沙发吧！')}</div>
 			{wc:else}
 			{wc:loop $hueifu $hf}
 			<div class="Comment_box_con">
@@ -72,7 +72,7 @@
 					<div class="C_summary gray02">{wc:$hf['hueifu']} 
 						<span class="gray03">{wc:fun:date("Y-m-d H:i:s",$hf['hftime'])}</span>
 					</div>
-					<div class="C_detail"><a name="linkReply" href="javascript:;" class="blue"><!-- 回复 --></a></div>
+					<div class="C_detail"><a name="linkReply" href="javascript:;" class="blue"><!-- {wc:fun:lang::get_lang('回复')} --></a></div>
 					<div name="ReplyList" class="qcomment_reply_list_module"></div>				
 				</div>
 			</div>
@@ -92,11 +92,11 @@
 					<form action="{WEB_PATH}/group/group/hueifuinsert" method="post">
 					<textarea id="hueifucontent" class="textarea01" name="hueifu" style="display: block;border:1px solid #C2C2C2; height:150px; resize:none;"></textarea>
 					<input value="{wc:$tiezi['id']}" name="tzid" class="hidden"/>
-					<div class="Comment_but"><input type="submit" name="submit" id="btnSubmitMsg" class="reply_unbotton" value="立即发送" /></div>
+					<div class="Comment_but"><input type="submit" name="submit" id="btnSubmitMsg" class="reply_unbotton" value="{wc:fun:lang::get_lang('立即发送')}" /></div>
 					</form>
 					{wc:else}
 					<div class="Comment_login" id="notLogin">
-						请您<a class="blue" href="{WEB_PATH}/member/user/login" id="replyLoginBtn">登录</a>或<a class="blue" href="{WEB_PATH}/member/user/register">注册</a>后再回复评论							
+						{wc:fun:lang::get_lang('请您')}<a class="blue" href="{WEB_PATH}/member/user/login" id="replyLoginBtn">{wc:fun:lang::get_lang('登录')}</a>{wc:fun:lang::get_lang('或')}<a class="blue" href="{WEB_PATH}/member/user/register">{wc:fun:lang::get_lang('注册')}</a>{wc:fun:lang::get_lang('后再回复评论')}							
 					</div>
 					{wc:if:end}
 				</div>

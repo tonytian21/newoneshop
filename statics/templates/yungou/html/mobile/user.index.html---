@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
-    <title>我的{wc:fun:_cfg('web_name_two')} - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('我的')}{wc:fun:_cfg('web_name_two')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
@@ -12,16 +12,16 @@
 <body>
 <div class="h5-1yyg-v11">
     
-<!-- 栏目页面顶部 -->
+<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
 
 
-<!-- 内页顶部 -->
+<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 
     <header class="g-header">
         <div class="head-l">
-	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
+	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>{wc:fun:lang::get_lang('返回')}</b></a>
         </div>
-        <h2>我的{wc:fun:_cfg('web_name_two')}</h2>
+        <h2>{wc:fun:lang::get_lang('我的')}{wc:fun:_cfg('web_name_two')}</h2>
         <div class="head-r">
 	        <a href="{WEB_PATH}/mobile/mobile" class="z-Home"></a>
         </div>
@@ -40,31 +40,31 @@
 				{wc:if $member['mobile']}
 				<em>({wc:$member['mobile']})</em>
 				{wc:else}
-				<em><a href="{WEB_PATH}/mobile/user/mobile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">绑定手机</a></em>
+				<em><a href="{WEB_PATH}/mobile/user/mobile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">{wc:fun:lang::get_lang('绑定手机')}</a></em>
 				 {wc:if:end}
 				</p>
-				<ul class="clearfix u-mbr-info"><li>可用福分 <span class="orange">{wc:$member['score']}</span></li>
-				<li>经验值 <span class="orange">{wc:$member['jingyan']}</span></li>
-				<li>余额 <span class="orange">￥{wc:$member['money']}</span>
-				<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">去充值</a></li>
+				<ul class="clearfix u-mbr-info"><li>{wc:fun:lang::get_lang('可用福分')} <span class="orange">{wc:$member['score']}</span></li>
+				<li>{wc:fun:lang::get_lang('经验值')} <span class="orange">{wc:$member['jingyan']}</span></li>
+				<li>{wc:fun:lang::get_lang('余额')} <span class="orange">{wc:fun:lang::get_lang('￥')}{wc:$member['money']}</span>
+				<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a></li>
 				</ul>
 			</div>
 		</div>
 	    <div class="m-round m-member-nav">
 		    <ul id="ulFun">
-		    	<li><a href="{WEB_PATH}/mobile/home/userqiandao"><b class="z-arrow"></b>每日签到</a></li>
-			    <li><a href="{WEB_PATH}/mobile/home/userbuylist"><b class="z-arrow"></b>云购记录</a></li>
-			    <li><a href="{WEB_PATH}/mobile/home/orderlist"><b class="z-arrow"></b>获得商品</a></li>
-			    <li><a href="{WEB_PATH}/mobile/home/singlelist"><b class="z-arrow"></b>我的晒单</a></li>
-			    <li><a href="{WEB_PATH}/mobile/home/userbalance"><b class="z-arrow"></b>帐户明细</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/home/invite"><b class="z-arrow"></b>邀请管理</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/home/zhuanzhang"><b class="z-arrow"></b>用户转账</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/user/password"><b class="z-arrow"></b>修改密码</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/user/headimg"><b class="z-arrow"></b>修改头像</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/user/profile"><b class="z-arrow"></b>修改资料</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/home/address"><b class="z-arrow"></b>地址管理</a></li>                   
-                 		   <li><a href="{WEB_PATH}/mobile/home/inviteshare"><b class="z-arrow"></b>如何一元云购</a></li>
-                 		   <li><a href="{WEB_PATH}/mobile/user/cook_end"><b class="z-arrow"></b>安全退出</a></li>
+		    	<li><a href="{WEB_PATH}/mobile/home/userqiandao"><b class="z-arrow"></b>{wc:fun:lang::get_lang('每日签到')}</a></li>
+			    <li><a href="{WEB_PATH}/mobile/home/userbuylist"><b class="z-arrow"></b>{wc:fun:lang::get_lang('云购记录')}</a></li>
+			    <li><a href="{WEB_PATH}/mobile/home/orderlist"><b class="z-arrow"></b>{wc:fun:lang::get_lang('获得商品')}</a></li>
+			    <li><a href="{WEB_PATH}/mobile/home/singlelist"><b class="z-arrow"></b>{wc:fun:lang::get_lang('我的晒单')}</a></li>
+			    <li><a href="{WEB_PATH}/mobile/home/userbalance"><b class="z-arrow"></b>{wc:fun:lang::get_lang('帐户明细')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/home/invite"><b class="z-arrow"></b>{wc:fun:lang::get_lang('邀请管理')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/home/zhuanzhang"><b class="z-arrow"></b>{wc:fun:lang::get_lang('用户转账')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/user/password"><b class="z-arrow"></b>{wc:fun:lang::get_lang('修改密码')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/user/headimg"><b class="z-arrow"></b>{wc:fun:lang::get_lang('修改头像')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/user/profile"><b class="z-arrow"></b>{wc:fun:lang::get_lang('修改资料')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/home/address"><b class="z-arrow"></b>{wc:fun:lang::get_lang('地址管理')}</a></li>                   
+                 		   <li><a href="{WEB_PATH}/mobile/home/inviteshare"><b class="z-arrow"></b>{wc:fun:lang::get_lang('如何一元云购')}</a></li>
+                 		   <li><a href="{WEB_PATH}/mobile/user/cook_end"><b class="z-arrow"></b>{wc:fun:lang::get_lang('安全退出')}</a></li>
 		    </ul>
 	    </div>
     </section>

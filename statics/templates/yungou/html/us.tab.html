@@ -1,21 +1,21 @@
 <div class="subnav">
 	<ul>
 		{wc:if $tab=="uname"}
-		<li class="poa-4"><a class="cur">TA的主页<s></s></a></li>
+		<li class="poa-4"><a class="cur">TA{wc:fun:lang::get_lang('的主页')}<s></s></a></li>
 		{wc:else}
-		<li class="poa-4"><a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" >TA的主页<s></s></a></li>
+		<li class="poa-4"><a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" >TA{wc:fun:lang::get_lang('的主页')}<s></s></a></li>
 		{wc:if:end}
 		
 		{wc:if $tab=="userbuy"}
-		<li class="poa-4"><a class="cur">云购记录<s></s></a></li>
+		<li class="poa-4"><a class="cur">{wc:fun:lang::get_lang('云购记录')}<s></s></a></li>
 		{wc:else}
-		<li class="poa-4"><a href="{WEB_PATH}/userbuy/{wc:fun:idjia($member['uid'])}" >云购记录<s></s></a></li>
+		<li class="poa-4"><a href="{WEB_PATH}/userbuy/{wc:fun:idjia($member['uid'])}" >{wc:fun:lang::get_lang('云购记录')}<s></s></a></li>
 		{wc:if:end}
 		
 		{wc:if $tab=="userraffle"}
-		<li class="poa-4"><a class="cur">获得的商品<s></s></a></li>
+		<li class="poa-4"><a class="cur">{wc:fun:lang::get_lang('获得的商品')}<s></s></a></li>
 		{wc:else}
-		<li class="poa-4"><a href="{WEB_PATH}/userraffle/{wc:fun:idjia($member['uid'])}" >获得的商品<s></s></a></li>
+		<li class="poa-4"><a href="{WEB_PATH}/userraffle/{wc:fun:idjia($member['uid'])}" >{wc:fun:lang::get_lang('获得的商品')}<s></s></a></li>
 		{wc:if:end}
 	
 		{wc:if:end}

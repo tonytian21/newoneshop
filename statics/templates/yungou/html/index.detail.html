@@ -1,17 +1,17 @@
 {wc:templates "index","header"}
-<!--晒单详情-->
+<!--{wc:fun:lang::get_lang('晒单详情')}-->
 <div class="clear"></div>
 <div class="wrap w1200">
 <div class="Current_nav w1200">
-	<a href="{WEB_PATH}">首页</a> &gt; <a href="#">晒单分享</a> &gt; 晒单详请</div>
+	<a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> &gt; <a href="#">{wc:fun:lang::get_lang('晒单分享')}</a> &gt; {wc:fun:lang::get_lang('晒单详请')}</div>
 <div class="share_box b_gray" id="loadingPicBlock">
 	<div id="DCMainLeft" class="share_box_left fl br_gray">
 		<div class="share_main">
-			<!--用户晒单部分-->
+			<!--{wc:fun:lang::get_lang('用户晒单部分')}-->
 			<div class="share_title">
 				<h3>{wc:$shaidan['sd_title']}</h3>
 				<div class="share_time">
-					晒单时间：<span>{wc:fun:date("Y-m-d H:i",$shaidan['sd_time'])}</span></div>
+					{wc:fun:lang::get_lang('晒单时间：')}<span>{wc:fun:date("Y-m-d H:i",$shaidan['sd_time'])}</span></div>
 			</div>
 			<div class="share_goods b_gray">
 				<div class="share-get">
@@ -25,14 +25,14 @@
 
 					
 					<div class="share-getinfo">
-						<p style="width: auto;" class="getinfo-name">幸运获得者：<a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($shaidan['sd_userid'])}" target="_blank">{wc:fun:get_user_name($shaidan['sd_userid'],'username')}</a></p>
-						<p>总共云购：<b class="orange">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>人次</p>
+						<p style="width: auto;" class="getinfo-name">{wc:fun:lang::get_lang('幸运获得者：')}<a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($shaidan['sd_userid'])}" target="_blank">{wc:fun:get_user_name($shaidan['sd_userid'],'username')}</a></p>
+						<p>{wc:fun:lang::get_lang('总共云购：')}<b class="orange">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>{wc:fun:lang::get_lang('人次')}</p>
 						{wc:php:start}
 						$jikxiao = get_shop_if_jiexiao($shaidan['sd_shopid']);						
 						{wc:php:end}
 						{wc:if $jikxiao['q_uid']}
-						<p>幸运云购码：{wc:$jikxiao['q_user_code']}	</p>
-						<p>揭晓时间：{wc:fun:microt($jikxiao['q_end_time'])}</p>
+						<p>{wc:fun:lang::get_lang('幸运云购码：')}{wc:$jikxiao['q_user_code']}	</p>
+						<p>{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($jikxiao['q_end_time'])}</p>
 						{wc:if:end}
 					</div>
 				</div>
@@ -40,14 +40,14 @@
 					<a class="fl-img b_gray" href="{WEB_PATH}/dataserver/{wc:$shaidan['sd_shopid']}" target="_blank">
 					<img src="{G_UPLOAD_PATH}/{wc:$goods['thumb']}" border="0"></a>
 					<div class="share-getinfo">
-						<p class="getinfo-title"><a class="gray01" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">(第{wc:$goods['qishu']}期){wc:$goods['title']}</a></p>
-						<p>价值：{wc:$goods['money']}云币</p>
+						<p class="getinfo-title"><a class="gray01" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">({wc:fun:lang::get_lang('第')}{wc:$goods['qishu']}{wc:fun:lang::get_lang('期')}){wc:$goods['title']}</a></p>
+						<p>{wc:fun:lang::get_lang('价值：')}{wc:$goods['money']}{wc:fun:lang::get_lang('云币')}</p>
 						<p id="GoToBuy">
 						<a class="getbut-a c_red b_gray" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">
 						{wc:if !empty($goods['q_uid'])}
-						已揭晓
+						{wc:fun:lang::get_lang('已揭晓')}
 						{wc:else}
-						第{wc:$goods['qishu']}期正在进行中...
+						{wc:fun:lang::get_lang('第')}{wc:$goods['qishu']}{wc:fun:lang::get_lang('期正在进行中')}...
 						{wc:if:end}
 						</a></p>
 					</div>
@@ -61,16 +61,16 @@
 				<p><img src="{G_UPLOAD_PATH}/{wc:$sdimg}" border="0"></p>
 				{wc:loop:end}
 			</div>
-			<!--用户晒单部分结束-->
-			<!-- 分享按钮 -->
+			<!--{wc:fun:lang::get_lang('用户晒单部分结束')}-->
+			<!-- {wc:fun:lang::get_lang('分享按钮')} -->
 			<div class="mood">
 				<div class="moodwm">
 					<div class="moodm fl hidden" style="display: block;">
-						 <span class="smile bg_red" id="emHits"><i></i><b>羡慕嫉妒恨(<em>{wc:$shaidan['sd_zhan']}</em>)</b></span>
-						 <span class="much"> <i></i>评论(<em id="emReplyCount">{wc:$shaidan['sd_ping']}</em>)</span>
+						 <span class="smile bg_red" id="emHits"><i></i><b>{wc:fun:lang::get_lang('羡慕嫉妒恨')}(<em>{wc:$shaidan['sd_zhan']}</em>)</b></span>
+						 <span class="much"> <i></i>{wc:fun:lang::get_lang('评论')}(<em id="emReplyCount">{wc:$shaidan['sd_ping']}</em>)</span>
 					</div>
 					<div class="share">
-						<span class="fen fl">分享到：</span>
+						<span class="fen fl">{wc:fun:lang::get_lang('分享到：')}</span>
 						
 						<ul class="-mob-share-list">
 							<li class="-mob-share-facebook"></li>
@@ -102,13 +102,13 @@
 					<div class="Comment_textbox">
 					{wc:if !$member}					
 						<div id="notLogin" name="replyLogin" class="Comment_login">
-							请您<a href="{WEB_PATH}/member/user/login" class="blue" name="replyLoginBtn">登录</a>
-							或<a href="{WEB_PATH}/member/user/register" class="blue">注册</a>后再回复评论
+							{wc:fun:lang::get_lang('请您')}<a href="{WEB_PATH}/member/user/login" class="blue" name="replyLoginBtn">{wc:fun:lang::get_lang('登录')}</a>
+							{wc:fun:lang::get_lang('或')}<a href="{WEB_PATH}/member/user/register" class="blue">{wc:fun:lang::get_lang('注册')}</a>{wc:fun:lang::get_lang('后再回复评论')}
 						</div>
 					{wc:else}
 						<form action="" method="post">
 						<textarea name="sdhf_content" class="Comment-txt"></textarea>
-						<input type="submit" name="submit" value="发表评论" class="reply_unbotton">
+						<input type="submit" name="submit" value="{wc:fun:lang::get_lang('发表评论')}" class="reply_unbotton">
 						</form>
 					{wc:if:end}
 					</div>
@@ -144,12 +144,12 @@
 				{wc:loop:end}
 			</ul>
 		</div>			
-		<!--用户评论列表开始-->
+		<!--{wc:fun:lang::get_lang('用户评论列表开始')}-->
 		<div class="Comment_main clearfix" id="CommentMain"></div>
-		<!--用户评论部分结束-->
+		<!--{wc:fun:lang::get_lang('用户评论部分结束')}-->
 	</div>
-	<!--晒单左侧结束-->
-	<!--晒单右侧-->
+	<!--{wc:fun:lang::get_lang('晒单左侧结束')}-->
+	<!--{wc:fun:lang::get_lang('晒单右侧')}-->
 	<div class="Comment_right" id="PostDetailRight">
 		<div class="Comment_victory">
 	<!-- 	<div class="victory-tit">
@@ -157,22 +157,22 @@
 			<a href="javascript:void(0);" class="page-upgray"></a>
 			<a href="javascript:void(0);" class="page-updow page-dow"></a>
 			</span>
-			<h3>其他期数获得者</h3>
+			<h3>{wc:fun:lang::get_lang('其他期数获得者')}</h3>
 		</div>
 		<ul>
 			<li class="victory_info">
-				<div class="victory_head"><a class="blue" href="#" title="长风" target="_blank"><img src="6542.jpg"></a></div>
-				<p class="victory_User"><a class="blue" href="#" title="长风" target="_blank">长风</a>获得了第10期</p>
-				<p><span class="gray03">暂未晒单</span></p>
+				<div class="victory_head"><a class="blue" href="#" title="{wc:fun:lang::get_lang('长风')}" target="_blank"><img src="6542.jpg"></a></div>
+				<p class="victory_User"><a class="blue" href="#" title="{wc:fun:lang::get_lang('长风')}" target="_blank">{wc:fun:lang::get_lang('长风')}</a>{wc:fun:lang::get_lang('获得了第')}10{wc:fun:lang::get_lang('期')}</p>
+				<p><span class="gray03">{wc:fun:lang::get_lang('暂未晒单')}</span></p>
 			</li>
 		</ul> -->	
 		<div class="Comment_share">
-			<h4>最新晒单</h4>			
+			<h4>{wc:fun:lang::get_lang('最新晒单')}</h4>			
 			{wc:loop $shaidannew $sd}
 			<div class="New-single">
-				<p class="New-single-time"><a class="blue" href="{WEB_PATH}/uname/{wc:fun:idjia($sd['sd_userid'])}" target="_blank">{wc:fun:get_user_name($sd['sd_userid'],'username')}</a></p><span style="color: #ccc;"> {wc:fun:date("Y年m月d日 H:i",$sd['sd_time'])}</span>
+				<p class="New-single-time"><a class="blue" href="{WEB_PATH}/uname/{wc:fun:idjia($sd['sd_userid'])}" target="_blank">{wc:fun:get_user_name($sd['sd_userid'],'username')}</a></p><span style="color: #ccc;"> {wc:fun:date("Y-m-d- H:i",$sd['sd_time'])}</span>
 				<p class="New-single-C"><a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank">{wc:fun:_strcut($sd['sd_content'],100)}</a></p>
-				<div class="New-singleImg"><div class="arrow arrow_Rleft"><em>◆</em></div>
+				<div class="New-singleImg"><div class="arrow arrow_Rleft"><em>{wc:fun:lang::get_lang('◆')}</em></div>
 					<a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank">
 						<img border="0" src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}">
 					</a>

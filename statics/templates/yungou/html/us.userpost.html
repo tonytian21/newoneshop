@@ -16,12 +16,12 @@
 			{wc:if $member['qianming']!=null}
 			{wc:$member['qianming']}
 			{wc:else}
-			这家伙很懒，什么都没留下。
+			{wc:fun:lang::get_lang('这家伙很懒，什么都没留下。')}
 			{wc:if:end}
 			</li>
 			</ul></div>
 	{wc:templates "us","tab"}
-	<div class="New-content"><div class="tips-con"><i></i>TA还没有晒单哦</div></div>   
+	<div class="New-content"><div class="tips-con"><i></i>TA{wc:fun:lang::get_lang('还没有晒单哦')}</div></div>   
 </div>
 
 

@@ -77,7 +77,7 @@ background-position: -168px 0;
 }
 .Single_list .SingleR_TC h3 {
 color: #999;
-font-family: 微软雅黑,宋体;
+font-family: {wc:fun:lang::get_lang('微软雅黑')},{wc:fun:lang::get_lang('宋体')};
 font-size: 18px;
 color: #333;
 line-height: 24px;
@@ -151,14 +151,14 @@ margin-right: 0;
 				</div>
 				<div class="SingleR fl">
 					<div class="SingleR_TC"><i></i> <s></s>
-						<h3><span class="gray02">第{wc:$v['sd_qishu']}期晒单</span><a href="{WEB_PATH}/go/shaidan/detail/{wc:$v['sd_id']}" target="_blank">{wc:$v['sd_title']}</a>   <em class="gray02">{wc:fun:date("Y-m-d",$v['sd_time'])}</em></h3>
+						<h3><span class="gray02">{wc:fun:lang::get_lang('第')}{wc:$v['sd_qishu']}{wc:fun:lang::get_lang('期晒单')}</span><a href="{WEB_PATH}/go/shaidan/detail/{wc:$v['sd_id']}" target="_blank">{wc:$v['sd_title']}</a>   <em class="gray02">{wc:fun:date("Y-m-d",$v['sd_time'])}</em></h3>
 						<p class="gray01">{wc:fun:_strcut($v['sd_content'],220)}</p>
 					</div>
 					<ul class="SingleR_pic">
 						{wc:$v['photolist']}
 					</ul>
 					<div class="SingleR_Comment" postID="2676" count="7">
-						<div class="Comment_smile gray02"><span><i></i>{wc:$v['sd_zhan']}人羡慕嫉妒恨</span><span><s></s>{wc:$v['sd_ping']}条评论</span></div>
+						<div class="Comment_smile gray02"><span><i></i>{wc:$v['sd_zhan']}{wc:fun:lang::get_lang('人羡慕嫉妒恨')}</span><span><s></s>{wc:$v['sd_ping']}{wc:fun:lang::get_lang('条评论')}</span></div>
 					</div>
 				</div>
 			</div>
@@ -166,7 +166,7 @@ margin-right: 0;
 		</div>
 	{wc:else}
 		<div style="text-align:center;width:100%;height:80px;line-height:80px;">
-			<b>该商品还未有晒单！</b>
+			<b>{wc:fun:lang::get_lang('该商品还未有晒单！')}</b>
 		</div>
 	{wc:if:end}
 </body>

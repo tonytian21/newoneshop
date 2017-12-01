@@ -5,11 +5,11 @@ var height=$("#ddBrandList").innerHeight();
 	if(height==78){
 		$("#ddBrandList").css("height","auto");
 		$(".list_classMore").addClass("MoreClick");
-		$(".list_classMore").html("收起<i></i>");
+		$(".list_classMore").html("{wc:fun:lang::get_lang('收起')}<i></i>");
 	}else{
 		$("#ddBrandList").css("height",78);
 		$(".list_classMore").removeClass("MoreClick");
-		$(".list_classMore").html("展开<i></i>");
+		$(".list_classMore").html("{wc:fun:lang::get_lang('展开')}<i></i>");
 	};
 }
 
@@ -50,20 +50,20 @@ $(function(){
 
 </script>
 <div class="wrap w1200" id="loadingPicBlock">
-	<div class="Current_nav w1200"><a href="{WEB_PATH}">首页</a> &gt; {wc:$daohang_title}</div>
+	<div class="Current_nav w1200"><a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> &gt; {wc:$daohang_title}</div>
 	<div id="current" class="list_Curtit b_gray">
 		<h1 class="fl c_red">{wc:$daohang_title}</h1> 
-		<span id="spTotalCount">(共<em class="c_red">{wc:$total}</em>件相关商品)</span>
+		<span id="spTotalCount">({wc:fun:lang::get_lang('共')}<em class="c_red">{wc:$total}</em>{wc:fun:lang::get_lang('件相关商品')})</span>
 	</div>
 	<div class="list_class">
 	<dl>
-		<dt>分类</dt>
+		<dt>{wc:fun:lang::get_lang('分类')}</dt>
 		<dd>
 		<ul id="_click">
 		{wc:if !$fen1}            
-			<li><a href="{WEB_PATH}/goods_list/0" class="ClassCur">全部</a></li>
+			<li><a href="{WEB_PATH}/goods_list/0" class="ClassCur">{wc:fun:lang::get_lang('全部')}</a></li>
 		{wc:else}
-			<li><a href="{WEB_PATH}/goods_list/0">全部</a></li>
+			<li><a href="{WEB_PATH}/goods_list/0">{wc:fun:lang::get_lang('全部')}</a></li>
 		{wc:if:end}
                		{wc:getlist sql="select * from `@#_category` where `model`='1' and `parentid` = '0' order by `order` DESC"}
                		{wc:loop $data $categoryx}
@@ -82,7 +82,7 @@ $(function(){
 	</div>	
 	<div class="list_class">
 	<dl>
-		<dt>品牌</dt>
+		<dt>{wc:fun:lang::get_lang('品牌')}</dt>
 		{wc:if count($brand)>17}
 		<dd id="ddBrandList" style="height:78px">
 		{wc:else}
@@ -90,9 +90,9 @@ $(function(){
 		{wc:if:end}
 			<ul>
             	{wc:if !$fen2}
-				<li><a href="{WEB_PATH}/goods_list" class="ClassCur" >全部</a></li>
+				<li><a href="{WEB_PATH}/goods_list" class="ClassCur" >{wc:fun:lang::get_lang('全部')}</a></li>
                 {wc:else}
-                <li><a href="{WEB_PATH}/goods_list">全部</a></li>
+                <li><a href="{WEB_PATH}/goods_list">{wc:fun:lang::get_lang('全部')}</a></li>
                 {wc:if:end}
 				{wc:loop $brand $brand2}
                 {wc:if $brand2['id']==$fen2}
@@ -106,24 +106,24 @@ $(function(){
 	</dl>
 
 	{wc:if count($brand)>17}	
-	<a class="list_classMore" href="javascript:;">展开<i></i></a>
+	<a class="list_classMore" href="javascript:;">{wc:fun:lang::get_lang('展开')}<i></i></a>
 	{wc:if:end}	
 	</div>
 	 <div class="list_Sort">
 		    <dl>
-			    <dt>排序</dt>
+			    <dt>{wc:fun:lang::get_lang('排序')}</dt>
 			    <dd>
-                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/10" {wc:if $select=='10'}class="SortCur"{wc:if:end}>即将揭晓</a>
-                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/20" {wc:if $select=='20'}class="SortCur"{wc:if:end}>人气</a>
-                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/30" {wc:if $select=='30'}class="SortCur"{wc:if:end}>剩余人次</a>
-                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/40" {wc:if $select=='40'}class="SortCur"{wc:if:end}>最新</a>
+                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/10" {wc:if $select=='10'}class="SortCur"{wc:if:end}>{wc:fun:lang::get_lang('即将揭晓')}</a>
+                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/20" {wc:if $select=='20'}class="SortCur"{wc:if:end}>{wc:fun:lang::get_lang('人气')}</a>
+                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/30" {wc:if $select=='30'}class="SortCur"{wc:if:end}>{wc:fun:lang::get_lang('剩余人次')}</a>
+                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/40" {wc:if $select=='40'}class="SortCur"{wc:if:end}>{wc:fun:lang::get_lang('最新')}</a>
                 {wc:if $select=='50'}
-                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/60" class="Price_Sort SortCur">价格 <i></i></a>
+                <a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/60" class="Price_Sort SortCur">{wc:fun:lang::get_lang('价格')} <i></i></a>
                 {wc:else}
                     {wc:if $select=='60'}
-                   		<a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/50" class="Price_Sort SortCur">价格 <s></s></a>
+                   		<a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/50" class="Price_Sort SortCur">{wc:fun:lang::get_lang('价格')} <s></s></a>
                     {wc:else}
-                    	<a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/50" class="Price_Sort">价格 <s></s></a>
+                    	<a style="font-size: 14px;" href="{WEB_PATH}/goods_list/{wc:$cate_band}/50" class="Price_Sort">{wc:fun:lang::get_lang('价格')} <s></s></a>
                     {wc:if:end}
                 {wc:if:end}
                 </dd>
@@ -157,30 +157,30 @@ $(function(){
 			<p class="name">
 				<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']} ">{wc:$shop['title']}</a>
 			</p>
-			<p class="money">价值：<span class="rmb">{wc:$shop['money']}</span></p>
+			<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmb">{wc:$shop['money']}</span></p>
 			<div class="Progress-bar">
-				<p style="height: 5px;" title="已完成{wc:fun:percent($shop['canyurenshu'],$shop['zongrenshu'])}"><span style="width:{wc:fun:percent($shop['canyurenshu'],$shop['zongrenshu'])};height: 6px;"></span></p>
+				<p style="height: 5px;" title="{wc:fun:lang::get_lang('已完成')}{wc:fun:percent($shop['canyurenshu'],$shop['zongrenshu'])}"><span style="width:{wc:fun:percent($shop['canyurenshu'],$shop['zongrenshu'])};height: 6px;"></span></p>
 				<ul class="Pro-bar-li">
-					<li class="P-bar01"><em>{wc:$shop['canyurenshu']}</em>已参与人次</li>
-					<li class="P-bar02"><em>{wc:$shop['zongrenshu']}</em>总需人次</li>
-					<li class="P-bar03"><em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>剩余人次</li>
+					<li class="P-bar01"><em>{wc:$shop['canyurenshu']}</em>{wc:fun:lang::get_lang('已参与人次')}</li>
+					<li class="P-bar02"><em>{wc:$shop['zongrenshu']}</em>{wc:fun:lang::get_lang('总需人次')}</li>
+					<li class="P-bar03"><em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>{wc:fun:lang::get_lang('剩余人次')}</li>
 				</ul>
 			</div>
 			<div class="w-goods-ing" style="width: 215px;margin-top: 3px;">
 				<div class="shop_buttom bg_red b_red1" style="margin:0 10px;width:115px;height:35px;">
-					<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" style="line-height:35px;font-size:14px;" class="Det_Shopnow">立即1币乐购</a>
+					<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" style="line-height:35px;font-size:14px;" class="Det_Shopnow">{wc:fun:lang::get_lang('立即')}1{wc:fun:lang::get_lang('币乐购')}</a>
 				</div>
 				<div class="shop_buttom1 bg_pink b_pink c_red" style="margin:0px 10px;width:60px;height:35px;">
 					<a href="javascript:;" onclick="gcartlist.gocartlist({wc:$shop['id']},'{WEB_PATH}','wc_')" class="c_red" style="line-height:30px;font-size:14px;" id="car_{wc:$shop['id']}"></a>
 				</div>
 			</div>
 			<div class="fail" style="display:none">
-			    <div class="main" style="text-indent:4em">购物车已存在！加入失败</div>
-			    <div class="arrow"><em>◆</em><s>◆</s></div>
+			    <div class="main" style="text-indent:4em">{wc:fun:lang::get_lang('购物车已存在！加入失败')}</div>
+			    <div class="arrow"><em>{wc:fun:lang::get_lang('◆')}</em><s>{wc:fun:lang::get_lang('◆')}</s></div>
 			</div>
 			<div class="success" style="display:none">
-				<div class="main" style="text-indent:4em">恭喜您,加入购物车成功</div>
-			    <div class="arrow"><em>◆</em><s>◆</s></div>
+				<div class="main" style="text-indent:4em">{wc:fun:lang::get_lang('恭喜您')},{wc:fun:lang::get_lang('加入购物车成功')}</div>
+			    <div class="arrow"><em>{wc:fun:lang::get_lang('◆')}</em><s>{wc:fun:lang::get_lang('◆')}</s></div>
 			</div>	
 		</li>
 		{wc:loop:end}
@@ -227,7 +227,7 @@ $(function(){
 		Cartcookie(sw,true); 
 	});	
 });
-//存到COOKIE
+//{wc:fun:lang::get_lang('存到')}COOKIE
 function Cartcookie(sw,cook){
 	var shopid = $(".Curbor_id").eq(sw).text(),
 		shenyu = $(".Curbor_yunjiage").eq(sw).text(),

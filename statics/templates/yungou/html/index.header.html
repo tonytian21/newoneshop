@@ -77,21 +77,21 @@
 				<ul class="collect fr">
 
 					<li class="fr">
-						<a class="livechatinc" style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg("qq")}&site=qq&menu=yes" target="_blank">在线客服</a>
+						<a class="livechatinc" style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg("qq")}&site=qq&menu=yes" target="_blank">{wc:fun:lang::get_lang('在线客服')}</a>
 					</li>
 					<li class="fr">
-						<a href="{WEB_PATH}/help/1">帮助</a>
+						<a href="{WEB_PATH}/help/1">{wc:fun:lang::get_lang('帮助')}</a>
 						<span>|</span>
 					</li>
 
 					<li class="fr">
-						<a href="{WEB_PATH}/member/home/userrecharge">快速充值</a>
+						<a href="{WEB_PATH}/member/home/userrecharge">{wc:fun:lang::get_lang('快速充值')}</a>
 						<span>|</span>
 					</li>
 
 					<li class="fr yu_ff">
 
-						<a  href="{WEB_PATH}/home/member">我的乐购</a>
+						<a  href="{WEB_PATH}/home/member">{wc:fun:lang::get_lang('我的乐购')}</a>
 						<span>|</span>
 
 						<div class="h_1yyg_eject">
@@ -99,23 +99,23 @@
 							<dl>
 
 								<dd>
-									<a  href="{WEB_PATH}/member/home">我的乐购</a>
+									<a  href="{WEB_PATH}/member/home">{wc:fun:lang::get_lang('我的乐购')}</a>
 								</dd>
 
 								<dd>
-									<a  href="{WEB_PATH}/member/home/userbuylist">乐购记录</a>
+									<a  href="{WEB_PATH}/member/home/userbuylist">{wc:fun:lang::get_lang('乐购记录')}</a>
 								</dd>
 
 								<dd>
-									<a  href="{WEB_PATH}/member/home/orderlist">获得商品</a>
+									<a  href="{WEB_PATH}/member/home/orderlist">{wc:fun:lang::get_lang('获得商品')}</a>
 								</dd>
 
 								<dd>
-									<a  href="{WEB_PATH}/member/home/userrecharge">帐户充值</a>
+									<a  href="{WEB_PATH}/member/home/userrecharge">{wc:fun:lang::get_lang('帐户充值')}</a>
 								</dd>
 
 								<dd>
-									<a  href="{WEB_PATH}/member/home/modify">个人设置</a>
+									<a  href="{WEB_PATH}/member/home/modify">{wc:fun:lang::get_lang('个人设置')}</a>
 								</dd>
 
 							</dl>
@@ -125,24 +125,24 @@
 					</li>
 					{wc:if get_user_arr()}
 					<li class="fr">
-						欢迎您:
+						{wc:fun:lang::get_lang('欢迎您')}:
 						<a  href="{WEB_PATH}/member/home" >{wc:fun:get_user_name(get_user_arr(),'username')}</a>
 
 						<span>|</span>
 
-						<a href="{WEB_PATH}/member/user/cook_end">[退出]</a>
+						<a href="{WEB_PATH}/member/user/cook_end">[{wc:fun:lang::get_lang('退出')}]</a>
 
 						<span>|</span>
 
 					</li>
 					{wc:else}
 					<li class="fr">
-						<a href="{WEB_PATH}/register">注册</a>
+						<a href="{WEB_PATH}/register">{wc:fun:lang::get_lang('注册')}</a>
 						<span>|</span>
 					</li>
 
 					<li class="fr">
-						<a href="{WEB_PATH}/login">登录</a>
+						<a href="{WEB_PATH}/login">{wc:fun:lang::get_lang('登录')}</a>
 						<span>|</span>
 					</li>
 					{wc:if:end}
@@ -150,17 +150,17 @@
 
 				<ul class="collect fl">
 					<li class="fl">
-						<a style="margin-right: 3px;" href="javascript:;" onclick="AddFavorite(window.location,document.title)">收藏</a>
+						<a style="margin-right: 3px;" href="javascript:;" onclick="AddFavorite(window.location,document.title)">{wc:fun:lang::get_lang('收藏')}</a>
 						<!--<span>|</span>-->
 					</li>
 					<!--<li class="fl mobile" style="position:relative;width: 50px;padding:0 25px;">
-						<a target="_blank" style="margin:0;" href="{G_WEB_PATH}/app/index.html">手机乐购</a>
+						<a target="_blank" style="margin:0;" href="{G_WEB_PATH}/app/index.html">{wc:fun:lang::get_lang('手机乐购')}</a>
 						<s style="left: 80px;"></s>
 						<span  class="shouji"></span>
 						<div class="h_mobile" style="padding:0 25px;width: 50px;height: 140px;z-index: 9999;">
 							<dl>
 								<li class="fl mobile">
-									<a target="_blank"  style="margin:0;color: #ff6600;" href="{G_WEB_PATH}/app/index.html">手机乐购</a>
+									<a target="_blank"  style="margin:0;color: #ff6600;" href="{G_WEB_PATH}/app/index.html">{wc:fun:lang::get_lang('手机乐购')}</a>
 									<s style="left: 80px;"></s>
 									<span class="shouji" style="background-position: -45px -34px;"></span>
 								</li>
@@ -168,7 +168,7 @@
 							<a target="_blank" href="{G_WEB_PATH}/app/index.html">
 								<img style="position: absolute;left: 5px;top: 30px;" src="{G_TEMPLATES_STYLE}/images/code.jpg" height="90" width="90">
 							</a>
-							<span style="line-height: 15px;color: #ff6600!important;display: block;position: absolute;top: 120px;left: 20px;"><a target="_blank" style="line-height: 18px;margin: 0;" href="{G_WEB_PATH}/app/index.html">下载客户端</a></span>
+							<span style="line-height: 15px;color: #ff6600!important;display: block;position: absolute;top: 120px;left: 20px;"><a target="_blank" style="line-height: 18px;margin: 0;" href="{G_WEB_PATH}/app/index.html">{wc:fun:lang::get_lang('下载客户端')}</a></span>
 						</div>
 					</li>-->
 				</ul>
@@ -203,10 +203,10 @@
 					</style>
 				<div class="head_search b_red fl" style="position: relative;">
 
-					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="输入'小米手机'试一试" type="text">
+					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="{wc:fun:lang::get_lang('输入')}'{wc:fun:lang::get_lang('小米手机')}'{wc:fun:lang::get_lang('试一试')}" type="text">
 					<span style="">
-						<a href="{G_WEB_PATH}/index.php/s_tag/苹果">苹果</a>
-						<a href="{G_WEB_PATH}/index.php/s_tag/购物卡" style="width: 45px;">购物卡</a>
+						<a href="{G_WEB_PATH}/index.php/s_tag/{wc:fun:lang::get_lang('苹果')}">{wc:fun:lang::get_lang('苹果')}</a>
+						<a href="{G_WEB_PATH}/index.php/s_tag/{wc:fun:lang::get_lang('购物卡')}" style="width: 45px;">{wc:fun:lang::get_lang('购物卡')}</a>
 					</span>
 					<a class="search_submit" id="butSearch" href="javascript:;"> <i class="ico_search"></i>
 
@@ -222,13 +222,13 @@
 		{wc:php:end}
 					<a href="{WEB_PATH}/buyrecord" target="_blank">
 
-						<span class="qian text">累计参与</span>
+						<span class="qian text">{wc:fun:lang::get_lang('累计参与')}</span>
 						{wc:loop $return $slide}
 						<!-- <span class="tnum" id="spBuyCount">{wc:fun:go_count_renci()}</span>
 					-->
 					<span class="tnum" id="spBuyCount">{wc:$slide}</span>
 					{wc:loop:end}
-					<span class="hou text">人次></span>
+					<span class="hou text">{wc:fun:lang::get_lang('人次')}></span>
 
 				</a>
 
@@ -240,7 +240,7 @@
 
 </div>
 
-<!--导航 header_nav 开始-->
+<!--{wc:fun:lang::get_lang('导航')} header_nav {wc:fun:lang::get_lang('开始')}-->
 
 <div class="head_nav">
 
@@ -251,7 +251,7 @@
 			<div class="m_menu_all">
 
 				<h3>
-					<a class="c_red" href="{WEB_PATH}/goods_list/">全部商品分类</a> <em></em>
+					<a class="c_red" href="{WEB_PATH}/goods_list/">{wc:fun:lang::get_lang('全部商品分类')}</a> <em></em>
 				</h3>
 
 			</div>
@@ -276,7 +276,7 @@
 	{wc:getlist:end}
 				</ul>
 
-				<a class="more" href="{WEB_PATH}/goods_list">查看更多</a>
+				<a class="more" href="{WEB_PATH}/goods_list">{wc:fun:lang::get_lang('查看更多')}</a>
 
 			</div>
 
@@ -285,7 +285,7 @@
 		<ul class="nav_list">
 
 			<li class="sort-all-shouye">
-				<a href="{wc:G_WEB_PATH}">首页</a>
+				<a href="{wc:G_WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a>
 			</li>
 			{wc:fun:Getheader('index')}
 		</ul>
@@ -295,7 +295,7 @@
 			<a href="{WEB_PATH}/member/cart/cartlist" class="cart c_red" target="_blank" id="sCartNavi">
 
 				<s></s>
-				购物车(
+				{wc:fun:lang::get_lang('购物车')}(
 				<span id="sCartTotal" class="c_red">0</span>
 				)
 			</a>
@@ -330,7 +330,7 @@
 
 </style>
 
-<!--导航 header_nav 结束-->
+<!--{wc:fun:lang::get_lang('导航')} header_nav {wc:fun:lang::get_lang('结束')}-->
 
 <script>
 
@@ -376,13 +376,13 @@ $(function(){
 
 		$("#txtSearch").css({background:"#FFF"});
 
-		$(this).attr("placeholder","输入'小米手机'试一试");	
+		$(this).attr("placeholder","{wc:fun:lang::get_lang('输入')}'{wc:fun:lang::get_lang('小米手机')}'{wc:fun:lang::get_lang('试一试')}");	
 
 	});
 
 	$("#butSearch").click(function(){
 
-		var val1="小米手机"
+		var val1="{wc:fun:lang::get_lang('小米手机')}"
 
 	    if($("#txtSearch").val()==""){
 
@@ -418,7 +418,7 @@ $(function(){
 
 		
 
-	//收藏
+	//{wc:fun:lang::get_lang('收藏')}
 
 	function AddFavorite(sURL, sTitle){
 
@@ -446,7 +446,7 @@ $(function(){
 
 			{
 
-				alert("您可以通过快捷键Ctrl+D进行添加");
+				alert("{wc:fun:lang::get_lang('您可以通过快捷键')}Ctrl+D{wc:fun:lang::get_lang('进行添加')}");
 
 			}
 

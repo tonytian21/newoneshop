@@ -178,7 +178,7 @@ function send_mobile_fid_code($mobile = null)
         _message("发送验证码邮箱号码不能为空");
     $db = System::load_sys_class('model');
     $checkcodes = rand(100000, 999999) . '|' . time(); // 验证码
-    $db->Query("UPDATE `@#_member` SET mobilecode='$checkcodes' where `mobile`='$mobile'");
+    $db->Query("UPDATE `@#_member` SET mobilecode='$checkcodes' where `email`='$mobile'");
     $checkcodes = explode("|", $checkcodes);
     $template = $db->GetOne("select * from `@#_caches` where `key` = 'template_mobile_reg'");
     if (! $template) {
@@ -195,7 +195,7 @@ function send_mobile_fid_code($mobile = null)
         }
     }
     
-    return _sendmobile($mobile, $content);
+    return _sendemail($mobile, '','找回密码',$content);
 }
 
 ?>

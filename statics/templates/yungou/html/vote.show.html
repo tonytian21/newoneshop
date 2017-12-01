@@ -15,7 +15,7 @@
 			   }
 			}
 			if(!flag){
-			   alert("请选择投票项！！！");
+			   alert("{wc:fun:lang::get_lang('请选择投票项！！！')}");
 			   return false;
 			   } 
 	     
@@ -29,7 +29,7 @@
 <form name="form1" action="{WEB_PATH}/vote/vote/checked_option" onSubmit="return Onsubmit()" method="post"> 
 <form>
 <div class="links_txt">
-	<h3><b>标题：{wc:$vote_title}</b></h3>
+	<h3><b>{wc:fun:lang::get_lang('标题：')}{wc:$vote_title}</b></h3>
 	<input type="hidden" name="vote_id" value="{wc:$vote_id}"/>
 	<ul style="border:1px solid #989898;margin-left:100px;width:500px;">
 	{wc:loop $vote_options $option_val}	
@@ -41,7 +41,7 @@
  
  
 </div>
-<input type="submit" value="提交投票"  style="margin-left:300px;"/>
+<input type="submit" value="{wc:fun:lang::get_lang('提交投票')}"  style="margin-left:300px;"/>
  
   	 	
 		 
@@ -59,15 +59,15 @@
   
 <div class="links_txt" style="margin:0 auto;">
 	<ul class="tabBut cu-li">
-		<h3><b>投票结果</b><span style="float:right;margin-right:500px;">投票总数:{wc:$total} </span></h3>
+		<h3><b>{wc:fun:lang::get_lang('投票结果')}</b><span style="float:right;margin-right:500px;">{wc:fun:lang::get_lang('投票总数')}:{wc:$total} </span></h3>
 	</ul>
 <div class="content pad-10" style="float:left;width:960px;text-align:center">
 	<table width="100%" align="center" cellspacing="0" class="table-list">
 		<thead>
 			<tr>
-				<th>投票项目选项</th>
-				<th width="20%" align="center">投票数</th>
-				<th width='40%' align="center">图示</th>
+				<th>{wc:fun:lang::get_lang('投票项目选项')}</th>
+				<th width="20%" align="center">{wc:fun:lang::get_lang('投票数')}</th>
+				<th width='40%' align="center">{wc:fun:lang::get_lang('图示')}</th>
 			</tr>
 		</thead>
 	   <tbody>		 

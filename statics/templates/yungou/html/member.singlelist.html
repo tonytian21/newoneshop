@@ -5,25 +5,25 @@
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.message.css"/>
 <div class="R-content">
 	<div class="subMenu">
-		<a class="current">已晒单</a>
-		<a >未晒单</a>
+		<a class="current">{wc:fun:lang::get_lang('已晒单')}</a>
+		<a >{wc:fun:lang::get_lang('未晒单')}</a>
 	</div>
 	<div class="list-tab topic" style="display: block;">
 		<ul class="listTitle">
-			<li style="text-align:center;" class="w100">晒单图片</li>
-			<li class="w400">晒单信息</li>
-			<li class="w130">晒单状态</li>
-			<li class="w85 fr">操作</li>
+			<li style="text-align:center;" class="w100">{wc:fun:lang::get_lang('晒单图片')}</li>
+			<li class="w400">{wc:fun:lang::get_lang('晒单信息')}</li>
+			<li class="w130">{wc:fun:lang::get_lang('晒单状态')}</li>
+			<li class="w85 fr">{wc:fun:lang::get_lang('操作')}</li>
 		</ul>
 		{wc:if $shaidan==null}
-		<div class="tips-con"><i></i>暂无记录！</div>
+		<div class="tips-con"><i></i>{wc:fun:lang::get_lang('暂无记录！')}</div>
 		{wc:else}
 		{wc:loop $shaidan $sd}
 		<ul class="listCon">			
 			<li class="w100" style="text-align:center;"><a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank" class="blue"><img width="50" src="{G_UPLOAD_PATH}/{wc:$sd['sd_thumbs']}"/></a></li>
 			<li class="w400"><a href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" target="_blank" class="gray01">{wc:$sd['sd_title']}</a></li>
 			<li class="w85 fr">
-			<font color="#666">不可修改</font>
+			<font color="#666">{wc:fun:lang::get_lang('不可修改')}</font>
 			</li>
 		</ul>
 		{wc:loop:end}
@@ -31,18 +31,18 @@
 	</div>
 	<div class="list-tab topic" style="display: none;">
 		<ul class="listTitle">
-			<li style="text-align:center;" class="w100">商品图片</li>
-			<li class="w630">商品信息</li>
-			<li class="w85 fr">操作</li>
+			<li style="text-align:center;" class="w100">{wc:fun:lang::get_lang('商品图片')}</li>
+			<li class="w630">{wc:fun:lang::get_lang('商品信息')}</li>
+			<li class="w85 fr">{wc:fun:lang::get_lang('操作')}</li>
 		</ul>
 		{wc:if $record==null}
-		<div class="tips-con"><i></i>暂无记录！</div>
+		<div class="tips-con"><i></i>{wc:fun:lang::get_lang('暂无记录！')}</div>
 		{wc:else}
 		{wc:loop $record $sd}
 		<ul class="listCon">
 			<li style="text-align:center;" class="w100"><div class="listConT"><img width="50" src="{G_UPLOAD_PATH}/{wc:fun:shoplisext($sd['shopid'],'thumb')}"/></div></li>
 			<li style="text-indent:1em;" class="w400"><a href="{WEB_PATH}/goods/{wc:$sd['shopid']}" target="_blank">{wc:fun:shoplisext($sd['shopid'],'title')}</a></li>
-			<li class="w50 fr"><a name="delete" href="{WEB_PATH}/member/home/singleinsert/{wc:$sd['id']}" class="blue">添加晒单</a></li>
+			<li class="w50 fr"><a name="delete" href="{WEB_PATH}/member/home/singleinsert/{wc:$sd['id']}" class="blue">{wc:fun:lang::get_lang('添加晒单')}</a></li>
 		</ul>
 		{wc:loop:end}
 		{wc:if:end}
@@ -143,23 +143,23 @@ $(function(){
 	});
 })
 function shaidan(id){
-	if(confirm("您确认要删除该条信息吗？")){
+	if(confirm("{wc:fun:lang::get_lang('您确认要删除该条信息吗？')}")){
 		window.location.href="{WEB_PATH}/member/home/shaidandel/"+id;
 	}
-	//FixedConfirm('你确定要删除？',240);
+	//FixedConfirm('{wc:fun:lang::get_lang('你确定要删除？')}',240);
 }
 /*$("#btnShow6").click(function(){
-		FixedConfirm('你确定要删除？',240);
+		FixedConfirm('{wc:fun:lang::get_lang('你确定要删除？')}',240);
 });*/
 function FixedConfirm(content,minwidth){
 	var div=FixedStar();
 		div+='<div id="foucs_close"></div>';
 		div+='<div id="foucs_main">';
-		div+='<div class="title" style="display:black">提示</div>';
+		div+='<div class="title" style="display:black">{wc:fun:lang::get_lang('提示')}</div>';
 		div+='<div class="content"><div class="PopMsgC"  style="display:black"><s></s>'+content+'</div>';
 		div+='<div class="PopMsgbtn" style="display:black">';
-		div+='<a class="orangebut" id="btnMsgOK" href="javascript:;">确认</a>&nbsp;&nbsp;';
-		div+='<a class="cancelBtn" id="btnMsgCancel" href="javascript:;">取消</a>';
+		div+='<a class="orangebut" id="btnMsgOK" href="javascript:;">{wc:fun:lang::get_lang('确认')}</a>&nbsp;&nbsp;';
+		div+='<a class="cancelBtn" id="btnMsgCancel" href="javascript:;">{wc:fun:lang::get_lang('取消')}</a>';
 		div+='</div></div></div>';
 		div+='</div>';	
 	$("body").append(div);
@@ -171,7 +171,7 @@ $(function(){
 		Fixed();
 	})
 })
-//关闭弹窗
+//{wc:fun:lang::get_lang('关闭弹窗')}
 function FixedClose(){
 	$("#foucs_close,#page_close,#btnMsgCancel").click(function(){		
 		$("#foucs_big,#foucs_min,#w3foucs").fadeOut(200,function(){

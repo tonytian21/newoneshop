@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>分享页面得现金-{wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('分享页面得现金')}-{wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" name="viewport" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -102,7 +102,7 @@
 
 
 
-                                <a href="{G_WEB_PATH}"  class="orangeBtn">立即1元云购</a>
+                                <a href="{G_WEB_PATH}"  class="orangeBtn">{wc:fun:lang::get_lang('立即')}1{wc:fun:lang::get_lang('元云购')}</a>
 
 
 
@@ -446,7 +446,7 @@
 
 
 
-            //弹出输入法是否隐藏底部导航
+            //{wc:fun:lang::get_lang('弹出输入法是否隐藏底部导航')}
 
 
 
@@ -676,11 +676,11 @@ var n = $("#hidLineLink").val();
 
     wx.onMenuShareTimeline({
 
-        title: "1元就能购买iPhone 6S！我已买了，快来看看吧！", // 分享标题
+        title: "1{wc:fun:lang::get_lang('元就能购买')}iPhone 6S{wc:fun:lang::get_lang('！我已买了，快来看看吧！')}", // {wc:fun:lang::get_lang('分享标题')}
 
-        link: n, // 分享链接
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
 
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // 分享图标
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // {wc:fun:lang::get_lang('分享图标')}
 
         success: function () { 
             var tt =$("#uid").val();
@@ -691,13 +691,13 @@ var n = $("#hidLineLink").val();
                       data : {f : tt},
                 success:function(data){
                     if(data==2){
-                         alert('分享成功,赠送的现金已经存入你的账户！');
+                         alert('{wc:fun:lang::get_lang('分享成功')},{wc:fun:lang::get_lang('赠送的现金已经存入你的账户！')}');
                      }else if(data==4){
-                        alert('分享成功,您已经分享过，不能再次获得赠金哦');
+                        alert('{wc:fun:lang::get_lang('分享成功')},{wc:fun:lang::get_lang('您已经分享过，不能再次获得赠金哦')}');
                      }else if(data ==1){
-                         alert('感谢您的分享，分享赠现金活动已经结束了哦');
+                         alert('{wc:fun:lang::get_lang('感谢您的分享，分享赠现金活动已经结束了哦')}');
                      }else if(data ==5){
-                        alert('请登录后分享，以便领取赠送的金额哦');
+                        alert('{wc:fun:lang::get_lang('请登录后分享，以便领取赠送的金额哦')}');
                      }
                    
                 },
@@ -710,7 +710,7 @@ var n = $("#hidLineLink").val();
 
         cancel: function () { 
 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
 
     });
@@ -721,27 +721,27 @@ var n = $("#hidLineLink").val();
 
 
 
-        title: "1元就能购买iphone X哦，快去看看吧！", // 分享标题
+        title: "1{wc:fun:lang::get_lang('元就能购买')}iphone X{wc:fun:lang::get_lang('哦，快去看看吧！')}", // {wc:fun:lang::get_lang('分享标题')}
 
 
 
-        desc: "1元就能购买iphone X哦，快去看看吧！", // 分享描述
+        desc: "1{wc:fun:lang::get_lang('元就能购买')}iphone X{wc:fun:lang::get_lang('哦，快去看看吧！')}", // {wc:fun:lang::get_lang('分享描述')}
 
 
 
-        link: n, // 分享链接
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
 
 
 
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // 分享图标
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // {wc:fun:lang::get_lang('分享图标')}
 
 
 
-        type: '', // 分享类型,music、video或link，不填默认为link
+        type: '', // {wc:fun:lang::get_lang('分享类型')},music{wc:fun:lang::get_lang('、')}video{wc:fun:lang::get_lang('或')}link{wc:fun:lang::get_lang('，不填默认为')}link
 
 
 
-        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+        dataUrl: '', // {wc:fun:lang::get_lang('如果')}type{wc:fun:lang::get_lang('是')}music{wc:fun:lang::get_lang('或')}video{wc:fun:lang::get_lang('，则要提供数据链接，默认为空')}
 
 
 
@@ -749,7 +749,7 @@ var n = $("#hidLineLink").val();
 
 
 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
 
 
 
@@ -761,7 +761,7 @@ var n = $("#hidLineLink").val();
 
 
 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
 
 
 
@@ -777,19 +777,19 @@ var n = $("#hidLineLink").val();
 
 
 
-        title: "1元就能购买iphone X哦，快去看看吧！", // 分享标题
+        title: "1{wc:fun:lang::get_lang('元就能购买')}iphone X{wc:fun:lang::get_lang('哦，快去看看吧！')}", // {wc:fun:lang::get_lang('分享标题')}
 
 
 
-        desc: "1元就能购买iphone X哦，快去看看吧！", // 分享描述
+        desc: "1{wc:fun:lang::get_lang('元就能购买')}iphone X{wc:fun:lang::get_lang('哦，快去看看吧！')}", // {wc:fun:lang::get_lang('分享描述')}
 
 
 
-        link: n, // 分享链接
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
 
 
 
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // 分享图标
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // {wc:fun:lang::get_lang('分享图标')}
 
 
 
@@ -797,7 +797,7 @@ var n = $("#hidLineLink").val();
 
 
 
-           // 用户确认分享后执行的回调函数
+           // {wc:fun:lang::get_lang('用户确认分享后执行的回调函数')}
 
 
 
@@ -809,7 +809,7 @@ var n = $("#hidLineLink").val();
 
 
 
-           // 用户取消分享后执行的回调函数
+           // {wc:fun:lang::get_lang('用户取消分享后执行的回调函数')}
 
 
 
@@ -825,19 +825,19 @@ var n = $("#hidLineLink").val();
 
 
 
-        title: "1元就能购买iphone X哦，快去看看吧！", // 分享标题
+        title: "1{wc:fun:lang::get_lang('元就能购买')}iphone X{wc:fun:lang::get_lang('哦，快去看看吧！')}", // {wc:fun:lang::get_lang('分享标题')}
 
 
 
-        desc: "1元就能购买iphone X哦，快去看看吧！", // 分享描述
+        desc: "1{wc:fun:lang::get_lang('元就能购买')}iphone X{wc:fun:lang::get_lang('哦，快去看看吧！')}", // {wc:fun:lang::get_lang('分享描述')}
 
 
 
-        link: n, // 分享链接
+        link: n, // {wc:fun:lang::get_lang('分享链接')}
 
 
 
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // 分享图标
+        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/iphone6.jpg", // {wc:fun:lang::get_lang('分享图标')}
 
 
 
@@ -845,7 +845,7 @@ var n = $("#hidLineLink").val();
 
 
 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
 
 
 
@@ -857,7 +857,7 @@ var n = $("#hidLineLink").val();
 
 
 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
 
 
 

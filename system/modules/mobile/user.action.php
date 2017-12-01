@@ -394,12 +394,12 @@ class user extends memberbase {
 	public function step1chk(){	
 		if($_POST){
 		$mobile=isset($_POST['mobile']) ? $_POST['mobile'] : "";
-		if(!_checkmobile($mobile) || $mobile==''){
-			echo "手机号错误";die;	
+		if(!_checkemail($mobile) || $mobile==''){
+			echo "邮箱号码错误";die;	
 		}
-		$member2=$this->db->GetOne("select mobilecode,uid,mobile from `@#_member` where `mobile`='$mobile'");
+		$member2=$this->db->GetOne("select mobilecode,uid,email from `@#_member` where `email`='$mobile'");
 			if(!$member2){
-					echo "手机号不存在或未验证成功！";die;
+					echo "邮箱号码不存在或未验证成功！";die;
 			}					
 			if($member2['mobilecode']=1){
 			//验证码
@@ -425,12 +425,12 @@ class user extends memberbase {
 		if(strlen($checkcodes)!=6){
 			echo "验证码输入不正确!";die;
 		}
-		$member2=$this->db->GetOne("SELECT mobilecode,uid,mobile from `@#_member` where `mobile`='$mobile'");
+		$member2=$this->db->GetOne("SELECT mobilecode,uid,mobile from `@#_member` where `email`='$mobile'");
 		$usercode=explode("|",$member2['mobilecode']);
 		if($checkcodes!=$usercode[0]){
 			echo "验证码输入不正确!";die;
 		}
-		$this->db->Query("UPDATE `@#_member` SET `mobilecode`='1' WHERE `mobile`='$mobile'");				
+		$this->db->Query("UPDATE `@#_member` SET `mobilecode`='1' WHERE `email`='$mobile'");				
 		echo 123;die;
 		}else{
 		echo '操作失败，请重新操作';die;
@@ -441,8 +441,9 @@ class user extends memberbase {
 		$pwd2=isset($_POST['pwd2']) ? $_POST['pwd2'] : "";
 		$pwd3=isset($_POST['pwd3']) ? $_POST['pwd3'] : "";
 		$mobile= base64_decode(_getcookie("mobilecheck"));
-		if(!_checkmobile($mobile) || $mobile==''){
-			echo "手机号码为空，操作失败";exit;
+		
+		if(!_checkemail($mobile) || $mobile==''){
+			echo "邮箱号码为空，操作失败";exit;
 		}
 		if($pwd3=='' or $pwd2==''){
 				echo "密码不能为空;";exit;

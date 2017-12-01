@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>验证身份 - {wc:$webname}</title>
+    <title>{wc:fun:lang::get_lang('验证身份')} - {wc:$webname}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -16,17 +16,17 @@
 <body style="background: #f4f4f4;">
     <div class="h5-1yyg-v1" id="content">
         
-<!-- 栏目页面顶部 -->
+<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
 
 
-<!-- 内页顶部 -->
+<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 
     <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
 
     <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
         <span style="display: block;height: 49px;line-height: 49px;">
             <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-               验证身份
+               {wc:fun:lang::get_lang('验证身份')}
             </a>
         </span>
 
@@ -55,10 +55,10 @@
 	        <div class="registerCon">
 	            <input type="hidden" id="inpMobile" name="mobile" value="{wc:$mobile}" />
     	        <ul>
-        	        <li><input type="text" id="mobileCode" name="code" placeholder="请输入手机验证码" class="rText"/><s class="rs2"></s></li>
-                    <li><a href="javascript:void(0);" id="chkPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
-                    <li style="font-size:12px;">如未收到验证短信，请在120秒后点击重新发送。</li>
-                    <li><a id="btnGetCode" class="resendBtn grayBtn">重新发送</a></li>
+        	        <li><input type="text" id="mobileCode" name="code" placeholder="{wc:fun:lang::get_lang('请输入邮箱验证码')}" class="rText"/><s class="rs2"></s></li>
+                    <li><a href="javascript:void(0);" id="chkPostCode" class="nextBtn  orgBtn">{wc:fun:lang::get_lang('确认，下一步')}</a></li>
+                    <li style="font-size:12px;">{wc:fun:lang::get_lang('如未收到验证短信，请在')}120{wc:fun:lang::get_lang('秒后点击重新发送。')}</li>
+                    <li><a id="btnGetCode" class="resendBtn grayBtn">{wc:fun:lang::get_lang('重新发送')}</a></li>
                 </ul>
 	        </div>
         </section>
@@ -78,17 +78,17 @@
         code : $code.val(),
         };
         if (post.code == '' ) {
-        $.PageDialog.fail("验证码不能为空");
+        $.PageDialog.fail("{wc:fun:lang::get_lang('验证码不能为空')}");
         return false;
         }
-        var the = $(this).text('正在提交');
+        var the = $(this).text('{wc:fun:lang::get_lang('正在提交')}');
 	    submiting = true;
             $.post("{WEB_PATH}/mobile/user/step2chk",post,function(s){
             if (s==123) {
                 window.location.href="{WEB_PATH}/mobile/user/step3";
             } else {
                 submiting = false;
-                the.text('提交');
+                the.text('{wc:fun:lang::get_lang('提交')}');
                 $.PageDialog.fail(s);
          }
             },'text');		

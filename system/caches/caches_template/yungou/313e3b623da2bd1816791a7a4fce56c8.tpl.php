@@ -15,7 +15,7 @@
     });
 </script>
 <style>
-    /*下面是对联广告的css代码*/
+    /*<?php echo lang::get_lang('下面是对联广告的'); ?>css<?php echo lang::get_lang('代码'); ?>*/
     .duilian{z-index: 999;top:200px;position:absolute; width:<?php echo $ad_area['width']; ?>px; overflow:hidden; display:none;}
     .duilian_left{ left:90px;}
     .duilian_right{right:90px;}
@@ -26,9 +26,9 @@
 
 <!--<div class="duilian duilian_left">
     <div class="duilian_con"><a target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html"><img width="<?php echo $ad_area['width']; ?>" height="<?php echo $ad_area['height']; ?>" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $couplet_img['0']; ?>"></a></div>
-    <a href="#" class="duilian_close">X&nbsp关闭</a>
+    <a href="#" class="duilian_close">X&nbsp<?php echo lang::get_lang('关闭'); ?></a>
 </div>
 <div class="duilian duilian_right">
     <div class="duilian_con"><a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><img width="<?php echo $ad_area['width']; ?>" height="<?php echo $ad_area['height']; ?>" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $couplet_img['1']; ?>"></a></div>
-    <a href="#" class="duilian_close">X关闭</a>
+    <a href="#" class="duilian_close">X<?php echo lang::get_lang('关闭'); ?></a>
 </div>-->

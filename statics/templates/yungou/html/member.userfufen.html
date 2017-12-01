@@ -4,17 +4,17 @@
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.css"/>
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.message.css"/>
 <div class="R-content">
-	<div class="member-t"><h2>账户积分</h2></div>
+	<div class="member-t"><h2>{wc:fun:lang::get_lang('账户积分')}</h2></div>
 	<div class="last">
 		<ul>
-			<li><h3>可用积分：</h3><b class="orange">{wc:$member['score']}</b></li>
+			<li><h3>{wc:fun:lang::get_lang('可用积分：')}</h3><b class="orange">{wc:$member['score']}</b></li>
 		</ul>
 	</div>
 	<div id="divList0" class="list-tab recordList">
 	<ul class="listTitle">
-		<li class="leftTitle">时间</li>
-		<li class="price">渠道</li>
-		<li class="regard">获得/支出</li>
+		<li class="leftTitle">{wc:fun:lang::get_lang('时间')}</li>
+		<li class="price">{wc:fun:lang::get_lang('渠道')}</li>
+		<li class="regard">{wc:fun:lang::get_lang('获得')}/{wc:fun:lang::get_lang('支出')}</li>
 	</ul>
 	{wc:loop $account $at}
 	<ul>

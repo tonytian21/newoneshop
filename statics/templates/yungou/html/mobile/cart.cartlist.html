@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>购物车 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('购物车')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -24,7 +24,7 @@
     <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
         <span style="display: block;height: 49px;line-height: 49px;">
             <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-               购物车
+              {wc:fun:lang::get_lang('购物车')}
             </a>
         </span>
 
@@ -68,12 +68,12 @@
                     </a>
                     <div class="u-Cart-r">
                         <p class="z-Cart-tt">
-                            <a href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}" class="gray6">(第{wc:$val['qishu']}期){wc:$val['title']}</a>
-                        </p> <ins class="z-promo gray9">剩余 <em class="arial">{wc:$val['zongrenshu']-$val['canyurenshu']}</em>
-                            人次</ins> 
+                            <a href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}" class="gray6">{wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$val['title']}</a>
+                        </p> <ins class="z-promo gray9">{wc:fun:lang::get_lang('剩余')} <em class="arial">{wc:$val['zongrenshu']-$val['canyurenshu']}</em>
+                            {wc:fun:lang::get_lang('人次')}</ins> 
                         <p class="gray9">
-                            总共参与： <em class="arial proce" id="arial{wc:$val['id']}" ids="{wc:$val['id']}">{wc:$Mcartlist[$val['id']]['num']}</em>
-                            人次/
+                            {wc:fun:lang::get_lang('总共参与')}： <em class="arial proce" id="arial{wc:$val['id']}" ids="{wc:$val['id']}">{wc:$Mcartlist[$val['id']]['num']}</em>
+                            {wc:fun:lang::get_lang('人次')}/
                             
 
                             <em class="orange arial">￥<span  id="price{wc:$val['id']}" ids="{wc:$val['id']}" class='price'>{wc:$Mcartlist[$val['id']]['sun']}</span></em>
@@ -122,31 +122,31 @@
                             <li id="Li2" data-id="{wc:$val['id']}" data-val="50">50</li>
                             <li id="Li3" data-id="{wc:$val['id']}" data-val="100">100</li>
                             <li id="Li4" data-id="{wc:$val['id']}" data-val="200">200</li>
-                            <li id="Li5" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">包尾</li>
+                            <li id="Li5" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}"> {wc:fun:lang::get_lang('包尾')}</li>
                             {wc:elseif $val['zongrenshu']-$val['canyurenshu']>99}
                             <li id="Li1" data-id="{wc:$val['id']}" data-val="10">10</li>
                             <li id="Li2" data-id="{wc:$val['id']}" data-val="50">50</li>
                             <li id="Li3" data-id="{wc:$val['id']}" data-val="100">100</li>
                             <div id="wy">200</div>
-                            <li id="Li4" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">包尾</li>
+                            <li id="Li4" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">{wc:fun:lang::get_lang('包尾')}</li>
                             {wc:elseif $val['zongrenshu']-$val['canyurenshu']>49}
                             <li id="Li1" data-id="{wc:$val['id']}" data-val="10">10</li>
                             <li id="Li2" data-id="{wc:$val['id']}" data-val="50">50</li>
                             <div id="wy">100</div>
                             <div id="wy">200</div>
-                            <li id="Li3" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">包尾</li>
+                            <li id="Li3" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">{wc:fun:lang::get_lang('包尾')}</li>
                             {wc:elseif $val['zongrenshu']-$val['canyurenshu']>9}
                             <li id="Li1" data-id="{wc:$val['id']}" data-val="10">10</li>
                             <div id="wy">50</div>
                             <div id="wy">100</div>
                             <div id="wy">200</div>
-                            <li id="Li2" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">包尾</li>
+                            <li id="Li2" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">{wc:fun:lang::get_lang('包尾')}</li>
                             {wc:elseif $val['zongrenshu']-$val['canyurenshu']>0}
                             <div id="wy">10</div>
                             <div id="wy">50</div>
                             <div id="wy">100</div>
                             <div id="wy">200</div>
-                            <li id="Li1" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">包尾</li>
+                            <li id="Li1" data-id="{wc:$val['id']}" data-val="{wc:$val['zongrenshu']-$val['canyurenshu']}">{wc:fun:lang::get_lang('包尾')}</li>
                             {wc:if:end}
                             </ul>
                     </div>
@@ -161,21 +161,21 @@
         <div id="divBtmMoney" class="g-Total-bt" style="height: 40px;width: 100%;">
             <p style="display: block;float: left;line-height: 45px;text-align: left;text-indent: 10px;">
                 <!--{wc:fun:_cfg('web_name_two')}-->
-                共
+                {wc:fun:lang::get_lang('共')}
                 <span class="orange arial z-user" style="font-size: 12px;line-height: 45px;">{wc:$num}</span>
-                &nbsp件商品&nbsp&nbsp&nbsp合计&nbsp
-                <span  id="total" class="orange arial" style="font-size: 14px;line-height: 45px;">{wc:$buyshopmoney}.00</span>
-                &nbsp币
+                &nbsp{wc:fun:lang::get_lang('件商品')}&nbsp&nbsp&nbsp{wc:fun:lang::get_lang('合计')}&nbsp
+                <span  id="total" class="orange arial" style="font-size: 14px;line-height: 45px;">{wc:$buyshopmoney}</span>
+                &nbsp{wc:fun:lang::get_lang('币')}
             </p>
-            <a style="float: right;width: 20%;" href="javascript:;" class="orgBtn">去 结 算</a>
+            <a style="float: right;width: 20%;" href="javascript:;" class="orgBtn">{wc:fun:lang::get_lang('去 结 算')}</a>
 
         </div>
         {wc:if:end}
         <div id="divNone" class="haveNot z-minheight" style="display:none">
             <s></s>
-            <p>购物车空空如也~~</p>
+            <p>{wc:fun:lang::get_lang('购物车空空如也')}~~</p>
             <a href="/">
-                <p class="guangguang">去逛逛</p>
+                <p class="guangguang">{wc:fun:lang::get_lang('去逛逛')}</p>
             </a>
         </div>
     </section>

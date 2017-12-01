@@ -4,7 +4,6 @@ class application {
 	public function __construct() {
 		
 		global $_cfg;
-		global $_lang;
 		$this->param = &System::load_sys_class ( 'param' );
 	
 		define ( 'ROUTE_M', $this->param->route_m () );
@@ -14,7 +13,7 @@ class application {
 		$_cfg ['route_c'] = ROUTE_C;
 		$_cfg ['route_a'] = ROUTE_A;
 		
-		include(dirname(dirname(dirname(__FILE__))).'/system/lang/zh-cn.php');
+		
 		$this->global_start ();
 		
 		$this->global_init ();
@@ -23,10 +22,9 @@ class application {
 	}
 	private function global_init() {
 		$FilePath = G_SYSTEM . 'modules' . DIRECTORY_SEPARATOR . ROUTE_M . DIRECTORY_SEPARATOR . ROUTE_C . ".action.php";
-		global $_cfg,$_lang;
+		global $_cfg;
 		$controller = $this->global_controller ( $FilePath );
 		$controller->_cfg = &$_cfg;
-		$controller->_lang = &$_lang;
 
 		// die(ROUTE_A);
 		if (method_exists ( $controller, ROUTE_A )) {
@@ -56,6 +54,7 @@ class application {
 		}
 	}
 	private function global_start() {
+		System::load_sys_class("lang", 'sys', "no");
 		if (! System::load_sys_config ( 'system', 'web_off' )) {
 			$admin_dir = System::load_sys_config ( 'system', 'admindir' );
 			if ($admin_dir !== ROUTE_M) {

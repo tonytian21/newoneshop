@@ -287,11 +287,11 @@ class  page {
 
 			if(empty($parses)){
 
-				$urls=$parse['path']."?";
+				$urls=$parse['path']."/?";
 
 			}else{				
 
-				$urls=$parse['path']."?".http_build_query($parses).'&';				
+				$urls=$parse['path']."/?".http_build_query($parses).'&';				
 
 				$urls = str_ireplace("%2f",'/',$urls);
 
@@ -301,7 +301,7 @@ class  page {
 
 		}else{
 
-			$urls=$parse['path']."?";
+			$urls=$parse['path']."/?";
 
 		}		
 

@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
-    <title>邀请管理 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('邀请管理')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
@@ -18,18 +18,18 @@
 <body>
 <div class="h5-1yyg-v11">
     
-<!-- 栏目页面顶部 -->
+<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
 
 
-<!-- 内页顶部 -->
+<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 
-    <!-- 栏目页面顶部 -->
+    <!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
 <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
 
     <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
         <span style="display: block;height: 49px;line-height: 49px;">
             <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-                邀请管理
+                {wc:fun:lang::get_lang('邀请管理')}
             </a>
         </span>
 
@@ -54,7 +54,7 @@
 
 </header>
 
-<!-- 栏目导航 -->
+<!-- {wc:fun:lang::get_lang('栏目导航')} -->
 
 
     <section class="clearfix g-member" style="padding-top: 60px;">
@@ -88,17 +88,17 @@
                 {wc:if:end} gray02">
                     <s></s>
                     {wc:if $member['jingyan'] < 501} 
-                        云购新手
+                        {wc:fun:lang::get_lang('云购新手')}
                     {wc:elseif $member['jingyan'] < 1001}
-                        云购小将
+                        {wc:fun:lang::get_lang('云购小将')}
                     {wc:elseif $member['jingyan'] < 3001}
-                        云购中将
+                        {wc:fun:lang::get_lang('云购中将')}
                     {wc:elseif $member['jingyan'] < 6001}
-                        云购上将
+                        {wc:fun:lang::get_lang('云购上将')}
                     {wc:elseif $member['jingyan'] < 20001}
-                        云购大将
+                        {wc:fun:lang::get_lang('云购大将')}
                     {wc:else}
-                        云购将军
+                        {wc:fun:lang::get_lang('云购将军')}
                     {wc:if:end}
                     
                 </span>
@@ -115,7 +115,7 @@
                     {wc:else} 
                     <em>
                     <a href="{WEB_PATH}/mobile/user/mobile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
-                    绑定手机
+                    {wc:fun:lang::get_lang('绑定手机')}
                     </a>
                     </em> 
                     {wc:if:end}
@@ -124,7 +124,7 @@
                     {wc:else} 
                     <em>
                     <a href="{WEB_PATH}/mobile/user/profile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
-                    绑定昵称
+                    {wc:fun:lang::get_lang('绑定昵称')}
                     </a>
                     </em> 
                     {wc:if:end}
@@ -132,33 +132,33 @@
                 </p>
                 <ul class="clearfix u-mbr-info">
                     <li>
-                        可用积分
+                        {wc:fun:lang::get_lang('可用积分')}
                         <span class="orange">{wc:$member['score']}</span>
                     </li>
                     <li>
-                        经验值
+                        {wc:fun:lang::get_lang('经验值')}
                         <span class="orange">{wc:$member['jingyan']}</span>
                     </li>
                     <li>
-                        可用余额
-                        <span class="orange">￥{wc:$member['money']}</span>
-                        <a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">去充值</a>
+                        {wc:fun:lang::get_lang('可用余额')}
+                        <span class="orange">{wc:fun:lang::get_lang('￥')}{wc:$member['money']}</span>
+                        <a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="R-content">
-            <div class="member-t"><h2>邀请好友</h2></div>
+            <div class="member-t"><h2>{wc:fun:lang::get_lang('邀请好友')}</h2></div>
 
             <div id="divInvited" class="success-invitation gray02"  >
-                <p>复制链接邀请好友赚提成！<br>
-                 <a target="_blank" href="" class="blue">详情请电脑端登录进行了解&gt;&gt;</a></p>
-                <span><input id="txtInfo"  style="width:80%;height:20px; " value="1元就能买IPhone X哦，快去看看吧！ {WEB_PATH}/mobile/user/register/{wc:$uid}" onpaste="return false" type="text"><span id="d_clip_container"><!--button id="d_clip_button" class="">复制</button--></span></span>
+                <p>{wc:fun:lang::get_lang('复制链接邀请好友赚提成！')}<br>
+                 <a target="_blank" href="" class="blue">{wc:fun:lang::get_lang('详情请电脑端登录进行了解')}&gt;&gt;</a></p>
+                <span><input id="txtInfo"  style="width:80%;height:20px; " value="1{wc:fun:lang::get_lang('元就能买')}IPhone X{wc:fun:lang::get_lang('哦，快去看看吧！')} {WEB_PATH}/mobile/user/register/{wc:$uid}" onpaste="return false" type="text"><span id="d_clip_container"><!--button id="d_clip_button" class="">{wc:fun:lang::get_lang('复制')}</button--></span></span>
 
             </div>
 
-            <div id="divInviteInfo" class="get-tips gray01" style="">成功邀请 <span class="orange">{wc:$involvedtotal}</span> 位会员注册，已有 <span class="orange">{wc:$involvednum}</span> 位会员参与</div>
-            <div id="divList" class="list-tab SuccessCon"><ul class="listTitle"><li class="w200">用户名</li><li class="w200">时间</li><li class="w200">邀请编号</li><li class="w200">消费状态</li></ul>
+            <div id="divInviteInfo" class="get-tips gray01" style="">{wc:fun:lang::get_lang('成功邀请')} <span class="orange">{wc:$involvedtotal}</span> {wc:fun:lang::get_lang('位会员注册，已有')} <span class="orange">{wc:$involvednum}</span> {wc:fun:lang::get_lang('位会员参与')}</div>
+            <div id="divList" class="list-tab SuccessCon"><ul class="listTitle"><li class="w200">{wc:fun:lang::get_lang('用户名')}</li><li class="w200">{wc:fun:lang::get_lang('时间')}</li><li class="w200">{wc:fun:lang::get_lang('邀请编号')}</li><li class="w200">{wc:fun:lang::get_lang('消费状态')}</li></ul>
                 {wc:if $involvedtotal!=0}
                 {wc:loop $invifriends $key $val}
                 <ul><li class="w200">  <a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$val['uid']}" target="_blank" class="blue">{wc:$val['sqlname']}</a></li>
@@ -168,7 +168,7 @@
                 </ul>
                 {wc:loop:end}
                 {wc:else}
-                <div class="tips-con"><i></i>您还未有邀请谁哦</div>
+                <div class="tips-con"><i></i>{wc:fun:lang::get_lang('您还未有邀请谁哦')}</div>
             </div>
             {wc:if:end}
         </div>
@@ -197,7 +197,7 @@ Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js');
             clip.setText(copy('txtInfo').value );
         });
         clip.addEventListener('complete',function(client,text){
-            alert("邀请复制成功");
+            alert("{wc:fun:lang::get_lang('邀请复制成功')}");
         });
         clip.glue('d_clip_button','d_clip_container');
     }

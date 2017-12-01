@@ -26,24 +26,24 @@ $.fn.CloudZoom.defaults = {
 .zoom-tiny-image:hover{border:1px solid #ff6600;}
 </style>
 <div class="Current_nav w1200">
-	<a href="{WEB_PATH}">首页</a> <span>&gt;</span> 
+	<a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> <span>&gt;</span> 
 	<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}">
 	{wc:$category['name']}
 	</a><span>&gt;</span> 
 	<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}e{wc:$item['brandid']}">
 	{wc:$brand['name']}
-	</a> <span>&gt;</span>商品详情 
+	</a> <span>&gt;</span>{wc:fun:lang::get_lang('商品详情')} 
 </div>
 <div class="show_content" style="margin-bottom: 10px;overflow: hidden;">
-	<!-- 商品期数 -->
+	<!-- {wc:fun:lang::get_lang('商品期数')} -->
 	<div id="divPeriodList" class="show_Period" style="max-height:33px;box-shadow:0 0 5px #e4e4e4;position: absolute;z-index: 99999;">
 
 		<div class="period_Open bt_gray bb_gray bl_gray" style="top: 0;border-top: none;">
-			<a class="gray02" href="javascript:;" id="btnOpenPeriod" click="off" style="color: #f60">更多<i></i></a>
+			<a class="gray02" href="javascript:;" id="btnOpenPeriod" click="off" style="color: #f60">{wc:fun:lang::get_lang('更多')}<i></i></a>
 		</div>	
 			{wc:$loopqishu}
 	</div>
-	<!-- 商品信息 -->
+	<!-- {wc:fun:lang::get_lang('商品信息')} -->
 	<div class="Pro_Details">
 		
 		<div class="Pro_Detleft" style="width: 363px;">
@@ -64,7 +64,7 @@ $.fn.CloudZoom.defaults = {
 			</div>
 			</div>
 			<div class="fenxiang1" style="position: absolute;bottom: 15px;left: 5px;width: 350px;">
-				<div class="fenxiang" style="margin-top: 13px;"><i></i>分享</div>
+				<div class="fenxiang" style="margin-top: 13px;"><i></i>{wc:fun:lang::get_lang('分享')}</div>
 				<!-- JiaThis Button BEGIN -->
 				<div class="jiathis_style">
 					<style>
@@ -111,7 +111,7 @@ $.fn.CloudZoom.defaults = {
 					<a class="jiathis_button_cqq"></a>
 					
 				</div>
-				<span style="text-align: right;line-height: 53px;display: block;float: right;"><a href="http://www.dbqb123.com">下载app，随时夺宝奇兵</a></span>
+				<span style="text-align: right;line-height: 53px;display: block;float: right;"><a href="http://www.dbqb123.com">{wc:fun:lang::get_lang('下载')}app{wc:fun:lang::get_lang('，随时夺宝奇兵')}</a></span>
 				<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
 				<!-- JiaThis Button END -->
 
@@ -150,18 +150,18 @@ $.fn.CloudZoom.defaults = {
 			{wc:if $sid_code['q_showtime']=='N'}
 			<!--
 			<div class="Pro_GetPrize">				
-				<h2>上期获得者</h2>
+				<h2>{wc:fun:lang::get_lang('上期获得者')}</h2>
 				<div class="GetPrize">				    
 					<dl>
 						<dt><a rel="nofollow" href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank"><img width="80" height="80" alt="" src="{G_UPLOAD_PATH}/{wc:$sid_code['q_user']['img']}"></a></dt>
 						<dd class="gray02">
-							<p>恭喜 <a href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank" class="blue">{wc:fun:get_user_name($sid_code['q_uid'])}</a>获得了本商品</p>
+							<p>{wc:fun:lang::get_lang('恭喜')} <a href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank" class="blue">{wc:fun:get_user_name($sid_code['q_uid'])}</a>{wc:fun:lang::get_lang('获得了本商品')}</p>
 							{wc:if $sid_go_record['ip']}
 							{wc:fun:get_ip($sid_go_record['id'],'ipcity')}
 							{wc:if:end}
-							<p>揭晓时间：{wc:fun:microt($sid_code['q_end_time'])}</p>
-							<p>夺宝时间：{wc:fun:microt($sid_go_record['time'])}</p>
-							<p>幸运夺宝码：<em class="orange Fb">{wc:$sid_code['q_user_code']}</em></p>
+							<p>{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($sid_code['q_end_time'])}</p>
+							<p>{wc:fun:lang::get_lang('夺宝时间：')}{wc:fun:microt($sid_go_record['time'])}</p>
+							<p>{wc:fun:lang::get_lang('幸运夺宝码：')}<em class="orange Fb">{wc:$sid_code['q_user_code']}</em></p>
 						</dd>
 					</dl>				
 				</div>
@@ -172,61 +172,61 @@ $.fn.CloudZoom.defaults = {
 		</div>
 		<div class="Pro_Detright" style="position: relative;width: 548px;height: 492px;">
 			<p style="font-size:18px;margin-top: 15px;color:#333;height: 72px; overflow: hidden;">
-		<span class="f24">(第{wc:$item['qishu']}期)</span>
+		<span class="f24">({wc:fun:lang::get_lang('第')}{wc:$item['qishu']}{wc:fun:lang::get_lang('期')})</span>
 		<span  class="f24">{wc:$item['title']}</span>
 		<span style="{wc:$item['title_style']}color: #f00;">{wc:$item['title2']}</span>
 		</p>
-			<p class="Det_money">价值：<span class="rmbgray">{wc:$item['money']}</span></p>
-			<!--显示揭晓动画 start-->
+			<p class="Det_money">{wc:fun:lang::get_lang('价值：')}<span class="rmbgray">{wc:$item['money']}</span></p>
+			<!--{wc:fun:lang::get_lang('显示揭晓动画')} start-->
 			{wc:if ($q_showtime=='Y')}
 				{wc:templates "index","item_animation"}
 			{wc:else}
 				{wc:templates "index","item_contents"}
 			{wc:if:end}	
-			<!--显示揭晓动画 end-->		
+			<!--{wc:fun:lang::get_lang('显示揭晓动画')} end-->		
 			<div class="Security">
 				<ul>
-					<li style="color: #9a9a9a;font-family: 微软雅黑;">三大服务保证：</li>
-					<li><a href="{WEB_PATH}/help/4" target="_blank"><i></i>100%公平公正</a></li>
-					<li><a href="{WEB_PATH}/help/5" target="_blank"><s></s>100%正品保证</a></li>
-					<li><a href="{WEB_PATH}/help/7" target="_blank"><b></b>全国免费配送</a></li>
+					<li style="color: #9a9a9a;font-family: {wc:fun:lang::get_lang('微软雅黑')};">{wc:fun:lang::get_lang('三大服务保证：')}</li>
+					<li><a href="{WEB_PATH}/help/4" target="_blank"><i></i>100%{wc:fun:lang::get_lang('公平公正')}</a></li>
+					<li><a href="{WEB_PATH}/help/5" target="_blank"><s></s>100%{wc:fun:lang::get_lang('正品保证')}</a></li>
+					<li><a href="{WEB_PATH}/help/7" target="_blank"><b></b>{wc:fun:lang::get_lang('全国免费配送')}</a></li>
 				</ul>
 			</div>		
 			<div style="height: 124px;width: 540px;border: 1px solid #dedede;border-radius: 20px;margin-top: 20px;">
 				<ul style="border-right: 1px solid #e4e4e4;float: left;height: 124px;position: relative;width: 52px;">
 					<li style="color: #f60;cursor: default;float: left;font-size: 14px;padding: 41px 10px;position:relative;">
-						怎么玩儿
+						{wc:fun:lang::get_lang('怎么玩儿')}
 						<i class="jiantou" style="background-color:#fff;background-position: -109px -283px;height: 13px;overflow: hidden;position: absolute;right: -8px;top: 55px;width: 8px;"></i>
 					</li>
 				</ul>
 				<div style=" float: left;height: 110px;padding-top: 14px;text-align: center;width: 453px;">
 					<div style="float: left;position: relative;width: 132px;">
 						<div class="ad-icon01 ng-xq-bg" style="height: 35px;margin-left: 39px;width: 38px;"></div>
-						<p style="color: #444;font-size: 16px;line-height: 26px;">选择商品</p>
+						<p style="color: #444;font-size: 16px;line-height: 26px;">{wc:fun:lang::get_lang('选择商品')}</p>
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
-							 每个商品规定总需
+							 {wc:fun:lang::get_lang('每个商品规定总需')}
 							<br>
-							参与人次(1人次=1元) 
+							{wc:fun:lang::get_lang('参与人次')}(1{wc:fun:lang::get_lang('人次')}=1{wc:fun:lang::get_lang('元')}) 
 						</p>
 						<div class="ng-xq-bg" style="background-position: -111px -5px;height: 8px;overflow: hidden;position: absolute;top: 15px;width: 17px;right: -8px;"></div>
 					</div>
 					<div style="float: left;position: relative;width: 145px;">
 						<div class="ad-icon02 ng-xq-bg" style="height: 30px;width: 59px;margin:4px auto 2px"></div>
-						<p style="color: #444;font-size: 16px;line-height: 26px;">支付1元</p>
+						<p style="color: #444;font-size: 16px;line-height: 26px;">{wc:fun:lang::get_lang('支付')}1{wc:fun:lang::get_lang('元')}</p>
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
-							 参与人次越多
+							 {wc:fun:lang::get_lang('参与人次越多')}
 							<br>
-							获得机率越大
+							{wc:fun:lang::get_lang('获得机率越大')}
 						</p>
 						<div class="ng-xq-bg" style="background-position: -111px -5px;height: 8px;overflow: hidden;position: absolute;top: 15px;width: 17px;right: -8px;"></div>
 					</div>
 					<div style="float: left;position: relative;width: 176px;">
 							<div class="ad-icon03 ng-xq-bg" style="height: 35px;width: 38px;margin: -1px auto 0;"></div>
-						<p style="color: #444;font-size: 16px;line-height: 26px;">抽出幸运获得者</p>
+						<p style="color: #444;font-size: 16px;line-height: 26px;">{wc:fun:lang::get_lang('抽出幸运获得者')}</p>
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
-							所有人次售完后根据计算规则
+							{wc:fun:lang::get_lang('所有人次售完后根据计算规则')}
 							<br>
-							抽出一位幸运获得者
+							{wc:fun:lang::get_lang('抽出一位幸运获得者')}
 						</p>
 					</div>
 				</div>
@@ -234,9 +234,9 @@ $.fn.CloudZoom.defaults = {
 		</div>
 		<div class="Pro_Record">
 				<ul id="ulRecordTab" class="Record_tit">
-					<li class="NewestRec Record_titCur">最新夺宝记录</li>
-					<li class="MytRec">我的夺宝记录</li>
-					<!--<li class="Explain orange">什么是1元夺宝？</li>-->
+					<li class="NewestRec Record_titCur">{wc:fun:lang::get_lang('最新夺宝记录')}</li>
+					<li class="MytRec">{wc:fun:lang::get_lang('我的夺宝记录')}</li>
+					<!--<li class="Explain orange">{wc:fun:lang::get_lang('什么是')}1{wc:fun:lang::get_lang('元夺宝？')}</li>-->
 				</ul>
 				<div class="Newest_Con hide" style="position: relative;">
 					<ul>
@@ -255,51 +255,51 @@ $.fn.CloudZoom.defaults = {
 						({wc:fun:get_ip($user['id'],'ipcity')}) 
 						{wc:if:end}
 
-						{wc:fun:_put_time($user['time'])} 夺宝了
+						{wc:fun:_put_time($user['time'])} {wc:fun:lang::get_lang('夺宝了')}
 						-->	
-						<em class="Fb gray01" style="color: #f60;">{wc:$user['gonumber']}</em>人次</li>
+						<em class="Fb gray01" style="color: #f60;">{wc:$user['gonumber']}</em>{wc:fun:lang::get_lang('人次')}</li>
 						{wc:loop:end}
 					</ul>
-					<p style="position: absolute;bottom: 5px;left: 28px;"><a id="btnUserBuyMore" href="javascript:;" class="gray01">查看更多</a></p>					
+					<p style="position: absolute;bottom: 5px;left: 28px;"><a id="btnUserBuyMore" href="javascript:;" class="gray01">{wc:fun:lang::get_lang('查看更多')}</a></p>					
 				</div>
 				<div class="My_Record hide" style="display:none;">
 					{wc:if uidcookie('uid')}					
 					<ul>
 						{wc:loop $us2 $user}
 						{wc:if $user['uid']==uidcookie('uid')}
-						<li style="height: 38px;text-align: center;border-bottom: 1px solid #eee;line-height: 38px;">您于{wc:fun:_put_time($user['time'])}  夺得了  <em style="color: #f60;">{wc:$user['gonumber']}</em>个夺宝码</li>
+						<li style="height: 38px;text-align: center;border-bottom: 1px solid #eee;line-height: 38px;">{wc:fun:lang::get_lang('您于')}{wc:fun:_put_time($user['time'])}  {wc:fun:lang::get_lang('夺得了')}  <em style="color: #f60;">{wc:$user['gonumber']}</em>{wc:fun:lang::get_lang('个夺宝码')}</li>
 						{wc:if:end}
 						{wc:loop:end}
 					</ul>
 					{wc:else}
 					<div class="My_RecordReg">
-						<b class="gray01">看不到？是不是没登录或是没注册？ 登录后看看</b>
-						<a href="{WEB_PATH}/member/user/login" class="My_Signbut">登录</a><a href="{WEB_PATH}/member/user/register" class="My_Regbut">注册</a>
+						<b class="gray01">{wc:fun:lang::get_lang('看不到？是不是没登录或是没注册？')} {wc:fun:lang::get_lang('登录后看看')}</b>
+						<a href="{WEB_PATH}/member/user/login" class="My_Signbut">{wc:fun:lang::get_lang('登录')}</a><a href="{WEB_PATH}/member/user/register" class="My_Regbut">{wc:fun:lang::get_lang('注册')}</a>
 					</div>
 					{wc:if:end}
 				</div>
 				<!--
 				<div class="Newest_Con hide" style="display:none;">
-					<p class="MsgIntro">{wc:fun:_cfg("web_name_two")}购是指只需1元就有机会买到想要的商品。即每件商品被平分成若干“等份”出售，每份1元，当一件商品所有“等份”售出后，根据夺宝规则产生一名幸运者，该幸运者即可获得此商品。</p>
-					<p class="MsgIntro1">{wc:fun:_cfg("web_name_two")}以“快乐夺宝，惊喜无限”为宗旨，力求打造一个100%公平公正、100%正品保障、寄娱乐与购物一体化的新型购物网站。<a href="{WEB_PATH}/help/1" class="blue" target="_blank">查看详情&gt;&gt;</a></p>
+					<p class="MsgIntro">{wc:fun:_cfg("web_name_two")}{wc:fun:lang::get_lang('购是指只需')}1{wc:fun:lang::get_lang('元就有机会买到想要的商品。即每件商品被平分成若干“等份”出售，每份')}1{wc:fun:lang::get_lang('元，当一件商品所有“等份”售出后，根据夺宝规则产生一名幸运者，该幸运者即可获得此商品。')}</p>
+					<p class="MsgIntro1">{wc:fun:_cfg("web_name_two")}{wc:fun:lang::get_lang('以“快乐夺宝，惊喜无限”为宗旨，力求打造一个')}100%{wc:fun:lang::get_lang('公平公正、')}100%{wc:fun:lang::get_lang('正品保障、寄娱乐与购物一体化的新型购物网站。')}<a href="{WEB_PATH}/help/1" class="blue" target="_blank">{wc:fun:lang::get_lang('查看详情')}&gt;&gt;</a></p>
 				</div>
 				-->
 			</div>	
 	</div>
 </div>
-<!-- 商品信息导航 -->
+<!-- {wc:fun:lang::get_lang('商品信息导航')} -->
 <div class="ProductTabNav">
 	<div id="divProductNav" class="DetailsT_Tit">
 		<div class="DetailsT_TitP">
 			<ul>
-				<li class="Product_DetT DetailsTCur"><span class="DetailsTCur">商品详情</span></li>
-				<li id="liUserBuyAll" class="All_RecordT"><span class="">所有参与记录</span></li>
-				<li class="Single_ConT"><span class="">晒单</span></li>
+				<li class="Product_DetT DetailsTCur"><span class="DetailsTCur">{wc:fun:lang::get_lang('商品详情')}</span></li>
+				<li id="liUserBuyAll" class="All_RecordT"><span class="">{wc:fun:lang::get_lang('所有参与记录')}</span></li>
+				<li class="Single_ConT"><span class="">{wc:fun:lang::get_lang('晒单')}</span></li>
 			</ul>
 		</div>
 	</div>
 </div>
-<!-- 商品内容 -->
+<!-- {wc:fun:lang::get_lang('商品内容')} -->
 <div id="divContent" class="Product_Content">
 	<div class="Product_Con hide" style="display:block;">{wc:$item['content']}</div>
 	<div name="bitem" class="AllRecordCon hide" style="display:none;">
@@ -315,7 +315,7 @@ $.fn.CloudZoom.defaults = {
 				{wc:if $user['ip']}
 				({wc:fun:get_ip($user['id'],'ipcity')} IP:{wc:fun:get_ip($user['id'],'ipmac')})
 				{wc:if:end}
-				夺宝了<em class="Fb orange">{wc:$user['gonumber']}</em>人次
+				{wc:fun:lang::get_lang('夺宝了')}<em class="Fb orange">{wc:$user['gonumber']}</em>{wc:fun:lang::get_lang('人次')}
 				</span>
 			</p>
 			</div>
@@ -323,7 +323,7 @@ $.fn.CloudZoom.defaults = {
 		{wc:loop:end}
 	</div>
 	
-		<!-- 晒单 -->
+		<!-- {wc:fun:lang::get_lang('晒单')} -->
 	<div id="divPost" class="Single_Content">
 		<iframe id="iframea" src="{WEB_PATH}/go/shaidan/itmeifram/{wc:$itemid}" style="width:1200px; border:none;height:0px;" frameborder="0" scrolling="no"></iframe>
 	</div>
@@ -335,16 +335,16 @@ $("#btnOpenPeriod").click(function(){
 		if($(this).attr("click")=='off'){
 			$("#divPeriodList").css("max-height",ui_obj.length*33+"px");	
 			$(this).attr("click","on");
-			$(this).html("关闭<s></s>");
+			$(this).html("{wc:fun:lang::get_lang('关闭')}<s></s>");
 			
 		}else{
 			$("#divPeriodList").css("max-height","33px");	
 			$(this).attr("click","off");
-			$(this).html("更多<i></i>");
+			$(this).html("{wc:fun:lang::get_lang('更多')}<i></i>");
 		}			
 });
 
-//添加购买
+//{wc:fun:lang::get_lang('添加购买')}
 $(function(){
 
 var syrs="{wc:$syrs}";
@@ -379,7 +379,7 @@ shopnum.keyup(function(){
 				var showbaifen=numshop/69;
 				var baifenbi=baifenshua(showbaifen,2);
 			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");   		
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");   		
 	}	
   
 });	
@@ -405,7 +405,7 @@ $("#shopadd").click(function(){
 				var showbaifen=resshopnump/69;
 				var baifenbi=baifenshua(showbaifen,2);
 			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");                			
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");                			
 		});
 		
 $("#shopsub").click(function(){
@@ -423,7 +423,7 @@ $("#shopsub").click(function(){
 				var showbaifen=shopnums/69;
 				var baifenbi=baifenshua(showbaifen,2);
 			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");       
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");       
 	});		
 });
 
@@ -440,7 +440,7 @@ $(".Det_Cart").click(function(){
 function Cartcookie(cook){
 	var info = {};
 	var shopid=shopinfo['shopid'];
-	var cookie_pre="wc_";//cookie配置前缀
+	var cookie_pre="wc_";//cookie{wc:fun:lang::get_lang('配置前缀')}
 	var Cartlist = $.cookie(cookie_pre+'Cartlist');
 	if(!Cartlist){
 		var info = {};
@@ -535,7 +535,7 @@ $(function(){
 			var showbaifen=numshop/{wc:$item['zongrenshu']};
 			var baifenbi=baifenshua(showbaifen,2);
 		}
-		$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+		$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");
 	});	
 	
 	$("#shopadd").click(function(){
@@ -559,7 +559,7 @@ $(function(){
 				var showbaifen=resshopnump/{wc:$item['zongrenshu']};
 				var baifenbi=baifenshua(showbaifen,2);
 			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");
 	});
 	
 	
@@ -578,13 +578,13 @@ $(function(){
 				var showbaifen=shopnums/{wc:$item['zongrenshu']};
 				var baifenbi=baifenshua(showbaifen,2);
 			}
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");
 	});
 });
 
 $(function(){
 $(".Det_Cart").onclick(function(){ 
-	//添加到购物车动画
+	//{wc:fun:lang::get_lang('添加到购物车动画')}
 	var src=$("#zoom1 img").attr('src');  
 	var $shadow = $('<img id="cart_dh" style="display: none;z-index: 99;" width="400" height="400" src="'+src+'" />').prependTo("body"); 
 	var $img = $(".mousetrap").first("img");

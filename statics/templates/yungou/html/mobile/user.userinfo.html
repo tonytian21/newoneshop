@@ -3,7 +3,7 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>注册 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('注册')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -18,13 +18,13 @@
 
 <body style="background: #f4f4f4;">
     <div class="h5-1yyg-v1" id="content">
-        <!-- 栏目页面顶部 -->
-        <!-- 内页顶部 -->
+        <!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
+        <!-- {wc:fun:lang::get_lang('内页顶部')} -->
         <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
             <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
     <span style="display: block;height: 49px;line-height: 49px;">
       <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-        帐号信息完善
+        {wc:fun:lang::get_lang('帐号信息完善')}
       </a>
     </span>
 
@@ -50,39 +50,39 @@
                                 <tr class="hanggao">
 
                                     <td width="20%">
-                                        <label>所在地区：</label>
+                                        <label>{wc:fun:lang::get_lang('所在地区：')}</label>
                                         <script>var s=["county","province","city"];</script>
                                     </td>
                                     <td  width="80%">
-                                        <select style="width: 26%;font-size: 14px;text-align: center;" datatype="*" nullmsg="请选择有效的国家" class="select iRequire" id="county" runat="server" name="guojia"></select>
-                                        <select style="width: 26%;font-size: 14px;text-align: center;" datatype="*" nullmsg="请选择有效的省份" class="select iRequire" id="province" runat="server" name="sheng"></select>
-                                        <select style="width: 26%;font-size: 14px;text-align: center;" datatype="*" nullmsg="请选择有效的市" class="select iRequire" id="city" runat="server" name="shi"></select> <em id="ship_address_valid_msg" class="red">*</em>
+                                        <select style="width: 26%;font-size: 14px;text-align: center;" datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的国家')}" class="select iRequire" id="county" runat="server" name="guojia"></select>
+                                        <select style="width: 26%;font-size: 14px;text-align: center;" datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的省份')}" class="select iRequire" id="province" runat="server" name="sheng"></select>
+                                        <select style="width: 26%;font-size: 14px;text-align: center;" datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的市')}" class="select iRequire" id="city" runat="server" name="shi"></select> <em id="ship_address_valid_msg" class="red">*</em>
                                         <script type="text/javascript">setup()</script>
                                     </td>
                                 </tr>
                                 <tr class="hanggao">
                                     <td>
-                                        <label>街道地址：</label>
+                                        <label>{wc:fun:lang::get_lang('街道地址：')}</label>
                                     </td>
                                     <td>
-                                        <input datatype="*1-100" class="input iRequire" nullmsg="请填街道地址！" name="jiedao" id="jiedao" type="text" class="street iRequire" maxlength="100" /> <em id="ship_address_valid_msg" class="red">*</em>
+                                        <input datatype="*1-100" class="input iRequire" nullmsg="{wc:fun:lang::get_lang('请填街道地址！')}" name="jiedao" id="jiedao" type="text" class="street iRequire" maxlength="100" /> <em id="ship_address_valid_msg" class="red">*</em>
                                     </td>
                                 </tr>
                                 <tr class="hanggao">
                                     <td>
-                                        <label>收&nbsp&nbsp货&nbsp&nbsp人：</label>
+                                        <label>{wc:fun:lang::get_lang('收')}&nbsp&nbsp{wc:fun:lang::get_lang('货')}&nbsp&nbsp{wc:fun:lang::get_lang('人：')}</label>
                                     </td>
                                     <td>
-                                        <input  class="input iRequire"  datatype="*" name="shouhuoren" nullmsg="请填收货人" id="shouhuoren" type="text" maxlength="20" id="txt_ship_name" class="inputTxt" value="">
+                                        <input  class="input iRequire"  datatype="*" name="shouhuoren" nullmsg="{wc:fun:lang::get_lang('请填收货人')}" id="shouhuoren" type="text" maxlength="20" id="txt_ship_name" class="inputTxt" value="">
                                         <em class="red" id="ship_name_valid_msg">*</em>
                                     </td>
                                 </tr>
                                 <tr class="hanggao">
                                     <td>
-                                        <label>手机号码：</label>
+                                        <label>{wc:fun:lang::get_lang('手机号码：')}</label>
                                     </td>
                                     <td>
-                                        <input  class="input iRequire"  datatype="m" nullmsg="手机号不能为空" errormsg="手机号不对" name="mobile" id="mobile" type="text"  class="inputTxt" maxlength="11">
+                                        <input  class="input iRequire"  datatype="m" nullmsg="{wc:fun:lang::get_lang('手机号不能为空')}" errormsg="{wc:fun:lang::get_lang('手机号不对')}" name="mobile" id="mobile" type="text"  class="inputTxt" maxlength="11">
                                         <em id="ship_mb_valid_msg" class="red">*</em>
                                     </td>
                                 </tr>
@@ -90,7 +90,7 @@
                                 <td colspan="2">
                                     <input type="hidden" name="uid" value="{wc:$member['uid']}">
                                     <input type="hidden" name="dosubmit" value="1">
-                                    <input style="background: #f60;border-radius: 5px;cursor: pointer;" name="submitbtn" type="button" class="orangebut" id="btn_consignee_save" value="保存" title="保存">
+                                    <input style="background: #f60;border-radius: 5px;cursor: pointer;" name="submitbtn" type="button" class="orangebut" id="btn_consignee_save" value="{wc:fun:lang::get_lang('保存')}" title="{wc:fun:lang::get_lang('保存')}">
                                 </td>
                             </tr>
                         </tbody>

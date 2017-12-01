@@ -5,20 +5,20 @@
 <script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/ZeroClipboard.js"></script>
 
          <div class="R-content">
-            <div class="member-t"><h2>邀请好友</h2></div>
+            <div class="member-t"><h2>{wc:fun:lang::get_lang('邀请好友')}</h2></div>
             
 		        <div id="divInvited" class="success-invitation gray02"  >
-			        <p>复制链接邀请好友拿四重大礼！ <a target="_blank" href="{WEB_PATH}/single/pleasereg" class="blue">详情&gt;&gt;</a></p>
-			        <span><b></b><input id="txtInfo"  style="width:818px;height:20px; " disabled="disabled" value="1元就能买IPhone X哦，快去看看吧！ {WEB_PATH}/register/{wc:$uid}" onpaste="return false" type="text"></span>
+			        <p>{wc:fun:lang::get_lang('复制链接邀请好友拿四重大礼！')} <a target="_blank" href="{WEB_PATH}/single/pleasereg" class="blue">{wc:fun:lang::get_lang('详情')}&gt;&gt;</a></p>
+			        <span><b></b><input id="txtInfo"  style="width:818px;height:20px; " disabled="disabled" value="1{wc:fun:lang::get_lang('元就能买')}IPhone X{wc:fun:lang::get_lang('哦，快去看看吧！')} {WEB_PATH}/register/{wc:$uid}" onpaste="return false" type="text"></span>
 				  <div class="d_clip_copy"></div>
 				   <div id="d_clip_container" style="position:relative;overflow:hidden">									
-					<div id="d_clip_button" class="bluebut f12" style="text-align:center;line-height:22px;width:60px;padding:0;" >复制</div>
+					<div id="d_clip_button" class="bluebut f12" style="text-align:center;line-height:22px;width:60px;padding:0;" >{wc:fun:lang::get_lang('复制')}</div>
 				</div>
 		        </div>
 		    
-            <div id="divInviteInfo"class="get-tips gray01 f12 bg_pink b_pink"   style="">成功邀请 <span class="orange">{wc:$involvedtotal}</span> 位会员注册，已有 <span class="c_red">{wc:$involvednum}</span> 位会员参与云购</div>
+            <div id="divInviteInfo"class="get-tips gray01 f12 bg_pink b_pink"   style="">{wc:fun:lang::get_lang('成功邀请')} <span class="orange">{wc:$involvedtotal}</span> {wc:fun:lang::get_lang('位会员注册，已有')} <span class="c_red">{wc:$involvednum}</span> {wc:fun:lang::get_lang('位会员参与云购')}</div>
             <div id="divList" class="list-tab SuccessCon f12">
-            <ul class="listTitle"><li class="w200">用户名</li><li class="w200">时间</li><li class="w180">邀请编号</li><li>消费状态</li></ul>
+            <ul class="listTitle"><li class="w200">{wc:fun:lang::get_lang('用户名')}</li><li class="w200">{wc:fun:lang::get_lang('时间')}</li><li class="w180">{wc:fun:lang::get_lang('邀请编号')}</li><li>{wc:fun:lang::get_lang('消费状态')}</li></ul>
 			{wc:if $involvedtotal!=0}
 			{wc:loop $invifriends $key $val}
 			  <ul><li class="w200">  <a href="{WEB_PATH}/uname/{wc:fun:idjia($val['uid'])}" target="_blank" class="blue">{wc:$val['sqlname']}</a></li>
@@ -27,7 +27,7 @@
 			  <li>{wc:$records[$val['uid']]}</li></ul>
 			{wc:loop:end}
             {wc:else}
-			 <div class="tips-con f12"><i></i>您还未有邀请谁哦</div></div>
+			 <div class="tips-con f12"><i></i>{wc:fun:lang::get_lang('您还未有邀请谁哦')}</div></div>
 			{wc:if:end}			
 			</div>
             <div id="divPageNav" class="page_nav"></div>
@@ -56,7 +56,7 @@ function initx(){
 		clip.setText(copy('txtInfo').value );
 	});		
 	clip.addEventListener('complete',function(client,text){
-		alert("邀请复制成功");
+		alert("{wc:fun:lang::get_lang('邀请复制成功')}");
 	});		
 	clip.glue('d_clip_button','d_clip_container');
 }

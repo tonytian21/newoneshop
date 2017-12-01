@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>购物车 - {wc:fun:_cfg("web_name")}</title>
+<title>{wc:fun:lang::get_lang('购物车')} - {wc:fun:_cfg("web_name")}</title>
 <meta name="keywords" content="{wc:if isset($keywords)}{wc:$keywords}{wc:else}{wc:fun:_cfg("web_key")}{wc:if:end}" />
 <meta name="description" content="{wc:if isset($description)}{wc:$description}{wc:else}{wc:fun:_cfg("web_des")}{wc:if:end}" />
 <!-- <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/comm.css"/>
@@ -19,32 +19,32 @@
 		<span class="logo_pic"><a href="{G_WEB_PATH}" class="a" title="{wc:fun:_cfg("web_name")}">
 			<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
 		</a></span>
-		<span class="tel"><a href="{G_WEB_PATH}" style="color:#999;">返回首页</a></span>
+		<span class="tel"><a href="{G_WEB_PATH}" style="color:#999;">{wc:fun:lang::get_lang('返回首页')}</a></span>
 	</div>
 </div>
 <div class="shop_process">
 	<ul class="process">
-		<li class="first_step">第一步：提交订单</li>
+		<li class="first_step">{wc:fun:lang::get_lang('第一步：提交订单')}</li>
 		<li class="arrow_1"></li>
-		<li class="secend_step">第二步：订单支付</li>
+		<li class="secend_step">{wc:fun:lang::get_lang('第二步：订单支付')}</li>
 		<li class="arrow_2"></li>
-		<li class="third_step">第三步：支付成功 等待揭晓</li>
+		<li class="third_step">{wc:fun:lang::get_lang('第三步：支付成功')} {wc:fun:lang::get_lang('等待揭晓')}</li>
 		<li class="arrow_2"></li>
-		<li class="fourth_step">第四步：揭晓获得者</li>
+		<li class="fourth_step">{wc:fun:lang::get_lang('第四步：揭晓获得者')}</li>
 		<!-- <li class="arrow_2"></li>
-		<li class="fifth_step">第五步：晒单奖励</li> -->
+		<li class="fifth_step">{wc:fun:lang::get_lang('第五步：晒单奖励')}</li> -->
 	</ul>
 	<div class="i_tips"></div>
 	<div class="submitted">
 		<ul class="order">
 			<li class="top">
-				<span class="goods">商品</span>
-				<span class="name">名称</span>
-				<span class="moneys">价值</span>
-				<span class="money">乐购价</span>
-				<span class="num">乐购人次</span>
-				<span class="xj">小计</span>
-				<span class="do">操作</span>
+				<span class="goods">{wc:fun:lang::get_lang('商品')}</span>
+				<span class="name">{wc:fun:lang::get_lang('名称')}</span>
+				<span class="moneys">{wc:fun:lang::get_lang('价值')}</span>
+				<span class="money">{wc:fun:lang::get_lang('乐购价')}</span>
+				<span class="num">{wc:fun:lang::get_lang('乐购人次')}</span>
+				<span class="xj">{wc:fun:lang::get_lang('小计')}</span>
+				<span class="do">{wc:fun:lang::get_lang('操作')}</span>
 			</li>
 			{wc:loop $shoplist $shops}            
 			<li class="end" id="shoplist{wc:$shops['id']}">
@@ -55,12 +55,12 @@
 				</span>
 				<span class="name">
 					<a href="{WEB_PATH}/go/index/item/{wc:$shops['id']}" >{wc:$shops['title']}</a>
-					<p>总需 <span class="color">{wc:$shops['zongrenshu']}</span>人次参与，还剩 
-                      	   <span class="gorenci">{wc:$shops['cart_shenyu']}</span> 人次
+					<p>{wc:fun:lang::get_lang('总需')} <span class="color">{wc:$shops['zongrenshu']}</span>{wc:fun:lang::get_lang('人次参与，还剩')} 
+                      	   <span class="gorenci">{wc:$shops['cart_shenyu']}</span> {wc:fun:lang::get_lang('人次')}
                     </p>
 				</span>
-				<span class="moneys">{wc:$shops['money']}乐购币</span>
-				<span class="money"><span class="color"><b>{wc:$shops['yunjiage']}乐购币</b></span></span>
+				<span class="moneys">{wc:$shops['money']}{wc:fun:lang::get_lang('乐购币')}</span>
+				<span class="money"><span class="color"><b>{wc:$shops['yunjiage']}{wc:fun:lang::get_lang('乐购币')}</b></span></span>
 				<span class="num">
 				<a href="JavaScript:;" val="{wc:$shops['id']}" class="jia">+</a>				
 					<dl class="add">					
@@ -69,20 +69,20 @@
 					</dl>
 					<a href="JavaScript:;" val="{wc:$shops['id']}" class="jian">-</a>
                     <p class="message"></p>
-                    			 <a href="javascript:;" class="shop_last_all" val="{wc:$shops['id']}">购买全部</a>  
+                    			 <a href="javascript:;" class="shop_last_all" val="{wc:$shops['id']}">{wc:fun:lang::get_lang('购买全部')}</a>  
 				</span>
 				<span  class="xj">{wc:$shops['cart_xiaoji']}</span>
-				<span class="do"><a href="javascript:;" onclick="delcart({wc:$shops['id']})"  class="delgood">删除</a></span> 
+				<span class="do"><a href="javascript:;" onclick="delcart({wc:$shops['id']})"  class="delgood">{wc:fun:lang::get_lang('删除')}</a></span> 
 			</li>		
 			{wc:loop:end}
 			<li class="ts">
-				<p class="right">总计:<span id="moenyCount"  style="color: #f60;">{wc:$MoenyCount}</span>乐币</p>
+				<p class="right">{wc:fun:lang::get_lang('总计')}:<span id="moenyCount"  style="color: #f60;">{wc:$MoenyCount}</span>{wc:fun:lang::get_lang('乐币')}</p>
 			</li>
 		</ul>
 	</div>
 	<h5>
-		<a href="{WEB_PATH}" id="but_on">返回继续乐购</a>
-		<input id="but_ok" type="button" value="去结算"  name="submit"/>
+		<a href="{WEB_PATH}" id="but_on">{wc:fun:lang::get_lang('返回继续乐购')}</a>
+		<input id="but_ok" type="button" value="{wc:fun:lang::get_lang('去结算')}"  name="submit"/>
 	</h5>
 </div>  
 <script type="text/javascript"> 
@@ -94,7 +94,7 @@ var xiaoji=$(".xj");
 var num=$(".amount");
 var message=$(".message");
 var moenyCount=$("#moenyCount");
-var cookie_pre="wc_";//cookie配置前缀
+var cookie_pre="wc_";//cookie{wc:fun:lang::get_lang('配置前缀')}
 $(function(){
 	$("#but_ok").click(function(){
 		var countmoney=parseInt(moenyCount.text());		
@@ -104,7 +104,7 @@ $(function(){
 			$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
 			document.location.href='{WEB_PATH}/member/cart/pay';
 		}else{
-			alert("购物车为空!");
+			alert("{wc:fun:lang::get_lang('购物车为空')}!");
 		}
 	});
 });
@@ -139,13 +139,13 @@ num.keyup(function(){
 	var shopid=$(this).attr("val");
 	var zindex=num.index(this);	
 	if($(this).val() > info[shopid]['shenyu']){
-		message.eq(zindex).text("乐购次数不能超过"+info[shopid]['shenyu']+"次");		
+		message.eq(zindex).text("{wc:fun:lang::get_lang('乐购次数不能超过')}"+info[shopid]['shenyu']+"{wc:fun:lang::get_lang('次')}");		
 		$(this).val(info[shopid]['shenyu']);
 		UpdataMoney(shopid,$(this).val(),zindex);		
 		return;
 	}
 	if($(this).val()<1){
-		message.eq(zindex).text("乐购次数不能少于1次");
+		message.eq(zindex).text("{wc:fun:lang::get_lang('乐购次数不能少于')}1{wc:fun:lang::get_lang('次')}");
 		$(this).val(1);
 		UpdataMoney(shopid,$(this).val(),zindex);
 		return;
@@ -157,7 +157,7 @@ numberadd.click(function(){
 	var zindex=numberadd.index(this);
 	var thisnum=num.eq(zindex);	
 		if(info[shopid]['num'] >= info[shopid]['shenyu']){
-			message.eq(zindex).text("乐购次数不能超过"+info[shopid]['shenyu']+"次");
+			message.eq(zindex).text("{wc:fun:lang::get_lang('乐购次数不能超过')}"+info[shopid]['shenyu']+"{wc:fun:lang::get_lang('次')}");
 			return;
 		}
 		var number=info[shopid]['num']+1;			
@@ -169,7 +169,7 @@ numbersub.click(function(){
 	var zindex=numbersub.index(this);
 	var thisnum=num.eq(zindex);	
 		if(info[shopid]['num'] <=1){
-			message.eq(zindex).text("乐购次数不能少于1次");
+			message.eq(zindex).text("{wc:fun:lang::get_lang('乐购次数不能少于')}1{wc:fun:lang::get_lang('次')}");
 			return;
 		}
 		var number=info[shopid]['num']-1;			
@@ -178,5 +178,5 @@ numbersub.click(function(){
 });
 
 </script> 
-<!--footer 开始-->
+<!--footer {wc:fun:lang::get_lang('开始')}-->
 {wc:templates "index","footer"}

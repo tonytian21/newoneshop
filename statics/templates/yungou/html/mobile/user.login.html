@@ -3,7 +3,7 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>登录 - {wc:$webname}触屏版</title>
+<title>{wc:fun:lang::get_lang('登录')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
 <meta content="app-id=518966501" name="apple-itunes-app" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
@@ -22,8 +22,8 @@
 
 <body style="background: #f4f4f4;">
 	<div class="h5-1yyg-v1" id="content">
-		<!-- 栏目页面顶部 -->
-		<!-- 内页顶部 -->
+		<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
+		<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 		<header class="header"
 			style="position: fixed; width: 100%; z-index: 99999999;">
 			<h1
@@ -31,7 +31,7 @@
 				class="fl">
 				<span style="display: block; height: 49px; line-height: 49px;">
 					<a style="font-size: 20px; line-height: 49px;"
-					href="{WEB_PATH}/mobile/mobile">帐号登陆</a>
+					href="{WEB_PATH}/mobile/mobile">{wc:fun:lang::get_lang('帐号登陆')}</a>
 				</span>
 
 				<!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
@@ -55,34 +55,34 @@
 				<ul>
 					<li class="accAndPwd" style="float: none; height: auto;">
 						<dl>
-							<input id="txtAccount" type="text" placeholder="请输入您的邮箱"
+							<input id="txtAccount" type="text" placeholder="{wc:fun:lang::get_lang('请输入您的邮箱')}"
 								class="lEmail">
 							<s class="rs4"></s>
 						</dl>
 						<dl>
 							<input style="border-top: 1px solid #ddd;" type="password"
-								id="txtPassword" class="lPwd" placeholder="密码">
+								id="txtPassword" class="lPwd" placeholder="{wc:fun:lang::get_lang('密码')}">
 							<s class="rs3"></s>
 						</dl>
 						<dl style="display: none">
 							<input type="hidden" id="txtVerify" class="lVerify"
-								placeholder="验证码" value="123456">
+								placeholder="{wc:fun:lang::get_lang('验证码')}" value="123456">
 							<span class="fog"></span>
 							<s class="rs3"></s>
 						</dl>
 					</li>
 					<li style="float: none;"><a href="javascript:;" id="btnLogin"
 						class="nextBtn orgBtn"
-						style="width: 100%; text-align: center; display: block; margin: 0 auto; height: 50px; line-height: 55px;">登&nbsp&nbsp&nbsp录</a>
+						style="width: 100%; text-align: center; display: block; margin: 0 auto; height: 50px; line-height: 55px;">{wc:fun:lang::get_lang('登')}&nbsp&nbsp&nbsp{wc:fun:lang::get_lang('录')}</a>
 						<input name="hidLoginForward" type="hidden" id="hidLoginForward"
 						value="{WEB_PATH}/mobile/home" /></li>
 					</li>
 					<li style="margin-top: 30px; text-align: center;"><a
 						style="height: 20px; line-height: 20px; color: #999 !important; background: none; display: inline; font-size: 14px; margin-right: 10%;"
 						href="{WEB_PATH}/mobile/user/step1" class="nextBtn orgBtn"
-						style="width:40%; float:right;">忘记密码?</a> | <a
+						style="width:40%; float:right;">{wc:fun:lang::get_lang('忘记密码')}?</a> | <a
 						style="height: 20px; line-height: 20px; color: #999 !important; background: none; display: inline; font-size: 14px; margin-left: 10%;"
-						href="{WEB_PATH}/mobile/user/register" class="nextBtn orgBtn">免费注册</a>
+						href="{WEB_PATH}/mobile/user/register" class="nextBtn orgBtn">{wc:fun:lang::get_lang('免费注册')}</a>
 					</li>
 				</ul>
 				<div class="fastLogin" style="padding-top: 30px;">
@@ -91,7 +91,7 @@
 					
 					{wc:if $conn_cfg['facebook']['off'] or $conn_cfg['facebook']['qq'] or $conn_cfg['facebook']['weixin']}
 					<h2>
-						<span class="line_l"></span> 一键登录 <span class="line_r"></span>
+						<span class="line_l"></span> {wc:fun:lang::get_lang('一键登录')} <span class="line_r"></span>
 					</h2>
 					<div class="fastInfo" style="margin-top: 20px;">
 						{wc:if $conn_cfg['facebook']['off']}<a

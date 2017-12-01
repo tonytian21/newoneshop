@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>晒单 - {wc:$webname}触屏版</title>
+<title>{wc:fun:lang::get_lang('晒单')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
 <meta content="app-id=518966501" name="apple-itunes-app" />     
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
 <meta content="yes" name="apple-mobile-web-app-capable" />     
@@ -20,25 +20,25 @@
 	<form  action="{WEB_PATH}/mobile/home/postsingle" method="post">
 		<input type="hidden" name="shopid" value="{wc:$shopid}"/>
 		<div class="sd_lilie">
-			<span class="sd_span">标题：</span>
+			<span class="sd_span">{wc:fun:lang::get_lang('标题：')}</span>
 			<input id="sd_text" type="text" name="title" />
 		</div>
 		<div class="sd_lilie">
-			<span class="sd_span">内容：</span>
+			<span class="sd_span">{wc:fun:lang::get_lang('内容：')}</span>
 			<textarea id="sd_textarea" name="content" ></textarea>
 		</div>
 		<div class="sd_lilie">
-			<span class="sd_span">晒图：</span>
+			<span class="sd_span">{wc:fun:lang::get_lang('晒图：')}</span>
 			<input type="hidden" id="file_up" name="file_up" value="">
 			<div id="queue"></div>
 			<div style="margin:0 auto; width:90%;">
 				
 				<input id="file_upload" name="file_upload" type="file" multiple="true">
-				<a style="position: relative; width:50px;padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;" class="uploadifive-button" href="javascript:$('#file_upload').uploadifive('upload')">开始上传</a>
+				<a style="position: relative; width:50px;padding-left:10px;padding-right:10px;padding-top:6px;padding-bottom:6px;" class="uploadifive-button" href="javascript:$('#file_upload').uploadifive('upload')">{wc:fun:lang::get_lang('开始上传')}</a>
 			<div style="clear:both"></div>
 			</div>
 		</div>
-		<input id="sd_submit" name="submit" type="submit" value="确认添加" />
+		<input id="sd_submit" name="submit" type="submit" value="{wc:fun:lang::get_lang('确认添加')}" />
 		
 	</form>
 

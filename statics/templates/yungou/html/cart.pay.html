@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>支付_{wc:fun:_cfg("web_name")}</title>
+<title>{wc:fun:lang::get_lang('支付')}_{wc:fun:_cfg("web_name")}</title>
 <meta name="keywords" content="{wc:if isset($keywords)}{wc:$keywords}{wc:else}{wc:fun:_cfg("web_key")}{wc:if:end}" />
 <meta name="description" content="{wc:if isset($description)}{wc:$description}{wc:else}{wc:fun:_cfg("web_des")}{wc:if:end}" />
 
@@ -25,30 +25,30 @@
 		<span class="logo_pic"><a href="{WEB_PATH}" class="a" title="{wc:fun:_cfg("web_name")}">
 			<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
 		</a></span>
-		<span class="tel"><a href="{WEB_PATH}" style="color: #999;">返回首页</a></span>
+		<span class="tel"><a href="{WEB_PATH}" style="color: #999;">{wc:fun:lang::get_lang('返回首页')}</a></span>
 	</div>
 </div>
 <form id="form_paysubmit" action="{WEB_PATH}/{ROUTE_M}/{ROUTE_C}/paysubmit" method="post">
 <div class="shop_payment">
 	<ul class="payment">
-		<li class="first_step">第一步：提交订单</li>
+		<li class="first_step">{wc:fun:lang::get_lang('第一步：提交订单')}</li>
 		<li class="arrow_1"></li>
-		<li class="secend_step orange_Tech">第二步：订单支付</li>
+		<li class="secend_step orange_Tech">{wc:fun:lang::get_lang('第二步：订单支付')}</li>
 		<li class="arrow_3"></li>
-		<li class="third_step">第三步：支付成功 等待揭晓</li>
+		<li class="third_step">{wc:fun:lang::get_lang('第三步：支付成功')} {wc:fun:lang::get_lang('等待揭晓')}</li>
 		<li class="arrow_2"></li>
-		<li class="fourth_step">第四步：揭晓获得者</li>
+		<li class="fourth_step">{wc:fun:lang::get_lang('第四步：揭晓获得者')}</li>
 		<!-- <li class="arrow_2"></li>
-		<li class="fifth_step">第五步：晒单奖励</li> -->
+		<li class="fifth_step">{wc:fun:lang::get_lang('第五步：晒单奖励')}</li> -->
 	</ul>
 	<div class="payment_Con">
 		<ul class="order_list">
 			<li class="top">
-				<span class="name">商品名称</span>
-				<span class="moneys">次数</span>
-				<span class="money">乐购价</span>
-				<span class="num1">乐购人次</span>
-				<span class="all">我的次数</span>
+				<span class="name">{wc:fun:lang::get_lang('商品名称')}</span>
+				<span class="moneys">{wc:fun:lang::get_lang('次数')}</span>
+				<span class="money">{wc:fun:lang::get_lang('乐购价')}</span>
+				<span class="num1">{wc:fun:lang::get_lang('乐购人次')}</span>
+				<span class="all">{wc:fun:lang::get_lang('我的次数')}</span>
 			</li>           
 			{wc:loop $shoplist $shops}
 			<li class="end">
@@ -56,54 +56,54 @@
                		<a class="blue" href="{WEB_PATH}/goods/{wc:$shops['id']}">{wc:$shops['title']}</a>
                 </span>
 				<span class="moneyss">{wc:$shops['money']}</span>
-				<span class="moneyss"><span class="color"><b>{wc:$shops['yunjiage']}</b>乐购币</span></span>
+				<span class="moneyss"><span class="color"><b>{wc:$shops['yunjiage']}</b>{wc:fun:lang::get_lang('乐购币')}</span></span>
 				<span class="num1 orange Fb">{wc:$shops['cart_gorenci']}</span>
 				<span class="alls">{wc:$shops['cart_xiaoji']}</span>
 			</li>
 			{wc:loop:end}           
 			<li class="payment_Total">
-				<div class="payment_List_Lc"><a href="{WEB_PATH}/member/cart/cartlist" class="form_ReturnBut">返回购物车修改订单</a></div>
-				<p class="payment_List_Rc">商品合计：<span class="orange F20">{wc:$MoenyCount}</span>乐币</p>
+				<div class="payment_List_Lc"><a href="{WEB_PATH}/member/cart/cartlist" class="form_ReturnBut">{wc:fun:lang::get_lang('返回购物车修改订单')}</a></div>
+				<p class="payment_List_Rc">{wc:fun:lang::get_lang('商品合计：')}<span class="orange F20">{wc:$MoenyCount}</span>{wc:fun:lang::get_lang('乐币')}</p>
 			</li>
-			<!-- 积分 -->
+			<!-- {wc:fun:lang::get_lang('积分')} -->
             {wc:if $fufen_dikou}
 			 <li id="liPayByPoints" class="point_out">
 					<div class="payment_List_Lc">
-					<input type="checkbox" class="input_choice" id="shop_score" name="shop_score" value="1"/>使用积分抵扣现金：您的积分({wc:$member['score']})本次消费最多可抵扣现金
-                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>乐币)，我要使用 
-                    <input type="text" maxlength="8" class="pay_input_text_gray" id="shop_score_num" value="0" money="{wc:$fufen['fufen_yuan']}" name="shop_score_num"/> 积分, 1乐币 = {wc:$fufen['fufen_yuan']} 积分</div>
+					<input type="checkbox" class="input_choice" id="shop_score" name="shop_score" value="1"/>{wc:fun:lang::get_lang('使用积分抵扣现金：您的积分')}({wc:$member['score']}){wc:fun:lang::get_lang('本次消费最多可抵扣现金')}
+                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>{wc:fun:lang::get_lang('乐币')}){wc:fun:lang::get_lang('，我要使用')} 
+                    <input type="text" maxlength="8" class="pay_input_text_gray" id="shop_score_num" value="0" money="{wc:$fufen['fufen_yuan']}" name="shop_score_num"/> {wc:fun:lang::get_lang('积分')}, 1{wc:fun:lang::get_lang('乐币')} = {wc:$fufen['fufen_yuan']} {wc:fun:lang::get_lang('积分')}</div>
                     <p id="pPointsTip" class="pay_Value" style="display:none;"></p>
                     <p class="payment_List_Rc"></p>
              </li>
              {wc:else}
               <li id="liPayByPoints" class="point_out point_gray">
 					<div class="payment_List_Lc">
-					<input type="checkbox" class="input_choice" disabled="disabled"/>使用积分抵扣现金：您的积分({wc:$member['score']})本次消费最多可抵扣现金
-                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>乐币)，我要使用 
-                    <input type="text" maxlength="8" class="pay_input_text_gray" name="costPoint"  disabled="disabled"/> 积分</div>
+					<input type="checkbox" class="input_choice" disabled="disabled"/>{wc:fun:lang::get_lang('使用积分抵扣现金：您的积分')}({wc:$member['score']}){wc:fun:lang::get_lang('本次消费最多可抵扣现金')}
+                    <span class="orange Fb">{wc:$fufen_dikou}.00</span>{wc:fun:lang::get_lang('乐币')}){wc:fun:lang::get_lang('，我要使用')} 
+                    <input type="text" maxlength="8" class="pay_input_text_gray" name="costPoint"  disabled="disabled"/> {wc:fun:lang::get_lang('积分')}</div>
                     <p id="pPointsTip" class="pay_Value" style="display:none;"></p>
                     <p class="payment_List_Rc"></p>
               </li>
              {wc:if:end}
-             <!-- 积分 -->
+             <!-- {wc:fun:lang::get_lang('积分')} -->
 
-            <!-- 余额支付 start-->
+            <!-- {wc:fun:lang::get_lang('余额支付')} start-->
 			<li class="point_in" id="liPayByBalance">
 				<div class="payment_List_Lc">					
-					<input type="checkbox" name="moneycheckbox" id="MoneyCheckbox" class="input_choice"/>使用账户余额支付，账户余额：
-					<span class="green F18">{wc:$Money}</span>乐币
+					<input type="checkbox" name="moneycheckbox" id="MoneyCheckbox" class="input_choice"/>{wc:fun:lang::get_lang('使用账户余额支付，账户余额：')}
+					<span class="green F18">{wc:$Money}</span>{wc:fun:lang::get_lang('乐币')}
 				</div>
 				<p style="" class="pay_Value" id="pBalanceTip">
-				<span>◆</span><em>◆</em>账户余额支付更快捷，
-				<a class="blue" target="_blank" href="{WEB_PATH}/member/home/userrecharge">立即充值</a></p>
-				<p class="payment_List_Rc">余额支付：<span id="pay_money" class="orange F20">0.00</span> 乐币</p>
+				<span>{wc:fun:lang::get_lang('◆')}</span><em>{wc:fun:lang::get_lang('◆')}</em>{wc:fun:lang::get_lang('账户余额支付更快捷，')}
+				<a class="blue" target="_blank" href="{WEB_PATH}/member/home/userrecharge">{wc:fun:lang::get_lang('立即充值')}</a></p>
+				<p class="payment_List_Rc">{wc:fun:lang::get_lang('余额支付：')}<span id="pay_money" class="orange F20">0.00</span> {wc:fun:lang::get_lang('乐币')}</p>
 			</li>
-            <!-- 余额支付 end--> 
+            <!-- {wc:fun:lang::get_lang('余额支付')} end--> 
 		
 			<li id="liPayByOther" class="point_in point_bank" style="display:list-item;">
-				<div class="payment_List_Lc gary01 Fb">您的账户乐币不足，请选择以下方式完成支付</div>
-				<div class="payment_List_Lc gary01 Fb" style=" color:#f60;">1云币等于1元，请谨慎充值</div>
-				<p class="payment_List_Rc">网银支付：<span id="pay_bankmoney" class="orange F20">0.00</span> 乐币</p>
+				<div class="payment_List_Lc gary01 Fb">{wc:fun:lang::get_lang('您的账户乐币不足，请选择以下方式完成支付')}</div>
+				<div class="payment_List_Lc gary01 Fb" style=" color:#f60;">1{wc:fun:lang::get_lang('云币等于')}1{wc:fun:lang::get_lang('元，请谨慎充值')}</div>
+				<p class="payment_List_Rc">{wc:fun:lang::get_lang('网银支付：')}<span id="pay_bankmoney" class="orange F20">0.00</span> {wc:fun:lang::get_lang('乐币')}</p>
 			</li>
 			
             
@@ -111,14 +111,14 @@
 	</div>
     
 	<div class="pay_bankC" id="divBankList" style="display:block;">
-		<div class="bank_arrow"><span>◆</span><em>◆</em></div>
+		<div class="bank_arrow"><span>{wc:fun:lang::get_lang('◆')}</span><em>{wc:fun:lang::get_lang('◆')}</em></div>
 		{wc:php:start}
         	$bank1 = $this->db->GetOne("select * from `@#_caches` where `key` = 'pay_bank_type'");
             $bank2 = $this->db->GetOne("select * from `@#_pay` where `pay_class` = '$bank1[value]'");
             if($bank1 && $bank2['pay_start'] ==1){
 		{wc:php:end}
         {wc:if $bank1['value'] == 'tenpay'}
-		 <h2>银行支付：</h2>
+		 <h2>{wc:fun:lang::get_lang('银行支付：')}</h2>
             <ul class="bank_logo click_img">
             	<input type="hidden" name="pay_bank" value="tenpay"  />
                 <li><input type="radio" value="CMB" name="account" checked="checked" /><label for="bankType1001"><span class="zh_bank"></span></label></li>
@@ -141,7 +141,7 @@
             </ul> 
             {wc:if:end}
             {wc:if $bank1['value'] == 'yeepay'}
-          	<h2>银行支付：</h2>
+          	<h2>{wc:fun:lang::get_lang('银行支付：')}</h2>
             <ul class="bank_logo yeepay_bank click_img">
             <input type="hidden" name="pay_bank" value="yeepay"  />
      		<li><input type="radio" value="ICBC-NET-B2C" name="account" checked="checked" /><img src="{G_TEMPLATES_STYLE}/images/bank/ICBC.png"></li>
@@ -163,7 +163,7 @@
 			{wc:php:start}
 				}
 			{wc:php:end}
-		<h3 class="bor">支付平台支付：</h3>
+		<h3 class="bor">{wc:fun:lang::get_lang('支付平台支付：')}</h3>
 		<ul class="click_img">
         	{wc:loop $paylist  $pay}
 			<li>
@@ -176,17 +176,17 @@
 
     <div class="payment_but" style="margin:15px 0 0 0;">
 			<input type="hidden" name="submitcode" value="{wc:$submitcode}">
-			<input type="submit" id="submit_ok" class="shop_pay_but" name="submit" value="确认支付，下一步">
+			<input type="submit" id="submit_ok" class="shop_pay_but" name="submit" value="{wc:fun:lang::get_lang('确认支付，下一步')}">
 	</div>
     </form>
 	<div class="answer">
-		<h6><span></span>付款遇到问题</h6>
+		<h6><span></span>{wc:fun:lang::get_lang('付款遇到问题')}</h6>
 		<ul class="answer_list">
-			<li>1、如您未开通网上银行，即可以使用储蓄卡快捷支付轻松完成付款；</li>
-			<li>2、如果您没有网银，可以使用银联在线支付，银联有支持无需开通网银的快捷支付和储值卡支付；</li>
-			<li>3、如果您有财付通或快钱、手机支付账户，可将款项先充入相应账户内，然后使用账户余额进行一次性支付；</li>
-			<li>4、如果银行卡已经扣款，但您的账户中没有显示，有可能因为网络原因导致，将在第二个工作日恢复。</li>
-			<li class="more"><a href="{WEB_PATH}/help/liaojie">更多帮助</a>&nbsp;&nbsp;<a href="{WEB_PATH}/member/home">进入我的乐购中心&gt;&gt;</a></li>
+			<li>1{wc:fun:lang::get_lang('、如您未开通网上银行，即可以使用储蓄卡快捷支付轻松完成付款；')}</li>
+			<li>2{wc:fun:lang::get_lang('、如果您没有网银，可以使用银联在线支付，银联有支持无需开通网银的快捷支付和储值卡支付；')}</li>
+			<li>3{wc:fun:lang::get_lang('、如果您有财付通或快钱、手机支付账户，可将款项先充入相应账户内，然后使用账户余额进行一次性支付；')}</li>
+			<li>4{wc:fun:lang::get_lang('、如果银行卡已经扣款，但您的账户中没有显示，有可能因为网络原因导致，将在第二个工作日恢复。')}</li>
+			<li class="more"><a href="{WEB_PATH}/help/liaojie">{wc:fun:lang::get_lang('更多帮助')}</a>&nbsp;&nbsp;<a href="{WEB_PATH}/member/home">{wc:fun:lang::get_lang('进入我的乐购中心')}&gt;&gt;</a></li>
 		</ul>
 	</div>
     
@@ -261,5 +261,5 @@ $(document).ready(function(){
 	});
 });
 </script>
-<!--footer 开始-->
+<!--footer {wc:fun:lang::get_lang('开始')}-->
 {wc:templates "index","footer"}

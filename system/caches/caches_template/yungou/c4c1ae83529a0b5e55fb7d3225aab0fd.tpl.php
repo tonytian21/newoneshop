@@ -2,7 +2,7 @@
 <?php if($ad_area): ?> 
     <?php include templates("ad","couplet");?> 
 <?php endif; ?>
-<!--banner 开始-->
+<!--banner <?php echo lang::get_lang('开始'); ?>-->
 <div class="banner w1200">
     <div class="banner_box b_gray" style="border-top:0;">
         <div style="width: 700px; margin-left: 0px; height: 460px; float: left;">
@@ -44,12 +44,12 @@
                         <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $new1['id']; ?>" target="_blank"><?php echo $new1['title']; ?></a>
                     </p>
                     <p class="money" style="margin-bottom: 10px;">
-                        已参与：
+                        <?php echo lang::get_lang('已参与：'); ?>
                         <span class="rmb" style="color: #ff6600;"><?php echo $new1['canyurenshu']; ?></span>
                     </p>
                     <p class="money">
-                        剩余：<span class="rmb" style="color: #ff6600;"><?php echo $new1['shenyurenshu']; ?></span>
-                    </p> <i class="sy_tj">推荐</i>
+                        <?php echo lang::get_lang('剩余：'); ?><span class="rmb" style="color: #ff6600;"><?php echo $new1['shenyurenshu']; ?></span>
+                    </p> <i class="sy_tj"><?php echo lang::get_lang('推荐'); ?></i>
                 </li>
                 <?php  endforeach; $ln++; unset($ln); ?>
                
@@ -59,27 +59,27 @@
 					<li class="fr1" style="float:right; position:relative;">
 						<a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php echo $renqi['title']; ?>"  target="_blank">
 							<img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $renqi['thumb']; ?>" alt="<?php echo $renqi['title']; ?>"></a>
-						<span id="tuijian">推荐</span>
+						<span id="tuijian"><?php echo lang::get_lang('推荐'); ?></span>
 					</li>
 					<li class="fr2">
 						<span class="span">
 							<a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" target="_blank"><?php echo $renqi['title']; ?></a>
 						</span>
 						<div class="Progress-bar" style="margin-left: 10px;">
-							<!--<p title="已完成<?php echo percent($renqi['canyurenshu'],$renqi['zongrenshu']); ?>">
+							<!--<p title="<?php echo lang::get_lang('已完成'); ?><?php echo percent($renqi['canyurenshu'],$renqi['zongrenshu']); ?>">
 								<span style="width:<?php echo percent($renqi['canyurenshu'],$renqi['zongrenshu']); ?>"></span>
 							</p>-->
 							<ul class="Pro-bar-li">
 								<li class="P-bar01">
-								<span style="float:left;padding-right:10px;">已参与</span>
+								<span style="float:left;padding-right:10px;"><?php echo lang::get_lang('已参与'); ?></span>
 								<em class="c_red" style=" margin-top:-2px;"><?php echo $renqi['canyurenshu']; ?></em>
 									
 								</li>
 								<!--<li class="P-bar02"> <em><?php echo $renqi['zongrenshu']; ?></em>
-									总需
+									<?php echo lang::get_lang('总需'); ?>
 								</li>-->
 								<li class="P-bar03" style="float:left; margin-top:30px; margin-left:-62px; width:37%;">
-								<span style="float:left;padding-right:10px;">剩余</span>
+								<span style="float:left;padding-right:10px;"><?php echo lang::get_lang('剩余'); ?></span>
 									<em style=" margin-top:-2px; color:#ff6600">
 									<?php echo $renqi['zongrenshu']-$renqi['canyurenshu']; ?></em>
 									
@@ -87,7 +87,7 @@
 							</ul>
 						</div>
 						<!--<div class="duobao">
-							<a style="color: #fff;" href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')">立即一元乐购</a>
+							<a style="color: #fff;" href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')"><?php echo lang::get_lang('立即一元乐购'); ?></a>
 						</div>-->
 
 					</li>
@@ -104,28 +104,28 @@
             </div>
             <div class="m_app bb_gray">
                 <ul>
-                    <li> <i class="i1"></i> 诚信网站
+                    <li> <i class="i1"></i> <?php echo lang::get_lang('诚信网站'); ?>
                     </li>
                     <li>
-                        <i class="i2"></i> 可信网站
+                        <i class="i2"></i> <?php echo lang::get_lang('可信网站'); ?>
                     </li>
                     <li>
-                        <i class="i3"></i> 电商诚信
+                        <i class="i3"></i> <?php echo lang::get_lang('电商诚信'); ?>
                     </li>
                     <li>
-                        <i class="i4"></i> 安信宝
+                        <i class="i4"></i> <?php echo lang::get_lang('安信宝'); ?>
                     </li>
                     <li>
-                        <i class="i5"></i> 监督管理局
+                        <i class="i5"></i> <?php echo lang::get_lang('监督管理局'); ?>
                     </li>
                     <li>
-                        <i class="i6"></i> 更多
+                        <i class="i6"></i> <?php echo lang::get_lang('更多'); ?>
                     </li>
                 </ul>
             </div>
             <div class="m_news">
                 <div class="m_newsT bb_gray">
-                    <p class="notice c_red">官方公告</p>
+                    <p class="notice c_red"><?php echo lang::get_lang('官方公告'); ?></p>
                 </div>
                 <?php $tiezi=$this->DB()->GetList("select * from `@#_article` where 1 AND cateid = 142 order by posttime DESC limit 0,4",array("type"=>1,"key"=>'',"cache"=>0)); ?>
                 <div class="m_newsM">
@@ -135,7 +135,7 @@
                     </div>
                     <div class="m_newsMR">
                         <?php $ln=1;if(is_array($tiezi)) foreach($tiezi AS $tz): ?>
-                        <p><?php echo date("m月d日",$tz['posttime']); ?></p>
+                        <p><?php echo date("m-d",$tz['posttime']); ?></p>
                         <?php  endforeach; $ln++; unset($ln); ?>
                     </div>
                 </div>
@@ -144,18 +144,18 @@
     </div>
 </div>
 <div class="clear"></div>
-<!--prin_pp 开始-->
+<!--prin_pp <?php echo lang::get_lang('开始'); ?>-->
 <style>
 .bs:hover {
     text-decoration: underline;
 }
 </style>
 <div style="height: 36px;line-height: 36px;padding: 10px 0;font-size: 22px;width: 1201px;margin: 0 auto;">
-    <i style="height: 22px;line-height: 22px;border-left: 4px solid #ff6600;margin-right: 7px;"></i> 最新揭晓
+    <i style="height: 22px;line-height: 22px;border-left: 4px solid #ff6600;margin-right: 7px;"></i> <?php echo lang::get_lang('最新揭晓'); ?>
     <span style="color: #999;line-height: 36px;font-size: 14px;display: inline-block;padding-left: 5px;top: 2px;position: relative;">
-	截至目前共揭晓商品
+	<?php echo lang::get_lang('截至目前共揭晓商品'); ?>
 	<em style="color: #ff6600;"><?php echo $total; ?></em>
-	个
+	<?php echo lang::get_lang('个'); ?>
 </span>
     
 </div>
@@ -171,7 +171,7 @@
                     </div>
                     <div class="print">
                         <p>
-                            恭喜用户：
+                            <?php echo lang::get_lang('恭喜用户'); ?>
                             <a href="<?php echo WEB_PATH; ?>/uname/<?php echo idjia($sq['q_user']['uid']); ?>" target="_blank" class="c_red">
 							<?php if($sq['q_user']['username']!=null): ?>
 						<?php echo $sq['q_user']['username']; ?>
@@ -183,21 +183,21 @@
 						</a>
                         </p>
                         <p class="mt30" style="margin-top:5px;">
-                            花
-                            <span class="c_red"><?php echo $sq['touzi']; ?></span> 乐购币，回报率：
-                            <span class="c_red t18"><?php echo $sq['rate']; ?></span> 倍
+                            <?php echo lang::get_lang('花'); ?>
+                            <span class="c_red"><?php echo $sq['touzi']; ?></span> <?php echo lang::get_lang('乐购币，回报率：'); ?>
+                            <span class="c_red t18"><?php echo $sq['rate']; ?></span> <?php echo lang::get_lang('倍'); ?>
                             
-                            <!--价值:￥
+                            <!--<?php echo lang::get_lang('价值'); ?>:<?php echo lang::get_lang('￥'); ?>
                             <span class="c_red"><?php echo $sq['jiazhi']; ?></span>-->
                         </p>
                         <a style="display: block;overflow: hidden;height: 35px;" href="<?php echo WEB_PATH; ?>/goods/<?php echo $sq['id']; ?>" target="_blank">
-                            <p class="c_black">(第<?php echo $sq['qishu1']; ?>期)<?php echo _strcut($sq['title'],56); ?></p>
+                            <p class="c_black">(<?php echo lang::get_lang('第*期',$sq['qishu1']); ?>)<?php echo _strcut($sq['title'],56); ?></p>
                         </a>
                         <a class="cydb_ca" href="<?php echo WEB_PATH; ?>/goods/<?php echo $sq['id']; ?>" target="_blank"></a>
                         
                        <!-- <p class="mt30" style="margin-top:5px;">
-                            回报率：
-                            <span class="c_red t18"><?php echo $sq['rate']; ?></span> 倍
+                            <?php echo lang::get_lang('回报率：'); ?>
+                            <span class="c_red t18"><?php echo $sq['rate']; ?></span> <?php echo lang::get_lang('倍'); ?>
                         </p>-->
                      
                     </div>
@@ -243,10 +243,10 @@
             html+= '<a href="'+path+'/dataserver/'+data.id+'" target="_blank"><img src="<?php echo G_UPLOAD_PATH; ?>/'+data.thumb+'"></a>';
             html+= '</div>';
             html+= '<div class="print" style="margin:0;">';      
-            html+= '<p>用户：<a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red">马上揭晓</a></p>';       
-            html+= '<p>花费：<a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red">马上揭晓</a></p>';   
-            html+= '<a style="display: block;height: 18px;overflow: hidden;" href="'+path+'/dataserver/'+data.id+'" target="_blank"><p class="c_black">(第'+data.qishu+'期)'+data.title+'</p></a>'; 
-            html+= '<p style="margin-top:5px;background-color:#f60;color:#fff;text-align:center;" class="mt30"><span style="font-size:14px;line-height:30px;">揭晓倒计时：</span><span class="shi"><span class="busytime" pattern="<i>mm</i><em>&nbsp:&nbsp</em><i>ss</i><em>&nbsp:&nbsp</em><i>ms</i>" time="'+(new Date().getTime() + (data.times * 1000)) +'">99 : 99 : 99</span></p>';    
+            html+= '<p><?php echo lang::get_lang('用户：'); ?><a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red"><?php echo lang::get_lang('马上揭晓'); ?></a></p>';       
+            html+= '<p><?php echo lang::get_lang('花费：'); ?><a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red"><?php echo lang::get_lang('马上揭晓'); ?></a></p>';   
+            html+= '<a style="display: block;height: 18px;overflow: hidden;" href="'+path+'/dataserver/'+data.id+'" target="_blank"><p class="c_black">(<?php echo lang::get_lang('第'); ?>'+data.qishu+'<?php echo lang::get_lang('期'); ?>)'+data.title+'</p></a>'; 
+            html+= '<p style="margin-top:5px;background-color:#f60;color:#fff;text-align:center;" class="mt30"><span style="font-size:14px;line-height:30px;"><?php echo lang::get_lang('揭晓倒计时：'); ?></span><span class="shi"><span class="busytime" pattern="<i>mm</i><em>&nbsp:&nbsp</em><i>ss</i><em>&nbsp:&nbsp</em><i>ms</i>" time="'+(new Date().getTime() + (data.times * 1000)) +'">99 : 99 : 99</span></p>';    
                                     
             html+= '</div>';
             html+= '</div>';
@@ -261,7 +261,7 @@
             $("#prin_pp").prepend(html);
             $("#timeloop"+data.id+" .busytime").busytime({
                 callback:function($dom){
-                    $dom.find(".shi").html('<span class="minute">正在计算,请稍后…</span>');
+                    $dom.find(".shi").html('<span class="minute"><?php echo lang::get_lang('正在计算'); ?>,<?php echo lang::get_lang('请稍后…'); ?></span>');
                     setTimeout(function(){
                     $.post(path+'/api/getshop/lottery_shop_getjson/',{gid:data.id},function(info){
                         var uhtml = '';     
@@ -271,11 +271,11 @@
                         uhtml+= '<a href="'+path+'/dataserver/'+info.id+'" target="_blank"><img src="<?php echo G_UPLOAD_PATH; ?>/'+info.thumb+'"></a>';
                         uhtml+= '</div>';
                         uhtml+= '<div class="print">';
-                        	uhtml+= '<p>恭喜用户：<a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
-                        uhtml+= '<p>花费：<span class="c_red">'+info.huafei+'</span>乐购币，价值:￥&nbsp<span class="c_red"><?php echo $sq['jiazhi']; ?></span></p>';    
+                        	uhtml+= '<p><?php echo lang::get_lang('恭喜用户：'); ?><a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
+                        uhtml+= '<p><?php echo lang::get_lang('花费：'); ?><span class="c_red">'+info.huafei+'</span><?php echo lang::get_lang('乐购币，价值'); ?>:<?php echo lang::get_lang('￥'); ?>&nbsp<span class="c_red"><?php echo $sq['jiazhi']; ?></span></p>';    
                         uhtml+= '<a style="display: block;height: 35px;overflow: hidden;" href="'+path+'/dataserver/'+info.id+'" target="_blank"><p class="c_black">'+info.qishu+info.title+'</p></a>' ;   
                         uhtml+='<a class="cydb_ca" href="<?php echo WEB_PATH; ?>/goods/<?php echo $sq['id']; ?>" target="_blank"></a>';
-                        uhtml+= '<p class="mt30" style="margin-top:5px;display: none;">回报率：<span class="c_red t18">'+info.huibaolv+'</span> 倍</p>';
+                        uhtml+= '<p class="mt30" style="margin-top:5px;display: none;"><?php echo lang::get_lang('回报率：'); ?><span class="c_red t18">'+info.huibaolv+'</span> <?php echo lang::get_lang('倍'); ?></p>';
                                 
                         uhtml+= '</div>';
                         uhtml+= '</div>';
@@ -290,31 +290,31 @@
     });
     </script>  
 </div>
-<!--prin_pp 结束-->
+<!--prin_pp <?php echo lang::get_lang('结束'); ?>-->
 <div class="clear"></div>
-<!--goods_hot 开始-->
+<!--goods_hot <?php echo lang::get_lang('开始'); ?>-->
 <div class="goods_hot bt2_red w1200" style="margin-top:10px;">
     <div class="goods_hotL fl b_gray" style="border-top:0;margin-right:-1px;">
         <div class="title bb_gray br_gray" style="width:249px;">
-            <p class="c_red">如何开始？</p>
+            <p class="c_red"><?php echo lang::get_lang('如何开始？'); ?></p>
         </div>
         <ul class="step">
             <li>
-                <h1 class="c_red">首先</h1>
-                <p>注册账号，挑选喜欢的奖品</p>
+                <h1 class="c_red"><?php echo lang::get_lang('首先'); ?></h1>
+                <p><?php echo lang::get_lang('注册账号，挑选喜欢的奖品'); ?></p>
             </li>
             <li>
-                <h1 class="c_red">然后</h1>
-                <p>支付乐购币参与乐购，每一个乐购币可参与一次乐购</p>
+                <h1 class="c_red"><?php echo lang::get_lang('然后'); ?></h1>
+                <p><?php echo lang::get_lang('支付乐购币参与乐购，每一个乐购币可参与一次乐购'); ?></p>
             </li>
             <li>
-                <h1 class="c_red">最后</h1>
-                <p>等待开奖，系统根据规则计算出一个幸运号码，持有该号码的用户，直接获得奖品</p>
+                <h1 class="c_red"><?php echo lang::get_lang('最后'); ?></h1>
+                <p><?php echo lang::get_lang('等待开奖，系统根据规则计算出一个幸运号码，持有该号码的用户，直接获得奖品'); ?></p>
             </li>
         </ul>
-        <a href="<?php echo WEB_PATH; ?>/help/1" class="more c_red" target="_blank">更多新手指南&gt;&gt;</a>
+        <a href="<?php echo WEB_PATH; ?>/help/1" class="more c_red" target="_blank"><?php echo lang::get_lang('更多新手指南'); ?>&gt;&gt;</a>
         <div class="title bb_gray bt_red">
-            <p class="c_red">正在乐购</p>
+            <p class="c_red"><?php echo lang::get_lang('正在乐购'); ?></p>
         </div>
         <ul class="user">
             <?php $ln=1;if(is_array($go_record)) foreach($go_record AS $gorecord): ?>
@@ -332,19 +332,19 @@
 				<?php endif; ?>
 			</a>
                 <p style="margin-top: 0;margin-left: 65px;">
-                    <a style="color: #2af;font-weight: normal;" class="c_yellow" href="<?php echo WEB_PATH; ?>/uname/<?php echo idjia($gorecord['uid']); ?>" target="_blank"><?php echo get_user_name($gorecord); ?></a> <!--&nbsp;于<?php echo _put_time($gorecord['time']); ?>-->
+                    <a style="color: #2af;font-weight: normal;" class="c_yellow" href="<?php echo WEB_PATH; ?>/uname/<?php echo idjia($gorecord['uid']); ?>" target="_blank"><?php echo get_user_name($gorecord); ?></a> <!--&nbsp;<?php echo lang::get_lang('于'); ?><?php echo _put_time($gorecord['time']); ?>-->
                 </p>
                 <div class="fl li_r"  style="margin-top: 5px;margin-left: 7px;">
                     <!--<p>
-				花费
+				<?php echo lang::get_lang('花费'); ?>
 				<span class="c_red"><?php echo $gorecord['gonumber']; ?></span>
-				人次
+				<?php echo lang::get_lang('人次'); ?>
 			</p>
 			-->
                     <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $gorecord['shopid']; ?>" target="_blank">
                         <span style="color: #6b6b6b; font-weight: normal;" class="c_red"><?php echo $gorecord['shopname']; ?></span>
                     </a>
-                    <!--<p style="margin-top:-2px;">总需：<?php echo $gorecord['zongrenshu']; ?> 人次</p>
+                    <!--<p style="margin-top:-2px;"><?php echo lang::get_lang('总需：'); ?><?php echo $gorecord['zongrenshu']; ?> <?php echo lang::get_lang('人次'); ?></p>
 		-->
                 </div>
             </li>
@@ -352,11 +352,11 @@
 
             <?php  endforeach; $ln++; unset($ln); ?>
         </ul>
-        <a href="<?php echo WEB_PATH; ?>/goods_lottery" class="more" target="_blank" style="line-height: 46px;">看看还有谁中奖了！</a>
+        <a href="<?php echo WEB_PATH; ?>/goods_lottery" class="more" target="_blank" style="line-height: 46px;"><?php echo lang::get_lang('看看还有谁中奖了！'); ?></a>
     </div>
     <div class="goods_hotR fl">
         <div class="title bb_gray br_gray">
-            <p>热门推荐</p>
+            <p><?php echo lang::get_lang('热门推荐'); ?></p>
         </div>
         <ul class="hot_list">
             <?php $ln=1;if(is_array($shoplistrenqi)) foreach($shoplistrenqi AS $renqi): ?>
@@ -369,35 +369,35 @@
                     <a "<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" target="_blank"><?php echo $renqi['title']; ?></a>
                 </p>
                <!-- <p class="money">
-                    价值：
-                    <span class="rmb"><?php echo $renqi['money']; ?></span> 乐购币
+                    <?php echo lang::get_lang('价值：'); ?>
+                    <span class="rmb"><?php echo $renqi['money']; ?></span> <?php echo lang::get_lang('乐购币'); ?>
                 </p>-->
                 <p class="money">
-                    总需：
-                    <span class="rmb"><?php echo $renqi['zongrenshu']; ?></span> 人次
+                    <?php echo lang::get_lang('总需：'); ?>
+                    <span class="rmb"><?php echo $renqi['zongrenshu']; ?></span> <?php echo lang::get_lang('人次'); ?>
                 </p>
                 <div class="Progress-bar" style="">
-                    <p style="height: 5px;" title="已完成<?php echo percent($renqi['canyurenshu'],$renqi['zongrenshu']); ?>">
+                    <p style="height: 5px;" title="<?php echo lang::get_lang('已完成'); ?><?php echo percent($renqi['canyurenshu'],$renqi['zongrenshu']); ?>">
                         <span style="height:6px;width:<?php echo percent($renqi['canyurenshu'],$renqi['zongrenshu']); ?>"></span>
                     </p>
                     <ul class="Pro-bar-li">
                         <li class="P-bar01">
-                            <em class="c_red"><?php echo $renqi['canyurenshu']; ?></em> 已参与人次
+                            <em class="c_red"><?php echo $renqi['canyurenshu']; ?></em> <?php echo lang::get_lang('已参与人次'); ?>
                         </li>
                         <!--<li class="P-bar02">
-                            <em><?php echo $renqi['zongrenshu']; ?></em> 总需人次
+                            <em><?php echo $renqi['zongrenshu']; ?></em> <?php echo lang::get_lang('总需人次'); ?>
                         </li>-->
                         <li class="P-bar03">
-                            <em><?php echo $renqi['zongrenshu']-$renqi['canyurenshu']; ?></em> 剩余人次
+                            <em><?php echo $renqi['zongrenshu']-$renqi['canyurenshu']; ?></em> <?php echo lang::get_lang('剩余人次'); ?>
                         </li>
                     </ul>
                 </div>
                 <div class="w-goods-ing">
                     <div class="shop_buttom bg_red b_red1">
                         <!--
-						<a href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')">立即乐购</a>
+						<a href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')"><?php echo lang::get_lang('立即乐购'); ?></a>
 		-->
-                        <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php echo $renqi['title']; ?>" target="_blank" class="Det_Shopnow">立即1币乐购</a>
+                        <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php echo $renqi['title']; ?>" target="_blank" class="Det_Shopnow"><?php echo lang::get_lang('立即'); ?>1<?php echo lang::get_lang('币乐购'); ?></a>
                     </div>
                 </div>
             </li>
@@ -411,12 +411,12 @@
         </div>
     </div>
 </div>
-<!--goods_hot 结束-->
+<!--goods_hot <?php echo lang::get_lang('结束'); ?>-->
 <div class="clear"></div>
-<!--即将揭晓 get_ready 开始-->
+<!--<?php echo lang::get_lang('即将揭晓'); ?> get_ready <?php echo lang::get_lang('开始'); ?>-->
 <div class="get_ready w1200" style="margin-top:10px;">
     <div class="title br_gray bl_gray bb_gray bt2_red">
-        <p class="c_red t16">即将揭晓</p>
+        <p class="c_red t16"><?php echo lang::get_lang('即将揭晓'); ?></p>
     </div>
     <ul>
         <?php $ln=1;if(is_array($shoplist)) foreach($shoplist AS $shop): ?>
@@ -429,31 +429,31 @@
                 <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank"><?php echo $shop['title']; ?></a>
             </p>
             <p class="money">
-                价值：
+                <?php echo lang::get_lang('价值：'); ?>
                 <span class="rmb"><?php echo $shop['money']; ?></span>
             </p>
             <div class="Progress-bar" style="">
-                <p style="height: 5px;border-radius:5px;" title="已完成<?php echo percent($shop['canyurenshu'],$shop['zongrenshu']); ?>">
+                <p style="height: 5px;border-radius:5px;" title="<?php echo lang::get_lang('已完成'); ?><?php echo percent($shop['canyurenshu'],$shop['zongrenshu']); ?>">
                     <span style="height:6px;border-radius:6px;width:<?php echo percent($shop['canyurenshu'],$shop['zongrenshu']); ?>;"></span>
                 </p>
                 <ul class="Pro-bar-li">
                     <li class="P-bar01">
-                        <em class="c_red"><?php echo $shop['canyurenshu']; ?></em> 已参与人次
+                        <em class="c_red"><?php echo $shop['canyurenshu']; ?></em> <?php echo lang::get_lang('已参与人次'); ?>
                     </li>
                     <li class="P-bar02">
-                        <em><?php echo $shop['zongrenshu']; ?></em> 总需人次
+                        <em><?php echo $shop['zongrenshu']; ?></em> <?php echo lang::get_lang('总需人次'); ?>
                     </li>
                     <li class="P-bar03">
-                        <em><?php echo $shop['zongrenshu']-$shop['canyurenshu']; ?></em> 剩余人次
+                        <em><?php echo $shop['zongrenshu']-$shop['canyurenshu']; ?></em> <?php echo lang::get_lang('剩余人次'); ?>
                     </li>
                 </ul>
             </div>
             <div class="w-goods-ing" style="margin: 5px auto; width: 84%;">
                 <div class="shop_buttom bg_red b_red1" style="">
                     <!--
-					<a href="javascript:;" style="font-size:14px;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $shop['id']; ?>,'<?php echo WEB_PATH; ?>')">立即乐购</a>
+					<a href="javascript:;" style="font-size:14px;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $shop['id']; ?>,'<?php echo WEB_PATH; ?>')"><?php echo lang::get_lang('立即乐购'); ?></a>
 -->
-                    <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank" style="font-size:14px;" class="Det_Shopnow">立即乐购</a>
+                    <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank" style="font-size:14px;" class="Det_Shopnow"><?php echo lang::get_lang('立即乐购'); ?></a>
                 </div>
                 <div class="shop_buttom1 bg_pink b_pink c_red" style="width:60px;height:35px;margin-left: 10px;">
                     <a class="c_red" href="javascript:;" onclick="gcartlist.gocartlist(<?php echo $shop['id']; ?>,'<?php echo WEB_PATH; ?>','wc_')" style="line-height:30px;font-size:14px;"></a>
@@ -463,12 +463,12 @@
         <?php  endforeach; $ln++; unset($ln); ?>
     </ul>
 </div>
-<!--即将揭晓 get_ready 结束-->
+<!--<?php echo lang::get_lang('即将揭晓'); ?> get_ready <?php echo lang::get_lang('结束'); ?>-->
 <div class="clear"></div>
-<!--新品上架 new_goods 开始-->
+<!--<?php echo lang::get_lang('新品上架'); ?> new_goods <?php echo lang::get_lang('开始'); ?>-->
 <div class="new_goods w1200" style="margin-top:10px;">
     <div class="title br_gray bl_gray bb_gray bt2_green">
-        <p class="c_green t16">新品上架</p>
+        <p class="c_green t16"><?php echo lang::get_lang('新品上架'); ?></p>
     </div>
     <ul>
         <?php $ln=1;if(is_array($new_shop)) foreach($new_shop AS $new): ?>
@@ -481,22 +481,22 @@
                 <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $new['id']; ?>" target="_blank"><?php echo $new['title']; ?></a>
             </p>
             <p class="money">
-                价值：
+                <?php echo lang::get_lang('价值：'); ?>
                 <span class="rmb"><?php echo $new['money']; ?></span>
             </p>
         </li>
         <?php  endforeach; $ln++; unset($ln); ?>
     </ul>
     <div class="check_out b_gray">
-        <a href="<?php echo WEB_PATH; ?>/goods_list" target="_blank">查看更多</a>
+        <a href="<?php echo WEB_PATH; ?>/goods_list" target="_blank"><?php echo lang::get_lang('查看更多'); ?></a>
     </div>
 </div>
-<!--新品上架 new_goods 结束-->
+<!--<?php echo lang::get_lang('新品上架'); ?> new_goods <?php echo lang::get_lang('结束'); ?>-->
 <div class="clear"></div>
-<!--lottery_show 晒单分享-->
+<!--lottery_show <?php echo lang::get_lang('晒单分享'); ?>-->
 <div class="lottery_show w1200" style="margin-top:10px;display: none;">
     <div class="title br_gray bl_gray bt2_orange">
-        <p class="c_orange t16">晒单管理</p>
+        <p class="c_orange t16"><?php echo lang::get_lang('晒单管理'); ?></p>
     </div>
     <div class="share_show">
         <?php $ln=1;if(is_array($shaidan)) foreach($shaidan AS $sd): ?>
@@ -558,15 +558,15 @@
         </div>
     </div>
     <div class="check_out b_gray">
-        <a href="<?php echo WEB_PATH; ?>/go/shaidan" target="_blank">查看更多</a>
+        <a href="<?php echo WEB_PATH; ?>/go/shaidan" target="_blank"><?php echo lang::get_lang('查看更多'); ?></a>
     </div>
 </div>
-<!--lottery_show 晒单分享end-->
+<!--lottery_show <?php echo lang::get_lang('晒单分享'); ?>end-->
 <div class="clear"></div>
 <!--
 <?php $res=$this->DB()->GetList("select img,link from `@#_recom` where 1 order by `id` ASC",array("type"=>1,"key"=>'',"cache"=>0)); ?>
 -->
-<!--topic 开始-->
+<!--topic <?php echo lang::get_lang('开始'); ?>-->
 
 <div class="topic w1200" style="margin-top:10px;">
     <div class="line bg_red"></div>
@@ -628,12 +628,12 @@ function displayStatusMsg() {
                   </li></a>
                 <script language="JavaScript">nextAd()</script>
                 <li>
-                    <h1>推荐话题</h1> <?php $ln=1;if(is_array($tiezi_tuijian)) foreach($tiezi_tuijian AS $tiezi): ?>
-                    <a href="<?php echo WEB_PATH; ?>/group/nei/<?php echo $tiezi['id']; ?>">•  <?php echo $tiezi['title']; ?></a> <?php  endforeach; $ln++; unset($ln); ?>
+                    <h1><?php echo lang::get_lang('推荐话题'); ?></h1> <?php $ln=1;if(is_array($tiezi_tuijian)) foreach($tiezi_tuijian AS $tiezi): ?>
+                    <a href="<?php echo WEB_PATH; ?>/group/nei/<?php echo $tiezi['id']; ?>"><?php echo lang::get_lang('•'); ?>  <?php echo $tiezi['title']; ?></a> <?php  endforeach; $ln++; unset($ln); ?>
                 </li>
                 <li style="margin-left:10px;">
-                    <h1>最新话题</h1> <?php $ln=1;if(is_array($tiezi_new)) foreach($tiezi_new AS $tiezi): ?>
-                    <a href="<?php echo WEB_PATH; ?>/group/nei/<?php echo $tiezi['id']; ?>">•  <?php echo $tiezi['title']; ?></a> <?php  endforeach; $ln++; unset($ln); ?>
+                    <h1><?php echo lang::get_lang('最新话题'); ?></h1> <?php $ln=1;if(is_array($tiezi_new)) foreach($tiezi_new AS $tiezi): ?>
+                    <a href="<?php echo WEB_PATH; ?>/group/nei/<?php echo $tiezi['id']; ?>"><?php echo lang::get_lang('•'); ?>  <?php echo $tiezi['title']; ?></a> <?php  endforeach; $ln++; unset($ln); ?>
                 </li>
             </ul>
             <ul class="columns fl b_gray" style="border-top:0">
@@ -654,14 +654,14 @@ function displayStatusMsg() {
                             <span class="message fl"></span>
                             <span class="number fl"><?php echo $v['tiezi']; ?></span>
                         </p>
-                        <a href="<?php echo WEB_PATH; ?>/group/show/<?php echo $v['id']; ?>">申请加入</a>
+                        <a href="<?php echo WEB_PATH; ?>/group/show/<?php echo $v['id']; ?>"><?php echo lang::get_lang('申请加入'); ?></a>
                     </div>
                 </li>
                 <?php  endforeach; $ln++; unset($ln); ?>
             </ul>
         </div>
         <div class="topicAllR fl bb_gray br_gray">
-            <h1>圈子活跃用户</h1>
+            <h1><?php echo lang::get_lang('圈子活跃用户'); ?></h1>
             <ul>
                 <?php $ln=1;if(is_array($hueifu)) foreach($hueifu AS $hf): ?>
                 <?php $quanzi=$this->DB()->GetList("select * from `@#_member` where `uid`=$hf[hueiyuan]",array("type"=>1,"key"=>'',"cache"=>0)); ?>
@@ -687,7 +687,7 @@ function displayStatusMsg() {
 </div>
 
 
-<!--topic 结束-->
+<!--topic <?php echo lang::get_lang('结束'); ?>-->
 <div class="clear"></div>
 <script type="text/javascript">
 Qfast.add('widgets', {
@@ -697,18 +697,18 @@ Qfast.add('widgets', {
 });
 Qfast(false, 'widgets', function() {
     K.tabs({
-        id: 'fsD1', //焦点图包裹id
-        conId: "D1pic1", //** 大图域包裹id
+        id: 'fsD1', //<?php echo lang::get_lang('焦点图包裹'); ?>id
+        conId: "D1pic1", //** <?php echo lang::get_lang('大图域包裹'); ?>id
         tabId: "D1fBt",
         tabTn: "a",
-        conCn: '.fcon', //** 大图域配置class
-        auto: 1, //自动播放 1或0
-        effect: 'fade', //效果配置
-        eType: 'mouseover', //** 鼠标事件
-        pageBt: true, //是否有按钮切换页码
-        bns: ['.prev', '.next'], //** 前后按钮配置class
-        interval: 3000 //** 停顿时间
-    })
+        conCn: '.fcon', //** <?php echo lang::get_lang('大图域配置'); ?>class
+        auto: 1, //<?php echo lang::get_lang('自动播放'); ?> 1<?php echo lang::get_lang('或'); ?>0
+        effect: 'fade', //<?php echo lang::get_lang('效果配置'); ?>
+        eType: 'mouseover', //** <?php echo lang::get_lang('鼠标事件'); ?>
+        pageBt: true, //<?php echo lang::get_lang('是否有按钮切换页码'); ?>
+        bns: ['.prev', '.next'], //** <?php echo lang::get_lang('前后按钮配置'); ?>class
+        interval: 3000 
+    });
 })
 </script>
 <script type="text/javascript">
@@ -759,7 +759,7 @@ $(".b_gray").mouseleave(function() {
     });
 })
 </script>
-<!--晒单分享end-->
+<!--<?php echo lang::get_lang('晒单分享'); ?>end-->
 <?php if(get_user_arr()): ?> <?php  else: ?>
 <!--<div id="MaCenter1" class="MaCenter1">
     <style>

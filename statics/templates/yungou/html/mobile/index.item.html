@@ -30,7 +30,7 @@
     <section class="goodsCon pCon">
 	    <!-- 导航 -->
         <div id="divPeriod" class="pNav">
-            <div class="loading"><b></b>正在加载</div>
+            <div class="loading"><b></b>{wc:fun:lang::get_lang('正在加载')}</div>
     	    <ul class="slides">
     	       {wc:$loopqishu}
             </ul>
@@ -60,12 +60,12 @@
                 </div>
         	    <div class="pResultsR">
                     <div class="g-snav">
-                        <div class="g-snav-lst">总共购买<br><dd><b class="orange">{wc:$gorecode['gonumber']}</b><br>人次</dd></div>
-                        <div class="g-snav-lst">揭晓时间<br><dd class="gray9"><span>{wc:fun:str_replace(' ','<br>',microt($item['q_end_time']))}</span></dd></div>
-                        <div class="g-snav-lst">购买时间<br><dd class="gray9"><span>{wc:fun:str_replace(' ','<br>',microt($gorecode['time']))}</span></dd></div>
+                        <div class="g-snav-lst">{wc:fun:lang::get_lang('总共购买')}<br><dd><b class="orange">{wc:$gorecode['gonumber']}</b><br>{wc:fun:lang::get_lang('人次')}</dd></div>
+                        <div class="g-snav-lst">{wc:fun:lang::get_lang('揭晓时间')}<br><dd class="gray9"><span>{wc:fun:str_replace(' ','<br>',microt($item['q_end_time']))}</span></dd></div>
+                        <div class="g-snav-lst">{wc:fun:lang::get_lang('购买时间')}<br><dd class="gray9"><span>{wc:fun:str_replace(' ','<br>',microt($gorecode['time']))}</span></dd></div>
                     </div>
                 </div>
-        	    <p><a href="{WEB_PATH}/mobile/mobile/calResult/{wc:$item['id']}" class="fr">查看计算结果</a>幸运码：<b class="orange">{wc:$item['q_user_code']}</b></p>
+        	    <p><a href="{WEB_PATH}/mobile/mobile/calResult/{wc:$item['id']}" class="fr">{wc:fun:lang::get_lang('查看计算结果')}</a>{wc:fun:lang::get_lang('幸运码')}：<b class="orange">{wc:$item['q_user_code']}</b></p>
             </div>
         </div>
         <input name="hidLineLink" type="hidden" id="hidLineLink" value="{WEB_PATH}/mobile/mobile/item/{wc:$item['id']}" />
@@ -81,33 +81,33 @@
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareAppMessage({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "别人{wc:$gorecode['gonumber']}元中了{wc:$item['title']},羡慕嫉妒恨...", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('别人')}{wc:$gorecode['gonumber']}{wc:fun:lang::get_lang('元中了')}{wc:$item['title']},{wc:fun:lang::get_lang('羡慕嫉妒恨')}...", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
          success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareQQ({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "别人{wc:$gorecode['gonumber']}元中了{wc:$item['title']},羡慕嫉妒恨...", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('别人')}{wc:$gorecode['gonumber']}{wc:fun:lang::get_lang('元中了')}{wc:$item['title']},{wc:fun:lang::get_lang('羡慕嫉妒恨')}...", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
@@ -118,15 +118,15 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareWeibo({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "别人{wc:$gorecode['gonumber']}元中了{wc:$item['title']},羡慕嫉妒恨...", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('别人')}{wc:$gorecode['gonumber']}{wc:fun:lang::get_lang('元中了')}{wc:$item['title']},{wc:fun:lang::get_lang('羡慕嫉妒恨')}...", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
 });
@@ -138,10 +138,10 @@ var n = $("#hidLineLink").val();
 			<div id="divLotteryTime" class="pProcess clearfix" data-id="{wc:$item['id']}" data-endtime="{wc:fun:ceil($item['q_end_time']-time())}">
 				<div class="pCountdown">
 					<div class="g-snav">
-						<div class="g-snav-lst">揭晓<br>倒计时<s></s></div>
-						<div class="g-snav-lst"><b class="minute">99</b><em>分</em></div>
-						<div class="g-snav-lst"><b class="second">99</b><em>秒</em></div>
-						<div class="g-snav-lst"><b class="millisecond">99</b><em>毫秒</em></div>
+						<div class="g-snav-lst">{wc:fun:lang::get_lang('揭晓')}<br>{wc:fun:lang::get_lang('倒计时')}<s></s></div>
+						<div class="g-snav-lst"><b class="minute">99</b><em>{wc:fun:lang::get_lang('分')}</em></div>
+						<div class="g-snav-lst"><b class="second">99</b><em>{wc:fun:lang::get_lang('秒')}</em></div>
+						<div class="g-snav-lst"><b class="millisecond">99</b><em>{wc:fun:lang::get_lang('毫秒')}</em></div>
 					</div>
 				</div>
 			</div>
@@ -158,34 +158,34 @@ var n = $("#hidLineLink").val();
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
         link: n, // 分享链接
         //imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareAppMessage({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "正在为您揭晓最新一期[{wc:$item['title']}],快来看谁是幸运者！", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('正在为您揭晓最新一期')}[{wc:$item['title']}],{wc:fun:lang::get_lang('快来看谁是幸运者')}！", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
          success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareQQ({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "正在为您揭晓最新一期[{wc:$item['title']}],快来看谁是幸运者！", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('正在为您揭晓最新一期')}[{wc:$item['title']}],{wc:fun:lang::get_lang('快来看谁是幸运者')}！", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
@@ -196,15 +196,15 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareWeibo({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "正在为您揭晓最新一期[{wc:$item['title']}],快来看谁是幸运者！", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')} ", // 分享标题
+        desc: "{wc:fun:lang::get_lang('正在为您揭晓最新一期')} [{wc:$item['title']}],{wc:fun:lang::get_lang('快来看谁是幸运者')}！", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
 });
@@ -215,7 +215,7 @@ var n = $("#hidLineLink").val();
         <div class="pPic pPicBor">
             <div class="pPic2">
     	        <div id="sliderBox" class="pImg">
-                    <div class="loading"><b></b>正在加载</div>
+                    <div class="loading"><b></b>{wc:fun:lang::get_lang('正在加载')}</div>
                     <ul class="slides">
 					{wc:loop $item['picarr'] $imgtu}
 					<li><img src="{G_UPLOAD_PATH}/{wc:$imgtu}" class="animClass" /></li>
@@ -224,7 +224,7 @@ var n = $("#hidLineLink").val();
                 </div>
             </div>
 			{wc:if $item['q_end_time']=='' && $item['xsjx_time']!=0}
-            <span id="spAutoFlag" class="z-limit-tips">限时揭晓</span>
+            <span id="spAutoFlag" class="z-limit-tips">{wc:fun:lang::get_lang('限时揭晓')}</span>
 			 {wc:if:end}
         </div>
 
@@ -232,20 +232,20 @@ var n = $("#hidLineLink").val();
 
 
         <div class="pDetails {wc:if $item['q_end_time']!=''}pDetails-end{wc:if:end}">
-                <b>(第{wc:$item['qishu']}期){wc:$item['title']} <span></span></b>
-                <p class="price">价值：<em class="arial gray">￥{wc:$item['money']}</em></p>
+                <b>{wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$item['title']} <span></span></b>
+                <p class="price">{wc:fun:lang::get_lang('价值')}：<em class="arial gray">￥{wc:$item['money']}</em></p>
 
 			{wc:if empty($item['q_end_time'])}
 				<div class="Progress-bar">
-					<p class="u-progress" title="已完成{wc:fun:percent($item['canyurenshu'],$item['zongrenshu'])}">
+					<p class="u-progress" title="{wc:fun:lang::get_lang('已完成')}{wc:fun:percent($item['canyurenshu'],$item['zongrenshu'])}">
 						<span class="pgbar" style="width:{wc:$item['canyurenshu']/$item['zongrenshu']*100}%;">
 							<span class="pging"></span>
 						</span>
 					</p>
 					<ul class="Pro-bar-li">
-						<li class="P-bar01"><em>{wc:$item['canyurenshu']}</em>已参与</li>
-						<li class="P-bar02"><em>{wc:$item['zongrenshu']}</em>总需人次</li>
-						<li class="P-bar03"><em>{wc:$item['zongrenshu']-$item['canyurenshu']}</em>剩余</li>
+						<li class="P-bar01"><em>{wc:$item['canyurenshu']}</em>{wc:fun:lang::get_lang('已参与')}</li>
+						<li class="P-bar02"><em>{wc:$item['zongrenshu']}</em>{wc:fun:lang::get_lang('总需人次')}</li>
+						<li class="P-bar03"><em>{wc:$item['zongrenshu']-$item['canyurenshu']}</em>{wc:fun:lang::get_lang('剩余')}</li>
 					</ul>
 				</div>
                 <input name="hidLineLink" type="hidden" id="hidLineLink" value="{WEB_PATH}/mobile/mobile/item/{wc:$item['id']}" />
@@ -261,33 +261,33 @@ var n = $("#hidLineLink").val();
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-        title: "梦想还是要有的,万一实现了呢?", // 分享标题
+        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')} ？", // 分享标题
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareAppMessage({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "最新一期【{wc:$item['title']}】招募进行中!强势插入！", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('最新一期')}【{wc:$item['title']}】{wc:fun:lang::get_lang('招募进行中!强势插入')}！", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
          success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
     wx.onMenuShareQQ({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "最新一期【{wc:$item['title']}】招募进行中!强势插入！", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('最新一期')}【{wc:$item['title']}】{wc:fun:lang::get_lang('招募进行中!强势插入')}！", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
@@ -298,15 +298,15 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareWeibo({
-        title: "分享一份来自\"自由乐购\"的幸运礼物", // 分享标题
-        desc: "最新一期【{wc:$item['title']}】招募进行中!强势插入！", // 分享描述
+        title: "{wc:fun:lang::get_lang('分享一份来自\"自由乐购\"的幸运礼物')}", // 分享标题
+        desc: "{wc:fun:lang::get_lang('最新一期')}【{wc:$item['title']}】{wc:fun:lang::get_lang('招募进行中!强势插入')}！", // 分享描述
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('已分享');
+           alert('{wc:fun:lang::get_lang('已分享')}');
         },
         cancel: function () { 
-            alert('已取消');
+            alert('{wc:fun:lang::get_lang('已取消')}');
         }
     });
 });
@@ -314,25 +314,25 @@ var n = $("#hidLineLink").val();
 			{wc:if:end}
 			{wc:if $item['q_end_time'] !=''}
 				{wc:if $item['q_end_time'] > time() }
-				  <div class="pClosed">正在揭晓</div>
+				  <div class="pClosed">{wc:fun:lang::get_lang('正在揭晓')}</div>
 				{wc:else}
-				  <div class="pClosed">本期已揭晓</div>
+				  <div class="pClosed">{wc:fun:lang::get_lang('本期已揭晓')}</div>
 				{wc:if:end}
 				{wc:if $itemxq==1}
-				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">第{wc:$itemzx['qishu']}期(正在进行中……)</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
+				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">{wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:fun:lang::get_lang('正在进行中')}(……)</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
 				{wc:if:end}
            	{wc:elseif $item['zongrenshu']==$item['canyurenshu']}
 			  {wc:if $item['xsjx_time']!=0}
-               <div id="divAutoRTime" class="pSurplus" time="{wc:$sysj}" timeAlt="{wc:fun:date('Y-m-d-H',$item['xsjx_time'])}"><p><span>限时揭晓</span>剩余时间：<em>00</em>时<em>00</em>分<em>00</em>秒</p></div>
+               <div id="divAutoRTime" class="pSurplus" time="{wc:$sysj}" timeAlt="{wc:fun:date('Y-m-d-H',$item['xsjx_time'])}"><p><span>{wc:fun:lang::get_lang('限时揭晓')}</span>{wc:fun:lang::get_lang('剩余时间')}：<em>00</em>{wc:fun:lang::get_lang('时')}<em>00</em>{wc:fun:lang::get_lang('分')}<em>00</em>{wc:fun:lang::get_lang('秒')}</p></div>
 			   {wc:if:end}
-               <div class="pClosed">下手慢了！！ 被抢光啦！！</div>
+               <div class="pClosed">{wc:fun:lang::get_lang('下手慢了！！ 被抢光啦')}！！</div>
 		    {wc:else}
                {wc:if $item['xsjx_time']!=0}
-			  <div id="divAutoRTime" class="pSurplus" time="{wc:$sysj}" timeAlt="{wc:fun:date('Y-m-d-H',$item['xsjx_time'])}"><p><span>限时揭晓</span>剩余时间：<em>00</em>时<em>00</em>分<em>00</em>秒</p></div>
+			  <div id="divAutoRTime" class="pSurplus" time="{wc:$sysj}" timeAlt="{wc:fun:date('Y-m-d-H',$item['xsjx_time'])}"><p><span>{wc:fun:lang::get_lang('限时揭晓')}</span>{wc:fun:lang::get_lang('剩余时间')}：<em>00</em>{wc:fun:lang::get_lang('时')}<em>00</em>{wc:fun:lang::get_lang('分')}<em>00</em>{wc:fun:lang::get_lang('秒')}</p></div>
 			  {wc:if:end}
               <div id="btnBuyBox" class="pBtn" codeid="{wc:$item['id']}">
-				<a style="width: 43%;margin-right: 2%;margin-left: 1%;" href="javascript:;" class="fl buyBtn">立即夺宝</a>
-				<a style="width: 42%;" href="javascript:;" class="fl addBtn">加入购物车</a>
+				<a style="width: 43%;margin-right: 2%;margin-left: 1%;" href="javascript:;" class="fl buyBtn">{wc:fun:lang::get_lang('立即夺宝')}</a>
+				<a style="width: 42%;" href="javascript:;" class="fl addBtn">{wc:fun:lang::get_lang('加入购物车')}</a>
                 
                 <a style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a>
                 
@@ -344,9 +344,9 @@ var n = $("#hidLineLink").val();
     	    <dl>
     	        
 
-				<a href="{WEB_PATH}/mobile/mobile/goodspost/{wc:$item['sid']}"><b class="fr z-arrow"></b>已有<span class="orange arial">{wc:fun:count($shaidan)}</span>个幸运者晒单<strong class="orange arial">{wc:$sum}</strong>条评论</a>
-                                                    <a href="{WEB_PATH}/mobile/mobile/goodsdesc/{wc:$item['id']}"><b class="fr z-arrow"></b>图文详情<em>（建议WIFI下使用）</em> </a>
-				<a style="border-color: #efefef;box-shadow:0px 0px 0px #e7e7e7;" href="{WEB_PATH}/mobile/mobile/buyrecords/{wc:$item['id']}"><b class="fr z-arrow jilu"></b>所有夺宝记录</a>
+				<a href="{WEB_PATH}/mobile/mobile/goodspost/{wc:$item['sid']}"><b class="fr z-arrow"></b>{wc:fun:lang::get_lang('已有')}<span class="orange arial">{wc:fun:count($shaidan)}</span>{wc:fun:lang::get_lang('个幸运者晒单')}<strong class="orange arial">{wc:$sum}</strong>{wc:fun:lang::get_lang('条评论')}</a>
+                                                    <a href="{WEB_PATH}/mobile/mobile/goodsdesc/{wc:$item['id']}"><b class="fr z-arrow"></b>{wc:fun:lang::get_lang('图文详情')}<em>（{wc:fun:lang::get_lang('建议WIFI下使用')}）</em> </a>
+				<a style="border-color: #efefef;box-shadow:0px 0px 0px #e7e7e7;" href="{WEB_PATH}/mobile/mobile/buyrecords/{wc:$item['id']}"><b class="fr z-arrow jilu"></b>{wc:fun:lang::get_lang('所有夺宝记录')}</a>
             </dl>
         <!-- 上期获得者 
 		{wc:if $item['q_end_time'] !=''}
@@ -376,10 +376,10 @@ var n = $("#hidLineLink").val();
                 </div>
                 </div> 
 
-                    <a id="btnLoadMore" class="loading" href="javascript:;" style="display:none;color: #999;border: none!important;margin-top: -1px;position: relative;top: -1px;"> <i style="position: relative;" class="jiazai"></i> 正在加载...
+                    <a id="btnLoadMore" class="loading" href="javascript:;" style="display:none;color: #999;border: none!important;margin-top: -1px;position: relative;top: -1px;"> <i style="position: relative;" class="jiazai"></i> {wc:fun:lang::get_lang('正在加载')}...
                     </a>
-                    <a id="btnLoadMore2" class="loading" style="display:none; padding-top: 0px;color: #999;margin-top: -1px;position: relative;top: -1px;">~~木有更夺友参与了~~</a>
-                    <a id="btnLoadMore3" class="loading" style="display:none; padding-top: 0px;color: #999;margin-top: -1px;position: relative;top: -1px;">~~木有更夺友参与了~~</a>
+                    <a id="btnLoadMore2" class="loading" style="display:none; padding-top: 0px;color: #999;margin-top: -1px;position: relative;top: -1px;">~~{wc:fun:lang::get_lang('木有更夺友参与了')}~~</a>
+                    <a id="btnLoadMore3" class="loading" style="display:none; padding-top: 0px;color: #999;margin-top: -1px;position: relative;top: -1px;">~~{wc:fun:lang::get_lang('木有更夺友参与了')}~~</a>
             <input id="urladdress" value="" type="hidden" />
             <input id="pagenum" value="" type="hidden" />
              <script type="text/javascript">
@@ -416,7 +416,7 @@ window.onload=function(){
                     ul += '<a href="{WEB_PATH}/mobile/mobile/userindex/'+data[i].uid+'">'+data[i].username+'</a>';
                     ul += '<strong>('+data[i].ip+')</strong>';
                     ul += '<br/>';
-                    ul += '<span>参与了<b class="orange">'+data[i].gonumber+'</b>人次</span>';
+                    ul += '<span>{wc:fun:lang::get_lang('参与了')}<b class="orange">'+data[i].gonumber+'</b>{wc:fun:lang::get_lang('人次')}</span>';
                     //ul += '<em class="arial">'+Year+'-'+Month+'-'+Day+'&nbsp&nbsp'+Hours+':'+Minutes+':'+Seconds+'</em>';
                     ul += '<em class="arial">'+data[i].time2+'</em>';
                     ul += '</li></ul>';
@@ -623,22 +623,22 @@ window.onload=function(){
     <div class="smailnav">
         <div id="btnGotoTop3" class="smailgb">
             <a class="home" href="{WEB_PATH}">
-                <i></i> <em>首页</em>
+                <i></i> <em>{wc:fun:lang::get_lang('首页')}</em>
             </a>
             <a class="glist" href="{WEB_PATH}/mobile/mobile/glist">
-                <i></i> <em>所有商品</em>
+                <i></i> <em>{wc:fun:lang::get_lang('所有商品')}</em>
             </a>
             <a class="lottry" href="{WEB_PATH}/mobile/mobile/lottery">
                 <i></i>
-                <em>最新揭晓</em>
+                <em>{wc:fun:lang::get_lang('最新揭晓')}</em>
             </a>
             <a class="user" href="{WEB_PATH}/mobile/home">
                 <i></i>
-                <em>我的夺宝</em>
+                <em>{wc:fun:lang::get_lang('我的夺宝')}</em>
             </a>
             <a id="shuaxin" class="sx" href="">
                 <i></i>
-                <em>刷新</em>
+                <em>{wc:fun:lang::get_lang('刷新')}</em>
             </a>
             <i class="xb"></i>
         </div>
@@ -777,7 +777,7 @@ $(function(){
 			var time = times - (new Date().getTime());
 			if ( time < 1 ) {
 				clearInterval(timer);
-				tips.css('line-height', '35px').css('color','#FF5152').html('刷新下，幸运者就是你！');
+				tips.css('line-height', '35px').css('color','#FF5152').html('{wc:fun:lang::get_lang('刷新下，幸运者就是你')}！');
 				minute.parent().remove();
 				second.parent().remove();
 				millisecond.parent().remove();
@@ -785,10 +785,10 @@ $(function(){
 				var checker = function(){
 					$.getJSON(Gobal.Webpath+"/api/getshop/lottery_shop_huode/"+new Date().getTime(),{'test':true,'gid':id},function(info){
 						if ( info.error ) {
-							tips.html('刷新下，幸运者就是你');
+							tips.html('{wc:fun:lang::get_lang('刷新下，幸运者就是你')}');
 							setTimeout(checker,1000);
 						} else {
-							tips.html('揭晓成功！');
+							tips.html('{wc:fun:lang::get_lang('揭晓成功')}！');
 							setTimeout(function(){
 								location.reload();
 							},200);

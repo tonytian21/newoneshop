@@ -5,11 +5,11 @@
 	.links_txt .vote_body{border-bottom:1px solid #ccc;text-align:center;}
 </style>
 <div class="links_txt">
-	<h3><b>投票项目活动列表</b></h3>
+	<h3><b>{wc:fun:lang::get_lang('投票项目活动列表')}</b></h3>
 	<ul>
-	<li style="width:450px;" class="vote_head">标题</li>
-	<li style="width:220px;" class="vote_head">开始时间</li>
-	<li style="width:220px;" class="vote_head">结束时间</li>
+	<li style="width:450px;" class="vote_head">{wc:fun:lang::get_lang('标题')}</li>
+	<li style="width:220px;" class="vote_head">{wc:fun:lang::get_lang('开始时间')}</li>
+	<li style="width:220px;" class="vote_head">{wc:fun:lang::get_lang('结束时间')}</li>
 	{wc:loop $vote_subjects $option_idval}	
 		<li style="width:450px;" class="vote_body" style="margin-left:10px;">
 			<a href="{WEB_PATH}/vote/vote/show_option/{wc:$option_idval['vote_id']}">{wc:$option_idval['vote_title']}</a>

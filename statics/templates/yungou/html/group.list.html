@@ -11,24 +11,24 @@
 					{wc:if $quanzi['id']=='1'}
 							{wc:if $quanzi['jiaru']=='Y'}
 								{wc:if !$addgroup}
-									<a id="btnJoinGroup" href="javascript:;" class="button04 bg_red">申请加入</a>
+									<a id="btnJoinGroup" href="javascript:;" class="button04 bg_red">{wc:fun:lang::get_lang('申请加入')}</a>
 									{wc:else}
-									<span class="JoinOut" id="spanJoinOut"><s></s>已加入<i>|</i><a id="btnJoinOutGroup" href="javascript:;" class="blue">退出</a></span>
+									<span class="JoinOut" id="spanJoinOut"><s></s>{wc:fun:lang::get_lang('已加入')}<i>|</i><a id="btnJoinOutGroup" href="javascript:;" class="blue">{wc:fun:lang::get_lang('退出')}</a></span>
 								{wc:if:end}
 							{wc:if:end}
 					{wc:else}
 							{wc:if $quanzi['jiaru']=='Y'}
 								{wc:if !$addgroup}
-									<a id="btnJoinGroup" href="javascript:;" class="button04 bg_red">申请加入</a>
+									<a id="btnJoinGroup" href="javascript:;" class="button04 bg_red">{wc:fun:lang::get_lang('申请加入')}</a>
 									{wc:else}
-									<span class="JoinOut" id="spanJoinOut"><s></s>已加入<i>|</i><a id="btnJoinOutGroup" href="javascript:;" class="blue">退出</a></span>
+									<span class="JoinOut" id="spanJoinOut"><s></s>{wc:fun:lang::get_lang('已加入')}<i>|</i><a id="btnJoinOutGroup" href="javascript:;" class="blue">{wc:fun:lang::get_lang('退出')}</a></span>
 								{wc:if:end}
 							{wc:if:end}
 					{wc:if:end}
 				</div>
-				<p class="Topic-Hinfo gray02">成员：
-					<span class="gray01">{wc:$quanzi['chengyuan']}</span>&nbsp;&nbsp;&nbsp;话题：
-					<span class="gray01">{wc:$quanzi['tiezi']}</span>&nbsp;&nbsp;&nbsp;创建时间：
+				<p class="Topic-Hinfo gray02">{wc:fun:lang::get_lang('成员：')}
+					<span class="gray01">{wc:$quanzi['chengyuan']}</span>&nbsp;&nbsp;&nbsp;{wc:fun:lang::get_lang('话题：')}
+					<span class="gray01">{wc:$quanzi['tiezi']}</span>&nbsp;&nbsp;&nbsp;{wc:fun:lang::get_lang('创建时间：')}
 					<span class="gray01">{wc:fun:date("Y-m-d H:i",$quanzi['time'])}</span>
 				</p>
 				<div class="Topic-Hintro" style="width:595px;"><span id="pGroupAbout" class="gray01">{wc:$quanzi['jianjie']}</span>&nbsp;</div>
@@ -47,18 +47,18 @@
 			</div>
 		</div>
 		<div class="msg">
-			<b><i></i>圈子公告：</b>
+			<b><i></i>{wc:fun:lang::get_lang('圈子公告：')}</b>
 			<p id="pGroupNotice" class="gray01" style="width:850px;">{wc:$quanzi['gongao']}</p>
 		</div>
 		<div class="Publish">
 			<div class="Pub-inp-click">
 				<b></b>
-				<input type="text" id="txtTopicTitle" value="点击展开"><a id="btnPostTopic" href="javascript:;" class="button05 bg_red">发表话题</a>
+				<input type="text" id="txtTopicTitle" value="{wc:fun:lang::get_lang('点击展开')}"><a id="btnPostTopic" href="javascript:;" class="button05 bg_red">{wc:fun:lang::get_lang('发表话题')}</a>
 			</div>
 			<div id="divEditor" class="Pub-topic hidden">
 			<form action="{WEB_PATH}/group/group/showinsert" method="post"  id="registerform">
 				<p class="Pub-tit"><b></b><input id="txtTopicTitleEx" maxlength="100" type="text" name="title" value=""></p>
-				<!--编辑器开始-->				
+				<!--{wc:fun:lang::get_lang('编辑器开始')}-->				
 				<script type="text/javascript">				
 				var editurl=Array();editurl['editurl']='{G_PLUGIN_PATH}/ueditor/';editurl['imageupurl']='';editurl['imageManager']=''			
 				</script>
@@ -73,25 +73,25 @@
 				window.UEDITOR_CONFIG.initialFrameHeight=300;
 				window.UEDITOR_CONFIG.fontsize=[8,9,10, 11, 12];
 				window.UEDITOR_CONFIG.toolbars = [["source","fontfamily","bold","italic","justifyleft","justifycenter","justifyright","justifyjustify","insertunorderedlist",]];
-				window.UEDITOR_CONFIG.fontfamily=[{ label:'',name:'songti',val:'宋体,SimSun'},{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}];
+				window.UEDITOR_CONFIG.fontfamily=[{ label:'',name:'songti',val:'{wc:fun:lang::get_lang('宋体')},SimSun'},{ label:'',name:'arial',val:'arial, helvetica,sans-serif'}];
 				window.UEDITOR_CONFIG.maximumWords = 60000;
 				var ue = UE.getEditor('txtTopicContent');
 				</script>
 				<input type="hidden" value="{wc:$quanzi['id']}" name="qzid" />
 				<div class="Pub-btn-r">
-					<a id="btnCancel" href="javascript:;" class="button06">取消</a>
-					<input type="submit" id="btnPostTopicEx" style="float:right; margin-left:10px" name="submit" class="button05"value="发表话题" />
+					<a id="btnCancel" href="javascript:;" class="button06">{wc:fun:lang::get_lang('取消')}</a>
+					<input type="submit" id="btnPostTopicEx" style="float:right; margin-left:10px" name="submit" class="button05"value="{wc:fun:lang::get_lang('发表话题')}" />
 				</div>
 			</form>
 			</div>
 		</div>		
 		<div class="Topic-tab">
 			<ul>
-				<li class="tabcur">话题</li>
+				<li class="tabcur">{wc:fun:lang::get_lang('话题')}</li>
 			</ul>
 		</div>
 		{wc:if $total==0}
-		<div class="tips-con"><i></i>暂无话题，快抢沙发吧！</div>
+		<div class="tips-con"><i></i>{wc:fun:lang::get_lang('暂无话题，快抢沙发吧！')}</div>
 		{wc:else}
 		{wc:loop $qz $tiezi}
 		<div class="Topiclist">
@@ -114,15 +114,15 @@
 					<a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}">{wc:$tiezi['title']}</a> 
 				   <!--  <i class="jing"></i>&nbsp; -->
 				   {wc:if:end}
-					<span class="time">{wc:fun:date("Y年m月d日 H:i",$tiezi['time'])}</span>
+					<span class="time">{wc:fun:date("Y-m-d- H:i",$tiezi['time'])}</span>
 				</div>
 				<div class="gray02">{wc:fun:_strcut($tiezi['neirong'],160)}</div>
 				<div class="topic-reply">
 					<div>
-						<a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}" class="gray02">回复<span class="gray03">({wc:$tiezi['hueifu']})</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}" class="gray02">人气<span class="gray03">({wc:$tiezi['dianji']})</span></a>
+						<a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}" class="gray02">{wc:fun:lang::get_lang('回复')}<span class="gray03">({wc:$tiezi['hueifu']})</span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}" class="gray02">{wc:fun:lang::get_lang('人气')}<span class="gray03">({wc:$tiezi['dianji']})</span></a>
 					</div>
-					<span class="gray03">最后回复：<a href="{WEB_PATH}/uname/{wc:fun:idjia($tiezi['zuihou'])}" class="blue">{wc:fun:userid($tiezi['zuihou'],'username')}</a>&nbsp;&nbsp;{wc:fun:date("Y年m月d日",$tiezi['time'])}&nbsp;&nbsp;</span>			
+					<span class="gray03">{wc:fun:lang::get_lang('最后回复：')}<a href="{WEB_PATH}/uname/{wc:fun:idjia($tiezi['zuihou'])}" class="blue">{wc:fun:userid($tiezi['zuihou'],'username')}</a>&nbsp;&nbsp;{wc:fun:date("Y-m-d-",$tiezi['time'])}&nbsp;&nbsp;</span>			
 				</div>
 			</div><p class="Topicline"></p>
 		</div>					
@@ -139,7 +139,7 @@ $(function(){
 	$("#btnJoinGroup,#btnJoinOutGroup").click(function(){
 		var uid="{wc:$uid}";
 		if(!uid){
-			alert("你未登录！");
+			alert("{wc:fun:lang::get_lang('你未登录！')}");
 		}else{
 			var qzid="{wc:$quanzi['id']}";
 			var text=$("#btnJoinOutGroup").text();
@@ -157,9 +157,9 @@ $(function(){
 		var uid="{wc:fun:uidcookie('uid')}";
 		var text=$("#btnJoinOutGroup").text();
 		if(!uid){
-			alert("你未登录！");
+			alert("{wc:fun:lang::get_lang('你未登录！')}");
 		}else if(!text){
-			alert("你未加入圈子！");
+			alert("{wc:fun:lang::get_lang('你未加入圈子！')}");
 		}else{
 			$("#divEditor").removeClass("hidden");
 			$(".Pub-inp-click").addClass("hidden");
@@ -173,7 +173,7 @@ $(function(){
 		var text=$("#txtTopicTitleEx").val();
 		var content=$("#txtTopicContent").val();
 		if(!text){			
-			alert("标题内容不能为空!");
+			alert("{wc:fun:lang::get_lang('标题内容不能为空')}!");
 			return false;
 		}
 	})

@@ -18,21 +18,21 @@
 
 		<div class="g-special">
 			<ul>
-				<li><a> <em class="u-spc-icon1"></em> <span>100%公平公正</span>
-						参与过程公开透明，用户可随时查看
+				<li><a> <em class="u-spc-icon1"></em> <span>100%<?php echo lang::get_lang('公平公正'); ?></span>
+						<?php echo lang::get_lang('参与过程公开透明，用户可随时查看'); ?>
 				</a></li>
-				<li><a> <em class="u-spc-icon2"></em> <span>100%正品保证</span>
-						精心挑选优质商家，100%品牌正品
+				<li><a> <em class="u-spc-icon2"></em> <span>100%<?php echo lang::get_lang('正品保证'); ?></span>
+						<?php echo lang::get_lang('精心挑选优质商家，'); ?>100%<?php echo lang::get_lang('品牌正品'); ?>
 				</a></li>
-				<li><a> <em class="u-spc-icon3"></em> <span>全国免运费</span>
-						全场商品全国包邮
+				<li><a> <em class="u-spc-icon3"></em> <span><?php echo lang::get_lang('全国免运费'); ?></span>
+						<?php echo lang::get_lang('全场商品全国包邮'); ?>
 				</a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="g-copyrightCon">
 		<div class="w1190">
-			<!-- //底部短连接 -->
+			<!-- //<?php echo lang::get_lang('底部短连接'); ?> -->
 			<div class="g-links">
 				<?php echo Getheader('foot'); ?>
 				<script
@@ -58,7 +58,7 @@
 			<li class="gouwuche">
 				<div class="mini_mycart" id="sCart">
 					<a href="<?php echo WEB_PATH; ?>/member/cart/cartlist" class="cart c_red"
-						target="_blank" id="sCartNavi"> <s></s> <em>购物车</em> <span
+						target="_blank" id="sCartNavi"> <s></s> <em><?php echo lang::get_lang('购物车'); ?></em> <span
 						id="sCartTotalA" class="c_red"></span>
 
 					</a>
@@ -74,7 +74,7 @@
 						style="width: 37px; display: none; position: absolute; height: 56px;">
 						<a
 							style="color: #fff; height: 32; line-height: 16px; width: 25px; padding-top: 12px; display: block; padding-left: 6px;"
-							id="btnRigQQ" target="_blank" class="quick_serviceA">好友分享</a>
+							id="btnRigQQ" target="_blank" class="quick_serviceA"><?php echo lang::get_lang('好友分享'); ?></a>
 
 						<ul class="-mob-share-list"
 							style="position: absolute; left: -152px; background: #fff; border: 1px solid #dcdcdc; width: 150px; padding: 15px 0; text-align: center; top: 0px;">
@@ -90,10 +90,10 @@
 	<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" style="position:relative;width: 37px;height: 56px;">
 			<i></i>
 			<div style="width:37px;display:none;position:absolute;height: 56px;">
-				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="<?php echo G_WEB_PATH; ?>/app/index.html" target="_blank" class="quick_serviceA">手机APP</a>
+				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="<?php echo G_WEB_PATH; ?>/app/index.html" target="_blank" class="quick_serviceA"><?php echo lang::get_lang('手机'); ?>APP</a>
 				<div style="position: absolute;left:-99px;background: #fff;border: 1px solid #dcdcdc;width: 97px;height: 113px;text-align: center;top: -57px;">
-					<a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="<?php echo G_TEMPLATES_IMAGE; ?>/code.jpg" alt="客户端"></a>
-					<a style="text-align: center;line-height: 10px;" target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html">下载客户端</a>
+					<a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="<?php echo G_TEMPLATES_IMAGE; ?>/code.jpg" alt="<?php echo lang::get_lang('客户端'); ?>"></a>
+					<a style="text-align: center;line-height: 10px;" target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('下载客户端'); ?></a>
 				</div>
 
 			</div>
@@ -104,11 +104,11 @@
 		<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" style="position:relative;width: 37px;height: 56px;">
 			<i></i>
 			<div style="width:37px;display:none;position:absolute;height: 56px;">
-				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="<?php echo G_WEB_PATH; ?>/weixin/index.html" target="_blank" class="quick_serviceA">官方微信</a>
+				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="<?php echo G_WEB_PATH; ?>/weixin/index.html" target="_blank" class="quick_serviceA"><?php echo lang::get_lang('官方微信'); ?></a>
 				<div style="position: absolute;left:-99px;background: #fff;border: 1px solid #dcdcdc;width: 97px;height: 113px;text-align: center;top: -57px;">
-					<a target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="<?php echo G_TEMPLATES_IMAGE; ?>/code.jpg" alt="微信">
+					<a target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="<?php echo G_TEMPLATES_IMAGE; ?>/code.jpg" alt="<?php echo lang::get_lang('微信'); ?>">
 					</a>
-					<a style="text-align: center;line-height: 10px;" target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html">关注官方微信</a>
+					<a style="text-align: center;line-height: 10px;" target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html"><?php echo lang::get_lang('关注官方微信'); ?></a>
 				</div>
 
 			</div>
@@ -126,7 +126,7 @@
 							style="color: #fff; height: 32; line-height: 16px; width: 25px; padding-top: 12px; display: block; padding-left: 6px;"
 							id="btnRigQQ"
 							href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("
-							qq"); ?>&site=qq&menu=yes " target="_blank" class="quick_serviceA livechatinc">在线客服</a>
+							qq"); ?>&site=qq&menu=yes " target="_blank" class="quick_serviceA livechatinc"><?php echo lang::get_lang('在线客服'); ?></a>
 					</div>
 				</div>
 			</li>
@@ -140,7 +140,7 @@
 						style="width: 37px; display: none; position: absolute; height: 56px;">
 						<a
 							style="width: 37px; height: 56px; line-height: 56px; color: #fff; text-align: center; display: block;"
-							id="btnGotoTop" href="javascript:;" class="quick_ReturnA">置顶</a>
+							id="btnGotoTop" href="javascript:;" class="quick_ReturnA"><?php echo lang::get_lang('置顶'); ?></a>
 					</div>
 				</div>
 
@@ -221,7 +221,7 @@ $(function(){
 		else if(window.sidebar){
 		   window.sidebar.addPanel('<?php echo _cfg("web_name"); ?>','<?php echo G_WEB_PATH; ?>', "");
 		}else{ 
-			alert('您可以通过快捷键' + ctrl + ' + D 加入到收藏夹');
+			alert('<?php echo lang::get_lang('您可以通过快捷键'); ?>' + ctrl + ' + D <?php echo lang::get_lang('加入到收藏夹'); ?>');
 		}
     });
     /*
@@ -241,7 +241,7 @@ $(function(){
 	src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21f30d1b7ccb5"></script>
 <script>
 mobShare.config( {
-    debug: false, // 开启调试，将在浏览器的控制台输出调试信息
+    debug: false, // <?php echo lang::get_lang('开启调试，将在浏览器的控制台输出调试信息'); ?>
     appkey: '21f30d1b7ccb5', // appkey
     params: window.shareParams,
 } );

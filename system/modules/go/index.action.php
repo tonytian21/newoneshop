@@ -9,8 +9,7 @@ class index extends base {
 	
 	public function __construct() {	
 		parent::__construct();
-		$this->
-db=System::load_sys_class('model');		
+		$this->db=System::load_sys_class('model');		
 	}		
 	
 	

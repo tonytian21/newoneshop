@@ -1,12 +1,12 @@
 {wc:templates "index","header"}
-<!--晒单-->
+<!--{wc:fun:lang::get_lang('晒单')}-->
 <div class="wrap w1200">
 	<div class="Current_nav w1200">
-		<a href="{WEB_PATH}">首页</a> &gt; 晒单分享</div>
+		<a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> &gt; {wc:fun:lang::get_lang('晒单分享')}</div>
 	<div id="current" class="share_Curtit">
 		<h1 class="fl"  style="color: #f60;">
-			晒单分享</h1>
-		<span id="spTotalCount">(共<em class="c_red">{wc:$total}</em>个幸运获得者晒单)</span>
+			{wc:fun:lang::get_lang('晒单分享')}</h1>
+		<span id="spTotalCount">({wc:fun:lang::get_lang('共')}<em class="c_red">{wc:$total}</em>{wc:fun:lang::get_lang('个幸运获得者晒单')})</span>
 	</div>
 	<div id="loadingPicBlock" class="share_list">
 		<div class="goods_share_listC">
@@ -35,8 +35,8 @@
 							</dd> 
 							<dd class="share_info gray01"><p>{wc:fun:_strcut($sd['sd_content'],50)}</p></dd> 
 							<dd class="message hidden" style="display: block;"> 
-								<span class="smile gray03"><i></i><b>羡慕(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
-								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>评论<em>({wc:$sd['sd_ping']})</em></a></span>
+								<span class="smile gray03"><i></i><b>{wc:fun:lang::get_lang('羡慕')}(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
+								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>{wc:fun:lang::get_lang('评论')}<em>({wc:$sd['sd_ping']})</em></a></span>
 							</dd>
 						</dl>
 						<p class="text-h10"></p>
@@ -67,8 +67,8 @@
 							</dd> 
 							<dd class="share_info gray01">{wc:fun:_strcut($sd['sd_content'],50)}</dd> 
 							<dd class="message hidden" style="display: block;"> 
-								<span class="smile gray03"><i></i><b>羡慕(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
-								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>评论<em>({wc:$sd['sd_ping']})</em></a></span>
+								<span class="smile gray03"><i></i><b>{wc:fun:lang::get_lang('羡慕')}(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
+								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>{wc:fun:lang::get_lang('评论')}<em>({wc:$sd['sd_ping']})</em></a></span>
 							</dd>
 						</dl>
 						<p class="text-h10"></p>
@@ -99,8 +99,8 @@
 							</dd> 
 							<dd class="share_info gray01">{wc:fun:_strcut($sd['sd_content'],50)}</dd> 
 							<dd class="message hidden" style="display: block;"> 
-								<span class="smile gray03"><i></i><b>羡慕(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
-								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>评论<em>({wc:$sd['sd_ping']})</em></a></span>
+								<span class="smile gray03"><i></i><b>{wc:fun:lang::get_lang('羡慕')}(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
+								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>{wc:fun:lang::get_lang('评论')}<em>({wc:$sd['sd_ping']})</em></a></span>
 							</dd>
 						</dl>
 						<p class="text-h10"></p>
@@ -130,8 +130,8 @@
 							</dd> 
 							<dd class="share_info gray01">{wc:fun:_strcut($sd['sd_content'],50)}</dd> 
 							<dd class="message hidden" style="display: block;"> 
-								<span class="smile gray03"><i></i><b>羡慕(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
-								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>评论<em>({wc:$sd['sd_ping']})</em></a></span>
+								<span class="smile gray03"><i></i><b>{wc:fun:lang::get_lang('羡慕')}(<em num="1282">{wc:$sd['sd_zhan']}</em>)</b></span>
+								<span class="much"><a target="_blank" href="{WEB_PATH}/go/shaidan/detail/{wc:$sd['sd_id']}" class="gray03"><i></i>{wc:fun:lang::get_lang('评论')}<em>({wc:$sd['sd_ping']})</em></a></span>
 							</dd>
 						</dl>
 						<p class="text-h10"></p>

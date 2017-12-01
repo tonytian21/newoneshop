@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>限时 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('限时')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -27,16 +27,16 @@
 
     <header class="g-header">
         <div class="head-l">
-	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
+	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>{wc:fun:lang::get_lang('返回')}</b></a>
         </div>
-        <h2>限时揭晓</h2>
+        <h2>{wc:fun:lang::get_lang('限时揭晓')}</h2>
 		{wc:templates "mobile/index","headertop"}
     </header>
 
         <nav class="limit-nav">
 		<ul>
-			<li class="limit-navCur" onclick="location.href='{WEB_PATH}/mobile/autolottery'">今日揭晓</li>
-			<li class="" onclick="location.href='{WEB_PATH}/mobile/autolottery/next'">明日限时</li>
+			<li class="limit-navCur" onclick="location.href='{WEB_PATH}/mobile/autolottery'">{wc:fun:lang::get_lang('今日揭晓')}</li>
+			<li class="" onclick="location.href='{WEB_PATH}/mobile/autolottery/next'">{wc:fun:lang::get_lang('明日限时<')}/li>
 		</ul>
 	</nav>
         <!-- 焦点图 -->
@@ -49,7 +49,7 @@
 		<div class="loading" style="background:#F4F4F4">
             <b>
             </b>
-            正在加载
+            {wc:fun:lang::get_lang('正在加载')}
         </div>
 		{wc:else}
 		 {wc:if 0 == $count }
@@ -63,10 +63,10 @@
 	    $sysj=$shop['xsjx_time']-time();
         {wc:php:end}         
         {wc:if $shop['xsjx_time'] < time()} 	
-	     <li class="m-xs-li" txt="{wc:$shop['time_H']}点">
+	     <li class="m-xs-li" txt="{wc:$shop['time_H']}{wc:fun:lang::get_lang('点')}">
             <div class="m-round limit-bd limit-End">
                 <div class="f-limit-time">
-                    <span class="f-limit-time-date">已揭晓</span>
+                    <span class="f-limit-time-date">{wc:fun:lang::get_lang('已揭晓<')}/span>
                 </div>
                 <div class="limt-pic">
                     <a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}">
@@ -77,11 +77,11 @@
                 <div class="limit-bd-con">
                     <p class="z-limit-tt">
                         <a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}" class="gray6 z-tt">
-                            (第{wc:$shop['qishu']}期){wc:$shop['title']}
+                            {wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$shop['title']}
                         </a>
                     </p>
                     <p class="z-promo">
-                        价值:<em class="gray9">￥{wc:$shop['money']}</em>
+                        {wc:fun:lang::get_lang('价值')}:<em class="gray9">￥{wc:$shop['money']}</em>
                     </p>
                     <div class="Progress-bar">
                         <p class="u-progress" title="已完成{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],100)}%">
@@ -92,13 +92,13 @@
                         </p>
                         <ul class="Pro-bar-li">
                             <li class="P-bar01">
-                                <em>{wc:$shop['canyurenshu']}</em>已参与
+                                <em>{wc:$shop['canyurenshu']}</em>{wc:fun:lang::get_lang('已参与')}
                             </li>
                             <li class="P-bar02">
-                                <em>{wc:$shop['zongrenshu']}</em>总需人次
+                                <em>{wc:$shop['zongrenshu']}</em>{wc:fun:lang::get_lang('总需人次')}
                             </li>
                             <li class="P-bar03">
-                                <em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>剩余
+                                <em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>{wc:fun:lang::get_lang('剩余')}
                             </li>
                         </ul>
                     </div>
@@ -109,22 +109,22 @@
                         <img border="0" src="{G_UPLOAD_PATH}/{wc:fun:get_user_key($shop['q_uid'],'img')}">
                     </a>
                     <p>
-                        恭喜<span class="z-user blue" onclick="location.href='{WEB_PATH}/uname/{wc:fun:idjia($shop['q_uid'])}'">{wc:fun:get_user_name($shop['q_uid'])}</span>获得
+                        {wc:fun:lang::get_lang('恭喜')}<span class="z-user blue" onclick="location.href='{WEB_PATH}/uname/{wc:fun:idjia($shop['q_uid'])}'">{wc:fun:get_user_name($shop['q_uid'])}</span>{wc:fun:lang::get_lang('获得')}
                     </p>
-                    <p class="m-limit-Code">幸运{wc:fun:_cfg('web_name_two')}码：<em class="orange">{wc:$shop['q_user_code']}</em>
+                    <p class="m-limit-Code">{wc:fun:lang::get_lang('幸运')}{wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('码')}：<em class="orange">{wc:$shop['q_user_code']}</em>
                     </p>
                     <p>
-                        {wc:fun:_cfg('web_name_two')}人次：{wc:$user_shop_number[$shop['q_uid']][$shop['id']]}
+                        {wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('人次')}：{wc:$user_shop_number[$shop['q_uid']][$shop['id']]}
                     </p>
                 </div>
             </div>
         </li>
 	    {wc:else}
-        <li class="m-xs-li" txt="{wc:$shop['time_H']}点">
+        <li class="m-xs-li" txt="{wc:$shop['time_H']}{wc:fun:lang::get_lang('点')}">
             <div class="m-round limit-bd ">
                 <div name="timerItem" class="f-limit-time" time="{wc:$sysj}">
                     <span class="f-limit-time-date">
-                        <b>剩余时间</b><em>00</em>时<em>00</em>分<em>00</em>秒
+                        <b>{wc:fun:lang::get_lang('剩余时间')}</b><em>00</em>{wc:fun:lang::get_lang('时')}<em>00</em>{wc:fun:lang::get_lang('分')}<em>00</em>{wc:fun:lang::get_lang('秒')}
                     </span>
                 </div>
                 <div class="limt-pic">
@@ -136,24 +136,24 @@
                 <div class="limit-bd-con">
                     <p class="z-limit-tt">
                         <a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}" class="gray6 z-tt">
-                            (第{wc:$shop['qishu']}期){wc:$shop['title']}
+                            {wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$shop['title']}
                         </a>
                     </p>
-                    <p class="z-promo">价值:<em class="gray9">￥{wc:$shop['money']}</em>
+                    <p class="z-promo">{wc:fun:lang::get_lang('价值')}:<em class="gray9">￥{wc:$shop['money']}</em>
                     </p>
                     <div class="Progress-bar">
-                        <p class="u-progress" title="已完成{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],100)}%">
+                        <p class="u-progress" title="{wc:fun:lang::get_lang('已完成')}{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],100)}%">
                             <span class="pgbar" style="width:width:{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],100)}%;">
                                 <span class="pging"></span>
                             </span>
                         </p>
                         <ul class="Pro-bar-li">
                             <li class="P-bar01">
-                                <em>{wc:$shop['canyurenshu']}</em>已参与
+                                <em>{wc:$shop['canyurenshu']}</em>{wc:fun:lang::get_lang('已参与')}
                             </li>
-                            <li class="P-bar02"><em>{wc:$shop['zongrenshu']}</em>总需人次
+                            <li class="P-bar02"><em>{wc:$shop['zongrenshu']}</em>{wc:fun:lang::get_lang('总需人次')}
                             </li>
-                            <li class="P-bar03"><em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>剩余
+                            <li class="P-bar03"><em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>{wc:fun:lang::get_lang('剩余')}
                             </li>
                         </ul>
                     </div>
@@ -162,15 +162,15 @@
 				   {wc:if $shop['canyurenshu']==$shop['zongrenshu']}
                     <div class="u-Btn-li">
                         <a class="grayBtn">
-                            下手慢了！！ 被抢光啦！！
+                            {wc:fun:lang::get_lang('下手慢了！！ 被抢光啦！！')} 
                         </a>
                     </div>
 					{wc:else}
 					<div class="u-Btn-li">
-						<a href="javascript:;" class="z-ShoppingBtn" id="{wc:$shop['id']}">立即{wc:fun:_cfg('web_name_two')}</a>
+						<a href="javascript:;" class="z-ShoppingBtn" id="{wc:$shop['id']}">{wc:fun:lang::get_lang('立即')}{wc:fun:_cfg('web_name_two')}</a>
 					</div>
 					<div class="u-Btn-li">
-						<a href="javascript:void(0);" class="z-cartBtn" id="{wc:$shop['id']}">加入购物车</a>
+						<a href="javascript:void(0);" class="z-cartBtn" id="{wc:$shop['id']}">{wc:fun:lang::get_lang('加入购物车')}</a>
 					</div>
 					{wc:if:end}
                 </div>
@@ -182,9 +182,9 @@
 </article>
 	    
 	<article class="clearfix mt10 m-round limit-tips">
-		<h3>限时揭晓规则</h3>
+		<h3>{wc:fun:lang::get_lang('限时揭晓规则')}</h3>
 		<div class="limit-tips-ct">
-			<p><s></s><b>所有限时揭晓商品，不管已参与人次是否达到总需参与人次，都按截止时间准时揭晓。</b></p>
+			<p><s></s><b>{wc:fun:lang::get_lang('{wc:fun:lang::get_lang('所有限时揭晓商品，不管已参与人次是否达到总需参与人次，都按截止时间准时揭晓')} )} 。</b></p>
 			<p><s></s><b>如果计算出的{wc:fun:_cfg('web_name_two')}码未被购买，则取差值最小的{wc:fun:_cfg('web_name_two')}码作为幸运{wc:fun:_cfg('web_name_two')}码。</b></p>
 			<p><s></s><b>如果有2个{wc:fun:_cfg('web_name_two')}码最小差值相等，则取大值作为最终幸运{wc:fun:_cfg('web_name_two')}码。</b></p>
 			<p><s></s><b>限时揭晓商品不参与差价送梦想分活动且晒单不可再获得1000梦想分奖励。</b></p>

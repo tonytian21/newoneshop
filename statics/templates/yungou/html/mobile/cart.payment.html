@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>结算支付 - {wc:$webname}触屏版</title>
+    <title>{wc:fun:lang::get_lang('结算支付')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版<')}/title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -25,7 +25,7 @@
     <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
         <span style="display: block;height: 49px;line-height: 49px;">
             <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-                结算支付
+                {wc:fun:lang::get_lang('结算支付')}
             </a>
         </span>
 
@@ -61,15 +61,15 @@
 		 {wc:loop $shoplist $key $val}
 		  
 			<li>
-			    <a href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}" class="gray6" style="line-height: 22px;">(第{wc:$val['qishu']}期){wc:$val['title']}  ({wc:$val['title2']})</a>
+			    <a href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}" class="gray6" style="line-height: 22px;">({wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$val['title']}  ({wc:$val['title2']})</a>
 			    <span>
-			        <em class="orange arial">{wc:$val['cart_xiaoji']}</em>人次
+			        <em class="orange arial">{wc:$val['cart_xiaoji']}</em>{wc:fun:lang::get_lang('人次')}
 			    </span>
 			</li>
 		 {wc:loop:end}
 		
 		</ul>
-		<p class="g-pay-Total gray9">合计：<span class="orange arial Fb F16">{wc:$MoenyCount}</span> 乐币</p>
+		<p class="g-pay-Total gray9">{wc:fun:lang::get_lang('合计')}：<span class="orange arial Fb F16">{wc:$MoenyCount}</span> {wc:fun:lang::get_lang('乐币')}</p>
 		<!--<p class="g-pay-bline"></p>-->
 		</div>
     </section>
@@ -80,30 +80,30 @@
 			{wc:if $fufen_dikou >= $MoenyCount}
 			    <li class="gray9 z-pay-ff z-pay-grayC" style="height: 40px;">
 				<i id="spPoints" class="z-pay-ment" sel="0"></i>
-				<span>您可以使用积分付款（您的积分：{wc:$member['score']}）</span>
+				<span>{wc:fun:lang::get_lang('您可以使用积分付款')}（{wc:fun:lang::get_lang('您的积分')}：{wc:$member['score']}）</span>
 				</li>
 			{wc:else}
 			     <li class="gray6 z-pay-ff z-pay-grayC" style="height: 40px;">
-				<span>您的积分不足（您的积分：{wc:$member['score']}）</span>
+				<span>{wc:fun:lang::get_lang('您的积分不足')}（{wc:fun:lang::get_lang('您的积分')}：{wc:$member['score']}）</span>
 				</li>
 			{wc:if:end}
 			
 			{wc:if $Money >= $MoenyCount}			
 				<li class="gray9 z-pay-ye z-pay-grayC"  style="height: 40px;"> 
 				<i id="spBalance" class="z-pay-ment" sel="0"></i>
-				<span>您可以使用余额付款（账户余额：{wc:$Money} 乐币）</span>
+				<span>{wc:fun:lang::get_lang('您可以使用余额付款')} （{wc:fun:lang::get_lang('账户余额')} ：{wc:$Money} {wc:fun:lang::get_lang('乐币')}）</span>
 				</li>
 			{wc:else}
 			    <li class="gray6 z-pay-ye z-pay-grayC" style="height: 40px;">
-				<a href="{WEB_PATH}/mobile/home/userrecharge" class="z-pay-Recharge">去充值</a>
-				<span>您的余额不足（账户余额：{wc:$Money} 乐币）</span>
+				<a href="{WEB_PATH}/mobile/home/userrecharge" class="z-pay-Recharge">{wc:fun:lang::get_lang('去充值')}</a>
+				<span>{wc:fun:lang::get_lang('您的余额不足')}（{wc:fun:lang::get_lang('账户余额')} ：{wc:$Money} {wc:fun:lang::get_lang('乐币')}）</span>
 				</li> 
 			{wc:if:end}
 		    </ul>
 	    </article>
 	     <article id="bankList" class="clearfix mt10 m-round g-pay-ment g-bank-ct">
 		    <ul>	
-		    	<li class="gray6 z-pay-grayC" style="height:41px;"><s class="z-arrow"></s>选择支付方式支付</li> 
+		    	<li class="gray6 z-pay-grayC" style="height:41px;"><s class="z-arrow"></s>{wc:fun:lang::get_lang('选择支付方式支付')}</li> 
 		    	{wc:loop $paylist $pay}
 		    	<li class="gray9" urm="{wc:$pay['pay_id']}"><i class="z-bank-Round"><s></s></i> {wc:$pay['pay_name']}</li>
 		    	 {wc:loop:end}
@@ -111,7 +111,7 @@
 		</ul>
 	    </article>
 	    <div style="margin-top: 10px;">
-		    <a style="height: 45px;line-height: 45px;" id="btnPay" href="javascript:;" class="orgBtn">确认支付</a>
+		    <a style="height: 45px;line-height: 45px;" id="btnPay" href="javascript:;" class="orgBtn">{wc:fun:lang::get_lang('确认支付')}</a>
 	    </div>
 	</div>
     </section>

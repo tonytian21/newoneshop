@@ -54,7 +54,7 @@ $.fn.CloudZoom.defaults = {
 
 <div class="Current_nav w1200">
 
-	<a href="{WEB_PATH}">首页</a> <span>&gt;</span> 
+	<a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> <span>&gt;</span> 
 
 	<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}">
 
@@ -66,13 +66,13 @@ $.fn.CloudZoom.defaults = {
 
 	{wc:$brand['name']}
 
-	</a> <span>&gt;</span>商品详情 
+	</a> <span>&gt;</span>{wc:fun:lang::get_lang('商品详情')} 
 
 </div>
 
 <div class="show_content" style="margin-bottom: 10px;overflow: hidden;">
 
-	<!-- 商品期数 -->
+	<!-- {wc:fun:lang::get_lang('商品期数')} -->
 
 	<div id="divPeriodList" class="show_Period" style="max-height:33px;box-shadow:0 0 5px #e4e4e4;position: absolute;z-index: 99999;">
 
@@ -80,7 +80,7 @@ $.fn.CloudZoom.defaults = {
 
 		<div class="period_Open bt_gray bb_gray bl_gray" style="top: 0;border-top: none;">
 
-			<a class="gray02" href="javascript:;" id="btnOpenPeriod" click="off" style="color: #f60">更多<i></i></a>
+			<a class="gray02" href="javascript:;" id="btnOpenPeriod" click="off" style="color: #f60">{wc:fun:lang::get_lang('更多')}<i></i></a>
 
 		</div>	
 
@@ -88,7 +88,7 @@ $.fn.CloudZoom.defaults = {
 
 	</div>
 
-	<!-- 商品信息 -->
+	<!-- {wc:fun:lang::get_lang('商品信息')} -->
 
 	<div class="Pro_Details">
 
@@ -130,7 +130,7 @@ $.fn.CloudZoom.defaults = {
 
 			<div class="fenxiang1" style="position: absolute;bottom: 15px;left: 5px;width: 350px;">
 
-				<div class="fenxiang" style="margin-top: 13px;"><i></i>分享</div>
+				<div class="fenxiang" style="margin-top: 13px;"><i></i>{wc:fun:lang::get_lang('分享')}</div>
 
 				<!-- JiaThis Button BEGIN -->
 
@@ -224,7 +224,7 @@ $.fn.CloudZoom.defaults = {
 
 				</div>
 
-				<span style="text-align: right;line-height: 13px;display: block;float: right;"><a href="{G_WEB_PATH}">下载app，随时{wc:fun:_cfg("web_name")}</a></span>
+				<span style="text-align: right;line-height: 13px;display: block;float: right;"><a href="{G_WEB_PATH}">{wc:fun:lang::get_lang('下载')}app{wc:fun:lang::get_lang('，随时')}{wc:fun:_cfg("web_name")}</a></span>
 
 				<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
 
@@ -302,7 +302,7 @@ $.fn.CloudZoom.defaults = {
 
 			<div class="Pro_GetPrize">				
 
-				<h2>上期获得者</h2>
+				<h2>{wc:fun:lang::get_lang('上期获得者')}</h2>
 
 				<div class="GetPrize">				    
 
@@ -312,7 +312,7 @@ $.fn.CloudZoom.defaults = {
 
 						<dd class="gray02">
 
-							<p>恭喜 <a href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank" class="blue">{wc:fun:get_user_name($sid_code['q_uid'])}</a>获得了本商品</p>
+							<p>{wc:fun:lang::get_lang('恭喜')} <a href="{WEB_PATH}/uname/{wc:fun:idjia($sid_code['q_uid'])}" target="_blank" class="blue">{wc:fun:get_user_name($sid_code['q_uid'])}</a>{wc:fun:lang::get_lang('获得了本商品')}</p>
 
 							{wc:if $sid_go_record['ip']}
 
@@ -320,11 +320,11 @@ $.fn.CloudZoom.defaults = {
 
 							{wc:if:end}
 
-							<p>揭晓时间：{wc:fun:microt($sid_code['q_end_time'])}</p>
+							<p>{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($sid_code['q_end_time'])}</p>
 
-							<p>乐购时间：{wc:fun:microt($sid_go_record['time'])}</p>
+							<p>{wc:fun:lang::get_lang('乐购时间：')}{wc:fun:microt($sid_go_record['time'])}</p>
 
-							<p>幸运乐购码：<em class="orange Fb">{wc:$sid_code['q_user_code']}</em></p>
+							<p>{wc:fun:lang::get_lang('幸运乐购码：')}<em class="orange Fb">{wc:$sid_code['q_user_code']}</em></p>
 
 						</dd>
 
@@ -346,7 +346,7 @@ $.fn.CloudZoom.defaults = {
 
 			<p style="font-size:18px;margin-top: 15px;color:#333;height: 72px; overflow: hidden;">
 
-		<span class="f24">(第{wc:$item['qishu']}期)</span>
+		<span class="f24">({wc:fun:lang::get_lang('第')}{wc:$item['qishu']}{wc:fun:lang::get_lang('期')})</span>
 
 		<span  class="f24">{wc:$item['title']}</span>
 
@@ -354,9 +354,9 @@ $.fn.CloudZoom.defaults = {
 
 		</p>
 
-			<!--<p class="Det_money">价值：<span class="rmbgray">{wc:$item['money']}</span></p>
+			<!--<p class="Det_money">{wc:fun:lang::get_lang('价值：')}<span class="rmbgray">{wc:$item['money']}</span></p>
 
-			显示揭晓动画 start-->
+			{wc:fun:lang::get_lang('显示揭晓动画')} start-->
 
 			{wc:if ($q_showtime=='Y')}
 
@@ -368,19 +368,19 @@ $.fn.CloudZoom.defaults = {
 
 			{wc:if:end}	
 
-			<!--显示揭晓动画 end-->		
+			<!--{wc:fun:lang::get_lang('显示揭晓动画')} end-->		
 
 			<div class="Security">
 
 				<ul>
 
-					<li style="color: #9a9a9a;font-family: 微软雅黑;">三大服务保证：</li>
+					<li style="color: #9a9a9a;font-family: {wc:fun:lang::get_lang('微软雅黑')};">{wc:fun:lang::get_lang('三大服务保证：')}</li>
 
-					<li><a href="{WEB_PATH}/help/4" target="_blank"><i></i>100%公平公正</a></li>
+					<li><a href="{WEB_PATH}/help/4" target="_blank"><i></i>100%{wc:fun:lang::get_lang('公平公正')}</a></li>
 
-					<li><a href="{WEB_PATH}/help/5" target="_blank"><s></s>100%正品保证</a></li>
+					<li><a href="{WEB_PATH}/help/5" target="_blank"><s></s>100%{wc:fun:lang::get_lang('正品保证')}</a></li>
 
-					<li><a href="{WEB_PATH}/help/7" target="_blank"><b></b>全国免费配送</a></li>
+					<li><a href="{WEB_PATH}/help/7" target="_blank"><b></b>{wc:fun:lang::get_lang('全国免费配送')}</a></li>
 
 				</ul>
 
@@ -392,7 +392,7 @@ $.fn.CloudZoom.defaults = {
 
 					<li style="color: #f60;cursor: default;float: left;font-size: 14px;padding: 41px 10px;position:relative;">
 
-						怎么玩儿
+						{wc:fun:lang::get_lang('怎么玩儿')}
 
 						<i class="jiantou" style="background-color:#fff;background-position: -109px -283px;height: 13px;overflow: hidden;position: absolute;right: -8px;top: 55px;width: 8px;"></i>
 
@@ -406,15 +406,15 @@ $.fn.CloudZoom.defaults = {
 
 						<div class="ad-icon01 ng-xq-bg" style="height: 35px;margin-left: 39px;width: 38px;"></div>
 
-						<p style="color: #444;font-size: 16px;line-height: 26px;">选择商品</p>
+						<p style="color: #444;font-size: 16px;line-height: 26px;">{wc:fun:lang::get_lang('选择商品')}</p>
 
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
 
-							 每个商品规定总需
+							 {wc:fun:lang::get_lang('每个商品规定总需')}
 
 							<br>
 
-							参与人次(1人次=1元) 
+							{wc:fun:lang::get_lang('参与人次')}(1{wc:fun:lang::get_lang('人次')}=1{wc:fun:lang::get_lang('元')}) 
 
 						</p>
 
@@ -426,15 +426,15 @@ $.fn.CloudZoom.defaults = {
 
 						<div class="ad-icon02 ng-xq-bg" style="height: 30px;width: 59px;margin:4px auto 2px"></div>
 
-						<p style="color: #444;font-size: 16px;line-height: 26px;">支付1乐币</p>
+						<p style="color: #444;font-size: 16px;line-height: 26px;">{wc:fun:lang::get_lang('支付')}1{wc:fun:lang::get_lang('乐币')}</p>
 
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
 
-							 参与人次越多
+							 {wc:fun:lang::get_lang('参与人次越多')}
 
 							<br>
 
-							获得机率越大
+							{wc:fun:lang::get_lang('获得机率越大')}
 
 						</p>
 
@@ -446,15 +446,15 @@ $.fn.CloudZoom.defaults = {
 
 							<div class="ad-icon03 ng-xq-bg" style="height: 35px;width: 38px;margin: -1px auto 0;"></div>
 
-						<p style="color: #444;font-size: 16px;line-height: 26px;">抽出幸运获得者</p>
+						<p style="color: #444;font-size: 16px;line-height: 26px;">{wc:fun:lang::get_lang('抽出幸运获得者')}</p>
 
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
 
-							所有人次售完后根据计算规则
+							{wc:fun:lang::get_lang('所有人次售完后根据计算规则')}
 
 							<br>
 
-							抽出一位幸运获得者
+							{wc:fun:lang::get_lang('抽出一位幸运获得者')}
 
 						</p>
 
@@ -470,11 +470,11 @@ $.fn.CloudZoom.defaults = {
 
 				<ul id="ulRecordTab" class="Record_tit">
 
-					<li class="NewestRec Record_titCur">最新乐购记录</li>
+					<li class="NewestRec Record_titCur">{wc:fun:lang::get_lang('最新乐购记录')}</li>
 
-					<li class="MytRec">我的乐购记录</li>
+					<li class="MytRec">{wc:fun:lang::get_lang('我的乐购记录')}</li>
 
-					<!--<li class="Explain orange">什么是1元乐购？</li>-->
+					<!--<li class="Explain orange">{wc:fun:lang::get_lang('什么是')}1{wc:fun:lang::get_lang('元乐购？')}</li>-->
 
 				</ul>
 
@@ -524,11 +524,11 @@ $.fn.CloudZoom.defaults = {
 
 
 
-						{wc:fun:_put_time($user['time'])} 乐购了
+						{wc:fun:_put_time($user['time'])} {wc:fun:lang::get_lang('乐购了')}
 
 						-->	
 
-						<em class="Fb gray01" style="color: #f60;">{wc:$user['gonumber']}</em>人次</li>
+						<em class="Fb gray01" style="color: #f60;">{wc:$user['gonumber']}</em>{wc:fun:lang::get_lang('人次')}</li>
 
 						{wc:loop:end}
 
@@ -536,7 +536,7 @@ $.fn.CloudZoom.defaults = {
 
 					</ul>
 
-					<p style="position: absolute;bottom: 3px;left: 28px;margin:0px;"><a id="btnUserBuyMore" href="javascript:;" class="gray01">查看更多</a></p>					
+					<p style="position: absolute;bottom: 3px;left: 28px;margin:0px;"><a id="btnUserBuyMore" href="javascript:;" class="gray01">{wc:fun:lang::get_lang('查看更多')}</a></p>					
 
 				</div>
 
@@ -550,7 +550,7 @@ $.fn.CloudZoom.defaults = {
 
 						{wc:if $user['uid']==uidcookie('uid')}
 
-						<li style="height: 38px;text-align: center;border-bottom: 1px solid #eee;line-height: 38px;">您于{wc:fun:_put_time($user['time'])}  夺得了  <em style="color: #f60;">{wc:$user['gonumber']}</em>个乐购码</li>
+						<li style="height: 38px;text-align: center;border-bottom: 1px solid #eee;line-height: 38px;">{wc:fun:lang::get_lang('您于')}{wc:fun:_put_time($user['time'])}  {wc:fun:lang::get_lang('夺得了')}  <em style="color: #f60;">{wc:$user['gonumber']}</em>{wc:fun:lang::get_lang('个乐购码')}</li>
 
 						{wc:if:end}
 
@@ -562,9 +562,9 @@ $.fn.CloudZoom.defaults = {
 
 					<div class="My_RecordReg">
 
-						<b class="gray01">看不到？是不是没登录或是没注册？ 登录后看看</b>
+						<b class="gray01">{wc:fun:lang::get_lang('看不到？是不是没登录或是没注册？')} {wc:fun:lang::get_lang('登录后看看')}</b>
 
-						<a href="{WEB_PATH}/member/user/login" class="My_Signbut">登录</a><a href="{WEB_PATH}/member/user/register" class="My_Regbut">注册</a>
+						<a href="{WEB_PATH}/member/user/login" class="My_Signbut">{wc:fun:lang::get_lang('登录')}</a><a href="{WEB_PATH}/member/user/register" class="My_Regbut">{wc:fun:lang::get_lang('注册')}</a>
 
 					</div>
 
@@ -576,9 +576,9 @@ $.fn.CloudZoom.defaults = {
 
 				<div class="Newest_Con hide" style="display:none;">
 
-					<p class="MsgIntro">{wc:fun:_cfg("web_name_two")}购是指只需1元就有机会买到想要的商品。即每件商品被平分成若干“等份”出售，每份1元，当一件商品所有“等份”售出后，根据乐购规则产生一名幸运者，该幸运者即可获得此商品。</p>
+					<p class="MsgIntro">{wc:fun:_cfg("web_name_two")}{wc:fun:lang::get_lang('购是指只需')}1{wc:fun:lang::get_lang('元就有机会买到想要的商品。即每件商品被平分成若干“等份”出售，每份')}1{wc:fun:lang::get_lang('元，当一件商品所有“等份”售出后，根据乐购规则产生一名幸运者，该幸运者即可获得此商品。')}</p>
 
-					<p class="MsgIntro1">{wc:fun:_cfg("web_name_two")}以“快乐乐购，惊喜无限”为宗旨，力求打造一个100%公平公正、100%正品保障、寄娱乐与购物一体化的新型购物网站。<a href="{WEB_PATH}/help/1" class="blue" target="_blank">查看详情&gt;&gt;</a></p>
+					<p class="MsgIntro1">{wc:fun:_cfg("web_name_two")}{wc:fun:lang::get_lang('以“快乐乐购，惊喜无限”为宗旨，力求打造一个')}100%{wc:fun:lang::get_lang('公平公正、')}100%{wc:fun:lang::get_lang('正品保障、寄娱乐与购物一体化的新型购物网站。')}<a href="{WEB_PATH}/help/1" class="blue" target="_blank">{wc:fun:lang::get_lang('查看详情')}&gt;&gt;</a></p>
 
 				</div>
 
@@ -590,7 +590,7 @@ $.fn.CloudZoom.defaults = {
 
 </div>
 
-<!-- 商品信息导航 -->
+<!-- {wc:fun:lang::get_lang('商品信息导航')} -->
 
 <div class="ProductTabNav">
 
@@ -600,11 +600,11 @@ $.fn.CloudZoom.defaults = {
 
 			<ul>
 
-				<li class="Product_DetT DetailsTCur"><span class="DetailsTCur">商品详情</span></li>
+				<li class="Product_DetT DetailsTCur"><span class="DetailsTCur">{wc:fun:lang::get_lang('商品详情')}</span></li>
 
-				<li id="liUserBuyAll" class="All_RecordT"><span class="">所有参与记录</span></li>
+				<li id="liUserBuyAll" class="All_RecordT"><span class="">{wc:fun:lang::get_lang('所有参与记录')}</span></li>
 
-				<li class="Single_ConT"><span class="">晒单</span></li>
+				<li class="Single_ConT"><span class="">{wc:fun:lang::get_lang('晒单')}</span></li>
 
 			</ul>
 
@@ -614,7 +614,7 @@ $.fn.CloudZoom.defaults = {
 
 </div>
 
-<!-- 商品内容 -->
+<!-- {wc:fun:lang::get_lang('商品内容')} -->
 
 <div id="divContent" class="Product_Content">
 
@@ -646,7 +646,7 @@ $.fn.CloudZoom.defaults = {
 
 				{wc:if:end}
 
-				乐购了<em class="Fb orange">{wc:$user['gonumber']}</em>人次
+				{wc:fun:lang::get_lang('乐购了')}<em class="Fb orange">{wc:$user['gonumber']}</em>{wc:fun:lang::get_lang('人次')}
 
 				</span>
 
@@ -662,7 +662,7 @@ $.fn.CloudZoom.defaults = {
 
 	
 
-		<!-- 晒单 -->
+		<!-- {wc:fun:lang::get_lang('晒单')} -->
 
 	<div id="divPost" class="Single_Content">
 
@@ -686,7 +686,7 @@ $("#btnOpenPeriod").click(function(){
 
 			$(this).attr("click","on");
 
-			$(this).html("关闭<s></s>");
+			$(this).html("{wc:fun:lang::get_lang('关闭')}<s></s>");
 
 			
 
@@ -696,7 +696,7 @@ $("#btnOpenPeriod").click(function(){
 
 			$(this).attr("click","off");
 
-			$(this).html("更多<i></i>");
+			$(this).html("{wc:fun:lang::get_lang('更多')}<i></i>");
 
 		}			
 
@@ -704,7 +704,7 @@ $("#btnOpenPeriod").click(function(){
 
 
 
-//添加购买
+//{wc:fun:lang::get_lang('添加购买')}
 
 $(function(){
 
@@ -774,7 +774,7 @@ shopnum.ready(function(){
 
 			}
 
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");   		
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");   		
 
 	}	
 
@@ -826,7 +826,7 @@ $("#shopadd").click(function(){
 
 			}
 
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");                			
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");                			
 
 		});
 
@@ -862,7 +862,7 @@ $("#shopsub").click(function(){
 
 			}
 
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");       
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");       
 
 	});		
 
@@ -896,7 +896,7 @@ function Cartcookie(cook){
 
 	var shopid=shopinfo['shopid'];
 
-	var cookie_pre="wc_";//cookie配置前缀
+	var cookie_pre="wc_";//cookie{wc:fun:lang::get_lang('配置前缀')}
 
 	var Cartlist = $.cookie(cookie_pre+'Cartlist');
 
@@ -1086,7 +1086,7 @@ $(function(){
 
 		}
 
-		$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+		$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");
 
 	});	
 
@@ -1134,7 +1134,7 @@ $(function(){
 
 			}
 
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");
 
 	});
 
@@ -1172,7 +1172,7 @@ $(function(){
 
 			}
 
-			$("#chance").html("<span style='color:red'>获得机率"+baifenbi+"</span>");
+			$("#chance").html("<span style='color:red'>{wc:fun:lang::get_lang('获得机率')}"+baifenbi+"</span>");
 
 	});
 
@@ -1184,7 +1184,7 @@ $(function(){
 
 $(".Det_Cart").click(function(){ 
 
-	//添加到购物车动画
+	//{wc:fun:lang::get_lang('添加到购物车动画')}
 
 	var src=$("#zoom1 img").attr('src');  
 

@@ -15,14 +15,14 @@ $(function(){
 })
 </script>
 <div class="R-content">
-	<div class="member-t"><h2>邮箱验证</h2></div>
+	<div class="member-t"><h2>{wc:fun:lang::get_lang('邮箱验证')}</h2></div>
 	<div class="email_verification_ok">
-		<h4>验证成功</h4>
+		<h4>{wc:fun:lang::get_lang('验证成功')}</h4>
 		<ul>
-			<li><span>验证成功！</span></li>
-			<li>您现在可以使用您的手机号 <span>{wc:$member['mobile']}</span> 或邮箱账号 <span>{wc:$memberx[0]}</span> 进行登录！</li>
-			<li>您还可以：<a href="{WEB_PATH}">开始云购</a> <a href="{WEB_PATH}/member/home">去个人中心首页</a></li>
-			<li>如没有任何操作，系统将在 <span id="spanNum"></span> 秒后自动跳转到个人中心首页！</li>
+			<li><span>{wc:fun:lang::get_lang('验证成功！')}</span></li>
+			<li>{wc:fun:lang::get_lang('您现在可以使用您的手机号')} <span>{wc:$member['mobile']}</span> {wc:fun:lang::get_lang('或邮箱账号')} <span>{wc:$memberx[0]}</span> {wc:fun:lang::get_lang('进行登录！')}</li>
+			<li>{wc:fun:lang::get_lang('您还可以：')}<a href="{WEB_PATH}">{wc:fun:lang::get_lang('开始云购')}</a> <a href="{WEB_PATH}/member/home">{wc:fun:lang::get_lang('去个人中心首页')}</a></li>
+			<li>{wc:fun:lang::get_lang('如没有任何操作，系统将在')} <span id="spanNum"></span> {wc:fun:lang::get_lang('秒后自动跳转到个人中心首页！')}</li>
 		</ul>
 	</div>
 </div>

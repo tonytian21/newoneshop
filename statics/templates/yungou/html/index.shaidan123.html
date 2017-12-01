@@ -1,16 +1,16 @@
 {wc:templates "index","header"}
 
-<!--晒单-->
+<!--{wc:fun:lang::get_lang('晒单')}-->
 
 <div class="wrap w1200">
 
 	<div class="Current_nav w1200">
 
-		<a href="{WEB_PATH}">刷单隐藏页</div>
+		<a href="{WEB_PATH}">{wc:fun:lang::get_lang('刷单隐藏页')}</div>
 
 	<div id="current" class="share_Curtit">
 
-		<h1 id="demo" class="fl">这个单页是刷单隐藏页，刷单期间请不要关闭就可以了~</h1>
+		<h1 id="demo" class="fl">{wc:fun:lang::get_lang('这个单页是刷单隐藏页，刷单期间请不要关闭就可以了')}~</h1>
 
 	</div>
 
@@ -19,11 +19,11 @@
 		<div class="goods_share_listC">
 
 			<ul style="margin-top:100px; font-size:16px;">				
-				<li style="width:50%;" id="kaishi">执行时间:</li>				
-				<li id="suijishu">已经购买次数:0</li>
-				<li style="width:50%;"><span>最大时间间隔：{wc:$t1}</span> <input type="hidden" id= 'max' value="{wc:$t1}"></li>
+				<li style="width:50%;" id="kaishi">{wc:fun:lang::get_lang('执行时间')}:</li>				
+				<li id="suijishu">{wc:fun:lang::get_lang('已经购买次数')}:0</li>
+				<li style="width:50%;"><span>{wc:fun:lang::get_lang('最大时间间隔：')}{wc:$t1}</span> <input type="hidden" id= 'max' value="{wc:$t1}"></li>
 
-				<li><span>最小时间间隔：{wc:$t2}</span> <input type="hidden" id= 'min' value="{wc:$t2}"></li>			
+				<li><span>{wc:fun:lang::get_lang('最小时间间隔：')}{wc:$t2}</span> <input type="hidden" id= 'min' value="{wc:$t2}"></li>			
 
 			</ul>				
 
@@ -100,24 +100,24 @@ $(".h_mobile").mouseout(function(){
 	var count = 0;
 	var rand = selectfrom(parseInt(b),parseInt(a));	
 	var timer = setInterval(time_rand,1000);
-	document.getElementById("kaishi").innerHTML="执行时间:"+rand+"秒";
+	document.getElementById("kaishi").innerHTML="{wc:fun:lang::get_lang('执行时间')}:"+rand+"{wc:fun:lang::get_lang('秒')}";
 	function ajax(){
 	    new Myajax({
 	    	url:"{WEB_PATH}/go/shua/xcaction",
 	        type : 'post',
 	        data : {sn:123}, 
 	        success:function(data1){
-	          	if(data1.trim() == '进入下一期并失败！' || data1.trim() == '所选用户不是批量注册用户' || data1.trim() == '刷单功能暂未开启，请点击后台开启后在开始刷单哦！' || data1.trim() == '目前不在刷单时间区间'){
+	          	if(data1.trim() == '{wc:fun:lang::get_lang('进入下一期并失败！')}' || data1.trim() == '{wc:fun:lang::get_lang('所选用户不是批量注册用户')}' || data1.trim() == '{wc:fun:lang::get_lang('刷单功能暂未开启，请点击后台开启后在开始刷单哦！')}' || data1.trim() == '{wc:fun:lang::get_lang('目前不在刷单时间区间')}'){
 	          		alert(data1);
 	          	}	     
 	        }
 	    })
 	    count = count+1;
-		document.getElementById("suijishu").innerHTML="已经购买次数:"+count+"次";
+		document.getElementById("suijishu").innerHTML="{wc:fun:lang::get_lang('已经购买次数')}:"+count+"{wc:fun:lang::get_lang('次')}";
 	}
 	function time_rand(){			
 		rand = rand-1
-		document.getElementById("kaishi").innerHTML="执行时间:"+rand+"秒";
+		document.getElementById("kaishi").innerHTML="{wc:fun:lang::get_lang('执行时间')}:"+rand+"{wc:fun:lang::get_lang('秒')}";
 		if(rand <= 0){
 			ajax();
 			rand = selectfrom(parseInt(b),parseInt(a));

@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <title>微信扫码支付</title>
+    <title>{wc:fun:lang::get_lang('微信扫码支付')}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <meta name="description" content="自由乐购" />
+    <meta name="description" content="{wc:fun:lang::get_lang('自由乐购')}" />
     <link rel="stylesheet" type="text/css" href="http://www.591jx.net/css/comm.css" />
     <link rel="stylesheet" type="text/css" href="http://www.591jx.net/css/header.css" />
     <script language="javascript" type="text/javascript" src="http://www.591jx.net/js/jquery181.js"></script>
@@ -63,12 +63,12 @@
   
   </head>
   <body>
-         <!--顶部-->
-<!--头部-->
+         <!--{wc:fun:lang::get_lang('顶部')}-->
+<!--{wc:fun:lang::get_lang('头部')}-->
     
     <div class="wx_header">
         <div class="wx_logo">
-            <img src="/Images/wxlogo_pay.png" alt="微信支付标志" title="微信支付"></div>
+            <img src="/Images/wxlogo_pay.png" alt="{wc:fun:lang::get_lang('微信支付标志')}" title="{wc:fun:lang::get_lang('微信支付')}"></div>
     </div>
     <div class="weixin">
         <div class="weixin2">
@@ -79,7 +79,7 @@
                         <div class="area_bd">
                         <span id="qr_box" class="wx_img_wrapper">
                         
-                            <img style="border-width:0px;" alt="二维码" src="http://www.591jx.net/uploadImages/2015101316467732.png" class="qrcode" id="payQRImg" />
+                            <img style="border-width:0px;" alt="{wc:fun:lang::get_lang('二维码')}" src="http://www.591jx.net/uploadImages/2015101316467732.png" class="qrcode" id="payQRImg" />
                             <img id="guide" alt="" src="/Images/wxwebpay_guide.png" class="guide pngFix" style="left: 50%; opacity: 0; display: none; margin-left: -101px;" />
                         
                         
@@ -87,13 +87,13 @@
                         
                             <div class="msg_default_box"><i class="icon_wx pngFix"></i>
                                 <p>
-                                    请使用微信扫描<br />
-                                                                                                            二维码以完成支付
+                                    {wc:fun:lang::get_lang('请使用微信扫描')}<br />
+                                                                                                            {wc:fun:lang::get_lang('二维码以完成支付')}
                                 </p>
                             </div>
                         
                             <div class="msg_box"><i class="icon_wx pngFix"></i>
-                                <p><strong>扫描成功</strong>请在手机确认支付</p>
+                                <p><strong>{wc:fun:lang::get_lang('扫描成功')}</strong>{wc:fun:lang::get_lang('请在手机确认支付')}</p>
                             </div>
                         </div>
                     </div>

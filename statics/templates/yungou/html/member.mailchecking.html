@@ -15,18 +15,18 @@ $(function(){
 </script>
 <div class="R-content">
 	<div class="member-t" style="border-bottom: 1px solid #dfdfdf;">
-		<h2>邮箱验证</h2>
-		<a href="javascript:history.go(-1);" class="blue">&lt;&lt; 返回</a>
+		<h2>{wc:fun:lang::get_lang('邮箱验证')}</h2>
+		<a href="javascript:history.go(-1);" class="blue">&lt;&lt; {wc:fun:lang::get_lang('返回')}</a>
 	</div>
 	<div class="email_verification">
-		<div class="prompt orange" style="width: 600px;">请完成邮箱验证，认证邮箱不仅能加强账户安全，快速找回密码，还会在您成功获得商品后及时通知您！<em></em></div>
+		<div class="prompt orange" style="width: 600px;">{wc:fun:lang::get_lang('请完成邮箱验证，认证邮箱不仅能加强账户安全，快速找回密码，还会在您成功获得商品后及时通知您！')}<em></em></div>
 		<form class="registerform" method="post" action="{WEB_PATH}/member/home/sendsuccess" style="margin-top: 0px;padding-left: 0px;">
 		<div class="text_email" style="padding-left: 0px;">
-			<span>输入邮箱地址：</span>
-			<input datatype="e"  nullmsg="不能为空" errormsg="邮箱格式错误" name="email" type="text" maxlength="100" class="email"/>
-			<input name="submit" type="submit" class="orangebut" value="发送验证邮件"/>			
+			<span>{wc:fun:lang::get_lang('输入邮箱地址：')}</span>
+			<input datatype="e"  nullmsg="{wc:fun:lang::get_lang('不能为空')}" errormsg="{wc:fun:lang::get_lang('邮箱格式错误')}" name="email" type="text" maxlength="100" class="email"/>
+			<input name="submit" type="submit" class="orangebut" value="{wc:fun:lang::get_lang('发送验证邮件')}"/>			
 		</div>
-		<div  class="text_email" style="padding-top:0px;padding-left: 0px;"><div class="Validform_checktip">点击“发送验证邮件”{wc:fun:_cfg("web_name")}系统将会给您发送一封验证邮件到您的邮箱！</div></div>
+		<div  class="text_email" style="padding-top:0px;padding-left: 0px;"><div class="Validform_checktip">{wc:fun:lang::get_lang('点击“发送验证邮件”')}{wc:fun:_cfg("web_name")}{wc:fun:lang::get_lang('系统将会给您发送一封验证邮件到您的邮箱！')}</div></div>
 		</form>
 	</div>
 </div>
