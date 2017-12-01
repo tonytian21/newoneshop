@@ -2,7 +2,7 @@
  System::load_sys_fun("send");
 /*
 
-*   生成购买的云购码
+*   生成购买的OneShop码
 
 *	user_num 		@生成个数
 
@@ -452,9 +452,9 @@ function pay_insert_shop($shop='',$type=''){
 
 /*
 
-	云购基金
+	OneShop基金
 
-	go_number @云购人次
+	go_number @OneShop人次
 
 */
 

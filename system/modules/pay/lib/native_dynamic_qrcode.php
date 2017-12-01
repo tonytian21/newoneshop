@@ -48,7 +48,7 @@
 					<span id="dingdan"  ddcode="<?php echo $config['code'];?>"  class="wx_right" ><?php echo $config['code'];?></span></p>
 					 <p><span  class="wx_left">订单时间</span>
 					<span  class="wx_right" ><?php echo date("Y-m-d H:i:s",time());?></span></p>
-                    <p><span class="wx_left">商品名称</span><span class="wx_right">云购商品</span></p>
+                    <p><span class="wx_left">商品名称</span><span class="wx_right">OneShop商品</span></p>
                 </div>
                 <div class="wx_kf">
                     <div class="wx_kf_img icon_wx"></div>

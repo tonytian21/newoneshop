@@ -3,7 +3,7 @@
 
 
 /*
-	计算云购码表
+	计算OneShop码表
 */
 function content_get_codes_table(){
 	$db = System::load_sys_class("model");
@@ -40,7 +40,7 @@ function content_get_codes_table(){
 }
 
 /*
-   生成云购码 
+   生成OneShop码 
    CountNum @ 生成个数
    len 	    @ 生成长度
    sid	    @ 商品ID

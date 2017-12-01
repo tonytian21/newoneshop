@@ -160,7 +160,7 @@ class yeepay_url extends SystemAction {
 		$scookies = unserialize($dingdaninfo['scookies']);			
 		$pay = System::load_app_class('pay','pay');		
 		$pay->scookie = $scookies;
-		$ok = $pay->init($uid,$pay_type['pay_id'],'go_record');	//云购商品	
+		$ok = $pay->init($uid,$pay_type['pay_id'],'go_record');	//OneShop商品	
 		if($ok != 'ok'){
 			$_COOKIE['Cartlist'] = '';_setcookie('Cartlist',NULL);			
 			return '商品购买失败';	//商品购买失败			

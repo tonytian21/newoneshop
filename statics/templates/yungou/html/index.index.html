@@ -86,9 +86,6 @@
 								</li>
 							</ul>
 						</div>
-						<!--<div class="duobao">
-							<a style="color: #fff;" href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow({wc:$renqi['id']},'{WEB_PATH}')">{wc:fun:lang::get_lang('立即一元乐购')}</a>
-						</div>-->
 
 					</li>
 				</ul>
@@ -184,7 +181,7 @@
                         </p>
                         <p class="mt30" style="margin-top:5px;">
                             {wc:fun:lang::get_lang('花')}
-                            <span class="c_red">{wc:$sq['touzi']}</span> {wc:fun:lang::get_lang('乐购币，回报率：')}
+                            <span class="c_red">{wc:$sq['touzi']}</span> {wc:fun:lang::get_lang('OneShop币，回报率：')}
                             <span class="c_red t18">{wc:$sq['rate']}</span> {wc:fun:lang::get_lang('倍')}
                             
                             <!--{wc:fun:lang::get_lang('价值')}:{wc:fun:lang::get_lang('￥')}
@@ -272,7 +269,7 @@
                         uhtml+= '</div>';
                         uhtml+= '<div class="print">';
                         	uhtml+= '<p>{wc:fun:lang::get_lang('恭喜用户：')}<a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
-                        uhtml+= '<p>{wc:fun:lang::get_lang('花费：')}<span class="c_red">'+info.huafei+'</span>{wc:fun:lang::get_lang('乐购币，价值')}:{wc:fun:lang::get_lang('￥')}&nbsp<span class="c_red">{wc:$sq['jiazhi']}</span></p>';    
+                        uhtml+= '<p>{wc:fun:lang::get_lang('花费：')}<span class="c_red">'+info.huafei+'</span>{wc:fun:lang::get_lang('OneShop币，价值')}:{wc:fun:lang::get_lang('￥')}&nbsp<span class="c_red">{wc:$sq['jiazhi']}</span></p>';    
                         uhtml+= '<a style="display: block;height: 35px;overflow: hidden;" href="'+path+'/dataserver/'+info.id+'" target="_blank"><p class="c_black">'+info.qishu+info.title+'</p></a>' ;   
                         uhtml+='<a class="cydb_ca" href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank"></a>';
                         uhtml+= '<p class="mt30" style="margin-top:5px;display: none;">{wc:fun:lang::get_lang('回报率：')}<span class="c_red t18">'+info.huibaolv+'</span> {wc:fun:lang::get_lang('倍')}</p>';
@@ -305,7 +302,7 @@
             </li>
             <li>
                 <h1 class="c_red">{wc:fun:lang::get_lang('然后')}</h1>
-                <p>{wc:fun:lang::get_lang('支付乐购币参与乐购，每一个乐购币可参与一次乐购')}</p>
+                <p>{wc:fun:lang::get_lang('支付OneShop币参与夺宝，每一个OneShop币可参与一次夺宝')}</p>
             </li>
             <li>
                 <h1 class="c_red">{wc:fun:lang::get_lang('最后')}</h1>
@@ -314,7 +311,7 @@
         </ul>
         <a href="{WEB_PATH}/help/1" class="more c_red" target="_blank">{wc:fun:lang::get_lang('更多新手指南')}&gt;&gt;</a>
         <div class="title bb_gray bt_red">
-            <p class="c_red">{wc:fun:lang::get_lang('正在乐购')}</p>
+            <p class="c_red">{wc:fun:lang::get_lang('正在OneShop')}</p>
         </div>
         <ul class="user">
             {wc:loop $go_record $gorecord}
@@ -335,17 +332,10 @@
                     <a style="color: #2af;font-weight: normal;" class="c_yellow" href="{WEB_PATH}/uname/{wc:fun:idjia($gorecord['uid'])}" target="_blank">{wc:fun:get_user_name($gorecord)}</a> <!--&nbsp;{wc:fun:lang::get_lang('于')}{wc:fun:_put_time($gorecord['time'])}-->
                 </p>
                 <div class="fl li_r"  style="margin-top: 5px;margin-left: 7px;">
-                    <!--<p>
-				{wc:fun:lang::get_lang('花费')}
-				<span class="c_red">{wc:$gorecord['gonumber']}</span>
-				{wc:fun:lang::get_lang('人次')}
-			</p>
-			-->
+                 
                     <a href="{WEB_PATH}/goods/{wc:$gorecord['shopid']}" target="_blank">
                         <span style="color: #6b6b6b; font-weight: normal;" class="c_red">{wc:$gorecord['shopname']}</span>
                     </a>
-                    <!--<p style="margin-top:-2px;">{wc:fun:lang::get_lang('总需：')}{wc:$gorecord['zongrenshu']} {wc:fun:lang::get_lang('人次')}</p>
-		-->
                 </div>
             </li>
             {wc:loop:end}
@@ -368,10 +358,6 @@
                 <p class="name">
                     <a "{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:$renqi['title']}</a>
                 </p>
-               <!-- <p class="money">
-                    {wc:fun:lang::get_lang('价值：')}
-                    <span class="rmb">{wc:$renqi['money']}</span> {wc:fun:lang::get_lang('乐购币')}
-                </p>-->
                 <p class="money">
                     {wc:fun:lang::get_lang('总需：')}
                     <span class="rmb">{wc:$renqi['zongrenshu']}</span> {wc:fun:lang::get_lang('人次')}
@@ -384,9 +370,6 @@
                         <li class="P-bar01">
                             <em class="c_red">{wc:$renqi['canyurenshu']}</em> {wc:fun:lang::get_lang('已参与人次')}
                         </li>
-                        <!--<li class="P-bar02">
-                            <em>{wc:$renqi['zongrenshu']}</em> {wc:fun:lang::get_lang('总需人次')}
-                        </li>-->
                         <li class="P-bar03">
                             <em>{wc:$renqi['zongrenshu']-$renqi['canyurenshu']}</em> {wc:fun:lang::get_lang('剩余人次')}
                         </li>
@@ -394,10 +377,7 @@
                 </div>
                 <div class="w-goods-ing">
                     <div class="shop_buttom bg_red b_red1">
-                        <!--
-						<a href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow({wc:$renqi['id']},'{WEB_PATH}')">{wc:fun:lang::get_lang('立即乐购')}</a>
-		-->
-                        <a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank" class="Det_Shopnow">{wc:fun:lang::get_lang('立即')}1{wc:fun:lang::get_lang('币乐购')}</a>
+                        <a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank" class="Det_Shopnow">{wc:fun:lang::get_lang('立即夺宝')}</a>
                     </div>
                 </div>
             </li>
@@ -450,10 +430,7 @@
             </div>
             <div class="w-goods-ing" style="margin: 5px auto; width: 84%;">
                 <div class="shop_buttom bg_red b_red1" style="">
-                    <!--
-					<a href="javascript:;" style="font-size:14px;" class="Det_Shopnow" onclick="jwebox.goshopnow({wc:$shop['id']},'{WEB_PATH}')">{wc:fun:lang::get_lang('立即乐购')}</a>
--->
-                    <a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" style="font-size:14px;" class="Det_Shopnow">{wc:fun:lang::get_lang('立即乐购')}</a>
+                    <a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" style="font-size:14px;" class="Det_Shopnow">{wc:fun:lang::get_lang('立即夺宝')}</a>
                 </div>
                 <div class="shop_buttom1 bg_pink b_pink c_red" style="width:60px;height:35px;margin-left: 10px;">
                     <a class="c_red" href="javascript:;" onclick="gcartlist.gocartlist({wc:$shop['id']},'{WEB_PATH}','wc_')" style="line-height:30px;font-size:14px;"></a>
@@ -761,32 +738,5 @@ $(".b_gray").mouseleave(function() {
 </script>
 <!--{wc:fun:lang::get_lang('晒单分享')}end-->
 {wc:if get_user_arr()} {wc:else}
-<!--<div id="MaCenter1" class="MaCenter1">
-    <style>
-    .guanbi3 {
-        -webkit-background-size: 40px 40px;
-        -moz-background-size: 40px 40px;
-        background-size: 40px 40px;
-        -webkit-border-radius: 110px;
-        border-radius: 110px;
-        -webkit-transition: -webkit-transform 2s ease-out;
-        -moz-transition: -moz-transform 2s ease-out;
-        -o-transition: -o-transform 2s ease-out;
-        -ms-transition: -ms-transform 2s ease-out;
-    }
-    
-    .guanbi3:hover {
-        -webkit-transform: rotateZ(360deg);
-        -moz-transform: rotateZ(360deg);
-        -o-transform: rotateZ(360deg);
-        -ms-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-    }
-    </style>
-    <div id="guanbi1">
-        <div class="guanbi2">
-            <div class="guanbi3"></div>
-        </div>
-    </div>
-</div>-->
+
 {wc:if:end} {wc:templates "index","footer"}

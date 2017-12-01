@@ -36,7 +36,7 @@
 			</li>
 			<li class="account-money" style="width: 300px;line-height: 25px;">
 				<em class="gray02">{wc:fun:lang::get_lang('帐户余额：')}</em>
-				<span class="money-red">{wc:fun:uidcookie('money')}{wc:fun:lang::get_lang('云购币')}</span>&nbsp;&nbsp;
+				<span class="money-red">{wc:fun:uidcookie('money')}{wc:fun:lang::get_lang('OneShop币')}</span>&nbsp;&nbsp;
 				<a href="{WEB_PATH}/member/home/userrecharge" title="{wc:fun:lang::get_lang('充值')}" class="blue">{wc:fun:lang::get_lang('充值')}</a>
 			</li>
 		</ul>		
@@ -47,13 +47,7 @@
 				{wc:else}
 				<li  style="border-radius:30px;border: 1px solid #d60; "><a style="color: #f60;padding-top: 14px;" class="nicheng" href="/index.php/member/home/modify" style="padding-top: 13px;">{wc:fun:lang::get_lang('昵称')}<br/>{wc:fun:lang::get_lang('未设定')}</a></li>
 				{wc:if:end}
-				<!--
-				{wc:if $member['qq']!=null}
-				<li  style=""><a class="qq" href="/index.php/member/home/qqclock"><i></i>{wc:fun:lang::get_lang('已绑定')}</a></li>
-				{wc:else}
-				<li  style="border-radius:30px;border: 1px solid #d60; "><a style="color: #f60;" class="qq1" href="/index.php/member/home/qqclock"><i></i>{wc:fun:lang::get_lang('未绑定')}</a></li>
-				{wc:if:end}
-				-->
+
 				{wc:if $member['email']!=null}
 				<li><a class="email" href="/index.php/member/home/mailchecking"><i></i>{wc:fun:lang::get_lang('已绑定')}</a></li>
 				{wc:else}
@@ -95,7 +89,7 @@
 			color: #fff;
 		}
 	</style>
-	<li class="daohang"><a href="/index.php/member/home/userbuylist">{wc:fun:lang::get_lang('云购记录')}</a></li>
+	<li class="daohang"><a href="/index.php/member/home/userbuylist">{wc:fun:lang::get_lang('夺宝记录')}</a></li>
 	<li class="daohang"><a href="/index.php/member/home/orderlist">{wc:fun:lang::get_lang('获得的商品')}</a></li>
 	<li class="daohang"><a href="/index.php/member/home/singlelist">{wc:fun:lang::get_lang('晒单')}</a></li>
 	<li class="daohang"><a href="/index.php/member/home/joingroup">{wc:fun:lang::get_lang('加入的圈子')}</a></li>
@@ -103,10 +97,8 @@
 	<li class="daohang" style="border-right: none;width: 134px;"><a href="/index.php/member/home/userbalance">{wc:fun:lang::get_lang('帐户明细')}</a></li>
 	<li class="daohang"><a href="/index.php/member/home/invitefriends">{wc:fun:lang::get_lang('邀请好友')}</a></li>
 	<li class="daohang"><a href="/index.php/member/home/commissions">{wc:fun:lang::get_lang('佣金明细')}</a></li>
-	<!--<li class="daohang"><a href="/index.php/member/home/cashout">{wc:fun:lang::get_lang('申请提现')}</a></li>
-	<li class="daohang"><a href="/index.php/member/home/record">{wc:fun:lang::get_lang('提现记录')}</a></li>-->
 	<li class="daohang"><a href="/index.php/member/home/modify">{wc:fun:lang::get_lang('编辑资料')}</a></li>
-	<li class="daohang" style="border-right: none;width: 134px;"><a href="/index.php/member/user/cook_end">{wc:fun:lang::get_lang('退出云购')}</a></li>
+	<li class="daohang" style="border-right: none;width: 134px;"><a href="/index.php/member/user/cook_end">{wc:fun:lang::get_lang('退出OneShop')}</a></li>
 </div>
 	
 </div>
@@ -126,12 +118,6 @@
 		</ul>
 	</div> 
 	<p class="r-line"></p>
-	<!-- <div class="gg-content">
-		<div class="R-grtit"><h3>{wc:fun:lang::get_lang('公告栏')}</h3></div>
-		<ul class="gg-list">	
-			<li><span class="point"></span><span class="info"><a href="http://group.1yyg.com/Topic-621.html" target="_blank" class="gray" title="{wc:fun:lang::get_lang('关于“幸运云购码”计算结果错误的公告')}">{wc:fun:lang::get_lang('关于“幸运云购码”计算结果错误的公告')}</a></span></li>
-		</ul>
-	</div> -->
 </div>
 <!--center_rjght_end-->
 

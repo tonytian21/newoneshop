@@ -26,12 +26,6 @@ tr{height:40px;line-height:40px}
 		<td>
 			<input type="radio" name="s_type" value="0" <?php echo ($type==0 ? 'checked' : ''); ?> /> <font color="#f00">中奖不通知</font> <br/>
 			<input type="radio" name="s_type" value="1" <?php echo ($type==1 ? 'checked' : ''); ?> /> <font color="#f60">只发邮件通知</font> <br/>
-			<input type="radio" name="s_type" value="2" <?php echo ($type==2 ? 'checked' : ''); ?> /> <font color="#0c0">只发短信通知</font> <br/>
-			<input type="radio" name="s_type" value="3" <?php echo ($type==3 ? 'checked' : ''); ?> /> <font color="#09c">短信和邮件通知</font> <br/>
-			<input type="radio" name="s_type" value="4" <?php echo ($type==4 ? 'checked' : ''); ?> /> <font color="#0Fc">微信通知</font> <br/>
-			<input type="radio" name="s_type" value="5" <?php echo ($type==5 ? 'checked' : ''); ?> /> <font color="#04c">邮件和微信通知</font> <br/>
-			<input type="radio" name="s_type" value="6" <?php echo ($type==6 ? 'checked' : ''); ?> /> <font color="#F0c">短信和微信通知</font> <br/>
-			<input type="radio" name="s_type" value="7" <?php echo ($type==7 ? 'checked' : ''); ?> /> <font color="#32c">邮件，短信，微信通知</font> <br/>
 		</td>
 	</tr>
  	

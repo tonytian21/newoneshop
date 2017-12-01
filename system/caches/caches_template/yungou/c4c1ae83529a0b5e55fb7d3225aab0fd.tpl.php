@@ -87,7 +87,11 @@
 							</ul>
 						</div>
 						<!--<div class="duobao">
+<<<<<<< HEAD
 							<a style="color: #fff;" href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')"><?php echo lang::get_lang('立即一元乐购'); ?></a>
+=======
+							<a style="color: #fff;" href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')">立即一元OneShop</a>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 						</div>-->
 
 					</li>
@@ -183,9 +187,15 @@
 						</a>
                         </p>
                         <p class="mt30" style="margin-top:5px;">
+<<<<<<< HEAD
                             <?php echo lang::get_lang('花'); ?>
                             <span class="c_red"><?php echo $sq['touzi']; ?></span> <?php echo lang::get_lang('乐购币，回报率：'); ?>
                             <span class="c_red t18"><?php echo $sq['rate']; ?></span> <?php echo lang::get_lang('倍'); ?>
+=======
+                            花
+                            <span class="c_red"><?php echo $sq['touzi']; ?></span> OneShop币，回报率：
+                            <span class="c_red t18"><?php echo $sq['rate']; ?></span> 倍
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                             
                             <!--<?php echo lang::get_lang('价值'); ?>:<?php echo lang::get_lang('￥'); ?>
                             <span class="c_red"><?php echo $sq['jiazhi']; ?></span>-->
@@ -271,8 +281,13 @@
                         uhtml+= '<a href="'+path+'/dataserver/'+info.id+'" target="_blank"><img src="<?php echo G_UPLOAD_PATH; ?>/'+info.thumb+'"></a>';
                         uhtml+= '</div>';
                         uhtml+= '<div class="print">';
+<<<<<<< HEAD
                         	uhtml+= '<p><?php echo lang::get_lang('恭喜用户：'); ?><a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
                         uhtml+= '<p><?php echo lang::get_lang('花费：'); ?><span class="c_red">'+info.huafei+'</span><?php echo lang::get_lang('乐购币，价值'); ?>:<?php echo lang::get_lang('￥'); ?>&nbsp<span class="c_red"><?php echo $sq['jiazhi']; ?></span></p>';    
+=======
+                        	uhtml+= '<p>恭喜用户：<a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
+                        uhtml+= '<p>花费：<span class="c_red">'+info.huafei+'</span>OneShop币，价值:￥&nbsp<span class="c_red"><?php echo $sq['jiazhi']; ?></span></p>';    
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                         uhtml+= '<a style="display: block;height: 35px;overflow: hidden;" href="'+path+'/dataserver/'+info.id+'" target="_blank"><p class="c_black">'+info.qishu+info.title+'</p></a>' ;   
                         uhtml+='<a class="cydb_ca" href="<?php echo WEB_PATH; ?>/goods/<?php echo $sq['id']; ?>" target="_blank"></a>';
                         uhtml+= '<p class="mt30" style="margin-top:5px;display: none;"><?php echo lang::get_lang('回报率：'); ?><span class="c_red t18">'+info.huibaolv+'</span> <?php echo lang::get_lang('倍'); ?></p>';
@@ -304,8 +319,13 @@
                 <p><?php echo lang::get_lang('注册账号，挑选喜欢的奖品'); ?></p>
             </li>
             <li>
+<<<<<<< HEAD
                 <h1 class="c_red"><?php echo lang::get_lang('然后'); ?></h1>
                 <p><?php echo lang::get_lang('支付乐购币参与乐购，每一个乐购币可参与一次乐购'); ?></p>
+=======
+                <h1 class="c_red">然后</h1>
+                <p>支付OneShop币参与夺宝，每一个OneShop币可参与一次夺宝</p>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
             </li>
             <li>
                 <h1 class="c_red"><?php echo lang::get_lang('最后'); ?></h1>
@@ -314,7 +334,11 @@
         </ul>
         <a href="<?php echo WEB_PATH; ?>/help/1" class="more c_red" target="_blank"><?php echo lang::get_lang('更多新手指南'); ?>&gt;&gt;</a>
         <div class="title bb_gray bt_red">
+<<<<<<< HEAD
             <p class="c_red"><?php echo lang::get_lang('正在乐购'); ?></p>
+=======
+            <p class="c_red">正在OneShop</p>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         </div>
         <ul class="user">
             <?php $ln=1;if(is_array($go_record)) foreach($go_record AS $gorecord): ?>
@@ -335,6 +359,7 @@
                     <a style="color: #2af;font-weight: normal;" class="c_yellow" href="<?php echo WEB_PATH; ?>/uname/<?php echo idjia($gorecord['uid']); ?>" target="_blank"><?php echo get_user_name($gorecord); ?></a> <!--&nbsp;<?php echo lang::get_lang('于'); ?><?php echo _put_time($gorecord['time']); ?>-->
                 </p>
                 <div class="fl li_r"  style="margin-top: 5px;margin-left: 7px;">
+<<<<<<< HEAD
                     <!--<p>
 				<?php echo lang::get_lang('花费'); ?>
 				<span class="c_red"><?php echo $gorecord['gonumber']; ?></span>
@@ -346,6 +371,13 @@
                     </a>
                     <!--<p style="margin-top:-2px;"><?php echo lang::get_lang('总需：'); ?><?php echo $gorecord['zongrenshu']; ?> <?php echo lang::get_lang('人次'); ?></p>
 		-->
+=======
+                 
+                    <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $gorecord['shopid']; ?>" target="_blank">
+                        <span style="color: #6b6b6b; font-weight: normal;" class="c_red"><?php echo $gorecord['shopname']; ?></span>
+                    </a>
+                   
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                 </div>
             </li>
             <?php  endforeach; $ln++; unset($ln); ?>
@@ -368,10 +400,14 @@
                 <p class="name">
                     <a "<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" target="_blank"><?php echo $renqi['title']; ?></a>
                 </p>
+<<<<<<< HEAD
                <!-- <p class="money">
                     <?php echo lang::get_lang('价值：'); ?>
                     <span class="rmb"><?php echo $renqi['money']; ?></span> <?php echo lang::get_lang('乐购币'); ?>
                 </p>-->
+=======
+              
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                 <p class="money">
                     <?php echo lang::get_lang('总需：'); ?>
                     <span class="rmb"><?php echo $renqi['zongrenshu']; ?></span> <?php echo lang::get_lang('人次'); ?>
@@ -384,9 +420,13 @@
                         <li class="P-bar01">
                             <em class="c_red"><?php echo $renqi['canyurenshu']; ?></em> <?php echo lang::get_lang('已参与人次'); ?>
                         </li>
+<<<<<<< HEAD
                         <!--<li class="P-bar02">
                             <em><?php echo $renqi['zongrenshu']; ?></em> <?php echo lang::get_lang('总需人次'); ?>
                         </li>-->
+=======
+                       
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                         <li class="P-bar03">
                             <em><?php echo $renqi['zongrenshu']-$renqi['canyurenshu']; ?></em> <?php echo lang::get_lang('剩余人次'); ?>
                         </li>
@@ -394,10 +434,15 @@
                 </div>
                 <div class="w-goods-ing">
                     <div class="shop_buttom bg_red b_red1">
+<<<<<<< HEAD
                         <!--
 						<a href="javascript:;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $renqi['id']; ?>,'<?php echo WEB_PATH; ?>')"><?php echo lang::get_lang('立即乐购'); ?></a>
 		-->
                         <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php echo $renqi['title']; ?>" target="_blank" class="Det_Shopnow"><?php echo lang::get_lang('立即'); ?>1<?php echo lang::get_lang('币乐购'); ?></a>
+=======
+         
+                        <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php echo $renqi['title']; ?>" target="_blank" class="Det_Shopnow">立即夺宝</a>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                     </div>
                 </div>
             </li>
@@ -451,9 +496,15 @@
             <div class="w-goods-ing" style="margin: 5px auto; width: 84%;">
                 <div class="shop_buttom bg_red b_red1" style="">
                     <!--
+<<<<<<< HEAD
 					<a href="javascript:;" style="font-size:14px;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $shop['id']; ?>,'<?php echo WEB_PATH; ?>')"><?php echo lang::get_lang('立即乐购'); ?></a>
 -->
                     <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank" style="font-size:14px;" class="Det_Shopnow"><?php echo lang::get_lang('立即乐购'); ?></a>
+=======
+					<a href="javascript:;" style="font-size:14px;" class="Det_Shopnow" onclick="jwebox.goshopnow(<?php echo $shop['id']; ?>,'<?php echo WEB_PATH; ?>')">立即夺宝</a>
+-->
+                    <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank" style="font-size:14px;" class="Det_Shopnow">立即夺宝</a>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                 </div>
                 <div class="shop_buttom1 bg_pink b_pink c_red" style="width:60px;height:35px;margin-left: 10px;">
                     <a class="c_red" href="javascript:;" onclick="gcartlist.gocartlist(<?php echo $shop['id']; ?>,'<?php echo WEB_PATH; ?>','wc_')" style="line-height:30px;font-size:14px;"></a>
@@ -761,32 +812,5 @@ $(".b_gray").mouseleave(function() {
 </script>
 <!--<?php echo lang::get_lang('晒单分享'); ?>end-->
 <?php if(get_user_arr()): ?> <?php  else: ?>
-<!--<div id="MaCenter1" class="MaCenter1">
-    <style>
-    .guanbi3 {
-        -webkit-background-size: 40px 40px;
-        -moz-background-size: 40px 40px;
-        background-size: 40px 40px;
-        -webkit-border-radius: 110px;
-        border-radius: 110px;
-        -webkit-transition: -webkit-transform 2s ease-out;
-        -moz-transition: -moz-transform 2s ease-out;
-        -o-transition: -o-transform 2s ease-out;
-        -ms-transition: -ms-transform 2s ease-out;
-    }
-    
-    .guanbi3:hover {
-        -webkit-transform: rotateZ(360deg);
-        -moz-transform: rotateZ(360deg);
-        -o-transform: rotateZ(360deg);
-        -ms-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-    }
-    </style>
-    <div id="guanbi1">
-        <div class="guanbi2">
-            <div class="guanbi3"></div>
-        </div>
-    </div>
-</div>-->
+
 <?php endif; ?> <?php include templates("index","footer");?>

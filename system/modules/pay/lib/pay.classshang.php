@@ -216,8 +216,8 @@ class pay {
 					pay_get_shop_codes($shop['cart_gorenci'],$shop,$ret_data);		
 					$this->dingdan_query = $ret_data['query'];
 					if(!$ret_data['query'])$this->dingdan_query = false;
-					$codes = $ret_data['user_code'];									//得到的云购码					
-					$codes_len= intval($ret_data['user_code_len']);						//得到云购码个数					
+					$codes = $ret_data['user_code'];									//得到的OneShop码					
+					$codes_len= intval($ret_data['user_code_len']);						//得到OneShop码个数					
 					$money=$codes_len * $shop['yunjiage'];								//单条商品的总价格				
 					$this->MoenyCount += $money;										//总价格				
 					$status='未付款,未发货';					

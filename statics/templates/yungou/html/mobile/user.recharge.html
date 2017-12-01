@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head><title>
-	{wc:fun:lang::get_lang('帐户充值')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}
+{wc:fun:lang::get_lang('帐户充值')} - {wc:$webname}
 </title>
 <meta content="app-id=518966501" name="apple-itunes-app" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
@@ -51,44 +51,18 @@
 
 </header>
 
-    <div class="g-Total gray9" style="padding-top: 55px;">{wc:fun:lang::get_lang('您的当前乐币：')}<span class="orange arial">{wc:$member['money']}</span>{wc:fun:lang::get_lang('乐币')}</div>
+    <div class="g-Total gray9" style="padding-top: 55px;">{wc:fun:lang::get_lang('您的当前OneShop币：')}<span class="orange arial">{wc:$member['money']}</span>{wc:fun:lang::get_lang('OneShop币')}</div>
  <div>
     
-            <!--section>
-                <div class="registerCon">
-                    <form action="{WEB_PATH}/member/cart/card_addmoney" method="post">
-                        <ul>
-                            <li class="accAndPwd">
-                                <dl><input id="txtAccount" type="text" placeholder="{wc:fun:lang::get_lang('请输入卡号')}" class="lEmail" name="czknum" maxlength="20"><s class="rs4"></s></dl>
-                                <dl>
-                                    <input type="password" id="txtPassword" class="lPwd" placeholder="{wc:fun:lang::get_lang('请输入卡密')}" name="password" maxlength="20">
-                                    <s class="rs3"></s>
-                                </dl>
-                            </li>
-                            <li><input type="submit" value=" {wc:fun:lang::get_lang('确认充值')}" /></li>
-                    </form>
-                    <li class="rSelect" style="width: 40%;">{wc:fun:lang::get_lang('淘宝充值卡购买')}</li>
-                    <li class="rSelect" style="width: 80%;"> 
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">1{wc:fun:lang::get_lang('乐币充值卡购买')}</a> | 
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">10{wc:fun:lang::get_lang('乐币充值卡购买')}</a>
-                    </li><li class="rSelect" style="width: 80%;">
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">50{wc:fun:lang::get_lang('乐币充值卡购买')}</a>  | 
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">100{wc:fun:lang::get_lang('乐币充值卡购买')}</a>  
-                    </li><li class="rSelect" style="width: 80%;">
-                        <a href="http://item.taobao.com" hidefocus="true" target="_blank">500{wc:fun:lang::get_lang('乐币充值卡购买')}</a></li>
-                    </ul>
-                </div>
-            </section-->
-     
      
     <section class="clearfix g-member">
         <div class="g-Recharge">
 	        <ul id="ulOption">
-		        <li money="10"><a href="javascript:;" class="z-sel">10{wc:fun:lang::get_lang('乐币')}<s></s></a></li>
-		        <li money="20"><a href="javascript:;">20{wc:fun:lang::get_lang('乐币')}<s></s></a></li>
-		        <li money="30"><a href="javascript:;">30{wc:fun:lang::get_lang('乐币')}<s></s></a></li>
-		        <li money="100"><a href="javascript:;">100{wc:fun:lang::get_lang('乐币')}<s></s></a></li>
-		        <li money="200"><a href="javascript:;">200{wc:fun:lang::get_lang('乐币')}<s></s></a></li>
+		        <li money="10"><a href="javascript:;" class="z-sel">10{wc:fun:lang::get_lang('OneShop币')}<s></s></a></li>
+		        <li money="20"><a href="javascript:;">20{wc:fun:lang::get_lang('OneShop币')}<s></s></a></li>
+		        <li money="30"><a href="javascript:;">30{wc:fun:lang::get_lang('OneShop币')}<s></s></a></li>
+		        <li money="100"><a href="javascript:;">100{wc:fun:lang::get_lang('OneShop币')}<s></s></a></li>
+		        <li money="200"><a href="javascript:;">200{wc:fun:lang::get_lang('OneShop币')}<s></s></a></li>
 		        <li>
 		            <b>
 		                <input type="text" class="z-init" placeholder="{wc:fun:lang::get_lang('输入金额')}" maxlength="8" />
@@ -141,14 +115,12 @@
             </style>
 	     <article class="clearfix mt10 m-round g-pay-ment g-bank-ct">
 	        <ul id="ulBankList">
-			     <li class="gray6"  style="height:36px;">{wc:fun:lang::get_lang('选择平台充值')}<em class="orange">10.00</em>{wc:fun:lang::get_lang('乐币')}</li>
+			     <li class="gray6"  style="height:36px;">{wc:fun:lang::get_lang('选择平台充值')}<em class="orange">10.00</em>{wc:fun:lang::get_lang('OneShop币')}</li>
 			{wc:loop $paylist $pay}
 			     <li class="gray9" urm="{wc:$pay['pay_id']}">
 			         <i class="z-bank-Round"><s></s></i>{wc:$pay['pay_name']}<!-- CMBCHINA-WAP -->
 			     </li>
 			{wc:loop:end}
-			    <!-- <li class="gray9" data-urm="ICBC-WAP"><i class="z-bank-Round"><s></s></i>{wc:fun:lang::get_lang('工商银行')}</li>ICBC-WAP
-			    <li class="gray9" data-urm="CCB-WAP"><i class="z-bank-Round"><s></s></i>{wc:fun:lang::get_lang('建设银行')}</li>CCB-WAP -->
 		    </ul>
 	    </article>
 	    <div class="mt10 f-Recharge-btn">

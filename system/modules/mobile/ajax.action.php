@@ -1004,7 +1004,7 @@ public function delCartItem_jf(){
 
 		 if($type==0){
 
-          //参与云购的商品 全部...
+          //参与OneShop的商品 全部...
 
 		  $shoplist=$this->db->GetList("select *,sum(gonumber) as gonumber from `@#_member_go_record` a left join `@#_shoplist_term` b on a.shopid=b.id left join `@#_shoplist` c on c.gid=b.sid left join `@#shoplist_en` d on c.gid=d.egid where a.uid='$uid' GROUP BY shopid ");
 

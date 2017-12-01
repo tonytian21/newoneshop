@@ -6,9 +6,9 @@
             <div class="member-t"><h2>{wc:fun:lang::get_lang('佣金明细')}</h2></div>
        	<div class="total f12 b_pink bg_pink">
         	    <dt>
-            	    </dt><dd>{wc:fun:lang::get_lang('累计收入：')}<b class="c_red">{wc:$shourutotal}</b>{wc:fun:lang::get_lang('元')}</dd>  <dd>{wc:fun:lang::get_lang('累计')}({wc:fun:lang::get_lang('提现')}/{wc:fun:lang::get_lang('充值')}){wc:fun:lang::get_lang('：')}<b class="c_red">{wc:$zhichutotal}</b>{wc:fun:lang::get_lang('元')}</dd> <dd>{wc:fun:lang::get_lang('佣金余额：')}<b class="c_red">{wc:$total}</b>{wc:fun:lang::get_lang('元')}</dd><dd><!--<a href="{WEB_PATH}/member/home/cashout" title="{wc:fun:lang::get_lang('申请提现')}" class="bluebut">{wc:fun:lang::get_lang('申请提现')}</a>--><a href="{WEB_PATH}/member/home/cashout" title="{wc:fun:lang::get_lang('充值到云购账户')}" class="bluebut">{wc:fun:lang::get_lang('充值到云购账户')}</a></dd>
+            	    </dt><dd>{wc:fun:lang::get_lang('累计收入：')}<b class="c_red">{wc:$shourutotal}</b>{wc:fun:lang::get_lang('元')}</dd>  
                 
-                <dd class="gray02">{wc:fun:lang::get_lang('佣金余额可实时充值到您的云购帐户。')}</dd>
+                <dd class="gray02">{wc:fun:lang::get_lang('佣金余额可实时充值到您的OneShop帐户。')}</dd>
 		    </div>
            <div class="record-tit">
 			    <div class="record-tab">
@@ -16,7 +16,8 @@
 			    </div>
 			    
 		    </div>
-            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w140">{wc:fun:lang::get_lang('用户')}</li><li class="w150">{wc:fun:lang::get_lang('时间')}</li><li class="w280">{wc:fun:lang::get_lang('描述')}</li><li class="w90">{wc:fun:lang::get_lang('云购金额')}({wc:fun:lang::get_lang('元')})</li><li class="w90">{wc:fun:lang::get_lang('佣金')}({wc:fun:lang::get_lang('元')})</li></ul>
+            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w140">{wc:fun:lang::get_lang('用户')}</li><li class="w150">{wc:fun:lang::get_lang('时间')}</li><li class="w280">{wc:fun:lang::get_lang('描述')}</li><li class="w90">{wc:fun:lang::get_lang('OneShop金额')}({wc:fun:lang::get_lang('元')})</li><li class="w90">{wc:fun:lang::get_lang('佣金')}({wc:fun:lang::get_lang('元')})</li></ul>
+
 			{wc:if $recodetotal!=0}
 				{wc:loop $recodearr $key $val}
 			<ul>

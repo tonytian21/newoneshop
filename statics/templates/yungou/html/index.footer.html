@@ -2,7 +2,7 @@
 <div class="footer mt20">
 	<div class="footer_center w1200">
 		<div class="g-guide">
-			{wc:getlist sql="select * from `@#_category` where `parentid`='1'"
+			{wc:getlist sql="select * from `@#_category` where `parentid`='3'"
 			return="category"} {wc:loop $category $help}
 			<dl>
 				<dt>{wc:$help['name']}</dt>
@@ -86,35 +86,6 @@
 					</div>
 				</div>
 			</li>
-			<!-- <li class="app">
-
-	<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" style="position:relative;width: 37px;height: 56px;">
-			<i></i>
-			<div style="width:37px;display:none;position:absolute;height: 56px;">
-				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="{G_WEB_PATH}/app/index.html" target="_blank" class="quick_serviceA">{wc:fun:lang::get_lang('手机')}APP</a>
-				<div style="position: absolute;left:-99px;background: #fff;border: 1px solid #dcdcdc;width: 97px;height: 113px;text-align: center;top: -57px;">
-					<a target="_blank" href="{G_WEB_PATH}/app/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="{G_TEMPLATES_IMAGE}/code.jpg" alt="{wc:fun:lang::get_lang('客户端')}"></a>
-					<a style="text-align: center;line-height: 10px;" target="_blank" href="{G_WEB_PATH}/app/index.html">{wc:fun:lang::get_lang('下载客户端')}</a>
-				</div>
-
-			</div>
-		</div>
-		</li>
-		<li class="weixin">
-
-		<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" style="position:relative;width: 37px;height: 56px;">
-			<i></i>
-			<div style="width:37px;display:none;position:absolute;height: 56px;">
-				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="{G_WEB_PATH}/weixin/index.html" target="_blank" class="quick_serviceA">{wc:fun:lang::get_lang('官方微信')}</a>
-				<div style="position: absolute;left:-99px;background: #fff;border: 1px solid #dcdcdc;width: 97px;height: 113px;text-align: center;top: -57px;">
-					<a target="_blank" href="{G_WEB_PATH}/weixin/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="{G_TEMPLATES_IMAGE}/code.jpg" alt="{wc:fun:lang::get_lang('微信')}">
-					</a>
-					<a style="text-align: center;line-height: 10px;" target="_blank" href="{G_WEB_PATH}/weixin/index.html">{wc:fun:lang::get_lang('关注官方微信')}</a>
-				</div>
-
-			</div>
-		</div>
-		</li> -->
 
 
 			<li class="qq">
@@ -246,6 +217,65 @@ mobShare.config( {
     appkey: '21f30d1b7ccb5', // appkey
     params: window.shareParams,
 } );
+
+
+
+
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+
+
+var LC_API = LC_API || {};
+LC_API.on_after_load = function() {
+  alert("ok");
+};
+
+
+window.__lc = window.__lc || {};
+
+/**
+ * LiveChat license number
+ */
+window.__lc.license = 9174730;
+//window.__lc.group = 1;
+
+window.__lc.chat_between_groups = false;
+
+
+window.__lc.ga_version = 'ga';
+
+
+window.__lc.visitor = {
+  name: 'Joe Public',
+  email: 'joe.public@gmail.com'
+};
+
+/* window.__lc.params = [
+  { name: 'Login', value: 'joe_public' },
+  { name: 'Account ID', value: 'ABCD1234' },
+  { name: 'Total order value', value: '$123' }
+]; */
+
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+
+
+
+/* 
+window.__lc = window.__lc || {};
+window.__lc.license = 9174730;
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();  */
+
+<!-- End of LiveChat code -->
+
+
+
 </script>
 </body>
 </html>

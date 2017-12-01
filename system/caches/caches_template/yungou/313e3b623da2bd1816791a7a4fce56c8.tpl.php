@@ -22,6 +22,7 @@
     .duilian_con{width:<?php echo $ad_area['width']; ?>px; height:<?php echo $ad_area['height']; ?>px; overflow:hidden;}
     .duilian_close{ width:100%; height:24px; line-height:24px; text-align:center; display:block; font-size:13px; color:#555555; text-decoration:none;background: #ccc;}
 </style>
+<<<<<<< HEAD
 
 
 <!--<div class="duilian duilian_left">
@@ -32,3 +33,5 @@
     <div class="duilian_con"><a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><img width="<?php echo $ad_area['width']; ?>" height="<?php echo $ad_area['height']; ?>" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $couplet_img['1']; ?>"></a></div>
     <a href="#" class="duilian_close">X<?php echo lang::get_lang('关闭'); ?></a>
 </div>-->
+=======
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9

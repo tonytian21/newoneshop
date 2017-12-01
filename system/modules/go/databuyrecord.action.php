@@ -4,7 +4,7 @@ System::load_app_fun('user');
 System::load_sys_fun('user');
 class databuyrecord extends SystemAction {
 	
-	//云购历史记录
+	//OneShop历史记录
 	public function buyrecord(){	
 			
 		$this_time_h =  date("H");

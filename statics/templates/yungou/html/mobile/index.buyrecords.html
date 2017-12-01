@@ -29,7 +29,11 @@
     <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
         <span style="display: block;height: 49px;line-height: 49px;">
             <a style="font-size: 20px;line-height: 49px;" href="{WEB_PATH}/mobile/mobile">
-                {wc:fun:lang::get_lang('所有乐购记录')}
+<<<<<<< HEAD
+                {wc:fun:lang::get_lang('所有夺宝记录')}
+=======
+                所有夺宝记录
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
             </a>
         </span>
 
@@ -70,7 +74,11 @@
         
 
 	{wc:if $co < 1}
-		<div id="divNone" class="haveNot z-minheight" style="margin-top: 0;padding-top: 100px;"><s></s><p>{wc:fun:lang::get_lang('抱歉，暂时还没有记录')}！</p><a href="{G_WEB_PATH}"><p class="guangguang">{wc:fun:lang::get_lang('我去乐购')}</p></a>
+<<<<<<< HEAD
+		<div id="divNone" class="haveNot z-minheight" style="margin-top: 0;padding-top: 100px;"><s></s><p>{wc:fun:lang::get_lang('抱歉，暂时还没有记录')}！</p><a href="{G_WEB_PATH}"><p class="guangguang">{wc:fun:lang::get_lang('我去夺宝')}</p></a>
+=======
+		<div id="divNone" class="haveNot z-minheight" style="margin-top: 0;padding-top: 100px;"><s></s><p>抱歉，暂时还没有记录！</p><a href="{G_WEB_PATH}"><p class="guangguang">我去OneShop</p></a>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 		</div>
 
@@ -105,7 +113,11 @@
 
 							{wc:if:end}</strong><br>
 
-					<span>{wc:fun:lang::get_lang('乐购了')}<b class="orange">{wc:$c['gonumber']}</b>{wc:fun:lang::get_lang('人次')}</span><em class="arial">{wc:fun:date("Y-m-d H:i:s",$c['time'])}</em>
+<<<<<<< HEAD
+					<span>{wc:fun:lang::get_lang('夺宝了')}<b class="orange">{wc:$c['gonumber']}</b>{wc:fun:lang::get_lang('人次')}</span><em class="arial">{wc:fun:date("Y-m-d H:i:s",$c['time'])}</em>
+=======
+					<span>参与了<b class="orange">{wc:$c['gonumber']}</b>人次</span><em class="arial">{wc:fun:date("Y-m-d H:i:s",$c['time'])}</em>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 				</li><i></i>
 

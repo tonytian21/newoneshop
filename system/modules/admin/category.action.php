@@ -237,7 +237,8 @@ HTML;
 							array("addcate","添加单网页",ROUTE_M.'/'.ROUTE_C."/addcate/danweb/".$this->segment(5)),
 							array("addcate","添加外部链接",ROUTE_M.'/'.ROUTE_C."/addcate/link/".$this->segment(5)),
 			);
-			$cateid=$this->segment(5);		
+			$cateid=$this->segment(5);
+		
 			if(!intval($cateid)){_message("参数错误");exit;}			
 			$cateinfo=$this->db->GetOne("SELECT * FROM `@#_category` WHERE `cateid` = '$cateid' LIMIT 1");
 			if(!$cateinfo)_message("没有这个栏目");	

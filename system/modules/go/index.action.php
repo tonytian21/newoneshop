@@ -47,7 +47,7 @@ class index extends base {
 		
 		//圈子获取
         $quanzi=$this->db->GetList("select * from `@#_quanzi` where 1 ORDER BY time DESC LIMIT 4 "); 
-		//他们正在云购	
+		//他们正在OneShop	
 		$go_record=$this->db->GetList("SELECT m.`uid`,m.`username`,m.`email`,m.`mobile`,m.`img`,mg.`shopid`,mg.`gonumber`, mg.`shopname`, mg.`time`,t.`zongrenshu`,t.`canyurenshu` FROM `@#_member_go_record` AS mg LEFT JOIN `@#_member` AS m ON m.`uid` = mg.`uid` LEFT JOIN `@#_shoplist` AS s  ON  s.`id` = mg.`shopid` left join `@#_shoplist_term` t on s.id=t.sid left join `@#_shoplist_en` sen on sen.egid=s.gid  WHERE mg.`status` LIKE '%已付款%'  ORDER BY mg.`time` DESC LIMIT 0,7");
 		//最新揭晓
 		$shopqishu = $this->db->GetList("select id,sid,thumb,title,zongrenshu,qishu,money,q_uid,q_user from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC LIMIT 5");
@@ -63,7 +63,7 @@ class index extends base {
 			$v['q_user2'] = substr_replace($v['q_user']['email'],'****',3,4);
 
 		}
-		//云购动态
+		//OneShop动态
 		$tiezi = $this->db->GetList("select * from `@#_quanzi_tiezi` where `qzid` = '1' order by `time` DESC LIMIT 5");
 		//晒单分享
 		$shaidan = $this->db->GetList("select * from `@#_shaidan` order by `sd_id` DESC LIMIT 1");
@@ -326,7 +326,7 @@ class index extends base {
 		$category=$this->db->GetOne("select * from `@#_category` where `cateid` = '$item[cateid]' LIMIT 1");
 		$brand=$this->db->GetOne("select * from `@#_brand` where `id` = '$item[brandid]' LIMIT 1");
 		
-		//云购中奖码
+		//OneShop中奖码
 		$q_user = unserialize($item['q_user']);		
 		$q_user_code_len = strlen($item['q_user_code']);
 		$q_user_code_arr = array();
@@ -334,16 +334,16 @@ class index extends base {
 < $q_user_code_len;$q_i++){	
 			$q_user_code_arr[$q_i] = substr($item['q_user_code'],$q_i,1);
 		}
-		//总云购次数
+		//总OneShop次数
 		$user_shop_number = $this->
 	db->GetOne("select sum(gonumber) as gonumber from `@#_member_go_record` where `uid`= '$item[q_uid]' and `shopid` = '$itemid' and `shopqishu` = '$item[qishu]'");
 		$user_shop_number = $user_shop_number['gonumber'];
-		//用户云购时间
+		//用户OneShop时间
 		$user_shop_time = $this->db->GetOne("select time from `@#_member_go_record` where `uid`= '$item[q_uid]' and `shopid` = '$itemid' and `shopqishu` = '$item[qishu]' and `huode` = '$item[q_user_code]'");
 		$user_shop_time = $user_shop_time['time'];
 		
 		$touxiangs = $this->db->GetOne("select img,headimg from `@#_member` where `uid`= '$item[q_uid]'");
-		//得到云购码
+		//得到OneShop码
 		$user_shop_codes = $this->db->GetOne("select * from `@#_member_go_record` where `uid`= '$item[q_uid]' and `shopid` = '$itemid' and `shopqishu` = '$item[qishu]'");
 		//$user_shop_codes = $this->db->GetOne("select GROUP_CONCAT(goucode) as goucode from `@#_member_go_record` where `uid`= '$item[q_uid]' and `shopid` = '$itemid' and `shopqishu` = '$item[qishu]'");
 		$user_shop_codes = $user_shop_codes['goucode'];

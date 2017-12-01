@@ -5,7 +5,9 @@
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>{wc:fun:lang::get_lang('个人主页')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
+
+    <title>{wc:fun:lang::get_lang('个人主页')} - {wc:$webname}</title>
+
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -67,18 +69,20 @@
                         {wc:$member['headimg']}
                     {wc:else}
                         {G_UPLOAD_PATH}/{wc:$touxiang}
+
                     {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>{wc:fun:lang::get_lang('积分')}：{wc:$member['score']}<br/>{wc:fun:lang::get_lang('经验值')}：{wc:$member['jingyan']}
-                    <span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('云购新手')}'}
+                    <span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop新手')}'}
                     z-class-icon01
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购小将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop小将')}'}
                     z-class-icon02
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购中将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop中将')}'}
                     z-class-icon03
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购上将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop上将')}'}
                     z-class-icon04
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购大将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop大将')}'}
                     z-class-icon05
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('云购将军')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop将军')}'}
+
                     z-class-icon06
                 {wc:if:end}"><s></s>{wc:$member['yungoudj']}</span></li>
                     

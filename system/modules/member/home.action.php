@@ -18,7 +18,7 @@ class home extends base {
 	}
 	public function init(){
 		$member=$this->userinfo;
-		$title="我的云购中心";	
+		$title="我的OneShop中心";	
 		$quanzi=$this->db->GetList("select * from `@#_quanzi_tiezi` order by id DESC LIMIT 5");
 		
 		$jingyan = $member['jingyan'];
@@ -341,24 +341,24 @@ class home extends base {
 
 			if($checkcodes!=$usercode[0])_message("验证码输入不正确!");
 			$this->db->Query("UPDATE `@#_member` SET `mobilecode`='1',`mobile` = '$shoujimahao' where `uid`='$member[uid]'");
-			//福分、经验添加			
-			$isset_user=$this->db->GetList("select `uid` from `@#_member_account` where `content`='手机认证完善奖励' and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='福分')");	
+			//积分、经验添加			
+			$isset_user=$this->db->GetList("select `uid` from `@#_member_account` where `content`='手机认证完善奖励' and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='积分')");	
 			if(empty($isset_user)){
-				$config = System::load_app_config("user_fufen");//福分/经验
+				$config = System::load_app_config("user_fufen");//积分/经验
 				$time=time();
-				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','福分','手机认证完善奖励','$config[f_phonecode]','$time')");
+				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','积分','手机认证完善奖励','$config[f_phonecode]','$time')");
 				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','经验','手机认证完善奖励','$config[z_phonecode]','$time')");			
 				$this->db->Query("UPDATE `@#_member` SET `score`=`score`+'$config[f_phonecode]',`jingyan`=`jingyan`+'$config[z_phonecode]' where uid='".$member['uid']."'");
 			}
 			_setcookie("uid",_encrypt($member['uid']));	
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])));		
-//福分、经验添加			
+//积分、经验添加			
 			$isset_user=$this->db->GetOne("select `uid` from `@#_member_account` where `pay`='手机认证完善奖励' and `type`='1' and `uid`='$member[uid]' or `pay`='经验'");	
 			if(empty($isset_user)){
-				$config = System::load_app_config("user_fufen");//福分/经验
+				$config = System::load_app_config("user_fufen");//积分/经验
 				$time=time();
 
-				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','福分','手机认证完善奖励','$config[f_overziliao]','$time')");
+				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','积分','手机认证完善奖励','$config[f_overziliao]','$time')");
 				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','经验','手机认证完善奖励','$config[z_overziliao]','$time')");			
 				$mysql_model->Query("UPDATE `@#_member` SET `score`=`score`+'$config[f_overziliao]',`jingyan`=`jingyan`+'$config[z_overziliao]' where uid='".$member['uid']."'");
 			}			
@@ -383,13 +383,13 @@ class home extends base {
 				}
 			
 			}			
-			//福分、经验添加
-			$isset_user=$this->db->GetOne("select `uid` from `@#_member_account` where (`content`='手机认证完善奖励' or `content`='完善昵称奖励') and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='福分')");	
+			//积分、经验添加
+			$isset_user=$this->db->GetOne("select `uid` from `@#_member_account` where (`content`='手机认证完善奖励' or `content`='完善昵称奖励') and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='积分')");	
 			if(!$isset_user){			
-				$config = System::load_app_config("user_fufen");//福分/经验
+				$config = System::load_app_config("user_fufen");//积分/经验
 				$time=time();
 
-				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','福分','完善昵称奖励','$config[f_overziliao]','$time')");
+				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','积分','完善昵称奖励','$config[f_overziliao]','$time')");
 				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','经验','完善昵称奖励','$config[z_overziliao]','$time')");			
 				$mysql_model->Query("UPDATE `@#_member` SET username='".$username."',qianming='".$qianming."',`score`=`score`+'$config[f_overziliao]',`jingyan`=`jingyan`+'$config[z_overziliao]' where uid='".$member['uid']."'");
 			}	
@@ -555,12 +555,12 @@ class home extends base {
 			echo _message("密码修改成功",null,3);
 		}
 	}
-	//云购记录
+	//OneShop记录
 	public function userbuylist(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title="云购记录 - "._cfg("web_name");		
+		$title="OneShop记录 - "._cfg("web_name");		
 		
 		$total=$this->db->GetCount("select * from `@#_member_go_record` where `uid`='$uid' order by `id` DESC");
 		$page=System::load_sys_class('page');
@@ -570,11 +570,11 @@ class home extends base {
 		
 		include templates("member","userbuylist");
 	}
-	//云购记录详细
+	//OneShop记录详细
 	public function userbuydetail(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="云购详情";
+		$title="OneShop详情";
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if(!$record){
@@ -624,24 +624,24 @@ class home extends base {
 		include templates("member","userbalance");
 	}
 	
-	//账户福分
+	//账户积分
 	public function userfufen(){
 		$member=$this->userinfo;	
 		$uid = $member['uid'];
-		$title="账户福分 - "._cfg("web_name");
+		$title="账户积分 - "._cfg("web_name");
 	
-		$total=$this->db->GetCount("select * from `@#_member_account` where `uid`='$uid' and `pay` = '福分'");
+		$total=$this->db->GetCount("select * from `@#_member_account` where `uid`='$uid' and `pay` = '积分'");
 		$page=System::load_sys_class('page');
 		if(isset($_GET['p'])){$pagenum=$_GET['p'];}else{$pagenum=1;}	
 		$page->config($total,20,$pagenum,"0");		
-		$account = $this->db->GetPage("select * from `@#_member_account` where `uid`='$uid' and `pay` = '福分' ORDER BY time DESC",array("num"=>20,"page"=>$pagenum,"type"=>1,"cache"=>0));
+		$account = $this->db->GetPage("select * from `@#_member_account` where `uid`='$uid' and `pay` = '积分' ORDER BY time DESC",array("num"=>20,"page"=>$pagenum,"type"=>1,"cache"=>0));
 				
 		include templates("member","userfufen");
 	}	
 	public function userrecharge(){
 		$member=$this->userinfo;
 		$title="账户充值";
-		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1' AND pay_mobile != 1");
+		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1' AND pay_mobile = 1");
 		include templates("member","userrecharge");
 	}	
     
@@ -933,7 +933,7 @@ class home extends base {
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;		 
 		$uid=_getcookie('uid');
-		$notinvolvednum=0;  //未参加云购的人数
+		$notinvolvednum=0;  //未参加OneShop的人数
 		$involvednum=0;     //参加预购的人数
 		$involvedtotal=0;   //邀请人数		 
 		
@@ -957,10 +957,10 @@ class home extends base {
 		//判断哪个好友有消费		
 		 if(empty($accounts[$sqluid])){
 		    $notinvolvednum +=1;
-		    $records[$sqluid]='未参与云购';
+		    $records[$sqluid]='未参与夺宝';
 		 }else{
 		    $involvednum +=1;
-		    $records[$sqluid]='已参与云购';
+		    $records[$sqluid]='已参与夺宝';
 		 }
 		
 		
@@ -1113,7 +1113,7 @@ class home extends base {
 		  $type       = 1;
 		  $pay        ="佣金";
 		  $time       =time();
-		  $content    ="使用佣金充值到云购账户";
+		  $content    ="使用佣金充值到账户";
 		  
 		 if($money <= 0 || $money > $total){
 			  _message("佣金金额输入不正确！");exit;

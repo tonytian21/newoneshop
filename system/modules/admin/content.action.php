@@ -1410,7 +1410,7 @@ HTML;
             
             if ($zongrenshu == 0 || ($zongrenshu - $canyurenshu) == 0) {
                 
-                _message("云购价格不正确");
+                _message("OneShop价格不正确");
             }
             
             $time = time(); // 商品添加时间
@@ -1547,7 +1547,7 @@ HTML;
         
         if ($this->db->affected_rows()) {
             
-            echo WEB_PATH . '/' . ROUTE_M . '/content/list_article';
+            echo WEB_PATH . '/' . ROUTE_M . '/content/article_list';
         } else {
             
             echo "no";
@@ -1730,7 +1730,7 @@ HTML;
         if ($money < $onemoney) {
             
             echo json_encode(array(
-                "meg" => " 总价不能小于云购价!",
+                "meg" => " 总价不能小于OneShop价!",
                 "err" => "-1"
             ));
             

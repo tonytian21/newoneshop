@@ -56,25 +56,6 @@
 										class="Result_LConductBut bg_red b_red">{wc:fun:lang::get_lang('第')}{wc:$itemzx['qishu']}{wc:fun:lang::get_lang('期正在进行查看详情')}</a>
 									</span>
 								</dt>
-								<!--
-						<div class="Result_Progress-bar">
-								<p>
-									<span style="width:{wc:fun:width($itemzx['canyurenshu'],$itemzx['zongrenshu'],208)}px;"></span>
-								</p>
-								<ul class="Pro-bar-li">
-									<li class="P-bar01"> <em>{wc:$itemzx['canyurenshu']}</em>
-										{wc:fun:lang::get_lang('已参与人次')}
-									</li>
-									<li class="P-bar02"> <em>{wc:$itemzx['zongrenshu']}</em>
-										{wc:fun:lang::get_lang('总需人次')}
-									</li>
-									<li class="P-bar03">
-										<em>{wc:$itemzx['shenyurenshu']}</em>
-										{wc:fun:lang::get_lang('剩余人次')}
-									</li>
-								</ul>
-							</div>
-							-->
 							</dl>
 						</div>
 						{wc:if:end}
@@ -123,7 +104,7 @@
 									{wc:fun:lang::get_lang('获得本期商品')}
 								</p>
 								<p>
-									{wc:fun:lang::get_lang('本期参与：')} <em class="c_red">{wc:$user_shop_number}</em> {wc:fun:lang::get_lang('人次')} <span
+									{wc:fun:lang::get_lang('本期购买：')} <em class="c_red">{wc:$user_shop_number}</em> {wc:fun:lang::get_lang('人次')} <span
 										id="divOpen" class="MaOff"
 										style="background: none; border: none; margin-left: 5px;">
 										<span class="dianjichakan"
@@ -159,7 +140,7 @@
 					</div>
 					<div class="Announced_FrameCode"
 						style="background-color: #fff; border: 1px solid #ffba6e; border-radius: 20px; float: left; height: 59px; padding: 23px 0; text-align: center; width: 220px; background-image: none;">
-						<p style="color: #999; font-size: 16px; line-height: 24px;">{wc:fun:lang::get_lang('—')}&nbsp{wc:fun:lang::get_lang('幸运夺宝码')}&nbsp{wc:fun:lang::get_lang('—')}</p>
+						<p style="color: #999; font-size: 16px; line-height: 24px;">{wc:fun:lang::get_lang('—')}&nbsp{wc:fun:lang::get_lang('幸运OneShop码')}&nbsp{wc:fun:lang::get_lang('—')}</p>
 						<ul class="Announced_FrameCodeMal" style="margin: 10px 0 0 50px;">
 							{wc:loop $q_user_code_arr $q_code_num}
 							<li
@@ -318,7 +299,7 @@
 				style="background-color: #fffddd; height: 155px; position: relative; text-align: center; z-index: 3;">
 				<p
 					style="color: #f60; font-size: 14px; height: 48px; line-height: 48px;">
-					{wc:fun:lang::get_lang('截止该商品揭晓购买时间【')}{wc:fun:microt($item['q_end_time'])}{wc:fun:lang::get_lang('】最后')}100{wc:fun:lang::get_lang('条全站购买时间记录')}</p>
+					{wc:fun:lang::get_lang('截止揭晓时间【')}{wc:fun:microt($item['q_end_time'])}{wc:fun:lang::get_lang('】最后')}100{wc:fun:lang::get_lang('条全站购买时间记录')}</p>
 				<div
 					style="height: 105px;; position: relative; border-bottom: 1px solid #ffca8a; line-height: 65px; width: 1167px;">
 					<ul class="step-inner clearfix"
@@ -384,70 +365,9 @@
 		</div>
 		{wc:php:start} $shop_fmod =
 		fmod($item['q_counttime'],$item['canyurenshu']); {wc:php:end}
-		<!--
-<div class="RecordOnehundred">
-<h4>100{wc:fun:lang::get_lang('条计算结果')}</h4>
-<div class="ResultBox bg_red">
-	<h2>{wc:fun:lang::get_lang('计算结果')}</h2>
-	<p class="num4">
-		{wc:fun:lang::get_lang('求和：')}
-		<span class="Fb">{wc:$item['q_counttime']}</span>
-		({wc:fun:lang::get_lang('上面')}100{wc:fun:lang::get_lang('条夺宝记录时间取值相加之和')})
-		<br>
-		{wc:fun:lang::get_lang('取余：')}
-		<span class="Fb">{wc:$item['q_counttime']}</span>
-		(100{wc:fun:lang::get_lang('条时间记录之和')})
-		<span class="Fb">% {wc:$item['canyurenshu']}</span>
-		({wc:fun:lang::get_lang('本商品总需参与人次')})
-		<span class="Fb">=  {wc:$shop_fmod}</span>
-		({wc:fun:lang::get_lang('余数')})
-		<br>
-		{wc:fun:lang::get_lang('结果：')}
-		<span class="Fb">{wc:$shop_fmod}</span>
-		({wc:fun:lang::get_lang('余数')})
-		<span class="Fb">
-			+ 10000001 =
-			<em>{wc:$item['q_user_code']}</em>
-		</span>
-	</p> <b class="bg_yellow c_red">{wc:fun:lang::get_lang('最终结果：')}{wc:$item['q_user_code']}</b>
-</div>
-<div style="width:100%;height:30px;clear:bolt;"></div>
-</div>
--->
+
 		{wc:else}
-		<!--
-<div class="RecordOnehundred" style="border-radius: 10px;">
-<h4 style="background: #f60;">{wc:fun:lang::get_lang('未满')}100{wc:fun:lang::get_lang('条计算结果')}</h4>
-<div class="ResultBox bg_red" style="background: #f80;">
-	<h2>{wc:fun:lang::get_lang('计算结果')}</h2>
-	<p class="num4">
-		{wc:fun:lang::get_lang('求和：')}
-		<span style="color: #f40;" class="Fb">{wc:$user_shop_time_add}</span>
-		({wc:fun:lang::get_lang('揭晓时间求和结果')})
-		<br>
-		{wc:fun:lang::get_lang('取余：')}
-		<span style="color: #f40;" class="Fb">{wc:$user_shop_time_add}</span>
-		({wc:fun:lang::get_lang('揭晓时间')})
-		<span style="color: #f40;" class="Fb">* 100 / {wc:$item['canyurenshu']}</span>
-		({wc:fun:lang::get_lang('本商品总需参与人次')})
-		<span style="color: #f40;" class="Fb">= {wc:$user_shop_fmod}</span>
-		({wc:fun:lang::get_lang('余数')})
-		<br>
-		{wc:fun:lang::get_lang('结果：')}
-		<span style="color: #f40;" class="Fb">{wc:$user_shop_fmod}</span>
-		({wc:fun:lang::get_lang('余数')})
-		<span style="color: #f40;" class="Fb">
-			+ 1000001 =
-			<em>{wc:$item['q_user_code']}</em>
-		</span>
-	</p>
-	<b class="bg_yellow c_red">{wc:fun:lang::get_lang('最终结果：')}{wc:$item['q_user_code']}</b>
-</div>
-
-<div style="width:100%;height:30px;clear:bolt;"></div>
-
-</div>
--->
+		
 		{wc:if:end}
 
 		<!-- {wc:fun:lang::get_lang('购买记录')} -->

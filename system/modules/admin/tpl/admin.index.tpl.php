@@ -20,7 +20,7 @@
 
 <script src="<?php echo G_GLOBAL_STYLE; ?>/global/js/global.js"></script>
 
-<title>自由乐购后台管理系统</title>
+<title>OneShop后台管理系统</title>
 <script type="text/javascript">
 
 var ready=1;
@@ -339,15 +339,15 @@ function api_off_on_open(key){
 
                             <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/setting/email">邮箱配置</a></li> 
 
-                            <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/setting/mobile">短信配置</a></li>
+                            <!--<li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/setting/mobile">短信配置</a></li>-->
 							
-							<!--<li><span></span><a href="http://120.26.244.194:8888" target="_blank" >客户关怀</a></li>-->
+							
 
                             <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/pay/pay/pay_list">支付方式</a></li>
 
 	               <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/setting/domain">模块域名绑定</a></li>	
 
-	               <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/qq_admin">官方QQ群</a></li>		
+	               	
 
         <li class="head">管理员管理</li>		
 
@@ -397,11 +397,7 @@ function api_off_on_open(key){
 
         <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/content/lists">管理内容</a></li>	
 
-        <li class="head">其他</li>
-
-        <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/content/model">内容模型</a></li>
-
-        <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/category/lists">栏目管理</a></li>
+        
 
         <li class="head">模块管理</li>
 
@@ -513,7 +509,7 @@ function api_off_on_open(key){
 
 		<li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/api/facebooklogin/set_config">登陆设置</a></li> 
 
-		<li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admin/fund/fundset">公益基金</a></li>
+		
 
                         <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admin/fund/specifylist">指定中奖人</a></li>
 

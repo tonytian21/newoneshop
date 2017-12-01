@@ -73,6 +73,7 @@ class SystemAction
 
     final protected function segment($n = 1)
     {
+        
         if (! isset(self::$route_url[$n])) {
             return false;
         } else {

@@ -8,7 +8,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>自由乐购后台管理系统</title>
+<title>OneShop后台管理系统</title>
 
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 
@@ -23,7 +23,7 @@
     <div class="login">
 
 
-        <div class="lh50 tac ft_yh ft20 bg_f63 white">自由乐购后台管理系统</div>
+        <div class="lh50 tac ft_yh ft20 bg_f63 white">OneShop后台管理系统</div>
 
         <div class="login_ibox">
 

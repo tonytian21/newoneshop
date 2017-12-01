@@ -198,12 +198,7 @@
             </style>
             <div class="tabs-wrap" style="min-height:1000px;">
                 <div id="fldh" class="zxjx" style="border-bottom: 1px solid #dcdcdc;">
-                    <!--
-                    <a href="{WEB_PATH}/mobile/mobile/glist" class="tab_selected" data-order_by='level'>
-                    人气推荐
-                    <label style="position:absolute; right:1rem; cursor:pointer">显示全部&nbsp;></label>
-                </a>
-                -->
+                   
                     <ul class="lbul" id="divGoodsNav">
                         <li id="jiexiaos" class="current" order="10">
                             <a href="javascript:;">{wc:fun:lang::get_lang('即将揭晓')}</a>
@@ -221,8 +216,13 @@
                     <a style="color: #999;" href="javascript:;"><span class="sh"><i></i><i style="margin-top: 3px;"></i><i style="margin-top: 3px;"></i></span>{wc:fun:lang::get_lang('分类')}</a>
                     <dl style="display:none;background: #fff;">
                         <div class="jiantou"></div>
+<<<<<<< HEAD
                         <!--<dd type="0" class="sOrange"><a style="text-align: center;" href="{WEB_PATH}/mobile/mobile/glist">全部</a></dd>-->
                         <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">{wc:fun:lang::get_lang('全部分类<')}/a></dd>
+=======
+                        
+                        <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">全部分类</a></dd>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                     {wc:getlist sql="select `cateid`,`name`,`pic_url` from `@#_category` where `model`='1' and `parentid` = '0' order by `order` desc"}
                             {wc:loop $data $categoryx}
                             <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/fen/{wc:$categoryx['cateid']}"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}"><span>{wc:$categoryx['name']}</span></a></dd>
@@ -420,18 +420,9 @@ window.onload=function(){
 <div id="pageDialogBG" class="pageDialogBG">
     <div class="Prompt"></div>
 </div>
-<!--
-<ul class="contact-public">
-<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg(" qq ")}&site=qq&menu=yes">
-联
-<br>
-系
-<br>
-客
-<br>服</a>
-</ul>
--->
+
 <input name="hidLineLink" type="hidden" id="hidLineLink" value="{WEB_PATH}/mobile/mobile/" />
+<<<<<<< HEAD
 <script>
   wx.config({
     debug: false,
@@ -494,3 +485,5 @@ var n = $("#hidLineLink").val();
     });
 });
 </script>
+=======
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9

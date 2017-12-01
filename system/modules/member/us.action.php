@@ -25,7 +25,7 @@ class us extends base{
 	}
 	public function userbuy(){
 		$mysql_model=System::load_sys_class('model');
-		$title="云购记录";
+		$title="OneShop记录";
 		$index=intval($this->segment(4));
 		if($index > 1000000000)$index = $index-1000000000;
 		$tab=$this->segment(3);

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>自由乐购后台管理系统</title>
+<title>OneShop后台管理系统</title>
 <link href="templates/style/admin.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="<?php echo G_ADMIN_STYLE; ?>/css/style.css" type="text/css">
 <style>

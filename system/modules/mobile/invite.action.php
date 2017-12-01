@@ -1,4 +1,6 @@
 <?php 
+
+// FIXME:佣金业务确认
 defined('G_IN_SYSTEM')or exit('No permission resources.');
 System::load_app_class('base','member','no');
 System::load_app_fun('my','go');
@@ -17,7 +19,7 @@ class invite extends base {
             public function friends(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的云购中心";
+        $title="我的OneShop中心";
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -31,7 +33,7 @@ class invite extends base {
         $mysql_model=System::load_sys_class('model');
         $member=$this->userinfo;
         $uid=_getcookie('uid');
-        $notinvolvednum=0;  //未参加云购的人数
+        $notinvolvednum=0;  //未参加OneShop的人数
         $involvednum=0;     //参加预购的人数
         $involvedtotal=0;   //邀请人数
 
@@ -55,10 +57,10 @@ class invite extends base {
             //判断哪个好友有消费
             if(empty($accounts[$sqluid])){
                 $notinvolvednum +=1;
-                $records[$sqluid]='未参与云购';
+                $records[$sqluid]='未参与夺宝';
             }else{
                 $involvednum +=1;
-                $records[$sqluid]='已参与云购';
+                $records[$sqluid]='已参与夺宝';
             }
 
 
@@ -76,7 +78,7 @@ class invite extends base {
         public function friends1(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的云购中心";
+        $title="我的OneShop中心";
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -90,7 +92,7 @@ class invite extends base {
         $mysql_model=System::load_sys_class('model');
         $member=$this->userinfo;
         $uid=_getcookie('uid');
-        $notinvolvednum=0;  //未参加云购的人数
+        $notinvolvednum=0;  //未参加OneShop的人数
         $involvednum=0;     //参加预购的人数
         $involvedtotal=0;   //邀请人数
 
@@ -114,10 +116,10 @@ class invite extends base {
             //判断哪个好友有消费
             if(empty($accounts[$sqluid])){
                 $notinvolvednum +=1;
-                $records[$sqluid]='未参与云购';
+                $records[$sqluid]='未参与夺宝';
             }else{
                 $involvednum +=1;
-                $records[$sqluid]='已参与云购';
+                $records[$sqluid]='已参与夺宝';
             }
 
 
@@ -147,13 +149,13 @@ class invite extends base {
 			$tmoney=$_POST[money];
 			$tuser=$_POST[txtBankName];
 			if($member[score]<1000)
-				_message("帐户云积分不得小与1000",null,3);
+				_message("帐户积分不得小与1000",null,3);
 		if($_POST[money]<1000)
-				_message("转帐云积分不得小于1000",null,3);
+				_message("转帐积分不得小于1000",null,3);
 			if(empty($tmoney)||empty($tuser))
 				_message("转入用户和金额不得为空",null,3);
 			if($tmoney>$member[score])
-				_message("转入云积分不得大于帐户云积分",null,3);
+				_message("转入积分不得大于帐户积分",null,3);
 			$user= $this->db->GetOne("SELECT * FROM `@#_member` where `email` = '$tuser' limit 1");	
 			if(empty($user))
 				$user= $this->db->GetOne("SELECT * FROM `@#_member` where `mobile` = '$tuser' limit 1");	
@@ -174,7 +176,7 @@ class invite extends base {
                                     $this->db->Query("insert into `@#_member_op_record` (`uid`,`username`,`deltamoney`,`premoney`,`money`,`time`) values ('$tuid','$tname','$tmoney','$user[money]','$ctmoney','$time')");
                                     $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', '转出到<$tname>', '$tmoney', '$time')");
                                     $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$tuid', '1', '账户', '由<$name>转入', '$tmoney', '$time')");		
-		                               _message("给".$tname."的".$tmoney."云积分冲值成功!",null,3);		
+		                               _message("给".$tname."的".$tmoney."账户积分冲值成功!",null,3);		
 		              }
 		              include templates("mobile/invite","usertransfer");
                   }
@@ -183,7 +185,7 @@ class invite extends base {
     public function commissions(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的云购中心";
+        $title="我的OneShop中心";
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -264,7 +266,7 @@ class invite extends base {
 
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的云购中心";
+        $title="我的OneShop中心";
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -348,7 +350,7 @@ class invite extends base {
             $type       = 1;
             $pay        ="佣金";
             $time       =time();
-            $content    ="使用佣金充值到云购账户";
+            $content    ="使用佣金充值到账户";
 
             if($money <= 0 || $money > $total){
                 _message("佣金金额输入不正确！");exit;
@@ -381,7 +383,7 @@ class invite extends base {
     function record(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的云购中心";
+        $title="我的OneShop中心";
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -408,22 +410,22 @@ class invite extends base {
         include templates("mobile/invite","record");
     }
 
-	//云购记录
+	//OneShop记录
 	public function userbuylist(){
 	   $webname=$this->_cfg['web_name'];
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title="云购记录";					
+		$title="OneShop记录";					
 		//$record=$mysql_model->GetList("select * from `@#_member_go_record` where `uid`='$uid' ORDER BY `time` DESC");				
 		include templates("mobile/user","userbuylist");
 	}
-	//云购记录详细
+	//OneShop记录详细
 	public function userbuydetail(){
 	    $webname=$this->_cfg['web_name'];
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="云购云购云购详情";
+		$title="OneShopOneShopOneShop详情";
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if($crodid>0){
@@ -466,7 +468,7 @@ class invite extends base {
 	    $webname=$this->_cfg['web_name'];
 		$member=$this->userinfo;
 		$title="账户充值";
-		//$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1'");
+		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1'");
  	
 		include templates("mobile/user","recharge");
 	}	

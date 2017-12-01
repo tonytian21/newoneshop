@@ -168,7 +168,7 @@ class wapalipay_url extends SystemAction {
 
 
 
-				$ok = $pay->init($uid,$pay_type['pay_id'],'go_record');	//云购商品
+				$ok = $pay->init($uid,$pay_type['pay_id'],'go_record');	//OneShop商品
 
 				if($ok != 'ok'){
 

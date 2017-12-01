@@ -1,5 +1,6 @@
 <?php
 
+// FIXME:跟据用户前端语言发送邮件信息
 /**
  *	发送用户手机认证码邮件
  *	mobile @用户手机号
@@ -71,50 +72,6 @@ function send_mobile_shop_code($mobile = null, $uid = null, $code = null)
     return _sendemailex($mobile, '', $title, $content);
 }
 
-// 发送微信中奖通知
-function send_wx_shop_code($openid = null, $uid = null, $gid = null)
-{
-    /*
-    if (! $uid)
-        _message("发送用户手机获奖邮件,用户ID不能为空！");
-    if (! $openid)
-        _message("发送用户未绑定微信账号，不能发送微信通知!");
-    if (! $gid)
-        _message("商品不存在或者错误,请检查！");
-    $db = System::load_sys_class('model');
-    $template = $db->GetOne("SELECT * FROM `@#_caches` WHERE `key` = 'template_mobile_shop'");
-    // 查询模板消息id
-    $template_id = $db->GetOne("SELECT * FROM `@#_wxch_cfg` WHERE `cfg_name` = 'template_zj'");
-    // 购买的商品信息
-    $info = $db->GetOne("SELECT * FROM `@#_shoplist` WHERE `id` = '$gid' and `q_uid` = '$uid'");
-    // 发送数据组合
-    $data = array(
-        "touser" => $openid,
-        "template_id" => $template_id['cfg_value'],
-        "url" => "/index.php/mobile/mobile/item/" . $info['id'],
-        "data" => array(
-            'first' => array(
-                "value" => "恭喜您！您购买的云购码" . $info['q_user_code'] . "已经中奖",
-                "color" => "#173177"
-            ),
-            "keyword1" => array(
-                "value" => "(第" . $info['qishu'] . "期)" . $info['title'],
-                "color" => "#173177"
-            ),
-            "keyword2" => array(
-                "value" => date("Y-m-d h:i:s", $info['q_end_time']) . "商品价格" . $info['money'] . "元",
-                "color" => "#555555"
-            ),
-            "remark" => array(
-                "value" => _cfg("web_name") . "感谢您的支持，请及时添加收货地址！" . "我们会在一周内发货，请注意查收。",
-                "color" => "#ff6600"
-            )
-        )
-    );
-    return json_encode($data);
-    */
-}
-
 /**
  * 发送用户验证邮箱
  * email @用户邮箱地址
@@ -161,13 +118,13 @@ function send_email_code($email = null, $username = null, $uid = null, $code = n
     $template = $db->GetOne("select * from `@#_caches` where `key` = 'template_email_shop'");
     if (! $template) {
         $template = array();
-        $template['value'] = "恭喜您：{$username},你在" . _cfg("web_name") . "云购的商品{$shoptitle}已获得,云购码是:" . $code;
+        $template['value'] = "恭喜您：{$username},你在" . _cfg("web_name") . "OneShop的商品{$shoptitle}已获得,OneShop码是:" . $code;
     } else {
         $template['value'] = str_ireplace("{用户名}", $username, $template['value']);
         $template['value'] = str_ireplace("{商品名称}", $shoptitle, $template['value']);
         $template['value'] = str_ireplace("{中奖码}", $code, $template['value']);
     }
-    $title = "恭喜您!!! 您在" . _cfg("web_name") . "云购的商品已获得!!!";
+    $title = "恭喜您!!! 您在" . _cfg("web_name") . "OneShop的商品已获得!!!";
     return _sendemail($email, '', $title, $template['value']);
 }
 

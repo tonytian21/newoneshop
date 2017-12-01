@@ -30,43 +30,6 @@
 	<script type="text/javascript">
 	window.shareParams={};
 	
-	var LC_API = LC_API || {};
-	LC_API.on_after_load = function() {
-	  alert("ok");
-	};
-	
-	
-	window.__lc = window.__lc || {};
-
-	/**
-	 * LiveChat license number
-	 */
-	window.__lc.license = 278126012;
-
-	window.__lc.group = 1;
-
-	window.__lc.chat_between_groups = false;
-
-	
-	window.__lc.ga_version = 'ga';
-
-	
-	window.__lc.visitor = {
-	  name: 'Joe Public',
-	  email: 'joe.public@gmail.com'
-	};
-
-	window.__lc.params = [
-	  { name: 'Login', value: 'joe_public' },
-	  { name: 'Account ID', value: 'ABCD1234' },
-	  { name: 'Total order value', value: '$123' }
-	];
-
-	(function() {
-	  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
-	  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
-	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
-	})();
 	
 	
 	
@@ -86,15 +49,26 @@
 					</li>
 					<li class="fr"><a href="<?php echo WEB_PATH; ?>/member/home/userrecharge"><?php echo lang::get_lang('快速充值'); ?></a>
 						<span>|</span></li>
+<<<<<<< HEAD
 					<li class="fr yu_ff"><a href="<?php echo WEB_PATH; ?>/home/member"><?php echo lang::get_lang('我的云购'); ?></a>
+=======
+					<li class="fr yu_ff"><a href="<?php echo WEB_PATH; ?>/home/member">个人中心</a>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 						<span>|</span>
 						<div class="h_1yyg_eject">
 							<dl>
 								<dd>
+<<<<<<< HEAD
 									<a href="<?php echo WEB_PATH; ?>/member/home"><?php echo lang::get_lang('我的云购'); ?></a>
 								</dd>
 								<dd>
 									<a href="<?php echo WEB_PATH; ?>/member/home/userbuylist"><?php echo lang::get_lang('云购记录'); ?></a>
+=======
+									<a href="<?php echo WEB_PATH; ?>/member/home">个人中心</a>
+								</dd>
+								<dd>
+									<a href="<?php echo WEB_PATH; ?>/member/home/userbuylist">夺宝记录</a>
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 								</dd>
 								<dd>
 									<a href="<?php echo WEB_PATH; ?>/member/home/orderlist"><?php echo lang::get_lang('获得商品'); ?></a>
@@ -121,6 +95,7 @@
 						href="javascript:;"
 						onclick="AddFavorite(window.location,document.title)"><?php echo lang::get_lang('收藏'); ?></a> <!--<span>|</span>-->
 					</li>
+<<<<<<< HEAD
 					<!--<li class="fl mobile" style="position:relative;width: 50px;padding:0 25px;">
 						<a target="_blank"  style="margin:0;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('手机云购'); ?></a>
 						<s style="left: 80px;"></s>
@@ -139,6 +114,9 @@
 							<span style="line-height: 15px;color: #ff6600!important;display: block;position: absolute;top: 120px;left: 20px;"><a target="_blank" style="line-height: 18px;margin: 0;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('下载客户端'); ?></a></span>
 						</div>
 					</li>-->
+=======
+					
+>>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 				</ul>
 			</div>
 		</div>

@@ -4,7 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
-    <title>{wc:fun:lang::get_lang('佣金管理')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
+
+    <title>{wc:fun:lang::get_lang('佣金管理')} - {wc:$webname}</title>
+
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
@@ -86,17 +88,19 @@
                 {wc:if:end} gray02">
                     <s></s>
                     {wc:if $member['jingyan'] < 501} 
-                        {wc:fun:lang::get_lang('云购新手')}
+
+                        {wc:fun:lang::get_lang('OneShop新手')}
                     {wc:elseif $member['jingyan'] < 1001}
-                        {wc:fun:lang::get_lang('云购小将')}
+                        {wc:fun:lang::get_lang('OneShop小将')}
                     {wc:elseif $member['jingyan'] < 3001}
-                        {wc:fun:lang::get_lang('云购中将')}
+                        {wc:fun:lang::get_lang('OneShop中将')}
                     {wc:elseif $member['jingyan'] < 6001}
-                        {wc:fun:lang::get_lang('云购上将')}
+                        {wc:fun:lang::get_lang('OneShop上将')}
                     {wc:elseif $member['jingyan'] < 20001}
-                        {wc:fun:lang::get_lang('云购大将')}
+                        {wc:fun:lang::get_lang('OneShop大将')}
                     {wc:else}
-                        {wc:fun:lang::get_lang('云购将军')}
+                        {wc:fun:lang::get_lang('OneShop将军')}
+
                     {wc:if:end}
                 </span>
             </div>
@@ -148,22 +152,16 @@
             <div class="member-t"><h2>{wc:fun:lang::get_lang('佣金明细')}</h2></div>
             <div class="total">
                 <dl>
-                <dd>{wc:fun:lang::get_lang('累计收入：')}<b class="orange">{wc:$shourutotal}</b>{wc:fun:lang::get_lang('元')}</dd>
-                    <dd>{wc:fun:lang::get_lang('累计')}({wc:fun:lang::get_lang('提现')}/{wc:fun:lang::get_lang('充值')}){wc:fun:lang::get_lang('：')}<b class="orange">{wc:$zhichutotal}</b>{wc:fun:lang::get_lang('元')}</dd>
-                    <dd>{wc:fun:lang::get_lang('佣金余额：')}<b class="orange">{wc:$total}</b>{wc:fun:lang::get_lang('元')}</dd>
-                    <dd><a href="{WEB_PATH}/mobile/invite/cashout" title="{wc:fun:lang::get_lang('申请提现')}" class="bluebut">{wc:fun:lang::get_lang('申请提现')}</a>
-                        <a href="{WEB_PATH}/mobile/invite/cashout" title="{wc:fun:lang::get_lang('充值到账户')}" class="orangebut">{wc:fun:lang::get_lang('充值账户')}</a></dd>
-                    <dt class="gray02">{wc:fun:lang::get_lang('佣金余额可实时充值到您的')}{wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('帐户，满')}100{wc:fun:lang::get_lang('元时才可申请提现。')}</dt>
+                <dd>累计收入：<b class="orange">{wc:$shourutotal}</b>元</dd>
+                    
+                   
+                    <dt class="gray02">佣金实时充值到您的帐户。</dt>
                 </dl>
 
             </div>
-            <!--             <div class="record-tit">
-                            <div class="record-tab">
-                                <a href="javascript:void();" class="record-cur">{wc:fun:lang::get_lang('全部')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('今天')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('本周')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('本月')}</a><a href="javascript:void();">{wc:fun:lang::get_lang('最近三个月')}</a>
-                            </div>
+      
+            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w20">用户</li><li class="w20">时间</li><li class="w40">描述</li><li class="w10">金额</li><li class="w10">佣金</li></ul>
 
-                        </div> -->
-            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w20">{wc:fun:lang::get_lang('用户')}</li><li class="w20">{wc:fun:lang::get_lang('时间')}</li><li class="w40">{wc:fun:lang::get_lang('描述')}</li><li class="w10">{wc:fun:lang::get_lang('金额')}</li><li class="w10">{wc:fun:lang::get_lang('佣金')}</li></ul>
                 {wc:if $recodetotal!=0}
                     {wc:loop $recodearr $key $val}
                     <ul>

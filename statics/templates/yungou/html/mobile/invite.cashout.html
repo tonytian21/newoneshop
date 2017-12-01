@@ -4,7 +4,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
-    <title>{wc:fun:lang::get_lang('申请提现')} - {wc:$webname}{wc:fun:lang::get_lang('触屏版')}</title>
+
+    <title>{wc:fun:lang::get_lang('申请提现')} - {wc:$webname}</title>
+
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
@@ -77,17 +79,19 @@
                 {wc:if:end} gray02">
                     <s></s>
                     {wc:if $member['jingyan'] < 501} 
-                        {wc:fun:lang::get_lang('云购新手')}
+
+                        {wc:fun:lang::get_lang('OneShop新手')}
                     {wc:elseif $member['jingyan'] < 1001}
-                        {wc:fun:lang::get_lang('云购小将')}
+                        {wc:fun:lang::get_lang('OneShop小将')}
                     {wc:elseif $member['jingyan'] < 3001}
-                        {wc:fun:lang::get_lang('云购中将')}
+                        {wc:fun:lang::get_lang('OneShop中将')}
                     {wc:elseif $member['jingyan'] < 6001}
-                        {wc:fun:lang::get_lang('云购上将')}
+                        {wc:fun:lang::get_lang('OneShop上将')}
                     {wc:elseif $member['jingyan'] < 20001}
-                        {wc:fun:lang::get_lang('云购大将')} 
+                        {wc:fun:lang::get_lang('OneShop大将')} 
                     {wc:else}
-                        {wc:fun:lang::get_lang('云购将军')}
+                        {wc:fun:lang::get_lang('OneShop将军')}
+
                     {wc:if:end}
                 </span>
             </div>
@@ -137,8 +141,9 @@
         </div>
         <div class="R-content">
             <div class="subMenu">
-                <a id="linkApply" class="current">{wc:fun:lang::get_lang('提现申请')}</a>
-                <a id="linkRecharge">{wc:fun:lang::get_lang('充值到云购账户')}</a>
+                <!--a id="linkApply" class="current">{wc:fun:lang::get_lang('提现申请')}</a-->
+                <a id="linkRecharge">{wc:fun:lang::get_lang('充值到账户')}</a>
+
             </div>
 
             <div class="total">
