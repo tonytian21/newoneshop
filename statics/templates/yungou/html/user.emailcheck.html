@@ -9,7 +9,7 @@
 			<li class="login_arrow"></li>
 			<li><b>3</b>{wc:fun:lang::get_lang('完成注册')}</li>
 		</ul>
-		<span>{wc:fun:lang::get_lang('已经是会员？')}<a id="hylinkLoginPage" class="blue Fb" href="{WEB_PATH}/login">{wc:fun:lang::get_lang('登录')}</a></span>
+		<span>{wc:fun:lang::get_lang('已经是会员')}<a id="hylinkLoginPage" class="blue Fb" href="{WEB_PATH}/login">{wc:fun:lang::get_lang('登录')}</a></span>
 	</div>
 	<div class="login_Content">          
 		<div id="divVerify" class="login_CEmail hidden" style="display: none;">
@@ -24,7 +24,7 @@
 		</div>
 		<div id="divError" class="login_CMobile_Complete hidden" style="display: none;"></div>
 		<div id="divNormal" class="login_CMobile_Complete hidden" style="display: block;">
-        	{wc:if ($reg_message === '{wc:fun:lang::get_lang('发送失败，请重新点击发送')}')}
+        	{wc:if ($reg_message === lang::get_lang('发送失败，请重新点击发送'))}
             	<p>{wc:$reg_message}</p>
             {wc:else}            
 			<p>{wc:fun:_cfg("web_name")}{wc:fun:lang::get_lang('已向您的')} <span class="orange">{wc:$name}</span> {wc:fun:lang::get_lang('邮箱发送了一封验证邮件，请前往收信，完成验证')}!</p>

@@ -41,7 +41,7 @@
                             <img src="{G_UPLOAD_PATH}/{wc:$new1['thumb']}"></a>
                     </div>
                     <p class="name" style="width: 180px;margin-bottom: 10px;margin-top: 10px;line-height: 20px;overflow: hidden;height: 40px;">
-                        <a href="{WEB_PATH}/goods/{wc:$new1['id']}" target="_blank">{wc:$new1['title']}</a>
+                        <a href="{WEB_PATH}/goods/{wc:$new1['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$new1['titleen']}{wc:else}{wc:$new1['title']}{wc:if:end}</a>
                     </p>
                     <p class="money" style="margin-bottom: 10px;">
                         {wc:fun:lang::get_lang('已参与：')}
@@ -63,21 +63,16 @@
 					</li>
 					<li class="fr2">
 						<span class="span">
-							<a href="{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:$renqi['title']}</a>
+							<a href="{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}</a>
 						</span>
 						<div class="Progress-bar" style="margin-left: 10px;">
-							<!--<p title="{wc:fun:lang::get_lang('已完成')}{wc:fun:percent($renqi['canyurenshu'],$renqi['zongrenshu'])}">
-								<span style="width:{wc:fun:percent($renqi['canyurenshu'],$renqi['zongrenshu'])}"></span>
-							</p>-->
+							
 							<ul class="Pro-bar-li">
 								<li class="P-bar01">
 								<span style="float:left;padding-right:10px;">{wc:fun:lang::get_lang('已参与')}</span>
 								<em class="c_red" style=" margin-top:-2px;">{wc:$renqi['canyurenshu']}</em>
 									
 								</li>
-								<!--<li class="P-bar02"> <em>{wc:$renqi['zongrenshu']}</em>
-									{wc:fun:lang::get_lang('总需')}
-								</li>-->
 								<li class="P-bar03" style="float:left; margin-top:30px; margin-left:-62px; width:37%;">
 								<span style="float:left;padding-right:10px;">{wc:fun:lang::get_lang('剩余')}</span>
 									<em style=" margin-top:-2px; color:#ff6600">
@@ -124,7 +119,12 @@
                 <div class="m_newsT bb_gray">
                     <p class="notice c_red">{wc:fun:lang::get_lang('官方公告')}</p>
                 </div>
-                {wc:getlist sql="select * from `@#_article` where 1 AND cateid = 142 order by posttime DESC limit 0,4" return="tiezi"}
+                {wc:if $this->_cfg['route_l'] == 'en-us'}
+                    {wc:getlist sql="select * from `@#_article` where 1 AND cateid = 148 order by posttime DESC limit 0,4" return="tiezi"}
+                {wc:else}
+                    {wc:getlist sql="select * from `@#_article` where 1 AND cateid = 142 order by posttime DESC limit 0,4" return="tiezi"}
+                {wc:if:end}
+                
                 <div class="m_newsM">
                     <div class="m_newsML">
                         {wc:loop $tiezi $tz}
@@ -150,9 +150,7 @@
 <div style="height: 36px;line-height: 36px;padding: 10px 0;font-size: 22px;width: 1201px;margin: 0 auto;">
     <i style="height: 22px;line-height: 22px;border-left: 4px solid #ff6600;margin-right: 7px;"></i> {wc:fun:lang::get_lang('最新揭晓')}
     <span style="color: #999;line-height: 36px;font-size: 14px;display: inline-block;padding-left: 5px;top: 2px;position: relative;">
-	{wc:fun:lang::get_lang('截至目前共揭晓商品')}
-	<em style="color: #ff6600;">{wc:$total}</em>
-	{wc:fun:lang::get_lang('个')}
+	{wc:fun:lang::get_lang('截至目前共揭晓商品',$total)}
 </span>
     
 </div>
@@ -180,23 +178,12 @@
 						</a>
                         </p>
                         <p class="mt30" style="margin-top:5px;">
-                            {wc:fun:lang::get_lang('花')}
-                            <span class="c_red">{wc:$sq['touzi']}</span> {wc:fun:lang::get_lang('OneShop币，回报率：')}
-                            <span class="c_red t18">{wc:$sq['rate']}</span> {wc:fun:lang::get_lang('倍')}
-                            
-                            <!--{wc:fun:lang::get_lang('价值')}:{wc:fun:lang::get_lang('￥')}
-                            <span class="c_red">{wc:$sq['jiazhi']}</span>-->
+                            {wc:fun:lang::get_lang('OneShop币回报率',$sq['touzi'],$sq['rate'])}
                         </p>
                         <a style="display: block;overflow: hidden;height: 35px;" href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank">
-                            <p class="c_black">({wc:fun:lang::get_lang('第*期',$sq['qishu1'])}){wc:fun:_strcut($sq['title'],56)}</p>
+                            <p class="c_black">({wc:fun:lang::get_lang('第*期',$sq['qishu1'])}){wc:if $this->_cfg['route_l'] == 'en-us'}{wc:fun:_strcut($sq['titleen'],40)}{wc:else}{wc:fun:_strcut($sq['title'],40)}{wc:if:end}</p>
                         </a>
                         <a class="cydb_ca" href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank"></a>
-                        
-                       <!-- <p class="mt30" style="margin-top:5px;">
-                            {wc:fun:lang::get_lang('回报率：')}
-                            <span class="c_red t18">{wc:$sq['rate']}</span> {wc:fun:lang::get_lang('倍')}
-                        </p>-->
-                     
                     </div>
                 </div>
             </div>
@@ -240,10 +227,10 @@
             html+= '<a href="'+path+'/dataserver/'+data.id+'" target="_blank"><img src="{G_UPLOAD_PATH}/'+data.thumb+'"></a>';
             html+= '</div>';
             html+= '<div class="print" style="margin:0;">';      
-            html+= '<p>{wc:fun:lang::get_lang('用户：')}<a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red">{wc:fun:lang::get_lang('马上揭晓')}</a></p>';       
-            html+= '<p>{wc:fun:lang::get_lang('花费：')}<a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red">{wc:fun:lang::get_lang('马上揭晓')}</a></p>';   
-            html+= '<a style="display: block;height: 18px;overflow: hidden;" href="'+path+'/dataserver/'+data.id+'" target="_blank"><p class="c_black">({wc:fun:lang::get_lang('第')}'+data.qishu+'{wc:fun:lang::get_lang('期')})'+data.title+'</p></a>'; 
-            html+= '<p style="margin-top:5px;background-color:#f60;color:#fff;text-align:center;" class="mt30"><span style="font-size:14px;line-height:30px;">{wc:fun:lang::get_lang('揭晓倒计时：')}</span><span class="shi"><span class="busytime" pattern="<i>mm</i><em>&nbsp:&nbsp</em><i>ss</i><em>&nbsp:&nbsp</em><i>ms</i>" time="'+(new Date().getTime() + (data.times * 1000)) +'">99 : 99 : 99</span></p>';    
+            html+= '<p>{wc:fun:lang::get_lang("用户")}<a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red">{wc:fun:lang::get_lang("马上揭晓")}</a></p>';       
+            html+= '<p>{wc:fun:lang::get_lang("花费")}<a  href="'+path+'/dataserver/'+data.id+'" target="_blank" class="c_red">{wc:fun:lang::get_lang("马上揭晓")}</a></p>';   
+            html+= '<a style="display: block;height: 18px;overflow: hidden;" href="'+path+'/dataserver/'+data.id+'" target="_blank"><p class="c_black">({wc:fun:lang::get_lang("第*期",'+data.qishu+')})'+data.title+'</p></a>'; 
+            html+= '<p style="margin-top:5px;background-color:#f60;color:#fff;text-align:center;" class="mt30"><span style="font-size:14px;line-height:30px;">{wc:fun:lang::get_lang("揭晓倒计时")}</span><span class="shi"><span class="busytime" pattern="<i>mm</i><em>&nbsp:&nbsp</em><i>ss</i><em>&nbsp:&nbsp</em><i>ms</i>" time="'+(new Date().getTime() + (data.times * 1000)) +'">99 : 99 : 99</span></p>';    
                                     
             html+= '</div>';
             html+= '</div>';
@@ -258,7 +245,7 @@
             $("#prin_pp").prepend(html);
             $("#timeloop"+data.id+" .busytime").busytime({
                 callback:function($dom){
-                    $dom.find(".shi").html('<span class="minute">{wc:fun:lang::get_lang('正在计算')},{wc:fun:lang::get_lang('请稍后…')}</span>');
+                    $dom.find(".shi").html('<span class="minute">{wc:fun:lang::get_lang("正在计算,请稍后")}</span>');
                     setTimeout(function(){
                     $.post(path+'/api/getshop/lottery_shop_getjson/',{gid:data.id},function(info){
                         var uhtml = '';     
@@ -268,11 +255,11 @@
                         uhtml+= '<a href="'+path+'/dataserver/'+info.id+'" target="_blank"><img src="{G_UPLOAD_PATH}/'+info.thumb+'"></a>';
                         uhtml+= '</div>';
                         uhtml+= '<div class="print">';
-                        	uhtml+= '<p>{wc:fun:lang::get_lang('恭喜用户：')}<a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
-                        uhtml+= '<p>{wc:fun:lang::get_lang('花费：')}<span class="c_red">'+info.huafei+'</span>{wc:fun:lang::get_lang('OneShop币，价值')}:{wc:fun:lang::get_lang('￥')}&nbsp<span class="c_red">{wc:$sq['jiazhi']}</span></p>';    
+                        	uhtml+= '<p>{wc:fun:lang::get_lang("恭喜用户")}<a href="'+path+'/uname/'+(1000000000 + parseInt(info.uid))+'"  target="_blank" class="c_red">'+info.user+'</a></p>';
+                        uhtml+= '<p>{wc:fun:lang::get_lang("花费")}<span class="c_red">'+info.huafei+'</span>{wc:fun:lang::get_lang("OneShop币")},{wc:fun:lang::get_lang("价值")}:￥&nbsp<span class="c_red">{wc:$sq['jiazhi']}</span></p>';    
                         uhtml+= '<a style="display: block;height: 35px;overflow: hidden;" href="'+path+'/dataserver/'+info.id+'" target="_blank"><p class="c_black">'+info.qishu+info.title+'</p></a>' ;   
                         uhtml+='<a class="cydb_ca" href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank"></a>';
-                        uhtml+= '<p class="mt30" style="margin-top:5px;display: none;">{wc:fun:lang::get_lang('回报率：')}<span class="c_red t18">'+info.huibaolv+'</span> {wc:fun:lang::get_lang('倍')}</p>';
+                        uhtml+= '<p class="mt30" style="margin-top:5px;display: none;">{wc:fun:lang::get_lang("回报率")}<span class="c_red t18">'+info.huibaolv+'</span> {wc:fun:lang::get_lang("倍")}</p>';
                                 
                         uhtml+= '</div>';
                         uhtml+= '</div>';
@@ -293,20 +280,20 @@
 <div class="goods_hot bt2_red w1200" style="margin-top:10px;">
     <div class="goods_hotL fl b_gray" style="border-top:0;margin-right:-1px;">
         <div class="title bb_gray br_gray" style="width:249px;">
-            <p class="c_red">{wc:fun:lang::get_lang('如何开始？')}</p>
+            <p class="c_red">{wc:fun:lang::get_lang('如何开始')}</p>
         </div>
         <ul class="step">
             <li>
                 <h1 class="c_red">{wc:fun:lang::get_lang('首先')}</h1>
-                <p>{wc:fun:lang::get_lang('注册账号，挑选喜欢的奖品')}</p>
+                <p>{wc:fun:lang::get_lang('挑选喜欢的奖品')}</p>
             </li>
             <li>
                 <h1 class="c_red">{wc:fun:lang::get_lang('然后')}</h1>
-                <p>{wc:fun:lang::get_lang('支付OneShop币参与夺宝，每一个OneShop币可参与一次夺宝')}</p>
+                <p>{wc:fun:lang::get_lang('支付OneShop币参与夺宝')}</p>
             </li>
             <li>
                 <h1 class="c_red">{wc:fun:lang::get_lang('最后')}</h1>
-                <p>{wc:fun:lang::get_lang('等待开奖，系统根据规则计算出一个幸运号码，持有该号码的用户，直接获得奖品')}</p>
+                <p>{wc:fun:lang::get_lang('等待开奖直接获得奖品')}</p>
             </li>
         </ul>
         <a href="{WEB_PATH}/help/1" class="more c_red" target="_blank">{wc:fun:lang::get_lang('更多新手指南')}&gt;&gt;</a>
@@ -342,7 +329,7 @@
 
             {wc:loop:end}
         </ul>
-        <a href="{WEB_PATH}/goods_lottery" class="more" target="_blank" style="line-height: 46px;">{wc:fun:lang::get_lang('看看还有谁中奖了！')}</a>
+        <a href="{WEB_PATH}/goods_lottery" class="more" target="_blank" style="line-height: 46px;">{wc:fun:lang::get_lang('看看还有谁中奖了')}</a>
     </div>
     <div class="goods_hotR fl">
         <div class="title bb_gray br_gray">
@@ -352,14 +339,14 @@
             {wc:loop $shoplistrenqi $renqi}
             <li class="list-block">
                 <div class="pic">
-                    <a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank">
-                        <img src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" alt="{wc:$renqi['title']}"></a>
+                    <a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}" target="_blank">
+                        <img src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" alt="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}"></a>
                 </div>
                 <p class="name">
-                    <a "{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:$renqi['title']}</a>
+                    <a "{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}</a>
                 </p>
                 <p class="money">
-                    {wc:fun:lang::get_lang('总需：')}
+                    {wc:fun:lang::get_lang('总需')}
                     <span class="rmb">{wc:$renqi['zongrenshu']}</span> {wc:fun:lang::get_lang('人次')}
                 </p>
                 <div class="Progress-bar" style="">
@@ -386,7 +373,7 @@
         <div class="catalog b_gray" style="border-left:0;float:left;width:950px;height:87px;margin-top:-1px;">
             <div class="fr" style="height: 35px;overflow: hidden;margin-top: 28px;">
                 {wc:getlist sql="select * from `@#_category` where `model`='1' and `parentid` = '0' order by `order` ASC" return="data"} {wc:loop $data $categoryx}
-                <a href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">{wc:$categoryx['name']}</a> {wc:loop:end} {wc:getlist:end}
+                <a href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</a> {wc:loop:end} {wc:getlist:end}
             </div>
         </div>
     </div>
@@ -406,7 +393,7 @@
                     <img src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a>
             </div>
             <p class="name">
-                <a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">{wc:$shop['title']}</a>
+                <a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$shop['titleen']}{wc:else}{wc:$shop['title']}{wc:if:end}</a>
             </p>
             <p class="money">
                 {wc:fun:lang::get_lang('价值：')}
@@ -455,10 +442,10 @@
                     <img src="{G_UPLOAD_PATH}/{wc:$new['thumb']}"></a>
             </div>
             <p class="name">
-                <a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank">{wc:$new['title']}</a>
+                <a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$new['titleen']}{wc:else}{wc:$new['title']}{wc:if:end}</a>
             </p>
             <p class="money">
-                {wc:fun:lang::get_lang('价值：')}
+                {wc:fun:lang::get_lang('价值')}
                 <span class="rmb">{wc:$new['money']}</span>
             </p>
         </li>
@@ -606,11 +593,11 @@ function displayStatusMsg() {
                 <script language="JavaScript">nextAd()</script>
                 <li>
                     <h1>{wc:fun:lang::get_lang('推荐话题')}</h1> {wc:loop $tiezi_tuijian $tiezi}
-                    <a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}">{wc:fun:lang::get_lang('•')}  {wc:$tiezi['title']}</a> {wc:loop:end}
+                    <a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}">•  {wc:$tiezi['title']}</a> {wc:loop:end}
                 </li>
                 <li style="margin-left:10px;">
                     <h1>{wc:fun:lang::get_lang('最新话题')}</h1> {wc:loop $tiezi_new $tiezi}
-                    <a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}">{wc:fun:lang::get_lang('•')}  {wc:$tiezi['title']}</a> {wc:loop:end}
+                    <a href="{WEB_PATH}/group/nei/{wc:$tiezi['id']}">• {wc:$tiezi['title']}</a> {wc:loop:end}
                 </li>
             </ul>
             <ul class="columns fl b_gray" style="border-top:0">

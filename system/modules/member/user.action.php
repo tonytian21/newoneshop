@@ -45,7 +45,7 @@ class user extends base {
 
 		if($user){
 
-			header("Location:".G_WEB_PATH);exit;
+			header("Location:".WEB_PATH);exit;
 
 		}else if(!$this->segment(4)){			
 
@@ -55,7 +55,7 @@ class user extends base {
 
 			$url = rtrim($url,'/');	
 
-			$url .= '/'.base64_encode(trim(G_HTTP_REFERER));	
+			$url .= '/login/'.base64_encode(trim(G_HTTP_REFERER));	
 
 			if($url != get_web_url()){
 
@@ -302,7 +302,7 @@ class user extends base {
 	/* 用户注册邮箱验证 */
 
 	public function emailcheck(){
-		$title="邮箱验证 -"._cfg("web_name");
+		$title= lang::get_lang('邮箱验证')." -"._cfg("web_name");
 
 		$check_code = _encrypt($this->segment(4),"DECODE");
 		
@@ -323,8 +323,6 @@ class user extends base {
 		$name = $info['reg_key'];
 
 		$enname = $this->segment(4);
-
-	
 
 		$reg_message = '';
 

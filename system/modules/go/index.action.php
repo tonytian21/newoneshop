@@ -50,7 +50,7 @@ class index extends base {
 		//他们正在OneShop	
 		$go_record=$this->db->GetList("SELECT m.`uid`,m.`username`,m.`email`,m.`mobile`,m.`img`,mg.`shopid`,mg.`gonumber`, mg.`shopname`, mg.`time`,t.`zongrenshu`,t.`canyurenshu` FROM `@#_member_go_record` AS mg LEFT JOIN `@#_member` AS m ON m.`uid` = mg.`uid` LEFT JOIN `@#_shoplist` AS s  ON  s.`id` = mg.`shopid` left join `@#_shoplist_term` t on s.id=t.sid left join `@#_shoplist_en` sen on sen.egid=s.gid  WHERE mg.`status` LIKE '%已付款%'  ORDER BY mg.`time` DESC LIMIT 0,7");
 		//最新揭晓
-		$shopqishu = $this->db->GetList("select id,sid,thumb,title,zongrenshu,qishu,money,q_uid,q_user from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC LIMIT 5");
+		$shopqishu = $this->db->GetList("select id,sid,thumb,title,zongrenshu,qishu,money,q_uid,q_user,titleen from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC LIMIT 5");
 		foreach ($shopqishu as &$v) {
 			$v['q_user'] = unserialize($v['q_user']);
 			$v['tou'] = $this->_touzi($v['q_uid'],$v['id']);
@@ -85,8 +85,7 @@ class index extends base {
 	
 	//商品列表
 	public function glist(){
-	
-		$title="商品列表_"._cfg("web_name");
+		$title=lang::get_lang('商品列表')."_"._cfg("web_name");
 		$cate_band =htmlspecialchars($this->segment(4));
 		$select =htmlspecialchars($this->segment(5));		
 		if(!$select){
@@ -109,11 +108,16 @@ class index extends base {
 		 
 		if(empty($fen1)){ 
 			$brand=$this->db->GetList("select * from `@#_brand` where 1 order by `order` DESC");	 
-			$daohang_title = '所有分类';	
+			$daohang_title = lang::get_lang('所有分类');	
 		}else{
 			$brand=$this->db->GetList("select * from `@#_brand` where `cateid`='$fen1' || cateid='".$categ_br['cateid']."' order by `order` DESC");   
 			$daohang=$this->db->GetOne("select * from `@#_category` where `cateid` = '$fen1' || `cateid` = '".$categ_br['cateid']."' LIMIT 1");  
-			$daohang_title = $daohang['name'];
+
+			if(ROUTE_L == 'en-us'){
+				$daohang_title = $daohang['catdir'];
+			}else{
+				$daohang_title = $daohang['name'];
+			}
 		} 
 		
 		

@@ -41,7 +41,7 @@
 		<tbody>
 		<tr>
 			<script>var s=["county","province","city"];</script>
-			<td><label>{wc:fun:lang::get_lang('所在地区：')}</label></td>
+			<td><label>{wc:fun:lang::get_lang('所在地区')}</label></td>
 			<td>
 				<select datatype="*" style="width: 116px;font-size: 14px;text-align: center;" nullmsg="{wc:fun:lang::get_lang('请选择有效的国家')}" class="select iRequire" id="county" runat="server" name="guojia"></select>
                 <select datatype="*" style="width: 116px;font-size: 14px;text-align: center;" nullmsg="{wc:fun:lang::get_lang('请选择有效的省份')}" class="select iRequire" id="province" runat="server" name="sheng"></select>
@@ -51,15 +51,15 @@
 			<td><div style="margin-top: 0px!important;" class="Validform_checktip"></div></td>
 		</tr>
 		<tr>
-			<td><label>{wc:fun:lang::get_lang('街道地址：')}</label></td>
+			<td><label>{wc:fun:lang::get_lang('街道地址')}</label></td>
 			<td>
-				<input datatype="*1-100" nullmsg="{wc:fun:lang::get_lang('请填街道地址！')}" errormsg="{wc:fun:lang::get_lang('范围在')}100{wc:fun:lang::get_lang('之间！')}" name="jiedao" type="text" class="street" maxlength="100" />
+				<input datatype="*1-100" nullmsg="{wc:fun:lang::get_lang('请填街道地址')}" errormsg="{wc:fun:lang::get_lang('范围在')}100{wc:fun:lang::get_lang('之间')}" name="jiedao" type="text" class="street" maxlength="100" />
 				<em id="ship_address_valid_msg" class="red">*</em> 			
 			</td>
 			<td><div style="margin-top: 0px!important;" class="Validform_checktip">({wc:fun:lang::get_lang('不需要重复填写省')}/{wc:fun:lang::get_lang('市')}/{wc:fun:lang::get_lang('区')})</div></td>
 		</tr>
 		<tr>
-			<td><label>{wc:fun:lang::get_lang('收货人：')}</label></td>
+			<td><label>{wc:fun:lang::get_lang('收货人')}</label></td>
 			<td>
 				<input datatype="*" nullmsg="{wc:fun:lang::get_lang('收货人不能为空')}" name="shouhuoren" type="text" maxlength="20" id="txt_ship_name" class="inputTxt" value="">
 				<em class="red" id="ship_name_valid_msg">*</em>
@@ -67,7 +67,7 @@
 			<td><div style="margin-top: 0px!important;" class="Validform_checktip"></div></td>
 		</tr>
 		<tr>
-			<td><label>{wc:fun:lang::get_lang('手机号码：')}</label></td>
+			<td><label>{wc:fun:lang::get_lang('手机号码')}</label></td>
 			<td>
 				<input datatype="m" nullmsg="{wc:fun:lang::get_lang('手机号不能为空')}" errormsg="{wc:fun:lang::get_lang('手机号不对')}" name="mobile" type="text" id="txt_ship_mb" value="" class="inputTxt" maxlength="11">
 				<em id="ship_mb_valid_msg" class="red">*</em>

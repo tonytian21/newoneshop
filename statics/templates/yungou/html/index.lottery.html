@@ -26,7 +26,7 @@ font-family: "{wc:fun:lang::get_lang('宋体')}";
 	<div class="W-left fl" style="padding:0;width: 100%;">
 		<div id="current" class="publish_Curtit">
 			<h1 class="fl c_red">{wc:fun:lang::get_lang('最新揭晓')}</h1>
-			<span id="spTotalCount" style="width: 300px;float: left;">({wc:fun:lang::get_lang('到目前为止共揭晓商品')}<em class="orange" style="color: #f60;">{wc:$total}</em>{wc:fun:lang::get_lang('件')})</span>
+			<span id="spTotalCount" style="width: 300px;float: left;">({wc:fun:lang::get_lang('截至目前共揭晓商品',$total)})</span>
 			{wc:if $total>$num}
 					<div class="pagesx" style="margin: 5px 0;">{wc:page:two}</div>
 			{wc:if:end}
@@ -59,17 +59,17 @@ font-family: "{wc:fun:lang::get_lang('宋体')}";
 							{wc:if:end}" width="50" height="50" border="0"/>
 							
 							</a>
-							<p style="margin-left: 0px;width: 195px;">{wc:fun:lang::get_lang('获得者：')}<a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank">{wc:fun:get_user_name($qishu['q_user'])}</a></p>
-							<p style="margin-left: 0px;width: auto;">{wc:fun:lang::get_lang('OneShop：')}<em class="c_red Fb">{wc:fun:get_user_goods_num($qishu['q_uid'],$qishu['id'])}</em>{wc:fun:lang::get_lang('人次')}</p>					
+							<p style="margin-left: 0px;width: 195px;">{wc:fun:lang::get_lang('获得者')}: <a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank">{wc:fun:get_user_name($qishu['q_user'])}</a></p>
+							<p style="margin-left: 0px;width: auto;">{wc:fun:lang::get_lang('OneShop')}<em class="c_red Fb">{wc:fun:get_user_goods_num($qishu['q_uid'],$qishu['id'])}</em>{wc:fun:lang::get_lang('人次')}</p>					
 
 						</div>
 						<div class="publishC-tit">
-							<h3><a href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank" class="gray01">({wc:fun:lang::get_lang('第')}{wc:$qishu['qishu']}{wc:fun:lang::get_lang('期')}){wc:$qishu['title']}</a></h3>
-							<p style="margin-bottom: 5px;" class="money">{wc:fun:lang::get_lang('商品价值：')}<span class="rmb">{wc:$qishu['money']}</span></p>
-							<p class="Announced-time gray02">{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($qishu['q_end_time'],'r')}</p>
+							<h3><a href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank" class="gray01">({wc:fun:lang::get_lang('第*期',$qishu['qishu'])}){wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$qishu['titleen']}{wc:else}{wc:$qishu['title']}{wc:if:end}</a></h3>
+							<p style="margin-bottom: 5px;" class="money">{wc:fun:lang::get_lang('价值')}:<span class="rmb">{wc:$qishu['money']}</span></p>
+							<p class="Announced-time gray02">{wc:fun:lang::get_lang('揭晓时间')}:{wc:fun:microt($qishu['q_end_time'],'r')}</p>
 						</div>
 						<div class="details bg_pink">
-							<p class="fl details-Code">{wc:fun:lang::get_lang('幸运OneShop码：')}<em class="c_red Fb">{wc:$qishu['q_user_code']}</em></p>
+							<p class="fl details-Code">{wc:fun:lang::get_lang('幸运OneShop码')}:<em class="c_red Fb">{wc:$qishu['q_user_code']}</em></p>
 							<a class="fl details-A c_red" href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" rel="nofollow" target="_blank">{wc:fun:lang::get_lang('查看详情')}</a>
 							
 						</div>

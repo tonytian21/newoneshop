@@ -184,7 +184,7 @@
 </style>
 				<div class="head_search b_red fl" style="position: relative;">
 
-					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="{wc:fun:lang::get_lang('输入')}'{wc:fun:lang::get_lang('小米手机')}'{wc:fun:lang::get_lang('试一试')}" type="text">
+					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="{wc:fun:lang::get_lang("输入'小米手机'试一试")}''" type="text">
 					<span style="">
 						<a href="{G_WEB_PATH}/index.php/s_tag/{wc:fun:lang::get_lang('苹果')}">{wc:fun:lang::get_lang('苹果')}</a>
 						<a href="{G_WEB_PATH}/index.php/s_tag/{wc:fun:lang::get_lang('购物卡')}" style="width: 45px;">{wc:fun:lang::get_lang('购物卡')}</a>
@@ -197,9 +197,9 @@
 				<div class="m-joinNum r">
 					{wc:php:start} $return = go_count_renci(); {wc:php:end} <a
 						href="{WEB_PATH}/buyrecord" target="_blank"> <span
-						class="qian text">累计参与</span> {wc:loop $return $slide} <!-- <span class="tnum" id="spBuyCount">{wc:fun:go_count_renci()}</span>
+						class="qian text">{wc:fun:lang::get_lang('累计参与')}</span> {wc:loop $return $slide} <!-- <span class="tnum" id="spBuyCount">{wc:fun:go_count_renci()}</span>
 					--> <span class="tnum" id="spBuyCount">{wc:$slide}</span>
-						{wc:loop:end} <span class="hou text">人次></span>
+						{wc:loop:end} <span class="hou text">{wc:fun:lang::get_lang('人次')}></span>
 					</a>
 
 				</div>

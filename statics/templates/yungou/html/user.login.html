@@ -48,8 +48,8 @@ $(function(){
 
 	<div class="login_header">
 		<div class="login_top">
-			<h1><a rel="nofollow" href="{G_WEB_PATH}"><img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"></a></h1>
-			<p><a rel="nofollow" href="{G_WEB_PATH}" class="back_home">{wc:fun:lang::get_lang('返回首页')}</a><a href="{WEB_PATH}/help/1" target="_blank" class="help">{wc:fun:lang::get_lang('帮助中心')}</a></p>
+			<h1><a rel="nofollow" href="{WEB_PATH}"><img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"></a></h1>
+			<p><a rel="nofollow" href="{WEB_PATH}" class="back_home">{wc:fun:lang::get_lang('返回首页')}</a><a href="{WEB_PATH}/help/1" target="_blank" class="help">{wc:fun:lang::get_lang('帮助中心')}</a></p>
 		</div>
 	</div>
 	<div class="login_bg">
@@ -68,7 +68,7 @@ $(function(){
 					<input style="color: #666;" class="text_password" name="password" type="password" placeholder="{wc:fun:lang::get_lang('密码')}" />
 					<b class="passport-icon" style="top:31px;height: 20px;background-position: 0 -25px;"></b>
 				</li>
-				<li class="fog" style="height: 25px;line-height: 25px;text-align:right;width: 300px;"><a href="{WEB_PATH}/member/finduser/findpassword">{wc:fun:lang::get_lang('忘记密码？')}</a></li> 								
+				<li class="fog" style="height: 25px;line-height: 25px;text-align:right;width: 300px;"><a href="{WEB_PATH}/member/finduser/findpassword">{wc:fun:lang::get_lang('忘记密码')}</a></li> 								
 				</li>
 				 <li class="yanzheng">
 				     <input style="color: #666;" class="text_verify" ajaxurl="{WEB_PATH}/member/user/codeCheck"
@@ -77,7 +77,7 @@ $(function(){
 				 </li>
 	
 				<li class="end">
-				<span><input name="submit" type="submit" value="{wc:fun:lang::get_lang('登')}&nbsp&nbsp{wc:fun:lang::get_lang('录')}" class="login_init" ></span>
+				<span><input name="submit" type="submit" value="{wc:fun:lang::get_lang('登录')}" class="login_init" ></span>
 				 
 
 				</li>
@@ -90,11 +90,9 @@ $(function(){
             {wc:if $conn_cfg['qq']['off'] or $conn_cfg['weixinpc']['off'] or $conn_cfg['facebook']['off']}
  			<div class="loginQQ">
  				<span id="qq_login_btn">
- 					{wc:fun:lang::get_lang('使用其它方式快捷登录：')}
+ 					{wc:fun:lang::get_lang('使用其它方式快捷登录')}
  				</span>
  				{wc:if $conn_cfg['facebook']['off']}<a class="facebookdenglu" style="background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 5px center; padding-left:26px; background-size: auto 70%;" href="{G_WEB_PATH}/index.php/api/facebooklogin/"><b></b>FaceBook</a>{wc:if:end}
-  				{wc:if $conn_cfg['qq']['off']}<a class="qqdenglu" href="{G_WEB_PATH}/index.php/api/qqlogin/"><b class="passport-icon1 transparent-png"></b></a> {wc:if:end}	
-  				{wc:if $conn_cfg['weixinpc']['off']}<a class="weixindenglu" href="{G_WEB_PATH}/index.php/api/wxloginpc/"><b style="background-position: 8px -149px!important;" class="passport-icon1 transparent-png"></b></a>{wc:if:end}	
  			</div>
 
             {wc:if:end}			

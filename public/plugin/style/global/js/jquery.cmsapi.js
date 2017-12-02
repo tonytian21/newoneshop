@@ -39,7 +39,6 @@
 			var loopdata;
 
 			opt = $.extend({}, opt, def);
-
 			$.get(self.url+"/api/getshop/lottery_shop_json/",{gid:gids},function(loopdata){
 				
 					if(loopdata.error == '0' && loopdata.id != 'null'){

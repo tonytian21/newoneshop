@@ -104,27 +104,27 @@ class  page {
 
 		if($Prev!=0){
 
-			$html.="<li id='Page_Prev'><a href=\"{$this->url[0]}{$Prev}{$this->url[1]}\">上一页</a></li>";	
+			$html.="<li id='Page_Prev'><a href=\"{$this->url[0]}{$Prev}{$this->url[1]}\">".lang::get_lang('上一页')."</a></li>";	
 
 		}else{
 
-			$html.="<li id='Page_Prev'><a href=\"javascript:void(0);\">上一页</a></li>";	
+			$html.="<li id='Page_Prev'><a href=\"javascript:void(0);\">".lang::get_lang('上一页')."</a></li>";	
 
 		}	
 
 		if($next<=$this->pagetotal){
 
-			$html.="<li id='Page_Next'><a href=\"{$this->url[0]}{$next}{$this->url[1]}\">下一页</a></li>";
+			$html.="<li id='Page_Next'><a href=\"{$this->url[0]}{$next}{$this->url[1]}\">".lang::get_lang('下一页')."</a></li>";
 
 		}else{
 
-			$html.="<li id='Page_Next'><a href=\"javascript:void(0);\">下一页</a></li>";	
+			$html.="<li id='Page_Next'><a href=\"javascript:void(0);\">".lang::get_lang('下一页')."</a></li>";	
 
 		}
 
-		$html.="<li id='Page_One'><a href=\"{$this->url[0]}1{$this->url[1]}\">首页</a></li>";	
+		$html.="<li id='Page_One'><a href=\"{$this->url[0]}1{$this->url[1]}\">".lang::get_lang('第一页')."</a></li>";	
 
-		$html.="<li id='Page_End'><a href=\"{$this->url[0]}{$this->pagetotal}{$this->url[1]}\">尾页</a></li>";	
+		$html.="<li id='Page_End'><a href=\"{$this->url[0]}{$this->pagetotal}{$this->url[1]}\">".lang::get_lang('尾页')."</a></li>";	
 
 		$html_r="</ul>";
 
@@ -162,17 +162,17 @@ class  page {
 
 		$html='';
 
-		$html.="<li id='Page_Total'>{$this->total}条";
+		$html.="<li id='Page_Total'>{$this->total}".lang::get_lang('条');
 
-		$html.="<li id='Page_One'><a href=\"{$this->url[0]}1{$this->url[1]}\">首页</a></li>";
+		$html.="<li id='Page_One'><a href=\"{$this->url[0]}1{$this->url[1]}\">".lang::get_lang('第一页')."</a></li>";
 
 		if($this->page==1){
 
-			$html.="<li id='Page_Prev'><a href=\"{$this->url[0]}".($this->page).$this->url[1]."\">上一页</a></li>";
+			$html.="<li id='Page_Prev'><a href=\"{$this->url[0]}".($this->page).$this->url[1]."\">".lang::get_lang('上一页')."</a></li>";
 
 		}else{
 
-			$html.="<li id='Page_Prev'><a href=\"{$this->url[0]}".($this->page-1).$this->url[1]."\">上一页</a></li>";
+			$html.="<li id='Page_Prev'><a href=\"{$this->url[0]}".($this->page-1).$this->url[1]."\">".lang::get_lang('上一页')."</a></li>";
 
 		}
 
@@ -222,15 +222,15 @@ class  page {
 
 		if($this->page==$this->pagetotal){
 
-			$html.="<li id='Page_Next'><a href=\"{$this->url[0]}".($this->page).$this->url[1]."\">下一页</a></li>";
+			$html.="<li id='Page_Next'><a href=\"{$this->url[0]}".($this->page).$this->url[1]."\">".lang::get_lang('下一页')."</a></li>";
 
 		}else{
 
-			$html.="<li id='Page_Next'><a href=\"{$this->url[0]}".($this->page+1).$this->url[1]."\">下一页</a></li>";
+			$html.="<li id='Page_Next'><a href=\"{$this->url[0]}".($this->page+1).$this->url[1]."\">".lang::get_lang('下一页')."</a></li>";
 
 		}	
 
-		$html.="<li id='Page_End'><a href=\"{$this->url[0]}{$this->pagetotal}{$this->url[1]}\">尾页</a></li>";
+		$html.="<li id='Page_End'><a href=\"{$this->url[0]}{$this->pagetotal}{$this->url[1]}\">".lang::get_lang('尾页')."</a></li>";
 
 		$html_r="</ul>";
 

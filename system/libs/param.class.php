@@ -89,7 +89,7 @@ class param {
 
 		$this->param_url = $path;
 		
-		if (isset ( $this->route_config ['routes'] )) {
+		if (isset ( $this->route_config ['routes'] )) {			
 			$lang = '';
 			if(preg_match('/(zh-cn)|(en-us)/', $path, $matches))
 			{	

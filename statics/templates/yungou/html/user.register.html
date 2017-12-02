@@ -46,31 +46,31 @@ $(function(){
 			<li class="login_arrow"></li>
 			<li><b>3</b>{wc:fun:lang::get_lang('完成注册')}</li>
 		</ul>
-		<span>{wc:fun:lang::get_lang('已经是会员？')}<a id="hylinkLoginPage" class="blue Fb" href="{WEB_PATH}/member/user/login">{wc:fun:lang::get_lang('登录')}</a></span>
+		<span>{wc:fun:lang::get_lang('已经是会员')}<a id="hylinkLoginPage" class="blue Fb" href="{WEB_PATH}/member/user/login">{wc:fun:lang::get_lang('登录')}</a></span>
 	</div>
 	<div class="login_ConInput registerform" style="float: left;">
 		<form method="post" action="" enctype="application/x-www-form-urlencoded">
 		<dl>
-			<dd class="zhanghao"><input id="ipyanz" datatype="m | e" sucmsg="{wc:fun:lang::get_lang('帐号验证通过！')}" nullmsg="{wc:fun:lang::get_lang('请填写帐号！')}" placeholder="{wc:fun:lang::get_lang('邮箱地址！')}" type="text" name="name" class="inputxt" /><b class="passport-icon"></b></dd>
+			<dd class="zhanghao"><input id="ipyanz" datatype="m | e" sucmsg="{wc:fun:lang::get_lang('帐号验证通过')}" nullmsg="{wc:fun:lang::get_lang('请填写帐号')}" placeholder="{wc:fun:lang::get_lang('邮箱地址')}" type="text" name="name" class="inputxt" /><b class="passport-icon"></b></dd>
 			<dd><div style="margin:7px 0 0 10px;" class="Validform_checktip"></div></dd>
 		</dl>
 		<dl>
-			<dd class="mima"><input id="mima" datatype="*6-20" plugin="passwordStrength" nullmsg="{wc:fun:lang::get_lang('请设置密码！')}" placeholder="{wc:fun:lang::get_lang('密码，')}6-20{wc:fun:lang::get_lang('字母或数字')}" type="password" name="userpassword" class="inputxt" maxlength="20"/><b style="top:31px;height: 20px;background-position: 0 -25px;" class="passport-icon"></b></dd>
+			<dd class="mima"><input id="mima" datatype="*6-20" plugin="passwordStrength" nullmsg="{wc:fun:lang::get_lang('请设置密码')}" placeholder="{wc:fun:lang::get_lang('密码')}6-20{wc:fun:lang::get_lang('字母或数字')}" type="password" name="userpassword" class="inputxt" maxlength="20"/><b style="top:31px;height: 20px;background-position: 0 -25px;" class="passport-icon"></b></dd>
 			<dd>
 				<div style="margin:7px 0 0 10px;" class="Validform_checktip"></div>
-				<div class="passwordStrength" style="display:none;"><b style="margin:0 0 0 8px;">{wc:fun:lang::get_lang('密码强度：')}</b> <span>{wc:fun:lang::get_lang('弱')}</span><span>{wc:fun:lang::get_lang('中')}</span><span class="last">{wc:fun:lang::get_lang('强')}</span></div>
+				<div class="passwordStrength" style="display:none;"><b style="margin:0 0 0 8px;">{wc:fun:lang::get_lang('密码强度')}</b> <span>{wc:fun:lang::get_lang('弱')}</span><span>{wc:fun:lang::get_lang('中')}</span><span class="last">{wc:fun:lang::get_lang('强')}</span></div>
 			</dd>
 		</dl>
 		<dl>
-			<dd class="mima"><input id="mima" tip="test"  datatype="*" recheck="userpassword" nullmsg="{wc:fun:lang::get_lang('请再输入一次密码！')}" errormsg="{wc:fun:lang::get_lang('您两次输入的账号密码不一致！')}" placeholder="{wc:fun:lang::get_lang('确认输入密码')}" type="password" name="userpassword2" class="inputxt" maxlength="20"/><b style="top:31px;height: 20px;background-position: 0 -25px;" class="passport-icon"></b></dd>
+			<dd class="mima"><input id="mima" tip="test"  datatype="*" recheck="userpassword" nullmsg="{wc:fun:lang::get_lang('请再输入一次密码')}" errormsg="{wc:fun:lang::get_lang('您两次输入的账号密码不一致')}" placeholder="{wc:fun:lang::get_lang('确认输入密码')}" type="password" name="userpassword2" class="inputxt" maxlength="20"/><b style="top:31px;height: 20px;background-position: 0 -25px;" class="passport-icon"></b></dd>
 			<dd><div style="margin:7px 0 0 10px;" class="Validform_checktip"></div></dd>
 		</dl>
 		<dl>
-				 <dd class="yanzheng"><input id="yanzheng" type="text" ajaxurl="{WEB_PATH}/member/user/codeCheck"  datatype="*4-6" nullmsg="{wc:fun:lang::get_lang('请输入验证码！')}" errormsg="{wc:fun:lang::get_lang('请输入正确的验证码！')}" placeholder="{wc:fun:lang::get_lang('验证码')}" ajaxurl="{WEB_PATH}/member/user/codeCheck"   class="inputxt" name="captcha" type="text" /></dd>
+				 <dd class="yanzheng"><input id="yanzheng" type="text" ajaxurl="{WEB_PATH}/member/user/codeCheck"  datatype="*4-6" nullmsg="{wc:fun:lang::get_lang('请输入验证码')}" errormsg="{wc:fun:lang::get_lang('请输入正确的验证码')}" placeholder="{wc:fun:lang::get_lang('验证码')}" ajaxurl="{WEB_PATH}/member/user/codeCheck"   class="inputxt" name="captcha" type="text" /></dd>
 				     <span class="fog"><img id="checkcode" src="{WEB_PATH}/api/checkcode/image/80_27/"/></span>
 				 </dl>
 		<div class="login_Membut">			
-			<input name="submit" type="submit" class="Mem_orangebut" value="{wc:fun:lang::get_lang('同意以下协议，提交')}">
+			<input name="submit" type="submit" class="Mem_orangebut" value="{wc:fun:lang::get_lang('同意以下协议提交')}">
 		</div>
 		</form>
 	</div>

@@ -18,11 +18,11 @@
 
 		<div class="g-special">
 			<ul>
-				<li><a> <em class="u-spc-icon1"></em> <span>100%<?php echo lang::get_lang('公平公正'); ?></span>
-						<?php echo lang::get_lang('参与过程公开透明，用户可随时查看'); ?>
+				<li><a> <em class="u-spc-icon1"></em> <span>100% <?php echo lang::get_lang('公平公正'); ?></span>
+						<?php echo lang::get_lang('参与过程公开透明'); ?>
 				</a></li>
-				<li><a> <em class="u-spc-icon2"></em> <span>100%<?php echo lang::get_lang('正品保证'); ?></span>
-						<?php echo lang::get_lang('精心挑选优质商家，'); ?>100%<?php echo lang::get_lang('品牌正品'); ?>
+				<li><a> <em class="u-spc-icon2"></em> <span>100% <?php echo lang::get_lang('正品保证'); ?></span>
+						<?php echo lang::get_lang('精心挑选优质商家'); ?>100% <?php echo lang::get_lang('品牌正品'); ?>
 				</a></li>
 				<li><a> <em class="u-spc-icon3"></em> <span><?php echo lang::get_lang('全国免运费'); ?></span>
 						<?php echo lang::get_lang('全场商品全国包邮'); ?>

@@ -183,7 +183,7 @@
 </style>
 				<div class="head_search b_red fl" style="position: relative;">
 
-					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="<?php echo lang::get_lang('输入'); ?>'<?php echo lang::get_lang('小米手机'); ?>'<?php echo lang::get_lang('试一试'); ?>" type="text">
+					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="<?php echo lang::get_lang("输入'小米手机'试一试"); ?>''" type="text">
 					<span style="">
 						<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/<?php echo lang::get_lang('苹果'); ?>"><?php echo lang::get_lang('苹果'); ?></a>
 						<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/<?php echo lang::get_lang('购物卡'); ?>" style="width: 45px;"><?php echo lang::get_lang('购物卡'); ?></a>
@@ -196,9 +196,9 @@
 				<div class="m-joinNum r">
 					<?php  $return = go_count_renci();  ?> <a
 						href="<?php echo WEB_PATH; ?>/buyrecord" target="_blank"> <span
-						class="qian text">累计参与</span> <?php $ln=1;if(is_array($return)) foreach($return AS $slide): ?> <!-- <span class="tnum" id="spBuyCount"><?php echo go_count_renci(); ?></span>
+						class="qian text"><?php echo lang::get_lang('累计参与'); ?></span> <?php $ln=1;if(is_array($return)) foreach($return AS $slide): ?> <!-- <span class="tnum" id="spBuyCount"><?php echo go_count_renci(); ?></span>
 					--> <span class="tnum" id="spBuyCount"><?php echo $slide; ?></span>
-						<?php  endforeach; $ln++; unset($ln); ?> <span class="hou text">人次></span>
+						<?php  endforeach; $ln++; unset($ln); ?> <span class="hou text"><?php echo lang::get_lang('人次'); ?>></span>
 					</a>
 
 				</div>

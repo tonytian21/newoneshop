@@ -53,7 +53,7 @@ $(function(){
 	<div class="Current_nav w1200"><a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> &gt; {wc:$daohang_title}</div>
 	<div id="current" class="list_Curtit b_gray">
 		<h1 class="fl c_red">{wc:$daohang_title}</h1> 
-		<span id="spTotalCount">({wc:fun:lang::get_lang('共')}<em class="c_red">{wc:$total}</em>{wc:fun:lang::get_lang('件相关商品')})</span>
+		<span id="spTotalCount">({wc:fun:lang::get_lang('共件相关商品',$total)})</span>
 	</div>
 	<div class="list_class">
 	<dl>
@@ -69,9 +69,9 @@ $(function(){
                		{wc:loop $data $categoryx}
 
                		{wc:if $categoryx['cateid']==$fen1}
-			<li><a  class="ClassCur" href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">{wc:$categoryx['name']}</a></li>
+			<li><a  class="ClassCur" href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</a></li>
 			{wc:else}
-			<li><a  href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">{wc:$categoryx['name']}</a></li>
+			<li><a  href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</a></li>
 			{wc:if:end}
 			{wc:loop:end}
 
@@ -96,9 +96,9 @@ $(function(){
                 {wc:if:end}
 				{wc:loop $brand $brand2}
                 {wc:if $brand2['id']==$fen2}
-				<li><a class="ClassCur"  href="{WEB_PATH}/goods_list/{wc:$brand2['cateid']}e{wc:$brand2['id']}" title="{wc:$brand2['name']}">{wc:$brand2['name']}</a></li>
+				<li><a class="ClassCur"  href="{WEB_PATH}/goods_list/{wc:$brand2['cateid']}e{wc:$brand2['id']}" title="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$brand2['nameen']}{wc:else}{wc:$brand2['name']}{wc:if:end}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$brand2['nameen']}{wc:else}{wc:$brand2['name']}{wc:if:end}</a></li>
                 {wc:else}
-                <li><a  href="{WEB_PATH}/goods_list/{wc:$brand2['cateid']}e{wc:$brand2['id']}" title="{wc:$brand2['name']}">{wc:$brand2['name']}</a></li>
+                <li><a  href="{WEB_PATH}/goods_list/{wc:$brand2['cateid']}e{wc:$brand2['id']}" title="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$brand2['nameen']}{wc:else}{wc:$brand2['name']}{wc:if:end}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$brand2['nameen']}{wc:else}{wc:$brand2['name']}{wc:if:end}</a></li>
                  {wc:if:end}
 				{wc:loop:end}
 			</ul>
@@ -155,9 +155,9 @@ $(function(){
 				<p name="buyCount" style="display:none;"></p>
 			</div>
 			<p class="name">
-				<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']} ">{wc:$shop['title']}</a>
+				<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" title="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$shop['titleen']}{wc:else}{wc:$shop['title']}{wc:if:end}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$shop['titleen']}{wc:else}{wc:$shop['title']}{wc:if:end}</a>
 			</p>
-			<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmb">{wc:$shop['money']}</span></p>
+			<p class="money">{wc:fun:lang::get_lang('价值')}<span class="rmb">{wc:$shop['money']}</span></p>
 			<div class="Progress-bar">
 				<p style="height: 5px;" title="{wc:fun:lang::get_lang('已完成')}{wc:fun:percent($shop['canyurenshu'],$shop['zongrenshu'])}"><span style="width:{wc:fun:percent($shop['canyurenshu'],$shop['zongrenshu'])};height: 6px;"></span></p>
 				<ul class="Pro-bar-li">
@@ -168,19 +168,19 @@ $(function(){
 			</div>
 			<div class="w-goods-ing" style="width: 215px;margin-top: 3px;">
 				<div class="shop_buttom bg_red b_red1" style="margin:0 10px;width:115px;height:35px;">
-					<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" style="line-height:35px;font-size:14px;" class="Det_Shopnow">{wc:fun:lang::get_lang('立即立即夺宝')}</a>
+					<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" style="line-height:35px;font-size:14px;" class="Det_Shopnow">{wc:fun:lang::get_lang('立即夺宝')}</a>
 				</div>
 				<div class="shop_buttom1 bg_pink b_pink c_red" style="margin:0px 10px;width:60px;height:35px;">
 					<a href="javascript:;" onclick="gcartlist.gocartlist({wc:$shop['id']},'{WEB_PATH}','wc_')" class="c_red" style="line-height:30px;font-size:14px;" id="car_{wc:$shop['id']}"></a>
 				</div>
 			</div>
 			<div class="fail" style="display:none">
-			    <div class="main" style="text-indent:4em">{wc:fun:lang::get_lang('购物车已存在！加入失败')}</div>
-			    <div class="arrow"><em>{wc:fun:lang::get_lang('◆')}</em><s>{wc:fun:lang::get_lang('◆')}</s></div>
+			    <div class="main" style="text-indent:4em">{wc:fun:lang::get_lang('购物车已存在')}</div>
+			    <div class="arrow"><em>◆</em><s>◆</s></div>
 			</div>
 			<div class="success" style="display:none">
-				<div class="main" style="text-indent:4em">{wc:fun:lang::get_lang('恭喜您')},{wc:fun:lang::get_lang('加入购物车成功')}</div>
-			    <div class="arrow"><em>{wc:fun:lang::get_lang('◆')}</em><s>{wc:fun:lang::get_lang('◆')}</s></div>
+				<div class="main" style="text-indent:4em">{wc:fun:lang::get_lang('加入购物车成功')}</div>
+			    <div class="arrow"><em>◆</em><s>◆</s></div>
 			</div>	
 		</li>
 		{wc:loop:end}
