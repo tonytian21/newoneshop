@@ -23,11 +23,12 @@ class ments extends admin {
 		if(isset($_POST['dosubmit'])){		
 			
 			$name=htmlspecialchars($_POST['name']);
+			$nameen=htmlspecialchars($_POST['nameen']);
 			$url=htmlspecialchars($_POST['url']);
 			$status=$_POST['status']=='Y' ? 'Y' : 'N';
 			$type = htmlspecialchars($_POST['type']);
 			$order=intval($_POST['order']) ? intval($_POST['order']) : 1;		
-			$this->db->Query("INSERT INTO `@#_navigation` (`name`, `type`, `url`, `status`,`order`) VALUES ('$name','$type','$url','$status','$order')");			
+			$this->db->Query("INSERT INTO `@#_navigation` (`name`, `nameen`,`type`, `url`, `status`,`order`) VALUES ('$name','$type','$url','$status','$order')");			
 			_message("操作成功",WEB_PATH.'/admin/ments/navigation');			
 		}
 		include $this->tpl(ROUTE_M,'navigation.add');
@@ -43,16 +44,20 @@ class ments extends admin {
 		if(!$info)_message("参数错误");
 		if(isset($_POST['dosubmit'])){
 			$name=htmlspecialchars($_POST['name']);
+			$nameen=htmlspecialchars($_POST['nameen']);
+
 			$url=htmlspecialchars($_POST['url']);
 			$type = htmlspecialchars($_POST['type']);
 			$status=$_POST['status']=='Y' ? 'Y' : 'N';
 			$order=intval($_POST['order']) ? intval($_POST['order']) : 1;
 			$this->db->Query("UPDATE `@#_navigation` SET `name`='$name',
+														`nameen`='$nameen',
 													  `url`='$url',
 													  `status`='$status',
 													  `type` = '$type',
 													  `order`='$order'
 			WHERE (`cid`='$cid')");
+			
 			_message("修改成功",WEB_PATH.'/'.ROUTE_M.'/ments/navigation');
 			
 		}

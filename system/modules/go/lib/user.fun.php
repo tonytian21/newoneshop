@@ -51,12 +51,28 @@ function Getheader($type='index'){
 	$url="";
 	if($type=='foot'){
 		foreach($navigation as $v){		
-			$url.='<a  href="'.WEB_PATH.$v['url'].'">'.$v['name'].'</a><s></s>';
+			$url.='<a  href="'.WEB_PATH.$v['url'].'">';
+
+			if(ROUTE_L == 'en-us'){
+				$url .= $v['nameen'];
+			}else{
+				$url .= $v['name'];
+			}
+
+			$url .= '</a><s></s>';
 		}
 		return $url;
 	}
 	foreach($navigation as $v){		
-		$url.='<li class="sort-all" ><a  href="'.WEB_PATH.$v['url'].'">'.$v['name'].'</a></li>';
+		$url.='<li class="sort-all" ><a  href="'.WEB_PATH.$v['url'].'">';
+
+		if(ROUTE_L == 'en-us'){
+			$url .= $v['nameen'];
+		}else{
+			$url .= $v['name'];
+		}
+		
+		$url .='</a></li>';
 	}
 	return $url;
 }

@@ -2,7 +2,7 @@
 <div class="footer mt20">
 	<div class="footer_center w1200">
 		<div class="g-guide">
-			<?php $category=$this->DB()->GetList("select * from `@#_category` where `parentid`='1'",array("type"=>1,"key"=>'',"cache"=>0)); ?> <?php $ln=1;if(is_array($category)) foreach($category AS $help): ?>
+			<?php $category=$this->DB()->GetList("select * from `@#_category` where `parentid`='3'",array("type"=>1,"key"=>'',"cache"=>0)); ?> <?php $ln=1;if(is_array($category)) foreach($category AS $help): ?>
 			<dl>
 				<dt><?php echo $help['name']; ?></dt>
 				<?php $article=$this->DB()->GetList("select * from `@#_article` where
@@ -85,39 +85,6 @@
 					</div>
 				</div>
 			</li>
-<<<<<<< HEAD
-			<!-- <li class="app">
-
-	<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" style="position:relative;width: 37px;height: 56px;">
-			<i></i>
-			<div style="width:37px;display:none;position:absolute;height: 56px;">
-				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="<?php echo G_WEB_PATH; ?>/app/index.html" target="_blank" class="quick_serviceA"><?php echo lang::get_lang('手机'); ?>APP</a>
-				<div style="position: absolute;left:-99px;background: #fff;border: 1px solid #dcdcdc;width: 97px;height: 113px;text-align: center;top: -57px;">
-					<a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="<?php echo G_TEMPLATES_IMAGE; ?>/code.jpg" alt="<?php echo lang::get_lang('客户端'); ?>"></a>
-					<a style="text-align: center;line-height: 10px;" target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('下载客户端'); ?></a>
-				</div>
-
-			</div>
-		</div>
-		</li>
-		<li class="weixin">
-
-		<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" style="position:relative;width: 37px;height: 56px;">
-			<i></i>
-			<div style="width:37px;display:none;position:absolute;height: 56px;">
-				<a style="color: #fff;height: 32;line-height: 16px;width: 25px;padding-top:12px;display: block;padding-left: 6px;" id="btnRigQQ" href="<?php echo G_WEB_PATH; ?>/weixin/index.html" target="_blank" class="quick_serviceA"><?php echo lang::get_lang('官方微信'); ?></a>
-				<div style="position: absolute;left:-99px;background: #fff;border: 1px solid #dcdcdc;width: 97px;height: 113px;text-align: center;top: -57px;">
-					<a target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html"><img style="width: 75px;height: 75px;padding:5px 5px 10px 5px;" src="<?php echo G_TEMPLATES_IMAGE; ?>/code.jpg" alt="<?php echo lang::get_lang('微信'); ?>">
-					</a>
-					<a style="text-align: center;line-height: 10px;" target="_blank" href="<?php echo G_WEB_PATH; ?>/weixin/index.html"><?php echo lang::get_lang('关注官方微信'); ?></a>
-				</div>
-
-			</div>
-		</div>
-		</li> -->
-=======
-			
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 
 			<li class="qq">
@@ -130,11 +97,7 @@
 							style="color: #fff; height: 32; line-height: 16px; width: 25px; padding-top: 12px; display: block; padding-left: 6px;"
 							id="btnRigQQ"
 							href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("
-<<<<<<< HEAD
 							qq"); ?>&site=qq&menu=yes " target="_blank" class="quick_serviceA livechatinc"><?php echo lang::get_lang('在线客服'); ?></a>
-=======
-							qq"); ?>&site=qq&menu=yes" target="_blank" class="quick_serviceA livechatinc">在线客服</a>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 					</div>
 				</div>
 			</li>

@@ -24,7 +24,9 @@ class param {
 		$this->sub_addslashes ();
 		
 		System::load_sys_class ( 'SystemAction', 'sys', 'no' );
+
 		SystemAction::set_route_url ( $this->route_url );
+
 		global $_cfg;
 		$_cfg ['param_arr'] = $this->route_url;
 		$_cfg ['param_arr'] ['url'] = $this->param_url;
@@ -44,9 +46,10 @@ class param {
 	
 		
 		if (isset ( $this->domain [$_SERVER ['HTTP_HOST']] )) {
-			$this->route_url [1] = $this->domain [$_SERVER ['HTTP_HOST']] ['m'];
-			$this->route_url [2] = $this->domain [$_SERVER ['HTTP_HOST']] ['c'];
-			$this->route_url [3] = $this->domain [$_SERVER ['HTTP_HOST']] ['a'];
+			$this->route_url [2] = $this->domain [$_SERVER ['HTTP_HOST']] ['m'];
+			$this->route_url [3] = $this->domain [$_SERVER ['HTTP_HOST']] ['c'];
+			$this->route_url [4] = $this->domain [$_SERVER ['HTTP_HOST']] ['a'];
+			$this->route_url [1] = $this->domain [$_SERVER ['HTTP_HOST']] ['l'];
 			return;
 		}
 		
@@ -83,25 +86,43 @@ class param {
 			default :
 				break;
 		}
+
 		$this->param_url = $path;
 		
 		if (isset ( $this->route_config ['routes'] )) {
-			if (isset ( $this->route_config ['routes'] [$path] )) {
-				$path = $this->route_config ['routes'] [$path];
-				
+			$lang = '';
+			if(preg_match('/(zh-cn)|(en-us)/', $path, $matches))
+			{	
+				$lang = $matches[0];
+				$tmpPath = str_replace($matches[0].'/', '', $path);
+			}else{
+				$tmpPath = $path;
+			}
+			
+			if (isset ( $this->route_config ['routes'] [$tmpPath] )) {
+				$path = $this->route_config ['routes'] [$tmpPath];
+
+				if($lang)
+				{
+					$path =$lang.'/'.$path;
+				}
 			} else {
 				foreach ( $this->route_config ['routes'] as $key => $val ) {
 					$key = str_replace ( ':any', '.+', str_replace ( ':num', '[0-9]+', $key ) );
-					if (preg_match ( '#^' . $key . '$#', $path )) {
+					if (preg_match ( '#^' . $key . '$#', $tmpPath )) {
 						if (strpos ( $val, '$' ) !== FALSE and strpos ( $key, '(' ) !== FALSE) {
-							$val = preg_replace ( '#^' . $key . '$#', $val, $path );
+							$val = preg_replace ( '#^' . $key . '$#', $val, $tmpPath );
+
+							if($lang)
+							{
+								$val =$lang.'/'.$val;
+							}
 						}
 						$path = $val;
 					}
 				}
 			}
 		}
-		
 		
 		$this->route_url = explode ($this->expstr, trim ( $path, $this->expstr ) );
 		
@@ -138,34 +159,42 @@ class param {
 	 * 获取模型
 	 */
 	public function route_m() {
-		if (empty ( $this->route_url [1] )) {
-			$this->route_url [1] = $this->route_config ['default'] ['m'];
+		if (empty ( $this->route_url [2] )) {
+			$this->route_url [2] = $this->route_config ['default'] ['m'];
 		}
-		define ( 'G_MODULE_PATH', WEB_PATH . '/' . $this->route_url [1] );
+		define ( 'G_MODULE_PATH', WEB_PATH . '/' . $this->route_url [2] );
 		
-		return $this->route_url [1];
+		return $this->route_url [2];
 	}
 	
 	/**
 	 * 获取控制器
 	 */
 	public function route_c() {
-		if (empty ( $this->route_url [2] )) {
-			$this->route_url [2] = $this->route_config ['default'] ['c'];
+		if (empty ( $this->route_url [3] )) {
+			$this->route_url [3] = $this->route_config ['default'] ['c'];
 			return $this->route_config ['default'] ['c'];
 		}
-		return $this->route_url [2];
+		return $this->route_url [3];
 	}
 	
 	/**
 	 * 获取事件
 	 */
 	public function route_a() {
-		if (empty ( $this->route_url [3] )) {
-			$this->route_url [3] = $this->route_config ['default'] ['a'];
+		if (empty ( $this->route_url [4] )) {
+			$this->route_url [4] = $this->route_config ['default'] ['a'];
 			return $this->route_config ['default'] ['a'];
 		}
-		return $this->route_url [3];
+		return $this->route_url [4];
+	}
+
+	public function route_l() {
+		if (empty ( $this->route_url [1] )) {
+			$this->route_url [1] = $this->route_config ['default'] ['l'];
+			return $this->route_config ['default'] ['l'];
+		}
+		return $this->route_url [1];
 	}
 }
 ?>

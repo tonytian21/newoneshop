@@ -9,10 +9,11 @@ class application {
 		define ( 'ROUTE_M', $this->param->route_m () );
 		define ( 'ROUTE_C', $this->param->route_c () );
 		define ( 'ROUTE_A', $this->param->route_a () );
+		define ( 'ROUTE_L', $this->param->route_l () );
 		$_cfg ['route_m'] = ROUTE_M;
 		$_cfg ['route_c'] = ROUTE_C;
 		$_cfg ['route_a'] = ROUTE_A;
-		
+		$_cfg ['route_l'] = ROUTE_L;
 		
 		$this->global_start ();
 		
@@ -33,7 +34,6 @@ class application {
 					ROUTE_A 
 			) );
 		} else {
-			
 			_error ( 'Action does not exist.', '...' );
 			exit ();
 		}
@@ -42,6 +42,7 @@ class application {
 		if (file_exists ( $filepath )) {
 			include $filepath;
 			$incname = ROUTE_C;
+
 			if (class_exists ( $incname )) {
 				return new $incname ();
 			} else {
@@ -55,6 +56,9 @@ class application {
 	}
 	private function global_start() {
 		System::load_sys_class("lang", 'sys', "no");
+		$global_lang = include(dirname(dirname(dirname(__FILE__))).'/system/lang/'.ROUTE_L.'.php');
+		
+		lang::init($global_lang);
 		if (! System::load_sys_config ( 'system', 'web_off' )) {
 			$admin_dir = System::load_sys_config ( 'system', 'admindir' );
 			if ($admin_dir !== ROUTE_M) {

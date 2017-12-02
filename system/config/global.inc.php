@@ -22,11 +22,15 @@ define ( "G_WEB_PATH", dirname ( G_HTTP . G_HTTP_HOST . $_SERVER ['SCRIPT_NAME']
 define ( "G_CDN_PATH", G_WEB_PATH);
 define ( "G_UPLOAD", G_WEB_DIR_PATH . 'uploads' . DIRECTORY_SEPARATOR );
 require G_SYSTEM . 'libs/system.class.php';
+System::load_sys_fun ( 'global' );
+$param = System::load_sys_class ( 'param' );
+
 if (System::load_sys_config ( 'system', 'index_name' ) == NULL) {
-	define ( "WEB_PATH", G_WEB_PATH );
+	define ( "WEB_PATH", G_WEB_PATH.'/'.$param->route_l() );
 } else {
-	define ( "WEB_PATH", G_WEB_PATH . '/' . System::load_sys_config ( 'system', 'index_name' ) );
+	define ( "WEB_PATH", G_WEB_PATH . '/' . System::load_sys_config ( 'system', 'index_name' ).'/'.$param->route_l() );
 }
+
 define ( "G_UPLOAD_PATH", G_CDN_PATH . '/' . '/uploads' );
 define ( "G_PLUGIN_PATH", G_CDN_PATH . '/' . '/plugin' );
 
@@ -41,7 +45,7 @@ define ( "G_TEMPLATES_CSS", G_TEMPLATES_PATH . '/' . G_STYLE . '/css' );
 define ( "G_TEMPLATES_MOBILESHAI", G_TEMPLATES_PATH . '/' . G_STYLE . '/css/mobile/shai' );
 define ( "G_TEMPLATES_JS", G_TEMPLATES_PATH . '/' . G_STYLE . '/js' );
 define ( "G_TEMPLATES_IMAGE", G_TEMPLATES_PATH . '/' . G_STYLE . '/images' );
-System::load_sys_fun ( 'global' );
+
 if (System::load_sys_config ( 'system', 'error' )) {
 	_error_handler ();
 }

@@ -44,31 +44,20 @@
 						style="text-indent: 25px; margin-right: 0 !important;"
 						class="service_img"
 						href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("
-						qq"); ?>&site=qq&menu=yes " target="_blank"></a></li>
+						qq"); ?>&site=qq&menu=yes " target="_blank"><?php echo lang::get_lang('在线客服'); ?></a></li>
 					<li class="fr"><a href="<?php echo WEB_PATH; ?>/help/1"><?php echo lang::get_lang('帮助'); ?></a> <span>|</span>
 					</li>
 					<li class="fr"><a href="<?php echo WEB_PATH; ?>/member/home/userrecharge"><?php echo lang::get_lang('快速充值'); ?></a>
 						<span>|</span></li>
-<<<<<<< HEAD
-					<li class="fr yu_ff"><a href="<?php echo WEB_PATH; ?>/home/member"><?php echo lang::get_lang('我的云购'); ?></a>
-=======
-					<li class="fr yu_ff"><a href="<?php echo WEB_PATH; ?>/home/member">个人中心</a>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+					<li class="fr yu_ff"><a href="<?php echo WEB_PATH; ?>/home/member"><?php echo lang::get_lang('个人中心'); ?></a>
 						<span>|</span>
 						<div class="h_1yyg_eject">
 							<dl>
 								<dd>
-<<<<<<< HEAD
-									<a href="<?php echo WEB_PATH; ?>/member/home"><?php echo lang::get_lang('我的云购'); ?></a>
+									<a href="<?php echo WEB_PATH; ?>/member/home"><?php echo lang::get_lang('个人中心'); ?></a>
 								</dd>
 								<dd>
-									<a href="<?php echo WEB_PATH; ?>/member/home/userbuylist"><?php echo lang::get_lang('云购记录'); ?></a>
-=======
-									<a href="<?php echo WEB_PATH; ?>/member/home">个人中心</a>
-								</dd>
-								<dd>
-									<a href="<?php echo WEB_PATH; ?>/member/home/userbuylist">夺宝记录</a>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+									<a href="<?php echo WEB_PATH; ?>/member/home/userbuylist"><?php echo lang::get_lang('夺宝记录'); ?></a>
 								</dd>
 								<dd>
 									<a href="<?php echo WEB_PATH; ?>/member/home/orderlist"><?php echo lang::get_lang('获得商品'); ?></a>
@@ -93,44 +82,18 @@
 				<ul class="collect fl">
 					<li class="fl"><a style="margin-right: 3px;"
 						href="javascript:;"
-						onclick="AddFavorite(window.location,document.title)"><?php echo lang::get_lang('收藏'); ?></a> <!--<span>|</span>-->
+						onclick="AddFavorite(window.location,document.title)"><?php echo lang::get_lang('收藏'); ?></a> 
 					</li>
-<<<<<<< HEAD
-					<!--<li class="fl mobile" style="position:relative;width: 50px;padding:0 25px;">
-						<a target="_blank"  style="margin:0;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('手机云购'); ?></a>
-						<s style="left: 80px;"></s>
-						<span  class="shouji"></span>
-						<div class="h_mobile" style="padding:0 25px;width: 50px;height: 140px;z-index: 9999;">
-							<dl>
-								<li class="fl mobile">
-									<a target="_blank"  style="margin:0;color: #ff6600;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('手机云购'); ?></a>
-									<s style="left: 80px;"></s>
-									<span class="shouji" style="background-position: -45px -34px;"></span>
-								</li>
-							</dl>
-							<a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html">
-								<img style="position: absolute;left: 5px;top: 30px;" src="<?php echo G_TEMPLATES_STYLE; ?>/images/code.jpg" height="90" width="90">
-							</a>
-							<span style="line-height: 15px;color: #ff6600!important;display: block;position: absolute;top: 120px;left: 20px;"><a target="_blank" style="line-height: 18px;margin: 0;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('下载客户端'); ?></a></span>
-						</div>
-					</li>-->
-=======
-					
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 				</ul>
 			</div>
 		</div>
 		<div class="head_mid">
 			<div class="head_mid_bg w1200">
 				<h1 class="logo_yungou fl">
-					<a class="logo_1yyg_img" href="<?php echo G_WEB_PATH; ?>/"
+					<a class="logo_1yyg_img" href="<?php echo WEB_PATH; ?>/"
 						title="<?php echo _cfg('web_name'); ?>"> <img
 						src="<?php echo G_UPLOAD_PATH; ?>/<?php echo Getlogo(); ?>"></a>
 				</h1>
-				<!--<h1 class="logo_yungou fl">
-					<a class="logo_1yyg_img" href="<?php echo G_WEB_PATH; ?>/" title="<?php echo _cfg('web_name'); ?>">
-						<img src="..<?php echo G_UPLOAD_PATH; ?>/banner/20160607/ecsc-join.gif"></a>
-				</h1>-->
 				<style>
 .head_search span {
 	position: absolute;
@@ -171,8 +134,8 @@
 				<div class="m-joinNum r">
 					<?php  $return = go_count_renci();  ?> <a
 						href="<?php echo WEB_PATH; ?>/buyrecord" target="_blank"> <span
-						class="qian text"><?php echo lang::get_lang('累计参与'); ?></span> <?php $ln=1;if(is_array($return)) foreach($return AS $slide): ?> <!-- <span class="tnum" id="spBuyCount"><?php echo go_count_renci(); ?></span>
-					--> <span class="tnum" id="spBuyCount"><?php echo $slide; ?></span>
+						class="qian text"><?php echo lang::get_lang('累计参与'); ?></span> <?php $ln=1;if(is_array($return)) foreach($return AS $slide): ?>
+						<span class="tnum" id="spBuyCount"><?php echo $slide; ?></span>
 						<?php  endforeach; $ln++; unset($ln); ?> <span class="hou text"><?php echo lang::get_lang('人次'); ?></span>
 					</a>
 
@@ -180,7 +143,7 @@
 			</div>
 		</div>
 	</div>
-	<!--<?php echo lang::get_lang('导航'); ?> header_nav <?php echo lang::get_lang('开始'); ?>-->
+	
 	<div class="head_nav">
 		<div class="nav_center bg_red b_red w1200">
 			<div class="m_menu br_red">
@@ -199,7 +162,7 @@
 								src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $categoryx['pic_url']; ?>" height="49"
 								width="44"></a> <a
 							href="<?php echo WEB_PATH; ?>/goods_list/<?php echo $categoryx['cateid']; ?>"
-							target="_blank"><?php echo $categoryx['name']; ?></a></li> <?php  endforeach; $ln++; unset($ln); ?>
+							target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $categoryx['catdir']; ?><?php  else: ?><?php echo $categoryx['name']; ?><?php endif; ?></a></li> <?php  endforeach; $ln++; unset($ln); ?>
 						<?php if(defined('G_IN_ADMIN')) {echo '<div style="padding:8px;background-color:#F93; color:#fff;border:1px solid #f60;text-align:center"><b>This Tag</b></div>';}?>
 					</ul>
 					<a class="more" href="<?php echo WEB_PATH; ?>/goods_list"><?php echo lang::get_lang('查看更多'); ?></a>
@@ -207,7 +170,7 @@
 			</div>
 			<ul class="nav_list">
 				<li class="sort-all-shouye"><a
-					style="background-color: #f04900;" href="<?php echo G_WEB_PATH; ?>"><?php echo lang::get_lang('首页'); ?></a></li>
+					style="background-color: #f04900;" href="<?php echo WEB_PATH; ?>"><?php echo lang::get_lang('首页'); ?></a></li>
 				<?php echo Getheader('index'); ?>
 
 			</ul>

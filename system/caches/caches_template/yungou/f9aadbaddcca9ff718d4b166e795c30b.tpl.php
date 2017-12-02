@@ -67,7 +67,6 @@
 
 				<ul class="collect fr">
 
-<<<<<<< HEAD
 					<li class="fr">
 						<a class="livechatinc" style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("qq"); ?>&site=qq&menu=yes" target="_blank"><?php echo lang::get_lang('在线客服'); ?></a>
 					</li>
@@ -83,34 +82,18 @@
 
 					<li class="fr yu_ff">
 
-						<a  href="<?php echo WEB_PATH; ?>/home/member"><?php echo lang::get_lang('我的乐购'); ?></a>
-=======
-					<li class="fr"><a class="livechatinc"
-						style="text-indent: 25px; margin-right: 0 !important;"
-						class="service_img"
-						href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("
-						qq"); ?>&site=qq&menu=yes " target="_blank">在线客服</a></li>
-					<li class="fr"><a href="<?php echo WEB_PATH; ?>/help/1">帮助</a> <span>|</span>
-					</li>
-
-					<li class="fr"><a href="<?php echo WEB_PATH; ?>/member/home/userrecharge">快速充值</a>
-						<span>|</span></li>
-
-					<li class="fr yu_ff"><a href="<?php echo WEB_PATH; ?>/home/member">个人中心</a>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+						<a  href="<?php echo WEB_PATH; ?>/home/member"><?php echo lang::get_lang('个人中心'); ?></a>
 						<span>|</span>
 
 						<div class="h_1yyg_eject">
 
 							<dl>
-
 								<dd>
-<<<<<<< HEAD
-									<a  href="<?php echo WEB_PATH; ?>/member/home"><?php echo lang::get_lang('我的乐购'); ?></a>
+									<a  href="<?php echo WEB_PATH; ?>/member/home"><?php echo lang::get_lang('个人中心'); ?></a>
 								</dd>
 
 								<dd>
-									<a  href="<?php echo WEB_PATH; ?>/member/home/userbuylist"><?php echo lang::get_lang('乐购记录'); ?></a>
+									<a  href="<?php echo WEB_PATH; ?>/member/home/userbuylist"><?php echo lang::get_lang('夺宝记录'); ?></a>
 								</dd>
 
 								<dd>
@@ -123,38 +106,12 @@
 
 								<dd>
 									<a  href="<?php echo WEB_PATH; ?>/member/home/modify"><?php echo lang::get_lang('个人设置'); ?></a>
-=======
-									<a href="<?php echo WEB_PATH; ?>/member/home">个人中心</a>
-								</dd>
-
-								<dd>
-									<a href="<?php echo WEB_PATH; ?>/member/home/userbuylist">夺宝记录</a>
-								</dd>
-
-								<dd>
-									<a href="<?php echo WEB_PATH; ?>/member/home/orderlist">获得商品</a>
-								</dd>
-
-								<dd>
-									<a href="<?php echo WEB_PATH; ?>/member/home/userrecharge">帐户充值</a>
-								</dd>
-
-								<dd>
-									<a href="<?php echo WEB_PATH; ?>/member/home/modify">个人设置</a>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 								</dd>
 
 							</dl>
 
 						</div></li> <?php if(get_user_arr()): ?>
 					<li class="fr">欢迎您: <a href="<?php echo WEB_PATH; ?>/member/home"><?php echo get_user_name(get_user_arr(),'username'); ?></a>
-
-<<<<<<< HEAD
-					</li>
-					<?php if(get_user_arr()): ?>
-					<li class="fr">
-						<?php echo lang::get_lang('欢迎您'); ?>:
-						<a  href="<?php echo WEB_PATH; ?>/member/home" ><?php echo get_user_name(get_user_arr(),'username'); ?></a>
 
 						<span>|</span>
 
@@ -181,44 +138,7 @@
 						<a style="margin-right: 3px;" href="javascript:;" onclick="AddFavorite(window.location,document.title)"><?php echo lang::get_lang('收藏'); ?></a>
 						<!--<span>|</span>-->
 					</li>
-					<!--<li class="fl mobile" style="position:relative;width: 50px;padding:0 25px;">
-						<a target="_blank" style="margin:0;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('手机乐购'); ?></a>
-						<s style="left: 80px;"></s>
-						<span  class="shouji"></span>
-						<div class="h_mobile" style="padding:0 25px;width: 50px;height: 140px;z-index: 9999;">
-							<dl>
-								<li class="fl mobile">
-									<a target="_blank"  style="margin:0;color: #ff6600;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('手机乐购'); ?></a>
-									<s style="left: 80px;"></s>
-									<span class="shouji" style="background-position: -45px -34px;"></span>
-								</li>
-							</dl>
-							<a target="_blank" href="<?php echo G_WEB_PATH; ?>/app/index.html">
-								<img style="position: absolute;left: 5px;top: 30px;" src="<?php echo G_TEMPLATES_STYLE; ?>/images/code.jpg" height="90" width="90">
-							</a>
-							<span style="line-height: 15px;color: #ff6600!important;display: block;position: absolute;top: 120px;left: 20px;"><a target="_blank" style="line-height: 18px;margin: 0;" href="<?php echo G_WEB_PATH; ?>/app/index.html"><?php echo lang::get_lang('下载客户端'); ?></a></span>
-						</div>
-					</li>-->
-=======
-						<span>|</span> <a href="<?php echo WEB_PATH; ?>/member/user/cook_end">[退出]</a>
-
-						<span>|</span>
-
-					</li> <?php  else: ?>
-					<li class="fr"><a href="<?php echo WEB_PATH; ?>/register">注册</a> <span>|</span>
-					</li>
-
-					<li class="fr"><a href="<?php echo WEB_PATH; ?>/login">登录</a> <span>|</span>
-					</li> <?php endif; ?>
-				</ul>
-
-				<ul class="collect fl">
-					<li class="fl"><a style="margin-right: 3px;"
-						href="javascript:;"
-						onclick="AddFavorite(window.location,document.title)">收藏</a> <!--<span>|</span>-->
-					</li>
 					
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 				</ul>
 
 			</div>
@@ -231,7 +151,7 @@
 
 				<h1 class="logo_yungou fl">
 
-					<a class="logo_1yyg_img" href="<?php echo G_WEB_PATH; ?>/"
+					<a class="logo_1yyg_img" href="<?php echo WEB_PATH; ?>/"
 						title="<?php echo _cfg('web_name'); ?>"> <img
 						src="<?php echo G_UPLOAD_PATH; ?>/<?php echo Getlogo(); ?>"></a>
 
@@ -263,22 +183,12 @@
 </style>
 				<div class="head_search b_red fl" style="position: relative;">
 
-<<<<<<< HEAD
 					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="<?php echo lang::get_lang('输入'); ?>'<?php echo lang::get_lang('小米手机'); ?>'<?php echo lang::get_lang('试一试'); ?>" type="text">
 					<span style="">
 						<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/<?php echo lang::get_lang('苹果'); ?>"><?php echo lang::get_lang('苹果'); ?></a>
 						<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/<?php echo lang::get_lang('购物卡'); ?>" style="width: 45px;"><?php echo lang::get_lang('购物卡'); ?></a>
 					</span>
 					<a class="search_submit" id="butSearch" href="javascript:;"> <i class="ico_search"></i>
-=======
-					<input
-						style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;"
-						id="txtSearch" class="init" placeholder="输入'小米手机'试一试" type="text">
-						<span style=""> <a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/苹果">苹果</a>
-							<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/购物卡" style="width: 45px;">购物卡</a>
-					</span> <a class="search_submit" id="butSearch" href="javascript:;"> <i
-							class="ico_search"></i>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 					</a>
 				</div>
@@ -289,18 +199,7 @@
 						class="qian text">累计参与</span> <?php $ln=1;if(is_array($return)) foreach($return AS $slide): ?> <!-- <span class="tnum" id="spBuyCount"><?php echo go_count_renci(); ?></span>
 					--> <span class="tnum" id="spBuyCount"><?php echo $slide; ?></span>
 						<?php  endforeach; $ln++; unset($ln); ?> <span class="hou text">人次></span>
-
-<<<<<<< HEAD
-						<span class="qian text"><?php echo lang::get_lang('累计参与'); ?></span>
-						<?php $ln=1;if(is_array($return)) foreach($return AS $slide): ?>
-						<!-- <span class="tnum" id="spBuyCount"><?php echo go_count_renci(); ?></span>
-					-->
-					<span class="tnum" id="spBuyCount"><?php echo $slide; ?></span>
-					<?php  endforeach; $ln++; unset($ln); ?>
-					<span class="hou text"><?php echo lang::get_lang('人次'); ?>></span>
-=======
 					</a>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 				</div>
 
@@ -310,40 +209,20 @@
 
 	</div>
 
-<<<<<<< HEAD
-</div>
-
-<!--<?php echo lang::get_lang('导航'); ?> header_nav <?php echo lang::get_lang('开始'); ?>-->
-=======
-	<!--导航 header_nav 开始-->
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
-
 	<div class="head_nav">
 
 		<div class="nav_center bg_red b_red w1200">
 
-<<<<<<< HEAD
-		<div class="m_menu br_red">
-
-			<div class="m_menu_all">
-
-				<h3>
-					<a class="c_red" href="<?php echo WEB_PATH; ?>/goods_list/"><?php echo lang::get_lang('全部商品分类'); ?></a> <em></em>
-				</h3>
-
-			</div>
-=======
 			<div class="m_menu br_red">
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 				<div class="m_menu_all">
 
 					<h3>
-						<a class="c_red" href="<?php echo WEB_PATH; ?>/goods_list/">全部商品分类</a> <em></em>
+						<a class="c_red" href="<?php echo WEB_PATH; ?>/goods_list/"><?php echo lang::get_lang('全部商品分类'); ?></a> <em></em>
 					</h3>
 
 				</div>
-
+				</div>
 				<div class="m_all_sort b_gray" id="m_all_sort"
 					style="border: 1px solid #2af;">
 
@@ -355,51 +234,30 @@
 								src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $categoryx['pic_url']; ?>" height="49"
 								width="44"></a> <a
 							href="<?php echo WEB_PATH; ?>/goods_list/<?php echo $categoryx['cateid']; ?>"
-							target="_blank"><?php echo $categoryx['name']; ?></a></li> <?php  endforeach; $ln++; unset($ln); ?>
+							target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $categoryx['catdir']; ?><?php  else: ?><?php echo $categoryx['name']; ?><?php endif; ?></a></li>  <?php  endforeach; $ln++; unset($ln); ?>
 
 						<?php if(defined('G_IN_ADMIN')) {echo '<div style="padding:8px;background-color:#F93; color:#fff;border:1px solid #f60;text-align:center"><b>This Tag</b></div>';}?>
 					</ul>
-
-					<a class="more" href="<?php echo WEB_PATH; ?>/goods_list">查看更多</a>
-
-<<<<<<< HEAD
 				<a class="more" href="<?php echo WEB_PATH; ?>/goods_list"><?php echo lang::get_lang('查看更多'); ?></a>
-=======
-				</div>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 			</div>
 
 			<ul class="nav_list">
 
-<<<<<<< HEAD
 			<li class="sort-all-shouye">
-				<a href="<?php echo G_WEB_PATH; ?>"><?php echo lang::get_lang('首页'); ?></a>
+				<a href="<?php echo WEB_PATH; ?>"><?php echo lang::get_lang('首页'); ?></a>
 			</li>
 			<?php echo Getheader('index'); ?>
 		</ul>
-=======
-				<li class="sort-all-shouye"><a href="<?php echo G_WEB_PATH; ?>">首页</a></li>
-				<?php echo Getheader('index'); ?>
-			</ul>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 			<div class="mini_mycart" id="sCart">
 
 				<a href="<?php echo WEB_PATH; ?>/member/cart/cartlist" class="cart c_red"
-					target="_blank" id="sCartNavi"> <s></s> 购物车( <span
-					id="sCartTotal" class="c_red">0</span> )
-				</a>
-
-<<<<<<< HEAD
-				<s></s>
+					target="_blank" id="sCartNavi"> <s></s>
 				<?php echo lang::get_lang('购物车'); ?>(
 				<span id="sCartTotal" class="c_red">0</span>
 				)
 			</a>
-=======
-			</div>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 		</div>
 
@@ -419,11 +277,6 @@
 }
 </style>
 
-<<<<<<< HEAD
-<!--<?php echo lang::get_lang('导航'); ?> header_nav <?php echo lang::get_lang('结束'); ?>-->
-=======
-	<!--导航 header_nav 结束-->
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 	<script>
 
@@ -539,11 +392,7 @@ $(function(){
 
 			{
 
-<<<<<<< HEAD
 				alert("<?php echo lang::get_lang('您可以通过快捷键'); ?>Ctrl+D<?php echo lang::get_lang('进行添加'); ?>");
-=======
-				alert("您可以通过快捷键Ctrl+D进行添加收藏");
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 
 			}
 

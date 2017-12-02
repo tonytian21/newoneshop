@@ -28,6 +28,11 @@ input.button{ display:inline-block}
         <td><input type="text" name="name" id="catname" class="input-text">
 		</td>
       </tr>   
+      <tr>
+        <th>导航英文名称：</th>
+        <td><input type="text" name="nameen" id="catnameen" class="input-text">
+    </td>
+      </tr> 
 		<tr>
 	  <th width="200">类别：</th>
         <td>
@@ -73,6 +78,11 @@ input.button{ display:inline-block}
         <td><input type="text" value="<?php echo $info['name']; ?>" name="name" id="catname" class="input-text">
 		</td>
       </tr>  
+      <tr>
+        <th>导航英文名称：</th>
+        <td><input type="text" value="<?php echo $info['nameen']; ?>" name="nameen" id="catnameen" class="input-text">
+    </td>
+      </tr> 
 		<tr>
 	  <th width="200">类别：</th>
         <td>

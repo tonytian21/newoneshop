@@ -45,7 +45,7 @@
 						style="text-indent: 25px; margin-right: 0 !important;"
 						class="service_img"
 						href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg("
-						qq")}&site=qq&menu=yes " target="_blank"></a></li>
+						qq")}&site=qq&menu=yes " target="_blank">{wc:fun:lang::get_lang('在线客服')}</a></li>
 					<li class="fr"><a href="{WEB_PATH}/help/1">{wc:fun:lang::get_lang('帮助')}</a> <span>|</span>
 					</li>
 					<li class="fr"><a href="{WEB_PATH}/member/home/userrecharge">{wc:fun:lang::get_lang('快速充值')}</a>
@@ -83,7 +83,7 @@
 				<ul class="collect fl">
 					<li class="fl"><a style="margin-right: 3px;"
 						href="javascript:;"
-						onclick="AddFavorite(window.location,document.title)">{wc:fun:lang::get_lang('收藏')}</a> <!--<span>|</span>-->
+						onclick="AddFavorite(window.location,document.title)">{wc:fun:lang::get_lang('收藏')}</a> 
 					</li>
 				</ul>
 			</div>
@@ -91,14 +91,10 @@
 		<div class="head_mid">
 			<div class="head_mid_bg w1200">
 				<h1 class="logo_yungou fl">
-					<a class="logo_1yyg_img" href="{G_WEB_PATH}/"
+					<a class="logo_1yyg_img" href="{WEB_PATH}/"
 						title="{wc:fun:_cfg('web_name')}"> <img
 						src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"></a>
 				</h1>
-				<!--<h1 class="logo_yungou fl">
-					<a class="logo_1yyg_img" href="{G_WEB_PATH}/" title="{wc:fun:_cfg('web_name')}">
-						<img src="..{G_UPLOAD_PATH}/banner/20160607/ecsc-join.gif"></a>
-				</h1>-->
 				<style>
 .head_search span {
 	position: absolute;
@@ -139,8 +135,8 @@
 				<div class="m-joinNum r">
 					{wc:php:start} $return = go_count_renci(); {wc:php:end} <a
 						href="{WEB_PATH}/buyrecord" target="_blank"> <span
-						class="qian text">{wc:fun:lang::get_lang('累计参与')}</span> {wc:loop $return $slide} <!-- <span class="tnum" id="spBuyCount">{wc:fun:go_count_renci()}</span>
-					--> <span class="tnum" id="spBuyCount">{wc:$slide}</span>
+						class="qian text">{wc:fun:lang::get_lang('累计参与')}</span> {wc:loop $return $slide}
+						<span class="tnum" id="spBuyCount">{wc:$slide}</span>
 						{wc:loop:end} <span class="hou text">{wc:fun:lang::get_lang('人次')}</span>
 					</a>
 
@@ -148,7 +144,7 @@
 			</div>
 		</div>
 	</div>
-	<!--{wc:fun:lang::get_lang('导航')} header_nav {wc:fun:lang::get_lang('开始')}-->
+	
 	<div class="head_nav">
 		<div class="nav_center bg_red b_red w1200">
 			<div class="m_menu br_red">
@@ -168,7 +164,7 @@
 								src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}" height="49"
 								width="44"></a> <a
 							href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}"
-							target="_blank">{wc:$categoryx['name']}</a></li> {wc:loop:end}
+							target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</a></li> {wc:loop:end}
 						{wc:getlist:end}
 					</ul>
 					<a class="more" href="{WEB_PATH}/goods_list">{wc:fun:lang::get_lang('查看更多')}</a>
@@ -176,7 +172,7 @@
 			</div>
 			<ul class="nav_list">
 				<li class="sort-all-shouye"><a
-					style="background-color: #f04900;" href="{wc:G_WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a></li>
+					style="background-color: #f04900;" href="{wc:WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a></li>
 				{wc:fun:Getheader('index')}
 
 			</ul>

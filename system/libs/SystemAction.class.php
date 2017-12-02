@@ -74,13 +74,13 @@ class SystemAction
     final protected function segment($n = 1)
     {
         
-        if (! isset(self::$route_url[$n])) {
+        if (! isset(self::$route_url[$n + 1])) {
             return false;
         } else {
-            if (strpos(self::$route_url[$n], "&p=") !== false) {
+            if (strpos(self::$route_url[$n + 1], "&p=") !== false) {
                 return '';
             } else {
-                return self::$route_url[$n];
+                return self::$route_url[$n + 1];
             }
         }
     }

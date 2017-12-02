@@ -4,7 +4,7 @@
 	routes   自定义路由
 */
 return array (
-  'default' => array('m' => 'go','c' => 'index','a' => 'init'),
+  'default' => array('l'=>'zh-cn','m' => 'go','c' => 'index','a' => 'init'),
   'routes' => array(		
 			'login' => "member/user/login",
 			'login/(:any)' => "member/user/login/$1",
