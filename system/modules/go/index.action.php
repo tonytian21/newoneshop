@@ -225,10 +225,18 @@ class index extends base {
 		$category=$mysql_model->GetOne("select * from `@#_category` where `cateid` = '$item[cateid]' LIMIT 1");
 		$brand=$mysql_model->GetOne("select * from `@#_brand` where `id`='$item[brandid]' LIMIT 1");
 		
-		$title=$item['title'].' ('.$item['title2'].')';
+		if(ROUTE_L == 'en-us'){
+			$title=$item['titleen'].' ('.$item['title2en'].')';
+
+			$keywords = $item['keywordsen'];
+			$description = $item['descriptionen'];
+		}else{
+			$title=$item['title'].' ('.$item['title2'].')';
+
+			$keywords = $item['keywords'];
+			$description = $item['description'];
+		}
 		
-		$keywords = $item['keywords'];
-		$description = $item['description'];
 		
 		$syrs=$item['zongrenshu']-$item['canyurenshu'];
 		$item['picarr'] = unserialize($item['picarr']);

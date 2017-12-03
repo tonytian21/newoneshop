@@ -191,9 +191,9 @@ $(function(){
 			window.external.addFavorite('{G_WEB_PATH}','{wc:fun:_cfg("web_name")}');
 		}
 		else if(window.sidebar){
-		   window.sidebar.addPanel('{wc:fun:_cfg("web_name")}','{G_WEB_PATH}', "");
+		   window.sidebar.addPanel('{wc:fun:_cfg("web_name")}','{WEB_PATH}', "");
 		}else{ 
-			alert('{wc:fun:lang::get_lang('您可以通过快捷键')}' + ctrl + ' + D {wc:fun:lang::get_lang('加入到收藏夹')}');
+			alert('{wc:fun:lang::get_lang("您可以通过快捷键")}' + ctrl + ' + D {wc:fun:lang::get_lang("加入到收藏夹")}');
 		}
     });
     /*

@@ -117,8 +117,7 @@ $.fn.CloudZoom.defaults = {
 	<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}">
 
 
-
-	{wc:$category['name']}
+	{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$category['catdir']}{wc:else}{wc:$category['name']}{wc:if:end}
 
 
 
@@ -129,8 +128,8 @@ $.fn.CloudZoom.defaults = {
 	<a href="{WEB_PATH}/goods_list/{wc:$item['cateid']}e{wc:$item['brandid']}">
 
 
-
-	{wc:$brand['name']}
+	{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$brand['nameen']}{wc:else}{wc:$brand['name']}{wc:if:end}
+	
 
 
 
@@ -395,9 +394,9 @@ $.fn.CloudZoom.defaults = {
 		</div>
 		<div class="Pro_Detright" style="position: relative;width: 548px;height: 492px;">
 			<p style="font-size:18px;margin-top: 15px;color:#333;height: 72px; overflow: hidden;">
-		<span class="f24">({wc:fun:lang::get_lang('第')}{wc:$item['qishu']}{wc:fun:lang::get_lang('期')})</span>
-		<span  class="f24">{wc:$item['title']}</span><br/>
-		<span style="{wc:$item['title_style']}color:#CCC; font-size:14px">{wc:$item['title2']}</span>
+		<span class="f24">({wc:fun:lang::get_lang('第*期',$item['qishu'])})</span>
+		<span  class="f24">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$item['titleen']}{wc:else}{wc:$item['title']}{wc:if:end}</span><br/>
+		<span style="{wc:$item['title_style']}color:#CCC; font-size:14px">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$item['title2en']}{wc:else}{wc:$item['title2']}{wc:if:end}</span>
 		</p>
 			<!--<p class="Det_money">{wc:fun:lang::get_lang('价值：')}<span class="rmbgray">{wc:$item['money']}</span></p>
 			{wc:fun:lang::get_lang('显示揭晓动画')} start-->
@@ -409,7 +408,7 @@ $.fn.CloudZoom.defaults = {
 
 			<div class="Security">
 				<ul>
-					<li style="color: #9a9a9a;font-family: {wc:fun:lang::get_lang('微软雅黑')};">{wc:fun:lang::get_lang('三大服务保证：')}</li>
+					<li style="color: #9a9a9a;font-family: {wc:fun:lang::get_lang('微软雅黑')};">{wc:fun:lang::get_lang('三大服务保证')}</li>
 					<li><a href="{WEB_PATH}/help/4" target="_blank"><i></i>100%{wc:fun:lang::get_lang('公平公正')}</a></li>
 					<li><a href="{WEB_PATH}/help/5" target="_blank"><s></s>100%{wc:fun:lang::get_lang('正品保证')}</a></li>
 
@@ -515,15 +514,7 @@ $.fn.CloudZoom.defaults = {
 
 
 
-							 {wc:fun:lang::get_lang('参与人次越多')}
-
-
-
-							<br>
-
-
-
-							{wc:fun:lang::get_lang('获得机率越大')}
+							 {wc:fun:lang::get_lang('参与人次越多获得机率越大')}
 
 
 
@@ -552,16 +543,6 @@ $.fn.CloudZoom.defaults = {
 
 
 						<p style="color: #bbb;font-size: 12px;line-height: 18px;">
-
-
-
-							{wc:fun:lang::get_lang('所有人次售完后根据计算规则')}
-
-
-
-							<br>
-
-
 
 							{wc:fun:lang::get_lang('抽出一位幸运获得者')}
 

@@ -190,9 +190,9 @@ $(function(){
 			window.external.addFavorite('<?php echo G_WEB_PATH; ?>','<?php echo _cfg("web_name"); ?>');
 		}
 		else if(window.sidebar){
-		   window.sidebar.addPanel('<?php echo _cfg("web_name"); ?>','<?php echo G_WEB_PATH; ?>', "");
+		   window.sidebar.addPanel('<?php echo _cfg("web_name"); ?>','<?php echo WEB_PATH; ?>', "");
 		}else{ 
-			alert('<?php echo lang::get_lang('您可以通过快捷键'); ?>' + ctrl + ' + D <?php echo lang::get_lang('加入到收藏夹'); ?>');
+			alert('<?php echo lang::get_lang("您可以通过快捷键"); ?>' + ctrl + ' + D <?php echo lang::get_lang("加入到收藏夹"); ?>');
 		}
     });
     /*

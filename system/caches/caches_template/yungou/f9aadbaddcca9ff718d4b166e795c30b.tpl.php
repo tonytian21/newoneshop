@@ -210,22 +210,15 @@
 	</div>
 
 	<div class="head_nav">
-
 		<div class="nav_center bg_red b_red w1200">
-
 			<div class="m_menu br_red">
-
 				<div class="m_menu_all">
-
 					<h3>
 						<a class="c_red" href="<?php echo WEB_PATH; ?>/goods_list/"><?php echo lang::get_lang('全部商品分类'); ?></a> <em></em>
 					</h3>
-
-				</div>
 				</div>
 				<div class="m_all_sort b_gray" id="m_all_sort"
 					style="border: 1px solid #2af;">
-
 					<ul>
 						<?php $data=$this->DB()->GetList("select * from `@#_category` where `model`='1' and
 						`parentid` = '0' order by `order` desc limit 0,8",array("type"=>1,"key"=>'',"cache"=>0)); ?> <?php $ln=1;if(is_array($data)) foreach($data AS $categoryx): ?>
@@ -234,33 +227,25 @@
 								src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $categoryx['pic_url']; ?>" height="49"
 								width="44"></a> <a
 							href="<?php echo WEB_PATH; ?>/goods_list/<?php echo $categoryx['cateid']; ?>"
-							target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $categoryx['catdir']; ?><?php  else: ?><?php echo $categoryx['name']; ?><?php endif; ?></a></li>  <?php  endforeach; $ln++; unset($ln); ?>
-
+							target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $categoryx['catdir']; ?><?php  else: ?><?php echo $categoryx['name']; ?><?php endif; ?></a></li> <?php  endforeach; $ln++; unset($ln); ?>
 						<?php if(defined('G_IN_ADMIN')) {echo '<div style="padding:8px;background-color:#F93; color:#fff;border:1px solid #f60;text-align:center"><b>This Tag</b></div>';}?>
 					</ul>
-				<a class="more" href="<?php echo WEB_PATH; ?>/goods_list"><?php echo lang::get_lang('查看更多'); ?></a>
-
+					<a class="more" href="<?php echo WEB_PATH; ?>/goods_list"><?php echo lang::get_lang('查看更多'); ?></a>
+				</div>
 			</div>
-
 			<ul class="nav_list">
+				<li class="sort-all-shouye"><a
+					style="background-color: #f04900;" href="<?php echo WEB_PATH; ?>"><?php echo lang::get_lang('首页'); ?></a></li>
+				<?php echo Getheader('index'); ?>
 
-			<li class="sort-all-shouye">
-				<a href="<?php echo WEB_PATH; ?>"><?php echo lang::get_lang('首页'); ?></a>
-			</li>
-			<?php echo Getheader('index'); ?>
-		</ul>
-
+			</ul>
 			<div class="mini_mycart" id="sCart">
-
 				<a href="<?php echo WEB_PATH; ?>/member/cart/cartlist" class="cart c_red"
-					target="_blank" id="sCartNavi"> <s></s>
-				<?php echo lang::get_lang('购物车'); ?>(
-				<span id="sCartTotal" class="c_red">0</span>
-				)
-			</a>
-
+					target="_blank" id="sCartNavi"> <s></s> <?php echo lang::get_lang('购物车'); ?>( <span
+					id="sCartTotal" class="c_red">0</span> )
+				</a>
+			</div>
 		</div>
-
 	</div>
 
 	<div class="clear"></div>

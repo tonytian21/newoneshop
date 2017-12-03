@@ -211,22 +211,15 @@
 	</div>
 
 	<div class="head_nav">
-
 		<div class="nav_center bg_red b_red w1200">
-
 			<div class="m_menu br_red">
-
 				<div class="m_menu_all">
-
 					<h3>
 						<a class="c_red" href="{WEB_PATH}/goods_list/">{wc:fun:lang::get_lang('全部商品分类')}</a> <em></em>
 					</h3>
-
-				</div>
 				</div>
 				<div class="m_all_sort b_gray" id="m_all_sort"
 					style="border: 1px solid #2af;">
-
 					<ul>
 						{wc:getlist sql="select * from `@#_category` where `model`='1' and
 						`parentid` = '0' order by `order` desc limit 0,8"} {wc:loop $data
@@ -236,33 +229,25 @@
 								src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}" height="49"
 								width="44"></a> <a
 							href="{WEB_PATH}/goods_list/{wc:$categoryx['cateid']}"
-							target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</a></li>  {wc:loop:end}
-
+							target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</a></li> {wc:loop:end}
 						{wc:getlist:end}
 					</ul>
-				<a class="more" href="{WEB_PATH}/goods_list">{wc:fun:lang::get_lang('查看更多')}</a>
-
+					<a class="more" href="{WEB_PATH}/goods_list">{wc:fun:lang::get_lang('查看更多')}</a>
+				</div>
 			</div>
-
 			<ul class="nav_list">
+				<li class="sort-all-shouye"><a
+					style="background-color: #f04900;" href="{wc:WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a></li>
+				{wc:fun:Getheader('index')}
 
-			<li class="sort-all-shouye">
-				<a href="{wc:WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a>
-			</li>
-			{wc:fun:Getheader('index')}
-		</ul>
-
+			</ul>
 			<div class="mini_mycart" id="sCart">
-
 				<a href="{WEB_PATH}/member/cart/cartlist" class="cart c_red"
-					target="_blank" id="sCartNavi"> <s></s>
-				{wc:fun:lang::get_lang('购物车')}(
-				<span id="sCartTotal" class="c_red">0</span>
-				)
-			</a>
-
+					target="_blank" id="sCartNavi"> <s></s> {wc:fun:lang::get_lang('购物车')}( <span
+					id="sCartTotal" class="c_red">0</span> )
+				</a>
+			</div>
 		</div>
-
 	</div>
 
 	<div class="clear"></div>
