@@ -192,8 +192,8 @@ class pay {
 		$config['type']  = $pay_type['pay_type'];					//支付方式：	即时到帐1   中介担保2
 
 
-		$config['ReturnUrl']  = G_WEB_PATH.'/index.php/pay/'.$pay_type['pay_class'].'_url/qiantai/';	//前台回调
-		$config['NotifyUrl']  = G_WEB_PATH.'/index.php/pay/'.$pay_type['pay_class'].'_url/houtai/';		//后台回调
+		$config['ReturnUrl']  = WEB_PATH.'/pay/'.$pay_type['pay_class'].'_url/qiantai/';	//前台回调
+		$config['NotifyUrl']  = WEB_PATH.'/pay/'.$pay_type['pay_class'].'_url/houtai/';		//后台回调
 
 
 		$config['pay_bank'] = $this->pay_type['pay_bank'];

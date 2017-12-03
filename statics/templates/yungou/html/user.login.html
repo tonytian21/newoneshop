@@ -70,7 +70,7 @@ $(function(){
  				<span id="qq_login_btn">
  					{wc:fun:lang::get_lang('使用其它方式快捷登录')}
  				</span>
- 				{wc:if $conn_cfg['facebook']['off']}<a class="facebookdenglu" style="background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 5px center; padding-left:26px; background-size: auto 70%;" href="{G_WEB_PATH}/index.php/api/facebooklogin/"><b></b>FaceBook</a>{wc:if:end}
+ 				{wc:if $conn_cfg['facebook']['off']}<a class="facebookdenglu" style="background:#3d589b url({G_TEMPLATES_STYLE}/images/facebook_icon.png) no-repeat 5px center; padding-left:26px; background-size: auto 70%;" href="{WEB_PATH}/api/facebooklogin/"><b></b>FaceBook</a>{wc:if:end}
  			</div>
 
             {wc:if:end}			

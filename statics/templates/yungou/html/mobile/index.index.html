@@ -104,7 +104,6 @@
             </div>
             <a id="gd" href=""></a>
             <div class="zxjx">
-<!--                 {wc:getlist sql="select * from `@#_article` where cateid = 142 order by posttime DESC limit 4" return="tiezi"} -->
                 <div class="zxjx_1" style="position: relative;"> <i></i>
                     <div id="demo" style="overflow:hidden;height:30px;width:80%;line-height: 30px;">
                         <ul id="demo1">
@@ -166,7 +165,7 @@
                             <div style="width:40%;float: left;">
                                 <img style="width:100%;" src="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}" class="lazy_loading_image"></div>
                             <div class="txt" style="float: left;">
-                                <h6>{wc:fun:_strcut($qishu['title'],30)}</h6>
+                                <h6>{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:fun:_strcut($qishu['titleen'],30)}{wc:else}{wc:fun:_strcut($qishu['title'],30)}{wc:if:end}</h6>
                                 <div class="zj">
                                     <span style="color: #5bb6ea;">{wc:fun:get_user_name($qishu['q_uid'],'username')}</span>
                                 </div>
@@ -179,7 +178,7 @@
                             <div style="width:40%;float: left;">
                                 <img style="width:100%;" src="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}" class="lazy_loading_image"></div>
                             <div class="txt" style="float: left;">
-                                <h6>{wc:fun:_strcut($qishu['title'],30)}</h6>
+                                <h6>{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:fun:_strcut($qishu['titleen'],30)}{wc:else}{wc:fun:_strcut($qishu['title'],30)}{wc:if:end}</h6>
                                 <div class="zj">
                                     <div style="text-align:left;white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color:#f04900;padding:0.4rem 0 0 0;">
                                         <time class="countdown" style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;font-size: 1rem;line-height: 2rem;height: 2rem;" data-dom_id="#r{wc:$qishu['id']}" data-sec="{wc:fun:ceil($qishu['q_end_time']-time())}" data-text="{wc:fun:lang::get_lang('正在揭晓')}..." data-delay="1000" data-callback="DuoBao.refresh_prize">{wc:fun:lang::get_lang('开始倒计时')}</time>
@@ -216,13 +215,7 @@
                     <a style="color: #999;" href="javascript:;"><span class="sh"><i></i><i style="margin-top: 3px;"></i><i style="margin-top: 3px;"></i></span>{wc:fun:lang::get_lang('分类')}</a>
                     <dl style="display:none;background: #fff;">
                         <div class="jiantou"></div>
-<<<<<<< HEAD
-                        <!--<dd type="0" class="sOrange"><a style="text-align: center;" href="{WEB_PATH}/mobile/mobile/glist">全部</a></dd>-->
                         <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">{wc:fun:lang::get_lang('全部分类<')}/a></dd>
-=======
-                        
-                        <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">全部分类</a></dd>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                     {wc:getlist sql="select `cateid`,`name`,`pic_url` from `@#_category` where `model`='1' and `parentid` = '0' order by `order` desc"}
                             {wc:loop $data $categoryx}
                             <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/fen/{wc:$categoryx['cateid']}"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}"><span>{wc:$categoryx['name']}</span></a></dd>
@@ -254,7 +247,7 @@
 window.onload=function(){
     init_json("list/10");
     //购物车数量
-    $.getJSON('/index.php/mobile/ajax/cartnum',function(data){
+    $.getJSON('{WEB_PATH}/mobile/ajax/cartnum',function(data){
         if(data.num){
             $("#btnCart").append('<em>'+data.num+'</em>');
         }
@@ -266,7 +259,7 @@ window.onload=function(){
     function init_json(parm) {
         $("#urladdress").val('');
         $("#pagenum").val('');
-        $.getJSON('/index.php/mobile/mobile/glistajax/' + parm, function(data) {
+        $.getJSON('{WEB_PATH}/mobile/mobile/glistajax/' + parm, function(data) {
             $("#divGoodsLoading").css('display', 'none');
             if (data[0].sum) {
                 var fg = parm.split("/");
@@ -274,16 +267,17 @@ window.onload=function(){
                 $("#pagenum").val(data[0].page);
                 for (var i = 0; i < data.length; i++) {
                     var ul = '<ul><li>';
-                    ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">{wc:fun:lang::get_lang('离线留言')}价值：￥' + data[i].money + '</div></span>';
+                    ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">{wc:fun:lang::get_lang("价值")}：￥' + data[i].money + '</div></span>';
+
                     ul += '<div style="margin-top:15px;" class="goodsListR">';
-                    ul += '<h2 id="' + data[i].id + '">{wc:fun:lang::getlang('第%s期',$val['qishu'])}' + data[i].title + '</h2>';
+                    ul += '<h2 id="' + data[i].id + '">({wc:fun:lang::get_lang("第*期","' + data[i].qishu + '")})' + data[i].title + '</h2>';
                     ul += '</div>';
                     ul += '<div class="pRate item_bottom_container">';
                     ul += '<div class="Progress-bar jdt_container" id="' + data[i].id + '">';
                     ul += '<div style="color:#646464;margin-top:2px;">';
                     var num =(data[i].canyurenshu / data[i].zongrenshu) * 100;
                     num = num.toFixed(2);
-                    ul += '{wc:fun:lang::get_lang('进度')}&nbsp;<label class="color_blue" id="jd">'+num+'%</label>';
+                    ul += '{wc:fun:lang::get_lang("进度")}&nbsp;<label class="color_blue" id="jd">'+num+'%</label>';
                     ul += '</div>';
                     ul += '<p class="u-progress jdt" style="margin-left:0;"><span class="pgbar" style="width:' +num+ '%;"><span class="pging"></span></span></p></div>';
                     ul += '<div class="buy_container"><div class="btn_buy">';
@@ -369,9 +363,9 @@ window.onload=function(){
         var codeid=$(this).attr('codeid');
         $.getJSON('{WEB_PATH}/mobile/ajax/addShopCart/'+codeid+'/1',function(data){
             if(data.code==1){
-                addsuccess('{wc:fun:lang::get_lang('添加失败')}');
+                addsuccess('{wc:fun:lang::get_lang("添加失败")}');
             }else if(data.code==0){
-                addsuccess('{wc:fun:lang::get_lang('添加成功')}');             
+                addsuccess('{wc:fun:lang::get_lang("添加成功")}');             
             }return false;
         });
     });
@@ -398,21 +392,7 @@ window.onload=function(){
     });
 
 });
-    //分类悬浮js
-/*  
-    window.onscroll = function() {
-        var w = document.documentElement.scrollTop || document.body.scrollTop;
-        var fldh = document.getElementById("fldh");
-        if (w >= 200) {
-            fldh.style.position = "fixed";
-            fldh.style.top = "49px";
-            fldh.style.width = "100%";
-        }else{
-            fldh.style.position = "relative";
-        }
 
-    }
-    */
     </script>
 </body>
 
@@ -422,68 +402,3 @@ window.onload=function(){
 </div>
 
 <input name="hidLineLink" type="hidden" id="hidLineLink" value="{WEB_PATH}/mobile/mobile/" />
-<<<<<<< HEAD
-<script>
-  wx.config({
-    debug: false,
-    appId: "{wc:php:start} echo $wechat['appid'];{wc:php:end}",
-    timestamp: '{wc:php:start} echo $signPackage["timestamp"];{wc:php:end}',
-    nonceStr: '{wc:php:start} echo $signPackage["nonceStr"];{wc:php:end}',
-    signature: '{wc:php:start} echo $signPackage["signature"];{wc:php:end}',
-  jsApiList: ["checkJsApi", "onMenuShareAppMessage", "onMenuShareTimeline", "onMenuShareWeibo", "onMenuShareQQ"]
-  });
-wx.ready(function () {
-var n = $("#hidLineLink").val();
-    wx.onMenuShareTimeline({
-        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
-        success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
-        },
-        cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
-        }
-    });
-    wx.onMenuShareAppMessage({
-        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
-        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
-        type: '', // 分享类型,music、video或link，不填默认为link
-        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-         success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
-        },
-        cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
-        }
-    });
-    wx.onMenuShareQQ({
-        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
-        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-        },
-        cancel: function () { 
-           // 用户取消分享后执行的回调函数
-        }
-    });
-    wx.onMenuShareWeibo({
-        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')}?", // 分享标题
-        desc: "{wc:fun:lang::get_lang('以前我们等待惊喜，现在我们发现惊喜就在这里！实现你的小梦想')}", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
-        success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
-        },
-        cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
-        }
-    });
-});
-</script>
-=======
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9

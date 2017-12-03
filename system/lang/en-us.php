@@ -1029,4 +1029,8 @@ return $_lang = [
 	"请使用初始密码"=>"如果您还没有设置过密码，请使用初始密码: 123456",
 	"密码强度"=>"password strength",
 	"查看OneShop码" => "view OneShop coin",
+	"复制链接邀请好友拿四重大礼"=>"Win a free gift by inviting friend to join us through sending them link",
+	"1元就能买"=>"bumped into this interesting website. Why? Cause I just bought an iPhone using RM1",
+	"成功邀请注册"=>"successfully invited <span class='orange'>%s</span> member to register, <span class='c_red'>%s</span> member had been joined",
+	"元"=>" RM ",
 ];

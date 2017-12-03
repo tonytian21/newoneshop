@@ -7,14 +7,14 @@
 	<div class="member-t"><h2>{wc:fun:lang::get_lang('账户明细')}</h2></div>
 	<div class="last">
 		<ul>
-			<li><h3>{wc:fun:lang::get_lang('您的账户可用余额为：')}</h3><b class="orange">{wc:$member['money']}</b>{wc:fun:lang::get_lang('元')} <a href="{WEB_PATH}/member/home/userrecharge" class="bluebut" title="{wc:fun:lang::get_lang('充值')}">{wc:fun:lang::get_lang('充值')}</a></li>
+			<li><h3>{wc:fun:lang::get_lang('您的账户可用余额为')}：</h3><b class="orange">{wc:$member['money']}</b>{wc:fun:lang::get_lang('元')} <a href="{WEB_PATH}/member/home/userrecharge" class="bluebut" title="{wc:fun:lang::get_lang('充值')}">{wc:fun:lang::get_lang('充值')}</a></li>
 		</ul>
 	</div>
 	<div id="divList0" class="list-tab recordList">
 	<ul class="listTitle">
 		<li class="leftTitle">{wc:fun:lang::get_lang('充值时间')}</li>
 		<li class="price">{wc:fun:lang::get_lang('资金渠道')}</li>
-		<li class="regard">{wc:fun:lang::get_lang('收入')}/{wc:fun:lang::get_lang('支出')}</li>
+		<li class="regard">{wc:fun:lang::get_lang('收入/支出')}</li>
 	</ul>
 	{wc:loop $account $at}
 	<ul>

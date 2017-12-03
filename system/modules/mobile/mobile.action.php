@@ -31,6 +31,7 @@ class mobile extends base
     public function init()
     {
         $webname = $this->_cfg['web_name'];
+
         // 最新商品
         // $new_shop=$this->db->GetOne("select * from `@#_shoplist` where `pos` = '1' and `q_end_time` is null ORDER BY `id` DESC LIMIT 1");
         // 即将揭晓
@@ -58,47 +59,6 @@ class mobile extends base
                 $shoplistrenqi[0]['t_new_goods'] = 1;
         }
         
-        // 触发限时揭晓
-        /*
-         * $yanshi=$this->db->GetList("SELECT * from `@#_shoplist` WHERE `xsjx_time` > 0 AND `xsjx_time` < $this_time AND q_user = ''");
-         * if(!empty($yanshi)){
-         * foreach ($yanshi as $k => $v) {
-         * $url = WEB_PATH.'/mobile/autolottery/autolottery_ret_install/'.$v['id'];
-         * getCurl($url);
-         * }
-         * }
-         *
-         * $w_jinri_time = strtotime(date('Y-m-d'));
-         * $w_minri_time = strtotime(date('Y-m-d',strtotime("+1 day")));
-         */
-        
-        /*
-         * $jinri_shoplist = $this->db->GetList("select * from `@#_shoplist` where `xsjx_time` > '$w_jinri_time' and `xsjx_time` < '$w_minri_time' order by xsjx_time limit 0,3 ");
-         */
-        // 总夺宝次数
-        /*
-         * $user_shop_number = array();
-         * $uid='';
-         * $shopid='';
-         * if(!empty($jinri_shoplist)){
-         *
-         * foreach($jinri_shoplist as $key=>$val){
-         * $uid=$val['q_uid'];
-         * $qishu=$val['qishu'];
-         * $shopid=$val['id'];
-         * if($val['xsjx_time'] < time()){
-         *
-         * $user_shop_list = $this->db->GetList("select * from `@#_member_go_record` where `uid`= '$uid' and `shopid` = '$shopid' and `shopqishu` = '$qishu'");
-         * $user_shop_number[$uid][$shopid]=0;
-         * foreach($user_shop_list as $user_shop_n){
-         * $user_shop_number[$uid][$shopid] += $user_shop_n['gonumber'];
-         *
-         *
-         * }
-         * }
-         * }
-         * }
-         */
         // 分享部分代码
         require_once (G_SYSTEM . "/modules/mobile/jssdk.php");
         
@@ -111,6 +71,7 @@ class mobile extends base
          * $count=count($jinri_shoplist);
          * $key="首页";
          */
+        
         include templates("mobile/index", "index");
     }
 

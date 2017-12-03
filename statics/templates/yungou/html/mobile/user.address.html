@@ -209,17 +209,9 @@
 							</div>
 							<div class="s1">
 								<ul>
-<<<<<<< HEAD
-									<li>{wc:fun:lang::get_lang('收')}&nbsp&nbsp{wc:fun:lang::get_lang('货')}&nbsp&nbsp{wc:fun:lang::get_lang('人：')}</li>
-									<li>{wc:fun:lang::get_lang('收')}&nbsp&nbsp{wc:fun:lang::get_lang('货')}QQ{wc:fun:lang::get_lang('：')}</li>
-									<li>{wc:fun:lang::get_lang('手机号码：')}</li>
-									<li>{wc:fun:lang::get_lang('收货地址：')}</li>
-=======
-									<li>收&nbsp&nbsp货&nbsp&nbsp人：</li>
-									
-									<li>手机号码：</li>
-									<li>收货地址：</li>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+									<li>{wc:fun:lang::get_lang('收货人')}</li>
+									<li>{wc:fun:lang::get_lang('手机号码')}</li>
+									<li>{wc:fun:lang::get_lang('收货地址')}</li>
 								</ul>
 							</div>
 							<div class="s2">
@@ -254,7 +246,7 @@
 							<tr class="hanggao">
 
 								<td width="20%">
-									<label>{wc:fun:lang::get_lang('所在地区：')}</label>
+									<label>{wc:fun:lang::get_lang('所在地区')}：</label>
 									<script>var s2=["province2","city2","county2"];</script>
 								</td>
 								<td  width="80%">
@@ -266,33 +258,22 @@
 							</tr>
 							<tr class="hanggao">
 								<td>
-									<label>{wc:fun:lang::get_lang('街道地址：')}</label>
+									<label>{wc:fun:lang::get_lang('街道地址')}：</label>
 								</td>
 								<td>
 									<input datatype="*1-100" class="input" nullmsg="{wc:fun:lang::get_lang('请填街道地址！')}" errormsg="{wc:fun:lang::get_lang('范围在')}100{wc:fun:lang::get_lang('之间！')}" name="jiedao" type="text" class="street" maxlength="100" /> <em id="ship_address_valid_msg" class="red">*</em>
 								</td>
 							</tr>
-<<<<<<< HEAD
 							<tr class="hanggao">
 								<td>
-									<label>{wc:fun:lang::get_lang('收')}&nbsp&nbsp{wc:fun:lang::get_lang('货')}QQ{wc:fun:lang::get_lang('：')}</label>
-								</td>
-								<td>
-									<input  class="input"  errormsg="QQ{wc:fun:lang::get_lang('号不符合常理')}" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="qq" type="text" id="txt_ship_qq" value="" class="inputTxt" maxlength="13"></td>
-							</tr>
-=======
-							
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
-							<tr class="hanggao">
-								<td>
-									<label>{wc:fun:lang::get_lang('邮政编码：')}</label>
+									<label>{wc:fun:lang::get_lang('邮政编码')}：</label>
 								</td>
 								<td>
 									<input  class="input"  datatype="p" ignore="ignore" errormsg="{wc:fun:lang::get_lang('邮政编码错误！')}" name="youbian" type="text" maxlength="6" id="txt_ship_zip" class="inputTxt" value=""></td>
 							</tr>
 							<tr class="hanggao">
 								<td>
-									<label>{wc:fun:lang::get_lang('收')}&nbsp&nbsp{wc:fun:lang::get_lang('货')}&nbsp&nbsp{wc:fun:lang::get_lang('人：')}</label>
+									<label>{wc:fun:lang::get_lang('收货人')}:</label>
 								</td>
 								<td>
 									<input  class="input"  datatype="*" nullmsg="{wc:fun:lang::get_lang('收货人不能为空')}" name="shouhuoren" type="text" maxlength="20" id="txt_ship_name" class="inputTxt" value="">
@@ -301,7 +282,7 @@
 							</tr>
 							<tr class="hanggao">
 								<td>
-									<label>{wc:fun:lang::get_lang('手机号码：')}</label>
+									<label>{wc:fun:lang::get_lang('手机号码')}：</label>
 								</td>
 								<td>
 									<input  class="input"  datatype="m" nullmsg="{wc:fun:lang::get_lang('手机号不能为空')}" errormsg="{wc:fun:lang::get_lang('手机号不对')}" name="mobile" type="text"  class="inputTxt" maxlength="11">
@@ -310,15 +291,11 @@
 							</tr>
 							<tr class="hanggao">
 							<td>
-								<label>{wc:fun:lang::get_lang('是否发货：')}</label>
+								<label>{wc:fun:lang::get_lang('是否发货')}：</label>
 							</td>
 							<td>
 								<input type="radio" name="shifoufahuo" value="1" />
-<<<<<<< HEAD
 								{wc:fun:lang::get_lang('是，马上收货')}&nbsp;&nbsp;&nbsp;
-=======
-								是，马上发货&nbsp;&nbsp;&nbsp;
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 								<input type="radio" name="shifoufahuo" value="0" checked="checked" />
 								{wc:fun:lang::get_lang('否，暂时别发货')}
 							</td>
@@ -365,17 +342,6 @@
 								<em id="ship_address_valid_msg" class="red">*</em>
 							</td>
 						</tr>
-<<<<<<< HEAD
-						<tr class="hanggao">
-							<td>
-								<label>{wc:fun:lang::get_lang('收')}&nbsp&nbsp{wc:fun:lang::get_lang('货')}QQ{wc:fun:lang::get_lang('：')}</label>
-							</td>
-							<td>
-								<input id="qqnb2" class="input" errormsg="QQ{wc:fun:lang::get_lang('号不符合常理')}" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="qq" type="text" value="" class="inputTxt" maxlength="13"></td>
-						</tr>
-=======
-						
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 						<tr class="hanggao">
 							<td>
 								<label>{wc:fun:lang::get_lang('邮政编码：')}</label>
@@ -407,11 +373,7 @@
 						</td>
 						<td colspan="2">
 							<input type="radio" id="sffh21" name="shifoufahuo" value="1" />
-<<<<<<< HEAD
 							{wc:fun:lang::get_lang('是，马上收货')}&nbsp;
-=======
-							是，马上发货&nbsp;
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
                         &nbsp;&nbsp;
 							<input type="radio" id="sffh22" name="shifoufahuo" value="0" />
 							{wc:fun:lang::get_lang('否，暂时别发货')}

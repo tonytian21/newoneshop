@@ -111,7 +111,7 @@
 							</dl>
 
 						</div></li> <?php if(get_user_arr()): ?>
-					<li class="fr">欢迎您: <a href="<?php echo WEB_PATH; ?>/member/home"><?php echo get_user_name(get_user_arr(),'username'); ?></a>
+					<li class="fr"><?php echo lang::get_lang('欢迎您'); ?>: <a href="<?php echo WEB_PATH; ?>/member/home"><?php echo get_user_name(get_user_arr(),'username'); ?></a>
 
 						<span>|</span>
 

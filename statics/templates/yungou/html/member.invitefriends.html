@@ -8,14 +8,14 @@
             <div class="member-t"><h2>{wc:fun:lang::get_lang('邀请好友')}</h2></div>
             
 		        <div id="divInvited" class="success-invitation gray02"  >
-			        <p>{wc:fun:lang::get_lang('复制链接邀请好友拿四重大礼！')} <a target="_blank" href="{WEB_PATH}/single/pleasereg" class="blue">{wc:fun:lang::get_lang('详情')}&gt;&gt;</a></p>
-			        <span><b></b><input id="txtInfo"  style="width:818px;height:20px; " disabled="disabled" value="1{wc:fun:lang::get_lang('元就能买')}IPhone X{wc:fun:lang::get_lang('哦，快去看看吧！')} {WEB_PATH}/register/{wc:$uid}" onpaste="return false" type="text"></span>
+			        <p>{wc:fun:lang::get_lang('复制链接邀请好友拿四重大礼')} <a target="_blank" href="{WEB_PATH}/single/pleasereg" class="blue">{wc:fun:lang::get_lang('详情')}&gt;&gt;</a></p>
+			        <span><b></b><input id="txtInfo"  style="width:818px;height:20px; " disabled="disabled" value="{wc:fun:lang::get_lang('1元就能买')} {WEB_PATH}/register/{wc:$uid}" onpaste="return false" type="text"></span>
 				  <div class="d_clip_copy"></div>
 				   <div id="d_clip_container" style="position:relative;overflow:hidden">									
 					<div id="d_clip_button" class="bluebut f12" style="text-align:center;line-height:22px;width:60px;padding:0;" >{wc:fun:lang::get_lang('复制')}</div>
 				</div>
 		        </div>
-            <div id="divInviteInfo"class="get-tips gray01 f12 bg_pink b_pink"   style="">{wc:fun:lang::get_lang('成功邀请')} <span class="orange">{wc:$involvedtotal}</span> {wc:fun:lang::get_lang('位会员注册，已有')} <span class="c_red">{wc:$involvednum}</span> {wc:fun:lang::get_lang('位会员参与OneShop')}</div>
+            <div id="divInviteInfo"class="get-tips gray01 f12 bg_pink b_pink"   style="">{wc:fun:lang::get_lang('成功邀请注册',$involvedtotal,$involvednum)}</div>
             <div id="divList" class="list-tab SuccessCon f12">
             <ul class="listTitle"><li class="w200">{wc:fun:lang::get_lang('用户名')}</li><li class="w200">{wc:fun:lang::get_lang('时间')}</li><li class="w180">{wc:fun:lang::get_lang('邀请编号')}</li><li>{wc:fun:lang::get_lang('消费状态')}</li></ul>
 			{wc:if $involvedtotal!=0}

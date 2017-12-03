@@ -81,47 +81,33 @@
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
+           alert("{wc:fun:lang::get_lang('已分享')}");
         },
         cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
+            alert("{wc:fun:lang::get_lang('已取消')}");
         }
     });
     wx.onMenuShareAppMessage({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         desc: "{wc:fun:lang::get_lang('别人')}{wc:$gorecode['gonumber']}{wc:fun:lang::get_lang('元中了')}{wc:$item['title']},{wc:fun:lang::get_lang('羡慕嫉妒恨')}...", // 分享描述
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
-        desc: "别人{wc:$gorecode['gonumber']}元中了{wc:$item['title']},羡慕嫉妒恨...", // 分享描述
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
          success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
+           alert("{wc:fun:lang::get_lang('已分享')}");
         },
         cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
+            alert("{wc:fun:lang::get_lang('已取消')}");
         }
     });
     wx.onMenuShareQQ({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         desc: "{wc:fun:lang::get_lang('别人')}{wc:$gorecode['gonumber']}{wc:fun:lang::get_lang('元中了')}{wc:$item['title']},{wc:fun:lang::get_lang('羡慕嫉妒恨')}...", // 分享描述
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
-        desc: "别人{wc:$gorecode['gonumber']}元中了{wc:$item['title']},羡慕嫉妒恨...", // 分享描述
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
@@ -132,20 +118,15 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareWeibo({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         desc: "{wc:fun:lang::get_lang('别人')}{wc:$gorecode['gonumber']}{wc:fun:lang::get_lang('元中了')}{wc:$item['title']},{wc:fun:lang::get_lang('羡慕嫉妒恨')}...", // 分享描述
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
-        desc: "别人{wc:$gorecode['gonumber']}元中了{wc:$item['title']},羡慕嫉妒恨...", // 分享描述
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
+           alert("{wc:fun:lang::get_lang('已分享')}");
         },
         cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
+            alert("{wc:fun:lang::get_lang('已取消')}");
         }
     });
 });
@@ -177,11 +158,7 @@ var n = $("#hidLineLink").val();
 wx.ready(function () {
 var n = $("#hidLineLink").val();
     wx.onMenuShareTimeline({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         link: n, // 分享链接
         //imgUrl: "{G_TEMPLATES_STYLE}/images/mobile/app.png", // 分享图标
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
@@ -193,32 +170,22 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareAppMessage({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         desc: "{wc:fun:lang::get_lang('正在为您揭晓最新一期')}[{wc:$item['title']}],{wc:fun:lang::get_lang('快来看谁是幸运者')}！", // 分享描述
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
-        desc: "正在为您揭晓最新一期[{wc:$item['title']}],快来看谁是幸运者！", // 分享描述
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         type: '', // 分享类型,music、video或link，不填默认为link
         dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
          success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
+           alert("{wc:fun:lang::get_lang('已分享')}");
         },
         cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
+            alert("{wc:fun:lang::get_lang('已取消')}");
         }
     });
     wx.onMenuShareQQ({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')}", // 分享标题
         desc: "{wc:fun:lang::get_lang('正在为您揭晓最新一期')}[{wc:$item['title']}],{wc:fun:lang::get_lang('快来看谁是幸运者')}！", // 分享描述
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
-        desc: "正在为您揭晓最新一期[{wc:$item['title']}],快来看谁是幸运者！", // 分享描述
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
@@ -229,20 +196,15 @@ var n = $("#hidLineLink").val();
         }
     });
     wx.onMenuShareWeibo({
-<<<<<<< HEAD
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')} ", // 分享标题
+        title: "{wc:fun:lang::get_lang('分享一份来自\"OneShop\"的幸运礼物')} ", // 分享标题
         desc: "{wc:fun:lang::get_lang('正在为您揭晓最新一期')} [{wc:$item['title']}],{wc:fun:lang::get_lang('快来看谁是幸运者')}！", // 分享描述
-=======
-        title: "分享一份来自\"OneShop\"的幸运礼物", // 分享标题
-        desc: "正在为您揭晓最新一期[{wc:$item['title']}],快来看谁是幸运者！", // 分享描述
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
         link: n, // 分享链接
         imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
         success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
+           alert("{wc:fun:lang::get_lang('已分享')}");
         },
         cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
+            alert("{wc:fun:lang::get_lang('已取消')}");
         }
     });
 });
@@ -287,72 +249,6 @@ var n = $("#hidLineLink").val();
 					</ul>
 				</div>
                 <input name="hidLineLink" type="hidden" id="hidLineLink" value="{WEB_PATH}/mobile/mobile/item/{wc:$item['id']}" />
-<<<<<<< HEAD
-<script>
-  wx.config({
-    debug: false,
-    appId: "{wc:php:start} echo $wechat['appid'];{wc:php:end}",
-    timestamp: "{wc:php:start} echo $signPackage['timestamp'];{wc:php:end}",
-    nonceStr: '{wc:php:start} echo $signPackage["nonceStr"];{wc:php:end}',
-    signature: '{wc:php:start} echo $signPackage["signature"];{wc:php:end}',
-  jsApiList: ["checkJsApi", "onMenuShareAppMessage", "onMenuShareTimeline", "onMenuShareWeibo", "onMenuShareQQ"]
-  });
-wx.ready(function () {
-var n = $("#hidLineLink").val();
-    wx.onMenuShareTimeline({
-        title: "{wc:fun:lang::get_lang('梦想还是要有的,万一实现了呢')} ？", // 分享标题
-        link: n, // 分享链接
-        imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
-        success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
-        },
-        cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
-        }
-    });
-    wx.onMenuShareAppMessage({
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
-        desc: "{wc:fun:lang::get_lang('最新一期')}【{wc:$item['title']}】{wc:fun:lang::get_lang('招募进行中!强势插入')}！", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
-        type: '', // 分享类型,music、video或link，不填默认为link
-        dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-         success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
-        },
-        cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
-        }
-    });
-    wx.onMenuShareQQ({
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
-        desc: "{wc:fun:lang::get_lang('最新一期')}【{wc:$item['title']}】{wc:fun:lang::get_lang('招募进行中!强势插入')}！", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
-        success: function () { 
-           // 用户确认分享后执行的回调函数
-        },
-        cancel: function () { 
-           // 用户取消分享后执行的回调函数
-        }
-    });
-    wx.onMenuShareWeibo({
-        title: "{wc:fun:lang::get_lang('分享一份来自\"自由夺宝\"的幸运礼物')}", // 分享标题
-        desc: "{wc:fun:lang::get_lang('最新一期')}【{wc:$item['title']}】{wc:fun:lang::get_lang('招募进行中!强势插入')}！", // 分享描述
-        link: n, // 分享链接
-        imgUrl: "{G_UPLOAD_PATH}/{wc:$item['thumb']}", // 分享图标
-        success: function () { 
-           alert('{wc:fun:lang::get_lang('已分享')}');
-        },
-        cancel: function () { 
-            alert('{wc:fun:lang::get_lang('已取消')}');
-        }
-    });
-});
-</script>
-=======
-
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
 			{wc:if:end}
 			{wc:if $item['q_end_time'] !=''}
 				{wc:if $item['q_end_time'] > time() }
@@ -361,11 +257,7 @@ var n = $("#hidLineLink").val();
 				  <div class="pClosed">{wc:fun:lang::get_lang('本期已揭晓')}</div>
 				{wc:if:end}
 				{wc:if $itemxq==1}
-<<<<<<< HEAD
-				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">{wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:fun:lang::get_lang('正在进行中')}(……)</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
-=======
-				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">第{wc:$itemzx['qishu']}期（正在进行中……）</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
->>>>>>> 331ddc7d179479b43f5f708000049a39596ebee9
+				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">{wc:fun:lang::getlang('第*期',$val['qishu'])}{wc:fun:lang::get_lang('正在进行中')}(……)</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
 				{wc:if:end}
            	{wc:elseif $item['zongrenshu']==$item['canyurenshu']}
 			  {wc:if $item['xsjx_time']!=0}
