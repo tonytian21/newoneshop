@@ -12,10 +12,6 @@
 <body>
 <div class="h5-1yyg-v1" id="loadingPicBlock">
 
-<!-- {wc:fun:lang::get_lang('栏目页面顶部')} -->
-
-
-<!-- {wc:fun:lang::get_lang('内页顶部')} -->
 
     <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
 
@@ -26,10 +22,6 @@
             </a>
         </span>
 
-        <!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
-        -->
-        <!--<img src="{G_TEMPLATES_IMAGE}/sjlogo.png"/>
-        -->
     </h1>
 
     <a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">
@@ -39,8 +31,6 @@
 
     <div class="fr head-r" style="position: absolute;right: 6px;top: 10px;">
 
-        <!--<a href="{WEB_PATH}/mobile/user/login" class="z-Member"></a>
-    -->
     <a href="{WEB_PATH}/mobile/mobile" class="z-shop" style="background-position: 2px -73px;"></a>
 
 </div>
@@ -50,17 +40,17 @@
     <section class="clearfix g-Record-ct" style="padding-top: 55px;">
 		<a class="fl z-Limg" href="{WEB_PATH}/mobile/mobile/item/{wc:$itemlist[0]['id']}"><span class="z-Imgbg {wc:$itemlist[0]['class']}"></span><em class="z-Imgtxt">{wc:$itemlist[0]['codeState']}</em><img src="{G_UPLOAD_PATH}/{wc:$itemlist[0]['thumb']}" border=0 /></a>
 
-		<div class="u-Rcd-r gray9"><p class="z-Rcd-tt"><a href="{WEB_PATH}/mobile/mobile/item/{wc:$itemlist[0]['id']}" class="gray6">({wc:fun:lang::get_lang('第')}{wc:$itemlist[0]['qishu']}{wc:fun:lang::get_lang('期')}){wc:$itemlist[0]['title']} </a></p>
+		<div class="u-Rcd-r gray9"><p class="z-Rcd-tt"><a href="{WEB_PATH}/mobile/mobile/item/{wc:$itemlist[0]['id']}" class="gray6">({wc:fun:lang::get_lang('第*期',$itemlist[0]['qishu'])}){wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$itemlist[0]['titleen']}{wc:else}{wc:$itemlist[0]['title']}{wc:if:end} </a></p>
 		{wc:if $itemlist[0]['q_end_time']!=''}
 		{wc:php:start}
 			$time = time();
 		{wc:php:end}
 			{wc:if $itemlist[0]['q_end_time']<= $time}
-			<p>{wc:fun:lang::get_lang('获得者：')}<em class="blue">{wc:fun:get_user_name($itemlist[0]['q_uid'])}</em></p>
-			<p>{wc:fun:lang::get_lang('揭晓时间：')}<em class="gray6">{wc:fun:microt($itemlist[0]['q_end_time'])}</em></p>
+			<p>{wc:fun:lang::get_lang('获得者')}:<em class="blue">{wc:fun:get_user_name($itemlist[0]['q_uid'])}</em></p>
+			<p>{wc:fun:lang::get_lang('揭晓时间')}:<em class="gray6">{wc:fun:microt($itemlist[0]['q_end_time'])}</em></p>
 			{wc:else}
-			<p>{wc:fun:lang::get_lang('获得者：')}<em class="blue">{wc:fun:lang::get_lang('正在揭晓中')}...</em></p>
-			<p>{wc:fun:lang::get_lang('揭晓时间：')}<em class="gray6">{wc:fun:lang::get_lang('正在揭晓中')}...</em></p>
+			<p>{wc:fun:lang::get_lang('获得者')}:<em class="blue">{wc:fun:lang::get_lang('正在揭晓中')}...</em></p>
+			<p>{wc:fun:lang::get_lang('揭晓时间')}:<em class="gray6">{wc:fun:lang::get_lang('正在揭晓中')}...</em></p>
 			{wc:if:end}
 		{wc:else}
 		 <div class="Progress-bar">

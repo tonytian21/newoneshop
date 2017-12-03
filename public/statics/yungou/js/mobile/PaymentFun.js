@@ -22,7 +22,7 @@ $(function() {
 
         var shopnum = parseInt($("#shopnum").val());
 
-        var r = "支付方式";
+        var r = getJsLang("支付方式");
 
         //var g = parseInt(t / 100) > x ? x: parseInt(t / 100);
 
@@ -76,7 +76,7 @@ $(function() {
 
                 c.parent().removeClass("z-pay-grayC");
 
-                c.attr("sel", "1").attr("class", "z-pay-mentsel").next("span").html('积分支付<em class="orange">' + y + ".00</em>元（您的积分：" + t + "）")
+                c.attr("sel", "1").attr("class", "z-pay-mentsel").next("span").html(getJsLang("积分支付")+'<em class="orange">' + y + ".00</em>"+getJsLang("元")+"（您的积分：" + t + "）")
 
 				checkpay='fufen';
 
@@ -84,7 +84,7 @@ $(function() {
 
             } else {
 
-                c.attr("sel", "0").attr("class", "z-pay-ment").next("span").html('积分支付<em class="orange">0.00</em>元（您的积分：' + t + "）")
+                c.attr("sel", "0").attr("class", "z-pay-ment").next("span").html(getJsLang("积分支付")+'<em class="orange">0.00</em>'+getJsLang("元")+'（您的积分：' + t + "）")
 
             }
 
@@ -102,7 +102,7 @@ $(function() {
 
                 p.parent().removeClass("z-pay-grayC");
 
-                p.attr("sel", "1").attr("class", "z-pay-mentsel").next("span").html('余额支付<em class="orange">' + y + ".00</em>元（账户余额：" + d + " 元）")
+                p.attr("sel", "1").attr("class", "z-pay-mentsel").next("span").html(getJsLang("余额支付")+'<em class="orange">' + y + ".00</em>"+getJsLang("元")+"（"+getJsLang("账户余额")+"：" + d + " "+getJsLang("元")+"）")
 
 				checkpay='money';
 
@@ -110,7 +110,7 @@ $(function() {
 
             } else {
 
-                p.attr("sel", "0").attr("class", "z-pay-ment").next("span").html('余额支付<em class="orange">0.00</em>元（账户余额：' + d + " 元）")
+                p.attr("sel", "0").attr("class", "z-pay-ment").next("span").html(getJsLang("余额支付")+'<em class="orange">0.00</em>'+getJsLang("元")+'（'+getJsLang("账户余额")+'：' + d + " "+getJsLang("元")+"）")
 
             }
 
@@ -122,7 +122,7 @@ $(function() {
 
             if (y > 0) {
 
-                h.html('<s class="z-arrow"></s>选择' + (r == "网银" ? "网银": '<b class="z-mlr">' + r + "</b>") + "支付" + ((g > 0 || w > 0) ? "剩余": "") + '<em class="orange">' + e + ".00</em>元");
+                h.html('<s class="z-arrow"></s>选择' + (r == "网银" ? "网银": '<b class="z-mlr">' + r + "</b>") + "支付" + ((g > 0 || w > 0) ? "剩余": "") + '<em class="orange">' + e + ".00</em>"+getJsLang("元")+"");
 
                 h.removeClass("z-pay-grayC").nextAll().show();
 
@@ -328,7 +328,7 @@ $(function() {
 
                     });
 
-                    h.html('<s class="z-arrow"></s>选择<b class="z-mlr">' + r + "</b>支付" + ((g > 0 || w > 0) ? "剩余": "") + '<em class="orange">' + e + ".00</em>元")
+                    h.html('<s class="z-arrow"></s>选择<b class="z-mlr">' + r + "</b>支付" + ((g > 0 || w > 0) ? "剩余": "") + '<em class="orange">' + e + ".00</em>"+getJsLang("元"))
 
 					checkpay='bank'
 
@@ -356,7 +356,7 @@ $(function() {
 
         if (e > 0) {
 
-            h.removeClass("z-pay-grayC").html('<s class="z-arrow"></s>选择<b class="z-mlr">' + r + "</b>支付" + ((g > 0 || w > 0) ? "剩余": "") + '<em class="orange">' + e + ".00</em>元").nextAll().show();
+            h.removeClass("z-pay-grayC").html('<s class="z-arrow"></s>选择<b class="z-mlr">' + r + "</b>支付" + ((g > 0 || w > 0) ? "剩余": "") + '<em class="orange">' + e + ".00</em>"+getJsLang("元")+"").nextAll().show();
 
             o = true
 

@@ -68,7 +68,7 @@
                     </a>
                     <div class="u-Cart-r">
                         <p class="z-Cart-tt">
-                            <a href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}" class="gray6">{wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$val['title']}</a>
+                            <a href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}" class="gray6">({wc:fun:lang::get_lang('第*期',$val['qishu'])}){wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$val['titleen']}{wc:else}{wc:$val['title']}{wc:if:end}</a>
                         </p> <ins class="z-promo gray9">{wc:fun:lang::get_lang('剩余')} <em class="arial">{wc:$val['zongrenshu']-$val['canyurenshu']}</em>
                             {wc:fun:lang::get_lang('人次')}</ins> 
                         <p class="gray9">
@@ -167,7 +167,7 @@
                 <span  id="total" class="orange arial" style="font-size: 14px;line-height: 45px;">{wc:$buyshopmoney}</span>
                 &nbsp{wc:fun:lang::get_lang('币')}
             </p>
-            <a style="float: right;width: 20%;" href="javascript:;" class="orgBtn">{wc:fun:lang::get_lang('去 结 算')}</a>
+            <a style="float: right;width: 30%;" href="javascript:;" class="orgBtn">{wc:fun:lang::get_lang('去结算')}</a>
 
         </div>
         {wc:if:end}

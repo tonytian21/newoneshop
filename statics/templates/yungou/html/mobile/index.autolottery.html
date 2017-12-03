@@ -38,7 +38,7 @@
         <nav class="limit-nav">
 		<ul>
 			<li class="limit-navCur" onclick="location.href='{WEB_PATH}/mobile/autolottery'">{wc:fun:lang::get_lang('今日揭晓')}</li>
-			<li class="" onclick="location.href='{WEB_PATH}/mobile/autolottery/next'">{wc:fun:lang::get_lang('明日限时<')}/li>
+			<li class="" onclick="location.href='{WEB_PATH}/mobile/autolottery/next'">{wc:fun:lang::get_lang('明日限时')}</li>
 		</ul>
 	</nav>
         <!-- 焦点图 -->
@@ -68,7 +68,7 @@
 	     <li class="m-xs-li" txt="{wc:$shop['time_H']}{wc:fun:lang::get_lang('点')}">
             <div class="m-round limit-bd limit-End">
                 <div class="f-limit-time">
-                    <span class="f-limit-time-date">{wc:fun:lang::get_lang('已揭晓<')}/span>
+                    <span class="f-limit-time-date">{wc:fun:lang::get_lang('已揭晓')}</span>
                 </div>
                 <div class="limt-pic">
                     <a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}">
@@ -79,7 +79,7 @@
                 <div class="limit-bd-con">
                     <p class="z-limit-tt">
                         <a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}" class="gray6 z-tt">
-                            {wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$shop['title']}
+                            {wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:$shop['title']}
                         </a>
                     </p>
                     <p class="z-promo">
@@ -138,7 +138,7 @@
                 <div class="limit-bd-con">
                     <p class="z-limit-tt">
                         <a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}" class="gray6 z-tt">
-                            {wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$shop['title']}
+                            {wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:$shop['title']}
                         </a>
                     </p>
                     <p class="z-promo">{wc:fun:lang::get_lang('价值')}:<em class="gray9">￥{wc:$shop['money']}</em>

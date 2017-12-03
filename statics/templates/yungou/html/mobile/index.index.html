@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="{G_TEMPLATES_CSS}/mobile/style.css">
     <link rel="stylesheet" href="{G_TEMPLATES_CSS}/mobile/zdy.css">
     <link href="{G_TEMPLATES_CSS}/mobile/main.css" rel="stylesheet" type="text/css">
+    {wc:if $this->_cfg['route_l'] == 'en-us'}
+    <script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+    {wc:else}
+    <script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+    {wc:if:end}
     <script src="{G_TEMPLATES_JS}/mobile/jquery.js"></script>
     <script src="{G_TEMPLATES_JS}/mobile/js.cookie.js"></script>
     <script src="{G_TEMPLATES_JS}/mobile/lodash.js"></script>
@@ -270,7 +275,7 @@ window.onload=function(){
                     ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">{wc:fun:lang::get_lang("价值")}：￥' + data[i].money + '</div></span>';
 
                     ul += '<div style="margin-top:15px;" class="goodsListR">';
-                    ul += '<h2 id="' + data[i].id + '">({wc:fun:lang::get_lang("第*期","' + data[i].qishu + '")})' + data[i].title + '</h2>';
+                    ul += '<h2 id="' + data[i].id + '">({wc:fun:lang::get_lang("第*期","' + data[i].qishu + '")}){wc:if $this->_cfg["route_l"] == "en-us"}' + data[i].titleen + '{wc:else}' + data[i].title + '{wc:if:end}</h2>';
                     ul += '</div>';
                     ul += '<div class="pRate item_bottom_container">';
                     ul += '<div class="Progress-bar jdt_container" id="' + data[i].id + '">';

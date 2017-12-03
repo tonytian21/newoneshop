@@ -9,7 +9,13 @@
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
-    <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" /><link href="{G_TEMPLATES_CSS}/mobile/member.css" rel="stylesheet" type="text/css" /><script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script><script id="pageJS" data="{G_TEMPLATES_JS}/mobile/userbuylist.js" language="javascript" type="text/javascript"></script>
+    <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" /><link href="{G_TEMPLATES_CSS}/mobile/member.css" rel="stylesheet" type="text/css" />
+    {wc:if $this->_cfg['route_l'] == 'en-us'}
+    <script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+    {wc:else}
+    <script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+    {wc:if:end}
+    <script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script><script id="pageJS" data="{G_TEMPLATES_JS}/mobile/userbuylist.js" language="javascript" type="text/javascript"></script>
 </head>
 <body>
 <div class="h5-1yyg-v1" id="loadingPicBlock">

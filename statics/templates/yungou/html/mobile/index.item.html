@@ -232,7 +232,7 @@ var n = $("#hidLineLink").val();
 
 
         <div class="pDetails {wc:if $item['q_end_time']!=''}pDetails-end{wc:if:end}">
-                <b>{wc:fun:lang::getlang('第%s期',$val['qishu'])}{wc:$item['title']} <span></span></b>
+                <b>{wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:$item['title']} <span></span></b>
                 <p class="price">{wc:fun:lang::get_lang('价值')}：<em class="arial gray">￥{wc:$item['money']}</em></p>
 
 			{wc:if empty($item['q_end_time'])}
@@ -257,7 +257,7 @@ var n = $("#hidLineLink").val();
 				  <div class="pClosed">{wc:fun:lang::get_lang('本期已揭晓')}</div>
 				{wc:if:end}
 				{wc:if $itemxq==1}
-				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">{wc:fun:lang::getlang('第*期',$val['qishu'])}{wc:fun:lang::get_lang('正在进行中')}(……)</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
+				<div class="pOngoing" codeid="{wc:$itemzx['id']}"><div class="jiexiao" style="line-height: 35px;margin-left: 1%;width: 89%;height: 35px;">{wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:fun:lang::get_lang('正在进行中')}(……)</div><a  style="margin:0;width: 10%;height: 33px;" class="xiangxigw" href="{WEB_PATH}/mobile/cart/cartlist"><i  style="margin: 6px auto;float: none;position: relative;" id="btnCart" class="{wc:$f_car}">&nbsp;</i></a></div>
 				{wc:if:end}
            	{wc:elseif $item['zongrenshu']==$item['canyurenshu']}
 			  {wc:if $item['xsjx_time']!=0}

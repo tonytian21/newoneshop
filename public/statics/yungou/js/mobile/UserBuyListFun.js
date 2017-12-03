@@ -82,7 +82,7 @@ $(function() {
 
                         if (m == 1) {
 
-                            o += '<span class="z-Imgbg z-ImgbgC01"></span><em class="z-Imgtxt">进行中...</em>'
+                            o += '<span class="z-Imgbg z-ImgbgC01"></span><em class="z-Imgtxt">' + getJsLang("进行中") + '...</em>'
 
                         } else {
 
@@ -108,7 +108,7 @@ $(function() {
 
 						 
 
-                        o += '<img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + n[p].thumb + '" border=0 alt=""></a><div class="u-sgl-r "><p class="z-sgl-tt"><a class="gray6">(第' + n[p].shopqishu + "期)" + n[p].shopname + "</a></p>";
+                        o += '<img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + n[p].thumb + '" border=0 alt=""></a><div class="u-sgl-r "><p class="z-sgl-tt"><a class="gray6">(' + getJsLang('第*期',n[p].shopqishu) + ")" + (js_lang['lang_curr'] == 'en-us' ? n[p].titleen : n[p].shopname) + "</a></p>";
 
                         if (m == 1 || m == 2) {
 
@@ -122,7 +122,7 @@ $(function() {
 
                             u = s > 0 && u < 1 ? 1 : u;
 
-                            o += '<p>已参与<em class="orange">' + n[p].gonumber + '</em>人次</p><div class="Progress-bar"><p class="u-progress">' + (s > 0 ? '<span style="width:' + u + '%;" class="pgbar"><span class="pging"></span></span>': "") + '</p><ul class="Pro-bar-li"><li class="P-bar01"><em>' + s + '</em>已参与</li><li class="P-bar02"><em>' + t + '</em>总需人次</li><li class="P-bar03"><em>' + l + "</em>剩余</li></ul></div>"
+                            o += '<p>' + getJsLang('已参与人次',n[p].canyurenshu) + '</p><div class="Progress-bar"><p class="u-progress">' + (s > 0 ? '<span style="width:' + u + '%;" class="pgbar"><span class="pging"></span></span>': "") + '</p><ul class="Pro-bar-li"><li class="P-bar01"><em>' + s + '</em>' + getJsLang("已参与") + '</li><li class="P-bar02"><em>' + t + '</em>' + getJsLang("总需人次") + '</li><li class="P-bar03"><em>' + l + "</em>" + getJsLang("剩余") + "</li></ul></div>"
 
                         } else {
 

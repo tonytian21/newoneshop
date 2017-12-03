@@ -18,17 +18,9 @@ class ajax extends base {
 
     private $Mcartlist_jf;
 
-
-
 	public function __construct(){
-
 		parent::__construct();
 
-/* 		if(ROUTE_A!='userphotoup' and ROUTE_A!='singphotoup'){
-
-			if(!$this->userinfo)_message("请登录",WEB_PATH."/mobile/user/login",3);
-
-		}	 */
 
 		$this->db = System::load_sys_class('model');
 
@@ -78,14 +70,7 @@ class ajax extends base {
 
 		 }
 
-
-
 		echo json_encode($user);
-
-
-
-
-
 	}
 
 	//幻灯
@@ -119,12 +104,7 @@ class ajax extends base {
 		   $slides['listItems'][$key]['width']='614PX';
 
 		   $slides['listItems'][$key]['height']='110PX';
-
-
-
 		}
-
-
 
 	  }
 
@@ -139,10 +119,6 @@ class ajax extends base {
     public function show_jrjxshop(){
 
 		$pagetime=safe_replace($this->segment(4));
-
-
-
-
 
 		$w_jinri_time = strtotime(date('Y-m-d'));
 
@@ -173,19 +149,11 @@ class ajax extends base {
 	//最新揭晓商品
 
 	public function show_newjxshop(){
-
-
-
 		//最新揭晓
 
 		$shopqishu=$this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` !='' ORDER BY `q_end_time` DESC LIMIT 4");
 
-
-
 		echo json_encode($shopqishu);
-
-
-
 	}
 
 
@@ -193,15 +161,6 @@ class ajax extends base {
 	//即将揭晓商品
 
 	public function show_msjxshop(){
-
-	      //暂时没做
-
-
-
-
-
-
-
 		//即将揭晓商品
 
 	    $shoplist['listItems'][0]['codeID']=14;  //商品id
@@ -217,8 +176,6 @@ class ajax extends base {
 		$shoplist['errorCode']=0;
 
 		//echo json_encode($shoplist);
-
-
 
 	}
 
@@ -1167,9 +1124,6 @@ public function delCartItem_jf(){
 	public function UserPay(){
 
 
-
-
-
 	}
 
 
@@ -1177,7 +1131,6 @@ public function delCartItem_jf(){
 	// 马上揭晓的商品
 
 	public function GetStartRaffleAllList(){
-
 		$maxSeconds = intval($this->segment(4));
 
 
@@ -1196,7 +1149,7 @@ public function delCartItem_jf(){
 
 		$time = time();
 
-		$list = $this->db->getlist("select A.qishu,A.xsjx_time,A.id,A.thumb,A.title,B.q_uid,B.q_user,B.q_end_time,A.money from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_showtime` = 'Y' AND A.id > '$maxSeconds' order by `q_end_time` DESC");
+		$list = $this->db->getlist("select A.qishu,A.xsjx_time,A.id,A.thumb,A.title,B.q_uid,B.q_user,B.q_end_time,A.money,sen.titleen from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_showtime` = 'Y' AND A.id > '$maxSeconds' order by `q_end_time` DESC");
 
 		foreach($list as $item) {
 
@@ -1223,6 +1176,7 @@ public function delCartItem_jf(){
 			$data['qishu'] = $item['qishu'];
 
 			$data['title'] = $item['title'];
+			$data['titleen'] = $item['titleen'];
 
 			$data['money'] = $item['money'];
 
@@ -1262,38 +1216,5 @@ public function delCartItem_jf(){
 			die(json_encode($result));
 		}
 	}
-
-
-	public function paywx(){
-
-		// ini_set('display_errors', 1);
-
-		// error_reporting(E_ALL);
-
-
-
-		$tradeno = $this->segment(4);
-
-		if(empty($tradeno)){
-
-			_message(lang::get_lang("订单不存在");
-
-		}
-
-		$pay=System::load_app_class('pay','pay');
-
-		$pay->go_pay_wx($tradeno);
-
-		exit;
-
-	}
-
-
-
-
-
 }
-
-
-
 ?>

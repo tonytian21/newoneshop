@@ -122,6 +122,7 @@ class home extends base
         $jssdk = new JSSDK($wechat['appid'], $wechat['appsecret']);
         
         $signPackage = $jssdk->GetSignPackage();
+        
         include templates("mobile/user", "invite");
     }
 

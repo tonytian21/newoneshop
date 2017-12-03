@@ -153,44 +153,6 @@ class user extends memberbase {
 	}
 
 
-	//wexin登录绑定
-	public function wxinit(){
-	$url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$this->conf['weixin']['id'].'&redirect_uri='.WEB_PATH.'/mobile/user/wxcallback&response_type=code&scope=snsapi_userinfo&state=wechat123&connect_redirect=1#wechat_redirect';
-		header("location:$url");
-	}
-	//wexin回调
-	public function wxcallback(){
-		$time = time();
-		$member=$this->userinfo;
-		$code = $_GET['code'];
-		$state = $_GET['state'];
-		if (empty($code)) $this->error('授权失败');
-		$token_url = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$this->conf['weixin']['id'].'&secret='.$this->conf['weixin']['key'].'&code='.$code.'&grant_type=authorization_code';
-		$token = json_decode(getCurl($token_url));
-		$access_token_url = 'https://api.weixin.qq.com/sns/oauth2/refresh_token?appid='.$this->conf['weixin']['id'].'&grant_type=refresh_token&refresh_token='.$token->refresh_token;
-		//转成对象
-		$access_token = json_decode(getCurl($access_token_url));
-		$user_info_url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token->access_token.'&openid='.$access_token->openid.'&lang=zh_CN';
-		//转成对象
-		$user_info = json_decode(getCurl($user_info_url),true);
-		$weixin_openid = $user_info['openid'];
-		$go_user_himg  = $user_info['headimgurl'];
-		if(empty($weixin_openid)){
-			echo '信息获取失败，请返回刷新后重新操作';die;
-		}
-		$info = $this->db->GetOne("SELECT * FROM `@#_member_band` WHERE `b_code` = '$weixin_openid'");
-		if(!empty($info)){
-			_messagemobile("该微信号已经被绑定，您的操作失败",WEB_PATH."/mobile/home",3);
-		}else{
-			$uid = $member['uid'];
-			$nickname = empty($member['username']) ? $user_info['nickname'] : $member['username'];
-			$q1 = $this->db->Query("INSERT INTO `@#_member_band` (`b_uid`, `b_type`, `b_code`, `b_time`) VALUES ('$uid', 'weixin', '$weixin_openid', '$time')");
-			$q2 = $this->db->Query("UPDATE  `@#_member` SET `wxid` = '$weixin_openid', `headimg`= '$go_user_himg', `username`='$nickname' WHERE `uid`=$uid");
-			if($q1 && $q2){
-				_messagemobile("微信账号绑定成功",WEB_PATH."/mobile/home",3);
-			}
-		}
-	}
 	public function password(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
@@ -420,7 +382,7 @@ class user extends memberbase {
 			$mobile = isset($_POST['mobile']) ? $_POST['mobile'] : '';
 			$checkcodes=isset($_POST['code']) ? $_POST['code'] : '';
 		if(empty($mobile)){
-			echo lang::get_lang("发送失败,失败状态")"验证出错，请重新绑定";die;
+			echo lang::get_lang("验证出错，请重新绑定");die;
 		}
 		if(strlen($checkcodes)!=6){
 			echo lang::get_lang("验证码输入不正确");die;

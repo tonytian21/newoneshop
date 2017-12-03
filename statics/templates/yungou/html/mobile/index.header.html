@@ -115,7 +115,7 @@
                 <li>
                     <a class="liebiao" href="{WEB_PATH}/mobile/mobile/fen/{wc:$categoryx['cateid']}">
                         <img src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}" alt="">
-                        <span>{wc:$categoryx['name']}</span>
+                        <span>{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</span>
                     </a>
                 </li>
             {wc:loop:end}

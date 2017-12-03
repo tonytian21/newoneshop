@@ -3,11 +3,16 @@
 <html>
 <head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" /><title>
 
-	{wc:fun:lang::get_lang('最新揭晓 ')}- {wc:$webname}
+	{wc:fun:lang::get_lang('最新揭晓')}- {wc:$webname}
 
 </title><meta content="app-id=518966501" name="apple-itunes-app" /><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black" name="apple-mobile-web-app-status-bar-style" /><meta content="telephone=no" name="format-detection" />
 <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
 <link href="{G_TEMPLATES_CSS}/mobile/lottery.css" rel="stylesheet" type="text/css" />
+{wc:if $this->_cfg['route_l'] == 'en-us'}
+<script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+{wc:else}
+<script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+{wc:if:end}
 <script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
  <script id="pageJS" data="{G_TEMPLATES_JS}/mobile/Lottery.js" language="javascript" type="text/javascript"></script> 
 </head>
