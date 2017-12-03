@@ -32,11 +32,11 @@ class shopajax extends base
         $pagetime = safe_replace($this->segment(4));
         if (ROUTE_A != 'userphotoup' and ROUTE_A != 'singphotoup') {
             if (! $this->userinfo)
-                _message("请登录", WEB_PATH . "/mobile/user/login", 3);
+                _message(lang::get_lang("请登录"), WEB_PATH . "/mobile/user/login", 3);
         }
         
         $member = $this->userinfo;
-        $title = "我的OneShop中心";
+        $title = lang::get_lang("我的OneShop中心");
         
         $user['code'] = 1;
         $user['username'] = get_user_name($member['uid']);

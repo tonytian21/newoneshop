@@ -8,7 +8,7 @@ class link extends SystemAction{
 	}	
 	public function init(){
 		$mysql_model=System::load_sys_class('model');
-		$title="友情链接";
+		$title=lang::get_lang("友情链接");
 		$link_size=$mysql_model->GetList("select * from `@#_link` where `type`='1'");
 		$link_img=$mysql_model->GetList("select * from `@#_link` where `type`='2'");
 		include templates("link","link");	

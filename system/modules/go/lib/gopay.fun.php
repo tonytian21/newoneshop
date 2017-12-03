@@ -2,7 +2,7 @@
 
 function gopay($member,$shopu,$shoprc,$shopid){
 	if(!$shopu){
-		_message("页面错误",WEB_PATH,3);
+		_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		exit;
 	}
 	$mysql_model=System::load_sys_class('model');		
@@ -80,9 +80,9 @@ function gopay($member,$shopu,$shoprc,$shopid){
 		_setcookie("CODE","",time()-3600);
 		_setcookie("NUM","",time()-3600);
 		
-		echo _message("支付成功",WEB_PATH.'/yun/index/cartlist3',3);			
+		echo _message(lang::get_lang("支付成功"),WEB_PATH.'/yun/index/cartlist3',3);			
 	}else{
-		echo _message("余额不足",WEB_PATH.'/member/home/userrecharge',3);
+		echo _message(lang::get_lang("余额不足"),WEB_PATH.'/member/home/userrecharge',3);
 	}	
 } 
 function tencord($time,$num,$shopid,$qishu,$shoptitle,$shopmoney,$shopjiage){

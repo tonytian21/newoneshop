@@ -16,7 +16,7 @@ class shaidan extends base {
 	
 	//晒单分享
 	public function init(){
-		$title="晒单分享";
+		$title=lang::get_lang("晒单分享");
 		$num=40;
 		$total=$this->db->GetCount("select * from `@#_shaidan` where 1");
 		$page=System::load_sys_class('page');		
@@ -76,14 +76,14 @@ class shaidan extends base {
 			$sdhf_username = get_user_name($member);
 			$sdhf_img = $member['img'];
 			if($sdhf_content==null){
-				_message("页面错误");
+				_message(lang::get_lang("页面错误"));
 			}
 				
 			$this->db->Query("INSERT INTO `@#_shaidan_hueifu`(`sdhf_id`,`sdhf_userid`,`sdhf_content`,`sdhf_time`,`sdhf_username`,`sdhf_img`)VALUES
 			('$sdhf_id','$sdhf_userid','$sdhf_content','$sdhf_time','$sdhf_username','$sdhf_img')");
 			$sd_ping=$shaidan['sd_ping']+1;
 			$this->db->Query("UPDATE `@#_shaidan` SET sd_ping='$sd_ping' where sd_id='$shaidan[sd_id]'");			
-			_message("评论成功",WEB_PATH."/go/shaidan/detail/".$sd_id);
+			_message(lang::get_lang("评论成功"),WEB_PATH."/go/shaidan/detail/".$sd_id);
 		}					
 		$shaidannew=$this->db->GetList("select * from `@#_shaidan` order by `sd_id` DESC limit 5");
 		$shaidan_hueifu=$this->db->GetList("select * from `@#_shaidan_hueifu` where `sdhf_id`='$sd_id'");
@@ -92,13 +92,13 @@ class shaidan extends base {
 			$shaidan_hueifu[$k]['sdhf_content'] = _htmtocode($shaidan_hueifu[$k]['sdhf_content']);
 		}	
 		if(!$shaidan){
-			_message("页面错误");
+			_message(lang::get_lang("页面错误"));
 		}
 		$substr=substr($shaidan['sd_photolist'],0,-1);
 		$sd_photolist=explode(";",$substr);
 		$title = $shaidan['sd_title'] . "_" . _cfg("web_name");
 		$keywords = $shaidan['sd_title'];
-		$description ='晒单详情';
+		$description =lang::get_lang('晒单详情');
 		if($shaidan['sd_content']){
 			$shaidan['sd_content'] = stripslashes($shaidan['sd_content']);
 		}

@@ -83,7 +83,7 @@ function microt($time,$x=null){
 	}else if($x=="H"){
 		return date("H:i:s",$list[0]).".".substr($list[1],0,3);
 	}else if($x=="r"){
-		return date("Y年m月d日 H:i",$list[0]);
+		return date("Y-m-d H:i",$list[0]);
 	}else{
 		return date("Y-m-d H:i:s",$list[0]).".".substr($list[1],0,3);
 	}

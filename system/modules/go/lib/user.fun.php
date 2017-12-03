@@ -31,7 +31,7 @@ function sdimg($sd_id){
 	$img=explode(";",$shaidan['sd_photolist']);
 	$ul_li="";
 	for($i=0;$i<count($img)-1;$i++){
-		$ul_li.='<li id="ulli_'.$i.'"><img src="'.G_UPLOAD_PATH.'/'.$img[$i].'" width="100" height="100"><input type="hidden" value="'.$img[$i].'"><a href="javascript:;" rel="ulli_'.$i.'">删除</a></li>';
+		$ul_li.='<li id="ulli_'.$i.'"><img src="'.G_UPLOAD_PATH.'/'.$img[$i].'" width="100" height="100"><input type="hidden" value="'.$img[$i].'"><a href="javascript:;" rel="ulli_'.$i.'">'.lang::get_lang('删除').'</a></li>';
 	}
 	return $ul_li;
 }

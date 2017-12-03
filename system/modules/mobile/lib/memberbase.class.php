@@ -44,7 +44,7 @@ class memberbase extends SystemAction {
 		}
 	}
 	protected function HeaderLogin(){
-		_message("你还未登录，无权限访问该页！",WEB_PATH."/mobile/user/login");
+		_message(lang::get_lang("无权限访问该页"),WEB_PATH."/mobile/user/login");
 	}
 	
 }

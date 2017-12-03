@@ -10,7 +10,7 @@ class us extends base{
 	}
 	public function uname(){
 		$mysql_model=System::load_sys_class('model');
-		$title="个人主页";
+		$title=lang::get_lang("个人主页");
 		$index=intval($this->segment(4));
 		if($index > 1000000000)$index = $index-1000000000;
 		$tab=$this->segment(3);
@@ -20,12 +20,12 @@ class us extends base{
 			$membergo=$mysql_model->GetList("select * from `@#_member_go_record` where uid='$index' order by `id` DESC limit 0,10 ");	
 			include templates("us","index");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 	public function userbuy(){
 		$mysql_model=System::load_sys_class('model');
-		$title="OneShop记录";
+		$title=lang::get_lang("OneShop记录");
 		$index=intval($this->segment(4));
 		if($index > 1000000000)$index = $index-1000000000;
 		$tab=$this->segment(3);
@@ -35,12 +35,12 @@ class us extends base{
 			$membergo=$mysql_model->GetList("select * from `@#_member_go_record` where uid='$index' order by `id` DESC limit 0,10");		
 			include templates("us","userbuy");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 	public function userraffle(){
 		$mysql_model=System::load_sys_class('model');
-		$title="获得的商品";
+		$title=lang::get_lang("获得的商品");
 		$index=intval($this->segment(4));
 		if($index > 1000000000)$index = $index-1000000000;
 		$tab=$this->segment(3);
@@ -49,7 +49,7 @@ class us extends base{
 		if($member){
 			include templates("us","userraffle");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 }

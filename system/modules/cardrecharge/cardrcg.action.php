@@ -11,7 +11,7 @@ class cardrcg extends base {
 		$this->db = System::load_sys_class("model");
 		$member=$this->userinfo;
 		if(empty($member['uid'])){
-			_message('请先登录',WEB_PATH.'/member/user/login');
+			_message(lang::get_lang('请先登录'),WEB_PATH.'/member/user/login');
 		}
 	}
 	

@@ -7,10 +7,10 @@ class quanzi extends admin {
 	public function __construct(){
 		parent::__construct();
 		$this->ment=array(
-			array("lists","圈子管理",ROUTE_M.'/'.ROUTE_C.""),
-			array("addcate","添加圈子",ROUTE_M.'/'.ROUTE_C."/insert"),
-			array("addcate","帖子查看",ROUTE_M.'/'.ROUTE_C."/tiezi"),
-			array("addcate","帖子回复查看",ROUTE_M.'/'.ROUTE_C."/liuyan"),
+			array("lists",lang::get_lang("圈子管理"),ROUTE_M.'/'.ROUTE_C.""),
+			array("addcate",lang::get_lang("添加圈子"),ROUTE_M.'/'.ROUTE_C."/insert"),
+			array("addcate",lang::get_lang("帖子查看"),ROUTE_M.'/'.ROUTE_C."/tiezi"),
+			array("addcate",lang::get_lang("帖子回复查看"),ROUTE_M.'/'.ROUTE_C."/liuyan"),
 		);
 		$this->db=System::load_sys_class("model");
 	} 
@@ -23,7 +23,7 @@ class quanzi extends admin {
 	public function insert(){
 		if(isset($_POST["submit"]))
 		{
-			if($_POST['title']==null)_message("圈子名不能为空",null,3);
+			if($_POST['title']==null)_message(lang::get_lang("圈子名不能为空"),null,3);
 			$title= htmlspecialchars($_POST['title']);
 			
 			$guanli= htmlspecialchars($_POST['guanli']);
@@ -32,11 +32,11 @@ class quanzi extends admin {
 			$checkemail=_checkemail($guanli);
 			$checkemobile=_checkmobile($guanli);
 			if($checkemail===false && $checkemobile===false){
-				_message("圈子管理员信息填写错误");
+				_message(lang::get_lang("圈子管理员信息填写错误"));
 			}
 			$res=$this->db->GetOne("SELECT uid FROM `@#_member` WHERE `email`='$guanli' or `mobile`='$guanli'");
 			if(empty($res)){
-				_message("圈子管理员不存在");
+				_message(lang::get_lang("圈子管理员不存在"));
 			}else{
 				$guanli=$res['uid'];
 			}
@@ -47,7 +47,7 @@ class quanzi extends admin {
 			$time= time();			
 			$img = htmlspecialchars($_POST['img']);
 			$this->db->Query("INSERT INTO `@#_quanzi`(title,img,guanli,jianjie,gongao,jiaru,time,glfatie)VALUES('$title','$img','$guanli','$jianjie','$gongao','$jiaru','$time','$glfatie')");
-			_message("添加成功");
+			_message(lang::get_lang("添加成功"));
 		}
 		include $this->tpl(ROUTE_M,'quanzi.insert');
 	}
@@ -58,18 +58,18 @@ class quanzi extends admin {
 		if(!$quanzi)_message("参数错误");
 		
 		if(isset($_POST["submit"])){
-			if($_POST['title']==null)_message("圈子名不能为空");
+			if($_POST['title']==null)_message(lang::get_lang("圈子名不能为空"));
 			$title= htmlspecialchars($_POST['title']);
 			$glfatie= htmlspecialchars($_POST['glfatie']);
 			$guanli= htmlspecialchars($_POST['guanli']);
 			$checkemail=_checkemail($guanli);
 			$checkemobile=_checkmobile($guanli);
 			if($checkemail===false && $checkemobile===false){
-				_message("圈子管理员信息填写错误");
+				_message(lang::get_lang("圈子管理员信息填写错误"));
 			}
 			$res=$this->db->GetOne("SELECT uid FROM `@#_member` WHERE `email`='$guanli' or `mobile`='$guanli'");
 			if(empty($res)){
-				_message("圈子管理员不存在");
+				_message(lang::get_lang("圈子管理员不存在"));
 			}else{
 				$guanli=$res['uid'];
 			}
@@ -80,7 +80,7 @@ class quanzi extends admin {
 			$time= time();
 			$img = htmlspecialchars($_POST['img']);				
 			$this->db->Query("UPDATE `@#_quanzi` SET title='$title',img='$img',glfatie='$glfatie',guanli='$guanli',jianjie='$jianjie',gongao='$gongao',jiaru='$jiaru',time='$time' where`id`='$id'");
-			_message("修改成功");
+			_message(lang::get_lang("修改成功"));
 		}		
 				
 		include $this->tpl(ROUTE_M,'quanzi.update');
@@ -108,10 +108,10 @@ class quanzi extends admin {
 			$neirong= htmlspecialchars($_POST['neirong']);
 			$zhiding= $_POST['zhiding'];
 			if($title==null || $neirong==null){
-				_message("不能为空");
+				_message(lang::get_lang("不能为空"));
 			}
 			$this->db->Query("UPDATE `@#_quanzi_tiezi` SET `title`='$title',`neirong`='$neirong',`zhiding`='$zhiding' where`id`='$id'");
-			_message("修改成功",WEB_PATH."/group/quanzi/tiezi");
+			_message(lang::get_lang("修改成功"),WEB_PATH."/group/quanzi/tiezi");
 		}
 		$tiezi=$this->db->GetOne("select * from `@#_quanzi_tiezi` where `id`='$id'");
 		
@@ -126,12 +126,12 @@ class quanzi extends admin {
 			$quanzix=$this->db->getlist("select * from `@#_quanzi_tiezi`  where `id`='$id' limit 1 ");
 			if($quanzix){
 				$this->db->Query("DELETE FROM `@#_quanzi_tiezi` where `id`='$id' ");
-				_message("删除成功");
+				_message(lang::get_lang("删除成功"));
 			}else{
-				_message("参数错误");
+				_message(lang::get_lang("参数错误"));
 			}
 		}else{
-			_message("参数错误");
+			_message(lang::get_lang("参数错误"));
 		}
 	}
 	//显示全部留言
@@ -158,12 +158,12 @@ class quanzi extends admin {
 			$quanzix=$this->db->getlist("select * from `@#_quanzi`  where `id`='$id' limit 1 ");
 			if($quanzix){
 				$this->db->Query("DELETE FROM `@#_quanzi` where `id`='$id' ");
-				_message("删除成功");
+				_message(lang::get_lang("删除成功"));
 			}else{
-				_message("参数错误");
+				_message(lang::get_lang("参数错误"));
 			}
 		}else{
-			_message("参数错误");
+			_message(lang::get_lang("参数错误"));
 		}		
 	}
 }

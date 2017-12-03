@@ -8,8 +8,8 @@ class shaidan_admin extends admin {
 	public function __construct(){		
 		parent::__construct();	
 		$this->ment=array(
-			array("lists","晒单管理",ROUTE_M.'/'.ROUTE_C.""),
-			array("addcate","晒单回复管理",ROUTE_M.'/'.ROUTE_C."/sd_hueifu"),
+			array("lists",lang::get_lang("晒单管理"),ROUTE_M.'/'.ROUTE_C.""),
+			array("addcate",lang::get_lang("晒单回复管理"),ROUTE_M.'/'.ROUTE_C."/sd_hueifu"),
 		);
 		$this->db=System::load_sys_class('model');		
 	} 	
@@ -32,9 +32,9 @@ class shaidan_admin extends admin {
 		$shaidanx=$this->db->getlist("select * from `@#_shaidan` where `sd_id`='$id' limit 1 ");
 		if($shaidanx){
 			$this->db->Query("DELETE FROM `@#_shaidan` where `sd_id`='$id' ");
-			_message("删除成功");
+			_message(lang::get_lang("删除成功"));
 		}else{
-			_message("参数错误");
+			_message(lang::get_lang("参数错误"));
 		}		
 	}
 	public function hf_del(){
@@ -42,9 +42,9 @@ class shaidan_admin extends admin {
 		$shaidanx=$this->db->getlist("select * from `@#_shaidan_hueifu` where `id`='$id' limit 1 ");
 		if($shaidanx){
 			$this->db->Query("DELETE FROM `@#_shaidan_hueifu` where `id`='$id' ");
-			_message("删除成功");
+			_message(lang::get_lang("删除成功"));
 		}else{
-			_message("参数错误");
+			_message(lang::get_lang("参数错误"));
 		}
 	}
 	public function sd_hueifu(){

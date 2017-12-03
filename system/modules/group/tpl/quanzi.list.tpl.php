@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>后台首页</title>
+<title><?=lang::get_lang('后台首页')?></title>
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/style.css" type="text/css">
 <style>
@@ -13,7 +13,7 @@ body{ background-color:#fff}
 <body>
 <script>
 function quanzi(id){
-	if(confirm("确定删除该圈子")){
+	if(confirm("<?=lang::get_lang('确定删除该圈子')?>")){
 		window.location.href="<?php echo G_MODULE_PATH;?>/quanzi/del/"+id;
 	}
 }
@@ -27,13 +27,13 @@ function quanzi(id){
  	<thead>
 	<tr align="center">
 		<th width="5%" height="30">ID</th>
-		<th width="10%">圈子名</th>
-		<th width="20%">简介</th>
-		<th width="20%">公告</th>
-		<th width="5%">成员</th>
-		<th width="10%">帖子数</th>
-		<th width="10%">发帖权限</th>
-		<th width="15%">管理</th>
+		<th width="10%"><?=lang::get_lang('圈子名')?></th>
+		<th width="20%"><?=lang::get_lang('简介')?></th>
+		<th width="20%"><?=lang::get_lang('公告')?></th>
+		<th width="5%"><?=lang::get_lang('成员')?></th>
+		<th width="10%"><?=lang::get_lang('帖子数')?></th>
+		<th width="10%"><?=lang::get_lang('发帖权限')?></th>
+		<th width="15%"><?=lang::get_lang('管理')?></th>
 	</tr>
     </thead>
     <tbody>
@@ -47,8 +47,8 @@ function quanzi(id){
 		<td><?php echo $v['tiezi'];?></td>
 		<td><?php echo $v['glfatie']=='Y'?'是':'否';?></td>
 		<td class="action">
-		<span>[<a href="<?php echo G_MODULE_PATH;?>/quanzi/quanzi_update/<?php echo $v['id'];?>">修改</a>]</span>
-		<span>[<a onClick="quanzi(<?php echo $v['id'];?>)" href="javascript:;">删除</a>]</span></td>		
+		<span>[<a href="<?php echo G_MODULE_PATH;?>/quanzi/quanzi_update/<?php echo $v['id'];?>"><?=lang::get_lang('修改')?></a>]</span>
+		<span>[<a onClick="quanzi(<?php echo $v['id'];?>)" href="javascript:;"><?=lang::get_lang('删除')?></a>]</span></td>		
 	</tr>
 	<?php } ?> 
     </tbody>

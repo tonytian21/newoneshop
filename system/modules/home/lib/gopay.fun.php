@@ -2,7 +2,7 @@
 
 function gopay($member,$shopu,$shoprc,$shopid){
 	if(!$shopu){
-		_message("页面错误",WEB_PATH,3);
+		_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		exit;
 	}
 	$mysql_model=System::load_sys_class('model');		
@@ -95,7 +95,7 @@ function gopay($member,$shopu,$shoprc,$shopid){
 		
 		//echo _message("支付成功",WEB_PATH.'home/index/cartlist3',3);			
 	}else{
-		echo _message("余额不足",WEB_PATH.'home/member/userrecharge',3);
+		echo _message(lang::get_lang("余额不足"),WEB_PATH.'home/member/userrecharge',3);
 	}	
 } 
 function tencord($time,$num){

@@ -30,7 +30,7 @@ class user extends base {
 
 		_setcookie("ushell","",time()-3600);		
 
-		_message("退出成功",WEB_PATH);
+		_message(lang::get_lang("退出成功"),WEB_PATH);
 
 	}
 
@@ -106,7 +106,7 @@ class user extends base {
 			
 			if(!_checkemail($username)){
 			    
-			    _message("邮箱格式不正确!");
+			    _message(lang::get_lang("邮箱格式不正确"));
 			    
 			}
 
@@ -116,7 +116,7 @@ class user extends base {
 			
 			if(!$member){
 
-				_message("帐号不存在错误!");
+				_message(lang::get_lang("帐号不存在错误"));
 
 			}		
 
@@ -126,7 +126,7 @@ class user extends base {
 
 				$strcode=_encrypt($member['email']);
 
-				_message("帐号未认证",WEB_PATH."/member/user/".$logintype."check/"._encrypt($member[$logintype]));
+				_message(lang::get_lang("帐号未认证"),WEB_PATH."/member/user/".$logintype."check/"._encrypt($member[$logintype]));
 
 			}
 
@@ -134,7 +134,7 @@ class user extends base {
 
 			if(!is_array($member)){
 
-				_message("帐号或密码错误",NULL,3);
+				_message(lang::get_lang("帐号或密码错误"),NULL,3);
 
 			}else{
 
@@ -150,7 +150,7 @@ class user extends base {
 
 			}			
 
-			_message("登录成功",base64_decode($this->segment(4)),2);
+			_message(lang::get_lang("登录成功"),base64_decode($this->segment(4)),2);
 
 				
 
@@ -186,7 +186,7 @@ class user extends base {
 
 			if($name==null or $userpassword==null or $userpassword2==null){
 
-				 _message("帐号密码不能为空",null,3);
+				 _message(lang::get_lang("帐号密码不能为空"),null,3);
 
 			}
 
@@ -197,19 +197,19 @@ class user extends base {
 			}*/
 			if(! _checkemail($name)){
 			    
-			    _message("帐号不是邮箱",null,3);
+			    _message(lang::get_lang("帐号不是邮箱"),null,3);
 			    
 			}
 
 			if(strlen($userpassword)<6 || strlen($userpassword)>20){
 
-				 _message("密码小于6位或大于20位",null,3);
+				 _message(lang::get_lang("密码小于6位或大于20位"),null,3);
 
 			}
 
 			if($userpassword!=$userpassword2){
 
-				_message("两次密码不一致",null,3);
+				_message(lang::get_lang("两次密码不一致"),null,3);
 
 			}			
 
@@ -225,7 +225,7 @@ class user extends base {
 
 				if(empty($config_mobile['mid']) && empty($config_email['mpass'])){
 
-					_message("系统短信配置不正确!");
+					_message(lang::get_lang("系统短信配置不正确"));
 
 				}		
 
@@ -237,19 +237,19 @@ class user extends base {
 
 				if(empty($config_email['user']) && empty($config_email['pass'])){
 
-					_message("系统邮箱配置不正确!");
+					_message(lang::get_lang("系统邮箱配置不正确"));
 
 				}				
 
 			}			
 
-			if($regtype==null)_message("注册类型不正确!",null,3);
+			if($regtype==null)_message(lang::get_lang("注册类型不正确"),null,3);
 
 			$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `$regtype` = '$name' LIMIT 1");			
 
 			if(is_array($member)){
 
-				_message("该账号已被注册!",WEB_PATH.'/register');
+				_message(lang::get_lang("该账号已被注册"),WEB_PATH.'/register');
 
 			}
 
@@ -281,13 +281,13 @@ class user extends base {
 
 			}else{
 
-				_message("注册失败!",WEB_PATH.'/register');
+				_message(lang::get_lang("注册失败"),WEB_PATH.'/register');
 
 			}
 
 		}
 
-		$title="注册"._cfg("web_name");
+		$title=lang::get_lang("注册")._cfg("web_name");
 
 		include templates("user","register");
 
@@ -310,13 +310,13 @@ class user extends base {
 
 		if(!$check_code || !isset($check_code['name']) || !isset($check_code['time'])){
 
-			_message("参数不正确或者验证已过期!",WEB_PATH.'/register');
+			_message(lang::get_lang("参数不正确或者验证已过期"),WEB_PATH.'/register');
 
 		}		
 
 		$info=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `reg_key` = '$check_code[name]' and `time` = '$check_code[time]' LIMIT 1");
 
-		if(!$info)_message("错误的来源!",WEB_PATH.'/register');
+		if(!$info)_message(lang::get_lang("错误的来源"),WEB_PATH.'/register');
 
 		$emailurl = explode("@",$info['reg_key']);
 
@@ -326,7 +326,7 @@ class user extends base {
 
 		$reg_message = '';
 
-		if($info['emailcode']=='1')_message("恭喜您,验证成功!",WEB_PATH."/login");
+		if($info['emailcode']=='1')_message(lang::get_lang("验证成功"),WEB_PATH."/login");
 
 		if($info['emailcode']=='-1'){			
 
@@ -348,21 +348,21 @@ class user extends base {
 
 		if(!$check_code || !isset($check_code['name']) || !isset($check_code['time'])){
 
-			_message("参数不正确或者验证已过期!",WEB_PATH.'/register');
+			_message(lang::get_lang("参数不正确或者验证已过期"),WEB_PATH.'/register');
 
 		}		
 
 		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `reg_key` = '$check_code[name]' and `time` = '$check_code[time]' LIMIT 1");
 
-		if(!$member)_message("错误的来源!",WEB_PATH.'/register');
+		if(!$member)_message(lang::get_lang("错误的来源"),WEB_PATH.'/register');
 
 		
 
-		if($member['emailcode']=='1')_message("邮箱已验证",WEB_PATH.'/member/home');
+		if($member['emailcode']=='1')_message(lang::get_lang("邮箱已验证"),WEB_PATH.'/member/home');
 
 		$this->db->Query("UPDATE `@#_member` SET emailcode='-1' where `uid`='$member[uid]'");
 
-		_message("正在重新发送...",WEB_PATH."/member/user/emailcheck/".$this->segment(4));	
+		_message(lang::get_lang("正在重新发送"),WEB_PATH."/member/user/emailcheck/".$this->segment(4));	
 
 		exit;
 
@@ -385,11 +385,11 @@ class user extends base {
 	    	$time = time();
 	    	$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `uid` = '$uid' LIMIT 1");
 	    	if(!$member){
-	    		$title="完善个人信息";
+	    		$title=lang::get_lang("完善个人信息");
 
-				$tiebu="验证失败";
+				$tiebu=lang::get_lang("验证失败");
 
-				$error="未知的来源!";
+				$error=lang::get_lang("未知的来源");
 
 				include templates("user","emailok");
 				exit;
@@ -402,7 +402,7 @@ class user extends base {
 	    	_setcookie("uid",_encrypt($member['uid']),60*60*24*7);	
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$mobile.$member['email'])),60*60*24*7);
 	    	
-	    	_message("保存成功",G_WEB_PATH);
+	    	_message(lang::get_lang("保存成功"),WEB_PATH);
 		}else{
 			$check_code = _encrypt($this->segment(4),"DECODE");
 
@@ -412,7 +412,7 @@ class user extends base {
 
 		if(!isset($check_code['email']) || !isset($check_code['code']) || !isset($check_code['time'])){
 
-			_message("未知的来源!",WEB_PATH,'/register');
+			_message(lang::get_lang("未知的来源"),WEB_PATH,'/register');
 
 		}
 
@@ -420,16 +420,16 @@ class user extends base {
 
 		$member=$this->db->GetOne("select * from `@#_member` where `reg_key`='$check_code[email]' AND `emailcode`= '$sql_code' LIMIT 1");
 
-		if(!$member)_message("未知的来源!",WEB_PATH,'/register');
+		if(!$member)_message(lang::get_lang("未知的来源"),WEB_PATH,'/register');
 
 		$timec=time() - $check_code['time'];			
 
 		if($timec < (3600*24)){
-				$title="邮件激活成功";
+				$title=lang::get_lang("邮件激活成功");
 
-				$tiebu="完成注册";
+				$tiebu=lang::get_lang("完成注册");
 
-				$success="邮件激活成功";					
+				$success=lang::get_lang("邮件激活成功");					
 
 				$fili_cfg = System::load_app_config("user_fufen");		
 
@@ -459,11 +459,11 @@ class user extends base {
 
 			}else{
 
-					$title="邮箱验证失败";
+					$title=lang::get_lang("邮箱验证失败");
 
-					$tiebu="验证失败";
+					$tiebu=lang::get_lang("验证失败");
 
-					$guoqi="对不起，验证码已过期或不正确！";
+					$guoqi=lang::get_lang("验证码已过期或不正确");
 
 					$this->db->Query("UPDATE `@#_member` SET emailcode='-1' where `uid`='$member[uid]'");
 
@@ -485,7 +485,7 @@ class user extends base {
 
 			if(!$check_code || !isset($check_code['name']) || !isset($check_code['time'])){
 
-				_message("参数不正确或者验证已过期!",WEB_PATH.'/register');
+				_message(lang::get_lang("参数不正确或者验证已过期"),WEB_PATH.'/register');
 
 			}	
 
@@ -495,9 +495,9 @@ class user extends base {
 
 			$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `reg_key` = '$check_code[name]' and `time` = '$check_code[time]' LIMIT 1");
 
-			if(!$member)_message("参数不正确!");
+			if(!$member)_message(lang::get_lang("参数不正确"));
 
-			if($member['mobilecode']=='1'){_message("该账号验证成功,请直接登录！",WEB_PATH."/login");}	
+			if($member['mobilecode']=='1'){_message(lang::get_lang("该账号验证成功"),WEB_PATH."/login");}	
 
 			$checkcode=explode("|",$member['mobilecode']);
 
@@ -509,15 +509,15 @@ class user extends base {
 
 				if($sendok[0]!=1){
 
-					_message("短信发送失败,代码:".$sendok[1]);exit;			
+					_message(lang::get_lang("短信发送失败").",".lang::get_lang("代码").":".$sendok[1]);exit;			
 
 				}
 
-				_message("正在重新发送...",WEB_PATH."/member/user/mobilecheck/".$this->segment(4));				
+				_message(lang::get_lang("正在重新发送"),WEB_PATH."/member/user/mobilecheck/".$this->segment(4));				
 
 			}else{
 
-				_message("重发时间间隔不能小于2分钟!",WEB_PATH."/member/user/mobilecheck/".$this->segment(4));
+				_message(lang::get_lang("重发时间间隔不能小于2分钟"),WEB_PATH."/member/user/mobilecheck/".$this->segment(4));
 
 			}
 
@@ -529,7 +529,7 @@ class user extends base {
 
 	public function mobilecheck(){
 
-		$title="手机认证 - "._cfg("web_name");	
+		$title=lang::get_lang("手机认证")." - "._cfg("web_name");	
 
 		$check_code = _encrypt($this->segment(4),"DECODE");
 
@@ -537,7 +537,7 @@ class user extends base {
 
 		if(!$check_code || !isset($check_code['name']) || !isset($check_code['time'])){
 
-			_message("参数不正确或者验证已过期!",WEB_PATH.'/register');
+			_message(lang::get_lang("参数不正确或者验证已过期"),WEB_PATH.'/register');
 
 		}
 
@@ -545,11 +545,11 @@ class user extends base {
 
 		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `reg_key` = '$check_code[name]' and `time` = '$check_code[time]' LIMIT 1");
 
-		if(!$member)_message("未知的来源!",WEB_PATH.'/register');
+		if(!$member)_message(lang::get_lang("未知的来源"),WEB_PATH.'/register');
 
 		if($member['mobilecode'] == '1'){
 
-			_message("该账号验证成功",WEB_PATH."/login");
+			_message(lang::get_lang("该账号验证成功"),WEB_PATH."/login");
 
 		}
 
@@ -575,13 +575,13 @@ class user extends base {
 
 		if(isset($_POST['submit'])){
 
-			$checkcodes=isset($_POST['checkcode']) ? $_POST['checkcode'] : _message("参数不正确!");
+			$checkcodes=isset($_POST['checkcode']) ? $_POST['checkcode'] : _message(lang::get_lang("参数不正确"));
 
-			if(strlen($checkcodes)!=6)_message("验证码输入不正确!");
+			if(strlen($checkcodes)!=6)_message(lang::get_lang("验证码输入不正确"));
 
 			$usercode=explode("|",$member['mobilecode']);
 
-			if($checkcodes!=$usercode[0])_message("验证码输入不正确!");
+			if($checkcodes!=$usercode[0])_message(lang::get_lang("验证码输入不正确"));
 
 			
 
@@ -607,7 +607,7 @@ class user extends base {
 
 			$check = $this->db->Query("UPDATE `@#_member` SET mobilecode='1',mobile='$member[reg_key]' where `uid`='$member[uid]'");			
 
-			_message("验证成功",WEB_PATH."/login");
+			_message(lang::get_lang("验证成功"),WEB_PATH."/login");
 
 		}
 
@@ -627,7 +627,7 @@ class user extends base {
 
 		if(empty($_POST['param'])){
 
-			$message['status']='x';$message['info']="验证码输入错误";
+			$message['status']='x';$message['info']=lang::get_lang("验证码输入错误");
 
 			echo json_encode($message);
 
@@ -637,7 +637,7 @@ class user extends base {
 
 		if(md5(strtolower($_POST['param']))!=_getcookie('checkcode')){
 
-			$message['status']='x';$message['info']="验证码输入错误";
+			$message['status']='x';$message['info']=lang::get_lang("验证码输入错误");
 
 			echo json_encode($message);
 
@@ -645,7 +645,7 @@ class user extends base {
 
 		}else{
 
-			$message['status']='y';$message['info']="验证码正确";
+			$message['status']='y';$message['info']=lang::get_lang("验证码正确");
 
 			echo json_encode($message);
 

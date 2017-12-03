@@ -20,9 +20,9 @@ class autolottery extends SystemAction
         // header("location: ".WEB_PATH);
         
         System::load_sys_fun('user');
-        $title = "限时揭晓" . "_" . $this->_cfg["web_name"];
-        $jinri_time = abs(date("m")) . '月' . date("d") . "日";
-        $minri_time = abs(date("m", strtotime("+1 day"))) . '月' . date("d", strtotime("+1 day")) . "日";
+        $title = lang::get_lang("限时揭晓") . "_" . $this->_cfg["web_name"];
+        $jinri_time = abs(date("m")) . lang::get_lang("月") . date("d") . lang::get_lang("日");
+        $minri_time = abs(date("m", strtotime("+1 day"))) . lang::get_lang("月") . date("d", strtotime("+1 day")) . lang::get_lang("日");
         
         $w_jinri_time = strtotime(date('Y-m-d'));
         $w_minri_time = strtotime(date('Y-m-d', strtotime("+1 day")));
@@ -49,9 +49,9 @@ class autolottery extends SystemAction
         }
         
         $count = count($shoplist);
-        $titlets = '抱歉，今日没有发布限时揭晓商品！';
+        $titlets = lang::get_lang("今日没有发布限时揭晓商品");
         $date = 'today';
-        $key = "限时";
+        $key = lang::get_lang("限时");
         
         // echo "<pre>";
         // print_r($shoplist);
@@ -70,9 +70,9 @@ class autolottery extends SystemAction
         
         $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `xsjx_time` > '$w_minri_time' and `xsjx_time` < '$w_hinri_time' order by `xsjx_time` limit 0,3");
         $count = count($shoplist);
-        $titlets = '抱歉，明日还没有发布限时揭晓商品！';
+        $titlets = lang::get_lang("今日没有发布限时揭晓商品");
         $date = 'next';
-        $key = "限时";
+        $key = lang::get_lang("限时");
         include templates("mobile/index", "autolottery");
     }
 

@@ -277,7 +277,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 				  unset ( $_SESSION ["submitcode"] );
 			  } else {
 				  $WEB_PATH = WEB_PATH;
-				  _messagemobile ( "请不要重复提交...<a href='{$WEB_PATH}/mobile/cart/cartlist' style='color:#22AAFF'>返回购物车</a>查看" );
+				  _messagemobile ( lang::get_lang("请不要重复提交")."<a href='{$WEB_PATH}/mobile/cart/cartlist' style='color:#22AAFF'>".lang::get_lang("返回购物车")."</a>".lang::get_lang("查看") );
 				  exit ();
 			  }
 		  } else {
@@ -310,7 +310,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		 
 		  if (! $pay_type_id) {
 			  if ($checkpay != 'fufen' && $checkpay != 'money')
-				  _messagemobile ( "选择支付方式" );
+				  _messagemobile ( lang::get_lang("选择支付方式") );
 		  }
 		  
 		  /**
@@ -328,12 +328,12 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		$ok = $pay->init($uid,$pay_type_id,'go_record');	//OneShop商品
 		if($ok != 'ok'){
 			_setcookie('Cartlist',NULL);
-			_messagemobile("购物车没有商品请<a href='".WEB_PATH."/mobile/cart/cartlist' style='color:#22AAFF'>返回购物车</a>查看");
+			_messagemobile(lang::get_lang("购物车没有商品请")."<a href='".WEB_PATH."/mobile/cart/cartlist' style='color:#22AAFF'>".lang::get_lang("返回购物车")."</a>".lang::get_lang("查看"));
 		  }
 		  
 		  $check = $pay->go_pay ( $pay_checkbox );
 		  if (! $check) {
-			  _messagemobile ( "订单添加失败,请<a href='" . WEB_PATH . "/mobile/cart/cartlist' style='color:#22AAFF'>返回购物车</a>查看" );
+			  _messagemobile ( lang::get_lang("订单添加失败").",".lang::get_lang("请")."<a href='" . WEB_PATH . "/mobile/cart/cartlist' style='color:#22AAFF'>".lang::get_lang("返回购物车")."</a>".lang::get_lang("查看") );
 		  }
 		  if ($check) {
 			  // 成功
@@ -379,7 +379,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		$jf_use_num=!empty($_POST['jf_use_num']) ? intval($_POST['jf_use_num']) : 0;
 
 		if(!$pay_checkbox && !$shop_score){
-			_message("请选择支付方式",WEB_PATH.'/mobile/cart/jf_cartlist');
+			_message(lang::get_lang("请选择支付方式"),WEB_PATH.'/mobile/cart/jf_cartlist');
 		}
 
 		if($pay_checkbox){
@@ -401,15 +401,15 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		if($ok != 'ok'){
 			$_COOKIE['Cartlist_jf'] = NULL;
 			_setcookie("Cartlist_jf",null);
-			_messagemobile("购物车没有商品请<a href='".WEB_PATH."/mobile/cart/jf_cartlist' style='color:#22AAFF'>返回购物车</a>查看");
+			_messagemobile(lang::get_lang("购物车没有商品请")."<a href='".WEB_PATH."/mobile/cart/jf_cartlist' style='color:#22AAFF'>".lang::get_lang("返回购物车")."</a>".lang::get_lang("查看"));
 		}
 
 		$check = $pay->jf_go_pay($pay_checkbox);
 		if($check + 100 == 0){
-			_messagemobile("账户余额不足以支付，请<a href='".WEB_PATH."/mobile/home/userrecharge' style='color:#22AAFF'>充值</a>");
+			_messagemobile(lang::get_lang("账户余额不足以支付")."<a href='".WEB_PATH."/mobile/home/userrecharge' style='color:#22AAFF'>".lang::get_lang("充值")."</a>");
 		}
 		if(!$check){
-			_messagemobile("订单添加失败,请<a href='".WEB_PATH."/mobile/cart/jf_cartlist' style='color:#22AAFF'>返回购物车</a>查看");
+			_messagemobile(lang::get_lang("订单添加失败").",".lang::get_lang("请")."<a href='".WEB_PATH."/mobile/cart/jf_cartlist' style='color:#22AAFF'>".lang::get_lang("返回购物车")."</a>查看");
 		}
 		if($check){
 			//成功

@@ -204,8 +204,8 @@ class mobile extends base
     public function glist()
     {
         $webname = $this->_cfg['web_name'];
-        $title = "商品列表_" . _cfg("web_name");
-        $key = "所有商品";
+        $title = lang::get_lang("商品列表")."_" . _cfg("web_name");
+        $key = lang::get_lang("所有商品");
         include templates("mobile/index", "glist");
     }
 
@@ -224,16 +224,16 @@ class mobile extends base
     public function gonggao()
     {
         $webname = $this->_cfg['web_name'];
-        $title = "网站公告_" . _cfg("web_name");
-        $key = "网站公告";
+        $title = lang::get_lang("网站公告")."_" . _cfg("web_name");
+        $key = lang::get_lang("网站公告");
         include templates("mobile/index", "gonggao");
     }
 
     public function gonggaoxq()
     {
         $webname = $this->_cfg['web_name'];
-        $title = "公告详情_" . _cfg("web_name");
-        $key = "公告详情";
+        $title = lang::get_lang("公告详情")."_" . _cfg("web_name");
+        $key = lang::get_lang("公告详情");
         $ggid = htmlspecialchars($this->segment(4));
         $gonggaoxq = $this->db->GetList("SELECT * FROM `@#_article` WHERE `id` = $ggid");
         include templates("mobile/index", "gonggaoxq");
@@ -245,7 +245,7 @@ class mobile extends base
         $webname = $this->_cfg['web_name'];
         $search = htmlspecialchars($this->segment(4));
         $title = $search . ' - ' . _cfg('web_name');
-        $key = "商品搜索";
+        $key = lang::get_lang("商品搜索");
         $shoplist = $this->db->GetList("SELECT `qishu`,`thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_user`  = '' AND `title` LIKE '%" . $search . "%' order by `canyurenshu` DESC");
         $list = count($shoplist);
         include templates("mobile/index", "search");
@@ -255,8 +255,8 @@ class mobile extends base
     public function jflist()
     {
         $webname = $this->_cfg['web_name'];
-        $title = "积分购物_" . _cfg("web_name");
-        $key = "积分购物";
+        $title = lang::get_lang("积分购物")."_" . _cfg("web_name");
+        $key = lang::get_lang("积分购物");
         include templates("mobile/index", "jflist");
     }
 
@@ -277,7 +277,7 @@ class mobile extends base
         }
         if (empty($fen1)) {
             $brand = $this->db->GetList("select * from `@#_brand` where 1 order by `order` DESC");
-            $daohang = '所有分类';
+            $daohang = lang::get_lang("所有分类");
         } else {
             $brand = $this->db->GetList("select * from `@#_brand` where `cateid`='$fen1' order by `order` DESC");
             $daohang = $this->db->GetOne("select * from `@#_category` where `cateid` = '$fen1' order by `order` DESC");
@@ -369,7 +369,7 @@ class mobile extends base
         }
         if (empty($fen1)) {
             $brand = $this->db->GetList("select * from `@#_jf_brand` where 1 order by `order` DESC");
-            $daohang = '所有分类';
+            $daohang = lang::get_lang("所有分类");
         } else {
             $brand = $this->db->GetList("select * from `@#_jf_brand` where `cateid`='$fen1' order by `order` DESC");
             $daohang = $this->db->GetOne("select * from `@#_category` where `cateid` = '$fen1' order by `order` DESC");
@@ -448,13 +448,13 @@ class mobile extends base
     public function item()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "商品详情";
+        $key = lang::get_lang("商品详情");
         $mysql_model = System::load_sys_class('model');
         $itemid = safe_replace($this->segment(4));
         
         $item = $mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='" . $itemid . "' LIMIT 1");
         if (! $item)
-            _messagemobile("商品不存在！");
+            _messagemobile(lang::get_lang("商品不存在"));
         if ($item['q_end_time']) {
             header("location: " . WEB_PATH . "/mobile/mobile/dataserver/" . $item['id']);
             exit();
@@ -640,13 +640,13 @@ class mobile extends base
     public function jf_item()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "商品详情";
+        $key = lang::get_lang("商品详情");
         $mysql_model = System::load_sys_class('model');
         $itemid = safe_replace($this->segment(4));
         
         $item = $mysql_model->GetOne("select * from `@#_jf_shoplist` where `id`='" . $itemid . "' LIMIT 1");
         if (! $item)
-            _messagemobile("商品不存在！");
+            _messagemobile(lang::get_lang("商品不存在"));
         if ($item['q_end_time']) {
             header("location: " . WEB_PATH . "/mobile/mobile/dataserver/" . $item['id']);
             exit();
@@ -670,20 +670,20 @@ class mobile extends base
         
         // 期数显示
         $loopqishu = '';
-        $loopqishu .= '<li class="cur"><a href="javascript:;">' . "第" . $item['qishu'] . "期</a><b></b></li>";
+        $loopqishu .= '<li class="cur"><a href="javascript:;">'. lang::get_lang('第*期',$item['qishu']) . "</a><b></b></li>";
         
         if (empty($itemlist)) {
             foreach ($itemlist as $qitem) {
-                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/jf_item/' . $qitem['id'] . '" class="">第' . $qitem['qishu'] . '期</a></li>';
+                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/jf_item/' . $qitem['id'] . '" class="">' .lang::get_lang('第*期',$qitem['qishu'])  . '</a></li>';
             }
         }
         
         foreach ($itemlist as $qitem) {
             if ($qitem['id'] == $itemid) {
                 
-                $loopqishu .= '<li class="cur"><a href="javascript:;">' . "第" . $itemlist[0]['qishu'] . "期</a><b></b></li>";
+                $loopqishu .= '<li class="cur"><a href="javascript:;">'  . lang::get_lang('第*期',$itemlist[0]['qishu']) . "</a><b></b></li>";
             } else {
-                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' . $qitem['id'] . '" >第' . $qitem['qishu'] . '期</a></li>';
+                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' . $qitem['id'] . '" >' . lang::get_lang('第*期',$qitem['qishu'])  . '</a></li>';
             }
         }
         $gorecode = array();
@@ -725,11 +725,11 @@ class mobile extends base
     public function dataserver()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "揭晓结果";
+        $key = lang::get_lang("揭晓结果");
         $itemid = intval($this->segment(4));
         $item = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid'  LIMIT 1");
         if (! $item) {
-            _messagemobile("商品不存在！");
+            _messagemobile(lang::get_lang("商品不存在"));
         }
         if (! $item['q_end_time']) {
             header("location: " . WEB_PATH . "/mobile/mobile/item/" . $item['id']);
@@ -737,7 +737,7 @@ class mobile extends base
         }
         
         if (empty($item['q_user_code'])) {
-            _messagemobile("该商品正在进行中...");
+            _messagemobile(lang::get_lang("该商品正在进行中"));
         }
         
         $itemlist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `sid`='$item[sid]' order by `qishu` DESC");
@@ -762,9 +762,9 @@ class mobile extends base
         foreach ($itemlist as $qitem) {
             if ($qitem['id'] == $itemid) {
                 
-                $loopqishu .= '<li class="cur"><a href="javascript:;">' . "第" . $qitem['qishu'] . "期</a><b></b></li>";
+                $loopqishu .= '<li class="cur"><a href="javascript:;">' . lang::get_lang('第*期',$qitem['qishu']) . "</a><b></b></li>";
             } else {
-                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' . $qitem['id'] . '" >第' . $qitem['qishu'] . '期</a></li>';
+                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' . $qitem['id'] . '" >' . lang::get_lang('第*期', $qitem['qishu']) . '</a></li>';
             }
         }
         
@@ -845,11 +845,11 @@ class mobile extends base
         $webname = $this->_cfg['web_name'];
         $code = _getcookie('CODE');
         if (! isset($_GET['attach'])) {
-            _messagemobile("页面错误!");
+            _messagemobile(lang::get_lang("页面错误"));
             exit();
         }
         if (! $code) {
-            _messagemobile("页面错误!");
+            _messagemobile(lang::get_lang("页面错误"));
             exit();
         }
         $mysql_model = System::load_sys_class('model');
@@ -873,7 +873,7 @@ class mobile extends base
         
         $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where 1 ORDER BY `canyurenshu` DESC LIMIT 4");
         $member_record = $this->db->GetList("select * from `@#_member_go_record` order by id DESC limit 6");
-        $key = "最新揭晓";
+        $key = lang::get_lang("最新揭晓");
         include templates("mobile/index", "lottery");
     }
 
@@ -881,7 +881,7 @@ class mobile extends base
     public function buyrecords()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "所有夺宝记录";
+        $key = lang::get_lang("所有夺宝记录");
         $itemid = intval($this->segment(4));
         $cords = $this->db->GetList("select * from `@#_member_go_record` where `shopid`='$itemid'order by `time` desc");
         $co = count($cords);
@@ -892,11 +892,11 @@ class mobile extends base
     public function goodsdesc()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "图文详情";
+        $key = lang::get_lang("图文详情");
         $itemid = intval($this->segment(4));
         $desc = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid'");
         if (! $desc) {
-            _messagemobile('页面错误!');
+            _messagemobile(lang::get_lang("页面错误"));
         }
         include templates("mobile/index", "goodsdesc");
     }
@@ -905,11 +905,11 @@ class mobile extends base
     public function goodspost()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "晒单评论";
+        $key = lang::get_lang("晒单评论");
         $itemid = intval($this->segment(4));
         $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='$itemid'");
         if (! $shoplist) {
-            _messagemobile('页面错误!');
+            _messagemobile(lang::get_lang("页面错误"));
         }
         $shop = '';
         foreach ($shoplist as $list) {
@@ -934,11 +934,11 @@ class mobile extends base
     public function buyrecords_jf()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "所有夺宝记录";
+        $key = lang::get_lang("所有夺宝记录");
         $itemid = intval($this->segment(4));
         $cords = $this->db->GetList("select * from `@#_member_go_jf_record` where `shopid`='$itemid'");
         if (! $cords) {
-            _messagemobile('页面错误!');
+            _messagemobile(lang::get_lang("页面错误"));
         }
         include templates("mobile/index", "buyrecords");
     }
@@ -947,11 +947,11 @@ class mobile extends base
     public function goodsdesc_jf()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "图文详情";
+        $key = lang::get_lang("图文详情");
         $itemid = intval($this->segment(4));
         $desc = $this->db->GetOne("select * from `@#_jf_shoplist` where `id`='$itemid'");
         if (! $desc) {
-            _messagemobile('页面错误!');
+            _messagemobile(lang::get_lang("页面错误"));
         }
         include templates("mobile/index", "goodsdesc");
     }
@@ -960,11 +960,11 @@ class mobile extends base
     public function goodspost_jf()
     {
         $webname = $this->_cfg['web_name'];
-        $key = "晒单评论";
+        $key = lang::get_lang("晒单评论");
         $itemid = intval($this->segment(4));
         $shoplist = $this->db->GetList("select * from `@#_jf_shoplist` where `sid`='$itemid'");
         if (! $shoplist) {
-            _messagemobile('页面错误!');
+            _messagemobile(lang::get_lang("页面错误"));
         }
         $shop = '';
         foreach ($shoplist as $list) {

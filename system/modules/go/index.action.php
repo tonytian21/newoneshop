@@ -203,7 +203,7 @@ class index extends base {
 		$mysql_model=System::load_sys_class('model');
 		$itemid=abs(intval(safe_replace($this->segment(4))));	
 		$item=$mysql_model->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='".$itemid."' LIMIT 1");
-		if(!$item)_message("没有这个商品！",WEB_PATH,3);
+		if(!$item)_message(lang::get_lang("没有这个商品"),WEB_PATH,3);
 		$q_showtime = (isset($item['q_showtime']) && $item['q_showtime'] == 'N') ? 'N' : 'Y';
 		
 		if($item['q_end_time'] && $q_showtime == 'N'){
@@ -248,33 +248,33 @@ class index extends base {
 			if($itemlist[0]['id'] == $item['id'])
 				$loopqishu.='
 	<li>
-		<a href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'"> <b class="period_Ongoing period_ArrowCur bg_red" style="padding-left:0px;">'."第".$itemlist[0]['qishu']."期 <i></i></b> 
+		<a href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'"> <b class="period_Ongoing period_ArrowCur bg_red" style="padding-left:0px;">'.lang::get_lang('第*期',$itemlist[0]['qishu']).' <i></i></b> 
 		</a>
 	</li>
-	";
+	';
 			else
 				$loopqishu.='
 	<li>
-		<a class="gray02" href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'"> <b class="">'."第".$itemlist[0]['qishu']."期 <i></i></b> 
+		<a class="gray02" href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'"> <b class="">'.lang::get_lang('第*期',$itemlist[0]['qishu']).' <i></i></b> 
 		</a>
 	</li>
-	";
+	';
 		}else{		
 			if($itemlist[0]['id'] == $item['id'])
 				$loopqishu.='
 	<li>
 		<a class="gray02" href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'">
 			<b class="">
-				'."第".$itemlist[0]['qishu']."期
+				'.lang::get_lang('第*期',$itemlist[0]['qishu']).'
 				<i></i>
 			</b>
 		</a>
 	</li>
-	";
+	';
 			else
 				$loopqishu.='
 	<li>
-		<a class="gray02" href="'.WEB_PATH.'/dataserver/'.$itemlist[0]['id'].'">第'.$itemlist[0]['qishu'].'期</a>
+		<a class="gray02" href="'.WEB_PATH.'/dataserver/'.$itemlist[0]['id'].'">'.lang::get_lang('第*期',$itemlist[0]['qishu']).'</a>
 	</li>
 	';
 		}
@@ -289,7 +289,7 @@ class index extends base {
 			if($qitem['id'] == $item['id'])
 				$loopqishu.='
 	<li>
-		<b class="period_Ongoing period_ArrowCur bg_red" style="padding-left:0px;">第'.$qitem['qishu'].'期</b>
+		<b class="period_Ongoing period_ArrowCur bg_red" style="padding-left:0px;">'.lang::get_lang('第*期',$qitem['qishu']).'</b>
 	</li>
 	';
 			else
@@ -297,7 +297,7 @@ class index extends base {
 	<li>
 		<a href="'.WEB_PATH.'/dataserver/'.$qitem['id'].'" class="gray02">
 			<b class="">
-				第'.$qitem['qishu'].'期
+				'.lang::get_lang('第*期',$qitem['qishu']).'
 				<i></i>
 			</b>
 		</a>
@@ -318,10 +318,10 @@ class index extends base {
 		$itemid=abs(intval(safe_replace($this->segment(4))));	
 		$item=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$itemid' and `q_uid` is not null LIMIT 1");
 		if(!$item){
-			_message("没有这个商品!");
+			_message(lang::get_lang("没有这个商品"));
 		}
 		if(empty($item['q_user_code'])){
-			_message("该商品正在进行中...",WEB_PATH.'/goods/'.$itemid);
+			_message(lang::get_lang("该商品正在进行中"),WEB_PATH.'/goods/'.$itemid);
 		}
 		if(isset($item['q_showtime']) && $item['q_showtime'] == 'Y'){	
 			header("location: ".WEB_PATH."/goods/".$item['id']);
@@ -393,7 +393,7 @@ class index extends base {
 		<li>
 			<a href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'">
 				<b class="period_Ongoing">
-					'."第".$itemlist[0]['qishu']."期
+					'.lang::get_lang('第*期',$itemlist[0]['qishu'])."
 					<i></i>
 				</b>
 			</a>
@@ -405,7 +405,7 @@ class index extends base {
 		<li>
 			<a href="'.WEB_PATH.'/goods/'.$itemlist[0]['id'].'">
 				<b class="period_ArrowCur">
-					'."第".$itemlist[0]['qishu']."期
+					'.lang::get_lang('第*期',$itemlist[0]['qishu'])."
 					<i></i>
 				</b>
 			</a>
@@ -429,13 +429,13 @@ class index extends base {
 			if($qitem['id'] == $itemid){
 				$loopqishu.='
 	<li>
-		<b class="period_ArrowCur bg_red">第'.$qitem['qishu'].'期</b>
+		<b class="period_ArrowCur bg_red">'.lang::get_lang('第*期',$qitem['qishu']).'</b>
 	</li>
 	';
 			}else{
 				$loopqishu.='
 	<li>
-		<a href="'.WEB_PATH.'/dataserver/'.$qitem['id'].'" class="gray02">第'.$qitem['qishu'].'期</a>
+		<a href="'.WEB_PATH.'/dataserver/'.$qitem['id'].'" class="gray02">'.lang::get_lang('第*期',$qitem['qishu']).'</a>
 	</li>
 	';		
 			}			

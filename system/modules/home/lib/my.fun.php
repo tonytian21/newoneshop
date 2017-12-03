@@ -46,7 +46,7 @@ function microt($time,$x=null){
 	if($x=="l"){		
 		return date("His",$list[1]).substr($list[0],2,2);
 	}else if($x=="r"){
-		return date("Y年m月d日 H:i",$list[1]);
+		return date("Y-m-d H:i",$list[1]);
 	}else{
 		return date("Y-m-d H:i:s",$list[1]).".".substr($list[0],2,2);
 	}

@@ -10,7 +10,7 @@ class home extends base {
 	public function __construct(){ 
 		parent::__construct();
 		if(ROUTE_A!='userphotoup' and ROUTE_A!='singphotoup'){
-			if(!$this->userinfo)_message("请登录",WEB_PATH."/member/user/login",3);
+			if(!$this->userinfo)_message(lang::get_lang("请登录"),WEB_PATH."/member/user/login",3);
 		}		
 		
 		$this->db = System::load_sys_class('model');
@@ -18,7 +18,7 @@ class home extends base {
 	}
 	public function init(){
 		$member=$this->userinfo;
-		$title="我的OneShop中心";	
+		$title=lang::get_lang("我的OneShop中心");	
 		$quanzi=$this->db->GetList("select * from `@#_quanzi_tiezi` order by id DESC LIMIT 5");
 		
 		$jingyan = $member['jingyan'];
@@ -93,21 +93,21 @@ class home extends base {
 		$time=time();
 		$shopinfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='".$shopid."'");
 		$umoney = $this->userinfo['money'];
-		if($umoney<$shopinfo['qmoney']){_message("账户余额不足");}
-		$ods = date("YmdHis").rand(1000,9999)."(全)";
+		if($umoney<$shopinfo['qmoney']){_message(lang::get_lang("账户余额不足"));}
+		$ods = date("YmdHis").rand(1000,9999)."(".lang::get_lang("全").")";
 		$this->db->Query("update @#_member set money=money-$shopinfo[qmoney] where uid=$uid");
-		$this->db->Query("INSERT INTO `@#_member_go_record`(`code`,`uid`,`username`,`gonumber`,`shopid`,`shopname`,`shopqishu`,`goucode`,`time`,`status`,`huode`)VALUES('$ods','$uid','$username',1,'$shopid','$shopinfo[title]','$shopinfo[qishu]','全款购买','$time','已付款,未发货,未完成','1')");
+		$this->db->Query("INSERT INTO `@#_member_go_record`(`code`,`uid`,`username`,`gonumber`,`shopid`,`shopname`,`shopqishu`,`goucode`,`time`,`status`,`huode`)VALUES('$ods','$uid','$username',1,'$shopid','$shopinfo[title]','$shopinfo[qishu]','".lang::get_lang("全款购买")."','$time','".lang::get_lang("已付款,未发货,未完成")."','1')");
 		if($this->segment(4)=="mobile"){
-			_message("购买成功",WEB_PATH."/mobile/home/userbuylist",3);
+			_message(lang::get_lang("购买成功"),WEB_PATH."/mobile/home/userbuylist",3);
 		}else{
-		    _message("购买成功",WEB_PATH."/member/home/userbuylist",3);
+		    _message(lang::get_lang("购买成功"),WEB_PATH."/member/home/userbuylist",3);
 		}
 	}
 	//个人设置
 	public function userphoto(){	
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="修改头像";
+		$title=lang::get_lang("修改头像");
 		$uid=_getcookie('uid');
 		$ushell=_getcookie('ushell');
 		include templates("member","photo");
@@ -120,7 +120,7 @@ class home extends base {
 			$uid=isset($_POST['uid']) ? $_POST['uid'] : NULL;		
 			$ushell=isset($_POST['ushell']) ? $_POST['ushell'] : NULL;
 			$login=$this->checkuser($uid,$ushell);			
-			if(!$login){echo "未登陆";exit;}
+			if(!$login){echo lang::get_lang("未登陆");exit;}
 			
 			System::load_sys_class('upload','sys','no');
 			upload::upload_config(array('png','jpg','jpeg'),500000,'touimg');
@@ -167,7 +167,7 @@ class home extends base {
 			upload::thumbs(30,30,false,G_UPLOAD.$tname,$point);			
 			
 			$this->db->Query("UPDATE `@#_member` SET img='$tname' where uid='$uid'");
-			_message("头像修改成功",WEB_PATH."/member/home/userphoto",3);
+			_message(lang::get_lang("头像修改成功"),WEB_PATH."/member/home/userphoto",3);
 			
 		}
 	}
@@ -177,7 +177,7 @@ class home extends base {
 	
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="编辑个人资料";
+		$title=lang::get_lang("编辑个人资料");
 		$member_qq=$this->db->GetOne("select * from `@#_member_band` where `b_uid`=$member[uid]");
 		include templates("member","modify");
 	}
@@ -185,9 +185,9 @@ class home extends base {
 	public function mailchecking(){	
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="邮箱验证";
+		$title=lang::get_lang("邮箱验证");
 		if($member['email'] && $member['emailcode'] == 1){
-			_message("您的邮箱已经验证成功,请勿重复验证！");
+			_message(lang::get_lang("您的邮箱已经验证成功"));
 		}		
 		include templates("member","mailchecking");
 		
@@ -197,7 +197,7 @@ class home extends base {
 		$member=$this->userinfo;		
 		$member2=$mysql_model->GetOne("select uid from `@#_member` where `email`='".$_POST['param']."'");
 		if(!empty($member2)){
-			echo "邮箱已经存在";
+			echo lang::get_lang("邮箱已经存在");
 		}else{
 			echo '{
 					"info":"",
@@ -210,33 +210,33 @@ class home extends base {
 	
 	//发送验证邮件
 	public function sendsuccess(){		
-		if(!isset($_POST['submit']))_message("参数错误",WEB_PATH.'/member/home/modify');
-		if(!isset($_POST['email']) || empty($_POST['email']))_message("邮箱地址不能为空!",WEB_PATH.'/member/home/modify');
-		if(!_checkemail($_POST['email']))_message("邮箱格式错误!",WEB_PATH.'/member/home/modify');
+		if(!isset($_POST['submit']))_message(lang::get_lang("参数错误"),WEB_PATH.'/member/home/modify');
+		if(!isset($_POST['email']) || empty($_POST['email']))_message(lang::get_lang("邮箱地址不能为空"),WEB_PATH.'/member/home/modify');
+		if(!_checkemail($_POST['email']))_message(lang::get_lang("邮箱格式错误"),WEB_PATH.'/member/home/modify');
 		
 		$config_email = System::load_sys_config("email");
 		if(empty($config_email['user']) && empty($config_email['pass'])){
-					_message("系统邮箱配置不正确!",WEB_PATH.'/member/home/modify');
+					_message(lang::get_lang("系统邮箱配置不正确"),WEB_PATH.'/member/home/modify');
 		}
 		
 		$member=$this->userinfo;
-		$title="发送成功";	
+		$title=lang::get_lang("发送成功");	
 		$email = $_POST['email'];
 		
 		$member2=$this->db->GetOne("select * from `@#_member` where `email`='$email' and `uid` != '$member[uid]'");
 		if(!empty($member2) && $member2['emailcode'] == 1){
-			_message("该邮箱已经存在，请选择另外的邮箱验证！",WEB_PATH.'/member/home/modify');
+			_message(lang::get_lang("该邮箱已经存在"),WEB_PATH.'/member/home/modify');
 		}
 		
 		$strcode1=$email.",".$member['uid'].",".time();
 		$strcode= _encrypt($strcode1);
 		
-		$tit=$this->_cfg['web_name_two']."激活注册邮箱";
-		$content='<span>请在24小时内绑定邮箱</span>，点击链接：<a href="'.WEB_PATH.'/member/home/emailcheckingok/'.$strcode.'">';
+		$tit=$this->_cfg['web_name_two'].lang::get_lang("激活注册邮箱");
+		$content='<span>'.lang::get_lang("请在24小时内绑定邮箱").'</span>，'.lang::get_lang("点击链接").'：<a href="'.WEB_PATH.'/member/home/emailcheckingok/'.$strcode.'">';
 		$content.=WEB_PATH.'/member/home/emailcheckingok/'.$strcode.'</a>';
 		$succ=_sendemail($email,'',$tit,$content,'yes','no');
 		if($succ=='no'){
-				_message("邮件发送失败!",WEB_PATH.'/member/home/modify',30);
+				_message(lang::get_lang("邮件发送失败"),WEB_PATH.'/member/home/modify',30);
 		}else{
 				include templates("member","sendsuccess");	
 		}
@@ -253,29 +253,29 @@ class home extends base {
 		
 		$emailcode=_encrypt($key,'DECODE');				
 		if(empty($emailcode)){
-			 _message("认证失败,参数不正确！",null,3);
+			 _message(lang::get_lang("认证失败"),null,3);
 		}		
 		$memberx=explode(",",$emailcode);		
 		$email=$memberx[0];
 		$timec=(time()-$memberx[2])/(60*60);	
 		$qmember=$this->db->GetOne("select * from `@#_member` where `email`='$email' and `uid` != '$member[uid]'");
 		if($qmember && $qmember['emailcode']==1){
-			_message("该邮箱已被认证,请勿重复认证!",WEB_PATH.'/member/home');
+			_message(lang::get_lang("该邮箱已被认证"),WEB_PATH.'/member/home');
 		}		
 		if($timec<24){
 			$this->db->Query("UPDATE `@#_member` SET email='".$memberx[0]."',emailcode='1' where uid='$member[uid]'");			
-			$title="邮箱验证完成";
+			$title=lang::get_lang("邮箱验证完成");
 			include templates("member","sendsuccess2");
 		}else{
-			_message("认证时间已过期!",null,3);
+			_message(lang::get_lang("认证时间已过期"),null,3);
 		}
 	}
 	public function mobilechecking(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="手机验证";
+		$title=lang::get_lang("手机验证");
 		if($member['mobile'] && $member['mobilecode'] == 1){
-			_message("您的手机已经验证成功,请勿重复验证！");
+			_message(lang::get_lang("您的手机已经验证成功,请勿重复验证"));
 		}	
 		include templates("member","mobilechecking");
 	}
@@ -283,23 +283,23 @@ class home extends base {
 	//手机验证
 	public function mobilesuccess(){
 		
-		$title="手机验证";
+		$title=lang::get_lang("手机验证");
 		$member=$this->userinfo;
 		
 		if(isset($_POST['submit'])){
 			$mobile=isset($_POST['mobile']) ? $_POST['mobile'] : "";
 			if(!_checkmobile($mobile) || $mobile==null){
-				_message("手机号错误",null,3);	
+				_message(lang::get_lang("手机号错误"),null,3);	
 			}
 			$member2=$this->db->GetOne("select mobilecode,uid,mobile from `@#_member` where `mobile`='$mobile' and `uid` != '$member[uid]'");
 			if($member2 && $member2['mobilecode'] == 1){
-				_message("手机号已被注册！");
+				_message(lang::get_lang("手机号已被注册"));
 			}					
 			if($member['mobilecode']!=1){
 				//验证码
 				$ok = send_mobile_reg_code($mobile,$member['uid']);			
 				if($ok[0]!=1){
-					_message("发送失败,失败状态:".$ok[1]);
+					_message(lang::get_lang("发送失败,失败状态").":".$ok[1]);
 				}else{
 					_setcookie("mobilecheck",base64_encode($mobile));
 				}					
@@ -313,7 +313,7 @@ class home extends base {
 		$member=$this->userinfo;
 		$mobilecodes=rand(100000,999999).'|'.time();//验证码
 
-		if($member['mobilecode']==1){_message("该账号验证成功",WEB_PATH."/member/home");}			
+		if($member['mobilecode']==1){_message(lang::get_lang("该账号验证成功"),WEB_PATH."/member/home");}			
 		
 		$checkcode=explode("|",$member['mobilecode']);
 		$times=time()-$checkcode[1];
@@ -321,12 +321,12 @@ class home extends base {
 			//重发验证码			
 				$ok = send_mobile_reg_code($member['mobile'],$member['uid']);
 				if($ok[0]!=1){
-					_message("发送失败,失败状态:".$ok[1]);
+					_message(lang::get_lang("发送失败,失败状态").":".$ok[1]);
 				}
 			
-			_message("正在重新发送...",WEB_PATH."/member/user/mobilecheck/"._encrypt($member['mobile']),2);				
+			_message(lang::get_lang("正在重新发送"),WEB_PATH."/member/user/mobilecheck/"._encrypt($member['mobile']),2);				
 		}else{
-			_message("重发时间间隔不能小于2分钟!",WEB_PATH."/member/user/mobilecheck/"._encrypt($member['mobile']));
+			_message(lang::get_lang("重发时间间隔不能小于2分钟"),WEB_PATH."/member/user/mobilecheck/"._encrypt($member['mobile']));
 		}
 		
 	}
@@ -334,12 +334,12 @@ class home extends base {
 		$member=$this->userinfo;
 		if(isset($_POST['submit'])){
 			$shoujimahao =  base64_decode(_getcookie("mobilecheck"));
-			if(!_checkmobile($shoujimahao))_message("手机号码错误!");			
-			$checkcodes=isset($_POST['mobile']) ? $_POST['mobile'] : _message("参数不正确!");
-			if(strlen($checkcodes)!=6)_message("验证码输入不正确!");
+			if(!_checkmobile($shoujimahao))_message(lang::get_lang("手机号码错误"));			
+			$checkcodes=isset($_POST['mobile']) ? $_POST['mobile'] : _message(lang::get_lang("参数不正确"));
+			if(strlen($checkcodes)!=6)_message(lang::get_lang("验证码输入不正确"));
 			$usercode=explode("|",$member['mobilecode']);	
 
-			if($checkcodes!=$usercode[0])_message("验证码输入不正确!");
+			if($checkcodes!=$usercode[0])_message(lang::get_lang("验证码输入不正确"));
 			$this->db->Query("UPDATE `@#_member` SET `mobilecode`='1',`mobile` = '$shoujimahao' where `uid`='$member[uid]'");
 			//积分、经验添加			
 			$isset_user=$this->db->GetList("select `uid` from `@#_member_account` where `content`='手机认证完善奖励' and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='积分')");	
@@ -362,9 +362,9 @@ class home extends base {
 				$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','经验','手机认证完善奖励','$config[z_overziliao]','$time')");			
 				$mysql_model->Query("UPDATE `@#_member` SET `score`=`score`+'$config[f_overziliao]',`jingyan`=`jingyan`+'$config[z_overziliao]' where uid='".$member['uid']."'");
 			}			
-			_message("验证成功",WEB_PATH."/member/home/modify");
+			_message(lang::get_lang("验证成功"),WEB_PATH."/member/home/modify");
 		}else{
-			_message("页面错误",null,3);
+			_message(lang::get_lang("页面错误"),null,3);
 		}
 	}
 	public function usermodify(){
@@ -378,7 +378,7 @@ class home extends base {
 			if(is_array($reg_user_str) && !empty($username)){
 				foreach($reg_user_str as $rv){
 					if($rv == $username){
-						_message("此昵称禁止使用!");
+						_message(lang::get_lang("此昵称禁止使用"));
 					}
 				}
 			
@@ -394,14 +394,14 @@ class home extends base {
 				$mysql_model->Query("UPDATE `@#_member` SET username='".$username."',qianming='".$qianming."',`score`=`score`+'$config[f_overziliao]',`jingyan`=`jingyan`+'$config[z_overziliao]' where uid='".$member['uid']."'");
 			}	
 			$mysql_model->Query("UPDATE `@#_member` SET username='".$username."',qianming='".$qianming."' where uid='".$member['uid']."'");
-			_message("修改成功",WEB_PATH."/member/home/modify",3);
+			_message(lang::get_lang("修改成功"),WEB_PATH."/member/home/modify",3);
 			
 		}
 	}
 	public function address(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="收货地址";
+		$title=lang::get_lang("收货地址");
 		$member_dizhi=$mysql_model->Getlist("select * from `@#_member_dizhi` where uid='".$member['uid']."' limit 5");
 		$count=count($member_dizhi);
 		include templates("member","address");
@@ -420,7 +420,7 @@ class home extends base {
 		$id = abs(intval($id));
 		if(isset($id)){
 		$mysql_model->Query("UPDATE `@#_member_dizhi` SET `default`='Y' where id='".$id."'");				
-		echo _message("修改成功",WEB_PATH."/member/home/address",3);
+		echo _message(lang::get_lang("修改成功"),WEB_PATH."/member/home/address",3);
 		}
 	}
 	
@@ -434,7 +434,7 @@ class home extends base {
 			$mysql_model->Query("DELETE FROM `@#_member_dizhi` WHERE `uid`='$member[uid]' and `id`='$id'");
 			header("location:".WEB_PATH."/member/home/address");
 		}else{
-			echo _message("删除失败",WEB_PATH."/member/home/address",0);
+			echo _message(lang::get_lang("删除失败"),WEB_PATH."/member/home/address",0);
 		}
 	}
 	public function updateddress(){
@@ -454,11 +454,11 @@ class home extends base {
 			$mobile=isset($_POST['mobile']) ? $_POST['mobile'] : "";
 			$time=time();
 			if($sheng==null or $jiedao==null or $shouhuoren==null or $mobile==null){
-				echo "带星号不能为空;";
+				echo lang::get_lang("带星号不能为空");
 				exit;
 			}			
 			if(!_checkmobile($mobile)){
-				echo "手机号错误;";
+				echo lang::get_lang("手机号错误");
 				exit;
 			}
 		$mysql_model->Query("UPDATE `@#_member_dizhi` SET 
@@ -471,7 +471,7 @@ class home extends base {
 		`shouhuoren`='".$shouhuoren."',
 		`tell`='".$tell."',
 		`mobile`='".$mobile."' where `id`='".$id."'");				
-		echo _message("修改成功",WEB_PATH."/member/home/address",3);
+		echo _message(lang::get_lang("修改成功"),WEB_PATH."/member/home/address",3);
 		}
 	}
 	public function useraddress(){
@@ -489,11 +489,11 @@ class home extends base {
 			$mobile=isset($_POST['mobile']) ? $_POST['mobile'] : "";
 			$time=time();
 			if($sheng==null or $jiedao==null or $shouhuoren==null or $mobile==null){
-				echo "带星号不能为空;";
+				echo lang::get_lang("带星号不能为空");
 				exit;
 			}			
 			if(!_checkmobile($mobile)){
-				echo "手机号错误;";
+				echo lang::get_lang("手机号错误");
 				exit;
 			}
 			$member_dizhi=$mysql_model->GetOne("select * from `@#_member_dizhi` where `uid`='".$member['uid']."'");
@@ -504,14 +504,14 @@ class home extends base {
 			}
 			$mysql_model->Query("INSERT INTO `@#_member_dizhi`(`uid`,`sheng`,`shi`,`xian`,`jiedao`,`youbian`,`shouhuoren`,`tell`,`mobile`,`default`,`time`)VALUES
 			('$uid','$sheng','$shi','$xian','$jiedao','$youbian','$shouhuoren','$tell','$mobile','$default','$time')");
-			echo _message("收货地址添加成功",WEB_PATH."/member/home/address",3);
+			echo _message(lang::get_lang("参数错误")"收货地址添加成功",WEB_PATH."/member/home/address",3);
 		}
 	}
 	
 	public function password(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="密码修改";	
+		$title=lang::get_lang("密码修改");	
 		include templates("member","password");
 	}
 	public function oldpassword(){
@@ -523,7 +523,7 @@ class home extends base {
 					"status":"y"
 				}';
 		}else{
-			echo "原密码错误";
+			echo lang::get_lang("原密码错误");
 		}
 	}
 	public function userpassword(){
@@ -534,25 +534,25 @@ class home extends base {
 		$userpassword=isset($_POST['userpassword']) ? $_POST['userpassword'] : "";
 		$userpassword2=isset($_POST['userpassword2']) ? $_POST['userpassword2'] : "";
 		if($password==null or $userpassword==null or $userpassword2==null){
-				echo "密码不能为空;";
+				echo lang::get_lang("密码不能为空");
 				exit;
 		}
 		
 		if(strlen($_POST['password'])<6 || strlen($_POST['password'])>20){
-			echo "密码不能小于6位或者大于20位";
+			echo lang::get_lang("密码不能小于6位或者大于20位");
 			exit;
 		}
 		if($_POST['userpassword']!==$_POST['userpassword2']){
-			echo "二次密码不一致";
+			echo lang::get_lang("二次密码不一致");
 			exit;
 		}		
 		$password=md5($password);
 		$userpassword=md5($userpassword);
 		if($member['password']!=$password){
-			echo _message("原密码错误",null,3);
+			echo _message(lang::get_lang("原密码错误"),null,3);
 		}else{
 			$mysql_model->Query("UPDATE `@#_member` SET password='".$userpassword."' where uid='".$member['uid']."'");
-			echo _message("密码修改成功",null,3);
+			echo _message(lang::get_lang("密码修改成功"),null,3);
 		}
 	}
 	//OneShop记录
@@ -560,7 +560,7 @@ class home extends base {
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title="OneShop记录 - "._cfg("web_name");		
+		$title=lang::get_lang("OneShop记录")." - "._cfg("web_name");		
 		
 		$total=$this->db->GetCount("select * from `@#_member_go_record` where `uid`='$uid' order by `id` DESC");
 		$page=System::load_sys_class('page');
@@ -574,25 +574,25 @@ class home extends base {
 	public function userbuydetail(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="OneShop详情";
+		$title=lang::get_lang("OneShop详情");
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if(!$record){
-			_message("页面错误",WEB_PATH."/member/home/userbuylist",3);
+			_message(lang::get_lang("页面错误"),WEB_PATH."/member/home/userbuylist",3);
 		}
 		$shopinfo=$mysql_model->GetOne("select thumb from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid  left join `@#_shoplist_en` sen on sen.egid=A.gid where `id`='$record[shopid]' LIMIT 1");
 		$record['thumb'] = $shopinfo['thumb'];
 		if($crodid>0){
 			include templates("member","userbuydetail");
 		}else{
-			_message("页面错误",WEB_PATH."/member/home/userbuylist",3);
+			_message(lang::get_lang("页面错误"),WEB_PATH."/member/home/userbuylist",3);
 		}
 	}
 	//获得的商品
 	public function orderlist(){
 		$member=$this->userinfo;	
 		$uid = $member['uid'];
-		$title="获得的商品 - "._cfg("web_name");
+		$title=lang::get_lang("获得的商品")." - "._cfg("web_name");
 		
 		$total=$this->db->GetCount("select * from `@#_member_go_record` where `uid`='$uid' and `huode`>'10000000'");
 		$page=System::load_sys_class('page');
@@ -613,7 +613,7 @@ class home extends base {
 	public function userbalance(){
 		$member=$this->userinfo;	
 		$uid = $member['uid'];
-		$title="账户记录 - "._cfg("web_name");		
+		$title=lang::get_lang("账户记录")." - "._cfg("web_name");		
 		
 		$total=$this->db->GetCount("select * from `@#_member_account` where `uid`='$uid' and `pay` = '账户'");
 		$page=System::load_sys_class('page');
@@ -628,7 +628,7 @@ class home extends base {
 	public function userfufen(){
 		$member=$this->userinfo;	
 		$uid = $member['uid'];
-		$title="账户积分 - "._cfg("web_name");
+		$title=lang::get_lang("账户积分")." - "._cfg("web_name");
 	
 		$total=$this->db->GetCount("select * from `@#_member_account` where `uid`='$uid' and `pay` = '积分'");
 		$page=System::load_sys_class('page');
@@ -640,7 +640,7 @@ class home extends base {
 	}	
 	public function userrecharge(){
 		$member=$this->userinfo;
-		$title="账户充值";
+		$title=lang::get_lang("账户充值");
 		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1' AND pay_mobile = 1");
 		include templates("member","userrecharge");
 	}	
@@ -648,7 +648,7 @@ class home extends base {
 	//圈子管理
 	public function joingroup(){
 		$member=$this->userinfo;
-		$title="加入的圈子";
+		$title=lang::get_lang("加入的圈子");
 		$addgroup=rtrim($member['addgroup'],",");
 		if($addgroup){
 			$group=$this->db->GetList("select * from `@#_quanzi` where `id` in ($addgroup)");		
@@ -659,18 +659,18 @@ class home extends base {
 	}
 	public function userrechargedk(){
 		$member=$this->userinfo;
-		$title="点卡充值";
+		$title=lang::get_lang("点卡充值");
 		include templates("member","userrechargedk");
 	}	
 	//手机版点卡充值
 	public function waprechargedk(){
 		$member=$this->userinfo;
-		$title="点卡充值";
+		$title=lang::get_lang("点卡充值");
 		include templates("member","waprechargedk");
 	}
 	public function topic(){
 		$member=$this->userinfo;
-		$title="圈子话题";
+		$title=lang::get_lang("圈子话题");
 		$tiezi=$this->db->GetList("select * from `@#_quanzi_tiezi` where `hueiyuan`='$member[uid]'");	
 		$hueifu=$this->db->GetList("select * from `@#_quanzi_hueifu` where `hueiyuan`='$member[uid]'");	
 		include templates("member","topic");
@@ -682,9 +682,9 @@ class home extends base {
 		$tiezi=$this->db->Getone("select * from `@#_quanzi_tiezi` where `hueiyuan`='$member[uid]' and  `id`='$id'");
 		if($tiezi){
 			$this->db->Query("DELETE FROM `@#_quanzi_tiezi` WHERE `hueiyuan`='$member[uid]' and  `id`='$id'");
-			_message("删除成功",WEB_PATH."/member/home/topic");
+			_message(lang::get_lang("删除成功"),WEB_PATH."/member/home/topic");
 		}else{
-			_message("删除失败",WEB_PATH."/member/home/topic");
+			_message(lang::get_lang("删除失败"),WEB_PATH."/member/home/topic");
 		}
 	}
 	public function hueifudel(){
@@ -694,9 +694,9 @@ class home extends base {
 		$hueifu=$this->db->Getone("select * from `@#_quanzi_hueifu` where `id`='$id'");
 		if($hueifu){
 			$this->db->Query("DELETE FROM `@#_quanzi_hueifu` WHERE `id`='$id'");
-			_message("删除成功",WEB_PATH."/member/home/topic");
+			_message(lang::get_lang("删除成功"),WEB_PATH."/member/home/topic");
 		}else{
-			_message("删除失败",WEB_PATH."/member/home/topic");
+			_message(lang::get_lang("删除失败"),WEB_PATH."/member/home/topic");
 		}
 	}
 
@@ -704,7 +704,7 @@ class home extends base {
 	//晒单
 	public function singlelist(){
 		$member=$this->userinfo;
-		$title="我的晒单";
+		$title=lang::get_lang("我的晒单");
 		$cord=$this->db->Getlist("select * from `@#_member_go_record` where `uid`='$member[uid]' and `huode` > '10000000'");
 		
 		$shaidan=$this->db->Getlist("select * from `@#_shaidan` where `sd_userid`='$member[uid]' order by `sd_id` DESC");
@@ -743,13 +743,13 @@ class home extends base {
 		$member=$this->userinfo;
 		$uid=_getcookie('uid');
 		$ushell=_getcookie('ushell');
-		$title="添加晒单";		
+		$title=lang::get_lang("添加晒单");		
 		if(isset($_POST['submit'])){
 	
-			if($_POST['title']==null)_message("标题不能为空");	
-			if($_POST['content']==null)_message("内容不能为空");
+			if($_POST['title']==null)_message(lang::get_lang("标题不能为空"));	
+			if($_POST['content']==null)_message(lang::get_lang("内容不能为空"));
 			if(!isset($_POST['fileurl_tmp'])){
-				_message("图片不能为空");
+				_message(lang::get_lang("图片不能为空"));
 			}
 			System::load_sys_class('upload','sys','no');
 			$img=$_POST['fileurl_tmp'];
@@ -762,7 +762,7 @@ class home extends base {
 			$src=trim($img[0]);
 			
 			if(!file_exists(G_UPLOAD.$src)){
-					_message("晒单图片不正确");
+					_message(lang::get_lang("晒单图片不正确"));
 			}
 			$size=getimagesize(G_UPLOAD.$src);
 			$width=265;
@@ -785,7 +785,7 @@ class home extends base {
 			$sd_ip = _get_ip_dizhi();						
 			$this->db->Query("INSERT INTO `@#_shaidan`(`sd_userid`,`sd_shopid`,`sd_qishu`,`sd_ip`,`sd_title`,`sd_thumbs`,`sd_content`,`sd_photolist`,`sd_time`)VALUES
 			('$sd_userid','$sd_shopid','$qs','$sd_ip','$sd_title','$sd_thumbs','$sd_content','$sd_photolist','$sd_time')");
-			_message("晒单分享成功",WEB_PATH."/member/home/singlelist");
+			_message(lang::get_lang("晒单分享成功"),WEB_PATH."/member/home/singlelist");
 		}
 		$recordid=intval($this->segment(4));
 		if($recordid>0){
@@ -793,16 +793,16 @@ class home extends base {
 			$shopid=$shaidan['shopid'];
 			include templates("member","singleinsert");
 		}else{
-			_message("页面错误");
+			_message(lang::get_lang("页面错误"));
 		}
 	}
 	//编辑
 	public function singleupdate(){
-		_message("不可编辑!");
+		_message(lang::get_lang("不可编辑"));
 		if(isset($_POST['submit'])){
 			System::load_sys_class('upload','sys','no');
-			if($_POST['title']==null)_message("标题不能为空");	
-			if($_POST['content']==null)_message("内容不能为空");				
+			if($_POST['title']==null)_message(lang::get_lang("标题不能为空"));	
+			if($_POST['content']==null)_message(lang::get_lang("内容不能为空"));				
 			$sd_id=$_POST['sd_id'];
 			$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sd_id'");			
 			$pic=null;$thumbs=null;
@@ -846,10 +846,10 @@ class home extends base {
 			`sd_content`='$sd_content',
 			`sd_photolist`='$sd_photolist',
 			`sd_time`='$sd_time' where sd_id='$sd_id'");
-			_message("晒单修改成功",WEB_PATH."/member/home/singlelist");
+			_message(lang::get_lang("晒单修改成功"),WEB_PATH."/member/home/singlelist");
 		}
 		$member=$this->userinfo;
-		$title="修改晒单";	
+		$title=lang::get_lang("修改晒单");	
 		$uid=_getcookie('uid');
 		$ushell=_getcookie('ushell');
 		$sd_id=intval($this->segment(4));
@@ -857,7 +857,7 @@ class home extends base {
 			$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sd_id'");
 			include templates("member","singleupdate");
 		}else{
-			_message("页面错误");
+			_message(lang::get_lang("页面错误"));
 		}	
 	}
 	public function singoldimg(){
@@ -878,7 +878,7 @@ class home extends base {
 			$uid=isset($_POST['uid']) ? $_POST['uid'] : NULL;		
 			$ushell=isset($_POST['ushell']) ? $_POST['ushell'] : NULL;
 			$login=$this->checkuser($uid,$ushell);
-			if(!$login){_message("上传出错");}
+			if(!$login){_message(lang::get_lang("上传出错"));}
 			System::load_sys_class('upload','sys','no');
 			upload::upload_config(array('png','jpg','jpeg','gif'),1000000,'shaidan');
 			upload::go_upload($_FILES['Filedata']);
@@ -914,7 +914,7 @@ class home extends base {
 	}
 	//晒单删除
 	public function shaidandel(){
-		_message("已添加的晒单不可删除!");
+		_message(lang::get_lang("已添加的晒单不可删除"));
 		$member=$this->userinfo;
 		//$id=isset($_GET['id']) ? $_GET['id'] : "";
 		$id=$this->segment(4);
@@ -922,9 +922,9 @@ class home extends base {
 		$shaidan=$this->db->Getone("select * from `@#_shaidan` where `sd_userid`='$member[uid]' and `sd_id`='$id'");
 		if($shaidan){
 			$this->db->Query("DELETE FROM `@#_shaidan` WHERE `sd_userid`='$member[uid]' and `sd_id`='$id'");
-			_message("删除成功",WEB_PATH."/member/home/singlelist");
+			_message(lang::get_lang("删除成功"),WEB_PATH."/member/home/singlelist");
 		}else{
-			_message("删除失败",WEB_PATH."/member/home/singlelist");
+			_message(lang::get_lang("删除失败"),WEB_PATH."/member/home/singlelist");
 		}
 	}
 	
@@ -957,10 +957,10 @@ class home extends base {
 		//判断哪个好友有消费		
 		 if(empty($accounts[$sqluid])){
 		    $notinvolvednum +=1;
-		    $records[$sqluid]='未参与夺宝';
+		    $records[$sqluid]=lang::get_lang("未参与夺宝");
 		 }else{
 		    $involvednum +=1;
-		    $records[$sqluid]='已参与夺宝';
+		    $records[$sqluid]=lang::get_lang("已参与夺宝");
 		 }
 		
 		
@@ -1094,32 +1094,32 @@ class home extends base {
 		 $type       = -3;  //收取1/消费-1/充值-2/提现-3
 		 
 		 if($total<100){
-		     _message("佣金金额大于100元才能提现！");exit;
+		     _message(lang::get_lang("佣金金额大于100元才能提现"));exit;
 		 }elseif($cashouthdtotal<$money){
-		    _message("输入额超出活动佣金金额！");exit;
+		    _message(lang::get_lang("输入额超出活动佣金金额"));exit;
 		 }elseif($total<$money ){  
-		     _message("输入额超出总佣金金额！");exit;
+		     _message(lang::get_lang("输入额超出总佣金金额"));exit;
 		 }else{
 		 
 		 //插入提现申请表  这里不用在佣金表中插入记录 等后台审核才插入
 		 $this->db->Query("INSERT INTO `@#_member_cashout`(`uid`,`money`,`username`,`bankname`,`branch`,`banknumber`,`linkphone`,`time`)VALUES
 			('$uid','$money','$username','$bankname','$branch','$banknumber','$linkphone','$time')"); 
-			_message("申请成功！请等待审核！");
+			_message(lang::get_lang("参数错误")"申请成功！请等待审核！");
 		 }	   
 	   }
 	   
 	   if(isset($_POST['submit2'])){//充值			
 		  $money      = abs(intval($_POST['txtCZMoney']));		
 		  $type       = 1;
-		  $pay        ="佣金";
+		  $pay        =lang::get_lang("佣金");
 		  $time       =time();
-		  $content    ="使用佣金充值到账户";
+		  $content    =lang::get_lang("使用佣金充值到账户");
 		  
 		 if($money <= 0 || $money > $total){
-			  _message("佣金金额输入不正确！");exit;
+			  _message(lang::get_lang("佣金金额输入不正确"));exit;
 		 }	
 		 if($cashouthdtotal<$money){
-		    _message("输入额超出活动佣金金额！");exit;
+		    _message(lang::get_lang("输入额超出活动佣金金额"));exit;
          }			
 		  
 		  //插入记录
@@ -1134,9 +1134,9 @@ class home extends base {
 			 //在佣金表中插入记录		 
 		     $recode=$this->db->Query("INSERT INTO `@#_member_recodes`(`uid`,`type`,`content`,`money`,`time`)VALUES
 			('$uid','-2','$content','$money','$time')");
-			_message("充值成功！");
+			_message(lang::get_lang("充值成功"));
 		 }else{
-		     _message("充值失败！");
+		     _message(lang::get_lang("充值失败"));
 		 }	
 	   }
 		include templates("member","cashout");

@@ -17,7 +17,7 @@ class shaidan extends base {
 	//晒单分享
 	public function init(){
 	    $webname=$this->_cfg['web_name'];
-		$key="晒单";
+		$key=lang::get_lang("晒单");
 		include templates("mobile/index","shaidan");
 	}
 	public function shaidanajax(){
@@ -69,7 +69,7 @@ class shaidan extends base {
 
 	public function detail(){
 	    $webname=$this->_cfg['web_name'];
-		$key="晒单分享";
+		$key=lang::get_lang("晒单分享");
 		$member=$this->userinfo;
 		$sd_id=intval($this->segment(4));
 		$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sd_id'");
@@ -83,7 +83,7 @@ class shaidan extends base {
 		$shaidan_hueifu=$this->db->GetList("select * from `@#_shaidan_hueifu` where `sdhf_id`='$sd_id'");
 		if(!$shaidan){
 			//_message("页面错误");
-			echo "页面错误";
+			echo lang::get_lang("页面错误");
 		}
 		$substr=substr($shaidan['sd_photolist'],0,-1);
 		$sd_photolist=explode(";",$substr);
@@ -98,14 +98,14 @@ class shaidan extends base {
 	    $webname=$this->_cfg['web_name'];
 		$member=$this->userinfo;
 		if(!is_array($member)){
-			echo "页面错误";exit;
+			echo lang::get_lang("页面错误");exit;
 		}
 		$sdhf_id=$_POST['sd_id'];
 		$sdhf_userid=$member['uid'];
 		$sdhf_content=$_POST['count'];
 		$sdhf_time=time();
 		if($sdhf_content==null){
-			echo "页面错误";exit;
+			echo lang::get_lang("页面错误");exit;
 		}
 		$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sdhf_id'");
 		$this->db->Query("INSERT INTO `@#_shaidan_hueifu`(`sdhf_id`,`sdhf_userid`,`sdhf_content`,`sdhf_time`)VALUES

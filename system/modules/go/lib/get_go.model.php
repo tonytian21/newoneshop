@@ -7,7 +7,7 @@ class get_go extends model {
 	}
 	
 	public function get_record($s1='',$s2=''){
-		$sql="select * from `@#_member_go_record`,`@#_member` where `@#_member`.uid = `@#_member_go_record`.uid  and  `status` = '%已付款%'  order by  `id` DESC";		
+		$sql="select * from `@#_member_go_record`,`@#_member` where `@#_member`.uid = `@#_member_go_record`.uid  and  `status` = '%".lang::get_lang('已付款')."%'  order by  `id` DESC";		
 		return $this->GetList($sql);	
 	}
 }

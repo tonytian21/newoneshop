@@ -13,7 +13,7 @@ class group extends base {
 	}	
 	public function init() {
 		$member=$this->userinfo;		
-		$title='圈子列表_'._cfg("web_name");	
+		$title=lang::get_lang('圈子列表').'_'._cfg("web_name");	
 		$quanzi=$this->db->GetList("select * from `@#_quanzi`");
 		$tiezi=$this->db->GetList("select * from `@#_quanzi_tiezi` LIMIT 5");
 		include templates("group","index");
@@ -21,11 +21,11 @@ class group extends base {
 	public function show() {
 		$id=abs(intval($this->segment(4)));
 		if(!$id){
-			_message("页面错误");
+			_message(lang::get_lang('页面错误'));
 		}
 		$quanzi=$this->db->GetOne("select * from `@#_quanzi` where `id` = '$id'");		
 		if(!$quanzi){
-			_message("页面错误");
+			_message(lang::get_lang('页面错误'));
 		}
 		$title=$quanzi['title']."_"._cfg("web_name");	
 		
@@ -55,7 +55,7 @@ class group extends base {
 		$addgroup=$this->db->GetOne("select * from `@#_member` where `uid` = '$uid'");
 		$chengyuan=$this->db->GetOne("select * from `@#_quanzi` where `id` = '$qzid'");
 		
-		if($text=="退出"){
+		if($text==lang::get_lang('退出')){
 			$exp=explode(",",$addgroup['addgroup']);
 			$zid="";
 			$cy=$chengyuan['chengyuan']-1;
@@ -80,33 +80,33 @@ class group extends base {
 			$qzid=intval($_POST['qzid']);
 			$uid = $this->userinfo['uid'];
 			
-			if($uid==null)_message("未登录");			
+			if($uid==null)_message(lang::get_lang('未登录'));			
 			$member=$this->db->GetOne("select * from `@#_member` where `uid` = '$uid' and `addgroup` like '%$qzid%'");
-			if(!$member)_message("未加入该圈子");			
+			if(!$member)_message(lang::get_lang('未加入该圈子'));			
 			$quanzi = $this->db->GetOne("select * from `@#_quanzi` where `id` = '$qzid' LIMIT 1");
-			if(!$quanzi)_message("该圈子不存在");
+			if(!$quanzi)_message(lang::get_lang('该圈子不存在'));
 			if($quanzi['glfatie'] == 'N'){			
-					_message($quanzi['title'].": 会员不能发帖!");
+					_message($quanzi['title'].": ".lang::get_lang('会员不能发帖'));
 			}			
-			if($title==null || $neirong==null)_message("不能为空");
+			if($title==null || $neirong==null)_message(lang::get_lang('不能为空'));
 			$time=time();
 			
 			$tiezi=$this->db->GetOne("select * from `@#_quanzi_tiezi` where `hueiyuan` = '$uid' and `qzid` = '$qzid' and `title` = '$title' and `neirong` = '$neirong'");
-			if($tiezi)_message("不能重复提交");
+			if($tiezi)_message(lang::get_lang('不能重复提交'));
 			$this->db->Query("INSERT INTO `@#_quanzi_tiezi`(`qzid`,`hueiyuan`,`title`,`neirong`,`zuihou`,`time`)VALUES('$qzid','$uid','$title','$neirong','$uid','$time')");
 			$tiez=$this->db->GetOne("select * from `@#_quanzi` where `id` = '$qzid'");
 			$tznum=$tiez['tiezi']+1;
 			$this->db->Query("UPDATE `@#_quanzi` SET `tiezi`='$tznum' where `id`='$qzid'");
-			_message("添加成功");
+			_message(lang::get_lang('添加成功'));
 		}
 	}
 	
 
 	public function nei(){
 		$id=abs(intval($this->segment(4)));
-		if(!$id)_message("页面错误");
+		if(!$id)_message(lang::get_lang('页面错误'));
 		$tiezi=$this->db->GetOne("select * from `@#_quanzi_tiezi` where `id`='$id'");
-		if(!$tiezi)_message("页面错误");
+		if(!$tiezi)_message(lang::get_lang('页面错误'));
 		
 		$dianji=$tiezi['dianji']+1;
 		$this->db->Query("UPDATE `@#_quanzi_tiezi` SET `dianji`='$dianji' where `id`='$id'");
@@ -139,19 +139,19 @@ class group extends base {
 	}
 	public function hueifuinsert(){
 		$uid = $this->userinfo['uid'];
-		if($uid==null)_message("未登录");
+		if($uid==null)_message(lang::get_lang('未登录'));
 		$hueifu=_htmtocode($_POST['hueifu']);
 		
-		if($hueifu==null)_message("内容不能为空");
+		if($hueifu==null)_message(lang::get_lang('内容不能为空'));
 		$tzid=intval($_POST['tzid']);
-		if($tzid<=0)_message("错误");
+		if($tzid<=0)_message(lang::get_lang('错误'));
 		$hftime=time();
 		$this->db->Query("INSERT INTO `@#_quanzi_hueifu`(`tzid`,`hueifu`,`hueiyuan`,`hftime`)VALUES('$tzid','$hueifu','$uid','$hftime')");
 		
 		$tiezi=$this->db->GetOne("select * from `@#_quanzi_tiezi` where `id`='$tzid'");
 		$hfnum=$tiezi['hueifu']+1;
 		$this->db->Query("UPDATE `@#_quanzi_tiezi` SET `hueifu`='$hfnum' where `id`='$tzid'");
-		_message("添加成功");
+		_message(lang::get_lang('添加成功'));
 	}
 	
 

@@ -55,7 +55,7 @@ class home extends base
     {
         $webname = $this->_cfg['web_name'];
         $member = $this->userinfo;
-        $title = "我的用户中心";
+        $title = lang::get_lang("我的用户中心");
         // $quanzi=$this->db->GetList("select * from `@#_quanzi_tiezi` order by id DESC LIMIT 5");
         if (! empty($member['headimg'])) {
             $member['img'] = $member['headimg'];
@@ -90,7 +90,7 @@ class home extends base
         
         $member = $this->userinfo;
         
-        $title = "我的用户中心";
+        $title = lang::get_lang("我的用户中心");
         
         $uid = _getcookie('uid');
         
@@ -194,7 +194,7 @@ class home extends base
         $mysql_model = System::load_sys_class('model');
         $member = $this->userinfo;
         $uid = $member['uid'];
-        $title = "夺宝记录";
+        $title = lang::get_lang("夺宝记录");
         // $record=$mysql_model->GetList("select * from `@#_member_go_record` where `uid`='$uid' ORDER BY `time` DESC");
         $user_dizhi = $mysql_model->GetOne("select * from `@#_member_dizhi` where `uid` = '$uid'");
         include templates("mobile/user", "userbuylist");
@@ -209,7 +209,7 @@ class home extends base
         
         $member = $this->userinfo;
         
-        $title = "夺宝详情";
+        $title = lang::get_lang("夺宝详情");
         
         $crodid = intval($this->segment(4));
         
@@ -220,7 +220,7 @@ class home extends base
             include templates("member", "userbuydetail");
         } else {
             
-            echo _messagemobile("页面错误", WEB_PATH . "/member/home/userbuylist", 3);
+            echo _messagemobile(lang::get_lang("页面错误"), WEB_PATH . "/member/home/userbuylist", 3);
         }
     }
 
@@ -231,7 +231,7 @@ class home extends base
         
         $member = $this->userinfo;
         
-        $title = "获得的商品";
+        $title = lang::get_lang("获得的商品");
         
         // $record=$this->db->GetList("select * from `@#_member_go_record` where `uid`='".$member['uid']."' and `huode`>'10000000' ORDER BY id DESC");
         
@@ -245,7 +245,7 @@ class home extends base
         
         $member = $this->userinfo;
         
-        $title = "账户记录";
+        $title = lang::get_lang("账户记录");
         
         $account = $this->db->GetList("select * from `@#_member_account` where `uid`='$member[uid]' and `pay` = '账户' ORDER BY time DESC");
         
@@ -276,7 +276,7 @@ class home extends base
         
         $member = $this->userinfo;
         
-        $title = "账户充值";
+        $title =lang::get_lang("账户充值") ;
         
         $paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1' AND pay_mobile = 1");
         
@@ -320,14 +320,14 @@ class home extends base
             
             $this->db->Query("UPDATE `@#_member` SET `score` = `score`+100, `money` =`money`+0 WHERE `uid` = $uid");
             
-            _messagemobile("签到成功，初次签到，系统会赠送您100积分！同时积分还可以兑换现金哦", WEB_PATH . "/mobile/home/userqiandao");
+            _messagemobile(lang::get_lang("签到成功"), WEB_PATH . "/mobile/home/userqiandao");
         }
         
         if ($qiandao['time'] > 0) {
             
             if ($qiandao['time'] > $start && $qiandao['time'] < $end) {
                 
-                _messagemobile("今天已经签到过了", WEB_PATH . "/mobile/home/userqiandao");
+                _messagemobile(lang::get_lang("今天已经签到过了"), WEB_PATH . "/mobile/home/userqiandao");
             } else {
                 
                 $this->db->Query("UPDATE `@#_qiandao` SET `time` = $t, `uid` =$uid, `sum` =`sum`+1  where uid=$uid");
@@ -343,10 +343,10 @@ class home extends base
                     
                     $this->db->Query("UPDATE `@#_qiandao` SET `lianxu` = 1 where `uid`= $uid");
                 }
-                _messagemobile("签到成功，坚持签到有积分赠送的哦！同时积分还可以兑换现金哦", WEB_PATH . "/mobile/home/userqiandao");
+                _messagemobile(lang::get_lang("坚持签到有积分"), WEB_PATH . "/mobile/home/userqiandao");
             }
         } else {
-            _messagemobile("签到错误", WEB_PATH . "/mobile/home/userqiandao");
+            _messagemobile(lang::get_lang("签到错误"), WEB_PATH . "/mobile/home/userqiandao");
         }
     }
 
@@ -359,24 +359,24 @@ class home extends base
         if ($_POST['submit']) {
             extract($_POST);
             if (empty($sheng) || empty($shi) || empty($xian)) {
-                _messagemobile("地市信息不能为空", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("地市信息不能为空"), WEB_PATH . "/mobile/home/address");
             }
             $jiedao1 = preg_replace("@<script(.*?)</script>@is", "", $jiedao);
             $jiedao = $jiedao1;
             if (empty($jiedao)) {
-                _messagemobile("街道地址包含特殊字符", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("街道地址包含特殊字符"), WEB_PATH . "/mobile/home/address");
             }
             if (empty($qq) || empty($youbian) || empty($shouhuoren) || empty($mobile)) {
-                _messagemobile("qq 或者 邮编 收货人 电话 不能为空", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("qq 或者 邮编 收货人 电话 不能为空"), WEB_PATH . "/mobile/home/address");
             }
             $q1 = $this->db->Query("INSERT INTO `@#_member_dizhi` SET `time` = $t, `uid` = $uid, `sheng` = '$sheng', `shi` = '$shi', `xian` = '$xian', `jiedao` = '$jiedao',`youbian` = $youbian, `shouhuoren`= '$shouhuoren', `mobile`= '$mobile', `qq`= '$qq', `shifoufahuo` = $shifoufahuo");
             if ($q1) {
-                _messagemobile("地址添加成功", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("地址添加成功"), WEB_PATH . "/mobile/home/address");
             } else {
-                _messagemobile("地址添加失败", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("地址添加失败"), WEB_PATH . "/mobile/home/address");
             }
         } else {
-            _messagemobile("添加失败", WEB_PATH . "/mobile/home/address");
+            _messagemobile(lang::get_lang("添加失败"), WEB_PATH . "/mobile/home/address");
         }
     }
 
@@ -401,32 +401,32 @@ class home extends base
             
             if (empty($sheng) || empty($shi) || empty($xian)) {
                 
-                _messagemobile("地市信息不能为空", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("地市信息不能为空"), WEB_PATH . "/mobile/home/address");
             }
             
             $jiedao1 = preg_replace("@<script(.*?)</script>@is", "", $jiedao);
             $jiedao = $jiedao1;
             if (empty($jiedao)) {
-                _messagemobile("街道地址包含特殊字符", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("街道地址包含特殊字符"), WEB_PATH . "/mobile/home/address");
             }
             
             if (empty($qq) || empty($youbian) || empty($shouhuoren) || empty($mobile)) {
                 
-                _messagemobile("qq 或者 邮编 收货人 电话 不能为空", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("qq 或者 邮编 收货人 电话 不能为空"), WEB_PATH . "/mobile/home/address");
             }
             
             $q1 = $this->db->Query("UPDATE `@#_member_dizhi` SET `time` = $t, `sheng` = '$sheng', `shi` = '$shi', `xian` = '$xian', `jiedao` = '$jiedao',`youbian` = $youbian, `shouhuoren`= '$shouhuoren', `mobile`= '$mobile', `qq`= '$qq', `shifoufahuo` = $shifoufahuo WHERE `id`= $id");
             
             if ($q1) {
                 
-                _messagemobile("地址修改成功", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("地址修改成功"), WEB_PATH . "/mobile/home/address");
             } else {
                 
-                _messagemobile("地址修改失败", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("地址修改失败"), WEB_PATH . "/mobile/home/address");
             }
         } else {
             
-            _messagemobile("修改失败", WEB_PATH . "/mobile/home/address");
+            _messagemobile(lang::get_lang("修改失败"), WEB_PATH . "/mobile/home/address");
         }
     }
 
@@ -440,14 +440,14 @@ class home extends base
             
             if ($q1) {
                 
-                _messagemobile("删除成功", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("删除成功"), WEB_PATH . "/mobile/home/address");
             } else {
                 
-                _messagemobile("删除失败", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("删除失败"), WEB_PATH . "/mobile/home/address");
             }
         } else {
             
-            _messagemobile("删除失败", WEB_PATH . "/mobile/home/address");
+            _messagemobile(lang::get_lang("删除失败"), WEB_PATH . "/mobile/home/address");
         }
     }
 
@@ -464,13 +464,13 @@ class home extends base
             
             if ($q1 && $q2) {
                 
-                _messagemobile("设置成功", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("设置成功"), WEB_PATH . "/mobile/home/address");
             } else {
                 
-                _messagemobile("设置失败", WEB_PATH . "/mobile/home/address");
+                _messagemobile(lang::get_lang("设置失败"), WEB_PATH . "/mobile/home/address");
             }
         } else {
-            _messagemobile("设置失败", WEB_PATH . "/mobile/home/address");
+            _messagemobile(lang::get_lang("设置失败"), WEB_PATH . "/mobile/home/address");
         }
     }
 
@@ -540,7 +540,7 @@ class home extends base
                 'ok' => true,
                 'round' => 0,
                 'left' => 0,
-                'desc' => '您的抽奖次数已经使用完！'
+                'desc' => lang::get_lang("您的抽奖次数已经使用完")
             );
             echo json_encode($res);
             die();
@@ -597,14 +597,14 @@ class home extends base
         $member = $this->userinfo;
         $uid = _getcookie('uid');
         $ushell = _getcookie('ushell');
-        $title = "添加晒单";
+        $title = lang::get_lang("添加晒单");
         if (isset($_POST['submit'])) {
             if ($_POST['title'] == null)
-                _messagemobile("标题不能为空");
+                _messagemobile(lang::get_lang("标题不能为空"));
             if ($_POST['content'] == null)
-                _messagemobile("内容不能为空");
+                _messagemobile(lang::get_lang("内容不能为空"));
             if (empty($_POST['file_up'])) {
-                _messagemobile("图片不能为空");
+                _messagemobile(lang::get_lang("图片不能为空"));
             }
             $pic = $_POST['file_up'];
             $pics = explode(';', $pic);
@@ -634,7 +634,7 @@ class home extends base
             $shopid = $shaidan['id'];
             include templates("mobile/user", "postsingle");
         } else {
-            _messagemobile("页面错误");
+            _messagemobile(lang::get_lang("页面错误"));
         }
     }
 
@@ -642,28 +642,28 @@ class home extends base
     {
         $member = $this->userinfo;
         $uid = $member['uid'];
-        $title = "添加晒单";
+        $title = lang::get_lang("添加晒单");
         $recordid = intval($this->segment(4));
         $shaidan = $this->db->GetOne("select * from `@#_member_go_record` where `shopid`='$recordid' and `uid` = '$member[uid]'");
         if (! $shaidan) {
-            _messagemobile("该商品您不可晒单!");
+            _messagemobile(lang::get_lang("该商品您不可晒单"));
         }
         $ginfo = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id`='$shaidan[shopid]' LIMIT 1");
         if (! $ginfo) {
-            _messagemobile("该商品已不存在!");
+            _messagemobile(lang::get_lang("该商品已不存在"));
         }
         $shaidanyn = $this->db->GetOne("select sd_id from `@#_shaidan` where `sd_shopid`='{$ginfo['id']}' and `sd_userid` = '$member[uid]'");
         if ($shaidanyn) {
-            _messagemobile("不可重复晒单!");
+            _messagemobile(lang::get_lang("不可重复晒单"));
         }
         if ($_POST) {
             
             if ($_POST['title'] == null)
-                _messagemobile("标题不能为空");
+                _messagemobile(lang::get_lang("标题不能为空"));
             if ($_POST['content'] == null)
-                _messagemobile("内容不能为空");
+                _messagemobile(lang::get_lang("内容不能为空"));
             if (! isset($_POST['fileurl_tmp'])) {
-                _messagemobile("图片不能为空");
+                _messagemobile(lang::get_lang("图片不能为空"));
             }
             System::load_sys_class('upload', 'sys', 'no');
             $img = explode(';', $_POST['fileurl_tmp']);
@@ -698,7 +698,7 @@ class home extends base
             $shopid = $shaidan['shopid'];
             include templates("mobile/user", "postsingle");
         } else {
-            _messagemobile("页面错误");
+            _messagemobile(lang::get_lang("页面错误"));
         }
     }
 
@@ -817,7 +817,7 @@ class home extends base
     // 晒单删除
     public function shaidandel()
     {
-        _messagemobile("不可以删除!");
+        _messagemobile(lang::get_lang("不可以删除"));
         $member = $this->userinfo;
         // $id=isset($_GET['id']) ? $_GET['id'] : "";
         $id = $this->segment(4);
@@ -825,9 +825,9 @@ class home extends base
         $shaidan = $this->db->Getone("select * from `@#_shaidan` where `sd_userid`='$member[uid]' and `sd_id`='$id'");
         if ($shaidan) {
             $this->db->Query("DELETE FROM `@#_shaidan` WHERE `sd_userid`='$member[uid]' and `sd_id`='$id'");
-            _messagemobile("删除成功", WEB_PATH . "/mobile/home/singlelist");
+            _messagemobile(lang::get_lang("删除成功"), WEB_PATH . "/mobile/home/singlelist");
         } else {
-            _messagemobile("删除失败", WEB_PATH . "/mobile/home/singlelist");
+            _messagemobile(lang::get_lang("删除失败"), WEB_PATH . "/mobile/home/singlelist");
         }
     }
 }

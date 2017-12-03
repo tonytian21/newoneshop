@@ -94,14 +94,14 @@ class user extends memberbase {
 
 	public function mobilecheck(){
 	    $webname=$this->_cfg['web_name'];
-		$title="验证邮箱";
+		$title=lang::get_lang("验证邮箱");
 		$time=3000;
 		$name=$this->segment(4);
 		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$name' LIMIT 1");
 		 
 		if(!$member)_message("参数不正确!");
 		if($member['mobilecode']==1){
-			_message("该账号验证成功",WEB_PATH."/mobile/mobile");
+			_message(lang::get_lang("该账号验证成功"),WEB_PATH."/mobile/mobile");
 		}
 
 
@@ -130,15 +130,15 @@ class user extends memberbase {
 	 if(!empty($itemlist)){
 		 if($itemlist[0]['q_end_time']!=''){
 	   //商品已揭晓
-			$itemlist[0]['codeState']='已揭晓...';
+			$itemlist[0]['codeState']=lang::get_lang("已揭晓");
 			$itemlist[0]['class']='z-ImgbgC02';
 	    }elseif($itemlist[0]['shenyurenshu']==0){
 		//商品购买次数已满
-			$itemlist[0]['codeState']='已满员...';
+			$itemlist[0]['codeState']=lang::get_lang("已满员");
 			$itemlist[0]['class']='z-ImgbgC01';
 		}else{
 		//进行中
-			$itemlist[0]['codeState']='进行中...';
+			$itemlist[0]['codeState']=lang::get_lang("进行中");
 			$itemlist[0]['class']='z-ImgbgC01';
 
 		}
@@ -194,7 +194,7 @@ class user extends memberbase {
 	public function password(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="密码修改";	
+		$title=lang::get_lang("密码修改");	
 		include templates("mobile/user","password");
 	}
 	public function oldpassword(){
@@ -206,7 +206,7 @@ class user extends memberbase {
 					"status":"y"
 				}';
 		}else{
-			echo "原密码错误";
+			echo lang::get_lang("原密码错误");
 		}
 	}
 	public function userpassword(){
@@ -216,22 +216,22 @@ class user extends memberbase {
 			$pwd2=isset($_POST['pwd2']) ? $_POST['pwd2'] : "";
 			$pwd3=isset($_POST['pwd3']) ? $_POST['pwd3'] : "";
 			if($pwd3==null or $pwd2==null or $pwd1==null){
-					echo "密码不能为空;";
+					echo lang::get_lang("密码不能为空");
 					exit;
 			}
 			
 			if(strlen($_POST['pwd2'])<6 || strlen($_POST['pwd2'])>20){
-				echo "密码不能小于6位或者大于20位";
+				echo lang::get_lang("密码不能小于6位或者大于20位");
 				exit;
 			}
 			if($_POST['pwd3']!==$_POST['pwd2']){
-				echo "二次密码不一致";
+				echo lang::get_lang("二次密码不一致");
 				exit;
 			}		
 			$pwd2=md5($pwd2);
 			$pwd1=md5($pwd1);
 			if($member['password']!=$pwd1){
-				echo "原密码错误";
+				echo lang::get_lang("原密码错误");
 			}else{
 				$mysql_model->Query("UPDATE `@#_member` SET password='".$pwd2."' where uid='".$member['uid']."'");
 				echo 'ok';
@@ -264,7 +264,7 @@ class user extends memberbase {
 				}
 			$tname="touimg/".$img;
 			$this->db->Query("UPDATE `@#_member` SET img='$tname' where uid={$member['uid']}");
-			_messagemobile("修改成功");
+			_messagemobile(lang::get_lang("修改成功"));
 			}					
 		}
 
@@ -283,7 +283,7 @@ class user extends memberbase {
 			if(is_array($reg_user_str) && !empty($username)){
 				foreach($reg_user_str as $rv){
 					if($rv == $username){
-						_message("此昵称禁止使用!");
+						_message(lang::get_lang("此昵称禁止使用"));
 					}
 				}
 			
@@ -395,17 +395,17 @@ class user extends memberbase {
 		if($_POST){
 		$mobile=isset($_POST['mobile']) ? $_POST['mobile'] : "";
 		if(!_checkemail($mobile) || $mobile==''){
-			echo "邮箱号码错误";die;	
+			echo lang::get_lang("邮箱号码错误");die;	
 		}
 		$member2=$this->db->GetOne("select mobilecode,uid,email from `@#_member` where `email`='$mobile'");
 			if(!$member2){
-					echo "邮箱号码不存在或未验证成功！";die;
+					echo lang::get_lang("邮箱号码不存在或未验证成功");die;
 			}					
 			if($member2['mobilecode']=1){
 			//验证码
 			$ok = send_mobile_fid_code($mobile);			
 			if($ok[0]!=1){
-				echo "发送失败,失败状态:".$ok[1];die;
+				echo lang::get_lang("发送失败,失败状态").":".$ok[1];die;
 				}else{
 				_setcookie("mobilecheck",base64_encode($mobile));
 			}					
@@ -420,20 +420,20 @@ class user extends memberbase {
 			$mobile = isset($_POST['mobile']) ? $_POST['mobile'] : '';
 			$checkcodes=isset($_POST['code']) ? $_POST['code'] : '';
 		if(empty($mobile)){
-			echo "验证出错，请重新绑定";die;
+			echo lang::get_lang("发送失败,失败状态")"验证出错，请重新绑定";die;
 		}
 		if(strlen($checkcodes)!=6){
-			echo "验证码输入不正确!";die;
+			echo lang::get_lang("验证码输入不正确");die;
 		}
 		$member2=$this->db->GetOne("SELECT mobilecode,uid,mobile from `@#_member` where `email`='$mobile'");
 		$usercode=explode("|",$member2['mobilecode']);
 		if($checkcodes!=$usercode[0]){
-			echo "验证码输入不正确!";die;
+			echo lang::get_lang("验证码输入不正确")."!";die;
 		}
 		$this->db->Query("UPDATE `@#_member` SET `mobilecode`='1' WHERE `email`='$mobile'");				
 		echo 123;die;
 		}else{
-		echo '操作失败，请重新操作';die;
+		echo lang::get_lang("操作失败，请重新操作");die;
 		}
 	}
 	//处理提交的新密码
@@ -443,16 +443,16 @@ class user extends memberbase {
 		$mobile= base64_decode(_getcookie("mobilecheck"));
 		
 		if(!_checkemail($mobile) || $mobile==''){
-			echo "邮箱号码为空，操作失败";exit;
+			echo lang::get_lang("邮箱号码为空，操作失败");exit;
 		}
 		if($pwd3=='' or $pwd2==''){
-				echo "密码不能为空;";exit;
+				echo lang::get_lang("密码不能为空");exit;
 		}
 		if(strlen($_POST['pwd2'])<6 || strlen($_POST['pwd2'])>20){
-			echo "密码不能小于6位或者大于20位";exit;
+			echo lang::get_lang("密码不能小于6位或者大于20位");exit;
 		}
 		if($_POST['pwd3'] != $_POST['pwd2']){
-			echo "二次密码不一致";exit;
+			echo lang::get_lang("二次密码不一致");exit;
 		}	
 		$this->db->Query("UPDATE `@#_member` SET password='".md5($pwd2)."' WHERE `mobile`='".$mobile."'");
 		echo 123;die;

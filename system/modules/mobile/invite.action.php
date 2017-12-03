@@ -19,7 +19,7 @@ class invite extends base {
             public function friends(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的OneShop中心";
+        $title=lang::get_lang("我的OneShop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -57,10 +57,10 @@ class invite extends base {
             //判断哪个好友有消费
             if(empty($accounts[$sqluid])){
                 $notinvolvednum +=1;
-                $records[$sqluid]='未参与夺宝';
+                $records[$sqluid]=lang::get_lang("未参与夺宝");
             }else{
                 $involvednum +=1;
-                $records[$sqluid]='已参与夺宝';
+                $records[$sqluid]=lang::get_lang("已参与夺宝");
             }
 
 
@@ -78,7 +78,7 @@ class invite extends base {
         public function friends1(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的OneShop中心";
+        $title=lang::get_lang("我的OneShop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -116,10 +116,10 @@ class invite extends base {
             //判断哪个好友有消费
             if(empty($accounts[$sqluid])){
                 $notinvolvednum +=1;
-                $records[$sqluid]='未参与夺宝';
+                $records[$sqluid]=lang::get_lang("未参与夺宝");
             }else{
                 $involvednum +=1;
-                $records[$sqluid]='已参与夺宝';
+                $records[$sqluid]=lang::get_lang("已参与夺宝");
             }
 
 
@@ -130,7 +130,7 @@ class invite extends base {
 	 public function address(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="收货地址";
+		$title=lang::get_lang("收货地址");
 		$member_dizhi=$mysql_model->Getlist("select * from `@#_member_dizhi` where uid='".$member['uid']."' limit 5");
 		foreach($member_dizhi as $k=>$v){		
 			$member_dizhi[$k] = _htmtocode($v);
@@ -142,29 +142,29 @@ class invite extends base {
 
 	public function usertransfer(){
 		$member=$this->userinfo;
-		$title="转帐";
+		$title=lang::get_lang("转帐");
 	
 		if(isset($_POST['submit1'])){
 			
 			$tmoney=$_POST[money];
 			$tuser=$_POST[txtBankName];
 			if($member[score]<1000)
-				_message("帐户积分不得小与1000",null,3);
+				_message(lang::get_lang("帐户积分不得小与1000"),null,3);
 		if($_POST[money]<1000)
-				_message("转帐积分不得小于1000",null,3);
+				_message(lang::get_lang("转帐积分不得小于1000"),null,3);
 			if(empty($tmoney)||empty($tuser))
-				_message("转入用户和金额不得为空",null,3);
+				_message(lang::get_lang("转入用户和金额不得为空"),null,3);
 			if($tmoney>$member[score])
-				_message("转入积分不得大于帐户积分",null,3);
+				_message(lang::get_lang("转入积分不得大于帐户积分"),null,3);
 			$user= $this->db->GetOne("SELECT * FROM `@#_member` where `email` = '$tuser' limit 1");	
 			if(empty($user))
 				$user= $this->db->GetOne("SELECT * FROM `@#_member` where `mobile` = '$tuser' limit 1");	
 			if(empty($user))
-					_message("转入用户不存在",null,3);
+					_message(lang::get_lang("转入用户不存在"),null,3);
 			$uid=$member[uid];
 			$tuid=$user[uid];
 		if($uid==$tuid)
-					_message("不能给自己转帐",null,3);
+					_message(lang::get_lang("不能给自己转帐"),null,3);
 			$time=time();
 			$cmoney=$member[score]-$tmoney;
 			$ctmoney=$user[score]+$tmoney;
@@ -176,7 +176,7 @@ class invite extends base {
                                     $this->db->Query("insert into `@#_member_op_record` (`uid`,`username`,`deltamoney`,`premoney`,`money`,`time`) values ('$tuid','$tname','$tmoney','$user[money]','$ctmoney','$time')");
                                     $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', '转出到<$tname>', '$tmoney', '$time')");
                                     $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$tuid', '1', '账户', '由<$name>转入', '$tmoney', '$time')");		
-		                               _message("给".$tname."的".$tmoney."账户积分冲值成功!",null,3);		
+		                               _message(lang::get_lang("给账户积分冲值成功",$tname,$tmoney),null,3);		
 		              }
 		              include templates("mobile/invite","usertransfer");
                   }
@@ -185,7 +185,7 @@ class invite extends base {
     public function commissions(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的OneShop中心";
+        $title=lang::get_lang("我的OneShop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -266,7 +266,7 @@ class invite extends base {
 
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的OneShop中心";
+        $title=lang::get_lang("我的OneShop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -331,32 +331,32 @@ class invite extends base {
             $type       = -3;  //收取1/消费-1/充值-2/提现-3
 
             if($total<100){
-                _message("佣金金额大于100元才能提现！");exit;
+                _message(lang::get_lang("佣金金额大于100元才能提现"));exit;
             }elseif($cashouthdtotal<$money){
-                _message("输入额超出活动佣金金额！");exit;
+                _message(lang::get_lang("输入额超出活动佣金金额"));exit;
             }elseif($total<$money ){
-                _message("输入额超出总佣金金额！");exit;
+                _message(lang::get_lang("输入额超出总佣金金额"));exit;
             }else{
 
                 //插入提现申请表  这里不用在佣金表中插入记录 等后台审核才插入
                 $this->db->Query("INSERT INTO `@#_member_cashout`(`uid`,`money`,`username`,`bankname`,`branch`,`banknumber`,`linkphone`,`time`)VALUES
 			('$uid','$money','$username','$bankname','$branch','$banknumber','$linkphone','$time')");
-                _message("申请成功！请等待审核！",WEB_PATH.'/mobile/invite/cashout');
+                _message(lang::get_lang("申请成功！请等待审核！"),WEB_PATH.'/mobile/invite/cashout');
             }
         }
 
         if(isset($_POST['submit2'])){//充值
             $money      = abs(intval($_POST['txtCZMoney']));
             $type       = 1;
-            $pay        ="佣金";
+            $pay        =lang::get_lang("佣金");
             $time       =time();
-            $content    ="使用佣金充值到账户";
+            $content    =lang::get_lang("使用佣金充值到账户");
 
             if($money <= 0 || $money > $total){
-                _message("佣金金额输入不正确！");exit;
+                _message(lang::get_lang("佣金金额输入不正确"));exit;
             }
             if($cashouthdtotal<$money){
-                _message("输入额超出活动佣金金额！");exit;
+                _message(lang::get_lang("输入额超出活动佣金金额"));exit;
             }
 
             //插入记录
@@ -372,9 +372,9 @@ class invite extends base {
                 $recode=$this->db->Query("INSERT INTO `@#_member_recodes`(`uid`,`type`,`content`,`money`,`time`)VALUES
 			('$uid','-2','$content','$money','$time')");
 
-                _message("充值成功！",WEB_PATH.'/mobile/invite/cashout');
+                _message(lang::get_lang("充值成功"),WEB_PATH.'/mobile/invite/cashout');
             }else{
-                _message("充值失败！");
+                _message(lang::get_lang("充值失败"));
             }
         }
 
@@ -383,7 +383,7 @@ class invite extends base {
     function record(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title="我的OneShop中心";
+        $title=lang::get_lang("我的OneShop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -416,7 +416,7 @@ class invite extends base {
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title="OneShop记录";					
+		$title=lang::get_lang("OneShop记录");					
 		//$record=$mysql_model->GetList("select * from `@#_member_go_record` where `uid`='$uid' ORDER BY `time` DESC");				
 		include templates("mobile/user","userbuylist");
 	}
@@ -425,20 +425,20 @@ class invite extends base {
 	    $webname=$this->_cfg['web_name'];
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title="OneShopOneShopOneShop详情";
+		$title=lang::get_lang("OneShop详情");
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if($crodid>0){
 			include templates("member","userbuydetail");
 		}else{
-			echo _message("页面错误",WEB_PATH."/member/home/userbuylist",3);
+			echo _message(lang::get_lang("页面错误"),WEB_PATH."/member/home/userbuylist",3);
 		}
 	}
 	//获得的商品
 	public function orderlist(){
 	    $webname=$this->_cfg['web_name'];
 		$member=$this->userinfo;
-		$title="获得的商品";
+		$title=lang::get_lang("获得的商品");
 		//$record=$this->db->GetList("select * from `@#_member_go_record` where `uid`='".$member['uid']."' and `huode`>'10000000' ORDER BY id DESC");				
 		include templates("mobile/user","orderlist");
 	}
@@ -446,7 +446,7 @@ class invite extends base {
 	public function userbalance(){
 	    $webname=$this->_cfg['web_name'];
 		$member=$this->userinfo;
-		$title="账户记录";
+		$title=lang::get_lang("账户记录");
 		$account=$this->db->GetList("select * from `@#_member_account` where `uid`='$member[uid]' and `pay` = '账户' ORDER BY time DESC");
          $czsum=0;
          $xfsum=0;
@@ -467,7 +467,7 @@ class invite extends base {
 	public function userrecharge(){
 	    $webname=$this->_cfg['web_name'];
 		$member=$this->userinfo;
-		$title="账户充值";
+		$title=lang::get_lang("账户充值");
 		$paylist = $this->db->GetList("SELECT * FROM `@#_pay` where `pay_start` = '1'");
  	
 		include templates("mobile/user","recharge");
@@ -482,7 +482,7 @@ class invite extends base {
             public function mycode(){
                    $webname=$this->_cfg['web_name'];
                     $member=$this->userinfo;
-                $title="我的邀请二维码";    
+                $title=lang::get_lang("我的邀请二维码");    
                 //$quanzi=$this->db->GetList("select * from `@#_quanzi_tiezi` order by id DESC LIMIT 5");       
                  $uid=_getcookie('uid');
                  $memberdj=$this->db->GetList("select * from `@#_member_group`");

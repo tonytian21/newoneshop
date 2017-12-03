@@ -54,7 +54,7 @@ class ajax extends base {
 
 	    if(ROUTE_A!='userphotoup' and ROUTE_A!='singphotoup'){
 
-			if(!$this->userinfo)_message("请登录",WEB_PATH."/mobile/user/login",3);
+			if(!$this->userinfo)_message(lang::get_lang("请登录"),WEB_PATH."/mobile/user/login",3);
 
 		}
 
@@ -62,7 +62,7 @@ class ajax extends base {
 
 		$member=$this->userinfo;
 
-		$title="我的会员中心";
+		$title=lang::get_lang("我的会员中心");
 
 
 
@@ -1276,7 +1276,7 @@ public function delCartItem_jf(){
 
 		if(empty($tradeno)){
 
-			_message("订单不存在!");
+			_message(lang::get_lang("订单不存在");
 
 		}
 

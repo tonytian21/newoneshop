@@ -182,11 +182,11 @@ class cart extends base {
 
 			$li.='<li id="shopid'.$st['id'].'">';
 
-			$li.='<a href="javascript:;" onclick="delshop('.$st['id'].')" title="删除" class="Close"></a>';
+			$li.='<a href="javascript:;" onclick="delshop('.$st['id'].')" title="'.lang::get_lang("删除").'" class="Close"></a>';
 
 			$li.='<a href="'.WEB_PATH.'/goods/'.$st['id'].'"><img src="'.G_UPLOAD_PATH.'/'.$st['thumb'].'" title="'.$st['title'].'"></a>';
 
-			$li.='<span class="orange">'.$st['cart_gorenci'].'</span>人次';
+			$li.='<span class="orange">'.$st['cart_gorenci'].'</span>'.lang::get_lang("人次");
 
 			$li.='</li>';
 
@@ -194,7 +194,7 @@ class cart extends base {
 
 		if(count($shoplist)>=7){
 
-			$li.='<li class="Roll_CartMore"><a target="_blank" title="查看更多" href="'.WEB_PATH.'/member/cart/cartlist">更多<i>&gt;</i></a></li>';
+			$li.='<li class="Roll_CartMore"><a target="_blank" title="查看更多" href="'.WEB_PATH.'/member/cart/cartlist">'.lang::get_lang("更多").'<i>&gt;</i></a></li>';
 
 		}
 
@@ -378,7 +378,7 @@ class cart extends base {
 
 			_setcookie('Cartlist',NULL);
 
-			_message("购物车没有商品!",WEB_PATH);
+			_message(lang::get_lang("购物车没有商品"),WEB_PATH);
 
 		}	
 
@@ -434,7 +434,7 @@ class cart extends base {
 
 		if(!isset($_POST['submit'])){	
 
-			_message("正在返回购物车...",WEB_PATH.'/member/cart/cartlist');
+			_message(lang::get_lang("正在返回购物车"),WEB_PATH.'/member/cart/cartlist');
 
 			exit;
 
@@ -462,13 +462,13 @@ class cart extends base {
 
 			}else{				
 
-				_message("请不要重复提交...",WEB_PATH.'/member/cart/cartlist');
+				_message(lang::get_lang("请不要重复提交"),WEB_PATH.'/member/cart/cartlist');
 
 			}	
 
 		}else{
 
-			_message("正在返回购物车...",WEB_PATH.'/member/cart/cartlist');
+			_message(lang::get_lang("正在返回购物车"),WEB_PATH.'/member/cart/cartlist');
 
 		}
 
@@ -548,13 +548,13 @@ class cart extends base {
 
 		if($check === 'not_pay'){
 
-			_message('未选择支付平台!',WEB_PATH.'/member/cart/cartlist');
+			_message(lang::get_lang("未选择支付平台"),WEB_PATH.'/member/cart/cartlist');
 
 		}
 
 		if(!$check){
 
-			_message("商品支付失败!",WEB_PATH.'/member/cart/cartlist');
+			_message(lang::get_lang("商品支付失败"),WEB_PATH.'/member/cart/cartlist');
 
 		}
 
@@ -603,7 +603,7 @@ class cart extends base {
 
 		if(!isset($_POST['submit'])){	
 
-			_message("正在返回充值页面...",WEB_PATH.'/member/member/home/userrecharge');
+			_message(lang::get_lang("正在返回充值页面"),WEB_PATH.'/member/member/home/userrecharge');
 
 			exit;
 
@@ -627,7 +627,7 @@ class cart extends base {
 
 		if($ok === 'not_pay'){
 
-			_message("未选择支付平台");
+			_message(lang::get_lang("未选择支付平台"));
 
 		}
 
@@ -711,7 +711,7 @@ class cart extends base {
 				$rs  = $pay->pay_user_go_shop($uid,$shopid,$shopnum);
 
 				if($rs){	//成功
-						$message = array('error'=>'您已经支付成功');
+						$message = array('error'=>lang::get_lang("您已经支付成功"));
 
 						echo json_encode($message);
 					exit;

@@ -12,7 +12,7 @@ class article extends SystemAction {
 	public function show(){	
 		$articleid=$this->segment(4);
 		$article=$this->db->GetOne("SELECT * FROM `@#_article` where `id` = '$articleid' LIMIT 1");
-		if(!$article){_message("参数错误!");}		
+		if(!$article){_message(lang::get_lang("参数错误"));}		
 		include templates("help","help");
 	}
 	
@@ -24,7 +24,7 @@ class article extends SystemAction {
 		}else{		
 			$article=$this->db->GetOne("SELECT * FROM `@#_category` where `catdir` = '$single' LIMIT 1");
 		}
-		if(!$article){_message("参数错误!");}		
+		if(!$article){_message(lang::get_lang("参数错误"));}		
 		
 		$info=unserialize($article['info']);
 

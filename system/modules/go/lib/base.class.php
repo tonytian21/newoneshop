@@ -26,7 +26,7 @@ class base extends SystemAction {
 	}
 	
 	private function HeaderLogin(){
-		_message("你还未登录，无权限访问该页！",WEB_PATH."/member/user/login",3);
+		_message(lang::get_lang("无权限访问该页"),WEB_PATH."/member/user/login",3);
 	}
 	
 }

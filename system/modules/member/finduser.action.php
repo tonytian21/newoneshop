@@ -42,17 +42,17 @@ class finduser extends SystemAction {
 
 			}
 
-			if($regtype==null)_message("帐号类型不正确!",null,3);
+			if($regtype==null)_message(lang::get_lang("帐号类型不正确"),null,3);
 
 			$info=$this->DB()->GetOne("SELECT * FROM `@#_member` WHERE $regtype = '$name' LIMIT 1");
 
-			if(!$info)_message("帐号不存在");
+			if(!$info)_message(lang::get_lang("帐号不存在"));
 
 			header("location:".WEB_PATH."/member/finduser/find".$regtype."check"."/"._encrypt($name));
 
 		}
 
-		$title="找回密码";
+		$title=lang::get_lang("找回密码");
 
 		include templates("user","findpassword");
 
@@ -66,7 +66,7 @@ class finduser extends SystemAction {
 
 		$member=$this->DB()->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
 
-		if(!$member)_message("参数不正确!");	
+		if(!$member)_message(lang::get_lang("参数不正确"));	
 
 		$checkcode=explode("|",$member['mobilecode']);
 
@@ -92,11 +92,11 @@ class finduser extends SystemAction {
 
 			}
 
-			_message("正在重新发送...",WEB_PATH."/member/finduser/findmobilecheck/"._encrypt($member['mobile']),2);				
+			_message(lang::get_lang("正在重新发送"),WEB_PATH."/member/finduser/findmobilecheck/"._encrypt($member['mobile']),2);				
 
 		}else{
 
-			_message("重发时间间隔不能小于2分钟!",WEB_PATH."/member/finduser/findmobilecheck/"._encrypt($member['mobile']));
+			_message(lang::get_lang("重发时间间隔不能小于2分钟"),WEB_PATH."/member/finduser/findmobilecheck/"._encrypt($member['mobile']));
 
 		}		
 
@@ -106,7 +106,7 @@ class finduser extends SystemAction {
 
 	
 
-		$title="手机找回密码";	
+		$title=lang::get_lang("手机找回密码");	
 
 		$time=120;
 
@@ -114,11 +114,11 @@ class finduser extends SystemAction {
 
 		$name=_encrypt($namestr,"DECODE");
 
-		if(strlen($name)!=11)_message("参数错误！");
+		if(strlen($name)!=11)_message(lang::get_lang("参数错误"));
 
 		$member=$this->DB()->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
 
-		if(!$member)_message("参数不正确!");
+		if(!$member)_message(lang::get_lang("参数不正确"));
 
 
 
@@ -148,13 +148,13 @@ class finduser extends SystemAction {
 
 		if(isset($_POST['submit'])){
 
-			$checkcodes=isset($_POST['checkcode']) ? $_POST['checkcode'] : _message("参数不正确!");
+			$checkcodes=isset($_POST['checkcode']) ? $_POST['checkcode'] : _message(lang::get_lang("参数不正确"));
 
-			if(strlen($checkcodes)!=6)_message("验证码输入不正确!");
+			if(strlen($checkcodes)!=6)_message(lang::get_lang("验证码输入不正确"));
 
 			$usercode=explode("|",$member['passcode']);	
 
-			if($checkcodes!=$usercode[0])_message("验证码输入不正确!");
+			if($checkcodes!=$usercode[0])_message(lang::get_lang("验证码输入不正确"));
 
 			$urlcheckcode=_encrypt($member['mobile']."|".$member['passcode']);
 
@@ -162,7 +162,7 @@ class finduser extends SystemAction {
 
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])));	
 
-			_message("手机验证成功",WEB_PATH."/member/finduser/findok/".$urlcheckcode,2);
+			_message(lang::get_lang("手机验证成功"),WEB_PATH."/member/finduser/findok/".$urlcheckcode,2);
 
 		}
 
@@ -184,11 +184,11 @@ class finduser extends SystemAction {
 
 		$member=$this->DB()->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$name' LIMIT 1");
 
-		if(!$member)_message("参数错误!");	
+		if(!$member)_message(lang::get_lang("参数错误"));	
 
 		$this->DB()->Query("UPDATE `@#_member` SET passcode='-1' where `uid`='$member[uid]'");
 
-		_message("正在重新发送...",WEB_PATH."/member/finduser/findemailcheck/".$this->segment(4),2);				
+		_message(lang::get_lang("正在重新发送"),WEB_PATH."/member/finduser/findemailcheck/".$this->segment(4),2);				
 
 		exit;	
 
@@ -196,7 +196,7 @@ class finduser extends SystemAction {
 
 	public function findemailcheck(){
 
-		$title="通过邮箱找回密码";				
+		$title=lang::get_lang("通过邮箱找回密码");				
 
 		$enname=$this->segment(4);
 
@@ -204,7 +204,7 @@ class finduser extends SystemAction {
 
 		$info=$this->DB()->GetOne("SELECT * FROM `@#_member` WHERE `email` = '$name' LIMIT 1");
 
-		if(!$info)_message("未知错误!");		
+		if(!$info)_message(lang::get_lang("未知错误"));		
 
 		$emailurl=explode("@",$info['email']);
 
@@ -222,9 +222,9 @@ class finduser extends SystemAction {
 
 			$this->DB()->Query("UPDATE `@#_member` SET `passcode`='$passcode' where `uid`='$info[uid]'");		
 
-			$tit=_cfg("web_name")."邮箱找回密码";
+			$tit=_cfg("web_name").lang::get_lang("邮箱找回密码");
 
-			$content='<span>请在24小时内激活邮件</span>，点击连接激活邮件：<a href="'.WEB_PATH.'/member/finduser/findok/'.$urlcheckcode.'">';
+			$content='<span>'.lang::get_lang("请在24小时内激活邮件").'</span>，'.lang::get_lang("点击连接激活邮件").'：<a href="'.WEB_PATH.'/member/finduser/findok/'.$urlcheckcode.'">';
 
 			$content.=$url;
 
@@ -244,7 +244,7 @@ class finduser extends SystemAction {
 
 		if(empty($key)){
 
-			_message("未知错误");	
+			_message(lang::get_lang("未知错误"));	
 
 		}else{
 
@@ -256,7 +256,7 @@ class finduser extends SystemAction {
 
 		$checkcode=explode("|",_encrypt($key,"DECODE"));		
 
-		if(count($checkcode)!=3)_message("未知错误",NULL,3);
+		if(count($checkcode)!=3)_message(lang::get_lang("未知错误"),NULL,3);
 
 		$emailurl=explode("@",$checkcode[0]);
 
@@ -272,7 +272,7 @@ class finduser extends SystemAction {
 
 		$member=$this->DB()->GetOne($sql);			
 
-		if(!$member)_message("帐号或验证码错误",NULL,2);
+		if(!$member)_message(lang::get_lang("帐号或验证码错误"),NULL,2);
 
 		$usercheck=explode("|",$member['passcode']);			
 
@@ -280,13 +280,13 @@ class finduser extends SystemAction {
 
 		if($timec<(3600*24)){
 
-			$title="重置密码";
+			$title=lang::get_lang("重置密码");
 
 			include templates("user","findok");
 
 		}else{
 
-			$title="验证失败";
+			$title=lang::get_lang("验证失败");
 
 			include templates("user","finderror");		
 
@@ -304,7 +304,7 @@ class finduser extends SystemAction {
 
 			$checkcode=explode("|",_encrypt($key,"DECODE"));		
 
-			if(count($checkcode)!=3)_message("未知错误",NULL,3);			
+			if(count($checkcode)!=3)_message(lang::get_lang("未知错误"),NULL,3);			
 
 			$emailurl=explode("@",$checkcode[0]);
 
@@ -320,11 +320,11 @@ class finduser extends SystemAction {
 
 			$member=$this->DB()->GetOne($sql);
 
-			if(!$member)_message("未知错误!");
+			if(!$member)_message(lang::get_lang("未知错误"));
 
 			$this->DB()->Query("UPDATE `@#_member` SET `password`='$password',`passcode`='-1' where `uid`='$member[uid]'");
 
-			_message("密码重置成功",WEB_PATH."/member/user/login");
+			_message(lang::get_lang("密码重置成功"),WEB_PATH."/member/user/login");
 
 		}
 

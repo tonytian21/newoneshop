@@ -18,13 +18,13 @@ class databuyrecord extends SystemAction {
 			$end_time = strtotime($end_time);		
 
 			if(strlen($start_time)!=10 && strlen($end_time)!=10){
-				_message("参数不正确!");
+				_message(lang::get_lang("参数不正确"));
 			}
 			if($end_time < $start_time){
-				_message("对不起！查询开始时间不得大于结束时间");
+				_message(lang::get_lang("查询开始时间不得大于结束时间"));
 			}			
 			if(($end_time - 7200) > $start_time){
-				_message("对不起！查询时间跨度不得超过2小时");
+				_message(lang::get_lang("时间跨度不得超过2小时"));
 			}
 			$start_time.='.000';
 			$end_time  .='.000';			

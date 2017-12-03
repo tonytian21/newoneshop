@@ -9,7 +9,7 @@ class us extends SystemAction{
 	}
 	public function uname(){
 		$mysql_model=System::load_sys_class('model');
-		$title="个人主页";
+		$title=lang::get_lang("个人主页");
 		$index=intval($this->segment(4))-1000000000;
 		$tab=$this->segment(3);
 		$member=$mysql_model->GetOne("select * from `@#_member` where uid='".$index."'");
@@ -17,43 +17,43 @@ class us extends SystemAction{
 		if($member){
 			include templates("us","index");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 	public function userbuy(){
 		$mysql_model=System::load_sys_class('model');
-		$title="获得的商品";
+		$title=lang::get_lang("获得的商品");
 		$index=intval($this->segment(4))-1000000000;
 		$tab=$this->segment(3);
 		$member=$mysql_model->GetOne("select * from `@#_member` where uid='".$index."'");
 		if($member){
 			include templates("us","userbuy");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 	public function userraffle(){
 		$mysql_model=System::load_sys_class('model');
-		$title="获得的商品";
+		$title=lang::get_lang("获得的商品");
 		$index=intval($this->segment(4))-1000000000;
 		$tab=$this->segment(3);
 		$member=$mysql_model->GetOne("select * from `@#_member` where uid='".$index."'");
 		if($member){
 			include templates("us","userraffle");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 	public function userpost(){
 		$mysql_model=System::load_sys_class('model');
-		$title="获得的商品";
+		$title=lang::get_lang("获得的商品");
 		$index=intval($this->segment(4))-1000000000;
 		$tab=$this->segment(3);
 		$member=$mysql_model->GetOne("select * from `@#_member` where uid='".$index."'");
 		if($member){
 			include templates("us","userpost");
 		}else{
-			_message("页面错误",WEB_PATH,3);
+			_message(lang::get_lang("页面错误"),WEB_PATH,3);
 		}
 	}
 }
