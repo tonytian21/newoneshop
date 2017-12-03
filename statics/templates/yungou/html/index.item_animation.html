@@ -107,25 +107,22 @@ function show_date_time(endTime,obj){
 	secondsold=Math.floor(sectimeold); 
 	msPerDay=24*60*60*1000
 	e_daysold=timeold/msPerDay 	
-	daysold=Math.floor(e_daysold); 				//{wc:fun:lang::get_lang('天')}	
+	daysold=Math.floor(e_daysold); 				
 	e_hrsold=(e_daysold-daysold)*24; 
-	hrsold=Math.floor(e_hrsold); 				//{wc:fun:lang::get_lang('时')}
+	hrsold=Math.floor(e_hrsold); 				
 	e_minsold=(e_hrsold-hrsold)*60;	
-	//{wc:fun:lang::get_lang('分')}
 	minsold=Math.floor((e_hrsold-hrsold)*60);
 	minsold = (minsold<10?'0'+minsold:minsold)
 	minsold = new String(minsold);
 	minsold_1 = minsold.substr(0,1);
 	minsold_2 = minsold.substr(1,1);	
 
-	//{wc:fun:lang::get_lang('秒')}
 	e_seconds = (e_minsold-minsold)*60;	
 	seconds=Math.floor((e_minsold-minsold)*60);
 	seconds = (seconds<10?'0'+seconds:seconds)
 	seconds = new String(seconds);
 	seconds_1 = seconds.substr(0,1);
-	seconds_2 = seconds.substr(1,1);	
-	//{wc:fun:lang::get_lang('毫秒')}	
+	seconds_2 = seconds.substr(1,1);		
 	ms = e_seconds-seconds;
 	ms = new String(ms)
 	ms_1 = ms.substr(2,1);
@@ -137,7 +134,6 @@ function show_date_time(endTime,obj){
 	$("#liSecond2").attr("class","Code_"+seconds_2);
 	$("#liMilliSecond1").attr("class","Code_"+ms_1);
 	$("#last").attr("class","Code_"+ms_2);
-	//this.obj.innerHTML=daysold+"{wc:fun:lang::get_lang('天')}"+(hrsold<10?'0'+hrsold:hrsold)+"{wc:fun:lang::get_lang('小时')}"+(minsold<10?'0'+minsold:minsold)+"{wc:fun:lang::get_lang('分')}"+(seconds<10?'0'+seconds:seconds)+"{wc:fun:lang::get_lang('秒')}."+ms;
 }
 
 $(function(){

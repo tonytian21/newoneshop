@@ -16,7 +16,6 @@ editurl['imageManager']="{WEB_PATH}/{G_ADMIN_DIR}/ueditor/imagemanager";
 
 {wc:templates "member","left"}
 <script>
-//{wc:fun:lang::get_lang('上传文件')}
 $(function(){
     $('#sd_file').uploadify({
     	'auto'     : false,
@@ -24,7 +23,7 @@ $(function(){
         'swf'      : '{G_PLUGIN_PATH}/uploadify/uploadify.swf',
         'uploader' : '{WEB_PATH}/member/home/singphotoup',
         'method'   : 'post',
-		'buttonText' : '{wc:fun:lang::get_lang('选择图片')}',
+		'buttonText' : '{wc:fun:lang::get_lang("选择图片")}',
 		'buttonImage': '{G_PLUGIN_PATH}/uploadify/select.png',
 		'width': 120,
 		'height': 30,
@@ -49,18 +48,17 @@ function sdUpload(){
 		$('#sd_file').uploadify('settings','formData',{'typeCode':document.getElementById('id_file').value});
 		$('#sd_file').uploadify('upload','*')
 	}
-//{wc:fun:lang::get_lang('显示上传的图片')}
+
 function SetImgContent(data){
 	var sLi = "";
 		sLi += '<li>';
 		sLi += '<img src="{G_UPLOAD_PATH}/' + data + '" width="100" height="100" />';
 		sLi += '<input type="hidden" name="fileurl_tmp[]" value="' + data + '">';
-		sLi += '<a href="javascript:;">{wc:fun:lang::get_lang('删除')}</a>';
+		sLi += '<a href="javascript:;">{wc:fun:lang::get_lang("删除")}</a>';
 		sLi += '</li>';
 	return sLi;
 }
 
-//{wc:fun:lang::get_lang('删除上传元素')}DOM{wc:fun:lang::get_lang('并清除目录文件')}
 function SetUploadFile(){
 	$(".fileWarp ul li").each(function(l_i){
 		$(this).attr("id", "li_" + l_i);

@@ -879,13 +879,13 @@ function _message($string = null, $defurl = null, $time = 2, $config = null)
         
         $str_url_two = array(
             "url" => WEB_PATH . '/' . G_ADMIN_DIR,
-            "text" => "返回后台首页"
+            "text" => lang::get_lang("返回后台首页")
         );
     } else {
         
         $str_url_two = array(
-            "url" => G_WEB_PATH,
-            "text" => "返回首页"
+            "url" => WEB_PATH,
+            "text" => lang::get_lang("返回首页")
         );
     }
     

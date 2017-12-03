@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="{G_PLUGIN_PATH}/uploadify/uploadify.css" type="text/css"> 
 {wc:templates "member","left"}
 <script>
-//{wc:fun:lang::get_lang('上传文件')}
 $(function(){
     $('#sd_file').uploadify({
     	'auto'     : false,
@@ -12,7 +11,7 @@ $(function(){
         'swf'      : '{G_PLUGIN_PATH}/uploadify/uploadify.swf',
         'uploader' : '{WEB_PATH}/member/home/singphotoup',
         'method'   : 'post',
-		'buttonText' : '{wc:fun:lang::get_lang('选择图片')}',
+		'buttonText' : '{wc:fun:lang::get_lang("选择图片")}',
 		'buttonImage': '{G_PLUGIN_PATH}/uploadify/select.png',
 		'width': 120,
 		'height': 30,
@@ -43,7 +42,7 @@ function SetImgContent(data){
 		sLi += '<li>';
 		sLi += '<img src="{G_UPLOAD_PATH}/' + data + '" width="100" height="100" />';
 		sLi += '<input type="hidden" name="fileurl_tmp[]" value="' + data + '">';
-		sLi += '<a href="javascript:void(0);">{wc:fun:lang::get_lang('删除')}</a>';
+		sLi += '<a href="javascript:void(0);">{wc:fun:lang::get_lang("删除")}</a>';
 		sLi += '</li>';
 	return sLi;
 }

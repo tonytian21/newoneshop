@@ -27,19 +27,19 @@ $(function(){
 </script>
 <div class="R-content">
 	{wc:templates "member","shezhi"}
-	<div class="prompt orange">{wc:fun:lang::get_lang('完善以下资料，')}{wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('不会以任何形式公开您的个人隐私，请放心填写！')}<s></s></div>
+	<div class="prompt orange">{wc:fun:lang::get_lang('完善以下资料')}<s></s></div>
 	<div class="info">
 	<form class="registerform" method="post" action="{WEB_PATH}/member/home/usermodify" style="float: none;">
 		<table border="0" cellpadding="0" cellspacing="8">
 			<tr>
 				{wc:if $member['email']!=null && $member['emailcode']=='1'}		
-				<td align="right"><em><font>*</font><label>{wc:fun:lang::get_lang('邮箱：')}</label></em></td>
+				<td align="right"><em><font>*</font><label>{wc:fun:lang::get_lang('邮箱')}：</label></em></td>
 				<td>
 					<b>{wc:$member['email']}</b> 
 					 {wc:fun:lang::get_lang('已验证')}
 				</td>
 				{wc:else}
-				<td align="right"><em><font>*</font><label>{wc:fun:lang::get_lang('邮箱：')}</label></em></td>
+				<td align="right"><em><font>*</font><label>{wc:fun:lang::get_lang('邮箱')}：</label></em></td>
 				<td>
 					<a style="margin-left:0;" href="{WEB_PATH}/member/home/mailchecking" title="{wc:fun:lang::get_lang('绑定邮箱')}">{wc:fun:lang::get_lang('绑定邮箱')}</a>
 				</td>
@@ -48,12 +48,12 @@ $(function(){
 			
 			<tr>
 				{wc:if $member_facebook['b_id']!=null || $member_qq['b_type']=='facebook'}		
-				<td align="right"><em><font>*</font><label>facebook{wc:fun:lang::get_lang('：')}</label></em></td>
+				<td align="right"><em><font>*</font><label>facebook：</label></em></td>
 				<td>
 					 {wc:fun:lang::get_lang('已绑定')}
 				</td>
 				{wc:else}
-				<td align="right"><em><font>*</font><label>facebook{wc:fun:lang::get_lang('：')}</label></em></td>
+				<td align="right"><em><font>*</font><label>facebook：</label></em></td>
 				<td>
 					<a style="margin-left:0;" href="{WEB_PATH}/member/home/facebookclock" title="{wc:fun:lang::get_lang('请绑定')}facebook">{wc:fun:lang::get_lang('请绑定')}facebook</a>
 				</td>
@@ -61,16 +61,16 @@ $(function(){
 			</tr>
 			
 			<tr>
-				<td align="right"><em><font>*</font><label>{wc:fun:lang::get_lang('昵称：')}</label></em></td>
+				<td align="right"><em><font>*</font><label>{wc:fun:lang::get_lang('昵称')}：</label></em></td>
 				<td>
 					<input id="nicxx" datatype="nic" nullmsg="{wc:fun:lang::get_lang('昵称不能为空')}" name="username" value="{wc:$member['username']}" type="text"  class="txt gray" maxlength="20" />					
 				</td>					
-				<td><div  style="margin-top: 0px!important;" class="Validform_checktip">{wc:fun:lang::get_lang('昵称为')}2-20{wc:fun:lang::get_lang('个汉字、字母、数字、“')}_{wc:fun:lang::get_lang('”字符组成')}</div></td>
+				<td><div  style="margin-top: 0px!important;" class="Validform_checktip"></div></td>
 			</tr>
 			<tr>
-				<td align="right"><em><font>&nbsp;</font><label>{wc:fun:lang::get_lang('签名：')}</label></em></td>
+				<td align="right"><em><font>&nbsp;</font><label>{wc:fun:lang::get_lang('签名')}：</label></em></td>
 				{wc:if $member['qianming']==null}
-				<td><textarea name="qianming" class="info_txtarea gray03" >{wc:fun:lang::get_lang('让别人看到不一样的你！')}</textarea></td>
+				<td><textarea name="qianming" class="info_txtarea gray03" ></textarea></td>
 				{wc:else}
 				<td><textarea name="qianming" class="info_txtarea gray03" >{wc:$member['qianming']}</textarea></td>
 				{wc:if:end}

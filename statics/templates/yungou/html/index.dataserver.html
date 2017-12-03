@@ -3,9 +3,9 @@
 <div class="wrap w1200">
 	<div class="Current_nav w1200">
 		<a href="{WEB_PATH}">{wc:fun:lang::get_lang('首页')}</a> <span>&gt;</span> <a
-			href="{WEB_PATH}/goods_list/{wc:$item['cateid']}">{wc:$category['name']}</a>
+			href="{WEB_PATH}/goods_list/{wc:$item['cateid']}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$category['catdir']}{wc:else}{wc:$category['name']}{wc:if:end}</a>
 		<span>&gt;</span> <a
-			href="{WEB_PATH}/goods_list/{wc:$item['cateid']}e{wc:$item['brandid']}">{wc:$brand['name']}</a>
+			href="{WEB_PATH}/goods_list/{wc:$item['cateid']}e{wc:$item['brandid']}">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$brand['nameen']}{wc:else}{wc:$brand['name']}{wc:if:end}</a>
 		<span>&gt;</span> {wc:fun:lang::get_lang('揭晓详情')}
 	</div>
 	<div class="show_content" style="overflow-x: hidden; overflow-y: auto;">
@@ -53,7 +53,7 @@
 									style="width: 268px; height: 36px; line-height: 36px; border: none; color: #f60; background: none;">
 									<span style="padding: 0px;"> <a id="chakanxingqing"
 										href="{WEB_PATH}/goods/{wc:$itemzx['id']}"
-										class="Result_LConductBut bg_red b_red">{wc:fun:lang::get_lang('第')}{wc:$itemzx['qishu']}{wc:fun:lang::get_lang('期正在进行查看详情')}</a>
+										class="Result_LConductBut bg_red b_red">{wc:fun:lang::get_lang('第*期',$itemzx['qishu'])}{wc:fun:lang::get_lang('正在进行查看详情')}</a>
 									</span>
 								</dt>
 							</dl>
@@ -78,10 +78,10 @@
 				style="width: 643px; height: 360px; position: relative;">
 				<p
 					style="font-size: 18px; padding-bottom: 9px; margin-top: 15px; color: #333; height: 20px; overflow: hidden; text-align: center;">
-					<span class="f24">({wc:fun:lang::get_lang('第')}{wc:$item['qishu']}{wc:fun:lang::get_lang('期')})</span> <span class="f24">{wc:$item['title']}</span>
+					<span class="f24">({wc:fun:lang::get_lang('第*期',$item['qishu'])})</span> <span class="f24">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$item['titleen']}{wc:else}{wc:$item['title']}{wc:if:end}</span>
 				</p>
 				<p class="Det_money" style="text-align: center;">
-					{wc:fun:lang::get_lang('价值：')} <span class="rmbgray">{wc:$item['money']}</span>
+					{wc:fun:lang::get_lang('价值')} <span class="rmbgray">{wc:$item['money']}</span>
 				</p>
 				<div class="Announced_Frame"
 					style="background-color: #fff2b7; border-radius: 20px; height: 107px; margin: 12px auto; overflow: hidden; padding: 22px 25px 15px 65px; position: relative; width: 556px; background-image: none;">
@@ -104,15 +104,15 @@
 									{wc:fun:lang::get_lang('获得本期商品')}
 								</p>
 								<p>
-									{wc:fun:lang::get_lang('本期购买：')} <em class="c_red">{wc:$user_shop_number}</em> {wc:fun:lang::get_lang('人次')} <span
+									{wc:fun:lang::get_lang('本期购买')}: <em class="c_red">{wc:$user_shop_number}</em> {wc:fun:lang::get_lang('人次')} <span
 										id="divOpen" class="MaOff"
 										style="background: none; border: none; margin-left: 5px;">
 										<span class="dianjichakan"
 										style="height: auto; line-height: 20px;">{wc:fun:lang::get_lang('点击查看')}</span>
 									</span>
 								</p>
-								<p>{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($item['q_end_time'])}</p>
-								<p>{wc:fun:lang::get_lang('夺宝时间：')}{wc:fun:microt($user_shop_time)}</p>
+								<p>{wc:fun:lang::get_lang('揭晓时间')}:{wc:fun:microt($item['q_end_time'])}</p>
+								<p>{wc:fun:lang::get_lang('夺宝时间')}:{wc:fun:microt($user_shop_time)}</p>
 							</dd>
 						</dl>
 						<div
@@ -160,12 +160,10 @@
 					style="padding: 0 6px 0 0; text-align: left;">
 					<h6
 						style="padding-bottom: 0px; color: #666; font-size: 14px; font-weight: bold; height: 22px; line-height: 22px; padding-bottom: 6px;">{wc:fun:lang::get_lang('如何计算')}?</h6>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">1{wc:fun:lang::get_lang('、取该商品最后购买时间前网站所有商品的最后')}100{wc:fun:lang::get_lang('条夺宝时间记录；')}</p>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">2{wc:fun:lang::get_lang('、按时、分、秒、毫秒排列取值之和，除以该商品总参与人次后取余数；')}</p>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">3{wc:fun:lang::get_lang('、余数加上')}10000001
-						{wc:fun:lang::get_lang('即为“幸运夺宝码”；')}</p>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">4{wc:fun:lang::get_lang('、余数是指整数除法中被除数未被除尽部分，')}
-						{wc:fun:lang::get_lang('如')}7÷3 = 2 ......1{wc:fun:lang::get_lang('，')}1{wc:fun:lang::get_lang('就是余数。')}</p>
+					<p style="font-size: 14px; line-height: 25px; color: #999;">1、{wc:fun:lang::get_lang('取该商品最后购买时间前100')}；</p>
+					<p style="font-size: 14px; line-height: 25px; color: #999;">2、{wc:fun:lang::get_lang('时分秒毫秒排列取值之和')}；</p>
+					<p style="font-size: 14px; line-height: 25px; color: #999;">3、{wc:fun:lang::get_lang('余数加上10000001')}；</p>
+					<p style="font-size: 14px; line-height: 25px; color: #999;">4、{wc:fun:lang::get_lang('余数是指整数除法中被除数未被除尽部分')}。</p>
 				</div>
 				<div id="MaCenter" class="MaCenter"
 					style="border: 1px solid #ccc; margin-top: 0; position: absolute; background: #fff; top: 11px; left: 15px; box-shadow: 0 0 12px #e2e2e2; width: 669px; height: 355px; z-index: 99999; display: none;">
@@ -176,7 +174,7 @@
 							<p
 								style="z-index: 99999; font-size: 14px; width: 635px; color: #666; text-indent: 0; position: absolute; z-index: 999999; background: #fff; text-align: center; top: 0px;">
 								{wc:fun:lang::get_lang('幸运获得者本期总共夺宝了')} <em style="z-index: 99999;" class="c_red">{wc:$user_shop_number}</em>
-								{wc:fun:lang::get_lang('人次')}&nbsp&nbsp&nbsp&nbsp {wc:fun:lang::get_lang('购买时间：')} <span
+								{wc:fun:lang::get_lang('人次')}&nbsp&nbsp&nbsp&nbsp {wc:fun:lang::get_lang('购买时间')}: <span
 									style="font-size: 12px; color: #999;">{wc:fun:microt($user_shop_time)}</span>
 							</p>
 							<dd style="z-index: 99999; width: auto; margin-top: 45px;">{wc:fun:yunma($user_shop_codes,"b")}</dd>
@@ -228,7 +226,7 @@
 
 					<li
 						style="height: 128px; background: #fff2b7; color: #f60; line-height: 80px; text-align: center; font-size: 14px">
-						{wc:fun:lang::get_lang('第')}{wc:$itemzx['qishu']}{wc:fun:lang::get_lang('期正在进行。。。')}
+						{wc:fun:lang::get_lang('第*期正在进行',$itemzx['qishu'])}
 						<div
 							style="line-height: 30px; border: 1px solid #f60; border-radius: 20px; width: 150px;">
 							<a style="color: #f60;"
@@ -241,7 +239,7 @@
 					{wc:else}
 					<li class="bottom_qishu"
 						style="height: 126px; background: #fbfbfb; text-align: center; line-height: 24px;"><a
-						href="{WEB_PATH}/goods/{wc:$itemzx['id']}">{wc:fun:lang::get_lang('木有了，前往最新一期！')}</a></li>
+						href="{WEB_PATH}/goods/{wc:$itemzx['id']}">{wc:fun:lang::get_lang('木有了新一期')}</a></li>
 					{wc:if:end}
 				</ul>
 			</div>
@@ -299,7 +297,7 @@
 				style="background-color: #fffddd; height: 155px; position: relative; text-align: center; z-index: 3;">
 				<p
 					style="color: #f60; font-size: 14px; height: 48px; line-height: 48px;">
-					{wc:fun:lang::get_lang('截止揭晓时间【')}{wc:fun:microt($item['q_end_time'])}{wc:fun:lang::get_lang('】最后')}100{wc:fun:lang::get_lang('条全站购买时间记录')}</p>
+					{wc:fun:lang::get_lang('截止揭晓时间*最后100条',microt($item['q_end_time']))}</p>
 				<div
 					style="height: 105px;; position: relative; border-bottom: 1px solid #ffca8a; line-height: 65px; width: 1167px;">
 					<ul class="step-inner clearfix"
@@ -357,7 +355,7 @@
 						style="width: 487px; text-align: left; padding-left: 20px;">
 						<a style="font-size: 14px;" class="gray02"
 						href="{WEB_PATH}/goods/{wc:$record['shopid']}" target="_blank">
-							(&nbsp{wc:fun:lang::get_lang('第')}{wc:$record['shopqishu']}{wc:fun:lang::get_lang('期')}&nbsp){wc:$record['shopname']} </a>
+							(&nbsp{wc:fun:lang::get_lang('第*期',$record['shopqishu'])}&nbsp){wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$record['shopname']}{wc:else}{wc:$record['shopname']}{wc:if:end} </a>
 					</li>
 				</ul>
 				{wc:loop:end}

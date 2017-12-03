@@ -661,16 +661,16 @@ Qfast.add('widgets', {
 });
 Qfast(false, 'widgets', function() {
     K.tabs({
-        id: 'fsD1', //<?php echo lang::get_lang('焦点图包裹'); ?>id
-        conId: "D1pic1", //** <?php echo lang::get_lang('大图域包裹'); ?>id
+        id: 'fsD1', 
+        conId: "D1pic1", 
         tabId: "D1fBt",
         tabTn: "a",
-        conCn: '.fcon', //** <?php echo lang::get_lang('大图域配置'); ?>class
-        auto: 1, //<?php echo lang::get_lang('自动播放'); ?> 1<?php echo lang::get_lang('或'); ?>0
-        effect: 'fade', //<?php echo lang::get_lang('效果配置'); ?>
-        eType: 'mouseover', //** <?php echo lang::get_lang('鼠标事件'); ?>
-        pageBt: true, //<?php echo lang::get_lang('是否有按钮切换页码'); ?>
-        bns: ['.prev', '.next'], //** <?php echo lang::get_lang('前后按钮配置'); ?>class
+        conCn: '.fcon', 
+        auto: 1, 
+        effect: 'fade', 
+        eType: 'mouseover', 
+        pageBt: true, 
+        bns: ['.prev', '.next'],
         interval: 3000 
     });
 })

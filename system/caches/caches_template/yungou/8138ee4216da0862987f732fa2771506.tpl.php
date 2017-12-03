@@ -32,7 +32,6 @@
 	</div>
 	<div class="g-copyrightCon">
 		<div class="w1190">
-			<!-- //<?php echo lang::get_lang('底部短连接'); ?> -->
 			<div class="g-links">
 				<?php echo Getheader('foot'); ?>
 				<script
@@ -212,7 +211,7 @@ $(function(){
 	src="http://f1.webshare.mob.com/code/mob-share.js?appkey=21f30d1b7ccb5"></script>
 <script>
 mobShare.config( {
-    debug: false, // <?php echo lang::get_lang('开启调试，将在浏览器的控制台输出调试信息'); ?>
+    debug: false, 
     appkey: '21f30d1b7ccb5', // appkey
     params: window.shareParams,
 } );

@@ -349,8 +349,6 @@ $(function(){
 
 		
 
-	//<?php echo lang::get_lang('收藏'); ?>
-
 	function AddFavorite(sURL, sTitle){
 
 		try

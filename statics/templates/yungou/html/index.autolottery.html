@@ -41,8 +41,8 @@ function lxfEndtime(objlist,len,thistimes){
 		 
 		  for(var i in objlist){
 			    var endtime = objlist[i]['endtimeto'];
-				var nowtime = thistimes;        //{wc:fun:lang::get_lang('今天的日期')}({wc:fun:lang::get_lang('毫秒值')})
-			  	var youtime = endtime - nowtime;		//{wc:fun:lang::get_lang('还有多久')}({wc:fun:lang::get_lang('毫秒值')})
+				var nowtime = thistimes;       
+			  	var youtime = endtime - nowtime;		
 				
                 var seconds = youtime/1000;
                 var minutes = Math.floor(seconds/60);
@@ -51,12 +51,12 @@ function lxfEndtime(objlist,len,thistimes){
                 var CDay = days;
                 var CHour= hours % 24;
                 var CMinute= minutes % 60;
-                var CSecond= Math.floor(seconds%60);//"%"{wc:fun:lang::get_lang('是取余运算，可以理解为')}60{wc:fun:lang::get_lang('进一后取余数，然后只要余数。')}
+                var CSecond= Math.floor(seconds%60);
 			    objlist[i]['obj'].html("<span></span>{wc:fun:lang::get_lang('剩余')}<em>"+CHour+"</em>{wc:fun:lang::get_lang('时')}<em>"+CMinute+"</em>{wc:fun:lang::get_lang('分')}<em>"+CSecond+"</em>{wc:fun:lang::get_lang('秒')}");				
 				delete youtime,seconds,minutes,hours,days,CDay,CHour, CMinute, CSecond;
 				if( endtime <= nowtime ){
 					delete endtime, nowtime;			
-                    objlist[i]['obj'].html("<b>{wc:fun:lang::get_lang('限时揭晓')}</b>&nbsp;&nbsp;{wc:fun:lang::get_lang('正在计算中')}....");//{wc:fun:lang::get_lang('如果结束日期小于当前日期就提示过期啦')}					
+                    objlist[i]['obj'].html("<b>{wc:fun:lang::get_lang('限时揭晓')}</b>&nbsp;&nbsp;{wc:fun:lang::get_lang('正在计算中')}....");			
 					$.post("{WEB_PATH}/go/autolottery/autolottery_ret_install",{"shopid":objlist[i]['shopid']},function(data){																														
 						if(data == '-1'){
 							 objlist[i]['obj'].html("&nbsp;{wc:fun:lang::get_lang('没有这个商品')}!");						

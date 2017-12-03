@@ -42,21 +42,21 @@
             <b>
             {wc:php:start}             
             	$status=@explode(",",$recd['status']);               
-                if($status[2]=='{wc:fun:lang::get_lang('未完成')}' || $status[2]=='{wc:fun:lang::get_lang('待收货')}'){       	
-                    if($status[1]=='{wc:fun:lang::get_lang('未发货')}'){                    	
-                        echo "{wc:fun:lang::get_lang('等待发货')}";
+                if($status[2]==lang::get_lang('未完成') || $status[2]==lang::get_lang('待收货')){       	
+                    if($status[1]==lang::get_lang('未发货')){                    	
+                        echo lang::get_lang('等待发货');
                     } 
-                    if($status[1]=='{wc:fun:lang::get_lang('已发货')}'){
-                    	echo "{wc:fun:lang::get_lang('已发货')}";
+                    if($status[1]==lang::get_lang('已发货')){
+                    	echo lang::get_lang('已发货');
                         echo "<br>";
-                        echo '<a class="wuliubtn" oid="'.$recd['id'].'" uid="'.$recd['uid'].'">{wc:fun:lang::get_lang('确认收货')}</a>';                      
+                        echo '<a class="wuliubtn" oid="'.$recd['id'].'" uid="'.$recd['uid'].'">'.lang::get_lang('确认收货').'</a>';                      
                     }  
                 } 
-                if($status[2]=='{wc:fun:lang::get_lang('已完成')}'){
-                	echo "{wc:fun:lang::get_lang('已完成')}";
+                if($status[2]==lang::get_lang('已完成')){
+                	echo lang::get_lang('已完成');
                 }   
-                if($status[2]=='{wc:fun:lang::get_lang('已作废')}'){
-                	echo "{wc:fun:lang::get_lang('已作废')}";
+                if($status[2]==lang::get_lang('已作废')){
+                	echo lang::get_lang('已作废');
                 }          
             {wc:php:end}       
             </b>

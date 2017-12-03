@@ -4,7 +4,6 @@
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.css"/>
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.message.css"/>
 <script type="text/javascript">
-//{wc:fun:lang::get_lang('裁剪图片')}
 function showCoords(obj){
 	$("#x").val(obj.x);$("#y").val(obj.y);$("#w").val(obj.w);$("#h").val(obj.h);
 	if(parseInt(obj.w) > 0){
@@ -34,7 +33,6 @@ function showCoords(obj){
 		});
 	}
 }
-//{wc:fun:lang::get_lang('上传文件')}
 $(function(){
     $('#file_upload').uploadify({
     	'auto'     : true,
@@ -44,7 +42,7 @@ $(function(){
         'swf'      : '{G_TEMPLATES_STYLE}/js/uploadify.swf',
         'uploader' : '{WEB_PATH}/member/home/userphotoup',
         'method'   : 'post',
-		'buttonText' : '{wc:fun:lang::get_lang('选择图片')}',
+		'buttonText' : '{wc:fun:lang::get_lang("选择图片")}',
 		'buttonImage': '{G_TEMPLATES_STYLE}/img/upload.gif',
 		'width': 94,
 		'height': 27,
@@ -82,11 +80,10 @@ $(function(){
 		}
     });
 });
-//{wc:fun:lang::get_lang('显示上传的图片')}
 function SetImgContent(data){
 
 	if(data == ''){
-		alert('{wc:fun:lang::get_lang('上传失败！')}');
+		alert('{wc:fun:lang::get_lang("上传失败！")}');
 		return;
 	}else{
 		var sLi = "";
@@ -101,13 +98,13 @@ function SetImgphoto(data){
 		var sLi160 = "";
 		sLi160 += '<li class="li160"><div class="w160"><div id="w160">';
 		sLi160 += '<img id="crop_preview" src="{G_UPLOAD_PATH}/'+data+'">';
-		sLi160 += '</div></div>160X160 {wc:fun:lang::get_lang('像素')}</li>';
+		sLi160 += '</div></div>160X160 {wc:fun:lang::get_lang("像素")}</li>';
 		sLi160 += '<li class="li80"><div class="w80"><div id="w80">';
 		sLi160 += '<img id="crop_preview2" src="{G_UPLOAD_PATH}/'+data+'">';
-		sLi160 += '</div></div>80X80 {wc:fun:lang::get_lang('像素')}</li>';
+		sLi160 += '</div></div>80X80 {wc:fun:lang::get_lang("像素")}</li>';
 		sLi160 += '<li class="li30"><div class="w30"><div id="w30">';
 		sLi160 += '<img id="crop_preview3" src="{G_UPLOAD_PATH}/'+data+'">';
-		sLi160 += '</div></div>30X30 {wc:fun:lang::get_lang('像素')}</li>';
+		sLi160 += '</div></div>30X30 {wc:fun:lang::get_lang("像素")}</li>';
 		return sLi160;
 	}
 }
@@ -122,8 +119,8 @@ function SetImgphoto(data){
 	<div id="urlxx"></div>
 	<div class="uploadCon" style="margin-top:20px;">
 		<div class="upLeft">
-            <div class="gray02">{wc:fun:lang::get_lang('支持')}  png,  jpg,  jpeg {wc:fun:lang::get_lang('图片上传')}</div>
-			<div class="upload" style="float:left; width:300px;"><input type="file" name="file_upload"  id="file_upload" multiple="true" /></div>
+            <div class="gray02">{wc:fun:lang::get_lang('图片上传格式')}</div>
+			<div class="upload" style="float:left; width:300px;"><input type="file" name="file_upload"  id="file_upload" multiple="true"/></div>
 			<div class="frameCut">
 				<div class="zhix"></div>
 				<div id="divImgTip" class="text">{wc:fun:lang::get_lang('选择一张本地的图片编辑后上传成为头像')}</div>

@@ -58,7 +58,7 @@
 
 				var endtime = {wc:$item['xsjx_time']}000;
 
-			    var youtime = endtime - this.this_time;	   	   //{wc:fun:lang::get_lang('还有多久')}({wc:fun:lang::get_lang('毫秒值')})
+			    var youtime = endtime - this.this_time;	   	  
 
 				
 
@@ -76,7 +76,7 @@
 
 				var CMinute= minutes % 60;
 
-				var CSecond= Math.floor(seconds%60);//"%"{wc:fun:lang::get_lang('是取余运算，可以理解为')}60{wc:fun:lang::get_lang('进一后取余数，然后只要余数')}							
+				var CSecond= Math.floor(seconds%60);						
 
 				this.xsjx_time_shop.html("<b>{wc:fun:lang::get_lang('限时揭晓')}</b><p>{wc:fun:lang::get_lang('剩余时间：')}<em>"+days+"</em>{wc:fun:lang::get_lang('天')}<em>"+CHour+"</em>{wc:fun:lang::get_lang('时')}<em>"+CMinute+"</em>{wc:fun:lang::get_lang('分')}<em>"+CSecond+"</em>{wc:fun:lang::get_lang('秒')}</p>");
 
@@ -86,7 +86,7 @@
 
 					lxfEndtime_setTimeout && clearTimeout(lxfEndtime_setTimeout);					
 
-					this.xsjx_time_shop.html("<b>{wc:fun:lang::get_lang('限时揭晓')}</b><p>{wc:fun:lang::get_lang('正在计算中')}....</p>");//{wc:fun:lang::get_lang('如果结束日期小于当前日期就提示过期啦')}	
+					this.xsjx_time_shop.html("<b>{wc:fun:lang::get_lang('限时揭晓')}</b><p>{wc:fun:lang::get_lang('正在计算中')}....</p>");
 
 					xsjx_time_shop = this.xsjx_time_shop;
 
@@ -167,8 +167,6 @@
 			</script>
 
             {wc:if:end}			
-
-			<!-- {wc:fun:lang::get_lang('限时揭晓')}end -->
 
 			
 

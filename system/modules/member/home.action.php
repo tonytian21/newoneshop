@@ -46,6 +46,7 @@ class home extends base {
 		 }
 		 
 	}
+	
 	public function zhuanzhang(){
 		$webname=$this->_cfg['web_name'];
 		$member=$this->userinfo;
@@ -179,6 +180,7 @@ class home extends base {
 		$member=$this->userinfo;
 		$title=lang::get_lang("编辑个人资料");
 		$member_qq=$this->db->GetOne("select * from `@#_member_band` where `b_uid`=$member[uid]");
+		
 		include templates("member","modify");
 	}
 	//邮箱验证
@@ -504,7 +506,7 @@ class home extends base {
 			}
 			$mysql_model->Query("INSERT INTO `@#_member_dizhi`(`uid`,`sheng`,`shi`,`xian`,`jiedao`,`youbian`,`shouhuoren`,`tell`,`mobile`,`default`,`time`)VALUES
 			('$uid','$sheng','$shi','$xian','$jiedao','$youbian','$shouhuoren','$tell','$mobile','$default','$time')");
-			echo _message(lang::get_lang("参数错误")"收货地址添加成功",WEB_PATH."/member/home/address",3);
+			echo _message(lang::get_lang("收货地址添加成功"),WEB_PATH."/member/home/address",3);
 		}
 	}
 	
@@ -562,11 +564,11 @@ class home extends base {
 		$uid = $member['uid'];
 		$title=lang::get_lang("OneShop记录")." - "._cfg("web_name");		
 		
-		$total=$this->db->GetCount("select * from `@#_member_go_record` where `uid`='$uid' order by `id` DESC");
+		$total=$this->db->GetCount("select A.*,c.titleen from `@#_member_go_record` A inner join `@#_shoplist_term` B on A.shopid=B.id left join `@#_shoplist_en` c on B.sid=c.egid where A.`uid`='$uid' order by A.`id` DESC");
 		$page=System::load_sys_class('page');
 		if(isset($_GET['p'])){$pagenum=$_GET['p'];}else{$pagenum=1;}	
 		$page->config($total,10,$pagenum,"0");		
-		$record = $this->db->GetPage("select * from `@#_member_go_record` where `uid`='$uid' order by `id` DESC",array("num"=>10,"page"=>$pagenum,"type"=>1,"cache"=>0));
+		$record = $this->db->GetPage("select A.*,c.titleen from `@#_member_go_record` A inner join `@#_shoplist_term` B on A.shopid=B.id left join `@#_shoplist_en` c on B.sid=c.egid where A.`uid`='$uid' order by A.`id` DESC",array("num"=>10,"page"=>$pagenum,"type"=>1,"cache"=>0));
 		
 		include templates("member","userbuylist");
 	}
@@ -1104,7 +1106,7 @@ class home extends base {
 		 //插入提现申请表  这里不用在佣金表中插入记录 等后台审核才插入
 		 $this->db->Query("INSERT INTO `@#_member_cashout`(`uid`,`money`,`username`,`bankname`,`branch`,`banknumber`,`linkphone`,`time`)VALUES
 			('$uid','$money','$username','$bankname','$branch','$banknumber','$linkphone','$time')"); 
-			_message(lang::get_lang("参数错误")"申请成功！请等待审核！");
+			_message(lang::get_lang("申请成功！请等待审核！"));
 		 }	   
 	   }
 	   
@@ -1150,8 +1152,6 @@ class home extends base {
 		$uid = $member['uid'];
 		$recount=0;
 		$fufen = System::load_app_config("user_fufen",'','member');
-		//查询提现记录	 
-		//$recordarr=$mysql_model->GetList("select * from `@#_member_recodes` a left join `@#_member_cashout` b on a.cashoutid=b.id where a.`uid`='$uid' and a.`type`='-3' ORDER BY a.`time` DESC");		$recordarr=
 		
 		$recordarr=$mysql_model->GetList("select * from  `@#_member_cashout`  where `uid`='$uid' ORDER BY `time` DESC limit 0,30");
         

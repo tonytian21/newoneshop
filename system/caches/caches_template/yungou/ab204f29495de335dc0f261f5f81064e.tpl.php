@@ -66,12 +66,12 @@ $(function(){
 
 			<div class="member-t">
 
-				<h2>账户充值</h2>
+				<h2><?php echo lang::get_lang('账户充值'); ?></h2>
 
 			</div>
 
-			<div class="select"> <b class="gray01">请您选择充值金额</b>
-            <input id="submit_ok" class="bluebut imm" type="button" onclick="location.href='<?php echo WEB_PATH; ?>/member/home/userrechargedk'" name="submit" value="充值卡" title="充值卡">
+			<div class="select"> <b class="gray01"><?php echo lang::get_lang('请您选择充值金额'); ?></b>
+            <input id="submit_ok" class="bluebut imm" type="button" onclick="location.href='<?php echo WEB_PATH; ?>/member/home/userrechargedk'" name="submit" value="<?php echo lang::get_lang('充值卡'); ?>" title="<?php echo lang::get_lang('充值卡'); ?>">
 
 				<ul id="ulMoneyList">
 
@@ -81,7 +81,7 @@ $(function(){
 
 						<label for="rd10">
 
-							充值 <strong>￥</strong> 10 <i></i>
+							<?php echo lang::get_lang('充值'); ?> <strong><?php echo lang::get_lang('￥'); ?></strong> 10 <i></i>
 
 						</label>
 
@@ -93,7 +93,7 @@ $(function(){
 
 						<label for="rd50">
 
-							充值 <strong>￥</strong>
+							<?php echo lang::get_lang('充值'); ?> <strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							50 <i></i>
 
@@ -107,9 +107,9 @@ $(function(){
 
 						<label for="rd100">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							100
 
@@ -125,9 +125,9 @@ $(function(){
 
 						<label for="rd200">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							200
 
@@ -143,9 +143,9 @@ $(function(){
 
 						<label for="rd500">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							500
 
@@ -161,9 +161,9 @@ $(function(){
 
 						<label for="rd1000">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							1000
 
@@ -179,9 +179,9 @@ $(function(){
 
 						<label for="rd3000">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							3000
 
@@ -197,9 +197,9 @@ $(function(){
 
 						<label for="rd5000">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							5000
 
@@ -215,9 +215,9 @@ $(function(){
 
 						<label for="rd10000">
 
-							充值
+							<?php echo lang::get_lang('充值'); ?>
 
-							<strong>￥</strong>
+							<strong><?php echo lang::get_lang('￥'); ?></strong>
 
 							10000
 
@@ -233,7 +233,7 @@ $(function(){
 
 						<label for="rdOther">
 
-							其它金额
+							<?php echo lang::get_lang('其它金额'); ?>
 
 							<i></i>
 
@@ -248,10 +248,7 @@ $(function(){
 			</div>
 
 			<div class="charge_money_list">
-
-			
-		<p class="leix">支付平台支付：</p>
-
+			<p class="leix"><?php echo lang::get_lang('支付平台支付：'); ?></p>
 		<ul class="payment yeepay_click">		
 
           <?php $ln=1;if(is_array($paylist)) foreach($paylist AS $pay): ?>
@@ -270,7 +267,7 @@ $(function(){
 
 		</ul>
 
-		<p class="much">应付金额：<span class="yf"><strong>￥</strong><span id="Money">10</span></span></p>
+		<p class="much"><?php echo lang::get_lang('应付金额：'); ?><span class="yf"><strong><?php echo lang::get_lang('￥'); ?></strong><span id="Money">10</span></span></p>
 
 		<h6>			
 
@@ -280,7 +277,7 @@ $(function(){
 
 				<input type="hidden" id="hidMoney" name="money" value="10">
 
-				<input id="submit_ok" class="bluebut imm" type="submit" name="submit" value="立即充值" title="立即充值">
+				<input id="submit_ok" class="bluebut imm" type="submit" name="submit" value="<?php echo lang::get_lang('立即充值'); ?>" title="<?php echo lang::get_lang('立即充值'); ?>">
 
 			</form>
 
@@ -292,7 +289,7 @@ $(function(){
 
 			<p class="ts">
 
-					请您在新开的页面上完成支付！
+					<?php echo lang::get_lang('请您在新开的页面上完成支付！'); ?>
 
 					</p>
 
@@ -300,27 +297,27 @@ $(function(){
 
 				<p class="pic"> <em></em>
 
-					请您在新开的页面上完成支付！
+					<?php echo lang::get_lang('请您在新开的页面上完成支付！'); ?>
 
 				</p>
 
 				<p class="ts">
 
-					付款完成之前，请不要关闭本窗口！
+					<?php echo lang::get_lang('付款完成之前，请不要关闭本窗口！'); ?>
 
-					<br>完成付款后跟据您的个人情况完成此操作！</p>
+					<br><?php echo lang::get_lang('完成付款后跟据您的个人情况完成此操作！'); ?></p>
 
 				<ul>
 
 					<li>
 
-						<a href="<?php echo WEB_PATH; ?>/member/home/userbalance" class="look" title="查看充值记录">查看充值记录</a>
+						<a href="<?php echo WEB_PATH; ?>/member/home/userbalance" class="look" title="<?php echo lang::get_lang('查看充值记录'); ?>"><?php echo lang::get_lang('查看充值记录'); ?></a>
 
 					</li>
 
 					<li>
 
-						<a href="javascript:gotoClick();" class="look" id="btnReSelect" title="重选支付方式">重选支付方式</a>
+						<a href="javascript:gotoClick();" class="look" id="btnReSelect" title="<?php echo lang::get_lang('重选支付方式'); ?>"><?php echo lang::get_lang('重选支付方式'); ?></a>
 
 					</li>
 

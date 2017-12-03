@@ -60,11 +60,8 @@ function shaidan(id){
 	if(confirm("{wc:fun:lang::get_lang('您确认要删除该条信息吗？')}")){
 		window.location.href="{WEB_PATH}/member/home/shaidandel/"+id;
 	}
-	//FixedConfirm('{wc:fun:lang::get_lang('你确定要删除？')}',240);
 }
-/*$("#btnShow6").click(function(){
-		FixedConfirm('{wc:fun:lang::get_lang('你确定要删除？')}',240);
-});*/
+
 function FixedConfirm(content,minwidth){
 	var div=FixedStar();
 		div+='<div id="foucs_close"></div>';
@@ -85,7 +82,6 @@ $(function(){
 		Fixed();
 	})
 })
-//{wc:fun:lang::get_lang('关闭弹窗')}
 function FixedClose(){
 	$("#foucs_close,#page_close,#btnMsgCancel").click(function(){		
 		$("#foucs_big,#foucs_min,#w3foucs").fadeOut(200,function(){

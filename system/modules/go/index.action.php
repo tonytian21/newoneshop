@@ -374,8 +374,12 @@ class index extends base {
 			    $i=date("i",$v['time']);
 			    $s=date("s",$v['time']);	
 			    list($timesss,$msss) = explode(".",$v['time']);
-				$item_q_content[$k]['timeadd'] = $h.$i.$s.$msss;			
-			
+				$item_q_content[$k]['timeadd'] = $h.$i.$s.$msss;	
+				$shoptmpmodel = $this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B On A.gid=B.sid left join `@#_shoplist_en` C on A.gid=c.egid where B.id='$v[shopid]'");
+
+				if($shoptmpmodel && ROUTE_L == 'en-us' && $shoptmpmodel['titleen']){
+					$item_q_content[$k]['shopname'] = $shoptmpmodel['titleen'];
+				}
 			}
 			arsort($keysvalue);	//asort($keysvalue);正序
 			reset($keysvalue);
@@ -384,9 +388,16 @@ class index extends base {
 			}			
 			$item['q_content'] = $new_array;
 		}
-		$title=$item['title'].' ('.$item['title2'].')';
-		$keywords = $item['keywords'];
-		$description = $item['description'];
+
+		if(ROUTE_L == 'en-us'){
+			$title=$item['titleen'].' ('.$item['title2en'].')';
+			$keywords = $item['keywordsen'];
+			$description = $item['descriptionen'];
+		}else{
+			$title=$item['title'].' ('.$item['title2'].')';
+			$keywords = $item['keywords'];
+			$description = $item['description'];
+		}
 		
 		$go_record_list = $this->db->GetList("select * from `@#_member_go_record` where `shopid` = '$item[id]' and `shopqishu` = '$item[qishu]' order by `id` DESC limit 50");
 		$itemzx=$this->db->GetOne("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `sid`='$item[sid]' and `qishu`>'$item[qishu]' order by `qishu` DESC LIMIT 1");

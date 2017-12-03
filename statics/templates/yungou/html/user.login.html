@@ -12,28 +12,6 @@
 <script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.Validform.min.js"></script>
 </head>
 <body style="background: #fff;">
-<!--
-<script>
-$(function(){
-    var select_form = $('input:text,textarea'); //{wc:fun:lang::get_lang('选择需要添加提示文字的表单')}
-    for(i=0;i<select_form.length;i++){          
-        select_form.eq(i).val(select_form.eq(i).attr('fs')).css('color','#999');//{wc:fun:lang::get_lang('设置表单的值为一个属性值为“')}fs{wc:fun:lang::get_lang('”的值')}    
-    }  
-    select_form.focus(function(){   //{wc:fun:lang::get_lang('获得焦点')}
-        if($(this).val()==$(this).attr('fs')){
-          $(this).val('');
-          $(this).css('color','#333');
-        }    
-    })
-    select_form.blur(function(){    //{wc:fun:lang::get_lang('失去焦点')}  
-        if($(this).val()==''){
-           $(this).val($(this).attr('fs'));
-           $(this).css('color','#999');
-        }
-    })
-})
-</script>
--->
 
 
 
@@ -102,7 +80,6 @@ $(function(){
 		</div>
 	</div>
 </div>
-<!--login {wc:fun:lang::get_lang('结束')}-->
 <div class="g-copyrightCon" style="padding-top: 50px;">
 	<div class="w1190">
 		<div class="g-links">
@@ -118,11 +95,8 @@ $(function(){
 
 $("#registerform").Validform({
 		tiptype:function(msg,o,cssctl){
-			//msg{wc:fun:lang::get_lang('：提示信息')};
-			//o:{obj:*,type:*,curform:*}, obj{wc:fun:lang::get_lang('指向的是当前验证的表单元素（或表单对象），')}type{wc:fun:lang::get_lang('指示提示的状态，值为')}1{wc:fun:lang::get_lang('、')}2{wc:fun:lang::get_lang('、')}3{wc:fun:lang::get_lang('、')}4{wc:fun:lang::get_lang('，')} 1{wc:fun:lang::get_lang('：正在检测')}/{wc:fun:lang::get_lang('提交数据，')}2{wc:fun:lang::get_lang('：通过验证，')}3{wc:fun:lang::get_lang('：验证失败，')}4{wc:fun:lang::get_lang('：提示')}ignore{wc:fun:lang::get_lang('状态')}, curform{wc:fun:lang::get_lang('为当前')}form{wc:fun:lang::get_lang('对象')};
-			//cssctl:{wc:fun:lang::get_lang('内置的提示信息样式控制函数，该函数需传入两个参数：显示提示信息的对象')} {wc:fun:lang::get_lang('和')} {wc:fun:lang::get_lang('当前提示的状态（既形参')}o{wc:fun:lang::get_lang('中的')}type{wc:fun:lang::get_lang('）')};
-			if(!o.obj.is("form")){//{wc:fun:lang::get_lang('验证表单元素时')}o.obj{wc:fun:lang::get_lang('为该表单元素，全部验证通过提交表单时')}o.obj{wc:fun:lang::get_lang('为该表单对象')};
-				//var objtip=o.obj.siblings(".Validform_checktip");
+			
+			if(!o.obj.is("form")){
 				var objtip=o.obj.parent().next().find(".Validform_checktip");
 				cssctl(objtip,o.type);
               		  if(o.type==3){

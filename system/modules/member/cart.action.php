@@ -420,7 +420,6 @@ class cart extends base {
 
 		$_SESSION['submitcode'] = $submitcode = uniqid();
 
-		
 
 		include templates("cart","pay");
 
