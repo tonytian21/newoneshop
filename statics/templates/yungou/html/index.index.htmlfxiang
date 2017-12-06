@@ -78,7 +78,7 @@
 				<p class="mt30">{wc:fun:lang::get_lang('回报率：')}<span class="c_red t18">{wc:$sq['rate']}</span> {wc:fun:lang::get_lang('倍')}</p>
 			</div>
 			<div class="w_goods_pic">
-				<a href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$sq['thumb']}"></a>
+				<a href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$sq['thumb'])}"></a>
 			</div>
 		</li>
 	{wc:loop:end}		
@@ -201,7 +201,7 @@
 		<ul class="hot_list">
 			{wc:loop $shoplistrenqi $renqi}
 				<li class="list-block">
-				<div class="pic"><a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" alt="{wc:$renqi['title']}"></a></div>
+				<div class="pic"><a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}" target="_blank"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$renqi['thumb'])}" alt="{wc:$renqi['title']}"></a></div>
 				<p class="name"><a "{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:$renqi['title']}</a></p>
 				<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmb">{wc:$renqi['money']}</span>  {wc:fun:lang::get_lang('云币')}</p>
 				<div class="Progress-bar" style="">
@@ -243,7 +243,7 @@
 	<ul>
 	{wc:loop $shoplist $shop}
 		<li class="list-block">
-			<div class="pic"><a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a></div>
+			<div class="pic"><a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a></div>
 			<p class="name"><a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank"> {wc:$shop['title']} </a></p>
 			<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmb">{wc:$shop['money']}</span></p>
 			<div class="Progress-bar" style="">
@@ -277,7 +277,7 @@
 	<ul>
 	{wc:loop $new_shop $new}
 		<li class="list-block">
-			<div class="pic"><a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$new['thumb']}"></a></div>
+			<div class="pic"><a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$new['thumb'])}"></a></div>
 			<p class="name"><a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank">{wc:$new['title']}</a></p>
 			<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmb">{wc:$new['money']}</span></p>
 		</li>

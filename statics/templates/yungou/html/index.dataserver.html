@@ -29,7 +29,7 @@
 						<a href="{WEB_PATH}/goods/{wc:$item['id']}"
 							title="{wc:$item['title']}"> <img
 							style="width: 268px; height: 268px;"
-							src="{G_UPLOAD_PATH}/{wc:$item['thumb']}"></a> {wc:if $itemzx}
+							src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$item['thumb'])}"></a> {wc:if $itemzx}
 						<style type="text/css">
 #chakanxingqing {
 	border: 1px solid #999;

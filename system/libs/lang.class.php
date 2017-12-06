@@ -11,4 +11,13 @@ class lang {
 
 		return $key;
 	}
+
+	static public function get_image($imagePath){
+		$tmpImagePath = trim(str_replace(G_UPLOAD_PATH,'',$imagePath),'/');
+		
+		if($tmpImagePath && file_exists(G_UPLOAD.$tmpImagePath)){
+			return $imagePath;
+		}
+		return G_TEMPLATES_STYLE.'/images/goods.jpg';
+	}
 }

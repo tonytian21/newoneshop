@@ -22,6 +22,7 @@ tbody tr{ line-height:30px; height:30px;}
 		<tr>
 		<th width="80px">id</th>
 		<th width="" align="center">幻灯图片</th>
+		<th width="" align="center">英文幻灯图片</th>
 		<th width="30%" align="center">操作</th>
 		</tr>
     </thead>
@@ -30,6 +31,7 @@ tbody tr{ line-height:30px; height:30px;}
 		<tr>
 			<td align="center"><?php echo $v['id']; ?></td>
 			<td align="center"><img height="50px" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $v['img']; ?>"/></td>
+			<td align="center"><img height="50px" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $v['imgen']; ?>"/></td>
 			<td align="center">
 				<a href="<?php echo WEB_PATH; ?>/admin/slide/update/<?php echo $v['id'];?>">修改</a>
 				<a href="<?php echo WEB_PATH; ?>/admin/slide/delete/<?php echo $v['id'];?>">删除</a>

@@ -197,11 +197,11 @@ $.fn.CloudZoom.defaults = {
 
 
 
-				<span style="height: 362px;" href="{G_UPLOAD_PATH}/{wc:$item['thumb']}" class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-2">
+				<span style="height: 362px;" href="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$item['thumb'])}" class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-2">
 
 
 
-                <img style="width: 362px;height: 362px;" width="80px" height="80px" src="{G_UPLOAD_PATH}/{wc:$item['thumb']}" /></span>
+                <img style="width: 362px;height: 362px;" width="80px" height="80px" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$item['thumb'])}" /></span>
 
 
 

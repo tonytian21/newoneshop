@@ -11,7 +11,7 @@
     {wc:php:end}
 	{wc:if $jiexiao['q_uid']}
 	<div class="yg_record_goods">
-		<a href="{WEB_PATH}/dataserver/{wc:$record['shopid']}" target="_blank" class="fl-img"><img src="{G_UPLOAD_PATH}/{wc:$record['thumb']}"></a>
+		<a href="{WEB_PATH}/dataserver/{wc:$record['shopid']}" target="_blank" class="fl-img"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$record['thumb'])}"></a>
 		<div class="yg_record_r">
 			<li><span class="orange">({wc:fun:lang::get_lang('第')}{wc:$record['shopqishu']}{wc:fun:lang::get_lang('期')})</span> <a target="_blank" href="{WEB_PATH}/dataserver/{wc:$record['shopid']}_{wc:$record['shopqishu']}" class="blue">{wc:$jiexiao['title']}</a></li>
 			<li class="gray02">{wc:fun:lang::get_lang('本期商品OneShop已结束')} {wc:fun:lang::get_lang('【获得者：')}<a href="{WEB_PATH}/uname/{wc:fun:idjia($record['uid'])}" target="_blank" class="blue">
@@ -21,7 +21,7 @@
 	</div>
 	{wc:else}
 	<div class="yg_record_goods">
-		<a href="{WEB_PATH}/goods/{wc:$record['shopid']}" target="_blank" class="fl-img"><img src="{G_UPLOAD_PATH}/{wc:$record['thumb']}"></a>
+		<a href="{WEB_PATH}/goods/{wc:$record['shopid']}" target="_blank" class="fl-img"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$record['thumb'])}"></a>
 		<div class="yg_record_r">
 			<li><span class="orange">({wc:fun:lang::get_lang('第')}{wc:$record['shopqishu']}{wc:fun:lang::get_lang('期')})</span> <a target="_blank" href="{WEB_PATH}/goods/{wc:$record['shopid']}" class="blue">{wc:$jiexiao['title']}</a></li>
 			<li><a target="_blank" href="{WEB_PATH}/goods/{wc:$record['shopid']}" class="bluebut">{wc:fun:lang::get_lang('查看详情')}</a></li></div>

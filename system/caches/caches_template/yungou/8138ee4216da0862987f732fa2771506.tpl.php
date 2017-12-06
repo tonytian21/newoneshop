@@ -2,7 +2,14 @@
 <div class="footer mt20">
 	<div class="footer_center w1200">
 		<div class="g-guide">
-			<?php $category=$this->DB()->GetList("select * from `@#_category` where `parentid`='3'",array("type"=>1,"key"=>'',"cache"=>0)); ?> <?php $ln=1;if(is_array($category)) foreach($category AS $help): ?>
+			<?php if($this->_cfg['route_l'] == 'en-us'): ?>
+				<?php $category=$this->DB()->GetList("select * from `@#_category` where `parentid`='5'",array("type"=>1,"key"=>'',"cache"=>0)); ?> 
+			<?php  else: ?>
+				<?php $category=$this->DB()->GetList("select * from `@#_category` where `parentid`='3'",array("type"=>1,"key"=>'',"cache"=>0)); ?> 
+			<?php endif; ?>
+			
+
+			<?php $ln=1;if(is_array($category)) foreach($category AS $help): ?>
 			<dl>
 				<dt><?php echo $help['name']; ?></dt>
 				<?php $article=$this->DB()->GetList("select * from `@#_article` where

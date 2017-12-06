@@ -148,7 +148,7 @@ $(".yu_ff").mouseout(function(){
 				<div class="jxTime">{wc:$shop['time_H']}{wc:fun:lang::get_lang('点揭晓')}</div>
 				<div class="autolistC">
 					<div class="pic">
-						<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank"><img src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a>
+						<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank"><img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a>
 					</div>
 					<p class="name"><a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">({wc:fun:lang::get_lang('第')}{wc:$shop['qishu']}{wc:fun:lang::get_lang('期')}){wc:$shop['title']}</a></p>
 					<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmb">{wc:$shop['money']}</span></p>
@@ -178,7 +178,7 @@ $(".yu_ff").mouseout(function(){
 				<div class="autolistC">
 					<div class="pic">
 						<a rel="nofollow" href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">
-                        <img src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a></div>
+                        <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a></div>
 					<p class="name">
 						<a href="{WEB_PATH}/goods/{wc:$shop['id']}"  target="_blank">({wc:fun:lang::get_lang('第')}{wc:$shop['qishu']}{wc:fun:lang::get_lang('期')}){wc:$shop['title']}</a></p>
 					<p class="money">
@@ -213,7 +213,7 @@ $(".yu_ff").mouseout(function(){
 				<div class="jxTime">{wc:$shop['time_H']}{wc:fun:lang::get_lang('点揭晓')}</div>
 				<div class="autolistC">
 					<div class="pic"><a rel="nofollow" href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">
-						<img src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a></div>
+						<img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a></div>
 					<p class="name">
 						<a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">({wc:fun:lang::get_lang('第')}{wc:$shop['qishu']}{wc:fun:lang::get_lang('期')}){wc:$shop['title']}</a></p>
 					<p class="money">
@@ -242,7 +242,7 @@ $(".yu_ff").mouseout(function(){
 					<ul class="autoOldlist">
 						<li class="pInfo">
 							<dt><a rel="nofollow" href="{WEB_PATH}/dataserver/{wc:$eshop['id']}" target="_blank">
-								<img border="0" src="{G_UPLOAD_PATH}/{wc:$eshop['thumb']}"></a></dt>
+								<img border="0" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$eshop['thumb'])}"></a></dt>
 							<dt class="title"><a href="{WEB_PATH}/dataserver/{wc:$eshop['id']}" target="_blank">
 								{wc:$eshop['title']}</a></dt>
 							<dd>

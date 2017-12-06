@@ -168,7 +168,7 @@
                     <li style="position: relative;">
                         <a href="{WEB_PATH}/mobile/mobile/item/{wc:$qishu['id']}" id="r{wc:$qishu['id']}" title="{WEB_PATH}/mobile/mobile/itemajax/{wc:$qishu['id']}">
                             <div style="width:40%;float: left;">
-                                <img style="width:100%;" src="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}" class="lazy_loading_image"></div>
+                                <img style="width:100%;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$qishu['thumb'])}" class="lazy_loading_image"></div>
                             <div class="txt" style="float: left;">
                                 <h6>{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:fun:_strcut($qishu['titleen'],30)}{wc:else}{wc:fun:_strcut($qishu['title'],30)}{wc:if:end}</h6>
                                 <div class="zj">
@@ -181,7 +181,7 @@
                     <li style="position: relative;">
                         <a href="{WEB_PATH}/mobile/mobile/item/{wc:$qishu['id']}" id="r{wc:$qishu['id']}" title="{WEB_PATH}/mobile/mobile/itemajax/{wc:$qishu['id']}">
                             <div style="width:40%;float: left;">
-                                <img style="width:100%;" src="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}" class="lazy_loading_image"></div>
+                                <img style="width:100%;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$qishu['thumb'])}" class="lazy_loading_image"></div>
                             <div class="txt" style="float: left;">
                                 <h6>{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:fun:_strcut($qishu['titleen'],30)}{wc:else}{wc:fun:_strcut($qishu['title'],30)}{wc:if:end}</h6>
                                 <div class="zj">

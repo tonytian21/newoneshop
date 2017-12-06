@@ -35,7 +35,7 @@
 
 				'up_media_type' => 'swf,flv,mp3,wav,wma,rmvb',
 
-				'upsize' => '114024',
+				'upsize' => '1140240',
 
 				'watermark_off' => '1',
 

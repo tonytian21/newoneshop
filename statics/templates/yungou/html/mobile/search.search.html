@@ -11,7 +11,7 @@
 		{wc:loop $shoplist $shop}
 		<li class="goods-iten" >
 			<div class="pic">
-				<a href="{WEB_PATH}/go/index/item/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']} "><img alt="{wc:$shop['title']}" src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a>
+				<a href="{WEB_PATH}/go/index/item/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']} "><img alt="{wc:$shop['title']}" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a>
 				<p name="buyCount" style="display:none;"></p>
 			</div>
 			<p class="name">

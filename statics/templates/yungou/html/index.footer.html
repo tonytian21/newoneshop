@@ -2,8 +2,16 @@
 <div class="footer mt20">
 	<div class="footer_center w1200">
 		<div class="g-guide">
-			{wc:getlist sql="select * from `@#_category` where `parentid`='3'"
-			return="category"} {wc:loop $category $help}
+			{wc:if $this->_cfg['route_l'] == 'en-us'}
+				{wc:getlist sql="select * from `@#_category` where `parentid`='5'"
+						return="category"} 
+			{wc:else}
+				{wc:getlist sql="select * from `@#_category` where `parentid`='3'"
+					return="category"} 
+			{wc:if:end}
+			
+
+			{wc:loop $category $help}
 			<dl>
 				<dt>{wc:$help['name']}</dt>
 				{wc:getlist sql="select * from `@#_article` where

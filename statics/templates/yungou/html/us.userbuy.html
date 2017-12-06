@@ -52,7 +52,7 @@
 						 }
     			{wc:php:end}
 		<ul class="ugoods_list">
-		    <li><a target="_blank" href="{WEB_PATH}/{wc:$url}/{wc:$go['shopid']}"><img class="pic"  src="{G_UPLOAD_PATH}/{wc:$jiexiao['thumb']}"></a></li>
+		    <li><a target="_blank" href="{WEB_PATH}/{wc:$url}/{wc:$go['shopid']}"><img class="pic"  src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$jiexiao['thumb'])}"></a></li>
 		                    <li class="gname" style="margin:15px 0 0 0;">
 		        <a target="_blank" href="{WEB_PATH}/{wc:$url}/{wc:$go['shopid']}" class="blue">({wc:fun:lang::get_lang('第')}{wc:$go['shopqishu']}{wc:fun:lang::get_lang('期')}){wc:$go['shopname']}</a>
 		        <p class="gray02">{wc:fun:lang::get_lang('购买时间：')}{wc:fun:microt($go['time'],"r")}</p>

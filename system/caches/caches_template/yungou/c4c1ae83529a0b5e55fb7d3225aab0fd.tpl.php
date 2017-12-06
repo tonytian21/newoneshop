@@ -9,17 +9,31 @@
             <?php $slides=$this->DB()->GetList("select * from `@#_slide` where 1",array("type"=>1,"key"=>'',"cache"=>0)); ?>
             <div id="fsD1" class="focus" style="height: 300px;">
                 <div id="D1pic1" class="fPic">
-                    <?php $ln=1;if(is_array($slides)) foreach($slides AS $slide): ?> <?php if($ln == 1): ?>
-                    <div class="fcon">
-                        <a href="<?php echo $slide['link']; ?>" target="_blank">
-                            <img style="opacity: 1;" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $slide['img']; ?>"></a>
-                    </div>
+                    <?php if($this->_cfg['route_l'] == 'en-us'): ?>
+                        <?php $ln=1;if(is_array($slides)) foreach($slides AS $slide): ?> <?php if($ln == 1): ?>
+                        <div class="fcon">
+                            <a href="<?php echo $slide['linken']; ?>" target="_blank">
+                                <img style="opacity: 1;" src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen']); ?>"></a>
+                        </div>
+                        <?php  else: ?>
+                        <div class="fcon" style="display: none;">
+                            <a href="<?php echo $slide['linken']; ?>" target="_blank">
+                                <img style="opacity: 1;" src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen']); ?>"></a>
+                        </div>
+                        <?php endif; ?> <?php  endforeach; $ln++; unset($ln); ?>
                     <?php  else: ?>
-                    <div class="fcon" style="display: none;">
-                        <a href="<?php echo $slide['link']; ?>" target="_blank">
-                            <img style="opacity: 1;" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $slide['img']; ?>"></a>
-                    </div>
-                    <?php endif; ?> <?php  endforeach; $ln++; unset($ln); ?>
+                         <?php $ln=1;if(is_array($slides)) foreach($slides AS $slide): ?> <?php if($ln == 1): ?>
+                        <div class="fcon">
+                            <a href="<?php echo $slide['link']; ?>" target="_blank">
+                                <img style="opacity: 1;" src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$slide['img']); ?>"></a>
+                        </div>
+                        <?php  else: ?>
+                        <div class="fcon" style="display: none;">
+                            <a href="<?php echo $slide['link']; ?>" target="_blank">
+                                <img style="opacity: 1;" src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$slide['img']); ?>"></a>
+                        </div>
+                        <?php endif; ?> <?php  endforeach; $ln++; unset($ln); ?>
+                    <?php endif; ?>
                 </div>
                 <div class="fbg">
                     <div class="D1fBt" id="D1fBt">
@@ -38,7 +52,7 @@
                 <li class="list-block1" style="position: relative;">
                     <div class="pic" style="height: 120px;width: 120px;float:left;">
                         <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $new1['id']; ?>" target="_blank">
-                            <img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $new1['thumb']; ?>"></a>
+                            <img src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$new1['thumb']); ?>"></a>
                     </div>
                     <p class="name" style="width: 180px;margin-bottom: 10px;margin-top: 10px;line-height: 20px;overflow: hidden;height: 40px;">
                         <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $new1['id']; ?>" target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $new1['titleen']; ?><?php  else: ?><?php echo $new1['title']; ?><?php endif; ?></a>
@@ -58,7 +72,7 @@
 				<ul>
 					<li class="fr1" style="float:right; position:relative;">
 						<a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php echo $renqi['title']; ?>"  target="_blank">
-							<img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $renqi['thumb']; ?>" alt="<?php echo $renqi['title']; ?>"></a>
+							<img src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$renqi['thumb']); ?>" alt="<?php echo $renqi['title']; ?>"></a>
 						<span id="tuijian"><?php echo lang::get_lang('推荐'); ?></span>
 					</li>
 					<li class="fr2">
@@ -162,7 +176,7 @@
                 <div style="padding:10px;height: 304px;position: relative;">
                     <div class="w_goods_pic">
                         <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $sq['id']; ?>" target="_blank">
-                            <img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $sq['thumb']; ?>"></a>
+                            <img src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$sq['thumb']); ?>"></a>
                     </div>
                     <div class="print">
                         <p>
@@ -340,7 +354,7 @@
             <li class="list-block">
                 <div class="pic">
                     <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" title="<?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $renqi['titleen']; ?><?php  else: ?><?php echo $renqi['title']; ?><?php endif; ?>" target="_blank">
-                        <img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $renqi['thumb']; ?>" alt="<?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $renqi['titleen']; ?><?php  else: ?><?php echo $renqi['title']; ?><?php endif; ?>"></a>
+                        <img src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$renqi['thumb']); ?>" alt="<?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $renqi['titleen']; ?><?php  else: ?><?php echo $renqi['title']; ?><?php endif; ?>"></a>
                 </div>
                 <p class="name">
                     <a "<?php echo WEB_PATH; ?>/goods/<?php echo $renqi['id']; ?>" target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $renqi['titleen']; ?><?php  else: ?><?php echo $renqi['title']; ?><?php endif; ?></a>
@@ -390,7 +404,7 @@
         <li class="list-block">
             <div class="pic">
                 <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank">
-                    <img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $shop['thumb']; ?>"></a>
+                    <img src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb']); ?>"></a>
             </div>
             <p class="name">
                 <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $shop['id']; ?>" target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $shop['titleen']; ?><?php  else: ?><?php echo $shop['title']; ?><?php endif; ?></a>
@@ -439,7 +453,7 @@
         <li class="list-block">
             <div class="pic">
                 <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $new['id']; ?>" target="_blank">
-                    <img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $new['thumb']; ?>"></a>
+                    <img src="<?php echo lang::get_image(G_UPLOAD_PATH.'/'.$new['thumb']); ?>"></a>
             </div>
             <p class="name">
                 <a href="<?php echo WEB_PATH; ?>/goods/<?php echo $new['id']; ?>" target="_blank"><?php if($this->_cfg['route_l'] == 'en-us'): ?><?php echo $new['titleen']; ?><?php  else: ?><?php echo $new['title']; ?><?php endif; ?></a>

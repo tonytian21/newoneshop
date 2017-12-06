@@ -32,7 +32,11 @@
 
 	<link rel="stylesheet" type="text/css"
 		href="<?php echo G_TEMPLATES_CSS; ?>/mycart.css" />
-
+<?php if($this->_cfg['route_l'] == 'en-us'): ?>
+    <script src="<?php echo G_TEMPLATES_JS; ?>/en-us.js" language="javascript" type="text/javascript"></script> 
+    <?php  else: ?>
+    <script src="<?php echo G_TEMPLATES_JS; ?>/zh-cn.js" language="javascript" type="text/javascript"></script> 
+    <?php endif; ?>
 	<script type="text/javascript"
 		src="<?php echo G_GLOBAL_STYLE; ?>/global/js/jquery-1.8.3.min.js"></script>
 
@@ -185,8 +189,8 @@
 
 					<input style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;" id="txtSearch" class="init" placeholder="<?php echo lang::get_lang("输入'小米手机'试一试"); ?>''" type="text">
 					<span style="">
-						<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/<?php echo lang::get_lang('苹果'); ?>"><?php echo lang::get_lang('苹果'); ?></a>
-						<a href="<?php echo G_WEB_PATH; ?>/index.php/s_tag/<?php echo lang::get_lang('购物卡'); ?>" style="width: 45px;"><?php echo lang::get_lang('购物卡'); ?></a>
+						<a href="<?php echo WEB_PATH; ?>/s_tag/<?php echo lang::get_lang('苹果'); ?>"><?php echo lang::get_lang('苹果'); ?></a>
+						<a href="<?php echo WEB_PATH; ?>/s_tag/<?php echo lang::get_lang('购物卡'); ?>" style="width: 45px;"><?php echo lang::get_lang('购物卡'); ?></a>
 					</span>
 					<a class="search_submit" id="butSearch" href="javascript:;"> <i class="ico_search"></i>
 

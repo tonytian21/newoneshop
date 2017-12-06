@@ -6,7 +6,12 @@
 {wc:templates "index","header"}
 <link href="{G_TEMPLATES_STYLE}/js/style.css" rel="stylesheet" type="text/css" />
 <link type="text/css" rel="stylesheet" href="{G_TEMPLATES_STYLE}/js/demo.css">
-<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.Validform.min.js"></script>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.Validform.min.js
+{wc:if $this->_cfg['route_l'] == 'en-us'}
+<script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+{wc:else}
+<script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+{wc:if:end}"></script>
 <script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/passwordStrength-min.js"></script>
 <script type="text/javascript">
 $(function(){		

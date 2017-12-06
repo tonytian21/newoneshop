@@ -48,8 +48,8 @@ $.fn.CloudZoom.defaults = {
 		
 		<div class="Pro_Detleft" style="width: 363px;">
 			<div class="zoom-small-image" style="width: 362px;height: 512px;">
-				<span style="height: 362px;" href="{G_UPLOAD_PATH}/{wc:$item['thumb']}" class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-2">
-                <img style="width: 362px;height: 362px;" width="80px" height="80px" src="{G_UPLOAD_PATH}/{wc:$item['thumb']}" /></span>
+				<span style="height: 362px;" href="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$item['thumb'])}" class = 'cloud-zoom' id='zoom1' rel="adjustX:10, adjustY:-2">
+                <img style="width: 362px;height: 362px;" width="80px" height="80px" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$item['thumb'])}" /></span>
                 <div class="zoom-desc" style="margin-top: 30px;"> 
 				<div class="jcarousel-prev jcarousel-prev-disabled"></div>
 				<div class="jcarousel-clip" style="height:55px;width:352px;margin-left: 10px;">

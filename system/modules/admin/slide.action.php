@@ -22,13 +22,22 @@ class slide extends admin {
 		$title=htmlspecialchars(trim($_POST['title']));
 		
 		$link=htmlspecialchars(trim($_POST['link']));
+
+		$titleen=htmlspecialchars(trim($_POST['titleen']));
+		
+		$linken=htmlspecialchars(trim($_POST['linken']));
 		if(isset($_POST['image'])){
 				$img=$_POST['image'];
 			}else{
 				$img=$slideone['img'];
 			}
 			 
-		$this->db->Query("insert into `@#_slide`(`title`,`link`,`img`) values('$title','$link','$img') ");	
+	   if(isset($_POST['imageen'])){
+			$imgen=$_POST['imageen'];
+		}else{
+			$imgen=$slideone['img'];
+		}
+		$this->db->Query("insert into `@#_slide`(`title`,`link`,`img`,`titleen`,`linken`,`imgen`) values('$title','$link','$img','$titleen','$linken','$imgen') ");	
 			if($this->db->affected_rows()){
 					_message("添加成功",WEB_PATH.'/'.ROUTE_M.'/'.ROUTE_C."/init");
 			}else{
@@ -60,8 +69,15 @@ class slide extends admin {
 				$img=$_POST['image'];
 			}else{
 				$img=$slideone['img'];
+			}	
+			$titleen=htmlspecialchars(trim($_POST['titleen']));	
+			$linken=htmlspecialchars(trim($_POST['linken']));	
+			if(isset($_POST['imageen'])){
+				$imgen=$_POST['imageen'];
+			}else{
+				$imgen=$slideone['img'];
 			}		
-			$this->db->Query("UPDATE `@#_slide` SET `img`='$img',`title`='$title',`link`='$link' WHERE `id`=$id");
+			$this->db->Query("UPDATE `@#_slide` SET `img`='$img',`title`='$title',`link`='$link',`imgen`='$imgen',`titleen`='$titleen',`linken`='$linken' WHERE `id`=$id");
 			if($this->db->affected_rows()){
 					_message("修改成功",WEB_PATH.'/'.ROUTE_M.'/'.ROUTE_C."/init");
 			}else{

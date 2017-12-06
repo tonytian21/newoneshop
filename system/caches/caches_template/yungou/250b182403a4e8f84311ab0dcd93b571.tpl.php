@@ -19,6 +19,11 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo G_TEMPLATES_CSS; ?>/css.css" />
 	<link rel="stylesheet" type="text/css"
 		href="<?php echo G_TEMPLATES_CSS; ?>/mycart.css" />
+	<?php if($this->_cfg['route_l'] == 'en-us'): ?>
+    <script src="<?php echo G_TEMPLATES_JS; ?>/en-us.js" language="javascript" type="text/javascript"></script> 
+    <?php  else: ?>
+    <script src="<?php echo G_TEMPLATES_JS; ?>/zh-cn.js" language="javascript" type="text/javascript"></script> 
+    <?php endif; ?>	
 	<script type="text/javascript"
 		src="<?php echo G_GLOBAL_STYLE; ?>/global/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo G_TEMPLATES_JS; ?>/jquery.cookie.js"></script>

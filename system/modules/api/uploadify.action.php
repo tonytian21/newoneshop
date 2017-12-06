@@ -25,13 +25,13 @@ class uploadify extends admin {
 		
 		$getinfo=$this->segment_array();		
 		//var_dump($getinfo);		
-		$title=isset($getinfo[4]) ? htmlspecialchars($getinfo[4]) : '';		//标题
-		$type=isset($getinfo[5]) ? htmlspecialchars($getinfo[5]) : '';		//上传类型
-		$path=isset($getinfo[6]) ? htmlspecialchars($getinfo[6]) : '';		//上传的文件夹
-		$num=isset($getinfo[7]) ? intval($getinfo[7]) : 0;				//上传个数
-		$size=isset($getinfo[8]) ? intval($getinfo[8]) : 0;				//最大size大小
-		$frame=isset($getinfo[9]) ? htmlspecialchars($getinfo[9]) : '';		//iframe的ID
-		$input=isset($getinfo[10]) ? htmlspecialchars($getinfo[10]) : '';	//父框架保存图片地址的input的id
+		$title=isset($getinfo[5]) ? htmlspecialchars($getinfo[5]) : '';		//标题
+		$type=isset($getinfo[6]) ? htmlspecialchars($getinfo[6]) : '';		//上传类型
+		$path=isset($getinfo[7]) ? htmlspecialchars($getinfo[7]) : '';		//上传的文件夹
+		$num=isset($getinfo[8]) ? intval($getinfo[8]) : 0;				//上传个数
+		$size=isset($getinfo[9]) ? intval($getinfo[9]) : 0;				//最大size大小
+		$frame=isset($getinfo[10]) ? htmlspecialchars($getinfo[10]) : '';		//iframe的ID
+		$input=isset($getinfo[11]) ? htmlspecialchars($getinfo[11]) : '';	//父框架保存图片地址的input的id
 		$desc=$type;													//类型描述
 		
 		$title = urldecode($title);		
@@ -125,7 +125,8 @@ class uploadify extends admin {
 		@xi	  是否返回详细
 	*/
 	private function getsize($size=0,$xi=false){
-		$maxsize=System::load_sys_config('upload','upsize');		
+		$maxsize=System::load_sys_config('upload','upsize');	
+		
 		if($size > $maxsize || $size < 1) $size=$maxsize;			
 		$units = array(3=>'G',2=>'M',1=>'KB',0=>'B');//单位字符,可类推添加更多字符.
 		$str='';

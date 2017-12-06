@@ -34,7 +34,7 @@
 					<ul>
 						<li>
 							<span id="{wc:$shop['id']}" class="z-Limg">
-								<a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}"><img alt="{wc:$shop['title']}" src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a>
+								<a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}"><img alt="{wc:$shop['title']}" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a>
 							</span>
 							<div id="{wc:$shop['id']}" class="goodsListR">
 								<h2 id="{wc:$shop['id']}"><a href="{WEB_PATH}/mobile/mobile/item/{wc:$shop['id']}">{wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:$shop['title']}</a></h2>

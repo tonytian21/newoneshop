@@ -150,7 +150,7 @@ $(function(){
 					{wc:if $shop['pos']!='0'}
 					<i class="goods_tj"></i>
 					{wc:if:end}
-					<img alt="{wc:$shop['title']}" src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}">
+					<img alt="{wc:$shop['title']}" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}">
 				</a>
 				<p name="buyCount" style="display:none;"></p>
 			</div>

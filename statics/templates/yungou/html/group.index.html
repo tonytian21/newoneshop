@@ -33,7 +33,7 @@
 
 					{wc:else}
 
-					<img src="{G_UPLOAD_PATH}/{wc:$v['img']}" title="{wc:$v['title']}" border="0" alt="">
+					<img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$v['img'])}" title="{wc:$v['title']}" border="0" alt="">
 
 					{wc:if:end}
 

@@ -46,7 +46,7 @@ font-family: "{wc:fun:lang::get_lang('宋体')}";
                     {wc:loop $tiezi $tz}
 					<li class="Cursor b_pink" style="position: relative;">
 						<a class="fl goodsimg" href="{WEB_PATH}/dataserver/{wc:$qishu['id']}" target="_blank" >
-						<img alt="" src="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}">
+						<img alt="" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$qishu['thumb'])}">
 						</a>
 						<div class="publishC-Member gray02"><a style="position: absolute;right: 2px;top: 2px;" class="fl headimg" href="{WEB_PATH}/uname/{wc:fun:idjia($qishu['q_uid'])}" target="_blank" >
 							

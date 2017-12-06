@@ -9,17 +9,31 @@
             {wc:getlist sql="select * from `@#_slide` where 1" return="slides"}
             <div id="fsD1" class="focus" style="height: 300px;">
                 <div id="D1pic1" class="fPic">
-                    {wc:loop $slides $slide} {wc:if $ln == 1}
-                    <div class="fcon">
-                        <a href="{wc:$slide['link']}" target="_blank">
-                            <img style="opacity: 1;" src="{G_UPLOAD_PATH}/{wc:$slide['img']}"></a>
-                    </div>
+                    {wc:if $this->_cfg['route_l'] == 'en-us'}
+                        {wc:loop $slides $slide} {wc:if $ln == 1}
+                        <div class="fcon">
+                            <a href="{wc:$slide['linken']}" target="_blank">
+                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen'])}"></a>
+                        </div>
+                        {wc:else}
+                        <div class="fcon" style="display: none;">
+                            <a href="{wc:$slide['linken']}" target="_blank">
+                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen'])}"></a>
+                        </div>
+                        {wc:if:end} {wc:loop:end}
                     {wc:else}
-                    <div class="fcon" style="display: none;">
-                        <a href="{wc:$slide['link']}" target="_blank">
-                            <img style="opacity: 1;" src="{G_UPLOAD_PATH}/{wc:$slide['img']}"></a>
-                    </div>
-                    {wc:if:end} {wc:loop:end}
+                         {wc:loop $slides $slide} {wc:if $ln == 1}
+                        <div class="fcon">
+                            <a href="{wc:$slide['link']}" target="_blank">
+                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['img'])}"></a>
+                        </div>
+                        {wc:else}
+                        <div class="fcon" style="display: none;">
+                            <a href="{wc:$slide['link']}" target="_blank">
+                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['img'])}"></a>
+                        </div>
+                        {wc:if:end} {wc:loop:end}
+                    {wc:if:end}
                 </div>
                 <div class="fbg">
                     <div class="D1fBt" id="D1fBt">
@@ -38,7 +52,7 @@
                 <li class="list-block1" style="position: relative;">
                     <div class="pic" style="height: 120px;width: 120px;float:left;">
                         <a href="{WEB_PATH}/goods/{wc:$new1['id']}" target="_blank">
-                            <img src="{G_UPLOAD_PATH}/{wc:$new1['thumb']}"></a>
+                            <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$new1['thumb'])}"></a>
                     </div>
                     <p class="name" style="width: 180px;margin-bottom: 10px;margin-top: 10px;line-height: 20px;overflow: hidden;height: 40px;">
                         <a href="{WEB_PATH}/goods/{wc:$new1['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$new1['titleen']}{wc:else}{wc:$new1['title']}{wc:if:end}</a>
@@ -58,7 +72,7 @@
 				<ul>
 					<li class="fr1" style="float:right; position:relative;">
 						<a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}"  target="_blank">
-							<img src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" alt="{wc:$renqi['title']}"></a>
+							<img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$renqi['thumb'])}" alt="{wc:$renqi['title']}"></a>
 						<span id="tuijian">{wc:fun:lang::get_lang('推荐')}</span>
 					</li>
 					<li class="fr2">
@@ -162,7 +176,7 @@
                 <div style="padding:10px;height: 304px;position: relative;">
                     <div class="w_goods_pic">
                         <a href="{WEB_PATH}/goods/{wc:$sq['id']}" target="_blank">
-                            <img src="{G_UPLOAD_PATH}/{wc:$sq['thumb']}"></a>
+                            <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$sq['thumb'])}"></a>
                     </div>
                     <div class="print">
                         <p>
@@ -340,7 +354,7 @@
             <li class="list-block">
                 <div class="pic">
                     <a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}" target="_blank">
-                        <img src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}" alt="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}"></a>
+                        <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$renqi['thumb'])}" alt="{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}"></a>
                 </div>
                 <p class="name">
                     <a "{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}</a>
@@ -390,7 +404,7 @@
         <li class="list-block">
             <div class="pic">
                 <a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">
-                    <img src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a>
+                    <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shop['thumb'])}"></a>
             </div>
             <p class="name">
                 <a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$shop['titleen']}{wc:else}{wc:$shop['title']}{wc:if:end}</a>
@@ -439,7 +453,7 @@
         <li class="list-block">
             <div class="pic">
                 <a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank">
-                    <img src="{G_UPLOAD_PATH}/{wc:$new['thumb']}"></a>
+                    <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$new['thumb'])}"></a>
             </div>
             <p class="name">
                 <a href="{WEB_PATH}/goods/{wc:$new['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$new['titleen']}{wc:else}{wc:$new['title']}{wc:if:end}</a>

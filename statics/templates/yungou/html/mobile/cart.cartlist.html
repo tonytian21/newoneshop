@@ -64,7 +64,7 @@
                 {wc:php:start} $buyshopmoney=0; {wc:php:end} {wc:loop $shoplist $key $val} {wc:php:start} $num = count($shoplist); $buyshopmoney+=$Mcartlist[$val['id']]['money']*$Mcartlist [$val ['id']] ['num']; {wc:php:end}
                 <li style="border-bottom: 1px solid #dcdcdc;padding: 6px 0;">
                     <a class="fl u-Cart-img" href="{WEB_PATH}/mobile/mobile/item/{wc:$val['id']}">
-                        <img src="{G_TEMPLATES_IMAGE}/loading.gif" src2="{G_UPLOAD_PATH}/{wc:$val['thumb']}" border="0" alt="" />
+                        <img src="{G_TEMPLATES_IMAGE}/loading.gif" src2="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$val['thumb'])}" border="0" alt="" />
                     </a>
                     <div class="u-Cart-r">
                         <p class="z-Cart-tt">

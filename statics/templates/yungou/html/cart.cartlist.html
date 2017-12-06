@@ -48,7 +48,7 @@
 			<li class="end" id="shoplist{wc:$shops['id']}">
 				<span class="goods">
 					<a href="{WEB_PATH}/goods/{wc:$shops['id']}">
-                   	 <img src="{G_UPLOAD_PATH}/{wc:$shops['thumb']}" />
+                   	 <img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$shops['thumb'])}" />
                     </a>                    
 				</span>
 				<span class="name">

@@ -40,8 +40,19 @@ $templates = System::load_sys_config ( 'templates', System::load_sys_config ( 's
 define ( "G_STYLE", $templates ['dir'] );
 define ( "G_STYLE_HTML", $templates ['html'] );
 define ( "G_TEMPLATES_PATH", G_CDN_PATH . '/' . $statics_path . DIRECTORY_SEPARATOR );
-define ( "G_TEMPLATES_STYLE", G_TEMPLATES_PATH . '/' . G_STYLE );
-define ( "G_TEMPLATES_CSS", G_TEMPLATES_PATH . '/' . G_STYLE . '/css' );
+
+if($param->route_l() == 'en-us'){
+	define ( "G_TEMPLATES_STYLE", G_TEMPLATES_PATH . '/' . G_STYLE.'en' );
+}else{
+	define ( "G_TEMPLATES_STYLE", G_TEMPLATES_PATH . '/' . G_STYLE );
+}
+
+if($param->route_l() == 'en-us'){
+	define ( "G_TEMPLATES_CSS", G_TEMPLATES_PATH . '/' . G_STYLE . 'en/css' );
+}else{
+	define ( "G_TEMPLATES_CSS", G_TEMPLATES_PATH . '/' . G_STYLE . '/css' );
+}
+
 define ( "G_TEMPLATES_MOBILESHAI", G_TEMPLATES_PATH . '/' . G_STYLE . '/css/mobile/shai' );
 define ( "G_TEMPLATES_JS", G_TEMPLATES_PATH . '/' . G_STYLE . '/js' );
 define ( "G_TEMPLATES_IMAGE", G_TEMPLATES_PATH . '/' . G_STYLE . '/images' );
