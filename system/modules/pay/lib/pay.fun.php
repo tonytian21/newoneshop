@@ -526,6 +526,13 @@ function pay_go_yongjin($uid=null,$dingdancode=null){
 
 		$db->Query("INSERT INTO `@#_member_recodes`(`uid`,`type`,`content`,`shopid`,`money`,`ygmoney`,`time`)VALUES('$uid','1','$content','$val[shopid]','$y_money','$val[moneycount]','$time' )");
 
+		//佣金直接充值
+		if($y_money){
+			$time = time();
+			$db->Query("UPDATE `@#_member` SET `money`=`money` + ¥y_money WHERE (`uid`='$uid')");	
+			$db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', '佣金充值', '$y_money', '$time')");
+		}
+
 	}
 
 

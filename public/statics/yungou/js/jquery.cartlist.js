@@ -19,21 +19,21 @@
 	gcartlist.gocartlist = function(shopid,path,cookie_pre){
 		var syrs='';
 		var shopinfo='';
-		$.get(path+"/member/cart/Fastpay/",{'shopid':shopid},function(cgoodsdata){
+		$.get(path+"/member/cart/Fastpay/",{'shopid':shopid},function(cgoodsdata){	
 			var cgoodsinfo = jQuery.parseJSON(cgoodsdata);
 			syrs=cgoodsinfo.zongrenshu-cgoodsinfo.canyurenshu;
 			shopinfo={'shopid':shopid,'money':cgoodsinfo.price,'shenyu':syrs};
             			var carid='car_'+shopid;
 			if(syrs!=0){
 				if(Cartcookie(false)){
-                				$('#'+carid).parent().parent().parent().find('.success .main').html(cgoodsinfo.tishi);
-                				$('#'+carid).parent().parent().parent().find('.success').show(1500,function(){
-                   				$('#'+carid).parent().parent().parent().find('.success').hide(1500);});
-                			}else{
-                				$('#'+carid).parent().parent().parent().find('.fail .main').html(cgoodsinfo.tishi);
-                				$('#'+carid).parent().parent().parent().find('.fail').show(1500,function(){
-                				$('#'+carid).parent().parent().parent().find('.fail').hide(1500);});
-                			}
+        				$('#'+carid).parent().parent().parent().find('.success .main').html(cgoodsinfo.tishi);
+        				$('#'+carid).parent().parent().parent().find('.success').show(1500,function(){
+           				$('#'+carid).parent().parent().parent().find('.success').hide(1500);});
+        			}else{
+        				$('#'+carid).parent().parent().parent().find('.fail .main').html(cgoodsinfo.tishi);
+        				$('#'+carid).parent().parent().parent().find('.fail').show(1500,function(){
+        				$('#'+carid).parent().parent().parent().find('.fail').hide(1500);});
+        			}
 			  	
 			}else{
                 			$('#'+carid).parent().parent().parent().find('.fail .main').html(cgoodsinfo.tishi);

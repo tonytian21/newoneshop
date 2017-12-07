@@ -51,11 +51,11 @@ function Getheader($type='index'){
 	$url="";
 	if($type=='foot'){
 		foreach($navigation as $v){		
-			$url.='<a  href="'.WEB_PATH.$v['url'].'">';
-
 			if(ROUTE_L == 'en-us'){
+				$url.='<a  href="'.WEB_PATH.$v['urlen'].'">';
 				$url .= $v['nameen'];
 			}else{
+				$url.='<a  href="'.WEB_PATH.$v['url'].'">';
 				$url .= $v['name'];
 			}
 
@@ -64,11 +64,11 @@ function Getheader($type='index'){
 		return $url;
 	}
 	foreach($navigation as $v){		
-		$url.='<li class="sort-all" ><a  href="'.WEB_PATH.$v['url'].'">';
-
 		if(ROUTE_L == 'en-us'){
+			$url.='<li class="sort-all" ><a  href="'.WEB_PATH.$v['urlen'].'">';
 			$url .= $v['nameen'];
 		}else{
+			$url.='<li class="sort-all" ><a  href="'.WEB_PATH.$v['url'].'">';
 			$url .= $v['name'];
 		}
 		

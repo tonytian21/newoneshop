@@ -70,10 +70,19 @@
 			<div class="head_top w1200">
 
 				<ul class="collect fr">
-
 					<li class="fr">
-						<a class="livechatinc" style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo _cfg("qq"); ?>&site=qq&menu=yes" target="_blank"><?php echo lang::get_lang('在线客服'); ?></a>
+						<?php if($this->_cfg['route_l'] == 'en-us'): ?>
+							<a href="<?php echo G_WEB_PATH; ?>/zh-cn/<?php echo lang::get_lang_url(); ?>"><?php echo lang::get_lang('中文'); ?></a>
+						<?php  else: ?>
+							<a href="<?php echo G_WEB_PATH; ?>/en-us/<?php echo lang::get_lang_url(); ?>">English</a>
+						<?php endif; ?>
+						<span>|</span>
 					</li>
+					<li class="fr">
+						<a class="livechatinc" style="text-indent: 25px;margin-right: 0 !important;" class="service_img" href="<?php echo _cfg("qq"); ?>" target="_blank"><?php echo lang::get_lang('在线客服'); ?></a>
+						<span>|</span>
+					</li>
+					
 					<li class="fr">
 						<a href="<?php echo WEB_PATH; ?>/help/1"><?php echo lang::get_lang('帮助'); ?></a>
 						<span>|</span>

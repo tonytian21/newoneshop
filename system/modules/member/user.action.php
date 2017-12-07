@@ -434,20 +434,16 @@ class user extends base {
 				$fili_cfg = System::load_app_config("user_fufen");		
 
 				if($member['yaoqing']){
+					$time = time();
 
-							$time = time();
+					$yaoqinguid = $member['yaoqing'];
 
-							$yaoqinguid = $member['yaoqing'];
+					//积分			
+					if($fili_cfg['f_visituser']){							
+						$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$yaoqinguid','1','积分','邀请好友奖励','$fili_cfg[f_visituser]','$time')");
+					}						
 
-							//积分			
-
-							if($fili_cfg['f_visituser']){							
-
-								$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$yaoqinguid','1','积分','邀请好友奖励','$fili_cfg[f_visituser]','$time')");
-
-							}						
-
-							$this->db->Query("UPDATE `@#_member` SET `score`=`score`+'$fili_cfg[f_visituser]',`jingyan`=`jingyan`+'$fili_cfg[z_visituser]' where uid='$yaoqinguid'");
+					$this->db->Query("UPDATE `@#_member` SET `score`=`score`+'$fili_cfg[f_visituser]',`jingyan`=`jingyan`+'$fili_cfg[z_visituser]' where uid='$yaoqinguid'");
 
 				}
 

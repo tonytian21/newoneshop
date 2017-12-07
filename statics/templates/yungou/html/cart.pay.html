@@ -95,24 +95,12 @@
 			</li>
 		
 			<li id="liPayByOther" class="point_in point_bank" style="display:list-item;">
-				<div class="payment_List_Lc gary01 Fb">{wc:fun:lang::get_lang('您的账户余额不足')}</div>
+				<div class="payment_List_Lc gary01 Fb">{wc:fun:lang::get_lang('您的账户余额不足')},<a class="blue" target="_blank" href="{WEB_PATH}/member/home/userrecharge">{wc:fun:lang::get_lang('立即充值')}</a></div>
+
 				<div class="payment_List_Lc gary01 Fb" style=" color:#f60;">{wc:fun:lang::get_lang('11Shop币等于1元')}</div>
 			</li>
 			
             
-		</ul>
-	</div>
-    
-	<div class="pay_bankC" id="divBankList" style="display:block;">
-		<div class="bank_arrow"><span>◆</span><em>◆</em></div>
-		<h3 class="bor">{wc:fun:lang::get_lang('支付平台支付')}：</h3>
-		<ul class="click_img">
-        	{wc:loop $paylist  $pay}
-			<li>
-            <input checked="checked" type="radio" value="{wc:$pay['pay_id']}" name="account" id="Tenpay">
-            <img style="border:1px solid #eee; padding:1px" height="35px" width="120px" src="{G_UPLOAD_PATH}/{wc:$pay['pay_thumb']}">
-            </li>   
-            {wc:loop:end}
 		</ul>
 	</div>
 

@@ -106,15 +106,6 @@
 			{wc:if:end}
 		    </ul>
 	    </article>
-	     <article id="bankList" class="clearfix mt10 m-round g-pay-ment g-bank-ct">
-		    <ul>	
-		    	<li class="gray6 z-pay-grayC" style="height:41px;"><s class="z-arrow"></s>{wc:fun:lang::get_lang('选择支付方式')}</li> 
-		    	{wc:loop $paylist $pay}
-		    	<li class="gray9" urm="{wc:$pay['pay_id']}"><i class="z-bank-Round"><s></s></i> {wc:$pay['pay_name']}</li>
-		    	 {wc:loop:end}
-
-		</ul>
-	    </article>
 	    <div style="margin-top: 10px;">
 		    <a style="height: 45px;line-height: 45px;" id="btnPay" href="javascript:;" class="orgBtn">{wc:fun:lang::get_lang('确认支付')}</a>
 	    </div>

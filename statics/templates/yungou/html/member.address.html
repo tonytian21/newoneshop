@@ -3,7 +3,7 @@
 {wc:templates "member","left"}
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.css"/>
 <link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/user.message.css"/>
-<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/area.js"></script>
+<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/worldAddress.js"></script>
 <script type="text/javascript">
 $(function(){		
 	var demo=$(".registerform").Validform({
@@ -71,12 +71,12 @@ function dell(id){
 		<table border="0" cellpadding="0" cellspacing="0">
 		<tbody>
 		<tr>
-			<script>var s=["province","city","county"];</script>
+			<script>var s=["county","province","city"];</script>
 			<td><label>{wc:fun:lang::get_lang('所在地区')}：</label></td>
 			<td>
-				<select datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的省市区')}" class="select" id="province" runat="server" name="sheng"></select>
-				<select datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的省市区')}" id="city" runat="server" name="shi"></select>
-				<select datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的省市区')}" id="county" runat="server" name="xian"></select>
+				<select datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的国家')}" class="select" id="county" runat="server" name="county"></select>
+				<select datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的省份')}" id="province" runat="server" name="sheng"></select>
+				<select datatype="*" nullmsg="{wc:fun:lang::get_lang('请选择有效的城市')}" id="city" runat="server" name="shi"></select>
 				<em id="ship_address_valid_msg" class="red">*</em> 	
 				<script type="text/javascript">setup()</script>
 			</td>

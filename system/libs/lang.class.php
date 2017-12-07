@@ -20,4 +20,13 @@ class lang {
 		}
 		return G_TEMPLATES_STYLE.'/images/goods.jpg';
 	}
+
+	static public function get_lang_url(){
+		$url = $_SERVER["QUERY_STRING"];
+		$url = str_replace('index.php', '', $url);
+		$url = str_replace('zh-cn', '', $url);
+		$url = str_replace('en-us', '', $url);
+		$url = str_replace('//', '/', $url);
+		return trim($url,'/');
+	}
 }

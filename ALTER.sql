@@ -1,0 +1,1 @@
+ALTER table go_navigation add urlen varchar(500);

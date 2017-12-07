@@ -46,9 +46,14 @@
 		<div class="site_top">
 			<div class="head_top w1200">
 				<ul class="collect fr">
-				
-				
-				
+					<li class="fr">
+						{wc:if $this->_cfg['route_l'] == 'en-us'}
+							<a href="{G_WEB_PATH}/zh-cn/{wc:fun:lang::get_lang_url()}">{wc:fun:lang::get_lang('中文')}</a>
+						{wc:else}
+							<a href="{G_WEB_PATH}/en-us/{wc:fun:lang::get_lang_url()}">English</a>
+						{wc:if:end}
+						<span>|</span>
+					</li>
 					<li class="fr"><a
 						style="text-indent: 25px; margin-right: 0 !important;"
 						class="service_img"

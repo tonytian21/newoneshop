@@ -47,6 +47,12 @@ input.button{ display:inline-block}
          <span><font color="#0c0" size="">※ </font>前面默认会加上: <?php echo WEB_PATH; ?></span>
 		</td>
       </tr>      
+      <tr>
+       <th>英文导航URL：</th>
+        <td><input type="text" name="urlen" style="width:350px;" id="catname" class="input-text">
+         <span><font color="#0c0" size="">※ </font>前面默认会加上: <?php echo WEB_PATH; ?></span>
+    </td>
+      </tr>    
 		<tr>
         <th width="200">是否显示：</th>
         <td>
@@ -96,7 +102,13 @@ input.button{ display:inline-block}
         <td><input type="text" name="url" value="<?php echo $info['url']; ?>" style="width:350px;" id="catname" class="input-text">
         <span><font color="#0c0" size="">※ </font>前面默认会加上: <?php echo WEB_PATH; ?></span>
 		</td>        
-      </tr>      
+      </tr>    
+      <tr>
+       <th>英文导航URL：</th>
+        <td><input type="text" name="urlen" value="<?php echo $info['urlen']; ?>" style="width:350px;" id="catname" class="input-text">
+        <span><font color="#0c0" size="">※ </font>前面默认会加上: <?php echo WEB_PATH; ?></span>
+    </td>        
+      </tr>   
 		<tr>
         <th width="200">是否显示：</th>
         <td>
