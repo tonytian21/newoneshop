@@ -43,7 +43,7 @@
 
 				'watermark_type' => 'text',
 
-				'watermark_text' => array('text'=>"OneShop",'color'=>"#ff0000",'size'=>"14",'font'=>'C:\WINDOWS\Fonts\simhei.ttf'),
+				'watermark_text' => array('text'=>"1Shop",'color'=>"#ff0000",'size'=>"14",'font'=>'C:\WINDOWS\Fonts\simhei.ttf'),
 
 				'watermark_image' => 'sss.png',
 

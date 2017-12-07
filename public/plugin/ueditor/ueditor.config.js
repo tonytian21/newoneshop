@@ -208,7 +208,7 @@
         //常用配置项目
         //,isShow : true    //默认显示编辑器
 		
-		,initialContent:'欢迎使用OneShop系统，请注意字符长度限制哦~!'    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
+		,initialContent:'欢迎使用1Shop系统，请注意字符长度限制哦~!'    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
         ,initialFrameWidth:930  //初始化编辑器宽度,默认1000
         ,initialFrameHeight:300  //初始化编辑器高度,默认320

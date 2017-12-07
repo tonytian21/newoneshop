@@ -26,12 +26,12 @@
 					
 					<div class="share-getinfo">
 						<p style="width: auto;" class="getinfo-name">{wc:fun:lang::get_lang('幸运获得者：')}<a class="blue Fb" href="{WEB_PATH}/uname/{wc:fun:idjia($shaidan['sd_userid'])}" target="_blank">{wc:fun:get_user_name($shaidan['sd_userid'],'username')}</a></p>
-						<p>{wc:fun:lang::get_lang('总共OneShop：')}<b class="orange">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>{wc:fun:lang::get_lang('人次')}</p>
+						<p>{wc:fun:lang::get_lang('总共1Shop：')}<b class="orange">{wc:fun:get_user_goods_num($shaidan['sd_userid'],$shaidan['sd_shopid'])}</b>{wc:fun:lang::get_lang('人次')}</p>
 						{wc:php:start}
 						$jikxiao = get_shop_if_jiexiao($shaidan['sd_shopid']);						
 						{wc:php:end}
 						{wc:if $jikxiao['q_uid']}
-						<p>{wc:fun:lang::get_lang('幸运OneShop码：')}{wc:$jikxiao['q_user_code']}	</p>
+						<p>{wc:fun:lang::get_lang('幸运1Shop码：')}{wc:$jikxiao['q_user_code']}	</p>
 						<p>{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($jikxiao['q_end_time'])}</p>
 						{wc:if:end}
 					</div>
@@ -41,7 +41,7 @@
 					<img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$goods['thumb'])}" border="0"></a>
 					<div class="share-getinfo">
 						<p class="getinfo-title"><a class="gray01" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">({wc:fun:lang::get_lang('第')}{wc:$goods['qishu']}{wc:fun:lang::get_lang('期')}){wc:$goods['title']}</a></p>
-						<p>{wc:fun:lang::get_lang('价值：')}{wc:$goods['money']}{wc:fun:lang::get_lang('OneShop币')}</p>
+						<p>{wc:fun:lang::get_lang('价值：')}{wc:$goods['money']}{wc:fun:lang::get_lang('1Shop币')}</p>
 						<p id="GoToBuy">
 						<a class="getbut-a c_red b_gray" href="{WEB_PATH}/goods/{wc:$goods['id']}" target="_blank">
 						{wc:if !empty($goods['q_uid'])}

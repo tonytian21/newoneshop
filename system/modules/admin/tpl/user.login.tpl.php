@@ -8,7 +8,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>OneShop后台管理系统</title>
+<title>1Shop后台管理系统</title>
 
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 
@@ -23,7 +23,7 @@
     <div class="login">
 
 
-        <div class="lh50 tac ft_yh ft20 bg_f63 white">OneShop后台管理系统</div>
+        <div class="lh50 tac ft_yh ft20 bg_f63 white">1Shop后台管理系统</div>
 
         <div class="login_ibox">
 
@@ -64,7 +64,7 @@
 	
 
 	<div class="lf login_btn bg_f63 ft16 ft_yh" id="form_but">
-	        乐购
+	        登录
 	</div>
 	<div class="cl"></div>
 

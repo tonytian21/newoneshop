@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>OneShop后台管理系统</title>
+<title>1Shop后台管理系统</title>
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/style.css" type="text/css">
 <script src="<?php echo G_GLOBAL_STYLE; ?>/global/js/jquery-1.8.3.min.js"></script>
@@ -57,7 +57,7 @@ $(function(){
             	<a target="_blank" href="<?php echo WEB_PATH;?>/goods/<?php echo $shopinfo['id'];?>"><b>第(<font color="red"><?php echo $shopinfo['qishu']; ?></font>)期  <?php echo $shopinfo['title']; ?></b></a>
 				<br />
 				总价格 <b style="color:red"><?php echo $shopinfo['money']; ?></b>&nbsp;&nbsp;&nbsp;
-				单次OneShop价格	<b style="color:red"><?php echo $shopinfo['yunjiage']; ?></b>&nbsp;&nbsp;&nbsp;
+				单次1Shop价格	<b style="color:red"><?php echo $shopinfo['yunjiage']; ?></b>&nbsp;&nbsp;&nbsp;
 				期数 <b style="color:red"><?php echo $shopinfo['qishu']; ?>/<?php echo $shopinfo['maxqishu']; ?></b>&nbsp;&nbsp;&nbsp;
             </td>
 			

@@ -52,7 +52,7 @@ jwebox.goshopnow = function(shopid,path){
 					<div class="jwebox_background"></div>
 						<div class="jwebox_webox" style="width:400px;height:300px;">
 						<div class="jwebox_inside" style="width:400px;height:300px;">
-						<h1 class="jwebox_locked"  onselectstart="return false;">快捷支付——您将要OneShop的商品信息<a class="span" href="javascript:void(0);">×</a></h1>				
+						<h1 class="jwebox_locked"  onselectstart="return false;">快捷支付——您将要1Shop的商品信息<a class="span" href="javascript:void(0);">×</a></h1>				
 							<div class="jwebox_mainlist" style="height:35px;line-height:17px;padding:10px 20px;overflow:hidden;border-bottom:1px dashed #ccc;" ><span><a style="line-height:20px;" class="jwebox_goshopc buxianshi"   href="" target="_blank"></a></span></div>	
 							
 							<div class="jwebox_mainlist" style="padding:10px 60px;">
@@ -68,7 +68,7 @@ jwebox.goshopnow = function(shopid,path){
 							<div style="clear:both;"></div>
 							<span id="yshopchance" class="c_gray" style="display:block;padding-top:10px;">购买人次越多获得几率越大哦！</span>				
 							<div class="jwebox_mainlist"><span>共计购买：<span class="jwebox_sum" ></span>人次</span></div>	
-							<div class="jwebox_mainlist"><span class="jwebox_mainlist_uspecies">您的账户余额：<span class="jwebox_uspecies" ></span>OneShop币</span></div>	
+							<div class="jwebox_mainlist"><span class="jwebox_mainlist_uspecies">您的账户余额：<span class="jwebox_uspecies" ></span>1Shop币</span></div>	
 							<div class="jwebox_shop_buttom" >
 								<a href="javascript:;"  class="jwebox_Det_Shopnow"  id="jwebox_Det_Shopnow">立即支付</a>
 								<a href="index.php/member/home/userrecharge"  class="jwebox_Det_Shopnow">去充值</a>
@@ -180,7 +180,7 @@ jwebox.goshopnow = function(shopid,path){
                             var shopid=shopinfo['shopid'];
                             var shopnum =parseInt($(".ynum_dig").val());
 		if(shopnum>3000){
-			$(".jwebox_shop_relog").text('OneShop人次大于3000会产生多条购买记录！');
+			$(".jwebox_shop_relog").text('1Shop人次大于3000会产生多条购买记录！');
 			setTimeout(function(){
 			$(".jwebox_shop_relog").text();
 			},3000);							

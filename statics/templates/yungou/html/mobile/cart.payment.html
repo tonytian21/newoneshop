@@ -75,7 +75,7 @@
 		 {wc:loop:end}
 		
 		</ul>
-		<p class="g-pay-Total gray9">{wc:fun:lang::get_lang('合计')}：<span class="orange arial Fb F16">{wc:$MoenyCount}</span> {wc:fun:lang::get_lang('OneShop币')}</p>
+		<p class="g-pay-Total gray9">{wc:fun:lang::get_lang('合计')}：<span class="orange arial Fb F16">{wc:$MoenyCount}</span> {wc:fun:lang::get_lang('1Shop币')}</p>
 		</div>
     </section>
     <section class="clearfix g-Cart" style="padding-bottom:10px;background: #fff;position:fixed;bottom: 0px;width: 100%;left: 0px;padding-top: 0px;">
@@ -96,12 +96,12 @@
 			{wc:if $Money >= $MoenyCount}			
 				<li class="gray9 z-pay-ye z-pay-grayC"  style="height: 40px;"> 
 				<i id="spBalance" class="z-pay-ment" sel="0"></i>
-				<span>{wc:fun:lang::get_lang('您可以使用余额付款')} （{wc:fun:lang::get_lang('账户余额')} ：{wc:$Money} {wc:fun:lang::get_lang('OneShop币')}）</span>
+				<span>{wc:fun:lang::get_lang('您可以使用余额付款')} （{wc:fun:lang::get_lang('账户余额')} ：{wc:$Money} {wc:fun:lang::get_lang('1Shop币')}）</span>
 				</li>
 			{wc:else}
 			    <li class="gray6 z-pay-ye z-pay-grayC" style="height: 40px;">
 				<a href="{WEB_PATH}/mobile/home/userrecharge" class="z-pay-Recharge">{wc:fun:lang::get_lang('去充值')}</a>
-				<span>{wc:fun:lang::get_lang('您的余额不足')}（{wc:fun:lang::get_lang('账户余额')} ：{wc:$Money} {wc:fun:lang::get_lang('OneShop币')}）</span>
+				<span>{wc:fun:lang::get_lang('您的余额不足')}（{wc:fun:lang::get_lang('账户余额')} ：{wc:$Money} {wc:fun:lang::get_lang('1Shop币')}）</span>
 				</li> 
 			{wc:if:end}
 		    </ul>

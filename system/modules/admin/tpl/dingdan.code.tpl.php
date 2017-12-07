@@ -99,13 +99,13 @@ select{height: 30px; padding-left: 15px; padding-right: 15px; border-radius: 5px
 
 			<li><b class="api_b"><font color="#ff0000">中奖人</font></b><?php echo $qishu['ren']; ?></li>
 
-			<li><b class="api_b"><font color="#ff0000">中奖OneShop码</font></b><?php echo $qishu['ma']; ?></li>	
+			<li><b class="api_b"><font color="#ff0000">中奖1Shop码</font></b><?php echo $qishu['ma']; ?></li>	
 
 			<div class="bk10"></div>
 
 			<li><b class="api_b">购买次数：</b><?php echo $record['gonumber']; ?>人次</li>
 
-			<li class="yun_ma"><b class="api_b">获得OneShop码：</b><br/>			
+			<li class="yun_ma"><b class="api_b">获得1Shop码：</b><br/>			
 
 			<?php  
 

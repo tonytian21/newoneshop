@@ -19,7 +19,16 @@
 	<div class="help-left-part">
 		<div class="help-nav">
 			<h3>{wc:fun:lang::get_lang('帮助中心')}</h3>			
-            {wc:getlist sql="select * from `@#_category` where `parentid`='3'" return="category"}
+			
+			{wc:if $this->_cfg['route_l'] == 'en-us'}
+				{wc:getlist sql="select * from `@#_category` where `parentid`='5'"
+						return="category"} 
+			{wc:else}
+				{wc:getlist sql="select * from `@#_category` where `parentid`='3'"
+					return="category"} 
+			{wc:if:end}
+			
+            
 			{wc:loop $category $help}
 			<h4>{wc:$help['name']}</h4>
 			<ul>
@@ -32,7 +41,8 @@
 		<div class="help-contact">
 			<p>{wc:fun:lang::get_lang('如果不能在帮助内容中找到答案，或者您有其他建议、投诉，您还可以：')}</p>
 			<ul>
-				<li class="CustomerCon"><a href="http://wpa.qq.com/msgrd?v=3&uin={wc:fun:_cfg('qq')}&site=qq&menu=yes" target="_blank" class="Customer livechatinc"><b></b>{wc:fun:lang::get_lang('在线客服')}</a></li>
+				<li class="CustomerCon"><a href="{wc:fun:_cfg("
+						qq")}" target="_blank" class="Customer livechatinc"><b></b>{wc:fun:lang::get_lang('在线客服')}</a></li>
 				<li>{wc:fun:lang::get_lang('电话客服热线')}({wc:fun:lang::get_lang('免长途费')})</li>
 				<li class="tel"><span>{wc:fun:_cfg('cell')}</span></li>
 			</ul>

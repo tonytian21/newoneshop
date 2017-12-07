@@ -71,17 +71,17 @@
                         {G_UPLOAD_PATH}/{wc:$touxiang}
 
                     {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>{wc:fun:lang::get_lang('积分')}：{wc:$member['score']}<br/>{wc:fun:lang::get_lang('经验值')}：{wc:$member['jingyan']}
-                    <span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop新手')}'}
+                    <span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop新手')}'}
                     z-class-icon01
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop小将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop小将')}'}
                     z-class-icon02
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop中将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop中将')}'}
                     z-class-icon03
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop上将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop上将')}'}
                     z-class-icon04
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop大将')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop大将')}'}
                     z-class-icon05
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('OneShop将军')}'}
+                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop将军')}'}
 
                     z-class-icon06
                 {wc:if:end}"><s></s>{wc:$member['yungoudj']}</span></li>

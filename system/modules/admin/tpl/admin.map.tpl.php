@@ -129,17 +129,14 @@ a:hover {
 			<li><a href="<?php echo G_MODULE_PATH; ?>/setting/upload">上传设置</a></li>
 			<li><a href="<?php echo G_MODULE_PATH; ?>/setting/watermark">水印设置</a></li>
 			<li><a href="<?php echo G_MODULE_PATH; ?>/setting/email">邮箱设置</a></li>
-			<li><a href="<?php echo G_MODULE_PATH; ?>/setting/mobile">短信设置</a></li>
+			
 			<li><a href="<?php echo WEB_PATH; ?>/pay/pay/pay_list">支付设置</a></li>
 			<li class="title2">管理员管理</li>
 			<li><a href="<?php echo G_MODULE_PATH; ?>/user/lists">管理员管理</a></li>
 			<li><a href="<?php echo G_MODULE_PATH; ?>/user/reg">添加管理员</a></li>
 			<li><a
 				href="<?php echo G_MODULE_PATH; ?>/user/edit/<?php echo $info['uid']; ?>">修改密码</a></li>
-			<li class="title2">站长运营</li>
-			<li><a href="<?php echo G_ADMIN_PATH; ?>/yunwei/websitemap">站点地图</a></li>
-			<li><a href="<?php echo G_ADMIN_PATH; ?>/yunwei/websubmit">网站提交</a></li>
-			<li><a href="<?php echo G_ADMIN_PATH; ?>/yunwei/webtongji">站长统计</a></li>
+			
 			<li class="title2">后台首页</li>
 			<li><a href="<?php echo G_ADMIN_PATH; ?>/index/Tdefault">后台首页</a></li>
 		</ul>
@@ -191,8 +188,6 @@ a:hover {
 	<div class="map-menu lf">
 		<ul>
 			<li class="title">云应用</li>
-			<li><a href="<?php echo WEB_PATH; ?>/api/upfile">在线升级</a></li>
-			<li><a href="<?php echo WEB_PATH; ?>/api/plugin/get/bom">BOM检测</a></li>
 			<li><a
 				href="<?php echo WEB_PATH; ?>/api/plugin/admin/egglotter/listlotter">游戏设置</a></li>
 		</ul>
@@ -216,7 +211,7 @@ a:hover {
 			<li class="title2">模块管理</li>
 			<li><a href="<?php echo WEB_PATH; ?>/group/quanzi">圈子模块</a></li>
 			<li><a href="<?php echo G_MODULE_PATH; ?>/link/lists">友情链接</a></li>
-			<li><a href="<?php echo WEB_PATH; ?>/admanage/admanage_admin">广告模块</a></li>
+			
 			<li><a href="<?php echo WEB_PATH; ?>/vote/vote_admin/">投票模块</a></li>
 		</ul>
 	</div>

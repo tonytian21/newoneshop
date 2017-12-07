@@ -40,12 +40,12 @@ $(function() {
             if (y > 0) {
                 c.parent().removeClass("z-pay-grayC");
                 $(this).removeClass('z-pay-mentsel').addClass('z-pay-ment');
-                c.attr("sel", "1").attr("class", "z-pay-mentsel sle").next("span").html('OneShop币支付<em class="orange">' + y + ".00</em>元（您的OneShop币：" + t + "）")
+                c.attr("sel", "1").attr("class", "z-pay-mentsel sle").next("span").html('1Shop币支付<em class="orange">' + y + ".00</em>元（您的1Shop币：" + t + "）")
 				$("#payact").val("zh");
                 checkpay='fufen';
 				banktype='nobank';
             } else {
-                c.attr("sel", "0").attr("class", "z-pay-ment sle").next("span").html('OneShop币支付<em class="orange">0.00</em>元（您的OneShop币：' + t + "）")
+                c.attr("sel", "0").attr("class", "z-pay-ment sle").next("span").html('1Shop币支付<em class="orange">0.00</em>元（您的1Shop币：' + t + "）")
             }
         };
         var f = function(y) {

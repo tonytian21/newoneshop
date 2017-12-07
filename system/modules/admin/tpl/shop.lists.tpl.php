@@ -8,7 +8,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>OneShop后台管理系统</title>
+<title>1Shop后台管理系统</title>
 
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 
@@ -46,7 +46,7 @@ tr{ text-align:center}
 
 	<br/>
 
-	<b>提示:</b> 因为商品添加后乐购码已经生成成功,所以不能在本期内修改价格了.
+	<b>提示:</b> 因为商品添加后1Shop码已经生成成功,所以不能在本期内修改价格了.
 
 </div>
 

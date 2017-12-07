@@ -59,7 +59,7 @@
 		        <p class="gray02">{wc:fun:lang::get_lang('购买人：')}{wc:fun:get_user_name($member,'username')}</p>
 		    </li>
 		    	{wc:if $jiexiao['q_uid']}
-		                    <li class="yg_status" style="margin:23px 0 0 0;">{wc:fun:lang::get_lang('幸运OneShop码：')}<br><span class="c_red">{wc:$jiexiao['q_user_code']}</span></li>
+		                    <li class="yg_status" style="margin:23px 0 0 0;">{wc:fun:lang::get_lang('幸运1Shop码：')}<br><span class="c_red">{wc:$jiexiao['q_user_code']}</span></li>
 		                    <li class="joinInfo" style="margin:23px 0 0 0;"><p><em>{wc:$go['gonumber']}</em>{wc:fun:lang::get_lang('人次')}</p></li>
 		                      <li class="do" style="margin:23px 0 0 0;"><a href="{WEB_PATH}/dataserver/{wc:$go['shopid']}"  class="blue" title="{wc:fun:lang::get_lang('详情')}">{wc:fun:lang::get_lang('详情')}</a></li>
 			{wc:else}
@@ -71,7 +71,7 @@
 		{wc:loop:end}		
 	</div>
 	{wc:else}
-	<div class="New-content"><div class="tips-con"><i></i>TA{wc:fun:lang::get_lang('还没有OneShop商品哦')}</div></div> 
+	<div class="New-content"><div class="tips-con"><i></i>TA{wc:fun:lang::get_lang('还没有1Shop商品哦')}</div></div> 
 	{wc:if:end}   
 </div>
 

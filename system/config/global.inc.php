@@ -18,6 +18,7 @@ define ( "G_CACHES", G_SYSTEM . 'caches' . DIRECTORY_SEPARATOR );
 define ( "G_PLUGIN", G_SYSTEM . 'plugin' . DIRECTORY_SEPARATOR );
 define ( "G_TEMPLATES", G_STATICS . 'templates' . DIRECTORY_SEPARATOR );
 define ( "G_WEB_PATH", dirname ( G_HTTP . G_HTTP_HOST . $_SERVER ['SCRIPT_NAME'] ) );
+
 //define ( "G_CDN_PATH", 'http://cdn.tcyyg.com.cn');
 define ( "G_CDN_PATH", G_WEB_PATH);
 define ( "G_UPLOAD", G_WEB_DIR_PATH . 'uploads' . DIRECTORY_SEPARATOR );

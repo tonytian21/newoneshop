@@ -186,7 +186,7 @@ tbody tr{ line-height:30px; height:30px;}
 
             <th width="50px" align="center">商品期数</th>
 
-            <th width="50px" align="center">OneShop次数</th>
+            <th width="50px" align="center">1Shop次数</th>
 
             <th width="50px" align="center">消费金额</th>
 

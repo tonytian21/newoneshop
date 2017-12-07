@@ -29,7 +29,7 @@ class autolottery extends SystemAction
         
         $shoplist = $this->db->GetList("select * from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `xsjx_time` > '$w_jinri_time' and `xsjx_time` < '$w_minri_time' order by `xsjx_time`  limit 0,3");
         
-        // 获奖者本次总OneShop次数
+        // 获奖者本次总1Shop次数
         $user_shop_number = array();
         if (! empty($shoplist)) {
             
@@ -141,7 +141,7 @@ class autolottery extends SystemAction
     // $q_3 = $this->autolottery_install($shop_info);
     // if($q_1 && $q_2 && $q_3){
     // $this->db->Autocommit_commit();
-    // echo $code."OneShop码";
+    // echo $code."1Shop码";
     // exit;
     // }else{
     // $this->db->Autocommit_rollback();

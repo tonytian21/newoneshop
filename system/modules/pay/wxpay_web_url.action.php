@@ -143,7 +143,7 @@ class wxpay_web_url extends SystemAction {
 			echo "fail";exit;
 		}
 
-		$pay->init($uid,$pay_type['pay_id'],'go_record');	//OneShop商品
+		$pay->init($uid,$pay_type['pay_id'],'go_record');	//1Shop商品
 
 	}
 

@@ -19,13 +19,11 @@ class user extends admin {
 		$this->db=System::load_sys_class("model");
 
 		$this->ment=array(
-
 						array("lists","管理员管理",ROUTE_M.'/'.ROUTE_C."/lists"),
 
 						array("reg","添加管理员",ROUTE_M.'/'.ROUTE_C."/reg"),
 
 						array("edit","修改管理员",ROUTE_M.'/'.ROUTE_C."/reg",'hide'),
-
 		);	
 
 		
@@ -246,7 +244,7 @@ class user extends admin {
 
 			if(!$info){$message['error']=true;$message['text']="登录失败,请检查用户名或密码!";echo json_encode($message);exit;}
 
-			if($info['userpass']!=md5($password)){$message['error']=true;$message['text']="登陆失败!";echo json_encode($message);exit;}
+			if($info['userpass']!=md5($password)){$message['error']=true;$message['text']="登陆失败";echo json_encode($message);exit;}
 
 			
 
@@ -258,11 +256,12 @@ class user extends admin {
 
 				$this->AdminInfo=$info;
 
-				$time=time();$ip=_get_ip();
+				$time=time();
+				$ip=_get_ip();
 
-				$this->db->Query("UPDATE `@#_admin` SET `logintime`='$time' WHERE (`uid`='$info[uid]')");
+				$this->db->Query("UPDATE `@#_admin` SET `logintime`='$time',`loginip`='$ip'  WHERE (`uid`='$info[uid]')");
 
-				$this->db->Query("UPDATE `@#_admin` SET `loginip`='$ip' WHERE (`uid`='$info[uid]')");
+// 				$this->db->Query("UPDATE `@#_admin` SET  WHERE (`uid`='$info[uid]')");
 
 			}
 

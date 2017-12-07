@@ -325,7 +325,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
         //$pay->fufen = $fufen;
 		$pay->fufen = $checkpay=='fufen'?$fufen:0;
 		$pay->pay_type_bank = $pay_type_bank;
-		$ok = $pay->init($uid,$pay_type_id,'go_record');	//OneShop商品
+		$ok = $pay->init($uid,$pay_type_id,'go_record');	//1Shop商品
 		if($ok != 'ok'){
 			_setcookie('Cartlist',NULL);
 			_messagemobile(lang::get_lang("购物车没有商品请")."<a href='".WEB_PATH."/mobile/cart/cartlist' style='color:#22AAFF'>".lang::get_lang("返回购物车")."</a>".lang::get_lang("查看"));
@@ -397,7 +397,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 
 		$pay->fufen = $shop_score ? $jf_use_num : 0;
 		$pay->pay_type_bank = 0;
-		$ok = $pay->init($uid,$payact,'jf_go_record');	//OneShop商品
+		$ok = $pay->init($uid,$payact,'jf_go_record');	//1Shop商品
 		if($ok != 'ok'){
 			$_COOKIE['Cartlist_jf'] = NULL;
 			_setcookie("Cartlist_jf",null);

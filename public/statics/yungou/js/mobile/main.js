@@ -526,7 +526,7 @@ function startSwiper() {
                 row_length = parseInt(tmp_str.substring(0, tmp_str.indexOf('.'))) + 1;
               }
               // 添加内容
-              var content = '<div style="margin-bottom:5px;">参与' + data_length + '次，OneShop号码：</div>'
+              var content = '<div style="margin-bottom:5px;">参与' + data_length + '次，1Shop号码：</div>'
               content += '<div style="max-height:150px; overflow:auto;">';
               for (var i=0; i<row_length; i++) {
                 for (var j=0; j<3; j++) {

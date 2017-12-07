@@ -20,7 +20,7 @@
 
 <script src="<?php echo G_GLOBAL_STYLE; ?>/global/js/global.js"></script>
 
-<title>OneShop后台管理系统</title>
+<title>1Shop后台管理系统</title>
 <script type="text/javascript">
 
 var ready=1;
@@ -287,7 +287,7 @@ function api_off_on_open(key){
 
     <a href="<?php echo G_WEB_PATH; ?>" title="网站首页" target="_blank">网站首页</a>
 
-    <a href="<?php echo G_MODULE_PATH; ?>/index/map" title="地图">地图</a>
+    
 
     <button  style="width:0px;height:0px;" onClick="document.location.hash='hello'"></button>
 
@@ -357,14 +357,7 @@ function api_off_on_open(key){
 
                         <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/user/edit/<?php echo $info['uid']; ?>">修改密码</a></li>
 
-	<li class="head">站长运营</li>
-
-                        <li><span></span><a href="javascript:void(0);" src="<?php echo G_ADMIN_PATH; ?>/yunwei/websitemap">站点地图</a></li>
-
-		<li><span></span><a href="javascript:void(0);" src="<?php echo G_ADMIN_PATH; ?>/yunwei/websubmit">网站提交</a></li>
-
-		<li><span></span><a href="javascript:void(0);" src="<?php echo G_ADMIN_PATH; ?>/yunwei/webtongji">站长统计</a></li>
-
+	
         <li class="head">后台首页</li>
 
                         <li><span></span><a href="javascript:void(0);" src="<?php echo G_ADMIN_PATH; ?>/index/Tdefault">后台首页</a></li>
@@ -405,7 +398,7 @@ function api_off_on_open(key){
 
         <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/link/lists">友情链接</a></li>
 
-        <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/admanage/admanage_admin">广告模块</a></li>
+       
 
         <li><span></span><a href="javascript:void(0);" src="<?php echo WEB_PATH; ?>/vote/vote_admin/">投票模块</a></li>
 
@@ -493,9 +486,9 @@ function api_off_on_open(key){
 
         <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/template/see">查看模板</a></li>
 
-        <li class="head">后台界面</li>
 
-        <li><span></span><a href="javascript:void(0);" src="<?php echo G_MODULE_PATH; ?>/index/map">后台地图</a></li>   
+
+          
 
         
 

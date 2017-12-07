@@ -12,18 +12,18 @@ tr{height:30px;line-height:30px}
 </head>
 <body>
 <div class="header-title lr10">
-	<b>OneShop基金配置</b>
+	<b>1Shop基金配置</b>
 </div>
 <div class="bk10"></div>
 <div class="header-data lr10">
-	<b>当前OneShop基金总金额为 : <font color="red"><?php echo $config['fund_count_money']; ?></font> 元</b>
+	<b>当前1Shop基金总金额为 : <font color="red"><?php echo $config['fund_count_money']; ?></font> 元</b>
 </div>
 <div class="bk10"></div>
 <div class="table_form lr10">	
 <form action="" method="post" id="myform">
 <table width="100%" class="lr10">
   <tr>
-    <td width="100">开启OneShop基金</td>
+    <td width="100">开启1Shop基金</td>
     <td>
      <input name="fund_off" value="1" type="radio" <?php if($config['fund_off'])echo "checked";?>> 开启
 	 <input name="fund_off" value="0" type="radio" <?php if(!$config['fund_off'])echo "checked";?>> 关闭 	 
@@ -34,7 +34,7 @@ tr{height:30px;line-height:30px}
   <tr>
     <td>基金出资金额</td>
     <td><input type="text" class="input-text wid150" name="fund_money" value="<?php echo $config['fund_money']; ?>"/>
-	当您每参与1人次OneShop，将出资 <font color="red"><?php echo $config['fund_money']; ?></font> 元为OneShop基金筹款
+	当您每参与1人次1Shop，将出资 <font color="red"><?php echo $config['fund_money']; ?></font> 元为1Shop基金筹款
 	</td>
   </tr>
     <tr>

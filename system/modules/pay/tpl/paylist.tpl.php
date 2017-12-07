@@ -13,10 +13,7 @@ tbody tr{ line-height:30px; height:30px;}
 <body>
 <div class="header-title lr10">
 	<b>支付方式</b> 
-	<span class="lr10"> | </span> 
-	<a href="<?php echo WEB_PATH; ?>/pay/pay/pay_bank" style="color:#ff0000; font-weight:bold"> 支付银行选择 </a> 
-	<span class="lr10"> | </span>
-	<!--<a href="<?php echo WEB_PATH; ?>/pay/pay/pay_install" style="color:#0c0; font-weight:bold"> 安装新的支付方式 </a> -->
+	
 </div>
 <div class="bk10"></div>
 <div class="table-list lr10">

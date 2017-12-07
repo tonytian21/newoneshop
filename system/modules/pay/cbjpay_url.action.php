@@ -92,7 +92,7 @@ class cbjpay_url extends SystemAction {
 				$pay = System::load_app_class('pay','pay');			
 				$pay->scookie = $scookies;	
 
-				$ok = $pay->init($uid,$pay_type['pay_id'],'go_record');	//OneShop商品	
+				$ok = $pay->init($uid,$pay_type['pay_id'],'go_record');	//1Shop商品	
 				if($ok != 'ok'){
 					_setcookie('Cartlist',NULL);	//商品购买失败	
 					return;		

@@ -118,13 +118,13 @@ function send_email_code($email = null, $username = null, $uid = null, $code = n
     $template = $db->GetOne("select * from `@#_caches` where `key` = 'template_email_shop'");
     if (! $template) {
         $template = array();
-        $template['value'] = "恭喜您：{$username},你在" . _cfg("web_name") . "OneShop的商品{$shoptitle}已获得,OneShop码是:" . $code;
+        $template['value'] = "恭喜您：{$username},你在" . _cfg("web_name") . "1Shop的商品{$shoptitle}已获得,1Shop码是:" . $code;
     } else {
         $template['value'] = str_ireplace("{用户名}", $username, $template['value']);
         $template['value'] = str_ireplace("{商品名称}", $shoptitle, $template['value']);
         $template['value'] = str_ireplace("{中奖码}", $code, $template['value']);
     }
-    $title = "恭喜您!!! 您在" . _cfg("web_name") . "OneShop的商品已获得!!!";
+    $title = "恭喜您!!! 您在" . _cfg("web_name") . "1Shop的商品已获得!!!";
     return _sendemail($email, '', $title, $template['value']);
 }
 

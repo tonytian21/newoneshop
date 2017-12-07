@@ -1,8 +1,8 @@
 <?php 
  defined('G_IN_SYSTEM') or exit('No permission resources.'); 
 return array( 
-'web_name' => 'OneShop',//网站名 
-'web_key' => 'OneShop|购物|一元购',//网站关键字 
+'web_name' => '1Shop',//网站名 
+'web_key' => '1Shop|购物|一元购',//网站关键字 
 'web_des' => '是一种全新的购物方式,是时尚、潮流的风向标,能满足个性、年轻消费者的购物需求',//网站介绍 
 'web_path' => 'http://1shopasia.com',//网站地址 
 'templates_edit' => '1',//是否允许在线编辑模板 
@@ -23,7 +23,7 @@ return array(
 'cell' => '010-59441570',//联系电话 
 'web_logo' => 'banner/20160707/27197635870709.jpg',//logo 
 'web_copyright' => 'Copyright © 1shopasia.com',//版权 
-'web_name_two' => 'OneShop',//短网站名 
+'web_name_two' => '1Shop',//短网站名 
 'qq_qun' => '',//QQ群 
 'goods_end_time' => '30',//开奖动画秒数(单位秒) 
 'xianshi' => '0',//手机端限时揭晓是否显示 

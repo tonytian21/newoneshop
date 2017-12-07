@@ -22,9 +22,9 @@
         <font color="red">000000</font> 是发送的验证码！请不要超过75个字,超过按照2条短信发送</td>
     </tr>
     <tr>
-    	<td width="150">用户OneShop获奖短信模板：</td> 
+    	<td width="150">用户1Shop获奖短信模板：</td> 
    		<td><textarea name="m_shop_temp" style=" height:50px; width:450px" class="input-text"><?php echo $temp_shop['value']; ?></textarea>
-        <font color="red">00000000</font> 是发送的OneShop码！,请不要超过75个字,超过按照2条短信发送
+        <font color="red">00000000</font> 是发送的1Shop码！,请不要超过75个字,超过按照2条短信发送
         </td>
     </tr>
       <tr>
@@ -40,11 +40,11 @@
 </style>
 <div class="mb_tishi">
 	<h1>中奖通知模版示例（红色字可改动）：</h1>
-	<p>模板一：恭喜您参与OneShop的商品已获奖！<span>OneShop码</span>：000000，赶快登录账户查看吧！</p>
-	<p>模板二：亲，您运气好极了，您已获得OneShop的商品，<span>OneShop码</span>：000000，赶快联系网站客服吧！</p>
-	<p>模板三：恭喜您获得了OneShop商品，<span>OneShop码</span>：000000。请登录账户完善个人信息哟！<span>客服电话：xxxxxx</span></p>
-	<p>模板四：恭喜获奖，<span>OneShop号</span>：000000。坐等快递小哥给你送过来！<span>客服QQ：xxxxxx</span></p>
-	<p>模板五：恭喜您OneShop成功！成为商品获得者,<span>幸运码</span>为：00000000，请您及时登陆会员中心补全收货地址,商品会在<span>一周</span>内发出！</p>
+	<p>模板一：恭喜您参与1Shop的商品已获奖！<span>1Shop码</span>：000000，赶快登录账户查看吧！</p>
+	<p>模板二：亲，您运气好极了，您已获得1Shop的商品，<span>1Shop码</span>：000000，赶快联系网站客服吧！</p>
+	<p>模板三：恭喜您获得了1Shop商品，<span>1Shop码</span>：000000。请登录账户完善个人信息哟！<span>客服电话：xxxxxx</span></p>
+	<p>模板四：恭喜获奖，<span>1Shop号</span>：000000。坐等快递小哥给你送过来！<span>客服QQ：xxxxxx</span></p>
+	<p>模板五：恭喜您1Shop成功！成为商品获得者,<span>幸运码</span>为：00000000，请您及时登陆会员中心补全收货地址,商品会在<span>一周</span>内发出！</p>
 </div>
 </div><!--table-list end-->
 </body>

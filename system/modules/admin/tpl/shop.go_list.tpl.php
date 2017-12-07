@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>OneShop后台管理系统</title>
+<title>1Shop后台管理系统</title>
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/global.css" type="text/css">
 <link rel="stylesheet" href="<?php echo G_GLOBAL_STYLE; ?>/global/css/style.css" type="text/css">
 <style>
@@ -29,7 +29,7 @@ body{ background-color:#fff}
 		<?php if($ginfo['q_uid'] && $ginfo['shenyurenshu']==0){
 					echo "已揭晓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 					echo "中奖人: ".get_user_name($ginfo['q_uid'],'username','all')."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-					echo "中奖OneShop码: ".$ginfo['q_user_code']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+					echo "中奖1Shop码: ".$ginfo['q_user_code']."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 					echo "揭晓时间: ".date("Y-m-d H:i:s",$ginfo['q_end_time']);
 		       }else if($ginfo['shenyurenshu']!=0 && $ginfo['xsjx_time'] == 0){
 					echo "商品还在进行中...";

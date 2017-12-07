@@ -1,1 +1,6 @@
 2017-11-15 17:28:17 pid:33960 Workerman[goods.php] start in DEBUG mode
+2017-12-06 23:24:41 pid:16086 Workerman[shua.php] start in DEBUG mode
+2017-12-06 23:24:44 pid:16086 Workerman[shua.php] Stopping ...
+2017-12-06 23:24:46 pid:16086 worker[none:16087] exit with status 9
+2017-12-06 23:24:46 pid:16086 Workerman[shua.php] has been stopped
+2017-12-07 11:13:16 pid:37569 Workerman[goods.php] start in DEBUG mode

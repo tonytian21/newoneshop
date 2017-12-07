@@ -18,7 +18,7 @@ class home extends base {
 	}
 	public function init(){
 		$member=$this->userinfo;
-		$title=lang::get_lang("我的OneShop中心");	
+		$title=lang::get_lang("我的1Shop中心");	
 		$quanzi=$this->db->GetList("select * from `@#_quanzi_tiezi` order by id DESC LIMIT 5");
 		
 		$jingyan = $member['jingyan'];
@@ -557,12 +557,12 @@ class home extends base {
 			echo _message(lang::get_lang("密码修改成功"),null,3);
 		}
 	}
-	//OneShop记录
+	//1Shop记录
 	public function userbuylist(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title=lang::get_lang("OneShop记录")." - "._cfg("web_name");		
+		$title=lang::get_lang("1Shop记录")." - "._cfg("web_name");		
 		
 		$total=$this->db->GetCount("select A.*,c.titleen from `@#_member_go_record` A inner join `@#_shoplist_term` B on A.shopid=B.id left join `@#_shoplist_en` c on B.sid=c.egid where A.`uid`='$uid' order by A.`id` DESC");
 		$page=System::load_sys_class('page');
@@ -572,11 +572,11 @@ class home extends base {
 		
 		include templates("member","userbuylist");
 	}
-	//OneShop记录详细
+	//1Shop记录详细
 	public function userbuydetail(){
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title=lang::get_lang("OneShop详情");
+		$title=lang::get_lang("1Shop详情");
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if(!$record){
@@ -935,7 +935,7 @@ class home extends base {
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;		 
 		$uid=_getcookie('uid');
-		$notinvolvednum=0;  //未参加OneShop的人数
+		$notinvolvednum=0;  //未参加1Shop的人数
 		$involvednum=0;     //参加预购的人数
 		$involvedtotal=0;   //邀请人数		 
 		

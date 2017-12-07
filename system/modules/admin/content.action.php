@@ -1410,7 +1410,7 @@ HTML;
             
             if ($zongrenshu == 0 || ($zongrenshu - $canyurenshu) == 0) {
                 
-                _message("OneShop价格不正确");
+                _message("1Shop价格不正确");
             }
             
             $time = time(); // 商品添加时间
@@ -1730,7 +1730,7 @@ HTML;
         if ($money < $onemoney) {
             
             echo json_encode(array(
-                "meg" => " 总价不能小于OneShop价!",
+                "meg" => " 总价不能小于1Shop价!",
                 "err" => "-1"
             ));
             

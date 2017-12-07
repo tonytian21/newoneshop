@@ -57,8 +57,8 @@
                       	   <span class="gorenci">{wc:$shops['cart_shenyu']}</span> {wc:fun:lang::get_lang('人次')}
                     </p>
 				</span>
-				<span class="moneys">{wc:$shops['money']}{wc:fun:lang::get_lang('OneShop币')}</span>
-				<span class="money"><span class="color"><b>{wc:$shops['yunjiage']}{wc:fun:lang::get_lang('OneShop币')}</b></span></span>
+				<span class="moneys">{wc:$shops['money']}{wc:fun:lang::get_lang('1Shop币')}</span>
+				<span class="money"><span class="color"><b>{wc:$shops['yunjiage']}{wc:fun:lang::get_lang('1Shop币')}</b></span></span>
 				<span class="num">
 				<a href="JavaScript:;" val="{wc:$shops['id']}" class="jia">+</a>				
 					<dl class="add">					
@@ -74,7 +74,7 @@
 			</li>		
 			{wc:loop:end}
 			<li class="ts">
-				<p class="right">{wc:fun:lang::get_lang('总计')}:<span id="moenyCount"  style="color: #f60;">{wc:$MoenyCount}</span>{wc:fun:lang::get_lang('OneShop币')}</p>
+				<p class="right">{wc:fun:lang::get_lang('总计')}:<span id="moenyCount"  style="color: #f60;">{wc:$MoenyCount}</span>{wc:fun:lang::get_lang('1Shop币')}</p>
 			</li>
 		</ul>
 	</div>
@@ -137,13 +137,13 @@ num.keyup(function(){
 	var shopid=$(this).attr("val");
 	var zindex=num.index(this);	
 	if($(this).val() > info[shopid]['shenyu']){
-		message.eq(zindex).text("{wc:fun:lang::get_lang('OneShop次数不能超过')}"+info[shopid]['shenyu']+"{wc:fun:lang::get_lang('次')}");		
+		message.eq(zindex).text("{wc:fun:lang::get_lang('1Shop次数不能超过')}"+info[shopid]['shenyu']+"{wc:fun:lang::get_lang('次')}");		
 		$(this).val(info[shopid]['shenyu']);
 		UpdataMoney(shopid,$(this).val(),zindex);		
 		return;
 	}
 	if($(this).val()<1){
-		message.eq(zindex).text("{wc:fun:lang::get_lang('OneShop次数不能少于1次')}");
+		message.eq(zindex).text("{wc:fun:lang::get_lang('1Shop次数不能少于1次')}");
 		$(this).val(1);
 		UpdataMoney(shopid,$(this).val(),zindex);
 		return;

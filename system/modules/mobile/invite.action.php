@@ -19,7 +19,7 @@ class invite extends base {
             public function friends(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title=lang::get_lang("我的OneShop中心");
+        $title=lang::get_lang("我的1Shop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -33,7 +33,7 @@ class invite extends base {
         $mysql_model=System::load_sys_class('model');
         $member=$this->userinfo;
         $uid=_getcookie('uid');
-        $notinvolvednum=0;  //未参加OneShop的人数
+        $notinvolvednum=0;  //未参加1Shop的人数
         $involvednum=0;     //参加预购的人数
         $involvedtotal=0;   //邀请人数
 
@@ -78,7 +78,7 @@ class invite extends base {
         public function friends1(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title=lang::get_lang("我的OneShop中心");
+        $title=lang::get_lang("我的1Shop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -92,7 +92,7 @@ class invite extends base {
         $mysql_model=System::load_sys_class('model');
         $member=$this->userinfo;
         $uid=_getcookie('uid');
-        $notinvolvednum=0;  //未参加OneShop的人数
+        $notinvolvednum=0;  //未参加1Shop的人数
         $involvednum=0;     //参加预购的人数
         $involvedtotal=0;   //邀请人数
 
@@ -185,7 +185,7 @@ class invite extends base {
     public function commissions(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title=lang::get_lang("我的OneShop中心");
+        $title=lang::get_lang("我的1Shop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -266,7 +266,7 @@ class invite extends base {
 
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title=lang::get_lang("我的OneShop中心");
+        $title=lang::get_lang("我的1Shop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -383,7 +383,7 @@ class invite extends base {
     function record(){
         $webname=$this->_cfg['web_name'];
         $member=$this->userinfo;
-        $title=lang::get_lang("我的OneShop中心");
+        $title=lang::get_lang("我的1Shop中心");
         $memberdj=$this->db->GetList("select * from `@#_member_group`");
         $jingyan=$member['jingyan'];
         if(!empty($memberdj)){
@@ -410,22 +410,22 @@ class invite extends base {
         include templates("mobile/invite","record");
     }
 
-	//OneShop记录
+	//1Shop记录
 	public function userbuylist(){
 	   $webname=$this->_cfg['web_name'];
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
 		$uid = $member['uid'];
-		$title=lang::get_lang("OneShop记录");					
+		$title=lang::get_lang("1Shop记录");					
 		//$record=$mysql_model->GetList("select * from `@#_member_go_record` where `uid`='$uid' ORDER BY `time` DESC");				
 		include templates("mobile/user","userbuylist");
 	}
-	//OneShop记录详细
+	//1Shop记录详细
 	public function userbuydetail(){
 	    $webname=$this->_cfg['web_name'];
 		$mysql_model=System::load_sys_class('model');
 		$member=$this->userinfo;
-		$title=lang::get_lang("OneShop详情");
+		$title=lang::get_lang("1Shop详情");
 		$crodid=intval($this->segment(4));
 		$record=$mysql_model->GetOne("select * from `@#_member_go_record` where `id`='$crodid' and `uid`='$member[uid]' LIMIT 1");		
 		if($crodid>0){

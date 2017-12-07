@@ -529,7 +529,7 @@ class cart extends base {
 
 		$pay->pay_type_bank = $pay_type_bank;
 
-		$ok = $pay->init($uid,$pay_type_id,'go_record');	//OneShop商品	
+		$ok = $pay->init($uid,$pay_type_id,'go_record');	//1Shop商品	
 
 
 

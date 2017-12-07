@@ -59,12 +59,6 @@ class dingdan extends admin
                 "insert",
                 "待收货",
                 ROUTE_M . '/' . ROUTE_C . "/lists/shouhuo"
-            ),
-            
-            array(
-                "genzhong",
-                "<b>快递跟踪</b>",
-                ROUTE_M . '/' . ROUTE_C . "/genzhong"
             )
         
         );

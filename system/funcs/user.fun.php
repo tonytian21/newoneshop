@@ -149,7 +149,7 @@ function get_user_arr($key = '', $where = '')
 }
 
 /*
- * 获取用户单个商品的总OneShop次数
+ * 获取用户单个商品的总1Shop次数
  */
 function get_user_goods_num($uid = null, $sid = null)
 {
