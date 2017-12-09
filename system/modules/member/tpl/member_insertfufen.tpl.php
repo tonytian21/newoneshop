@@ -52,23 +52,58 @@ input.button{ display:inline-block}
 			</td>
 		</tr>
 		<tr>
+			<td width="120" align="right">邀请好友数量：</td>
+			<td>
+				<input type="text" name="f_visitusercount1" value="<?php echo $config['f_visitusercount1'];?>" class="input-text" style="width: 140px;">-<input type="text" name="f_visitusercount12" value="<?php echo $config['f_visitusercount12'];?>" class="input-text" style="width: 140px;">(&nbsp;个&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="z_visitusercount1" value="<?php echo $config['z_visitusercount1'];?>" class="input-text">(佣金)
+			</td>
+		</tr>
+		<tr>
+			<td width="120" align="right"></td>
+			<td>
+				<input type="text" name="f_visitusercount2" value="<?php echo $config['f_visitusercount2'];?>" class="input-text" style="width: 140px;">-<input type="text" name="f_visitusercount22" value="<?php echo $config['f_visitusercount22'];?>" class="input-text" style="width: 140px;">(&nbsp;个&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="z_visitusercount2" value="<?php echo $config['z_visitusercount2'];?>" class="input-text">(佣金)
+			</td>
+		</tr>
+		<tr>
+			<td width="120" align="right"></td>
+			<td>
+				<input type="text" name="f_visitusercount3" value="<?php echo $config['f_visitusercount3'];?>" class="input-text" style="width: 140px;">-<input type="text" name="f_visitusercount32" value="<?php echo $config['f_visitusercount32'];?>" class="input-text" style="width: 140px;">(&nbsp;个&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="z_visitusercount3" value="<?php echo $config['z_visitusercount3'];?>" class="input-text">(佣金)
+			</td>
+		</tr>
+		<tr>
+			<td width="120" align="right"></td>
+			<td>
+				<input type="text" name="f_visitusercount4" value="<?php echo $config['f_visitusercount4'];?>" class="input-text" style="width: 140px;">-<input type="text" name="f_visitusercount42" value="<?php echo $config['f_visitusercount42'];?>" class="input-text" style="width: 140px;">(&nbsp;个&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="z_visitusercount4" value="<?php echo $config['z_visitusercount4'];?>" class="input-text">(佣金)
+			</td>
+		</tr>
+		<tr>
+			<td width="120" align="right"></td>
+			<td>
+				<input type="text" name="f_visitusercount5" value="<?php echo $config['f_visitusercount5'];?>" class="input-text" style="width: 140px;">-<input type="text" name="f_visitusercount52" value="<?php echo $config['f_visitusercount52'];?>" class="input-text" style="width: 140px;">(&nbsp;个&nbsp;&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="z_visitusercount5" value="<?php echo $config['z_visitusercount5'];?>" class="input-text">(佣金)
+			</td>
+		</tr>
+		<tr>
 			<td width="120" align="right">一元抵扣：</td>
 			<td>
 				<input type="text" name="fufen_yuan" value="<?php echo $config['fufen_yuan'];?>" class="input-text">(积分/元)&nbsp;&nbsp;&nbsp;&nbsp;备注：积分请输入10的整数
 			</td>
 		</tr>
-		<tr>
+		<!--tr>
 			<td width="120" align="right">佣金返回：</td>
 			<td>
-				<input type="text" name="fufen_yongjin" maxlength="4" value="<?php echo $config['fufen_yongjin'];?>" class="input-text">&nbsp;&nbsp;&nbsp;&nbsp;备注：被邀请好友每消费一元所产生的佣金返回给邀请者！
+				<input type="text" name="fufen_yongjin" maxlength="4" value="<--?php echo $config['fufen_yongjin'];?>" class="input-text">&nbsp;&nbsp;&nbsp;&nbsp;备注：被邀请好友每消费一元所产生的佣金返回给邀请者！
 			</td>
 		</tr>
 		<tr>
 			<td width="120" align="right">佣金提现手续费：</td>
 			<td>
-				<input type="text" name="fufen_yongjintx" onkeyup="value=value.replace(/\D/g,'')"  value="<?php echo $config['fufen_yongjintx'];?>" class="input-text">&nbsp;&nbsp;&nbsp;&nbsp;备注：提现一百元佣金所产生的手续费
+				<input type="text" name="fufen_yongjintx" onkeyup="value=value.replace(/\D/g,'')"  value="<--?php echo $config['fufen_yongjintx'];?>" class="input-text">&nbsp;&nbsp;&nbsp;&nbsp;备注：提现一百元佣金所产生的手续费
 			</td>
-		</tr>
+		</tr-->
 		<tr>
         	<td width="120" align="right"></td>
             <td>

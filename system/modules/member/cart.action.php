@@ -661,7 +661,10 @@ class cart extends base {
 				$shoplist['umoney'] = $money['money'];
 
 				$shoplist['ustatus'] ='1';
+				//获取购买改商品的最后10个用户
+				$userlist = $this->db->GetList("select A.* from `@#_member` A INNER join `@#_member_go_record` B on A.uid=B.uid where B.shopid=".$id." limit 10");
 
+				$shoplist['userList'] = $userlist;
 			}
 
 			echo json_encode($shoplist);

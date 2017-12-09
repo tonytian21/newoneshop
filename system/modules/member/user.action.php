@@ -445,6 +445,24 @@ class user extends base {
 
 					$this->db->Query("UPDATE `@#_member` SET `score`=`score`+'$fili_cfg[f_visituser]',`jingyan`=`jingyan`+'$fili_cfg[z_visituser]' where uid='$yaoqinguid'");
 
+					//获取该用户邀请的总人数
+					$yaoqingCount = $this->db->GetOne("select count(0) as visitcount from `@#_member` where `yaoqing`='$yaoqinguid'");
+
+					//计算邀请佣金，佣金直接充值
+					$y_money = 0;
+					for($i = 1; $i <= 5; $i ++){
+						if($yaoqingCount > intval($fili_cfg['f_visitusercount'.$i]) && ($yaoqingCount <= intval($fili_cfg['f_visitusercount'.$i.'2'])) || intval($fili_cfg['f_visitusercount'.$i.'2']) == 0){
+							$y_money = floatval($fili_cfg['z_visitusercount'.$i]);
+						}
+					}
+					
+					f($y_money){
+						$time = time();
+
+						$db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$yaoqinguid', '1', '账户', '邀请用户佣金', '$goodsInfo[money]', '$time')");
+						
+						$db->Query("UPDATE `@#_member` SET `money`=`money` + $y_money WHERE (`uid`='$yaoqinguid')");	
+					}
 				}
 
 				$this->db->Query("UPDATE `@#_member` SET emailcode='1',email = '$member[reg_key]' where `uid`='$member[uid]'");

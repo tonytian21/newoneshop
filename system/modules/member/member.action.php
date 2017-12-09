@@ -732,7 +732,23 @@ class member extends admin {
 
 				$fufen_yongjin=floatval(trim($_POST['fufen_yongjin']));
 
-	
+				
+				$f_visitusercount1=intval(trim($_POST['f_visitusercount1']));
+				$f_visitusercount12=intval(trim($_POST['f_visitusercount12']));
+				$f_visitusercount2=intval(trim($_POST['f_visitusercount2']));
+				$f_visitusercount22=intval(trim($_POST['f_visitusercount22']));
+				$f_visitusercount3=intval(trim($_POST['f_visitusercount3']));
+				$f_visitusercount32=intval(trim($_POST['f_visitusercount32']));
+				$f_visitusercount4=intval(trim($_POST['f_visitusercount4']));
+				$f_visitusercount42=intval(trim($_POST['f_visitusercount42']));
+				$f_visitusercount5=intval(trim($_POST['f_visitusercount5']));
+				$f_visitusercount52=intval(trim($_POST['f_visitusercount52']));
+
+				$z_visitusercount1=floatval(trim($_POST['z_visitusercount1']));
+				$z_visitusercount2=floatval(trim($_POST['z_visitusercount2']));
+				$z_visitusercount3=floatval(trim($_POST['z_visitusercount3']));
+				$z_visitusercount4=floatval(trim($_POST['z_visitusercount4']));
+				$z_visitusercount5=floatval(trim($_POST['z_visitusercount5']));
 
 				$fufen_yongjintx=floatval(trim($_POST['fufen_yongjintx']));
 
@@ -776,8 +792,22 @@ return array (
 
 	'fufen_yongjin' => '$fufen_yongjin',
 
-	'fufen_yongjintx' => '$fufen_yongjintx'
-
+	'fufen_yongjintx' => '$fufen_yongjintx',
+	'f_visitusercount1'=>'$f_visitusercount1',
+	'f_visitusercount12'=>'$f_visitusercount12',
+	'f_visitusercount2'=>'$f_visitusercount2',
+	'f_visitusercount22'=>'$f_visitusercount22',
+	'f_visitusercount3'=>'$f_visitusercount3',
+	'f_visitusercount32'=>'$f_visitusercount32',
+	'f_visitusercount4'=>'$f_visitusercount4',
+	'f_visitusercount42'=>'$f_visitusercount42',
+	'f_visitusercount5'=>'$f_visitusercount5',
+	'f_visitusercount52'=>'$f_visitusercount52',
+	'z_visitusercount1'=>'$z_visitusercount1',
+	'z_visitusercount2'=>'$z_visitusercount2',
+	'z_visitusercount3'=>'$z_visitusercount3',
+	'z_visitusercount4'=>'$z_visitusercount4',
+	'z_visitusercount5'=>'$z_visitusercount5',
 );
 
 ?>

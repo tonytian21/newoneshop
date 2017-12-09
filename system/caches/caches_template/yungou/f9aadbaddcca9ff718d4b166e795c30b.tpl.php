@@ -32,6 +32,8 @@
 
 	<link rel="stylesheet" type="text/css"
 		href="<?php echo G_TEMPLATES_CSS; ?>/mycart.css" />
+	<link rel="stylesheet" type="text/css"
+	href="<?php echo G_TEMPLATES_CSS; ?>/paopao.css" />
 <?php if($this->_cfg['route_l'] == 'en-us'): ?>
     <script src="<?php echo G_TEMPLATES_JS; ?>/en-us.js" language="javascript" type="text/javascript"></script> 
     <?php  else: ?>

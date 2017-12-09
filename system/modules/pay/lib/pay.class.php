@@ -268,7 +268,7 @@ class pay {
 			if(!$pay_1){return $pay_1;}
 			$dingdancode=$this->dingdancode;
 			$pay_2 = pay_go_fund($this->goods_count_num);
-			$pay_3 = pay_go_yongjin($uid,$dingdancode);
+//			$pay_3 = pay_go_yongjin($uid,$dingdancode);
 			return $pay_1;
 		}
 		if(!is_array($this->pay_type)){
@@ -417,7 +417,7 @@ class pay {
 			if(!$pay_1){return $pay_1;}
 			$dingdancode=$this->dingdancode;
 			$pay_2 = pay_go_fund($this->goods_count_num);
-			$pay_3 = pay_go_yongjin($uid,$dingdancode);
+//			$pay_3 = pay_go_yongjin($uid,$dingdancode);
 			return $pay_1;
 
 		}else{
