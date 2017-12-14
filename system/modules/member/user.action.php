@@ -456,11 +456,9 @@ class user extends base {
 						}
 					}
 					
-					f($y_money){
-						$time = time();
-
+					if($y_money){
+					    $time = time();
 						$db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$yaoqinguid', '1', '账户', '邀请用户佣金', '$goodsInfo[money]', '$time')");
-						
 						$db->Query("UPDATE `@#_member` SET `money`=`money` + $y_money WHERE (`uid`='$yaoqinguid')");	
 					}
 				}
@@ -641,7 +639,8 @@ class user extends base {
 
 		if(empty($_POST['param'])){
 
-			$message['status']='x';$message['info']=lang::get_lang("验证码输入错误");
+			$message['status']='x';
+			$message['info']=lang::get_lang("验证码输入错误");
 
 			echo json_encode($message);
 
