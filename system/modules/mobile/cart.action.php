@@ -285,12 +285,12 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
   // 			_messagemobile ( "正在返回购物车...<a href='{$WEB_PATH}/mobile/cart/cartlist' style='color:#22AAFF'>返回购物车</a>查看" );
 		  }
 		  
-		
+		/*
 		  $zhifutype = $this->db->GetOne ( "select * from `@#_pay` where `pay_class` = 'alipay' " );
 		  if (! $zhifutype) {
 			  _messagemobile ( "手机支付只支持易宝,请联系站长开通！" );
 		  }
-		  
+		  */
 		  $pay_checkbox = false;
 		  $pay_type_bank = false;
 		  $pay_type_id = false;
