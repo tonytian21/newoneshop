@@ -42,9 +42,21 @@ editurl['imageManager']='<?php echo G_ADMIN_PATH; ?>/ueditor/imagemanager';
 			</td>
 		</tr>
 		<tr>
+			<td width="120" align="right">幻灯英文名称:</td>
+			<td>
+				<input type="text" name="titleen" value="" class="input-text wid300" />
+			</td>
+		</tr>
+		<tr>
 			<td width="120" align="right">幻灯链接:</td>
 			<td>
 				<input type="text" name="link" value="" class="input-text wid300"/>
+			</td>
+		</tr>
+		<tr>
+			<td width="120" align="right">英文幻灯链接:</td>
+			<td>
+				<input type="text" name="linken" value="" class="input-text wid300"/>
 			</td>
 		</tr>
         <tr>
@@ -64,6 +76,17 @@ editurl['imageManager']='<?php echo G_ADMIN_PATH; ?>/ueditor/imagemanager';
 			<input type="button" class="button"
              onClick="GetUploadify('<?php echo WEB_PATH; ?>','uploadify','缩略图上传','image','banner',1,500000,'imagetext')" 
              value="上传图片"/>
+            </td>
+        </tr>
+         <tr>
+        	<td width="120" align="right">英文图片:</td>
+            <td>	
+            <img height="50px" src=""/>
+            <input type="text" name="imageen" id="imagetexten" value="" class="input-text wid300">
+			<input type="button" class="button"
+             onClick="GetUploadify('<?php echo WEB_PATH; ?>','uploadify','缩略图上传','image','banneren',1,500000,'imagetexten')" 
+             value="上传图片"/>
+            
             </td>
         </tr>
 

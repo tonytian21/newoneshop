@@ -22,13 +22,21 @@ class wap extends admin {
 		$title=htmlspecialchars(trim($_POST['title'])); 
 		$link=htmlspecialchars(trim($_POST['link']));
 		$title2=htmlspecialchars(trim($_POST['title2']));
+		$titleen=htmlspecialchars(trim($_POST['titleen'])); 
+		$linken=htmlspecialchars(trim($_POST['linken']));
 		if(isset($_POST['image'])){
 				$img=$_POST['image'];
 			}else{
 				$img=$slideone['img'];
 			}
+
+		if(isset($_POST['imageen'])){
+				$imgen=$_POST['imageen'];
+			}else{
+				$imgen=$slideone['img'];
+			}
 			 
-		$this->db->Query("insert into `@#_wap`(`title`,`link`,`img`,`color`) values('$title','$link','$img','$title2') ");	
+		$this->db->Query("insert into `@#_wap`(`title`,`link`,`img`,`color`,`titleen`,`linken`,`imgen`) values('$title','$link','$img','$title2','$titleen','$linken','$imgen') ");	
 			if($this->db->affected_rows()){
 					_message("添加成功",WEB_PATH.'/'.ROUTE_M.'/'.ROUTE_C."/init");
 			}else{
@@ -57,12 +65,20 @@ class wap extends admin {
 			$title=htmlspecialchars(trim($_POST['title']));	
 			$link=htmlspecialchars(trim($_POST['link']));	
 			$title2=htmlspecialchars(trim($_POST['title2']));
+			$titleen=htmlspecialchars(trim($_POST['titleen'])); 
+			$linken=htmlspecialchars(trim($_POST['linken']));
 			if(isset($_POST['image'])){
-				$img=$_POST['image'];
-			}else{
-				$img=$slideone['img'];
-			}		
-			$this->db->Query("UPDATE `@#_wap` SET `img`='$img',`title`='$title',`link`='$link',`color`='$title2' WHERE `id`=$id");
+					$img=$_POST['image'];
+				}else{
+					$img=$slideone['img'];
+				}
+
+			if(isset($_POST['imageen'])){
+					$imgen=$_POST['imageen'];
+				}else{
+					$imgen=$slideone['img'];
+				}	
+			$this->db->Query("UPDATE `@#_wap` SET `img`='$img',`title`='$title',`link`='$link',`color`='$title2',`titleen`='$titleen',`linken`='$linken',`imgen`='$imgen' WHERE `id`=$id");
 			if($this->db->affected_rows()){
 					_message("修改成功",WEB_PATH.'/'.ROUTE_M.'/'.ROUTE_C."/init");
 			}else{

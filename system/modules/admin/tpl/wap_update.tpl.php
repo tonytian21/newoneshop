@@ -32,9 +32,22 @@ input.button{ display:inline-block}
 			</td>
 		</tr>
 		<tr>
+			<td width="120" align="right">幻灯英文名称:</td>
+			<td>
+				<input type="text" name="titleen" value="<?php echo $wapone['titleen'];?>" class="input-text wid300" />
+			</td>
+		</tr>
+		<tr>
 			<td width="120" align="right">幻灯链接:</td>
 			<td>
 				<input type="text" name="link" value="<?php echo $wapone['link'];?>" class="input-text wid300"/>
+				 地址前,系统会默认添加 <?php echo WEB_PATH; ?>/   
+			</td>
+		</tr>
+		<tr>
+			<td width="120" align="right">幻灯英文链接:</td>
+			<td>
+				<input type="text" name="linken" value="<?php echo $wapone['linken'];?>" class="input-text wid300"/>
 				 地址前,系统会默认添加 <?php echo WEB_PATH; ?>/   
 			</td>
 		</tr>
@@ -48,12 +61,22 @@ input.button{ display:inline-block}
             </td>
 		</tr>
 		   <tr>
-        	<td width="120" align="right">图asdff片:</td>
+        	<td width="120" align="right">图片:</td>
             <td>	
             <img height="50px" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $wapone['img']; ?>"/>
             <input type="text" name="image" id="imagetext" value="<?php echo $wapone['img'];?>" id="imagetext" class="input-text wid300">
 			<input type="button" class="button"
              onClick="GetUploadify('<?php echo WEB_PATH; ?>','uploadify','缩略图上传','image','banner',1,500000,'imagetext')" 
+             value="上传图片"/>
+            </td>
+        </tr>
+        <tr>
+        	<td width="120" align="right">英文图片:</td>
+            <td>	
+            <img height="50px" src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $wapone['imgen']; ?>"/>
+            <input type="text" name="imageen" id="imagetexten" value="<?php echo $wapone['imgen'];?>"  class="input-text wid300">
+			<input type="button" class="button"
+             onClick="GetUploadify('<?php echo WEB_PATH; ?>','uploadify','缩略图上传','image','banneren',1,500000,'imagetexten')" 
              value="上传图片"/>
             </td>
         </tr>
