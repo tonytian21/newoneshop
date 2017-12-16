@@ -68,8 +68,14 @@
                 <div class="swiper-wrapper">
                     {wc:loop $shop_ad $ad}
                     <div class="swiper-slide swiper-slide-active">
+                        {wc:if $this->_cfg['route_l'] == 'en-us'}
+                        <a href="{wc:$ad['linken']}">
+                            <img alt="{wc:$ad['titleen']}" src="{G_UPLOAD_PATH}/{wc:$ad['imgen']}"></a>
+                        {wc:else}
                         <a href="{wc:$ad['link']}">
                             <img alt="{wc:$ad['title']}" src="{G_UPLOAD_PATH}/{wc:$ad['img']}"></a>
+                        {wc:if:end}
+                        
                     </div>
                     {wc:loop:end}
                 </div>
