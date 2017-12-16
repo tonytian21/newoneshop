@@ -143,7 +143,7 @@ $(function(){
 		}else{
 			var qzid="{wc:$quanzi['id']}";
 			var text=$("#btnJoinOutGroup").text();
-			new Myajax({
+			$.ajax({
 				type:"POST",
 				url:"{WEB_PATH}/group/group/goqz",
 				data:{id:qzid,text:text},

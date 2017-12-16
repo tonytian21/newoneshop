@@ -16,7 +16,7 @@
 	var Net_Path = '{WEB_PATH}', Img_Path = '{G_TEMPLATES_STYLE}/images/mobile', indexMark = "",indexTree="",ssid="ca39172c00742697e16acd1e6fccfe48929782a4",Appid="wxd4b1d5dbed7a8b49";
 
 		localStorage.ssr_deviceid = "f3eb6e297e277a9d90e6217082647417";
-		try{if(localStorage.ssr_deviceid==undefined||localStorage.ssr_deviceid.length<30){new Myajax({type:"POST",async:false,dataType:"json",url: "/app/common/deviceid",success:function(data){
+		try{if(localStorage.ssr_deviceid==undefined||localStorage.ssr_deviceid.length<30){$.ajax({type:"POST",async:false,dataType:"json",url: "/app/common/deviceid",success:function(data){
 				if(data.err==0){localStorage.ssr_deviceid = data.deviceid;}}})}
 		}catch(err){}
 		var dataCollectionModel = {};

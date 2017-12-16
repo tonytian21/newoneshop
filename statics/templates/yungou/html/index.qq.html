@@ -49,7 +49,7 @@ var opt0 =["----{wc:fun:lang::get_lang('请选择')}----","----{wc:fun:lang::get
 	     var  prov = $("#s_province").val(); 
 		 var cityv = $("#s_city").val();
 		 var  couv = $("#s_county").val();
-		new Myajax({
+		$.ajax({
 			type: "get",
 			url: "{WEB_PATH}/go/qq_qun/get_cityqq/"+prov+'/'+cityv+'/'+couv,
 			success: function(data){				
@@ -61,7 +61,7 @@ var opt0 =["----{wc:fun:lang::get_lang('请选择')}----","----{wc:fun:lang::get
 	     var  prov = $("#s_province").val(); 
 		 var cityv = $("#s_city").val();
 		 var  couv = $("#s_county").val();
-		 new Myajax({
+		 $.ajax({
 			type: "get",
 			url: "{WEB_PATH}/go/qq_qun/get_cityqq/"+prov+'/'+cityv+'/'+couv,
 			success: function(data){
@@ -73,7 +73,7 @@ var opt0 =["----{wc:fun:lang::get_lang('请选择')}----","----{wc:fun:lang::get
 	     var  prov = $("#s_province").val(); 
 		 var cityv = $("#s_city").val();
 		 var  couv = $("#s_county").val();
-		 new Myajax({
+		 $.ajax({
 			type: "get",
 			url: "{WEB_PATH}/go/qq_qun/get_cityqq/"+prov+'/'+cityv+'/'+couv,
 			success: function(data){

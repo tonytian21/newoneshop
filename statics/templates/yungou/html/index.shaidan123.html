@@ -102,7 +102,7 @@ $(".h_mobile").mouseout(function(){
 	var timer = setInterval(time_rand,1000);
 	document.getElementById("kaishi").innerHTML="{wc:fun:lang::get_lang('执行时间')}:"+rand+"{wc:fun:lang::get_lang('秒')}";
 	function ajax(){
-	    new Myajax({
+	    $.ajax({
 	    	url:"{WEB_PATH}/go/shua/xcaction",
 	        type : 'post',
 	        data : {sn:123}, 

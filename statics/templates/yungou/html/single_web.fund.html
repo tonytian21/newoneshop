@@ -96,7 +96,7 @@
 <script>
 
 $(function(){
-	new Myajax({
+	$.ajax({
 		url:"{WEB_PATH}/api/fund/get",
 		success:function(msg){
 			$("#pFundMoney").text(msg);
