@@ -384,6 +384,6 @@ $(function() {
 
     };
 
-    Base.getScript(Gobal.Skin + "/js/mobile/Comm.js", a)
+    Base.getScript(Gobal.JsPath + "/mobile/Comm.js", a)
 
 });

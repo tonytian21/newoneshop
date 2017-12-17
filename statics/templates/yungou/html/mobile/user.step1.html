@@ -85,9 +85,9 @@
                     });
                 };
                 var a = function() {
-                    Base.getScript(Path.Skin + "/js/mobile/pageDialog.js", b);
+                    Base.getScript(Path.JsPath + "/mobile/pageDialog.js", b);
                 };
-                Base.getScript(Path.Skin + "/js/mobile/Comm.js", a);
+                Base.getScript(Path.JsPath + "/mobile/Comm.js", a);
             });
             </script>
         </div>
@@ -97,7 +97,7 @@
         Path.Skin = "{G_TEMPLATES_STYLE}";
         Path.Webpath = "{WEB_PATH}";
         Path.imgpath = "{G_WEB_PATH}/statics";
-
+Path.JsPath="{G_TEMPLATES_JS}";
         var Base = {
             head: document.getElementsByTagName("head")[0] || document.documentElement,
             Myload: function(B, A) {

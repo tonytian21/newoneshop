@@ -1,15 +1,15 @@
-<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/js/jquery.Jcrop.css" />
-<link rel="stylesheet" href="{G_TEMPLATES_STYLE}/js/uploadify.css" type="text/css"> 
-<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.Jcrop.js"></script>
-<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.uploadify-3.1.min.js"></script> 
-<link href="{G_TEMPLATES_STYLE}/js/style.css" rel="stylesheet" type="text/css" />
-<link href="{G_TEMPLATES_STYLE}/js/demo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_JS}jquery.Jcrop.css" />
+<link rel="stylesheet" href="{G_TEMPLATES_JS}uploadify.css" type="text/css"> 
+<script type="text/javascript" src="{G_TEMPLATES_JS}jquery.Jcrop.js"></script>
+<script type="text/javascript" src="{G_TEMPLATES_JS}jquery.uploadify-3.1.min.js"></script> 
+<link href="{G_TEMPLATES_JS}style.css" rel="stylesheet" type="text/css" />
+<link href="{G_TEMPLATES_JS}demo.css" rel="stylesheet" type="text/css" />
 {wc:if $this->_cfg['route_l'] == 'en-us'}
 <script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
 {wc:else}
 <script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
 {wc:if:end}
-<script type="text/javascript" src="{G_TEMPLATES_STYLE}/js/jquery.Validform.min.js"></script>
+<script type="text/javascript" src="{G_TEMPLATES_JS}jquery.Validform.min.js"></script>
 <div class="subMenu">
 	{wc:if $title==lang::get_lang('编辑个人资料')}<a class="current2 current" href="{WEB_PATH}/member/home/modify"> {wc:else}<a class="current2" href="{WEB_PATH}/member/home/modify">{wc:if:end}{wc:fun:lang::get_lang('个人资料')}</a>
 	{wc:if $title==lang::get_lang('修改头像')}<a class="current" href="{WEB_PATH}/member/home/userphoto"> {wc:else}<a href="{WEB_PATH}/member/home/userphoto">{wc:if:end}{wc:fun:lang::get_lang('修改头像')}</a>

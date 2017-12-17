@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/Post/JS/PostListFun.js?v=130826");
+Base.getScript(Gobal.JsPath+"/mobile/PostListFun.js?v=130826");

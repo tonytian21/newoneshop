@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/CartindexFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/CartindexFun.js");

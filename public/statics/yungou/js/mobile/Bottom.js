@@ -106,6 +106,8 @@ var addNumToCartFun = null; (function() {
 
     Gobal.Skin = Path.Skin; 
 
+    Gobal.JsPath = Path.JsPath;
+
     Gobal.Webpath = Path.Webpath; 
 
     Gobal.imgpath = Path.imgpath;  //上传图片地址

@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/IndexFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/IndexFun.js");

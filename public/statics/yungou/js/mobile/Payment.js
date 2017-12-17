@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/PaymentFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/PaymentFun.js");

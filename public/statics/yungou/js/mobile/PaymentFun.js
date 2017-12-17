@@ -481,6 +481,6 @@ $(function() {
 
     };
 
-    Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", b)
+    Base.getScript(Gobal.JsPath + "/mobile/pageDialog.js", b)
 
 });

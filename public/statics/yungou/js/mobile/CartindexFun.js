@@ -233,7 +233,7 @@ $(".tags li").on("click",function(){
      };
 
      if (a.length > 0) {
-         Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", b)
+         Base.getScript(Gobal.JsPath + "/mobile/pageDialog.js", b)
      } else {
          c.show()
      }

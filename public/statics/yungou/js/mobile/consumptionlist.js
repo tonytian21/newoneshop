@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/consumptionListFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/consumptionListFun.js");

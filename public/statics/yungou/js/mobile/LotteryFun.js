@@ -220,7 +220,7 @@ $(function() {
 
             } else {
 
-                Base.getScript(Gobal.Skin + "/js/mobile/LotteryTimeFun.js",
+                Base.getScript(Gobal.JsPath + "/mobile/LotteryTimeFun.js",
 
                 function() {
 
@@ -236,7 +236,7 @@ $(function() {
 
     };
 
-    Base.getScript(Gobal.Skin + "/js/mobile/comm.js", k)
+    Base.getScript(Gobal.JsPath + "/mobile/comm.js", k)
 
             $(window).scroll(function () {         
             if ($(document).height() - $(this).scrollTop() - $(this).height() < 1

@@ -265,5 +265,5 @@ $(function() {
         s.bind("click", u);
         a = true
     };
-    Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", b)
+    Base.getScript(Gobal.JsPath + "/mobile/pageDialog.js", b)
 });

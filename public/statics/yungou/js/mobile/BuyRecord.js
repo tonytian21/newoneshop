@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/JS/BuyRecordFun.js?v=130903");
+Base.getScript(Gobal.JsPath + "/BuyRecordFun.js?v=130903");

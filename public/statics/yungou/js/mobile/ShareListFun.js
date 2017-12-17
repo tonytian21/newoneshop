@@ -246,7 +246,7 @@ $(function() {
             b("请先获取短信验证码")
         })
     };
-    Base.getScript(Gobal.Skin + "/JS/pageDialog.js",
+    Base.getScript(Gobal.JsPath + "/mobile/pageDialog.js",
     function() {
         a();
         d()

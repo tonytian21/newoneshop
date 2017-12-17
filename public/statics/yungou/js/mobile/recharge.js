@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/RechargeFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/RechargeFun.js");

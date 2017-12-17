@@ -15,7 +15,7 @@ $(function() {
                     }
                 })
             };
-            Base.getScript(Gobal.Skin + "/js/mobile/CountdownFun.js", b)
+            Base.getScript(Gobal.JsPath + "/mobile/CountdownFun.js", b)
         }
         var i = c.find("div[name=waiterItem]");
         if (i.length > 0) {
@@ -63,7 +63,7 @@ $(function() {
                 if (k) {
                     m(n.listItems)
                 } else {
-                    Base.getScript(Gobal.Skin + "/js/mobile/indexLotteryFun.js",
+                    Base.getScript(Gobal.JsPath + "/mobile/indexLotteryFun.js",
                     function() {
                         k = true;
                         m(n.listItems)
@@ -96,7 +96,7 @@ $(function() {
                 startAt: l
             });
         };
-        Base.getScript(Gobal.Skin + "/js/mobile/Flexslider.js", e);
+        Base.getScript(Gobal.JsPath + "/mobile/Flexslider.js", e);
         var d = function(l) {
             if (l && l.stopPropagation) {
                 l.stopPropagation()

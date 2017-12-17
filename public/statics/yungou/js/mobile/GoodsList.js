@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/JS/GoodsListFun.js?v=130826");
+Base.getScript(Gobal.JsPath + "/GoodsListFun.js?v=130826");

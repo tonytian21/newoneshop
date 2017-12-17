@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/JS/IndexFun.js?v=150129");
+Base.getScript(Gobal.JsPath + "/IndexFun.js?v=150129");

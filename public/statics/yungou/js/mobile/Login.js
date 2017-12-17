@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/LoginFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/LoginFun.js");

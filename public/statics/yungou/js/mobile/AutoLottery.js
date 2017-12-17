@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/AutoLotteryFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/AutoLotteryFun.js");

@@ -1,1 +1,1 @@
-Base.getScript(Gobal.Skin+"/js/mobile/CalResultFun.js");
+Base.getScript(Gobal.JsPath + "/mobile/CalResultFun.js");
