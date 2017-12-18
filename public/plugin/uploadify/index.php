@@ -147,7 +147,7 @@ function SetImgContent(data)
 		{
 			var sLi = "";
 			sLi += '<li class="img">';
-			sLi += '<img src="../../../' + resjson[2] + '" width="100" height="100" onerror="this.src=\'nopic.png\'">';
+			sLi += '<img src="../../../' + resjson[2] + ' width="100" height="100" onerror="this.src=\'nopic.png\'">';
 			sLi += '<input type="hidden" name="fileurl_tmp[]" value="' + resjson[2] + '">';
 			sLi += '<a href="javascript:void(0);">删除</a>';
 			sLi += '</li>';
