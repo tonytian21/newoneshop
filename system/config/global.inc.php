@@ -55,7 +55,7 @@ if($param->route_l() == 'en-us'){
 }
 
 define ( "G_TEMPLATES_MOBILESHAI", G_TEMPLATES_PATH . '/' . G_STYLE . '/css/mobile/shai' );
-define ( "G_TEMPLATES_JS", G_TEMPLATES_PATH . '/' . G_STYLE . '/js' );
+define ( "G_TEMPLATES_JS", G_TEMPLATES_PATH . '/' . G_STYLE . '/js/' );
 
 define ( "G_TEMPLATES_IMAGE", G_TEMPLATES_PATH . '/' . G_STYLE . '/images' );
 

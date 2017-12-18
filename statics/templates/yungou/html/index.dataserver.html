@@ -274,10 +274,9 @@
 			</div>
 		</div>
 	</div>
-	<!--{wc:fun:lang::get_lang('商品详情')} {wc:fun:lang::get_lang('开始')}-->
 	<div class="ygRecord"
 		style="width: 1168px; padding: 15px; border: 1px solid #dfdfdf; border-top: 1px solid #dfdfdf; overflow: visible;">
-		{wc:if $item['q_content']}
+		
 		<div class="RecordOnehundred" name="div_tab"
 			style="width: 1167px; border: 1px solid #ffca8a; margin-top: 5px; border-bottom: none;">
 			<ul class="Record_title"
@@ -333,6 +332,7 @@
 			<div class="FloatBox b_red3"></div>
 			<div class="FloatBox b_red4"></div>
 			<div style="padding-top: 5px;">
+				{wc:if $item['q_content']}
 				{wc:loop $item['q_content'] $record} {wc:php:start} $record_time =
 				explode(".",$record['time']); $record['time'] = $record_time[0];
 				{wc:php:end}
@@ -358,17 +358,13 @@
 							(&nbsp{wc:fun:lang::get_lang('第*期',$record['shopqishu'])}&nbsp){wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$record['shopname']}{wc:else}{wc:$record['shopname']}{wc:if:end} </a>
 					</li>
 				</ul>
-				{wc:loop:end}
+				{wc:loop:end}{wc:if:end}
 			</div>
 		</div>
 		{wc:php:start} $shop_fmod =
 		fmod($item['q_counttime'],$item['canyurenshu']); {wc:php:end}
-
-		{wc:else}
 		
-		{wc:if:end}
 
-		<!-- {wc:fun:lang::get_lang('购买记录')} -->
 		<div name="div_tab" id="bitem" class="AllRecordCon hide"
 			style="border: 1px solid #dfdfdf; width: 1167px; display: none; margin-bottom: 0;">
 			{wc:loop $go_record_list $user}
