@@ -34,7 +34,6 @@ function showCoords(obj){
 	}
 }
 $(function(){
-	alert(22);
     $('#file_upload').uploadify({
     	'auto'     : true,
     	'removeTimeout' : 1,
@@ -66,7 +65,6 @@ $(function(){
 			}
 		},
 		'onUploadSuccess' : function(file,data,response){	
-			alert(111);
 			data =  data.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g,'');   			
 			$(".photo ul li").remove();
 			$("#divImgTip").hide();
