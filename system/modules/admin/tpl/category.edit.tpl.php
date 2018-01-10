@@ -72,8 +72,7 @@ input.button{ display:inline-block}
       </tr>
 	<tr>
       <th>英文名称：</th>
-        <td><input type="text" name="info[catdir]"  value="<?php echo $cateinfo['catdir']; ?>"
-        onKeyUp="value=value.replace(/[^\w]/ig,'')" class="input-text wid140">
+        <td><input type="text" name="info[catdir]"  value="<?php echo $cateinfo['catdir']; ?>"  class="input-text wid140">
         <span><font color="#0c0">※ </font>请输入英文名称</span> 
       </tr>
       

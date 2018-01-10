@@ -20,7 +20,7 @@ return array(
 'expstr' => '/',//url分隔符号 
 'admindir' => 'admin',//后台管理文件夹 
 'qq' => '550608418',//qq 
-'cell' => '010-59441570',//联系电话 
+'cell' => '604-4959916',//联系电话 
 'web_logo' => 'banner/20160707/27197635870709.jpg',//logo 
 'web_copyright' => 'Copyright © 1shopasia.com',//版权 
 'web_name_two' => '1Shop',//短网站名 
@@ -29,5 +29,6 @@ return array(
 'xianshi' => '0',//手机端限时揭晓是否显示 
 'web_verify' => '1',//验证码是否开启 
 'sendmobile' => '0',//发货微信提醒 
+'autobuy' => '',//正常开奖机器人最大自动购买比例 
 ); 
  ?>
