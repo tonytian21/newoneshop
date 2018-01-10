@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
 	if(empty($lotterytype)) _message("请填写抽奖类型");
 	
 	$lotterjb=trim(htmlspecialchars($_POST['lotterjb']));
-	if(empty($lotterjb)) _message("请填写消耗的积分或者金币");
+	if(empty($lotterjb)) _message("请填写消耗的银币或者金币");
 	
 	$ruledesc=trim(htmlspecialchars($_POST['ruledesc']));
 	if(empty($ruledesc)) _message("请填写奖品规则");
@@ -147,14 +147,14 @@ if(isset($_POST['submit'])){
 	<tr>
 		<td width="120" align="right">抽奖类型：</td>
 		<td>
-			<input type="radio" name="lotterytype" id="lotterytype1" value="1" class="input-text" checked>积分
+			<input type="radio" name="lotterytype" id="lotterytype1" value="1" class="input-text" checked>银币
 			<input type="radio" name="lotterytype" id="lotterytype3" value="2" class="input-text">会员免费
 			<font color="red">*会员免费,就是会员登录后才能砸，一天只能砸一次*</font>
 		</td>
 	</tr>
 	<tr>
 		<td width="120" id="jbid1" align="right" >每次消耗：</td>
-		<td id="jbid2" ><input type="text" name="lotterjb" id="jf" class="input-text wid100" >(积分)</td>
+		<td id="jbid2" ><input type="text" name="lotterjb" id="jf" class="input-text wid100" >(银币)</td>
 	</tr>
 	<tr>
 		<td width="120" align="right">活动规则：</td>

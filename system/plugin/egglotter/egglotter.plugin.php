@@ -15,7 +15,7 @@ class egglotter extends SystemAction{
 		$this->mysql_model=System::load_sys_class('model');
 		$this->userid=intval(_encrypt(_getcookie("uid"),'DECODE'));
         
-		//获取当前客户的基本信息 (积分、剩余金额等)
+		//获取当前客户的基本信息 (银币、剩余金额等)
 		$this->userinfo=$this->mysql_model->GetOne("SELECT * from `@#_member` where `uid` = '$this->userid'");		
 		$curtime=time();
 		/* if(!$this->userid){
@@ -46,8 +46,8 @@ class egglotter extends SystemAction{
 		$lotterdes='';//定义本次抽奖是按什么类型进行
 		//计算该用户有几次抽奖机会
 		if($ruleinfo['lotterytype']==1){
-			//表示是按照积分抽奖        
-			$lotterdes='积分不足！';            
+			//表示是按照银币抽奖        
+			$lotterdes='银币不足！';            
 			$lotter_opportunity=floor($this->userinfo['score']/$this->ruleinfo['lotterjb']);  		  
 		}else{
 		    //表示是按照每个会员有一次机会 
@@ -67,7 +67,7 @@ class egglotter extends SystemAction{
 		/* if($lotter_opportunity>0){
 		    include "tpl/egglotter.index.php";		  
 		}elseif($ruleinfo['lotterytype']==1){
-		    _message("你的积分已不足！本次活动按积分抽奖<br/>每次消耗".$this->ruleinfo['lotterjb']."积分",WEB_PATH);   		  
+		    _message("你的银币已不足！本次活动按银币抽奖<br/>每次消耗".$this->ruleinfo['lotterjb']."银币",WEB_PATH);   		  
 		}elseif($ruleinfo['lotterytype']==2){	
             _message("你的金币已不足！本次活动按金币抽奖<br/>每次消耗".$this->ruleinfo['lotterjb']."金币",WEB_PATH);   
 		}else{
@@ -111,7 +111,7 @@ class egglotter extends SystemAction{
 		   VALUES('$user_id','$user_name','$rule_id','$spoil_resid','$curtime')");
 		//}		 
 		//改变抽奖机会
-		//修改一次成员表中的积分      
+		//修改一次成员表中的银币      
 		if($ruleinfo['lotterytype']==1){
 		    $score=$this->userinfo['score']-$this->ruleinfo['lotterjb'];
 	        $this->mysql_model->Query("UPDATE `@#_member` SET `score`='$score' where `uid`='$user_id'");	 
@@ -134,7 +134,7 @@ class egglotter extends SystemAction{
 		   VALUES('$user_id','$user_name','$rule_id','$spoil_resid','$curtime')");
 		}		 
 		//改变抽奖机会
-		//修改一次成员表中的金币或者积分      
+		//修改一次成员表中的金币或者银币      
         if($ruleinfo['lotterytype']==2){
 		    $money=$this->userinfo['money']-$this->ruleinfo['lotterjb'];
 	        $this->mysql_model->Query("UPDATE `@#_member` SET `money`='$money' where `uid`='$user_id'");	 

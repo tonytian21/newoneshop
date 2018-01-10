@@ -307,7 +307,7 @@ class pay {
 		if($this->fufen_to_money){
 			$myfufen = $this->members['score'] - $this->fufen;
 			$query_fufen = $this->db->Query("UPDATE `@#_member` SET `score`='$myfufen' WHERE (`uid`='$uid')");
-			$pay_zhifu_name = '积分';
+			$pay_zhifu_name = '银币';
 			$this->MoenyCount = $this->fufen;
 		}
 
@@ -341,13 +341,13 @@ class pay {
 			$goods_count_num += $shop['goods_count_num'];
 		endforeach;
 
-		//添加积分
+		//添加银币
 		if(!$this->fufen_to_money){
 			$mygoscore = $fufen['f_shoppay']*$goods_count_num;
 			$mygoscore_text =  "购买了{$goods_count_num}人次商品";
 			$myscore = $this->members['score'] + $mygoscore;
 			$query_add_fufen_1 = $this->db->Query("UPDATE `@#_member` SET `score`= '$myscore' WHERE (`uid`='$uid')");
-			$query_add_fufen_2 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '积分', '$mygoscore_text', '$mygoscore', '$time')");
+			$query_add_fufen_2 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '银币', '$mygoscore_text', '$mygoscore', '$time')");
 			$query_fufen = ($query_add_fufen_1 && $query_add_fufen_2);
 		}
 

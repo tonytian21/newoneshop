@@ -684,7 +684,7 @@ class wechatCallbackapiTest
 					$contentStr = $res['contentStr'];
 				}
 			}elseif($jf_state == 'no'){
-				$contentStr = '签到送积分已停止使用';
+				$contentStr = '签到送银币已停止使用';
 			}
 			$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
 			echo $resultStr;
@@ -720,7 +720,7 @@ class wechatCallbackapiTest
 			$money = $ret['money'];
 			$jingyan = $ret['jingyan'];
 			$msgType = "text";
-			$contentStr = "尊敬的".$ret['username']."您好：\r\n账户余额：$money\r\n积分：$pay_points\r\n经验：$jingyan";
+			$contentStr = "尊敬的".$ret['username']."您好：\r\n账户余额：$money\r\n银币：$pay_points\r\n经验：$jingyan";
 			$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
 			echo $resultStr;
 			exit;
@@ -1016,11 +1016,11 @@ class wechatCallbackapiTest
 		}
 		$res_arr['errmsg'] = 'ok';
 		if($record_num['total']==0){
-			$res_arr['contentStr'] = "签到成功,\r\n共计签到1天 , 积分+";
+			$res_arr['contentStr'] = "签到成功,\r\n共计签到1天 , 银币+";
 		}
 		if($record_num['total']>0){
 			$totals = $record_num['total']+1;
-			$res_arr['contentStr'] ="您共签到".$totals."天\r\n上次签到时间：".date('Y-m-d H:i:s',$record_num['lasttime']) ."\r\n本次签到成功,积分+";
+			$res_arr['contentStr'] ="您共签到".$totals."天\r\n上次签到时间：".date('Y-m-d H:i:s',$record_num['lasttime']) ."\r\n本次签到成功,银币+";
 		}
 		return $res_arr;
 	}

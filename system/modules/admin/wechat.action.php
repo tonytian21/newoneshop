@@ -25,7 +25,7 @@ class wechat extends admin {
 
 						array("email","关键词回复设置",ROUTE_M.'/'.ROUTE_C."/keywordlists"),
 
-						array("mobile","互动积分设置",ROUTE_M.'/'.ROUTE_C."/hdcfg"),
+						array("mobile","互动银币设置",ROUTE_M.'/'.ROUTE_C."/hdcfg"),
 
 						array("payset","红包设置",ROUTE_M.'/'.ROUTE_C."/huiyuan"),	
 
@@ -308,7 +308,7 @@ class wechat extends admin {
 		include $this->tpl(ROUTE_M,'wechat.pic');
 	}
 
-	//互动积分设置
+	//互动银币设置
 	public function hdcfg(){
 		if(isset($_POST['dosubmit']) && $_POST['dosubmit'] != 'del'){
 			$data = $_POST;

@@ -112,7 +112,7 @@ $(function() {
 
                                     if (z == 2) {
 
-                                        A += '<p>状态：<span class="green">审核通过，奖励1000积分</span></p>'
+                                        A += '<p>状态：<span class="green">审核通过，奖励1000银币</span></p>'
 
                                     }
 

@@ -216,8 +216,8 @@ class mobile extends base
     public function jflist()
     {
         $webname = $this->_cfg['web_name'];
-        $title = lang::get_lang("积分购物")."_" . _cfg("web_name");
-        $key = lang::get_lang("积分购物");
+        $title = lang::get_lang("银币购物")."_" . _cfg("web_name");
+        $key = lang::get_lang("银币购物");
         include templates("mobile/index", "jflist");
     }
 

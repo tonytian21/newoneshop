@@ -51,18 +51,18 @@
 
 </header>
 
-    <div class="g-Total gray9" style="padding-top: 55px;">{wc:fun:lang::get_lang('您的当前1Shop币：')}<span class="orange arial">{wc:$member['money']}</span>{wc:fun:lang::get_lang('1Shop币')}</div>
+    <div class="g-Total gray9" style="padding-top: 55px;">{wc:fun:lang::get_lang('您的当前金币：')}<span class="orange arial">{wc:$member['money']}</span>{wc:fun:lang::get_lang('金币')}</div>
  <div>
     
      
     <section class="clearfix g-member">
         <div class="g-Recharge">
 	        <ul id="ulOption">
-		        <li money="10"><a href="javascript:;" class="z-sel">10{wc:fun:lang::get_lang('1Shop币')}<s></s></a></li>
-		        <li money="20"><a href="javascript:;">20{wc:fun:lang::get_lang('1Shop币')}<s></s></a></li>
-		        <li money="30"><a href="javascript:;">30{wc:fun:lang::get_lang('1Shop币')}<s></s></a></li>
-		        <li money="100"><a href="javascript:;">100{wc:fun:lang::get_lang('1Shop币')}<s></s></a></li>
-		        <li money="200"><a href="javascript:;">200{wc:fun:lang::get_lang('1Shop币')}<s></s></a></li>
+		        <li money="10"><a href="javascript:;" class="z-sel">10{wc:fun:lang::get_lang('金币')}<s></s></a></li>
+		        <li money="20"><a href="javascript:;">20{wc:fun:lang::get_lang('金币')}<s></s></a></li>
+		        <li money="30"><a href="javascript:;">30{wc:fun:lang::get_lang('金币')}<s></s></a></li>
+		        <li money="100"><a href="javascript:;">100{wc:fun:lang::get_lang('金币')}<s></s></a></li>
+		        <li money="200"><a href="javascript:;">200{wc:fun:lang::get_lang('金币')}<s></s></a></li>
 		        <li>
 		            <b>
 		                <input type="text" class="z-init" placeholder="{wc:fun:lang::get_lang('输入金额')}" maxlength="8" />
@@ -115,7 +115,7 @@
             </style>
 	     <article class="clearfix mt10 m-round g-pay-ment g-bank-ct">
 	        <ul id="ulBankList">
-			     <li class="gray6"  style="height:36px;">{wc:fun:lang::get_lang('选择平台充值')}<em class="orange">10.00</em>{wc:fun:lang::get_lang('1Shop币')}</li>
+			     <li class="gray6"  style="height:36px;">{wc:fun:lang::get_lang('选择平台充值')}<em class="orange">10.00</em>{wc:fun:lang::get_lang('金币')}</li>
 			{wc:loop $paylist $pay}
 			     <li class="gray9" urm="{wc:$pay['pay_id']}">
 			         <i class="z-bank-Round"><s></s></i>{wc:$pay['pay_name']}<!-- CMBCHINA-WAP -->

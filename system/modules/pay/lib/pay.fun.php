@@ -500,7 +500,7 @@ function pay_go_yongjin($uid=null,$dingdancode=null){
 
 	$db = System::load_sys_class("model");$time=time();
 
-	$config = System::load_app_config("user_fufen",'','member');//积分/经验/佣金
+	$config = System::load_app_config("user_fufen",'','member');//银币/经验/佣金
 
 	$yesyaoqing=$db->GetOne("SELECT `yaoqing` FROM `@#_member` WHERE `uid`='$uid'");
 

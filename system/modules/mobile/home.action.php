@@ -317,7 +317,7 @@ class home extends base
             
             $this->db->Query("INSERT INTO `@#_qiandao` SET `time` = $t, `uid` = $uid,`sum` = 1, `lianxu` = 1");
             
-            // 签到送100积分，同时送1元钱
+            // 签到送100银币，同时送1元钱
             
             $this->db->Query("UPDATE `@#_member` SET `score` = `score`+100, `money` =`money`+0 WHERE `uid` = $uid");
             
@@ -344,7 +344,7 @@ class home extends base
                     
                     $this->db->Query("UPDATE `@#_qiandao` SET `lianxu` = 1 where `uid`= $uid");
                 }
-                _messagemobile(lang::get_lang("坚持签到有积分"), WEB_PATH . "/mobile/home/userqiandao");
+                _messagemobile(lang::get_lang("坚持签到有银币"), WEB_PATH . "/mobile/home/userqiandao");
             }
         } else {
             _messagemobile(lang::get_lang("签到错误"), WEB_PATH . "/mobile/home/userqiandao");
@@ -546,7 +546,7 @@ class home extends base
             echo json_encode($res);
             die();
         } else {
-            // 扣除积分
+            // 扣除银币
             $q1 = $this->db->Query("UPDATE `@#_member` SET `score` = `score`- 200  where  `uid` = $uid");
             $lefts = $score - 200;
             if ($q1) {
@@ -555,7 +555,7 @@ class home extends base
                     'ok' => true,
                     'round' => 0,
                     'left' => $left,
-                    'desc' => '真遗憾，您没有中奖哦！剩余积分' . $lefts
+                    'desc' => '真遗憾，您没有中奖哦！剩余银币' . $lefts
                 );
                 echo json_encode($res);
                 die();

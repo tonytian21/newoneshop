@@ -123,7 +123,7 @@ select{
 
 	</tr>
 	  <tr>
-		<td width="220" align="right">签到送积分：&nbsp;</td>
+		<td width="220" align="right">签到送银币：&nbsp;</td>
 		<td>
 			<select name="qiandao[]"> 
 				<option value="yes" <?php if($wechat[6]['autoload']=='yes'){ ?> selected="selected" <?php } ?>>是</option>

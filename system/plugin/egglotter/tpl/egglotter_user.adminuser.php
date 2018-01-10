@@ -69,7 +69,7 @@ tbody tr{ line-height:30px; height:30px;}
 			<td align="center"><?php echo date("Y-m-d H:i",$v['subtime']); ?></td>
 <!-- 			<td align="center"><?php 
 			if($v['lotterytype']==1){
-				echo '积分';
+				echo '银币';
 			}elseif($v['lotterytype']==2){
 				echo '金币';
 			}else{

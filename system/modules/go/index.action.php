@@ -47,7 +47,7 @@ class index extends base {
 		
 		//圈子获取
         $quanzi=$this->db->GetList("select * from `@#_quanzi` where 1 ORDER BY time DESC LIMIT 4 "); 
-		//他们正在1Shop	
+		//他们正在夺宝	
 		$go_record=$this->db->GetList("SELECT m.`uid`,m.`username`,m.`email`,m.`mobile`,m.`img`,mg.`shopid`,mg.`gonumber`, mg.`shopname`, mg.`time`,t.`zongrenshu`,t.`canyurenshu` FROM `@#_member_go_record` AS mg LEFT JOIN `@#_member` AS m ON m.`uid` = mg.`uid` LEFT JOIN `@#_shoplist` AS s  ON  s.`id` = mg.`shopid` left join `@#_shoplist_term` t on s.id=t.sid left join `@#_shoplist_en` sen on sen.egid=s.gid  WHERE mg.`status` LIKE '%已付款%'  ORDER BY mg.`time` DESC LIMIT 0,7");
 		//最新揭晓
 		$shopqishu = $this->db->GetList("select id,sid,thumb,title,zongrenshu,qishu,money,q_uid,q_user,titleen from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `q_end_time` is not null and `q_showtime` = 'N' ORDER BY `q_end_time` DESC LIMIT 5");

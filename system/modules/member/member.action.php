@@ -700,7 +700,7 @@ class member extends admin {
 
 		
 
-		//积分配置
+		//银币配置
 
 		public function member_fufen(){
 
@@ -718,7 +718,7 @@ class member extends admin {
 
 				$f_visituser=intval(trim($_POST['f_visituser']));
 
-				//以上是积分，一下是经验值
+				//以上是银币，一下是经验值
 
 				$z_overziliao=intval(trim($_POST['z_overziliao']));
 
@@ -754,7 +754,7 @@ class member extends admin {
 
 				if($fufen_yuan<=0){
 
-					_message('积分输入有错误');
+					_message('银币输入有错误');
 
 				}
 
@@ -762,7 +762,7 @@ class member extends admin {
 
 				if($jieguo!=0){
 
-					_message('积分输入有错误');
+					_message('银币输入有错误');
 
 				}
 

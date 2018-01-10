@@ -118,7 +118,7 @@ class pay {
 		
 		//总支付价格
 		$this->MoenyCount=substr(sprintf("%.3f",$MoenyCount),0,-1);
-		//积分
+		//银币
 		if($this->fufen){
 			$fufen = System::load_app_config("user_fufen",'','member');
 			
@@ -272,7 +272,7 @@ class pay {
 		$uid=$this->members['uid'];
 		$query_1 = $this->set_dingdan('账户','A');	
 			
-		//积分
+		//银币
 		$fufen = System::load_app_config("user_fufen",'','member');
 		if($this->fufen){			
 			if($fufen['fufen_yuan']){
@@ -291,12 +291,12 @@ class pay {
 		if($fufen_dikou){
 			$myfufen = $this->members['score'] - $this->fufen;
 			$query_fufen = $this->db->Query("UPDATE `@#_member` SET `score`='$myfufen' WHERE (`uid`='$uid')");			
-			$pay_zhifu_name = '积分';
+			$pay_zhifu_name = '银币';
 			$this->MoenyCount = $this->fufen;
 		}else{
 			$myscore = $this->members['score'] + $fufen['f_shoppay'];
 			$query_add_fufen_1 = $this->db->Query("UPDATE `@#_member` SET `score`= '$myscore' WHERE (`uid`='$uid')");
-			$query_add_fufen_2 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '积分', '购买了商品', '$fufen[f_shoppay]', '$time')");
+			$query_add_fufen_2 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '银币', '购买了商品', '$fufen[f_shoppay]', '$time')");
 			$query_fufen = ($query_add_fufen_1 && $query_add_fufen_2);
 		}
 		

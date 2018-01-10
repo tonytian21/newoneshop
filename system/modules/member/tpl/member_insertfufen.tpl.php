@@ -26,28 +26,28 @@ input.button{ display:inline-block}
   	 <tr>
 			<td width="120" align="right">资料昵称完善奖励：</td>
 			<td>
-				<input type="text" name="f_overziliao" value="<?php echo $config['f_overziliao'];?>" class="input-text">(积分)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="f_overziliao" value="<?php echo $config['f_overziliao'];?>" class="input-text">(银币)&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="text" name="z_overziliao" value="<?php echo $config['z_overziliao'];?>" class="input-text">(经验)
 			</td>
 		</tr>
 		<tr>
 			<td width="120" align="right">商品购买奖励：</td>
 			<td>
-				<input type="text" name="f_shoppay" value="<?php echo $config['f_shoppay'];?>" class="input-text">(积分)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="f_shoppay" value="<?php echo $config['f_shoppay'];?>" class="input-text">(银币)&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="text" name="z_shoppay" value="<?php echo $config['z_shoppay'];?>" class="input-text">(经验)
 			</td>
 		</tr>
 		<tr>
 			<td width="120" align="right">手机验证完善奖励：</td>
 			<td>
-				<input type="text" name="f_phonecode" value="<?php echo $config['f_phonecode'];?>" class="input-text">(积分)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="f_phonecode" value="<?php echo $config['f_phonecode'];?>" class="input-text">(银币)&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="text" name="z_phonecode" value="<?php echo $config['z_phonecode'];?>" class="input-text">(经验)
 			</td>
 		</tr>
 		<tr>
 			<td width="120" align="right">邀请好友奖励：</td>
 			<td>
-				<input type="text" name="f_visituser" value="<?php echo $config['f_visituser'];?>" class="input-text">(积分)&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="f_visituser" value="<?php echo $config['f_visituser'];?>" class="input-text">(银币)&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="text" name="z_visituser" value="<?php echo $config['z_visituser'];?>" class="input-text">(经验)
 			</td>
 		</tr>
@@ -89,7 +89,7 @@ input.button{ display:inline-block}
 		<tr>
 			<td width="120" align="right">一元抵扣：</td>
 			<td>
-				<input type="text" name="fufen_yuan" value="<?php echo $config['fufen_yuan'];?>" class="input-text">(积分/元)&nbsp;&nbsp;&nbsp;&nbsp;备注：积分请输入10的整数
+				<input type="text" name="fufen_yuan" value="<?php echo $config['fufen_yuan'];?>" class="input-text">(银币/元)&nbsp;&nbsp;&nbsp;&nbsp;备注：银币请输入10的整数
 			</td>
 		</tr>
 		<!--tr>

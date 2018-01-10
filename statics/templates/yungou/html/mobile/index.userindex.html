@@ -70,7 +70,7 @@
                     {wc:else}
                         {G_UPLOAD_PATH}/{wc:$touxiang}
 
-                    {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>{wc:fun:lang::get_lang('积分')}：{wc:$member['score']}<br/>{wc:fun:lang::get_lang('经验值')}：{wc:$member['jingyan']}
+                    {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>{wc:fun:lang::get_lang('银币')}：{wc:$member['score']}<br/>{wc:fun:lang::get_lang('经验值')}：{wc:$member['jingyan']}
                     <span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop新手')}'}
                     z-class-icon01
                 {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop小将')}'}

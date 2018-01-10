@@ -250,12 +250,12 @@ class user extends memberbase {
 				}
 			
 			}			
-			//积分、经验添加
-			$isset_user=$this->db->GetOne("select `uid` from `@#_member_account` where (`content`='手机认证完善奖励' or `content`='完善昵称奖励') and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='积分')");	
+			//银币、经验添加
+			$isset_user=$this->db->GetOne("select `uid` from `@#_member_account` where (`content`='手机认证完善奖励' or `content`='完善昵称奖励') and `type`='1' and `uid`='$member[uid]' and (`pay`='经验' or `pay`='银币')");	
 			// if(!$isset_user){			
-			// 	$config = System::load_app_config("user_fufen");//积分/经验
+			// 	$config = System::load_app_config("user_fufen");//银币/经验
 			// 	$time=time();
-			// 	$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','积分','完善昵称奖励','$config[f_overziliao]','$time')");
+			// 	$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','银币','完善昵称奖励','$config[f_overziliao]','$time')");
 			// 	$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$member[uid]','1','经验','完善昵称奖励','$config[z_overziliao]','$time')");			
 			// 	$mysql_model->Query("UPDATE `@#_member` SET username='".$username."',qianming='".$qianming."',`score`=`score`+'$config[f_overziliao]',`jingyan`=`jingyan`+'$config[z_overziliao]' where uid='".$member['uid']."'");
 			// }	

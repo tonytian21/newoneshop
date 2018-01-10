@@ -438,9 +438,9 @@ class user extends base {
 
 					$yaoqinguid = $member['yaoqing'];
 
-					//积分			
+					//银币			
 					if($fili_cfg['f_visituser']){							
-						$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$yaoqinguid','1','积分','邀请好友奖励','$fili_cfg[f_visituser]','$time')");
+						$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$yaoqinguid','1','银币','邀请好友奖励','$fili_cfg[f_visituser]','$time')");
 					}						
 
 					$this->db->Query("UPDATE `@#_member` SET `score`=`score`+'$fili_cfg[f_visituser]',`jingyan`=`jingyan`+'$fili_cfg[z_visituser]' where uid='$yaoqinguid'");
@@ -605,11 +605,11 @@ class user extends base {
 
 				$yaoqinguid = $member['yaoqing'];
 
-				//积分、经验添加
+				//银币、经验添加
 
 				if($fili_cfg['f_visituser']){
 
-					$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$yaoqinguid','1','积分','邀请好友奖励','$fili_cfg[f_visituser]','$time')");
+					$this->db->Query("insert into `@#_member_account` (`uid`,`type`,`pay`,`content`,`money`,`time`) values ('$yaoqinguid','1','银币','邀请好友奖励','$fili_cfg[f_visituser]','$time')");
 
 				}				
 

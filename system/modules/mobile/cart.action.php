@@ -261,7 +261,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		  $checkpay = $this->segment ( 4 ); // 获取支付方式 fufen money bank
 		  $banktype = $this->segment ( 5 ); // 获取选择的银行 CMBCHINA ICBC CCB
 		  $money = $this->segment ( 6 ); // 获取需支付金额
-		  $fufen = $this->segment ( 7 ); // 获取积分
+		  $fufen = $this->segment ( 7 ); // 获取银币
 		  $submitcode1 = $this->segment ( 8 ); // 获取SESSION
 		  
 		  $uid = $this->userinfo ['uid'];
@@ -321,7 +321,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		  
 	
 		$pay=System::load_app_class('pay','pay');
- //修改支付每次都要使用积分问题 lq 2014-12-01
+ //修改支付每次都要使用银币问题 lq 2014-12-01
         //$pay->fufen = $fufen;
 		$pay->fufen = $checkpay=='fufen'?$fufen:0;
 		$pay->pay_type_bank = $pay_type_bank;

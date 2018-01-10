@@ -68,7 +68,7 @@ jwebox.goshopnow = function(shopid,path){
 							<div style="clear:both;"></div>
 							<span id="yshopchance" class="c_gray" style="display:block;padding-top:10px;">购买人次越多获得几率越大哦！</span>				
 							<div class="jwebox_mainlist"><span>共计购买：<span class="jwebox_sum" ></span>人次</span></div>	
-							<div class="jwebox_mainlist"><span class="jwebox_mainlist_uspecies">您的账户余额：<span class="jwebox_uspecies" ></span>1Shop币</span></div>	
+							<div class="jwebox_mainlist"><span class="jwebox_mainlist_uspecies">您的账户余额：<span class="jwebox_uspecies" ></span>金币</span></div>	
 							<div class="jwebox_shop_buttom" >
 								<a href="javascript:;"  class="jwebox_Det_Shopnow"  id="jwebox_Det_Shopnow">立即支付</a>
 								<a href="index.php/member/home/userrecharge"  class="jwebox_Det_Shopnow">去充值</a>

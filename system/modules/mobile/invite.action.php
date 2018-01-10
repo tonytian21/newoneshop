@@ -149,13 +149,13 @@ class invite extends base {
 			$tmoney=$_POST[money];
 			$tuser=$_POST[txtBankName];
 			if($member[score]<1000)
-				_message(lang::get_lang("帐户积分不得小与1000"),null,3);
+				_message(lang::get_lang("帐户银币不得小与1000"),null,3);
 		if($_POST[money]<1000)
-				_message(lang::get_lang("转帐积分不得小于1000"),null,3);
+				_message(lang::get_lang("转帐银币不得小于1000"),null,3);
 			if(empty($tmoney)||empty($tuser))
 				_message(lang::get_lang("转入用户和金额不得为空"),null,3);
 			if($tmoney>$member[score])
-				_message(lang::get_lang("转入积分不得大于帐户积分"),null,3);
+				_message(lang::get_lang("转入银币不得大于帐户银币"),null,3);
 			$user= $this->db->GetOne("SELECT * FROM `@#_member` where `email` = '$tuser' limit 1");	
 			if(empty($user))
 				$user= $this->db->GetOne("SELECT * FROM `@#_member` where `mobile` = '$tuser' limit 1");	
@@ -176,7 +176,7 @@ class invite extends base {
                                     $this->db->Query("insert into `@#_member_op_record` (`uid`,`username`,`deltamoney`,`premoney`,`money`,`time`) values ('$tuid','$tname','$tmoney','$user[money]','$ctmoney','$time')");
                                     $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', '转出到<$tname>', '$tmoney', '$time')");
                                     $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$tuid', '1', '账户', '由<$name>转入', '$tmoney', '$time')");		
-		                               _message(lang::get_lang("给账户积分冲值成功",$tname,$tmoney),null,3);		
+		                               _message(lang::get_lang("给账户银币冲值成功",$tname,$tmoney),null,3);		
 		              }
 		              include templates("mobile/invite","usertransfer");
                   }

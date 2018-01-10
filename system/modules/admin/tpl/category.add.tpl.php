@@ -67,7 +67,8 @@ input.button{ display:inline-block}
       </tr>     
       <tr>
         <th>栏目名称：</th>
-        <td><input type="text" name="info[name]" class="input-text wid140“>
+        <td>
+        <input type="text" name="info[name]" class="input-text wid140">
         	<span><font color="#0c0">※ </font>请输入栏目名称</span>
 		</td>
       </tr>
@@ -139,7 +140,7 @@ input.button{ display:inline-block}
       </tr>
 	<tr id="catdir_tr">
       <th>英文目录：</th>
-        <td><input type="text" name="info[catdir]" onKeyUp="value=value.replace(/[^\w]/ig,'')" class="input-text">
+        <td><input type="text" name="info[catdir]" class="input-text">
         <span><font color="#0c0" size="">※ </font>请输入英文名称,请保证唯一性</span> 
       </tr>
       
