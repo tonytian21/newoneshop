@@ -1481,7 +1481,7 @@ position: absolute;
     text-align: center!important;
 }
  .step-inner .s-r2 {
-    line-height: 22px;
+    line-height: 18px;
     width: 184px;
 }
  .s-r2 p {
@@ -1489,11 +1489,11 @@ position: absolute;
 }
  .step-inner span {
     color: #bbb;
-    font-size: 14px;
+    font-size: 8px;
 }
  .step-inner .mod {
     cursor: pointer;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 48px;
 }
  .step-inner .txt {
@@ -1507,7 +1507,7 @@ position: absolute;
     width: 42px;
 }
  .step-inner .s-r3 {
-    line-height: 22px;
+    line-height: 18px;
     width: 162px;
 }
  .step-inner .s-r4 {
@@ -1521,6 +1521,8 @@ position: absolute;
 }
 
 
+.result-how p{ font-size: 12px; line-height: 19px; color: #999;}
+
 .DetailsT_TitP li {
 float: left;
 font-family: 微软雅黑,宋体;
@@ -1532,10 +1534,14 @@ border-right: 1px solid #E4E4E4;
 position: relative;
 cursor: pointer;
 }
-.DetailsT_TitP li.Single_ConT {width: 98px;}
+/* .DetailsT_TitP li.Single_ConT {width: 98px;}
 .DetailsT_TitP li.Product_DetT {width: 134px;}
 .DetailsT_TitP li.All_RecordT {width: 158px;}
-.DetailsT_TitP li.Single_ConT {width: 98px;}
+.DetailsT_TitP li.Single_ConT {width: 98px;} */
+
+
+
+
 .DetailsT_TitP li.DetailsTCur {
 font-size: 18px;
 height: 34px;

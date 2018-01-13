@@ -31,7 +31,7 @@
 						$jikxiao = get_shop_if_jiexiao($shaidan['sd_shopid']);						
 						{wc:php:end}
 						{wc:if $jikxiao['q_uid']}
-						<p>{wc:fun:lang::get_lang('幸运1Shop码：')}{wc:$jikxiao['q_user_code']}	</p>
+						<p>{wc:fun:lang::get_lang('幸运夺宝码：')}{wc:$jikxiao['q_user_code']}	</p>
 						<p>{wc:fun:lang::get_lang('揭晓时间：')}{wc:fun:microt($jikxiao['q_end_time'])}</p>
 						{wc:if:end}
 					</div>

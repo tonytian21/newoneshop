@@ -2,51 +2,56 @@
 {wc:if $ad_area} 
     {wc:templates "ad","couplet"} 
 {wc:if:end}
+<link rel="stylesheet" href="{G_TEMPLATES_CSS}/style.css">
+<script src="{G_TEMPLATES_JS}/swiper.min.js"></script>
 <!--banner {wc:fun:lang::get_lang('开始')}-->
 <div class="banner w1200">
     <div class="banner_box b_gray" style="border-top:0;">
-        <div style="width: 700px; margin-left: 0px; height: 460px; float: left;">
+        <div style=" margin-left: 0px; height: 460px;">
             {wc:getlist sql="select * from `@#_slide` where 1" return="slides"}
-            <div id="fsD1" class="focus" style="height: 300px;">
-                <div id="D1pic1" class="fPic">
-                    {wc:if $this->_cfg['route_l'] == 'en-us'}
-                        {wc:loop $slides $slide} {wc:if $ln == 1}
-                        <div class="fcon">
-                            <a href="{wc:$slide['linken']}" target="_blank">
-                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen'])}"></a>
-                        </div>
-                        {wc:else}
-                        <div class="fcon" style="display: none;">
-                            <a href="{wc:$slide['linken']}" target="_blank">
-                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen'])}"></a>
-                        </div>
-                        {wc:if:end} {wc:loop:end}
-                    {wc:else}
-                         {wc:loop $slides $slide} {wc:if $ln == 1}
-                        <div class="fcon">
-                            <a href="{wc:$slide['link']}" target="_blank">
-                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['img'])}"></a>
-                        </div>
-                        {wc:else}
-                        <div class="fcon" style="display: none;">
-                            <a href="{wc:$slide['link']}" target="_blank">
-                                <img style="opacity: 1;" src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['img'])}"></a>
-                        </div>
-                        {wc:if:end} {wc:loop:end}
-                    {wc:if:end}
-                </div>
-                <div class="fbg">
-                    <div class="D1fBt" id="D1fBt">
-                        <a href="javascript:void(0)" hidefocus="true" target="_self" class="current"></a>
-                        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""></a>
-                        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""></a>
-                        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""></a>
-                        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""></a>
-                    </div>
-                </div>
-                <span class="prev"></span>
-                <span class="next"></span>
+            <div id="fsD1" class="focus swiper-container" style="height: 300px;">
+            
+            	
+            	
+            
+                
+					<div class="swiper-wrapper">
+					
+					{wc:if $this->_cfg['route_l'] == 'en-us'} 
+						{wc:loop $slides $slide}
+							<div class="swiper-slide">
+							
+								<a href="{wc:$slide['linken']}" target="_blank"> <img
+								style="opacity: 1;"
+								src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['imgen'])}"></a>
+							
+							</div>
+						 {wc:loop:end}
+					 {wc:else}
+					 	{wc:loop $slides $slide}
+					 		<div class="swiper-slide">
+					 		<a href="{wc:$slide['link']}" target="_blank"> <img
+								style="opacity: 1;"
+								src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$slide['img'])}"></a>
+					 		</div>
+					 		
+						 {wc:loop:end}
+					{wc:if:end}
+					
+					
+					</div>
+					<div class="swiper-pagination swiper-pagination-clickable">
+						<span
+							class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+						<span class="swiper-pagination-bullet"></span>
+					</div>
+
+
+				
+				
             </div>
+            
+            
             <div class="lb_x2">
                 {wc:loop $tj_shop $new1}
                 <li class="list-block1" style="position: relative;">
@@ -63,7 +68,7 @@
                     </p>
                     <p class="money">
                         {wc:fun:lang::get_lang('剩余：')}<span class="rmb" style="color: #ff6600;">{wc:$new1['shenyurenshu']}</span>
-                    </p> <i class="sy_tj">{wc:fun:lang::get_lang('推荐')}</i>
+                    </p> <i class="sy_tj"></i>
                 </li>
                 {wc:loop:end}
                
@@ -73,28 +78,25 @@
 					<li class="fr1" style="float:right; position:relative;">
 						<a href="{WEB_PATH}/goods/{wc:$renqi['id']}" title="{wc:$renqi['title']}"  target="_blank">
 							<img src="{wc:fun:lang::get_image(G_UPLOAD_PATH.'/'.$renqi['thumb'])}" alt="{wc:$renqi['title']}"></a>
-						<span id="tuijian">{wc:fun:lang::get_lang('推荐')}</span>
+						<span id="tuijian"></span>
 					</li>
 					<li class="fr2">
 						<span class="span">
 							<a href="{WEB_PATH}/goods/{wc:$renqi['id']}" target="_blank">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$renqi['titleen']}{wc:else}{wc:$renqi['title']}{wc:if:end}</a>
 						</span>
-						<div class="Progress-bar" style="margin-left: 10px;">
-							
-							<ul class="Pro-bar-li">
-								<li class="P-bar01">
-								<span style="float:left;padding-right:10px;">{wc:fun:lang::get_lang('已参与')}</span>
-								<em class="c_red" style=" margin-top:-2px;">{wc:$renqi['canyurenshu']}</em>
+						<ul class="Pro-bar-ul">
+								<li>
+									<span >{wc:fun:lang::get_lang('已参与')}</span>
+									<em class="c_red" style=" margin-top:-2px;">{wc:$renqi['canyurenshu']}</em>
 									
 								</li>
-								<li class="P-bar03" style="float:left; margin-top:30px; margin-left:-62px; width:37%;">
-								<span style="float:left;padding-right:10px;">{wc:fun:lang::get_lang('剩余')}</span>
-									<em style=" margin-top:-2px; color:#ff6600">
+								<li>
+									<span>{wc:fun:lang::get_lang('剩余')}</span>
+									<em  class="c_red" style=" margin-top:-2px;">
 									{wc:$renqi['zongrenshu']-$renqi['canyurenshu']}</em>
 									
 								</li>
 							</ul>
-						</div>
 
 					</li>
 				</ul>
@@ -103,55 +105,7 @@
 			
             </div>
         </div>
-        <div class="banner_boxR fr">
-            <div class="m_login bb_gray">
-                <a href="{WEB_PATH}/single/newbie" target="_blank">
-                    <img src="{G_TEMPLATES_STYLE}/images/index-come.gif" height="108" width="208"></a>
-            </div>
-            <div class="m_app bb_gray">
-                <ul>
-                    <li> <i class="i1"></i> {wc:fun:lang::get_lang('诚信网站')}
-                    </li>
-                    <li>
-                        <i class="i2"></i> {wc:fun:lang::get_lang('可信网站')}
-                    </li>
-                    <li>
-                        <i class="i3"></i> {wc:fun:lang::get_lang('电商诚信')}
-                    </li>
-                    <li>
-                        <i class="i4"></i> {wc:fun:lang::get_lang('安信宝')}
-                    </li>
-                    <li>
-                        <i class="i5"></i> {wc:fun:lang::get_lang('监督管理局')}
-                    </li>
-                    <li>
-                        <i class="i6"></i> {wc:fun:lang::get_lang('更多')}
-                    </li>
-                </ul>
-            </div>
-            <div class="m_news">
-                <div class="m_newsT bb_gray">
-                    <p class="notice c_red">{wc:fun:lang::get_lang('官方公告')}</p>
-                </div>
-                {wc:if $this->_cfg['route_l'] == 'en-us'}
-                    {wc:getlist sql="select * from `@#_article` where 1 AND cateid = 148 order by posttime DESC limit 0,4" return="tiezi"}
-                {wc:else}
-                    {wc:getlist sql="select * from `@#_article` where 1 AND cateid = 142 order by posttime DESC limit 0,4" return="tiezi"}
-                {wc:if:end}
-                
-                <div class="m_newsM">
-                    <div class="m_newsML">
-                        {wc:loop $tiezi $tz}
-                        <a href="{WEB_PATH}/help/{wc:$tz['id']}" target="_blank">{wc:$tz['title']}</a> {wc:loop:end}
-                    </div>
-                    <div class="m_newsMR">
-                        {wc:loop $tiezi $tz}
-                        <p>{wc:fun:date("m-d",$tz['posttime'])}</p>
-                        {wc:loop:end}
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
 <div class="clear"></div>
@@ -668,26 +622,12 @@ function displayStatusMsg() {
 
 <!--topic {wc:fun:lang::get_lang('结束')}-->
 <div class="clear"></div>
+
 <script type="text/javascript">
-Qfast.add('widgets', {
-    path: "{G_TEMPLATES_JS}/terminator2.2.min.js",
-    type: "js",
-    requires: ['fx']
-});
-Qfast(false, 'widgets', function() {
-    K.tabs({
-        id: 'fsD1', 
-        conId: "D1pic1", 
-        tabId: "D1fBt",
-        tabTn: "a",
-        conCn: '.fcon', 
-        auto: 1, 
-        effect: 'fade', 
-        eType: 'mouseover', 
-        pageBt: true, 
-        bns: ['.prev', '.next'],
-        interval: 3000 
-    });
+var mySwiper = new Swiper('.swiper-container', {
+    autoplay: 5000, //可选选项，自动滑动
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
 })
 </script>
 <script type="text/javascript">

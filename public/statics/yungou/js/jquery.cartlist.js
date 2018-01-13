@@ -94,7 +94,7 @@
 				if(curr_timeout != '')
 					clearTimeout(curr_timeout);
 
-				if(curr_index >= curr_userlist.length)
+				if(!curr_userlist || curr_index >= curr_userlist.length)
 					return;
 
 				var html = '<div class="paopao paopao'+curr_shopid+' iconfont" style="left: '+ Math.round(Math.random()*100/3) + 'px;">';

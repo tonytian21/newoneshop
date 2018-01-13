@@ -3712,6 +3712,8 @@ border-right: 1px solid #fff;
 	float:left;
 }
 .pwdCon table td label {
+	width:90px;
+	display:inline-block;
 	color:#666;
 	font-size:14px;
 }

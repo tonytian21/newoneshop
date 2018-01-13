@@ -1,9 +1,9 @@
 <div class="subnav">
 	<ul>
 		{wc:if $tab=="uname"}
-		<li class="poa-4"><a class="cur">TA{wc:fun:lang::get_lang('的主页')}<s></s></a></li>
+		<li class="poa-4"><a class="cur">{wc:fun:lang::get_lang('TA的主页')}<s></s></a></li>
 		{wc:else}
-		<li class="poa-4"><a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" >TA{wc:fun:lang::get_lang('的主页')}<s></s></a></li>
+		<li class="poa-4"><a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" >{wc:fun:lang::get_lang('TA的主页')}<s></s></a></li>
 		{wc:if:end}
 		
 		{wc:if $tab=="userbuy"}

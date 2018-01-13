@@ -575,7 +575,7 @@
 	text-decoration:none
 }
 .subnav li.poa-4 a {
-	width:123px;
+	width:130px;
 	font-size:14px;
 	height: 40px;
 	font-family:宋体;
@@ -583,7 +583,7 @@
 	text-align:center;
 }
 .subnav li.poa-4 a:hover {
-	width:123px;
+	width:130px;
 }
 .subnav li.poa-2 a {
 	width:75px;
@@ -596,7 +596,7 @@
 	width:75px;
 }
 .subnav li.poa-4 .cur {
-	width:123px;
+	width:130px;
 	height:40px;
 	display:inline-block;
 	position:relative;
@@ -3828,7 +3828,7 @@ color: #e00;
 	padding:15px 0 10px 0;
 }
 .help-contact .Customer {
-	width:128px;
+	width:168px;
 	height:26px;
 	text-align:center;
 	line-height:24px;

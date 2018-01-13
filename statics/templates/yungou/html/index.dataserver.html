@@ -92,7 +92,7 @@
 }
 </style>
 					<div class="Announced_FrameGet"
-						style="background-color: #fff; border: 1px solid #ffba6e; border-radius: 20px; color: #949494; float: left; font-size: 12px; height: 85px; line-height: 20px; margin-right: 9px; padding: 10px 20px 10px 83px; position: relative; text-align: left; width: 200px; background-image: none;">
+						style="background-color: #fff; border: 1px solid #ffba6e; border-radius: 20px; color: #949494; float: left; font-size: 12px; height: 85px; line-height: 20px; margin-right: 9px; padding: 10px 20px 10px 83px; position: relative; text-align: left; background-image: none;">
 						<dl style="padding: 0px; margin-left: 0px;">
 							<dd class="gray02 fl" style="position: relative;">
 								<p>
@@ -101,7 +101,7 @@
 										href="{WEB_PATH}/uname/{wc:fun:idjia($item['q_uid'])}"
 										target="_blank" class="blue"
 										title="{wc:fun:get_user_name($q_user)}">{wc:fun:get_user_name($q_user)}</a>
-									{wc:fun:lang::get_lang('获得本期商品')}
+									{wc:fun:lang::get_lang('获得')}
 								</p>
 								<p>
 									{wc:fun:lang::get_lang('本期购买')}: <em class="c_red">{wc:$user_shop_number}</em> {wc:fun:lang::get_lang('人次')} <span
@@ -139,9 +139,9 @@
 						</div>
 					</div>
 					<div class="Announced_FrameCode"
-						style="background-color: #fff; border: 1px solid #ffba6e; border-radius: 20px; float: left; height: 59px; padding: 23px 0; text-align: center; width: 220px; background-image: none;">
-						<p style="color: #999; font-size: 16px; line-height: 24px;">{wc:fun:lang::get_lang('—')}&nbsp{wc:fun:lang::get_lang('幸运1Shop码')}&nbsp{wc:fun:lang::get_lang('—')}</p>
-						<ul class="Announced_FrameCodeMal" style="margin: 10px 0 0 50px;">
+						style="background-color: #fff; border: 1px solid #ffba6e; border-radius: 20px; float: left; height: 59px; padding: 23px 0; text-align: center; width: 180px; background-image: none;">
+						<p style="color: #999; font-size: 16px; line-height: 24px;">{wc:fun:lang::get_lang('—')}&nbsp{wc:fun:lang::get_lang('幸运夺宝码')}&nbsp{wc:fun:lang::get_lang('—')}</p>
+						<ul class="Announced_FrameCodeMal" style="margin: 10px 0 0 30px;">
 							{wc:loop $q_user_code_arr $q_code_num}
 							<li
 								style="font-size: 26px; line-height: 36px; color: #f60; height: auto; width: auto; font-weight: 400;"
@@ -159,11 +159,11 @@
 				<div class="result-how"
 					style="padding: 0 6px 0 0; text-align: left;">
 					<h6
-						style="padding-bottom: 0px; color: #666; font-size: 14px; font-weight: bold; height: 22px; line-height: 22px; padding-bottom: 6px;">{wc:fun:lang::get_lang('如何计算')}?</h6>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">1、{wc:fun:lang::get_lang('取该商品最后购买时间前100')}；</p>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">2、{wc:fun:lang::get_lang('时分秒毫秒排列取值之和')}；</p>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">3、{wc:fun:lang::get_lang('余数加上10000001')}；</p>
-					<p style="font-size: 14px; line-height: 25px; color: #999;">4、{wc:fun:lang::get_lang('余数是指整数除法中被除数未被除尽部分')}。</p>
+						style="padding-bottom: 0px; color: #666; font-size: 12px; font-weight: bold; height: 22px; line-height: 22px; padding-bottom: 6px;">{wc:fun:lang::get_lang('如何计算')}?</h6>
+					<p>1、{wc:fun:lang::get_lang('取该商品最后购买时间前100。')}</p>
+					<p>2、{wc:fun:lang::get_lang('时分秒毫秒排列取值之和。')}</p>
+					<p>3、{wc:fun:lang::get_lang('余数加上10000001。')}</p>
+					<p>4、{wc:fun:lang::get_lang('余数是指整数除法中被除数未被除尽部分。')}</p>
 				</div>
 				<div id="MaCenter" class="MaCenter"
 					style="border: 1px solid #ccc; margin-top: 0; position: absolute; background: #fff; top: 11px; left: 15px; box-shadow: 0 0 12px #e2e2e2; width: 669px; height: 355px; z-index: 99999; display: none;">
@@ -252,8 +252,7 @@
 			style="width: 1198px; background: none;">
 			<div class="DetailsT_TitP"
 				style="border-top: none; border-left: none; background: #fff; border-bottom: none; border-right: none; width: 1166px; z-index: 9999999999;">
-				<ul
-					style="width: 550px; margin: 0 auto; position: relative; float: none;">
+				<ul>
 					<style type="text/css">
 #li_hua {
 	border-right: none;
@@ -307,7 +306,7 @@
 						<li class="s-t">=</li>
 						<li class="s-t">(</li>
 						<li class="s-r2">
-							<p>{wc:$item['q_counttime']}</p> <span>{wc:fun:lang::get_lang('以下')}100{wc:fun:lang::get_lang('条时间取值之和')}</span>
+							<p>{wc:$item['q_counttime']}</p> <span>{wc:fun:lang::get_lang('以下100条时间取值之和')}</span>
 						</li>
 						<li class="s-t mod" id="li_mod"><i>%</i> <span class="txt">({wc:fun:lang::get_lang('取余')})</span>
 						</li>

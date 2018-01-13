@@ -71,11 +71,171 @@ $(function(){
 			</div>
 
 			<div class="select"> <b class="gray01">{wc:fun:lang::get_lang('请您选择充值金额')}</b>
-            <input id="submit_ok" class="bluebut imm" type="button" onclick="location.href='{WEB_PATH}/member/home/userrechargedk'" name="submit" value="{wc:fun:lang::get_lang('充值卡')}" title="{wc:fun:lang::get_lang('充值卡')}">
+           
 
 				<ul id="ulMoneyList">
+{wc:if $this->_cfg['route_l'] == 'en-us'}
+							<li class="selected" style="margin-left:0;">
 
-					<li class="selected" style="margin-left:0;">
+						<input  type="radio" id="rd10" name="money" value="10" checked="checked">
+
+						<label for="rd10">
+
+							 <strong>{wc:fun:lang::get_lang('￥')}</strong> 10 <i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="50" id="rd50">
+
+						<label for="rd50">
+
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							50 <i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="100" id="rd100">
+
+						<label for="rd100">
+
+							
+
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							100
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="200" id="rd200">
+
+						<label for="rd200">
+
+							
+
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							200
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="500" id="rd500">
+
+						<label for="rd500">
+
+							
+
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							500
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li style="margin-left:0;">
+
+						<input type="radio" name="money" value="1000" id="rd1000">
+
+						<label for="rd1000">
+
+							
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							1000
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="3000" id="rd3000">
+
+						<label for="rd3000">
+
+							
+
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							3000
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="5000" id="rd5000">
+
+						<label for="rd5000">
+
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							5000
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li>
+
+						<input type="radio" name="money" value="10000" id="rd10000">
+
+						<label for="rd10000">
+							<strong>{wc:fun:lang::get_lang('￥')}</strong>
+
+							10000
+
+							<i></i>
+
+						</label>
+
+					</li>
+
+					<li >
+
+						<input type="radio" value="0" name="money" id="rdOther">
+
+						<label for="rdOther">
+
+							<i></i>
+
+						</label>
+
+						<input value="" id="txtOtherMoney" type="text" class="enter" maxlength="7" />
+
+					</li>
+						{wc:else}
+							<li class="selected" style="margin-left:0;">
 
 						<input  type="radio" id="rd10" name="money" value="10" checked="checked">
 
@@ -242,13 +402,15 @@ $(function(){
 						<input value="" id="txtOtherMoney" type="text" class="enter" maxlength="7" />
 
 					</li>
+						{wc:if:end}
+					
 
 				</ul>
 
 			</div>
 
 			<div class="charge_money_list">
-			<p class="leix">{wc:fun:lang::get_lang('支付平台支付：')}</p>
+			<p class="leix">{wc:fun:lang::get_lang('支付平台：')}</p>
 		<ul class="payment yeepay_click">		
 
           {wc:loop $paylist  $pay}
@@ -283,51 +445,7 @@ $(function(){
 
 		</h6>
 
-		<!--<div id="payAltBox" style="position: absolute;">
-
-			<div class="prompt_box">
-
-			<p class="ts">
-
-					{wc:fun:lang::get_lang('请您在新开的页面上完成支付！')}
-
-					</p>
-
-				
-
-				<p class="pic"> <em></em>
-
-					{wc:fun:lang::get_lang('请您在新开的页面上完成支付！')}
-
-				</p>
-
-				<p class="ts">
-
-					{wc:fun:lang::get_lang('付款完成之前，请不要关闭本窗口！')}
-
-					<br>{wc:fun:lang::get_lang('完成付款后跟据您的个人情况完成此操作！')}</p>
-
-				<ul>
-
-					<li>
-
-						<a href="{WEB_PATH}/member/home/userbalance" class="look" title="{wc:fun:lang::get_lang('查看充值记录')}">{wc:fun:lang::get_lang('查看充值记录')}</a>
-
-					</li>
-
-					<li>
-
-						<a href="javascript:gotoClick();" class="look" id="btnReSelect" title="{wc:fun:lang::get_lang('重选支付方式')}">{wc:fun:lang::get_lang('重选支付方式')}</a>
-
-					</li>
-
-				</ul>
-
-				
-
-			</div>
-
-		</div>-->
+		
 
 	</div>
 

@@ -32,9 +32,8 @@
 	<script type="text/javascript" src="{G_TEMPLATES_JS}/jquery.cookie.js"></script>
 	<script type="text/javascript" src="{G_TEMPLATES_JS}/cloud-zoom.min.js"></script>
 	<script type="text/javascript" src="{G_TEMPLATES_JS}/jquery.webox.js"></script>
-	<script type="text/javascript"
-		src="{G_TEMPLATES_JS}/jquery.cartlist.js"></script>
-	<script type="text/javascript" src="{G_TEMPLATES_JS}/koala.min.1.5.js"></script>
+	<script type="text/javascript"src="{G_TEMPLATES_JS}/jquery.cartlist.js"></script>
+	<!-- <script type="text/javascript" src="{G_TEMPLATES_JS}/koala.min.1.5.js"></script> -->
 	<script type="text/javascript">
 	window.shareParams={};
 	
@@ -54,7 +53,7 @@
 						{wc:else}
 							<a href="{G_WEB_PATH}/en-us/{wc:fun:lang::get_lang_url()}">English</a>
 						{wc:if:end}
-						<span>|</span>
+						
 					</li>
 					<li class="fr"><a
 						style="text-indent: 25px; margin-right: 0 !important;"
@@ -66,13 +65,11 @@
 					</li>
 					<li class="fr"><a href="{WEB_PATH}/member/home/userrecharge">{wc:fun:lang::get_lang('快速充值')}</a>
 						<span>|</span></li>
-					<li class="fr yu_ff"><a href="{WEB_PATH}/home/member">{wc:fun:lang::get_lang('个人中心')}</a>
+					<li class="fr yu_ff"><a href="{WEB_PATH}/member/home">{wc:fun:lang::get_lang('个人中心')}</a>
 						<span>|</span>
 						<div class="h_1yyg_eject">
 							<dl>
-								<dd>
-									<a href="{WEB_PATH}/member/home">{wc:fun:lang::get_lang('个人中心')}</a>
-								</dd>
+								
 								<dd>
 									<a href="{WEB_PATH}/member/home/userbuylist">{wc:fun:lang::get_lang('夺宝记录')}</a>
 								</dd>

@@ -494,7 +494,7 @@ $(function(){
 
 			{wc:php:end}
 
-		<p class="leix">{wc:fun:lang::get_lang('支付平台支付：')}</p>
+		<p class="leix">{wc:fun:lang::get_lang('支付平台：')}</p>
 
 		<ul class="payment yeepay_click">		
 

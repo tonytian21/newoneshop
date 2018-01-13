@@ -12,7 +12,7 @@ font-weight: normal;
 font-size: 12px;
 }
 
-body{font-size:12px;}
+body{font-size:12px;text-transform:capitalize;}
 .yanzheng{
 	cursor: pointer;
 }
@@ -85,10 +85,11 @@ i, em {font-style: normal;}
 .hidden {display: none;}
 input{border:Solid 1px #BDBDBD}
 .h_1yyg_eject{
-display: none;
-position: absolute;
-top: -1px;
-left:-1px;
+ display: none; 
+ position: absolute;
+top: 33px;
+left:-25px;
+width:120px;
 background: #fff;
 border: 1px solid #ECECEC;
 z-index:99;
@@ -1444,8 +1445,8 @@ a.login {
 	font-weight:bold;
 	color:#a4a4a4;
 }
-#passqiang{ padding:0 0 0 140px; color:#777;}
-#passqiang span{width:41px;}
+#passqiang{ padding:0 0 0 ; color:#777;}
+#passqiang span{width:50px; margin-top:5px}
 
 .quick_service s,.quick_Collection s,.quick_Return s,.Close,.Roll_mycart li a.Close:hover,.quick_service .Current s,.quick_Collection .Current s,.quick_Return .Current s {
 	background:url(../images/quickBack.png) no-repeat;

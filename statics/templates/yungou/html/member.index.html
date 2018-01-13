@@ -34,7 +34,7 @@
 					<span class = "gray02">({wc:fun:lang::get_lang('还差')}{wc:$dengji_x}{wc:fun:lang::get_lang('经验值升级到最高等级')})</span>
 				{wc:if:end}
 			</li>
-			<li class="account-money" style="width: 300px;line-height: 25px;">
+			<li class="account-money" style="width: 400px;line-height: 25px;">
 				<em class="gray02">{wc:fun:lang::get_lang('帐户余额')}:</em>
 				<span class="money-red">{wc:fun:uidcookie('money')}{wc:fun:lang::get_lang('金币')}</span>&nbsp;&nbsp;
 				<a href="{WEB_PATH}/member/home/userrecharge" title="{wc:fun:lang::get_lang('充值')}" class="blue">{wc:fun:lang::get_lang('充值')}</a>
@@ -62,7 +62,8 @@
 <div style="height: 100px; border-top: 1px solid #dfdfdf;border-right: 1px solid #dfdfdf;">
 	<style>
 		.daohang{
-			width: 133px;
+			text-align: center;
+			width: 154px;
 			height: 48px;
 			float: left;
 			border-right: 1px solid #dfdfdf;
@@ -72,12 +73,12 @@
 			color: #888;
 		}
 		.daohang a{
-			text-align: center;
+			
 			line-height: 48px;
 			color: #888;
 			font-size: 14px;
 			display: block;
-			width: 133px;
+			
 			height: 48px;
 		}
 		.daohang:hover,.daohang a:hover{
@@ -89,8 +90,8 @@
 	<li class="daohang"><a href="{WEB_PATH}/member/home/orderlist">{wc:fun:lang::get_lang('获得的商品')}</a></li>
 	<li class="daohang"><a href="{WEB_PATH}/member/home/singlelist">{wc:fun:lang::get_lang('晒单')}</a></li>
 	<li class="daohang"><a href="{WEB_PATH}/member/home/joingroup">{wc:fun:lang::get_lang('加入的圈子')}</a></li>
-	<li class="daohang"><a href="{WEB_PATH}/member/home/userfufen">{wc:fun:lang::get_lang('我的银币')}</a></li>
-	<li class="daohang" style="border-right: none;width: 134px;"><a href="{WEB_PATH}/member/home/userbalance">{wc:fun:lang::get_lang('帐户明细')}</a></li>
+	<li class="daohang"  style="border-right: none;width: 134px;"><a href="{WEB_PATH}/member/home/userfufen">{wc:fun:lang::get_lang('我的银币')}</a></li>
+	<li class="daohang"><a href="{WEB_PATH}/member/home/userbalance">{wc:fun:lang::get_lang('帐户明细')}</a></li>
 	<li class="daohang"><a href="{WEB_PATH}/member/home/invitefriends">{wc:fun:lang::get_lang('邀请好友')}</a></li>
 	<li class="daohang"><a href="{WEB_PATH}/member/home/commissions">{wc:fun:lang::get_lang('佣金明细')}</a></li>
 	<li class="daohang"><a href="{WEB_PATH}/member/home/modify">{wc:fun:lang::get_lang('编辑资料')}</a></li>
