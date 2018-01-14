@@ -15,7 +15,7 @@
 				<p name="buyCount" style="display:none;"></p>
 			</div>
 			<p class="name">
-				<a href="{WEB_PATH}/go/index/item/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']} ">{wc:$shop['title']}</a>
+				<a href="{WEB_PATH}/go/index/item/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']} ">{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$shop['titleen']}{wc:else}{wc:$shop['title']}{wc:if:end}</a>
 			</p>
 			<p class="money">{wc:fun:lang::get_lang('价值：')}<span class="rmbgray">{wc:$shop['money']}</span></p>
 			<div class="Progress-bar">
