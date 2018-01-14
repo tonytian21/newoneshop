@@ -167,12 +167,17 @@ class user extends base {
 
 
 	public function register(){
+	    
+	    if($this->_cfg['route_l']=="en-us"){
+	        $article = $this->db->GetOne("select * from `@#_article` where `id`=14");
+	    }else{
+	        $article = $this->db->GetOne("select * from `@#_article` where `id`=3");
+	        
+	    }
 
 		$config_email = System::load_sys_config("email");
 
 		$config_mobile = System::load_sys_config("mobile");
-
-		
 
 		if(isset($_POST['submit'])){			
 

@@ -983,11 +983,15 @@ class mobile extends base
     // 用户服务协议
     public function terms()
     {
+        
+        
         $webname = $this->_cfg['web_name'];
-        $category = $this->db->GetOne("select * from `@#_category` where `parentid`='1' and `name`='新手指南'");
-        
-        $article = $this->db->GetOne("select * from `@#_article` where `cateid`='$category[cateid]' and `title`='服务协议' ");
-        
+        if($this->_cfg['route_l']=="en-us"){
+            $article = $this->db->GetOne("select * from `@#_article` where `id`=14");
+        }else{
+            $article = $this->db->GetOne("select * from `@#_article` where `id`=3");
+            
+        }
         include templates("mobile/system", "terms");
     }
 

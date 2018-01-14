@@ -510,7 +510,6 @@ return array(
     '然后' => 'Then',
     '最后' => 'Last',
     '更多新手指南' => 'More Beginner\'s Guide',
-    '看看还有谁中奖了' => '看看还有谁中奖了！',
     '热门推荐' => 'Hot Recommendation',
     '晒单管理' => 'Moments Management',
     '推荐话题' => 'Recommended Topic',
@@ -1034,7 +1033,9 @@ return array(
     "或者"=>"or",
     "请"=>"please",
     "请先"=>"please",
-    "您每邀请一位好友成功参与即可获得50银币。"=>'You can get 50 silver COINS for each successful engagement.',
+    "您每邀请一位好友成功参与即可获得1000银币。"=>'You can get 1000 silver COINS for each successful engagement.',
+    "当您邀请好友超过10个人以后每邀请一位好友成功参与即可获得2000银币。"=>'When you invite more than 10 friends, you will get 2000 silver COINS for each successful engagement.',
+    
     "圈子管理"=>"Network management",
     "未设定"=>"Not set",
     "该商品还未有晒单！"=>"The goods haven't been posted yet!",
@@ -1052,6 +1053,9 @@ return array(
     "未找到有关“"=>'no"',
     "”的商品"=>'"related products',
     "件相关商品"=>"related products",
+    '查询' => 'The Query',
+    "看看还有谁中奖了"=>"See who else won", 
+
     
 );
 
