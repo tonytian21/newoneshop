@@ -3109,11 +3109,12 @@ text-align: center;
 .login_button a, .login_button a:visited {
 text-decoration: none;
 width: 196px;
-height: 45px;
+height: 40px;
+padding-top:5px;
 text-align: center;
 font-size: 14px;
 background-position: -118px 0;
-line-height: 45px;
+line-height: 18px;
 color: #fff;
 font-weight: bold;
 display: inline-block;
@@ -3145,7 +3146,7 @@ margin-bottom: 10px;
 }
 .Invitation-C1 .textarea {
 width: 670px;
-height: 50px;
+height: 70px;
 padding: 5px 10px;
 line-height: 22px;
 font-size: 14px;

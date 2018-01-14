@@ -65,8 +65,7 @@ input.button{ display:inline-block}
       </tr>     
       <tr>
         <th>栏目名称：</th>
-        <td><input type="text" name="info[name]" class="input-text wid140" value="<?php echo $cateinfo['name']; ?>"
-         onKeyUp="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\_]/g,'')">
+        <td><input type="text" name="info[name]" class="input-text wid140" value="<?php echo $cateinfo['name']; ?>">
         	<span><font color="#0c0">※ </font>请输入栏目名称</span>
 		</td>
       </tr>

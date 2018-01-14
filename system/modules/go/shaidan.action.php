@@ -66,7 +66,7 @@ class shaidan extends base {
 		$member=$this->userinfo;	
 		$sd_id=abs(intval($this->segment(4)));
 		$shaidan=$this->db->GetOne("select * from `@#_shaidan` where `sd_id`='$sd_id'");
-		$goods = $this->db->GetOne("select id,qishu,money,q_uid,maxqishu,thumb,title from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$shaidan[sd_shopid]' order by `qishu` DESC");
+		$goods = $this->db->GetOne("select id,qishu,money,q_uid,maxqishu,thumb,title,sen.titleen from `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  where `id` = '$shaidan[sd_shopid]' order by `qishu` DESC");
 			
 		if(isset($_POST['submit'])){			
 			$sdhf_id=$shaidan['sd_id'];

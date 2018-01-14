@@ -48,7 +48,6 @@ class index extends SystemAction
         
         $title = $search . ' - ' . _cfg('web_name');
         $shoplist = $mysql_model->GetList("SELECT `thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid  WHERE `q_user`  = '' AND `title` LIKE '%" . $search . "%'");
-        
         $list = count($shoplist);
         
         include templates("search", "search");

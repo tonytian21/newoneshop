@@ -97,51 +97,43 @@
 {wc:php:start} $uid = _encrypt(get_user_uid()); {wc:php:end}
 <div class="wrap w1200" style="overflow: hidden; margin-top: 15px;">
 	<div class="W-left fl" style="width: 865px">
-		<h4>
-			<i></i>
+		<h4 style="font-size: 24px">
+			{wc:fun:lang::get_lang('邀请好友')} 
 		</h4>
-		<div id="referDocument" class="process-box">
-			<ul class="process">
-				<li class="p-1">
-					<div class="process_con S01 hidden">
-						<span><em>◆</em><s>◆</s></span> 您每邀请一位好友成功参与1Shop即可获得50银币。
-					</div>
-				</li>
-			</ul>
+		<div id="referDocument">
+			<p style=" margin-top: 30px">
+				1.{wc:fun:lang::get_lang('您每邀请一位好友成功参与即可获得50银币。')}
+			</p>
+			
+			<p style=" margin: 20px 0">
+				2.{wc:fun:lang::get_lang('当您邀请好友超过10个人以后每邀请一位好友成功参与即可获得100银币。')}
+			</p>
 		</div>
-		<div class="referrals_banner">
-			<ul>
-				<li><img src="{G_TEMPLATES_STYLE}/images/referrals_01.jpg"
-					border="0" alt=""></li>
-				<li><img src="{G_TEMPLATES_STYLE}/images/referrals_02.jpg"
-					border="0" alt=""></li>
-			</ul>
-		</div>
+		
 		{wc:if !uidcookie('uid')}
 		<div class="login_reg">
-			{wc:fun:lang::get_lang('请先')}<a href="{WEB_PATH}/member/user/login">{wc:fun:lang::get_lang('登录')}</a>{wc:fun:lang::get_lang('或者')}<a
+			{wc:fun:lang::get_lang('请先')} <a href="{WEB_PATH}/member/user/login">{wc:fun:lang::get_lang('登录')}</a> {wc:fun:lang::get_lang('或者')} <a
 				href="{WEB_PATH}/member/user/register">{wc:fun:lang::get_lang('注册')}</a>{wc:fun:lang::get_lang('，获取您的专属邀请链接。')}
 		</div>
 		<div class="login_button">
 			<a href="{WEB_PATH}/member/user/login">{wc:fun:lang::get_lang('立即登录，邀请好友')} &gt;&gt;</a>
 		</div>
 		<div class="reg-txt">
-			{wc:fun:lang::get_lang('还没有')}{wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('帐号？')}<a
+			{wc:fun:lang::get_lang('还没有帐号')} <a
 				href="{WEB_PATH}/member/user/register"><b>{wc:fun:lang::get_lang('立即注册')}</b></a>
 		</div>
 		{wc:else}
 		<div class="Invitation-t">{wc:fun:lang::get_lang('专用邀请链接')}</div>
 		<div class="Invitation-C1">
-			<p class="fs14">{wc:fun:lang::get_lang('这是您的专属邀请链接，请通过')} MSN {wc:fun:lang::get_lang('或')} FaceBook {wc:fun:lang::get_lang('发送给您的好友')}</p>
+			<p class="fs14">{wc:fun:lang::get_lang('这是您的专属邀请链接，请通过MSN或FaceBook发送给您的好友。')}</p>
 			<div class="">
-				<textarea disabled="disabled" name="copyShareText" id="fe_text"
-					class="textarea">{wc:fun:lang::get_lang('我刚发现一个很好很好玩的网站，')}1{wc:fun:lang::get_lang('元就能买')}IPhone X{wc:fun:lang::get_lang('哦，快去看看吧！')}
-{WEB_PATH}/register/{wc:$uid}</textarea>
+				<textarea disabled="disabled" name="copyShareText" id="fe_text" class="textarea">{wc:fun:lang::get_lang('我刚发现一个很好很好玩的网站，1元就能买IPhone X哦，快去看看吧！')}
+					{WEB_PATH}/register/{wc:$uid}</textarea>
 			</div>
 
 		</div>
 		<div class="Invitation-C2">
-			<p class="fs14">{wc:fun:lang::get_lang('通过分享方式邀请好友，立即分享到您的')}facebook{wc:fun:lang::get_lang('、')}twitter{wc:fun:lang::get_lang('、')}linkedin{wc:fun:lang::get_lang('上的朋友吧！')}</p>
+			<p class="fs14">{wc:fun:lang::get_lang('通过分享方式邀请好友，立即分享到您的Facebook、Twitter、Linkedin上的朋友吧！')}</p>
 			<ul class="-mob-share-list">
 				<li class="-mob-share-facebook"></li>
 				<li class="-mob-share-twitter"></li>
