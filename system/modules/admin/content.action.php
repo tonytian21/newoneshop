@@ -1428,7 +1428,8 @@ HTML;
             $shopid = $this->db->insert_id();
 
             if ($shopid) {
-                $this->db->Query("INSERT INTO `@#_shoplist_en` (`gid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$shopid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
+                $this->db->Query("INSERT INTO `@#_shoplist_en` (`egid`, `titleen`,`title2en`,`keywordsen`,`descriptionen`,`contenten`) VALUES ('$shopid', '$titleen', '$title2en', '$keywordsen', '$descriptionen', '$contenten')");
+                
                 $this->db->Autocommit_commit();
 
                 //添加商品的编号写入redis

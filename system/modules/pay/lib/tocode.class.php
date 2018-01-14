@@ -93,7 +93,8 @@ class tocode {
 		if($this->go_list  && count($this->go_list) >= $this->num){
 			$this->get_code_dabai();
 		}else{
-			$this->get_code_yibai();
+			//$this->get_code_yibai();
+			$this->get_code_dabai();
 		}
 	}
 	
