@@ -1540,7 +1540,7 @@ cursor: pointer;
 .DetailsT_TitP li.Single_ConT {width: 98px;} */
 
 
-
+.DetailsT_TitP li{padding: 0 10px;}
 
 .DetailsT_TitP li.DetailsTCur {
 font-size: 18px;
