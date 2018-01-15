@@ -63,6 +63,10 @@ body{ background-color:#fff}
 			<td align="right">品牌名称：</td>
 			<td><input type="text"  name="name" class="input-text wid100"></td>
 	</tr>
+	<tr>
+			<td align="right">英文名称：</td>
+			<td><input type="text"  name="nameen" class="input-text wid100"></td>
+	</tr>
     <tr>
 			<td align="right">排序：</td>
 			<td><input type="text"  name="order" onKeyUp="value=value.replace(/[^\d]/ig,'')" class="input-text wid100">
