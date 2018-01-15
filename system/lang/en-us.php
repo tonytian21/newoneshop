@@ -370,7 +370,7 @@ return array(
     '天' => 'Day',
     '提交订单' => 'Submit the invoice',
     '订单支付' => 'Pay the order',
-    '支付成功等待揭晓' => 'payment successful waiting for the announcement',
+    '支付成功等待揭晓' =>'Payment successful waiting',
     '揭晓获得者' => 'Announcement',
     '商品' => 'Product',
     '名称' => 'Name ',
@@ -985,7 +985,7 @@ return array(
     '第*期正在进行' => 'Batch %s is in progress',
     '截止揭晓时间*最后100条' => 'Expired Date of Announce [%s] Last 100 list of purchase record',
     '总需参与人次' => 'The number of total participant',
-    '包尾' => 'Buy all',
+    '包尾' => 'All',
     '总计' => 'Total ',
     '第一步' => 'First step',
     '第二步' => 'Second step',
@@ -1055,7 +1055,7 @@ return array(
     "件相关商品"=>"related products",
     '查询' => 'The Query',
     "看看还有谁中奖了"=>"See who else won", 
-
+    "支付"=>"Pay",
     
 );
 
