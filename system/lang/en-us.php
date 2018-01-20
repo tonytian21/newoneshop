@@ -1055,7 +1055,10 @@ return array(
     "件相关商品"=>"related products",
     '查询' => 'The Query',
     "看看还有谁中奖了"=>"See who else won", 
-    "支付"=>"Pay",
+    "公司名称："=>"Company Name:",
+    "联系电话："=>"Contact No.: Office:",
+    "电子邮箱："=>"Email Address: ",
+    "公司地址："=>"Company Address:",
     
 );
 

@@ -3837,7 +3837,7 @@ font-size:14px;
 }
 .links_exp h3 {
 	border-bottom:1px dashed #CCC;
-	float:left;
+	
 	font-size:16px;
 	height:60px;
 	line-height:60px;
@@ -3846,8 +3846,8 @@ font-size:14px;
 }
 .links_exp p {
 	font-size:14px;
-	padding:15px 10px 15px 30px;
-	float:left;
+	padding:0 10px 8px 18px;
+	
 }
 
 .fundCon {

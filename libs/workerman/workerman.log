@@ -4,3 +4,530 @@
 2017-12-06 23:24:46 pid:16086 worker[none:16087] exit with status 9
 2017-12-06 23:24:46 pid:16086 Workerman[shua.php] has been stopped
 2017-12-07 11:13:16 pid:37569 Workerman[goods.php] start in DEBUG mode
+2018-01-14 22:26:38 pid:69852 Workerman[shua.php] start in DEBUG mode
+2018-01-14 22:26:42 pid:69852 Workerman[shua.php] Stopping ...
+2018-01-14 22:26:42 pid:69852 Workerman[shua.php] has been stopped
+2018-01-14 22:26:44 pid:69856 Workerman[shua.php] start in DAEMON mode
+2018-01-14 22:26:55 pid:69863 Workerman[shua.php] start in DAEMON mode
+2018-01-14 22:26:55 pid:69863 Workerman[shua.php] already running
+2018-01-14 22:27:10 pid:69868 Workerman[goods.php] start in DAEMON mode
+2018-01-15 15:36:14 pid:69879 Worker[69879] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69876 Worker[69876] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69874 Worker[69874] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69877 Worker[69877] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69872 Worker[69872] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69875 Worker[69875] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69873 Worker[69873] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69871 Worker[69871] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69878 Worker[69878] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69880 Worker[69880] process terminated with ERROR: E_ERROR "Uncaught RedisException: Connection lost in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(431): Worke in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:14 pid:69870 worker[none:69880] exit with status 65280
+2018-01-15 15:36:14 pid:69870 worker[none:69879] exit with status 65280
+2018-01-15 15:36:14 pid:69870 worker[none:69878] exit with status 65280
+2018-01-15 15:36:14 pid:69870 worker[none:69877] exit with status 65280
+2018-01-15 15:36:14 pid:69870 worker[none:69876] exit with status 65280
+2018-01-15 15:36:14 pid:82613 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:82614 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:69870 worker[none:69875] exit with status 65280
+2018-01-15 15:36:14 pid:82615 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:69870 worker[none:69874] exit with status 65280
+2018-01-15 15:36:14 pid:82616 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:69870 worker[none:69873] exit with status 65280
+2018-01-15 15:36:14 pid:82617 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:69870 worker[none:69872] exit with status 65280
+2018-01-15 15:36:14 pid:82618 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:82619 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:69870 worker[none:69871] exit with status 65280
+2018-01-15 15:36:14 pid:82620 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:82621 Warning: User yangfeng not exsits
+2018-01-15 15:36:14 pid:82622 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:82617 Worker[82617] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82613 Worker[82613] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82619 Worker[82619] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82615 Worker[82615] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82618 Worker[82618] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82616 Worker[82616] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82614 Worker[82614] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82622 Worker[82622] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82620 Worker[82620] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:82621 Worker[82621] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:15 pid:69870 worker[none:82619] exit with status 65280
+2018-01-15 15:36:15 pid:69870 worker[none:82618] exit with status 65280
+2018-01-15 15:36:15 pid:69870 worker[none:82622] exit with status 65280
+2018-01-15 15:36:15 pid:82623 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:69870 worker[none:82617] exit with status 65280
+2018-01-15 15:36:15 pid:82624 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:69870 worker[none:82616] exit with status 65280
+2018-01-15 15:36:15 pid:82625 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:69870 worker[none:82615] exit with status 65280
+2018-01-15 15:36:15 pid:82626 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:69870 worker[none:82614] exit with status 65280
+2018-01-15 15:36:15 pid:82627 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:82628 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:69870 worker[none:82613] exit with status 65280
+2018-01-15 15:36:15 pid:82629 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:82630 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:69870 worker[none:82621] exit with status 65280
+2018-01-15 15:36:15 pid:69870 worker[none:82620] exit with status 65280
+2018-01-15 15:36:15 pid:82631 Warning: User yangfeng not exsits
+2018-01-15 15:36:15 pid:82632 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:82623 Worker[82623] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82625 Worker[82625] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82627 Worker[82627] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82624 Worker[82624] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82628 Worker[82628] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82626 Worker[82626] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82629 Worker[82629] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82630 Worker[82630] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82631 Worker[82631] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:82632 Worker[82632] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:16 pid:69870 worker[none:82629] exit with status 65280
+2018-01-15 15:36:16 pid:69870 worker[none:82627] exit with status 65280
+2018-01-15 15:36:16 pid:69870 worker[none:82631] exit with status 65280
+2018-01-15 15:36:16 pid:69870 worker[none:82628] exit with status 65280
+2018-01-15 15:36:16 pid:82633 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:69870 worker[none:82630] exit with status 65280
+2018-01-15 15:36:16 pid:82634 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:82635 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:69870 worker[none:82626] exit with status 65280
+2018-01-15 15:36:16 pid:82636 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:69870 worker[none:82625] exit with status 65280
+2018-01-15 15:36:16 pid:82637 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:69870 worker[none:82624] exit with status 65280
+2018-01-15 15:36:16 pid:82638 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:69870 worker[none:82623] exit with status 65280
+2018-01-15 15:36:16 pid:82639 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:82640 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:69870 worker[none:82632] exit with status 65280
+2018-01-15 15:36:16 pid:82641 Warning: User yangfeng not exsits
+2018-01-15 15:36:16 pid:82642 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:82634 Worker[82634] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82635 Worker[82635] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82633 Worker[82633] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82641 Worker[82641] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82636 Worker[82636] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82639 Worker[82639] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82638 Worker[82638] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82642 Worker[82642] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82637 Worker[82637] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:82640 Worker[82640] process terminated with ERROR: E_ERROR "Uncaught RedisException: Redis server went away in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php:201
+Stack trace:
+#0 /Users/yangfeng/git/newoneshop/system/libs/predis.class.php(201): Redis->rPop('GOODS:ADDTERM')
+#1 /Users/yangfeng/git/newoneshop/system/modules/worker/goods.php(23): predis->rpop('GOODS:ADDTERM')
+#2 [internal function]: {closure}()
+#3 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(233): call_user_func_array(Object(Closure), Array)
+#4 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Events/Select.php(274): Workerman\Events\Select->tick()
+#5 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1723): Workerman\Events\Select->loop()
+#6 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1025): Workerman\Worker->run()
+#7 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(988): Workerman\Worker::forkOneWorker(Object(Workerman\Worker))
+#8 /Users/yangfeng/git/newoneshop/libs/workerman/workerman/Worker.php(1143 in /Users/yangfeng/git/newoneshop/system/libs/predis.class.php on line 201"
+2018-01-15 15:36:17 pid:69870 worker[none:82634] exit with status 65280
+2018-01-15 15:36:17 pid:69870 worker[none:82635] exit with status 65280
+2018-01-15 15:36:17 pid:82643 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:69870 worker[none:82641] exit with status 65280
+2018-01-15 15:36:17 pid:69870 worker[none:82642] exit with status 65280
+2018-01-15 15:36:17 pid:69870 worker[none:82639] exit with status 65280
+2018-01-15 15:36:17 pid:82644 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:82645 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:69870 worker[none:82638] exit with status 65280
+2018-01-15 15:36:17 pid:82646 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:69870 worker[none:82636] exit with status 65280
+2018-01-15 15:36:17 pid:82647 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:82648 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:69870 worker[none:82633] exit with status 65280
+2018-01-15 15:36:17 pid:69870 worker[none:82637] exit with status 65280
+2018-01-15 15:36:17 pid:82649 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:69870 worker[none:82640] exit with status 65280
+2018-01-15 15:36:17 pid:82650 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:82651 Warning: User yangfeng not exsits
+2018-01-15 15:36:17 pid:82652 Warning: User yangfeng not exsits
