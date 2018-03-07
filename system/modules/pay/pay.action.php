@@ -42,7 +42,7 @@ class pay extends admin {
 				_message("开通易宝支付请联系官网");
 			}
 		}
-
+		
 		$pay['pay_key']  = @unserialize($pay['pay_key']);
 
 		if(!is_array($pay['pay_key'])){
