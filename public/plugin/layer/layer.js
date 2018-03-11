@@ -120,7 +120,7 @@ Class.pt.config = {
 	zIndex : 19891014, 
 	maxWidth : 400,
 	fadeIn : [300 , false],
-	dialog : {btns : 1, btn : ['确定','取消'], type : 3, msg : '', yes : function(index){ layer.close(index);}, no : function(index){ layer.close(index);}
+	dialog : {btns : 1, btn : [getJsLang('确定'),getJsLang('取消')], type : 3, msg : '', yes : function(index){ layer.close(index);}, no : function(index){ layer.close(index);}
 	},
 	page : {dom: '#xulayer', html: ''},
 	iframe : {src: 'http://sentsin.com'},

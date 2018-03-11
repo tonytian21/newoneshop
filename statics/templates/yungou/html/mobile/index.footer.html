@@ -8,6 +8,11 @@
 <p>
     <br />
 </p>
+{wc:if $this->_cfg['route_l'] == 'en-us'}
+<script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+{wc:else}
+<script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+{wc:if:end}
 <style>
 .footerdi .f_home i.cur {
     background-position: 0 0 !important;

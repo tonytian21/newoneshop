@@ -65,7 +65,7 @@ $(".tags li").on("click",function(){
                  if (h.length > 0) {
                      h.children("span").html(q)
                  }
-                 g.children("p").html('总共购买<span class="orange arial z-user">' + r + '</span>个奖品  合计金额：<span id="total" class="orange arial">' + q + ".00</span> 元")
+                 g.children("p").html(getJsLang("总共购买") + '<span class="orange arial z-user">' + r + '</span>'+getJsLang("个奖品")+'  '+getJsLang("合计金额")+'：<span id="total" class="orange arial">' + q + ".00</span> "+getJsLang("元"))
              } else {
                  g.remove()
              }
@@ -139,11 +139,11 @@ $(".tags li").on("click",function(){
                  if (w.code == 1) {
                      var v = $(window).width();
                      var u = (v) / 2 - q.offset().left - 127;
-                     e("本期奖品已购买光了", q, -75, u)
+                     e(getJsLang("本期奖品已购买光了"), q, -75, u)
                  } else {
                      if (w.code == 0) {
                         var ids = q.parent().prev().find(".proce").attr("ids");
-                         q.parent().prev().html('总共参与：<em class="arial proce" id="arial'+ids+'" ids="'+ids+'">' + r + '</em>人次/<em class="orange arial" id="orange'+ids+'" ids="'+ids+'">￥' + r * yjg + "</em>")
+                         q.parent().prev().html(getJsLang("总共参与") + '：<em class="arial proce" id="arial'+ids+'" ids="'+ids+'">' + r + '</em>'+getJsLang("人次")+'/<em class="orange arial" id="orange'+ids+'" ids="'+ids+'">￥' + r * yjg + "</em>")
                      }
                  }
              };
@@ -226,8 +226,8 @@ $(".tags li").on("click",function(){
                              }
                          };
                          GetJPData(Gobal.Webpath, "ajax", "delCartItem/" + t, u)
-                     };
-                     n("您确定要删除吗？", s)
+                     };//' + getJsLang("限时揭晓") + '
+                     n(getJsLang("您确定要删除吗"), s)
                  })
          })
      };

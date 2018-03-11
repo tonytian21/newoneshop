@@ -17,6 +17,16 @@ js_lang["已参与人次"] = " <em class='orange'>{0}</em> Participants";
 js_lang["已参与"] = " Participants ";
 js_lang["剩余"] = " left ";
 js_lang["进行中"] = " In-Progress";
+js_lang["您确定要删除吗"] = "Are you sure you want to delete ?";
+js_lang["确定"] = "Confirm";
+js_lang["取消"] = "Cancel";
+js_lang["总共购买"] = "Total Purchase";
+js_lang["合计金额"] = "Total";
+js_lang["个奖品"] = "Items";
+js_lang["总共参与"] = "Total Participants";
+js_lang["人次"] = " Frequency";
+js_lang["本期奖品已购买光了"] = "This batch has been sold out";
+js_lang["元"] = "RM";
 
 function getJsLang(){
 	if (arguments.length == 0)
