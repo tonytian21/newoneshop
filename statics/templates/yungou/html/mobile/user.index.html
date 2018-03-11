@@ -186,23 +186,13 @@
 				<b class="z-name gray01">
 				{wc:fun:get_user_name($member['uid'])}
 				</b>
-					{wc:if $member['mobile']} 
-					<em>
-					({wc:$member['mobile']})
-					</em>
-					{wc:else} 
-					<em>
-					<a href="{WEB_PATH}/mobile/user/mobile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
-					{wc:fun:lang::get_lang('绑定手机')}
-					</a>
-					</em> 
-					{wc:if:end}
+					
 					{wc:if $member['username']}
 					<em></em>
 					{wc:else} 
 					<em>
 					<a href="{WEB_PATH}/mobile/user/profile" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">
-					{wc:fun:lang::get_lang('绑定昵称')}
+					{wc:fun:lang::get_lang('修改昵称')}
 					</a>
 					</em> 
 					{wc:if:end}
@@ -210,17 +200,17 @@
 				</p>
 				<ul class="clearfix u-mbr-info">
 					<li>
-						{wc:fun:lang::get_lang('可用银币')}
+						{wc:fun:lang::get_lang('可用银币：')}
 						<span class="orange">{wc:$member['score']}</span>
 					</li>
 					<li>
-						{wc:fun:lang::get_lang('经验值')}
+						{wc:fun:lang::get_lang('经验值：')}
 						<span class="orange">{wc:$member['jingyan']}</span>
 					</li>
 					<li>
 
-						{wc:fun:lang::get_lang('可用金币')}
-						<span class="orange">{wc:fun:lang::get_lang('：')}{wc:$member['money']}</span>
+						{wc:fun:lang::get_lang('可用金币：')}
+						<span class="orange">{wc:$member['money']}</span>
 						<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
 
 					</li>
@@ -297,7 +287,7 @@
 				<li>
 					<a href="{WEB_PATH}/mobile/user/profile">
 						<b class="z-arrow qq"></b>
-						{wc:fun:lang::get_lang('绑定')}Facebook
+						{wc:fun:lang::get_lang('绑定Facebook')}
 					</a>
 				</li>
 				<li>
