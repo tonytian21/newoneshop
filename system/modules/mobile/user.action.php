@@ -47,6 +47,8 @@ class user extends memberbase {
 	}
 
 	public function userinfo(){
+	    
+	    
 	    $webname=$this->_cfg['web_name'];
 
 	    if(isset($_POST['dosubmit'])){
@@ -59,6 +61,7 @@ class user extends memberbase {
 	    	$mobile = $_POST['mobile'];
 	    	$time = time();
 	    	$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `uid` = '$uid' LIMIT 1");
+	    	
 	    	if(!$member){
 	    		echo json_encode(['success'=>0,'message'=>'参数错误']);
 	    		exit;

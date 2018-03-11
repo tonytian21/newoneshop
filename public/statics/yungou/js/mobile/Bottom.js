@@ -116,13 +116,13 @@ var addNumToCartFun = null; (function() {
 
     Gobal.LoadImg = null;
 
-    Gobal.LoadHtml = '<div class="loadImg">正在加载</div>';
+    Gobal.LoadHtml = '<div class="loadImg">'+getJsLang("正在加载")+'</div>';
 
     Gobal.LoadPic = Gobal.Skin + "/images/loading.gif";
 
 	 
 
-    Gobal.NoneHtml = '<div class="haveNot z-minheight"><s></s><p>暂无记录</p></div>';
+    Gobal.NoneHtml = '<div class="haveNot z-minheight"><s></s><p>'+getJsLang("暂无记录")+'</p></div>';
 
     Gobal.unlink = "javascript:void(0);";
 
@@ -144,15 +144,15 @@ var addNumToCartFun = null; (function() {
 
     function(h) {       
 
-        var g = '<span><a href="'+Gobal.Webpath+'/mobile/mobile">首页</a><b></b></span><span><a href='+Gobal.Webpath+'/mobile/mobile/about>新手指南</a><b></b></span>';
+        var g = '<span><a href="'+Gobal.Webpath+'/mobile/mobile">首页</a><b></b></span><span><a href='+Gobal.Webpath+'/mobile/mobile/about>'+getJsLang("新手指南")+'</a><b></b></span>';
 
         if (h.code == 0) {		   
 
-            g = g + '<span><a href="'+Gobal.Webpath+'/mobile/home" class="Member">' + h.username + '</a><a href="'+Gobal.Webpath+'/mobile/user/cook_end" class="Exit">退出</a></span>'
+            g = g + '<span><a href="'+Gobal.Webpath+'/mobile/home" class="Member">' + h.username + '</a><a href="'+Gobal.Webpath+'/mobile/user/cook_end" class="Exit">'+getJsLang("退出")+'</a></span>'
 
         } else {
 
-            g = g + '<span><a href="'+Gobal.Webpath+'/mobile/user/login">登录</a><b></b></span><span><a href="'+Gobal.Webpath+'/mobile/register">注册</a></span>'
+            g = g + '<span><a href="'+Gobal.Webpath+'/mobile/user/login">登录</a><b></b></span><span><a href="'+Gobal.Webpath+'/mobile/register">'+getJsLang("注册")+'</a></span>'
 
         }
 

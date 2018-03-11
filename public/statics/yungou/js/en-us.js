@@ -27,7 +27,11 @@ js_lang["总共参与"] = "Total Participants";
 js_lang["人次"] = " Frequency";
 js_lang["本期奖品已购买光了"] = "This batch has been sold out";
 js_lang["元"] = "RM";
-
+js_lang["暂无记录"]="No records";
+js_lang["正在加载"]="Being loaded";
+js_lang["新手指南"]="Beginner 's Guide";
+js_lang["退出"]="Quit";
+js_lang["注册"]="Registration";
 function getJsLang(){
 	if (arguments.length == 0)
         return '';

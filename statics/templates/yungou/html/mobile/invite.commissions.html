@@ -73,36 +73,24 @@
                         {G_UPLOAD_PATH}/{wc:$touxiang}
                     {wc:if:end}" border=0>
                 </a>
-                <span class="{wc:if $member['jingyan'] < 501}
-                    z-class-icon01
-                {wc:elseif $member['jingyan'] < 1001}
-                    z-class-icon02
-                {wc:elseif $member['jingyan'] < 3001}
-                    z-class-icon03
-                {wc:elseif $member['jingyan'] < 6001}
-                    z-class-icon04
-                {wc:elseif $member['jingyan'] < 2001}
-                    z-class-icon05
-                {wc:else}
-                    z-class-icon06
-                {wc:if:end} gray02">
-                    <s></s>
-                    {wc:if $member['jingyan'] < 501} 
+                <span class="{wc:if $member['yungoudj']=='云购新手'}
+					z-class-icon01
+				{wc:elseif $member['yungoudj']=='云购小将'}
+					z-class-icon02
+				{wc:elseif $member['yungoudj']=='云购中将'}
+					z-class-icon03
+				{wc:elseif $member['yungoudj']=='云购上将'}
+					z-class-icon04
+				{wc:elseif $member['yungoudj']=='云购大将'}
+					z-class-icon05
+				{wc:elseif $member['yungoudj']=='云购将军'}
 
-                        {wc:fun:lang::get_lang('1Shop新手')}
-                    {wc:elseif $member['jingyan'] < 1001}
-                        {wc:fun:lang::get_lang('1Shop小将')}
-                    {wc:elseif $member['jingyan'] < 3001}
-                        {wc:fun:lang::get_lang('1Shop中将')}
-                    {wc:elseif $member['jingyan'] < 6001}
-                        {wc:fun:lang::get_lang('1Shop上将')}
-                    {wc:elseif $member['jingyan'] < 20001}
-                        {wc:fun:lang::get_lang('1Shop大将')}
-                    {wc:else}
-                        {wc:fun:lang::get_lang('1Shop将军')}
-
-                    {wc:if:end}
-                </span>
+					z-class-icon06
+				{wc:if:end} gray02">
+					<s></s>
+					{wc:fun:lang::get_lang($member['yungoudj'])}
+					
+				</span>
             </div>
             <div class="m-name-info">
                 <p class="u-name"> 
@@ -123,15 +111,15 @@
                 </p>
                 <ul class="clearfix u-mbr-info">
                     <li>
-                        {wc:fun:lang::get_lang('可用银币')}
+                        {wc:fun:lang::get_lang('可用银币：')}
                         <span class="orange">{wc:$member['score']}</span>
                     </li>
                     <li>
-                        {wc:fun:lang::get_lang('经验值')}
+                        {wc:fun:lang::get_lang('经验值：')}
                         <span class="orange">{wc:$member['jingyan']}</span>
                     </li>
                     <li>
-                        {wc:fun:lang::get_lang('可用余额')}
+                        {wc:fun:lang::get_lang('可用余额：')}
                         <span class="orange">{wc:fun:lang::get_lang('￥')}{wc:$member['money']}</span>
                         <a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
                     </li>
@@ -142,15 +130,15 @@
             <div class="member-t"><h2>{wc:fun:lang::get_lang('佣金明细')}</h2></div>
             <div class="total">
                 <dl>
-                <dd>累计收入：<b class="orange">{wc:$shourutotal}</b>元</dd>
+                <dd>{wc:fun:lang::get_lang('累计收入：')}<b class="orange">{wc:$shourutotal}</b>{wc:fun:lang::get_lang('元')}</dd>
                     
                    
-                    <dt class="gray02">佣金实时充值到您的帐户。</dt>
+                    <dt class="gray02">{wc:fun:lang::get_lang('佣金余额实时充值到您的帐户。')}</dt>
                 </dl>
 
             </div>
       
-            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w20">用户</li><li class="w20">时间</li><li class="w40">描述</li><li class="w10">金额</li><li class="w10">佣金</li></ul>
+            <div id="divCommissionList" class="list-tab commission gray02"><ul class="listTitle"><li class="w20">{wc:fun:lang::get_lang('用户')}</li><li class="w20">{wc:fun:lang::get_lang('时间')}</li><li class="w20">{wc:fun:lang::get_lang('描述')}</li><li class="w20">{wc:fun:lang::get_lang('金额')}</li><li class="w20">{wc:fun:lang::get_lang('佣金')}</li></ul>
 
                 {wc:if $recodetotal!=0}
                     {wc:loop $recodearr $key $val}

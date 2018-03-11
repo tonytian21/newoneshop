@@ -75,37 +75,26 @@
                         {G_UPLOAD_PATH}/{wc:$touxiang}
                     {wc:if:end}" border=0>
                 </a>
-                <span class="{wc:if $member['jingyan'] < 501}
-                    z-class-icon01
-                {wc:elseif $member['jingyan'] < 1001}
-                    z-class-icon02
-                {wc:elseif $member['jingyan'] < 3001}
-                    z-class-icon03
-                {wc:elseif $member['jingyan'] < 6001}
-                    z-class-icon04
-                {wc:elseif $member['jingyan'] < 2001}
-                    z-class-icon05
-                {wc:else}
-                    z-class-icon06
-                {wc:if:end} gray02">
-                    <s></s>
-                    {wc:if $member['jingyan'] < 501} 
+                
+                <span class="{wc:if $member['yungoudj']=='云购新手'}
+					z-class-icon01
+				{wc:elseif $member['yungoudj']=='云购小将'}
+					z-class-icon02
+				{wc:elseif $member['yungoudj']=='云购中将'}
+					z-class-icon03
+				{wc:elseif $member['yungoudj']=='云购上将'}
+					z-class-icon04
+				{wc:elseif $member['yungoudj']=='云购大将'}
+					z-class-icon05
+				{wc:elseif $member['yungoudj']=='云购将军'}
 
-                        {wc:fun:lang::get_lang('1Shop新手')}
-                    {wc:elseif $member['jingyan'] < 1001}
-                        {wc:fun:lang::get_lang('1Shop小将')}
-                    {wc:elseif $member['jingyan'] < 3001}
-                        {wc:fun:lang::get_lang('1Shop中将')}
-                    {wc:elseif $member['jingyan'] < 6001}
-                        {wc:fun:lang::get_lang('1Shop上将')}
-                    {wc:elseif $member['jingyan'] < 20001}
-                        {wc:fun:lang::get_lang('1Shop大将')}
-                    {wc:else}
-                        {wc:fun:lang::get_lang('1Shop将军')}
-
-                    {wc:if:end}
-                    
-                </span>
+					z-class-icon06
+				{wc:if:end} gray02">
+					<s></s>
+					{wc:fun:lang::get_lang($member['yungoudj'])}
+					
+				</span>
+                
             </div>
             <div class="m-name-info">
                 <p class="u-name"> 
@@ -126,15 +115,15 @@
                 </p>
                 <ul class="clearfix u-mbr-info">
                     <li>
-                        {wc:fun:lang::get_lang('可用银币')}
+                        {wc:fun:lang::get_lang('可用银币：')}
                         <span class="orange">{wc:$member['score']}</span>
                     </li>
                     <li>
-                        {wc:fun:lang::get_lang('经验值')}
+                        {wc:fun:lang::get_lang('经验值：')}
                         <span class="orange">{wc:$member['jingyan']}</span>
                     </li>
                     <li>
-                        {wc:fun:lang::get_lang('可用余额')}
+                        {wc:fun:lang::get_lang('可用余额：')}
                         <span class="orange">{wc:fun:lang::get_lang('￥')}{wc:$member['money']}</span>
                         <a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
                     </li>
@@ -147,11 +136,11 @@
             <div id="divInvited" class="success-invitation gray02"  >
                 <p>{wc:fun:lang::get_lang('复制链接邀请好友赚提成！')}<br>
                  <a target="_blank" href="" class="blue">{wc:fun:lang::get_lang('详情请电脑端登录进行了解')}&gt;&gt;</a></p>
-                <span><input id="txtInfo"  style="width:80%;height:20px; " value="1{wc:fun:lang::get_lang('元就能买')}IPhone X{wc:fun:lang::get_lang('哦，快去看看吧！')} {WEB_PATH}/mobile/user/register/{wc:$uid}" onpaste="return false" type="text"><span id="d_clip_container"><!--button id="d_clip_button" class="">{wc:fun:lang::get_lang('复制')}</button--></span></span>
+                <span><input id="txtInfo"  style="width:80%;height:20px; " value="{wc:fun:lang::get_lang('1元就能买IPhoneX哦，快去看看吧！')} {WEB_PATH}/mobile/user/register/{wc:$uid}" onpaste="return false" type="text"><span id="d_clip_container"><!--button id="d_clip_button" class="">{wc:fun:lang::get_lang('复制')}</button--></span></span>
 
             </div>
 
-            <div id="divInviteInfo" class="get-tips gray01" style="">{wc:fun:lang::get_lang('成功邀请')} <span class="orange">{wc:$involvedtotal}</span> {wc:fun:lang::get_lang('位会员注册，已有')} <span class="orange">{wc:$involvednum}</span> {wc:fun:lang::get_lang('位会员参与')}</div>
+            <div id="divInviteInfo" class="get-tips gray01" style="">  {wc:fun:lang::get_lang('成功邀请注册',$involvedtotal,$involvednum)}</div>
             <div id="divList" class="list-tab SuccessCon"><ul class="listTitle"><li class="w200">{wc:fun:lang::get_lang('用户名')}</li><li class="w200">{wc:fun:lang::get_lang('时间')}</li><li class="w200">{wc:fun:lang::get_lang('邀请编号')}</li><li class="w200">{wc:fun:lang::get_lang('消费状态')}</li></ul>
                 {wc:if $involvedtotal!=0}
                 {wc:loop $invifriends $key $val}

@@ -21,6 +21,7 @@ class base extends SystemAction {
 		$uid=_encrypt(_getcookie('uid'),'DECODE');
 
 		if (!isset($_GET['wxid'])) {
+		    
 			$member=$mysql_model->GetOne("select * from `@#_member` where `uid`='".$uid."'");
 		}else{
 			$wxid = $_GET['wxid'];

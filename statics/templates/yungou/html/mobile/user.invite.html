@@ -73,22 +73,23 @@
                     {wc:if:end}" border=0>
 				</a>
         
-				<span class="{wc:if $member['yungoudj']==lang::get_lang('1Shop新手')}
-                    z-class-icon01
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop小将')}
-                    z-class-icon02
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop中将')}
-                    z-class-icon03
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop上将')}
-                    z-class-icon04
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop大将')}
-                    z-class-icon05
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop将军')}
+				<span class="{wc:if $member['yungoudj']=='云购新手'}
+					z-class-icon01
+				{wc:elseif $member['yungoudj']=='云购小将'}
+					z-class-icon02
+				{wc:elseif $member['yungoudj']=='云购中将'}
+					z-class-icon03
+				{wc:elseif $member['yungoudj']=='云购上将'}
+					z-class-icon04
+				{wc:elseif $member['yungoudj']=='云购大将'}
+					z-class-icon05
+				{wc:elseif $member['yungoudj']=='云购将军'}
 
-                    z-class-icon06
-                {wc:if:end} gray02">
+					z-class-icon06
+				{wc:if:end} gray02">
 					<s></s>
-					{wc:$member['yungoudj']}
+					{wc:fun:lang::get_lang($member['yungoudj'])}
+					
 				</span>
 			</div>
 			<div class="m-name-info">
@@ -110,15 +111,15 @@
 				</p>
 				<ul class="clearfix u-mbr-info">
 					<li>
-						{wc:fun:lang::get_lang('可用银币')}
+						{wc:fun:lang::get_lang('可用银币：')}
 						<span class="orange">{wc:$member['score']}</span>
 					</li>
 					<li>
-						{wc:fun:lang::get_lang('经验值')}
+						{wc:fun:lang::get_lang('经验值：')}
 						<span class="orange">{wc:$member['jingyan']}</span>
 					</li>
 					<li>
-						{wc:fun:lang::get_lang('可用余额')}
+						{wc:fun:lang::get_lang('可用余额：')}
 						<span class="orange">{wc:fun:lang::get_lang('￥')}{wc:$member['money']}</span>
 						<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
 					</li>
@@ -139,8 +140,6 @@
 
 			    <li><a href="{WEB_PATH}/mobile/invite/friends"><b class="z-arrow xz"></b>{wc:fun:lang::get_lang('邀请好友')}</a></li>
 			    <li><a href="{WEB_PATH}/mobile/invite/commissions"><b class="z-arrow xz"></b>{wc:fun:lang::get_lang('佣金明细')}</a></li>
-			    
-			    <li><a href="{WEB_PATH}/mobile/invite/record"><b class="z-arrow xz"></b>{wc:fun:lang::get_lang('提现记录')}</a></li>
                 <li><a href="{WEB_PATH}/mobile/invite/mycode"><b class="z-arrow xz"></b>{wc:fun:lang::get_lang('我的专属二维码')}</a></li>
 
 		    </ul>

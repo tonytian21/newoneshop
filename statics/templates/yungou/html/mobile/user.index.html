@@ -162,22 +162,23 @@
                     {wc:if:end}" border=0>
 				</a>
 
-				<span class="{wc:if $member['yungoudj']==lang::get_lang('1Shop新手')}
+				<span class="{wc:if $member['yungoudj']=='云购新手'}
 					z-class-icon01
-				{wc:elseif $member['yungoudj']==lang::get_lang('1Shop小将')}
+				{wc:elseif $member['yungoudj']=='云购小将'}
 					z-class-icon02
-				{wc:elseif $member['yungoudj']==lang::get_lang('1Shop中将')}
+				{wc:elseif $member['yungoudj']=='云购中将'}
 					z-class-icon03
-				{wc:elseif $member['yungoudj']==lang::get_lang('1Shop上将')}
+				{wc:elseif $member['yungoudj']=='云购上将'}
 					z-class-icon04
-				{wc:elseif $member['yungoudj']==lang::get_lang('1Shop大将')}
+				{wc:elseif $member['yungoudj']=='云购大将'}
 					z-class-icon05
-				{wc:elseif $member['yungoudj']==lang::get_lang('1Shop将军')}
+				{wc:elseif $member['yungoudj']=='云购将军'}
 
 					z-class-icon06
 				{wc:if:end} gray02">
 					<s></s>
-					{wc:$member['yungoudj']}
+					{wc:fun:lang::get_lang($member['yungoudj'])}
+					
 				</span>
 				
 			</div>
@@ -228,7 +229,6 @@
 					<a href="{WEB_PATH}/mobile/home/userbuylist">
 						<b class="z-arrow jilu"></b>
 						{wc:fun:lang::get_lang('夺宝记录')}
-】
 					</a>
 				</li>
 				<li>
@@ -265,24 +265,24 @@
 					</a>
 				</li>
 
-				<li>
+				<!-- <li>
 					<a href="{WEB_PATH}/mobile/home/zhuanzhang">
 						<b class="z-arrow1 zhuanzhang"></b>
 						{wc:fun:lang::get_lang('用户转账')}
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<a href="{WEB_PATH}/mobile/invite/mycode">
 						<b style="width: 26px;" class="z-arrow1 erweima"></b>
 						{wc:fun:lang::get_lang('二维码推广')}
 					</a>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="{WEB_PATH}/mobile/home/inviteshare">
 						<b class="z-arrow1 gouwuzhinan"></b>
 						{wc:fun:lang::get_lang('购物指南')}
 					</a>
-				</li>
+				</li> -->
 				<div class="member_wz">{wc:fun:lang::get_lang('资料编辑')}</div>
 				<li>
 					<a href="{WEB_PATH}/mobile/user/profile">

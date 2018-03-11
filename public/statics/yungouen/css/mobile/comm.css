@@ -11,6 +11,7 @@ select,
 textarea {
     font-size: 12px;
     font-family: arial, 微软雅黑;
+    text-transform:capitalize;
 }
 
 :focus {
