@@ -74,11 +74,11 @@ $(function() {
 
                             t.isCount = 0;
 
-                            m.html("已晒单(" + v + ")");
+                            m.html(getJsLang("已晒单") + "(" + v + ")");
 
                             if (D.unPostCount > 0) {
 
-                                i.html("未晒单(" + D.unPostCount + ")")
+                                i.html(getJsLang("未晒单") + "(" + D.unPostCount + ")")
 
                             }
 
@@ -96,7 +96,7 @@ $(function() {
 
                             var x = z == 2 ? Gobal.Webpath+"/mobile/mobile/item/" + C[y].id + "": Gobal.Webpath+"/mobile/home/PostSingleEdit/" + C[y].id + "";
 
-                            A += '<li class="' + (y + 1 == B ? "bornone": "") + '" onclick="location.href=\'' + x + '\'"><a class="fl z-Limg" href="' + x + '"><img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + C[y].thumb + '" border=0 alt="" width=40></a><div class="u-sgl-r"><p class="z-sgl-tt"><a href="' + x + '" class="gray6">' + C[y].sd_title + '</a></p><p class="z-sgl-info gray9">' + C[y].sd_content + "</p><p>晒单时间：" + C[y].sd_time + "</p>";
+                            A += '<li class="' + (y + 1 == B ? "bornone": "") + '" onclick="location.href=\'' + x + '\'"><a class="fl z-Limg" href="' + x + '"><img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + C[y].thumb + '" border=0 alt="" width=40></a><div class="u-sgl-r"><p class="z-sgl-tt"><a href="' + x + '" class="gray6">' + C[y].sd_title + '</a></p><p class="z-sgl-info gray9">' + C[y].sd_content + "</p><p>"+getJsLang("晒单时间")+"：" + C[y].sd_time + "</p>";
 
                             /*if (z == 0) {
 
@@ -242,7 +242,7 @@ $(function() {
 
                         for (var x = 0; x < z; x++) {
 
-                            var C = '<li class="' + (x + 1 == z ? "bornone": "") + '" id="' + A[x].id + '"><a class="fl z-Limg" href="'+Gobal.Webpath+'/mobile/mobile/item/' + A[x].id + '"><img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + A[x].thumb + '" border=0 alt=""></a><div class="u-sgl-r gray9"><p class="z-sgl-tt"><a href="'+Gobal.Webpath+'/mobile/mobile/item/' + A[x].id + '" class="gray6">' + A[x].title + "</a></p><p>幸运码：" + A[x].q_user_code + "</p><p>揭晓时间：" + A[x].q_end_time + '</p><p><a href="'+Gobal.Webpath+'/mobile/home/postsingle/' + A[x].id + '" class="z-sgl-btn">添加晒单</a></p></div><b class="z-arrow"></b></li>';
+                            var C = '<li class="' + (x + 1 == z ? "bornone": "") + '" id="' + A[x].id + '"><a class="fl z-Limg" href="'+Gobal.Webpath+'/mobile/mobile/item/' + A[x].id + '"><img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + A[x].thumb + '" border=0 alt=""></a><div class="u-sgl-r gray9"><p class="z-sgl-tt"><a href="'+Gobal.Webpath+'/mobile/mobile/item/' + A[x].id + '" class="gray6">' + A[x].title + "</a></p><p>"+getJsLang("幸运码")+"：" + A[x].q_user_code + "</p><p>"+getJsLang("揭晓时间")+"：" + A[x].q_end_time + '</p><p><a href="'+Gobal.Webpath+'/mobile/home/postsingle/' + A[x].id + '" class="z-sgl-btn">'+getJsLang("添加晒单")+'</a></p></div><b class="z-arrow"></b></li>';
 
                             var y = $(C);
 

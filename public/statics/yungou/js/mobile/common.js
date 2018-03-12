@@ -19,7 +19,7 @@ var chk_pwd = {
 					}
 				}
 			}
-			error.msg = "为保障您的账户安全，禁止使用弱密码";
+			error.msg = getJsLang("禁止使用弱密码");
 		}
 		return false;
 	}

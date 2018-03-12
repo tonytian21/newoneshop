@@ -64,7 +64,7 @@ $(function() {
 
                         j = m;
 
-                        f.html('选择平台充值<em class="orange">' + l(m) + "</em>元")
+                        f.html(getJsLang("选择平台充值") + '<em class="orange">' + l(m) + "</em>" + getJsLang("元"))
 
                     }
 
@@ -76,7 +76,7 @@ $(function() {
 
                 a.focus();
 
-                f.html('选择平台充值<em class="orange">0.00</em>元')
+                f.html(getJsLang("选择平台充值") + '<em class="orange">0.00</em>'+getJsLang("元"))
 
             }
 
@@ -98,7 +98,7 @@ $(function() {
 
                     n.siblings().children().removeClass("z-sel").removeClass("z-initsel");
 
-                    f.html('选择平台充值<em class="orange">' + n.attr("money") + ".00</em>元")
+                    f.html(getJsLang("选择平台充值") + '<em class="orange">' + n.attr("money") + ".00</em>" + getJsLang("元"))
 
                 })
 
@@ -110,7 +110,7 @@ $(function() {
 
                     g = true;
 
-                    if (a.val() == "输入金额") {
+                    if (a.val() == getJsLang("输入金额")) {
 
                         a.val("")
 

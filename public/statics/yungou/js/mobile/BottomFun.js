@@ -114,7 +114,7 @@ Gobal.JsPath = Path.JsPath;
 
     Gobal.LoadImg = null;
 
-    Gobal.LoadHtml = '<div class="loadImg">正在加载</div>';
+    Gobal.LoadHtml = '<div class="loadImg">'+getJsLang("正在加载")+'</div>';
 
     Gobal.LoadPic = Gobal.Skin + "/images/loading.gif";
 

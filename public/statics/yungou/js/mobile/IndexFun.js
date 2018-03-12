@@ -108,7 +108,7 @@ $(function() {
 
                             g += p.codeID + ",";
 
-                            var s = $('<div class="m-lott-conduct" id="' + p.codeID + '"><p class="z-lott-tt">(第' + p.period + "期)" + p.goodsSName + '<b class="z-arrow"></b><span class="z-lott-time">揭晓倒计时<span class="minute">00</span>:<span class="second">00</span>:<span class="millisecond">0</span><span class="last">0</span></span></p></div>');
+                            var s = $('<div class="m-lott-conduct" id="' + p.codeID + '"><p class="z-lott-tt">('+getJsLang("第*期",p.period)+')' + p.goodsSName + '<b class="z-arrow"></b><span class="z-lott-time">'+getJsLang("揭晓倒计时")+'<span class="minute">00</span>:<span class="second">00</span>:<span class="millisecond">0</span><span class="last">0</span></span></p></div>');
 
                             s.click(function() {                                
 

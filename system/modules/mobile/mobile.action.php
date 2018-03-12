@@ -1019,6 +1019,7 @@ class mobile extends base
                 }
             }
         }
+        
         include templates("mobile/index", "userindex");
     }
     

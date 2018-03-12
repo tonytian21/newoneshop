@@ -76,7 +76,7 @@ $(function() {
 
                 c.parent().removeClass("z-pay-grayC");
 
-                c.attr("sel", "1").attr("class", "z-pay-mentsel").next("span").html(getJsLang("银币支付")+'<em class="orange">' + y + ".00</em>"+getJsLang("元")+"（您的银币：" + t + "）")
+                c.attr("sel", "1").attr("class", "z-pay-mentsel").next("span").html(getJsLang("银币支付")+'<em class="orange">' + y + ".00</em>"+getJsLang("元")+"（"+getJsLang("您的银币")+"：" + t + "）")
 
 				checkpay='fufen';
 
@@ -84,7 +84,7 @@ $(function() {
 
             } else {
 
-                c.attr("sel", "0").attr("class", "z-pay-ment").next("span").html(getJsLang("银币支付")+'<em class="orange">0.00</em>'+getJsLang("元")+'（您的银币：' + t + "）")
+                c.attr("sel", "0").attr("class", "z-pay-ment").next("span").html(getJsLang("银币支付")+'<em class="orange">0.00</em>'+getJsLang("元")+'（'+getJsLang("您的银币")+'：' + t + "）")
 
             }
 

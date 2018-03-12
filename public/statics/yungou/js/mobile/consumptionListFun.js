@@ -74,7 +74,7 @@ $(function() {
 
                             v.isCount = 0;
 
-                            B = '<li class="m-userMoneylst-tt"><span>充值时间</span><span>充值金额</span><span>充值渠道</span></li>'
+                            B = '<li class="m-userMoneylst-tt"><span>'+getJsLang("充值时间")+'</span><span>'+getJsLang("充值金额")+'</span><span>充值渠道</span></li>'
 
                         }
 
@@ -196,7 +196,7 @@ $(function() {
 
                             x = D.count;							 
 
-                            B = '<li class="m-userMoneylst-tt"><span>消费时间</span><span>消费金额</span></li>'
+                            B = '<li class="m-userMoneylst-tt"><span>'+getJsLang("消费时间")+'</span><span>'+getJsLang("消费金额")+'</span></li>'
 
                         }
 
@@ -206,7 +206,7 @@ $(function() {
 
                         for (var z = 0; z < A; z++) {
 
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>花费 ￥" + C[z].money + C[z].content + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>"+getJsLang("花费")+" ￥" + C[z].money + C[z].content + "</span></li>"
 
                         }
 

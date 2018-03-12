@@ -113,18 +113,18 @@ $(document).ready(function() {
                             var z = Math.ceil(G);
                             E += "<ul onclick=\"location.href='"+Gobal.Webpath+"/mobile/mobile/item/" + F.shopid + '\'"><li class="mBuyRecordL">';
                             E += '<img src2="'+Gobal.imgpath+'/uploads/' + F.thumb + '" src="' + Gobal.LoadPic + '"></li>';
-                            E += '<li class="mBuyRecordR">(第' + F.qishu + "期)" + F.title + "";
+                            E += '<li class="mBuyRecordR">('+getJsLang("第*期",F.qishu)+')' + (getJsLang("lang_curr") == 'en-us' ? F.titleen : F.title);
                             if (F.codeState == 3) {
-                                E += '<p class="mValue">价值：￥' + F.money + '</p><span>获得者：<a style="color: #22AAff" href="'+Gobal.Webpath+'/mobile/mobile/userindex/' + F.q_uid + '">' + F.q_user + '</a><br>幸运码：<em class="orange">' + F.q_user_code + "</em></span>"
+                                E += '<p class="mValue">'+getJsLang("价值")+'：￥' + F.money + '</p><span>'+getJsLang("获得者")+'：<a style="color: #22AAff" href="'+Gobal.Webpath+'/mobile/mobile/userindex/' + F.q_uid + '">' + F.q_user + '</a><br>'+getJsLang("幸运码")+'：<em class="orange">' + F.q_user_code + "</em></span>"
                             } else {
                                 E += '<div class="pRate"><div class="Progress-bar">';
                                 if (z == 0) {
                                     E += '<p class="u-progress"></p>'
                                 } else {
-                                    E += '<p class="u-progress" title="已完成' + G + '%"><span class="pgbar" style="width: ' + z + '%;"><span class="pging"></span></span></p>'
+                                    E += '<p class="u-progress" title="' + getJsLang("已完成") + G + '%"><span class="pgbar" style="width: ' + z + '%;"><span class="pging"></span></span></p>'
                                 }
                                 E += '<ul class="Pro-bar-li">';
-                                E += '<li class="P-bar01"><em>' + F.canyurenshu + '</em>已参与</li><li class="P-bar02"><em>' + F.zongrenshu + '</em>总需人次</li><li class="P-bar03"><em>' + (F.zongrenshu - F.canyurenshu) + "</em>剩余</li>";
+                                E += '<li class="P-bar01"><em>' + F.canyurenshu + '</em>'+getJsLang("已参与")+'</li><li class="P-bar02"><em>' + F.zongrenshu + '</em>'+getJsLang("总需人次")+'</li><li class="P-bar03"><em>' + (F.zongrenshu - F.canyurenshu) + "</em>"+getJsLang('剩余')+"</li>";
                                 E += "</ul></div></div>"
                             }
                             E += "</li></ul>"
@@ -210,8 +210,8 @@ $(document).ready(function() {
                             var C = D[A];
                             B += "<ul onclick=\"location.href='"+Gobal.Webpath+"/mobile/mobile/item/" + C.id + '\'" class="BuyRecordList"><li class="mBuyRecordL">';
                             B += '<img src2="'+Gobal.imgpath+'/uploads/' + C.thumb + '" src="' + Gobal.LoadPic + '"></li>';
-                            B += '<li class="mBuyRecordR">(第' + C.qishu + "期)" + C.title + '<p class="mValue">价值：￥' + C.money + "</p>";
-                            B += '<span>幸运码：<em class="orange">' + C.q_user_code + "</em><br>揭晓时间：" + C.q_end_time + " </span></li></ul>"
+                            B += '<li class="mBuyRecordR">('+getJsLang("第*期",C.qishu) + ")" + (getJsLang("lang_curr") == 'en-us' ? C.titleen : C.title)+ '<p class="mValue">'+getJsLang("价值")+'：￥' + C.money + "</p>";
+                            B += '<span>'+getJsLang("幸运码")+'：<em class="orange">' + C.q_user_code + "</em><br>"+getJsLang("揭晓时间")+"：" + C.q_end_time + " </span></li></ul>"
                         }
                         e.append(B);
                         s = "";
@@ -296,7 +296,7 @@ $(document).ready(function() {
                             if (z.length > 75) {
                                 z = z.substring(0, 75) + "..."
                             }
-                            F += '<li><a href="'+Gobal.Webpath+'/mobile/shaidan/detail/' + G.sd_id + '"><h3><b>' + G.sd_title + "</b><em>" + G.sd_time + "</em></h3>";
+                            F += '<li><a href="'+Gobal.Webpath+'/mobile/shaidan/detail/' + G.sd_id + '"><h3><b>' + (getJsLang("lang_curr") == 'en-us' ? G.titleen : G.title) + "</b><em>" + G.sd_time + "</em></h3>";
                             F += "<p>" + z + "</p><dl>";
                             var A = G.sd_thumbs.split(",");
                             for (var C = 0; C < A.length; C++) {

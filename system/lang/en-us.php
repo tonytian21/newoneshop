@@ -890,7 +890,7 @@ return array(
     '请选择一种支付方式' => 'Please choose a payment method',
     '购物车中没有奖品' => 'Your cart is empty, go hunt some treasure',
     '支付方式' => 'Payment method',
-    '选择平台充值元' => 'Choose a payment method',
+    '选择平台充值' => 'Choose a payment method',
     '请输入充值金额' => 'Please enter the reload amount',
     '充值金额输入有误' => 'Wrong amount',
     '已被注册，请更换邮箱' => 'Registered, please change the mailbox',
@@ -1088,7 +1088,7 @@ return array(
     "云购中将" => "corporal",
     "云购上将" => "admiral",
     "云购大将" => "general",
-    "云购将军" => "The general"
-    
+    "云购将军" => "The general",
+    "参与了"=>"joined",
 );
 

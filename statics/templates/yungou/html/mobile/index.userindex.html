@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +18,6 @@
 <body id="loadingPicBlock">
     <div class="h5-1yyg-v11">
         
-<!-- 栏目页面顶部 -->
-
-
-<!-- 内页顶部 -->
 <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
 
     <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
@@ -34,10 +27,6 @@
             </a>
         </span>
 
-        <!--<img src="{G_UPLOAD_PATH}/{wc:fun:Getlogo()}"/>
-        -->
-        <!--<img src="{G_TEMPLATES_IMAGE}/sjlogo.png"/>
-        -->
     </h1>
 
     <a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">
@@ -47,8 +36,6 @@
 
     <div class="fr head-r" style="position: absolute;right: 0px;top: 0px;">
 
-        <!--<a href="{WEB_PATH}/mobile/user/login" class="z-Member"></a>
-    -->
     <a href="{WEB_PATH}/mobile/mobile" class="z-shop" style="background-position: 2px 0px;"></a>
 
 </div>
@@ -71,17 +58,17 @@
                         {G_UPLOAD_PATH}/{wc:$touxiang}
 
                     {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>{wc:fun:lang::get_lang('银币')}：{wc:$member['score']}<br/>{wc:fun:lang::get_lang('经验值')}：{wc:$member['jingyan']}
-                    <span class="{wc:if $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop新手')}'}
+                    <span class="{wc:if $member['yungoudj']==lang::get_lang('1Shop新手')}
                     z-class-icon01
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop小将')}'}
+                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop小将')}
                     z-class-icon02
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop中将')}'}
+                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop中将')}
                     z-class-icon03
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop上将')}'}
+                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop上将')}
                     z-class-icon04
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop大将')}'}
+                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop大将')}
                     z-class-icon05
-                {wc:elseif $member['yungoudj']=='{wc:fun:lang::get_lang('1Shop将军')}'}
+                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop将军')}
 
                     z-class-icon06
                 {wc:if:end}"><s></s>{wc:$member['yungoudj']}</span></li>

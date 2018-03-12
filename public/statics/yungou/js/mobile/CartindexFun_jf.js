@@ -35,7 +35,7 @@ $(function() {
                     h.children("span").html(q + ".00")
                 }
                     console.log(r);
-                g.children("p").html('总共购买<span class="orange arial z-user">' + r + '</span>个奖品  合计金额：<span class="orange arial">' + q + ".00</span> 元")
+                g.children("p").html(getJsLang("总共购买") + '<span class="orange arial z-user">' + r + '</span>'+getJsLang("个奖品")+'  '+getJsLang("合计金额")+'：<span class="orange arial">' + q + ".00</span> "+getJsLang("元"))
             } else {
                 g.remove()
             }
@@ -116,7 +116,7 @@ $(function() {
                 } else {
 
                     if (w.code == 0) {
-                        q.parent().prev().html('总共购买：<em class="arial">' + r + '</em>人次/<em class="orange arial">￥' + r*pr + ".00</em>")
+                        q.parent().prev().html(getJsLang("总共购买") + '：<em class="arial">' + r + '</em>'+getJsLang("人次")+'/<em class="orange arial">￥' + r*pr + ".00</em>")
                     }
                 }
             };
@@ -202,7 +202,7 @@ $(function() {
                     };
                     GetJPData(Gobal.Webpath, "ajax", "delCartItem/" + t, u)
                 };
-                n("您确定要删除吗？", s)
+                n(getJsLang("您确定要删除吗"), s)
             })
         });
         $("a[name=delLink1]", a).each(function(q) {
@@ -223,7 +223,7 @@ $(function() {
                     };
                     GetJPData(Gobal.Webpath, "ajax", "delCartItem_jf/" + t, u)
                 };
-                n("您确定要删除吗？", s)
+                n(getJsLang("您确定要删除吗"), s)
             })
         })
     };

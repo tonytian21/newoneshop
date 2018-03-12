@@ -88,15 +88,15 @@ $(function() {
 
                             if (m == 2) {
 
-                                o += '<span class="z-Imgbg z-ImgbgC01"></span><em class="z-Imgtxt">已满员</em>'
+                                o += '<span class="z-Imgbg z-ImgbgC01"></span><em class="z-Imgtxt">'+getJsLang("已满员")+'</em>'
 
                             } else {
 
                                 if (m == 3) {
                                     if(n[p].q_end_times<=timestamp){
-                                            o += '<span class="z-Imgbg z-ImgbgC02"></span><em class="z-Imgtxt">已揭晓</em>'
+                                            o += '<span class="z-Imgbg z-ImgbgC02"></span><em class="z-Imgtxt">'+getJsLang("已揭晓")+'</em>'
                                     }else{
-                                            o += '<span class="z-Imgbg z-ImgbgC02"></span><em class="z-Imgtxt">揭晓中</em>'
+                                            o += '<span class="z-Imgbg z-ImgbgC02"></span><em class="z-Imgtxt">'+getJsLang("揭晓中")+'</em>'
                                     }
                                     
 

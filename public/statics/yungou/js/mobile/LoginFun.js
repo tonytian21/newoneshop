@@ -52,41 +52,41 @@ $(function() {
 
         var o = {
 
-            txtStr: "请输入您的邮箱",
+            txtStr: getJsLang("请输入您的邮箱"),
 
-            txtpwd: "请输入您的登录密码",
+            txtpwd: getJsLang("请输入您的登录密码"),
 
-            errorU: "请输入正确的邮箱",
+            errorU: getJsLang("请输入正确的邮箱"),
 
-            errorP: "密码长度为6-20位字符",
+            errorP: getJsLang("密码长度为6-20位字符"),
 
-            loginerr0: "登录帐号或密码不正确",
+            loginerr0: getJsLang("登录帐号或密码不正确"),
 
-            loginerr1: "登录帐号未注册",
+            loginerr1: getJsLang("登录帐号未注册"),
 
-            loginerr2: "账号被冻结，请与客服联系",
+            loginerr2: getJsLang("账号被冻结"),
 
-            loginerr3: "失败次数超限，被冻结5分钟",
+            loginerr3: getJsLang("失败次数超限"),
 
-            loginerr4: "登录失败，请重试",
+            loginerr4: getJsLang("登录失败"),
 
-            showPWD: "显示密码",
+            showPWD: getJsLang("显示密码"),
 
-            loginerr5: "必须输入帐号和密码",
+            loginerr5: getJsLang("必须输入帐号和密码"),
 
-             loginok: "登录成功",
+             loginok: getJsLang("登录成功"),
 
-            verify:"请输入验证码",
+            verify:getJsLang("请输入验证码"),
 
-            verifyerr:"验证码错误"
+            verifyerr:getJsLang("验证码错误")
 
         };
 
         var t = {
 
-            txtStr: "登录",
+            txtStr: getJsLang("登录"),
 
-            checkCode: "正在登录"
+            checkCode: getJsLang("正在登录")
 
         };
 
