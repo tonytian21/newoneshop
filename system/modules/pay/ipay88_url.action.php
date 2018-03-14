@@ -40,15 +40,16 @@ class ipay88_url extends SystemAction {
 					_message("支付失败");	
 				}
 				return;
-			}			
-			if(empty($dingdaninfo['scookies'])){					
-				if(_is_mobile()){
-					_messagemobile("支付失败",WEB_PATH . "/mobile/mobile/");	
-				}else{
-					_message("支付失败");	
-				}
-				return;		
-			}			
+			}	
+
+			if(_is_mobile()){
+				_messagemobile("充值成功",WEB_PATH . "/mobile/home/");	
+			}else{
+				_message("充值成功");	
+			}	
+
+			return;
+			/*
 			$scookies = unserialize($dingdaninfo['scookies']);			
 			$pay = System::load_app_class('pay','pay');			
 			$pay->scookie = $scookies;	
@@ -74,6 +75,7 @@ class ipay88_url extends SystemAction {
 					_message("充值成功!",WEB_PATH."/member/home/userbalance");
 				}			
 			}
+			*/
 		}else{
 			if(_is_mobile()){
 				_messagemobile("支付失败",WEB_PATH . "/mobile/mobile/");	
