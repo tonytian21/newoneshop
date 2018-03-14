@@ -114,6 +114,7 @@ class ipay88_url extends SystemAction {
 				header("location: ".WEB_PATH."/pay/ipay88_url/qiantai");
 				exit;
 			}	
+			
 			$c_money = intval($dingdaninfo['money']);			
 			$uid = $dingdaninfo['uid'];
 			$time = time();			
@@ -149,6 +150,7 @@ class ipay88_url extends SystemAction {
 			}
 
 			header("location: ".WEB_PATH."/pay/ipay88_url/qiantai");
+			echo  "RECEIVEOK";
 			exit;
 		
 		}
