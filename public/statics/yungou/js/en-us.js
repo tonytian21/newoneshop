@@ -112,7 +112,7 @@ js_lang['状态：'] = 'Status:';
 js_lang['您已购买数量：'] = 'You have purchased quantity:';
 js_lang['已购买'] = 'Have to buy';
 
-
+js_lang["购买了商品"]="";
 
 
 function getJsLang(){
