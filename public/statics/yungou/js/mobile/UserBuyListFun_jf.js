@@ -14,7 +14,7 @@ $(function() {
     var i = false;
     var b = false;
     var c = function() {
-
+    	
         var j = function() {
             return "/" + g.FIdx + "/" + g.EIdx + "/" + g.isCount + "/" + g.state
         };
@@ -59,7 +59,7 @@ $(function() {
 							//if(isNaN(l)) l = t;
                             u = parseInt(s * 100) / t;       //百分比
                             u = s > 0 && u < 1 ? 1 : u;
-                            o += '<p>您已购买数量<em class="orange">' + n[p].gonumber + '</em></p><div class="Progress-bar"><p class="u-progress">' + (s > 0 ? '<span style="width:' + u + '%;" class="pgbar"><span class="pging"></span></span>': "") + '</p><ul class="Pro-bar-li"><li class="P-bar01"><em>' + s + '</em>已购买</li><li class="P-bar03"><em>' + l + "</em>剩余</li></ul></div>"
+                            o += '<p>'+ getJsLang("您已购买数量：") +'<em class="orange">' + n[p].gonumber + '</em></p><div class="Progress-bar"><p class="u-progress">' + (s > 0 ? '<span style="width:' + u + '%;" class="pgbar"><span class="pging"></span></span>': "") + '</p><ul class="Pro-bar-li"><li class="P-bar01"><em>' + s + '</em>'+ getJsLang("已购买") +'</li><li class="P-bar03"><em>' + l + "</em>"+ getJsLang("剩余") +'</li></ul></div>"
                         } else {
                             if (m == 3) {
                                 //o += '<p>获得者：<em class="blue">' + n[p].q_user + '</em></p><p>揭晓时间：<em class="gray6">' + n[p].q_end_time + "</em></p>"
@@ -74,7 +74,7 @@ $(function() {
 									stus_w = "等待发货";
 								} 
 								if(stus[1]=='已发货'){
-									stus_w = "已发货" + ' <a class="wuliubtn" oid="' + n[p].gid + '" uid="' + n[p].uid + '" onclick="wulibtnCLK(this);return false;">确认收货</a>';                      
+									stus_w = "已发货" + ' <a class="wuliubtn" oid="' + n[p].gid + '" uid="' + n[p].uid + '" onclick="wulibtnCLK(this);return false;">'+getJsLang("确认收货")+'</a>';                      
 								}  
 							} 
 							if(stus[2]=='已完成'){
@@ -83,7 +83,7 @@ $(function() {
 							if(stus[2]=='已作废'){
 								stus_w = "已作废";
 							}
-							o += "<div>状态：" + stus_w + '</div>';
+							o += "<div>"+getJsLang("状态：")+ getJsLang(stus_w) + '</div>';
                         o += '</div><b class="z-arrow"></b></li>'
                     }
                     if (g.FIdx > -1) {

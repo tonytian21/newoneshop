@@ -86,7 +86,7 @@ class weixin
 				<div class="wx_hd">
 				    <div class="wx_hd_img icon_wx"></div>
 				</div>
-				<div class="wx_money"><span>￥</span>'.$this->config['money'].'元</div>
+				<div class="wx_money"><span>{wc:fun:lang::get_lang('￥')}</span>'.$this->config['money'].'元</div>
 				<div class="wx_pay">
 				    <p><span class="wx_left">支付订单号</span><span class="wx_right">'.$out_trade_no.'</span></p>
 				</div>

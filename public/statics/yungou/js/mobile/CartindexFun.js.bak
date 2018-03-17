@@ -126,7 +126,7 @@
                      e("本期奖品已购买光了", q, -75, u)
                  } else {
                      if (w.code == 0) {
-                         q.parent().prev().html('总共参与：<em class="arial">' + r + '</em>人次/<em class="orange arial">￥' + r * yjg + "</em>")
+                         q.parent().prev().html('总共参与：<em class="arial">' + r + '</em>人次/<em class="orange arial">'+getJsLang("￥") + r * yjg + "</em>")
                      }
                  }
              };

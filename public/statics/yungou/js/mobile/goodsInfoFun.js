@@ -46,7 +46,7 @@ $(function() {
 
                         addNumToCartFun(s.num);
 
-                        h("添加成功")
+                        h(getJsLang("添加成功"))
 
                     } else {
 
@@ -58,11 +58,11 @@ $(function() {
 
                     if (r == 0) {
 
-                        d("添加失败")
+                        d(getJsLang("添加失败"))
 
                     } else {
 
-                        d("添加失败，请重试")
+                        d(getJsLang("添加失败，请重试"))
 
                     }
 

@@ -83,7 +83,7 @@
                         </a>
                     </p>
                     <p class="z-promo">
-                        {wc:fun:lang::get_lang('价值')}:<em class="gray9">￥{wc:$shop['money']}</em>
+                        {wc:fun:lang::get_lang('价值')}:<em class="gray9">{wc:fun:lang::get_lang('￥')}{wc:$shop['money']}</em>
                     </p>
                     <div class="Progress-bar">
                         <p class="u-progress" title="已完成{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],100)}%">
@@ -141,7 +141,7 @@
                             {wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:$shop['title']}
                         </a>
                     </p>
-                    <p class="z-promo">{wc:fun:lang::get_lang('价值')}:<em class="gray9">￥{wc:$shop['money']}</em>
+                    <p class="z-promo">{wc:fun:lang::get_lang('价值')}:<em class="gray9">{wc:fun:lang::get_lang('￥')}{wc:$shop['money']}</em>
                     </p>
                     <div class="Progress-bar">
                         <p class="u-progress" title="{wc:fun:lang::get_lang('已完成')}{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],100)}%">

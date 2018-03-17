@@ -115,7 +115,7 @@ $(document).ready(function() {
                             E += '<img src2="'+Gobal.imgpath+'/uploads/' + F.thumb + '" src="' + Gobal.LoadPic + '"></li>';
                             E += '<li class="mBuyRecordR">('+getJsLang("第*期",F.qishu)+')' + (getJsLang("lang_curr") == 'en-us' ? F.titleen : F.title);
                             if (F.codeState == 3) {
-                                E += '<p class="mValue">'+getJsLang("价值")+'：￥' + F.money + '</p><span>'+getJsLang("获得者")+'：<a style="color: #22AAff" href="'+Gobal.Webpath+'/mobile/mobile/userindex/' + F.q_uid + '">' + F.q_user + '</a><br>'+getJsLang("幸运码")+'：<em class="orange">' + F.q_user_code + "</em></span>"
+                                E += '<p class="mValue">'+getJsLang("价值：")+getJsLang("￥") +F.money + '</p><span>'+getJsLang("获得者")+'：<a style="color: #22AAff" href="'+Gobal.Webpath+'/mobile/mobile/userindex/' + F.q_uid + '">' + F.q_user + '</a><br>'+getJsLang("幸运码")+'：<em class="orange">' + F.q_user_code + "</em></span>"
                             } else {
                                 E += '<div class="pRate"><div class="Progress-bar">';
                                 if (z == 0) {
@@ -210,7 +210,7 @@ $(document).ready(function() {
                             var C = D[A];
                             B += "<ul onclick=\"location.href='"+Gobal.Webpath+"/mobile/mobile/item/" + C.id + '\'" class="BuyRecordList"><li class="mBuyRecordL">';
                             B += '<img src2="'+Gobal.imgpath+'/uploads/' + C.thumb + '" src="' + Gobal.LoadPic + '"></li>';
-                            B += '<li class="mBuyRecordR">('+getJsLang("第*期",C.qishu) + ")" + (getJsLang("lang_curr") == 'en-us' ? C.titleen : C.title)+ '<p class="mValue">'+getJsLang("价值")+'：￥' + C.money + "</p>";
+                            B += '<li class="mBuyRecordR">('+getJsLang("第*期",C.qishu) + ")" + (getJsLang("lang_curr") == 'en-us' ? C.titleen : C.title)+ '<p class="mValue">'+getJsLang("价值：")+getJsLang("￥") +C.money + "</p>";
                             B += '<span>'+getJsLang("幸运码")+'：<em class="orange">' + C.q_user_code + "</em><br>"+getJsLang("揭晓时间")+"：" + C.q_end_time + " </span></li></ul>"
                         }
                         e.append(B);

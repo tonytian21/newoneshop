@@ -173,10 +173,21 @@ class mobile extends base
     public function fen()
     {
         $fenid = htmlspecialchars($this->segment(4));
-        $fenname = $this->db->GetOne("SELECT name FROM `@#_category` WHERE `cateid`  = '$fenid'");
+        $fenname = $this->db->GetOne("SELECT catdir,name FROM `@#_category` WHERE `cateid`  = '$fenid'");
         $webname = $this->_cfg['web_name'];
-        $title = "$fenname[name]" . _cfg("web_name");
-        $key = $fenname[name];
+        
+        if($this->_cfg['route_l'] == 'en-us'){
+            $title = "$fenname[catdir]" . _cfg("web_name");
+            $key = $fenname[catdir];
+        }else{
+            $title = "$fenname[name]" . _cfg("web_name");
+            
+            
+            
+            $key = $fenname[name];
+            
+        }
+       
         $shoplist = $this->db->GetList("SELECT `qishu`,`thumb`,`title`,`id`,`sid`,`zongrenshu`,`canyurenshu`,`shenyurenshu`,`money` FROM `@#_shoplist` A inner join `@#_shoplist_term` B on A.gid=B.sid left join `@#_shoplist_en` sen on sen.egid=A.gid WHERE `q_user`  = '' AND `cateid`='$fenid' order by `canyurenshu` DESC");
         $list = count($shoplist);
         include templates("mobile/index", "fen");
@@ -439,20 +450,20 @@ class mobile extends base
         
         // 期数显示
         $loopqishu = '';
-        $loopqishu .= '<li class="cur"><a href="javascript:;">' . "第" . $item['qishu'] . "期</a><b></b></li>";
+        $loopqishu .= '<li class="cur"><a href="javascript:;">'.lang::get_lang('第*期',$item['qishu'])."</a><b></b></li>";
         
         if (empty($itemlist)) {
             foreach ($itemlist as $qitem) {
-                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/item/' . $qitem['id'] . '" class="">第' . $qitem['qishu'] . '期</a></li>';
+                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/item/' . $qitem['id'] . '" class="">'.lang::get_lang('第*期',$item['qishu']).'</a></li>';
             }
         }
         
         foreach ($itemlist as $qitem) {
             if ($qitem['id'] == $itemid) {
                 
-                $loopqishu .= '<li class="cur"><a href="javascript:;">' . "第" . $itemlist[0]['qishu'] . "期</a><b></b></li>";
+                $loopqishu .= '<li class="cur"><a href="javascript:;">' .lang::get_lang('第*期',$item['qishu'])."</a><b></b></li>";
             } else {
-                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' . $qitem['id'] . '" >第' . $qitem['qishu'] . '期</a></li>';
+                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' .lang::get_lang('第*期',$item['qishu']).'</a></li>';
             }
         }
         /*
@@ -631,7 +642,7 @@ class mobile extends base
         
         // 期数显示
         $loopqishu = '';
-        $loopqishu .= '<li class="cur"><a href="javascript:;">'. lang::get_lang('第*期',$item['qishu']) . "</a><b></b></li>";
+        $loopqishu .= '<li class="cur"><a href="javascript:;">'.lang::get_lang('第*期',$item['qishu']) . "</a><b></b></li>";
         
         if (empty($itemlist)) {
             foreach ($itemlist as $qitem) {
@@ -658,6 +669,7 @@ class mobile extends base
         // echo microt($itemlist[0]['q_end_time']);exit;
         $curtime = time();
         $shopitem = 'itemfun';
+        
         
         // 晒单数
         $shopid = $this->db->GetOne("select * from `@#_jf_shoplist` where `id`='$itemid'");

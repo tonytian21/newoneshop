@@ -7,6 +7,8 @@ js_lang["幸运码"] = " Lucky Number";
 js_lang["揭晓时间"] = " Announcement Date & Time";
 js_lang["第*期"] = " Batch {0}";
 js_lang["价值"] = " Price";
+js_lang["价值："] = " Price:";
+js_lang["￥"]="RM";
 js_lang["揭晓倒计时"] = " announcement counting down";
 js_lang["正在揭晓"] = " Current phrase announced";
 js_lang["支付方式"] = " payment method";
@@ -34,6 +36,9 @@ js_lang["注册"]="Registration";
 js_lang["价值"]="Price";
 js_lang["幸运码"]="Lucky Number";
 js_lang["已完成"]="Completed";
+js_lang["已作废"]="Invalid";
+js_lang["已发货"]="Has been shipped";
+js_lang["等待发货"]="Wait for the delivery";
 js_lang["已参与"]="Joined";
 js_lang["总需人次"]="Total";
 js_lang["剩余"]="Left ";
@@ -79,6 +84,9 @@ js_lang['消费金额'] = 'Purchased Products';
 js_lang['花费'] = 'Expenditure';
 js_lang['正在计算,请稍后'] = 'Calculating, please wait';
 js_lang['添加失败'] = 'Adding failed, please try again';
+js_lang['添加失败，请重试'] = 'Add failed, please try again';
+
+
 js_lang['添加成功'] = 'Added Successfully';
 js_lang['人气'] = 'popularity';
 js_lang['恭喜'] = 'Congratulations';
@@ -96,6 +104,16 @@ js_lang['揭晓中'] = 'Revealling';
 js_lang['参与了'] = 'Joined';
 js_lang['银币支付'] = 'Use Your Bonus';
 js_lang['您的银币'] = 'Your Credit Balance';
+js_lang['正在倒计时揭晓中...'] = 'The countdown is on...';
+js_lang['揭晓倒计时正在进行中...'] = 'The countdown is underway...';
+js_lang['确认收货'] = 'Confirm the goods';
+js_lang['确认收货'] = 'Confirm the goods';
+js_lang['状态：'] = 'Status:';
+js_lang['您已购买数量：'] = 'You have purchased quantity:';
+js_lang['已购买'] = 'Have to buy';
+
+
+
 
 function getJsLang(){
 	if (arguments.length == 0)

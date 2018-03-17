@@ -128,9 +128,9 @@ $(function() {
 
                             if (m == 3) {
                                if(n[p].q_end_times<=timestamp){
-                                        o += '<p>获得者：<em class="blue">' + n[p].q_user + '</em></p><p>揭晓时间：<em class="gray6">' + n[p].q_end_time + "</em></p>";
+                                        o += '<p>'+getJsLang("获得者：")+'<em class="blue">' + n[p].q_user + '</em></p><p>'+getJsLang("揭晓时间：")+'<em class="gray6">' + n[p].q_end_time + "</em></p>";
                                }else{
-                                        o += '<p>获得者：<em class="blue">正在倒计时揭晓中...</em></p><p>揭晓倒计时正在进行中...</p>';
+                                        o += '<p>'+getJsLang("获得者：")+'<em class="blue">'+getJsLang("正在倒计时揭晓中...")+'</em></p><p>'+getJsLang("揭晓倒计时正在进行中...")+'</p>';
                                }
                                 
 

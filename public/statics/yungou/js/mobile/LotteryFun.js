@@ -194,7 +194,7 @@ $(function() {
 
                         e += s.id + ",";
 
-                        var u = $('<ul class="rNow rFirst" id="' + s.id + '"><li class="revConL"><img src="'+Path.path+'/statics/uploads/'+ s.thumb + '"></li><li class="revConR"><h4>(' + getJsLang("第*期",s.qishu) + ')"' + (js_lang['lang_curr'] == 'en-us' ? s.titleen : s.title) + '"</h4><h5>"' + getJsLang("价值") + '"：￥' + CastMoney(s.money) + '</h5><p name="pTime"><s></s>' + getJsLang("揭晓倒计时") + ' <strong><em>00</em> : <em>00</em> : <em>0</em><em>0</em></strong></p><b class="fr z-arrow"></b></li><div class="rNowTitle">' + getJsLang("正在揭晓") + '</div></ul>');
+                        var u = $('<ul class="rNow rFirst" id="' + s.id + '"><li class="revConL"><img src="'+Path.path+'/statics/uploads/'+ s.thumb + '"></li><li class="revConR"><h4>(' + getJsLang("第*期",s.qishu) + ')"' + (js_lang['lang_curr'] == 'en-us' ? s.titleen : s.title) + '"</h4><h5>"' + getJsLang("价值：") + getJsLang("￥") + CastMoney(s.money) + '</h5><p name="pTime"><s></s>' + getJsLang("揭晓倒计时") + ' <strong><em>00</em> : <em>00</em> : <em>0</em><em>0</em></strong></p><b class="fr z-arrow"></b></li><div class="rNowTitle">' + getJsLang("正在揭晓") + '</div></ul>');
 
                         u.click(function() {
 

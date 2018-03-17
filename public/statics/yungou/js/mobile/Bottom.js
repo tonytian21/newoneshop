@@ -144,7 +144,7 @@ var addNumToCartFun = null; (function() {
 
     function(h) {       
 
-        var g = '<span><a href="'+Gobal.Webpath+'/mobile/mobile">首页</a><b></b></span><span><a href='+Gobal.Webpath+'/mobile/mobile/about>'+getJsLang("新手指南")+'</a><b></b></span>';
+        var g = '<span><a href="'+Gobal.Webpath+'/mobile/mobile">'+getJsLang("首页")+'</a><b></b></span><span><a href='+Gobal.Webpath+'/mobile/mobile/about>'+getJsLang("新手指南")+'</a><b></b></span>';
 
         if (h.code == 0) {		   
 
@@ -152,7 +152,7 @@ var addNumToCartFun = null; (function() {
 
         } else {
 
-            g = g + '<span><a href="'+Gobal.Webpath+'/mobile/user/login">登录</a><b></b></span><span><a href="'+Gobal.Webpath+'/mobile/register">'+getJsLang("注册")+'</a></span>'
+            g = g + '<span><a href="'+Gobal.Webpath+'/mobile/user/login">'+getJsLang("登录")+'</a><b></b></span><span><a href="'+Gobal.Webpath+'/mobile/register">'+getJsLang("注册")+'</a></span>'
 
         }
 

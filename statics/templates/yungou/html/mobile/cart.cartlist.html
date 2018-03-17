@@ -73,11 +73,11 @@
                         </p> <ins class="z-promo gray9">{wc:fun:lang::get_lang('剩余')} <em class="arial">{wc:$val['zongrenshu']-$val['canyurenshu']}</em>
                             {wc:fun:lang::get_lang('人次')}</ins> 
                         <p class="gray9">
-                            {wc:fun:lang::get_lang('总共参与')}： <em class="arial proce" id="arial{wc:$val['id']}" ids="{wc:$val['id']}">{wc:$Mcartlist[$val['id']]['num']}</em>
+                            {wc:fun:lang::get_lang('总共参与：')} <em class="arial proce" id="arial{wc:$val['id']}" ids="{wc:$val['id']}">{wc:$Mcartlist[$val['id']]['num']}</em>
                             {wc:fun:lang::get_lang('人次')}/
                             
 
-                            <em class="orange arial">￥<span  id="price{wc:$val['id']}" ids="{wc:$val['id']}" class='price'>{wc:$Mcartlist[$val['id']]['sun']}</span></em>
+                            <em class="orange arial">{wc:fun:lang::get_lang('￥')}<span  id="price{wc:$val['id']}" ids="{wc:$val['id']}" class='price'>{wc:$Mcartlist[$val['id']]['sun']}</span></em>
                         </p>
                         <p class="f-Cart-Other">
                             <input type="hidden" value="{wc:$val['yunjiage']}" class="yunjiage">

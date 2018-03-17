@@ -5,7 +5,6 @@
 </title><meta content="app-id=xxxx" name="apple-itunes-app" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" /><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black" name="apple-mobile-web-app-status-bar-style" /><meta content="telephone=no" name="format-detection" />
 <link href="{G_TEMPLATES_CSS}/mobile/comm.css?v=20150129" rel="stylesheet" type="text/css" />
 <link href="{G_TEMPLATES_CSS}/mobile/goods.css" rel="stylesheet" type="text/css" />
-<link href="{G_TEMPLATES_CSS}/mobile/top.css" rel="stylesheet" type="text/css" />
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
 {wc:if $shopitem=='itemfun'}
@@ -13,6 +12,13 @@
 {wc:else}
 <script id="pageJS" data="{G_TEMPLATES_JS}/mobile/LotteryDetail.js" language="javascript" type="text/javascript"></script>
 {wc:if:end}
+
+{wc:if $this->_cfg['route_l'] == 'en-us'}
+    <script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+    {wc:else}
+    <script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+    {wc:if:end}
+
 </head>
 <body>
 <div class="h5-1yyg-v1" id="loadingPicBlock">
@@ -232,8 +238,15 @@ var n = $("#hidLineLink").val();
 
 
         <div class="pDetails {wc:if $item['q_end_time']!=''}pDetails-end{wc:if:end}">
-                <b>{wc:fun:lang::get_lang('第*期',$val['qishu'])}{wc:$item['title']} <span></span></b>
-                <p class="price">{wc:fun:lang::get_lang('价值')}：<em class="arial gray">￥{wc:$item['money']}</em></p>
+                <b>{wc:fun:lang::get_lang('第*期',$item['qishu'])}
+                
+
+                 {wc:if $this->_cfg['route_l'] == 'en-us'}{wc:fun:_strcut($item['titleen'],70)}{wc:else}{wc:fun:_strcut($item['title'],30)}{wc:if:end}
+                
+                
+                
+                 <span></span></b>
+                <p class="price">{wc:fun:lang::get_lang('价值：')}<em class="arial gray">{wc:fun:lang::get_lang('￥')}{wc:$item['money']}</em></p>
 
 			{wc:if empty($item['q_end_time'])}
 				<div class="Progress-bar">
@@ -282,8 +295,8 @@ var n = $("#hidLineLink").val();
     	    <dl>
     	        
 
-				<a href="{WEB_PATH}/mobile/mobile/goodspost/{wc:$item['sid']}"><b class="fr z-arrow"></b>{wc:fun:lang::get_lang('已有')}<span class="orange arial">{wc:fun:count($shaidan)}</span>{wc:fun:lang::get_lang('个幸运者晒单')}<strong class="orange arial">{wc:$sum}</strong>{wc:fun:lang::get_lang('条评论')}</a>
-                                                    <a href="{WEB_PATH}/mobile/mobile/goodsdesc/{wc:$item['id']}"><b class="fr z-arrow"></b>{wc:fun:lang::get_lang('图文详情')}<em>（{wc:fun:lang::get_lang('建议WIFI下使用')}）</em> </a>
+				<a href="{WEB_PATH}/mobile/mobile/goodspost/{wc:$item['sid']}"><b class="fr z-arrow"></b>{wc:fun:lang::get_lang('已有个幸运者晒单',count($shaidan))}<strong class="orange arial">{wc:$sum}</strong>{wc:fun:lang::get_lang('条评论')}</a>
+                                                    <a href="{WEB_PATH}/mobile/mobile/goodsdesc/{wc:$item['id']}"><b class="fr z-arrow"></b>{wc:fun:lang::get_lang('图文详情')} <em>{wc:fun:lang::get_lang('（建议WIFI下使用）')}</em> </a>
 				<a style="border-color: #efefef;box-shadow:0px 0px 0px #e7e7e7;" href="{WEB_PATH}/mobile/mobile/buyrecords/{wc:$item['id']}"><b class="fr z-arrow jilu"></b>{wc:fun:lang::get_lang('所有夺宝记录')}</a>
             </dl>
        
@@ -389,13 +402,6 @@ window.onload=function(){
     bottom: 0;
 }
 
-#btnGotoTop1 {
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    display: block;
-    position: absolute;
-}
 
 #btnGotoTop .s1 {
     background: url({G_TEMPLATES_IMAGE}/mobile/fast-nav-new.png) 0 -163px no-repeat;
@@ -417,16 +423,6 @@ window.onload=function(){
 #top_div {
     display: none;
     width: 40px;
-    height: 80px;
-    background: #242424;
-    opacity: 0.8;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-#top_div1 {
-    display: block;
-    width: 40px;
     height: 40px;
     background: #242424;
     opacity: 0.8;
@@ -434,142 +430,12 @@ window.onload=function(){
     border-top-left-radius: 5px;
 }
 
-#btnGotoTop1 .s2 {
-    background: url({G_TEMPLATES_IMAGE}/mobile/fast-nav-new.png) 0 -129px no-repeat;
-    background-size: 21px auto;
-    margin: 9px auto;
-    display: block;
-    width: 21px;
-    height: 21px;
-}
-
-#btnGotoTop3 {
-    display: none;
-    width: 100px;
-    position: absolute;
-    right: 0;
-    top: -219px;
-    padding: 0 10px;
-    background: #242424;
-    opacity: 0.7;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-#btnGotoTop3 a {
-    display: block;
-    height: 40px;
-    line-height: 40px;
-    width: 100%;
-    padding: 0;
-    color: #fff;
-    clear: both;
-}
-
-#btnGotoTop3 .xb {
-    display: block;
-    width: 10px;
-    height: 10px;
-    background: #242424;
-    border-left: 1px solid #242424;
-    border-top: 1px solid #242424;
-    -webkit-transform: rotate(45deg);
-    position: absolute;
-    bottom: -5px;
-    right: 10px;
-}
-
-#btnGotoTop3 a i {
-    background: url({G_TEMPLATES_IMAGE}/mobile/fast-nav-new.png) 0 0px no-repeat;
-    width: 20px;
-    height: 20px;
-    margin: 10px 5px 0 0;
-    display: block;
-    vertical-align: middle;
-    float: left;
-    position: relative;
-    background-size: 25px;
-    left: 2px;
-}
-
-#btnGotoTop3 a em {
-    display: block;
-    float: left;
-    line-height: 42px;
-}
-
-#btnGotoTop3 .home {
-    border-bottom: 1px solid #4b4b4b;
-}
-
-#btnGotoTop3 .home i {
-    background-position: 0 1px;
-    background-size: 28px auto;
-    height: 22px;
-}
-
-#btnGotoTop3 .glist {
-    border-bottom: 1px solid #4b4b4b;
-}
-
-#btnGotoTop3 .glist i {
-    background-position: 0 -117px;
-    background-size: 19px;
-}
-
-#btnGotoTop3 .lottry {
-    border-bottom: 1px solid #4b4b4b;
-}
-
-#btnGotoTop3 .lottry i {
-    background-position: 0 -35px;
-    left: 0;
-}
-
-#btnGotoTop3 .user {
-    border-bottom: 1px solid #4b4b4b;
-}
-
-#btnGotoTop3 .user i {
-    background-position: 0 -113px;
-}
-
-#btnGotoTop3 .sx i {
-    background-position: 0 -213px;
-    background-size: 22px auto;
-}
     </style>
     <div class="smailnav">
-        <div id="btnGotoTop3" class="smailgb">
-            <a class="home" href="{WEB_PATH}">
-                <i></i> <em>{wc:fun:lang::get_lang('首页')}</em>
-            </a>
-            <a class="glist" href="{WEB_PATH}/mobile/mobile/glist">
-                <i></i> <em>{wc:fun:lang::get_lang('所有商品')}</em>
-            </a>
-            <a class="lottry" href="{WEB_PATH}/mobile/mobile/lottery">
-                <i></i>
-                <em>{wc:fun:lang::get_lang('最新揭晓')}</em>
-            </a>
-            <a class="user" href="{WEB_PATH}/mobile/home">
-                <i></i>
-                <em>{wc:fun:lang::get_lang('我的夺宝')}</em>
-            </a>
-            <a id="shuaxin" class="sx" href="">
-                <i></i>
-                <em>{wc:fun:lang::get_lang('刷新')}</em>
-            </a>
-            <i class="xb"></i>
-        </div>
-        <div id="top_div1">
-            <a id="btnGotoTop1" onclick="Show_Hidden(btnGotoTop3)">
-                <i class="s2"></i>
-            </a>
-        </div>
+       
+       
         <div id="top_div">
-            <a id="btnGotoTop1" onclick="Show_Hidden(btnGotoTop3)">
-                <i class="s2"></i>
-            </a>
+           
             <a id="btnGotoTop" href="javascript:;">
                 <i class="s1"></i>
             </a>
@@ -588,35 +454,15 @@ window.onload=function(){
     window.onscroll = function() {
         var t = document.documentElement.scrollTop || document.body.scrollTop;
         var top_div = document.getElementById("top_div");
-        var s = document.documentElement.scrollTop || document.body.scrollTop;
-        var top_div1 = document.getElementById("top_div1");
         if (t >= 200) {
             top_div.style.display = "block";
         } else {
             top_div.style.display = "none";
         }
-        if (s >= 200) {
-            top_div1.style.display = "none";
-        } else {
-            top_div1.style.display = "block";
-        }
+        
 
     }
 
-    function Show_Hidden(btnGotoTop3) {
-        if (btnGotoTop3.style.display == "block") {
-            btnGotoTop3.style.display = 'none';
-        } else {
-            btnGotoTop3.style.display = 'block';
-        }
-    }
-    /*document.onclick = function() //发布微博刷新代码
-        {
-            var obj = event.srcElement;
-            if (obj.id == "shuaxin") {
-                window.location.reload();
-            }
-        }*/
     </script>
 <script language="javascript" type="text/javascript">
   var Path = new Object();

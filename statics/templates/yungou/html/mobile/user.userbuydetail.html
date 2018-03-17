@@ -71,7 +71,7 @@
     <section class="clearfix g-member g-Record-ctlst">
 	    <b class="z-arrow"></b>
 	    <article class="m-round">
-		    <h3>{wc:fun:lang::get_lang('本期商品您总共拥有')}<em class="orange">{wc:$count}</em>{wc:fun:lang::get_lang('个')}{wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('码')}</h3>
+		    <h3>{wc:fun:lang::get_lang('本期商品您总共拥有')}<em class="orange">{wc:$count}</em>{wc:fun:lang::get_lang('个')} {wc:fun:lang::get_lang('夺宝码')}</h3>
 		    <ul>
 			{wc:loop $itemlist $val}
 			    <li><p class="gray9">{wc:fun:microt($val['timego'])}<span>{wc:$val['gonumber']}{wc:fun:lang::get_lang('人次')}</span></p>

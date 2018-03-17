@@ -88,11 +88,11 @@ $(document).ready(function() {
 
                         addNumToCartFun(n.num);
 
-                        k("添加成功")
+                        k(getJsLang("添加成功"))
 
                     } else {
 
-                        h("添加失败")
+                        h(getJsLang("添加失败"))
 
                     }
 

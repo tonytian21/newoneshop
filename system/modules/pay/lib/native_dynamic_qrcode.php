@@ -41,7 +41,7 @@
                 <div class="wx_hd">
                     <div class="wx_hd_img icon_wx"></div>
                 </div>
-                <div class="wx_money"><span>￥</span><?php echo $config['money'];?></div>
+                <div class="wx_money"><span>{wc:fun:lang::get_lang('￥')}</span><?php echo $config['money'];?></div>
                 <!--支付订单号-->
                 <div class="wx_pay">
                     <p><span  class="wx_left">支付订单号</span>

@@ -116,7 +116,7 @@ $(function() {
                 } else {
 
                     if (w.code == 0) {
-                        q.parent().prev().html(getJsLang("总共购买") + '：<em class="arial">' + r + '</em>'+getJsLang("人次")+'/<em class="orange arial">￥' + r*pr + ".00</em>")
+                        q.parent().prev().html(getJsLang("总共购买") + '：<em class="arial">' + r + '</em>'+getJsLang("人次")+'/<em class="orange arial">'+getJsLang("￥")+ r*pr + ".00</em>")
                     }
                 }
             };

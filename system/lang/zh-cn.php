@@ -1,4 +1,5 @@
 <?php
+
 return $_lang = [
 	"截至目前共揭晓商品" => "截至目前共揭晓商品<em style='color: #ff6600;'>%s</em>个",
 	"金币回报率"=> " 花<span class='c_red'>%s</span> 金币，回报率：<span class='c_red t18'>%s</span> 倍",
@@ -63,5 +64,8 @@ return $_lang = [
     "云购中将" => "中将",
     "云购上将" => "上将",
     "云购大将" => "大将",
-    "云购将军" => "将军"
+    "云购将军" => "将军",
+    '元' => 'RM',
+    "￥"=>"RM",
+    "已有个幸运者晒单"=>"已有<span class='orange arial'>%s</span>个幸运者晒单",
 ];

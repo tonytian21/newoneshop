@@ -6,7 +6,7 @@ $(".tags li").on("click",function(){
     $("#shuliang" + id).val(num);
     $("#price" + id).text(num);
     $("#arial" + id).text(num);
-    $("#orange" + id).text("￥"+num);
+    $("#orange" + id).text(getJsLang("￥")+num);
     var a = $("#cartBody");
     var q = 0;
     var r = 0;
@@ -143,7 +143,7 @@ $(".tags li").on("click",function(){
                  } else {
                      if (w.code == 0) {
                         var ids = q.parent().prev().find(".proce").attr("ids");
-                         q.parent().prev().html(getJsLang("总共参与") + '：<em class="arial proce" id="arial'+ids+'" ids="'+ids+'">' + r + '</em>'+getJsLang("人次")+'/<em class="orange arial" id="orange'+ids+'" ids="'+ids+'">￥' + r * yjg + "</em>")
+                         q.parent().prev().html(getJsLang("总共参与") + '：<em class="arial proce" id="arial'+ids+'" ids="'+ids+'">' + r + '</em>'+getJsLang("人次")+'/<em class="orange arial" id="orange'+ids+'" ids="'+ids+'">'+getJsLang("￥")  + r * yjg + "</em>")
                      }
                  }
              };

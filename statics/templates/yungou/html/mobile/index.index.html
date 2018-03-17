@@ -226,10 +226,10 @@
                     <a style="color: #999;" href="javascript:;"><span class="sh"><i></i><i style="margin-top: 3px;"></i><i style="margin-top: 3px;"></i></span>{wc:fun:lang::get_lang('分类')}</a>
                     <dl style="display:none;background: #fff;">
                         <div class="jiantou"></div>
-                        <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">{wc:fun:lang::get_lang('全部分类<')}/a></dd>
-                    {wc:getlist sql="select `cateid`,`name`,`pic_url` from `@#_category` where `model`='1' and `parentid` = '0' order by `order` desc"}
+                        <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/glist"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt="">{wc:fun:lang::get_lang('全部分类')}</a></dd>
+                    {wc:getlist sql="select `catdir`,`cateid`,`name`,`pic_url` from `@#_category` where `model`='1' and `parentid` = '0' order by `order` desc"}
                             {wc:loop $data $categoryx}
-                            <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/fen/{wc:$categoryx['cateid']}"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}"><span>{wc:$categoryx['name']}</span></a></dd>
+                            <dd class="a1"><a href="{WEB_PATH}/mobile/mobile/fen/{wc:$categoryx['cateid']}"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_UPLOAD_PATH}/{wc:$categoryx['pic_url']}"><span>{wc:if $this->_cfg['route_l'] == 'en-us'}{wc:$categoryx['catdir']}{wc:else}{wc:$categoryx['name']}{wc:if:end}</span></a></dd>
                     {wc:loop:end}
                     {wc:getlist:end}
                     </dl>
@@ -278,7 +278,7 @@ window.onload=function(){
                 $("#pagenum").val(data[0].page);
                 for (var i = 0; i < data.length; i++) {
                     var ul = '<ul><li>';
-                    ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">{wc:fun:lang::get_lang("价值")}：￥' + data[i].money + '</div></span>';
+                    ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;"><img src="{G_UPLOAD_PATH}/' + data[i].thumb + '"><div id="jiazhi1">{wc:fun:lang::get_lang("价值：")}{wc:fun:lang::get_lang('￥')}' + data[i].money + '</div></span>';
 
                     ul += '<div style="margin-top:15px;" class="goodsListR">';
                     ul += '<h2 id="' + data[i].id + '">({wc:fun:lang::get_lang("第*期","' + data[i].qishu + '")}){wc:if $this->_cfg["route_l"] == "en-us"}' + data[i].titleen + '{wc:else}' + data[i].title + '{wc:if:end}</h2>';
@@ -390,6 +390,7 @@ window.onload=function(){
         $("#pageDialogBG").fadeOut(1000);
         //购物车数量
         $.getJSON('{WEB_PATH}/mobile/ajax/cartnum',function(data){
+        	
             $("#btnCart").append('<em>'+data.num+'</em>');
         });
     }
