@@ -34,9 +34,14 @@
         <img width="30" height="30" src="{G_TEMPLATES_IMAGE}/mobile/fanhui.png">
     </a>
 
-    <div class="fr head-r" style="position: absolute;right: 0px;top: 0px;">
 
-    <a href="{WEB_PATH}/mobile/mobile" class="z-shop" style="background-position: 2px 0px;"></a>
+
+
+
+    <div class="fr head-r" style="position: absolute;right: 6px;top: 10px;">
+
+    <a href="{WEB_PATH}/mobile/mobile" class="z-shop" style="background-position: -5px 0px;"></a>
+    
 
 </div>
 
@@ -58,25 +63,29 @@
                         {G_UPLOAD_PATH}/{wc:$touxiang}
 
                     {wc:if:end}"></li><li class="mUserInfo"><p>{wc:fun:get_user_name($member['uid'])}</p><br/>{wc:fun:lang::get_lang('银币')}：{wc:$member['score']}<br/>{wc:fun:lang::get_lang('经验值')}：{wc:$member['jingyan']}
-                    <span class="{wc:if $member['yungoudj']==lang::get_lang('1Shop新手')}
-                    z-class-icon01
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop小将')}
-                    z-class-icon02
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop中将')}
-                    z-class-icon03
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop上将')}
-                    z-class-icon04
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop大将')}
-                    z-class-icon05
-                {wc:elseif $member['yungoudj']==lang::get_lang('1Shop将军')}
+                 	<span class="{wc:if $member['yungoudj']=='云购新手'}
+					z-class-icon01
+				{wc:elseif $member['yungoudj']=='云购小将'}
+					z-class-icon02
+				{wc:elseif $member['yungoudj']=='云购中将'}
+					z-class-icon03
+				{wc:elseif $member['yungoudj']=='云购上将'}
+					z-class-icon04
+				{wc:elseif $member['yungoudj']=='云购大将'}
+					z-class-icon05
+				{wc:elseif $member['yungoudj']=='云购将军'}
 
-                    z-class-icon06
-                {wc:if:end}"><s></s>{wc:$member['yungoudj']}</span></li>
+					z-class-icon06
+				{wc:if:end} gray02">
+					<s></s>
+					{wc:fun:lang::get_lang($member['yungoudj'])}
+					
+				</span></li>
                     
             </ul>
         </div>
         <div class="g-snav" id="divMidNav">
-        	<span class="g-snav-lst mCurr"><a href="javascript:void(0);">{wc:fun:_cfg('web_name_two')}{wc:fun:lang::get_lang('记录')}</a></span>
+        	<span class="g-snav-lst mCurr"><a href="javascript:void(0);">{wc:fun:lang::get_lang('夺宝记录')}</a></span>
             <span class="g-snav-lst"><a href="javascript:void(0);">{wc:fun:lang::get_lang('获得的商品')}</a></span>
             <span class="g-snav-lst"><a href="javascript:void(0);">{wc:fun:lang::get_lang('晒单')}</a></span>
         </div>
