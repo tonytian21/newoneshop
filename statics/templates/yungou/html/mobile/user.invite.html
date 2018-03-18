@@ -10,9 +10,26 @@
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
+    
+    
+    
     <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
     <link href="{G_TEMPLATES_CSS}/mobile/member.css" rel="stylesheet" type="text/css" />
     <link href="{G_TEMPLATES_CSS}/mobile/invite.css" rel="stylesheet" type="text/css" />
+    
+    {wc:if $this->_cfg['route_l'] == 'en-us'}
+<script src="{G_TEMPLATES_JS}/en-us.js" language="javascript" type="text/javascript"></script> 
+{wc:else}
+<script src="{G_TEMPLATES_JS}/zh-cn.js" language="javascript" type="text/javascript"></script> 
+{wc:if:end}
+    
+    <script language="javascript" type="text/javascript">
+    var Path = new Object();
+    Path.Skin="{G_TEMPLATES_STYLE}";  
+    Path.Webpath = "{WEB_PATH}";
+    Path.JsPath="{G_TEMPLATES_JS}";
+    </script>
+    
     <script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
     <script src="{G_TEMPLATES_JS}/mobile/ShareListFun.js" language="javascript" type="text/javascript"></script>
     <script src="{G_TEMPLATES_JS}/mobile/Bottom.js" language="javascript" type="text/javascript"></script>
@@ -119,8 +136,8 @@
 						<span class="orange">{wc:$member['jingyan']}</span>
 					</li>
 					<li>
-						{wc:fun:lang::get_lang('可用余额：')}
-						<span class="orange">{wc:fun:lang::get_lang('￥')}{wc:$member['money']}</span>
+						{wc:fun:lang::get_lang('可用金币：')}
+						<span class="orange">{wc:$member['money']}</span>
 						<a href="{WEB_PATH}/mobile/home/userrecharge" class="fr z-Recharge-btn">{wc:fun:lang::get_lang('去充值')}</a>
 					</li>
 				</ul>
@@ -160,17 +177,15 @@
  </div>
 <!-- {wc:fun:lang::get_lang('弹出窗口')}E -->
 <input name="hidLineLink" type="hidden" id="hidLineLink" value="{WEB_PATH}/mobile/user/register/{wc:$uid}" />
-{wc:templates "mobile/index","footer"}
 <script language="javascript" type="text/javascript">
-  var Path = new Object();
-  Path.Skin="{G_TEMPLATES_STYLE}";  
-  Path.Webpath = "{WEB_PATH}";
-  Path.JsPath="{G_TEMPLATES_JS}";
+  
   
 var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
 function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
 Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js');
 </script>
+{wc:templates "mobile/index","footer"}
+
 
 </div>
 </body>

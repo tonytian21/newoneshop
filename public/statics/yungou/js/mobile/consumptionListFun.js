@@ -84,7 +84,7 @@ $(function() {
 
                         for (var z = 0; z < A; z++) {
 
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>"+getJsLang("￥") + C[z].money + "</span><span>" + C[z].content + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>" + C[z].money +getJsLang("￥") + "</span><span>" + C[z].content + "</span></li>"
 
                         }
 
@@ -206,7 +206,7 @@ $(function() {
 
                         for (var z = 0; z < A; z++) {
 
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>"+getJsLang("花费")+getJsLang("￥") + C[z].money + getJsLang(C[z].content) + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>"+getJsLang("花费") + C[z].money +getJsLang("金币")+ getJsLang(C[z].content) + "</span></li>"
 
                         }
 
