@@ -855,7 +855,7 @@ return array(
     '年' => 'Year',
     '月' => 'Month',
     '日' => 'Day',
-    '揭晓倒计时' => 'Announcement counting down',
+    '揭晓倒计时' => 'Countdown countdown',
     '再接再厉' => 'Keep it up! Your balance is xx',
     '您的抽奖次数用完了' => 'Sorry, run out of credit',
     '抽奖机会' => 'You left x lucky draw chance!',
@@ -1097,5 +1097,10 @@ return array(
     "本期商品您总共拥有"=>"You have the goods in total",
     "个"=>"Individual",
     "个商品！"=>"A goods!",
+    "如何计算"=>"How do you calculate it",
+    "我的次数"=>"The Number Of I",
+    "次数"=>"The Number Of",
+    "人次参与"=>"People Involved In",
+    "马上揭晓"=>"Immediately announced"
 );
 
