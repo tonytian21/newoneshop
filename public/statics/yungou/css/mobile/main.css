@@ -137,6 +137,7 @@ textarea {
 }
 
 
+
 /* 进度条 */
 
 .jdt {
@@ -2804,3 +2805,5 @@ textarea {
         font-size: 14px;
     }
 }
+html, body{overflow: hidden;}
+.header+.container{overflow: scroll;}

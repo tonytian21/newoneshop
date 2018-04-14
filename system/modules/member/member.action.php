@@ -79,7 +79,7 @@ class member extends admin {
 
 		$members=$this->db->GetPage("SELECT * FROM `@#_member` WHERE `emailcode` <> '1' and `mobilecode` <> '1' and `auto_user` != 1 and (`email` ='' AND `mobile` ='') order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
-		
+
 
 		include $this->tpl(ROUTE_M,'member.lists');	
 
@@ -182,15 +182,18 @@ class member extends admin {
 
 		$num=20;
 
-		$total=$this->db->GetCount("SELECT COUNT(*) FROM `$table` WHERE (`emailcode` = '1' or `mobilecode` = '1') and `auto_user` != 1"); 
+// 		$total=$this->db->GetCount("SELECT COUNT(*) FROM `$table` WHERE (`emailcode` = '1' or `mobilecode` = '1') and `auto_user` != 1"); 
 
+		$total=$this->db->GetCount("SELECT COUNT(*) FROM `$table` WHERE `auto_user` != 1"); 
+		
 		$page=System::load_sys_class('page');
 
 		if(isset($_GET['p'])){$pagenum=$_GET['p'];}else{$pagenum=1;}	
 
 		$page->config($total,$num,$pagenum,"0");		
+		//(`emailcode` = '1' or `mobilecode` = '1' ) and 
 
-		$members=$this->db->GetPage("SELECT * FROM `$table` WHERE (`emailcode` = '1' or `mobilecode` = '1' ) and `auto_user` != 1 order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
+		$members=$this->db->GetPage("SELECT * FROM `$table` WHERE `auto_user` != 1 order by uid desc",array("num"=>$num,"page"=>$pagenum,"type"=>1,"cache"=>0)); 
 
 		include $this->tpl(ROUTE_M,'member.lists');	
 
@@ -431,9 +434,7 @@ class member extends admin {
 			_message("删除成功");
 
 		}else{
-
 			$this->db->Autocommit_rollback();
-
 			_message("删除失败");
 
 		}			

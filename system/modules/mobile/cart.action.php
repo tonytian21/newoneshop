@@ -450,6 +450,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		  $webname = $this->_cfg ['web_name'];
 		  $money = $this->segment ( 4 ); // 获取充值金额
 		  $pay_id = $this->segment ( 5 ); // 获取选择的支付方式
+		  
 		
 		  if (! $this->userinfo) {
 			  header ( "location: " . WEB_PATH . "/mobile/user/login" );
@@ -473,7 +474,7 @@ $shoparr = $this->db->GetList ( "SELECT * FROM `@#_shoplist` A inner join `@#_sh
 		  $uid = $this->userinfo ['uid'];
 		  $pay = System::load_app_class ( 'pay', 'pay' );
 		  $pay->pay_type_bank = $pay_type_bank;
-		  $ok = $pay->init ( $uid, $pay_type_id, 'addmoney_record', $money );
+		  $ok = $pay->init ( $uid, $pay_type_id, 'addmoney_record', $money);
   
 		  if ($ok === 'not_pay') {
 			  _messagemobile ( "未选择支付平台" );

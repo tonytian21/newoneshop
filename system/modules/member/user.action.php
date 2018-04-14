@@ -129,27 +129,15 @@ class user extends base {
 				_message(lang::get_lang("帐号未认证"),WEB_PATH."/member/user/".$logintype."check/"._encrypt($member[$logintype]));
 
 			}
-
-					
-
 			if(!is_array($member)){
-
 				_message(lang::get_lang("帐号或密码错误"),NULL,3);
-
 			}else{
-
 				$user_ip = _get_ip_dizhi();
-
 				$this->db->GetOne("UPDATE `@#_member` SET `user_ip` = '$user_ip' where `uid` = '$member[uid]'");
-
-				_setcookie("uid",_encrypt($member['uid']),60*60*24*7);			
-
-				_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);	
-
-			
-
-			}			
-
+				$ti=60*60*24*7;
+				_setcookie("uid",_encrypt($member['uid']),$ti);
+				_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),$ti);	
+			}
 			_message(lang::get_lang("登录成功"),base64_decode($this->segment(4)),2);
 
 				

@@ -1,13 +1,13 @@
 <div class="left">
 	<div class="head">
-		<a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" target="_blank">			
+		<a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" target="_blank">	
 			<img style="border-radius: 55px;" id="imgUserPhoto" src="{wc:if $member['img']!='photo/member.jpg'}
 				{G_UPLOAD_PATH}/{wc:$member['img']}
 			{wc:elseif $member['headimg']!=''}
 				{wc:$member['headimg']}
 			{wc:else}
 				{G_UPLOAD_PATH}/{wc:$member['img']}
-			{wc:if:end}		" width="160" height="160" border="0"/>	
+			{wc:if:end}" width="160" height="160" border="0"/>	
 			
 		</a>
 	</div>

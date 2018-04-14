@@ -1465,6 +1465,12 @@ function postCurl($url, $post)
     return $arr;
 }
 
+function isAjax()
+{
+    if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUESTED_WITH"])=="xmlhttprequest") return true;
+    return $result;
+}
+
 // 获取token
 function get_token($appid, $appsecret)
 {

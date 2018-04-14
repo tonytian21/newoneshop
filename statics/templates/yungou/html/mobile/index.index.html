@@ -2,11 +2,12 @@
 <html>
 
 <head>
-    <base href="/">
     <meta charset="utf-8">
+    <!-- <meta http-equiv="Cache-Control" content="max-age=7200" /> -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="renderer" content="webkit">
     <title>{wc:$webname}</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link href="{G_TEMPLATES_CSS}/mobile/comm.css" rel="stylesheet" type="text/css" />
     <link href="{G_TEMPLATES_CSS}/mobile/index.css" rel="stylesheet" type="text/css" />
@@ -29,7 +30,7 @@
     <script src="{G_TEMPLATES_JS}/mobile/simpop.min.js"></script>
     <script src="{G_TEMPLATES_JS}/mobile/jquery.lazyload.min.js"></script>
     <script src="{G_TEMPLATES_JS}/mobile/ajax.js"></script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    
     <script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
 
     <script>
@@ -206,7 +207,7 @@
                 #fldh{position: relative;z-index: 999;width: 100%;}
 
             </style>
-            <div class="tabs-wrap" style="min-height:1000px;">
+            <div class="tabs-wrap">
                 <div id="fldh" class="zxjx" style="border-bottom: 1px solid #dcdcdc;">
                    
                     <ul class="lbul" id="divGoodsNav">
@@ -266,6 +267,9 @@ window.onload=function(){
     
 }
 
+   
+   
+   
     //打开页面加载数据
     function init_json(parm) {
         $("#urladdress").val('');
@@ -390,7 +394,7 @@ window.onload=function(){
         $("#pageDialogBG").fadeOut(1000);
         //购物车数量
         $.getJSON('{WEB_PATH}/mobile/ajax/cartnum',function(data){
-        	
+        
             $("#btnCart").append('<em>'+data.num+'</em>');
         });
     }
@@ -404,6 +408,8 @@ window.onload=function(){
     });
 
 });
+  
+
 
     </script>
 </body>

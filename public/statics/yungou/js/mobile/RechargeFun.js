@@ -162,13 +162,13 @@ $(function() {
 
         });
 
-        $("#btnSubmit").click(function() {
-
+        $("#btnSubmit").click(function() {	
+        	
             d = g ? a.val() : d;
 
             if (d == "" || parseInt(d) == 0) {
 
-                k("请输入充值金额")
+                k(getJsLang("请输入充值金额"))
 
             } else {
 
@@ -176,15 +176,28 @@ $(function() {
 
                 if (m.test(d)) {
 
-                    if (c == 1 || c==2 ||c==3) {
+                    
+                    	
+                    	
+                        if(window.Njs){
+                        	
+                        	$.getJSON (Gobal.Webpath+"/mobile/cart/addmoney/" + d+"/"+banktype,function(data){
+                        		window.Njs.startPay(JSON.stringify(data));
+                            });
+                        }else if(window.webkit && window.webkit.messageHandlers){
+                        	$.getJSON (Gobal.Webpath+"/mobile/cart/addmoney/" + d+"/"+banktype,function(data){
+                        		window.webkit.messageHandlers.startPay.postMessage(data);
+                            });
+                        }else{
+                        	
+                        	 location.href = Gobal.Webpath+"/mobile/cart/addmoney/" + d+"/"+banktype;
+                        }
 
-                        location.href = Gobal.Webpath+"/mobile/cart/addmoney/" + d+"/"+banktype
-
-                    }
+                    
 
                 } else {
 
-                    k("充值金额输入有误")
+                    k(getJsLang("充值金额输入有误"))
 
                 }
 
@@ -192,7 +205,7 @@ $(function() {
 
         });
 
-
+        
 
 		$("#ulBankList>li:eq(1)").click();
 

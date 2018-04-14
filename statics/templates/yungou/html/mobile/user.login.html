@@ -97,11 +97,11 @@
 					</h2>
 					<div class="fastInfo" style="margin-top: 20px;">
 						{wc:if $conn_cfg['facebook']['off']}<a
-							href="{WEB_PATH}/api/facebooklogin" class="user_login_f"></a>{wc:if:end}
-						{wc:if $conn_cfg['qq']['off']}<a href="{WEB_PATH}/api/qqlogin"
-							class="user_login_q"></a>{wc:if:end} {wc:if
-						$conn_cfg['weixin']['off']}<a href="{WEB_PATH}/api/wxlogin"
-							class="user_login_w"></a>{wc:if:end}
+							data-href="{WEB_PATH}/api/facebooklogin" data-type="facebook" class="user_login_f"></a>{wc:if:end}
+						{wc:if $conn_cfg['qq']['off']}<a data-href="{WEB_PATH}/api/qqlogin"
+							class="user_login_q"  data-type="qq"></a>{wc:if:end} {wc:if
+						$conn_cfg['weixin']['off']}<a data-href="{WEB_PATH}/api/wxlogin"
+							class="user_login_w"  data-type="wx"></a>{wc:if:end}
 					</div>
 					{wc:if:end}
 				</div>
@@ -112,7 +112,6 @@
 			var Path = new Object();
 
 			Path.Skin = "{G_TEMPLATES_STYLE}";
-
 			Path.Webpath = "{WEB_PATH}";
 			Path.JsPath="{G_TEMPLATES_JS}";
 
@@ -176,21 +175,38 @@
 								.toString().substring(0, 1))
 			}
 
-			Base
-					.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js?v='
+			Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js?v='
 							+ GetVerNum());
 
+			
 			var checkcode = document.getElementById('checkcode');
 
-			checkcode.src = checkcode.src + new Date().getTime();
+			if(checkcode){
+				checkcode.src = checkcode.src + new Date().getTime();
 
-			var src = checkcode.src;
+				var src = checkcode.src;
 
-			checkcode.onclick = function() {
+				checkcode.onclick = function() {
 
-				this.src = src + '/' + new Date().getTime();
+					this.src = src + '/' + new Date().getTime();
 
+				}
 			}
+			
+			
+			$(".fastInfo a").click(function() {
+				var data_type = $(this).attr("data-type");
+				if (window.Njs) {
+					if(window.Njs.startLogin(data_type)==1) return;
+				}else if(window.webkit && window.webkit.messageHandlers){
+					
+					window.webkit.messageHandlers.startLogin.postMessage(data_type);
+					return;
+				}
+				var data_href = $(this).attr("data-href");
+				location.href =data_href;
+				
+			});
 		</script>
 	</div>
 </body>

@@ -2789,18 +2789,20 @@ textarea {
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     html {
-        font-size: 12px;
+        font-size: 8px;
     }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 640px) {
     html {
-        font-size: 14px;
+        font-size: 10px;
     }
 }
 
 @media only screen and (min-width: 641px) {
     html {
-        font-size: 14px;
+        font-size: 10px;
     }
 }
+html, body{overflow: hidden;}
+.header+.container{overflow: scroll;}

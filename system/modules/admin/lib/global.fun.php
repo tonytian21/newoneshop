@@ -87,6 +87,7 @@ function indexTemplate($zhengze=''){
 
 }
 
+
 /* 百度编辑器过滤 */
 function editor_safe_replace($content){
     $tags = array(

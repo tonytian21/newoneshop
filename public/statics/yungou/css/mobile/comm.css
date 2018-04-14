@@ -1246,6 +1246,25 @@ div.pageDialog {
     box-shadow: none;
 }
 
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    html {
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-device-width:320px) {
     body {
         -webkit-text-size-adjust: none;
@@ -1634,10 +1653,13 @@ div.pageDialog {
     margin: 0;
     padding: 0;
 }
-
-
-
 .-mob-share-list li{min-width: 40px!important;height: 40px!important;margin:0 5px!important; display: inline-block!important; background-size:auto 100% !important; border: none!important;}
 .-mob-share-facebook{background: url("../../images/sicon_f.png") no-repeat center;}
 .-mob-share-twitter{background: url("../../images/sicon_t.png") no-repeat center;}
 .-mob-share-linkedin{background: url("../../images/sicon_l.png") no-repeat center;}
+
+/* html, body{overflow: hidden;} */
+/* html, body,.h5-1yyg-v1,.revealed{height: 100%} */
+/* .header+section,.header+.container,.header+div{overflow: scroll;}  */
+
+

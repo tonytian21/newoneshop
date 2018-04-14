@@ -11,14 +11,12 @@
  * SYSTEM BAN BEN TYPE
  * ---------------------------------------------------------------
  */
-
 /*
  * ---------------------------------------------------------------
  * SYSTEM FOLDER NAME
  * ---------------------------------------------------------------
  */
 $system_path = 'system';
-
 /*
  * ---------------------------------------------------------------
  * STATICS FOLDER NAME
@@ -41,14 +39,12 @@ if (! empty ( $_SERVER ["QUERY_STRING"] )) {
  */
 define ( 'G_WEB_DIR_PATH', dirname ( __FILE__ ) . DIRECTORY_SEPARATOR );
 define ( 'G_APP_PATH', G_WEB_DIR_PATH.'..'.DIRECTORY_SEPARATOR );
-
 /*
  * --------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
  * --------------------------------------------------------------
  */
 include G_APP_PATH . $system_path . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'global.php';
-
 require_once(dirname(dirname(__FILE__)).'/system/libs/predis.class.php');
 /*
  * --------------------------------------------------------------

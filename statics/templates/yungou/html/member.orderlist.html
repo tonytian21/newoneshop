@@ -15,7 +15,7 @@
 <div class="R-content" style="position: relative;">
 	<div class="member-t"><h2>{wc:fun:lang::get_lang('获得的商品')}</h2></div>
 	<div class="get-pro gray02">{wc:fun:lang::get_lang('您总共成功夺得商品')} <b id="goodsCount" class="orange" style="color: #f60;">{wc:fun:count($record)}</b> {wc:fun:lang::get_lang('个')}
-    	  <a href="#" id="wuliu_select">{wc:fun:lang::get_lang('查询物流')}</a>
+    	  
     </div>	
     {wc:if !member_get_dizhi($uid)}    
     <div class="message" style="width:auto; position: absolute;left: 320px;top: 55px;">{wc:fun:lang::get_lang('你还没有填写收货信息，请填写收货信息！')} <a href="{WEB_PATH}/member/home/address" style="font-weight:bold; color:#2af">{wc:fun:lang::get_lang('去填写')}!</a></div>
@@ -96,15 +96,7 @@
 .p_win_text a{ font-size:13px; color:#f60}
 .pay_window_quit:hover{ color:#f00}
 </style>
-<div id="paywindow">
-	<div id="paywindow_b"></div>
-	<div id="paywindow_c">
-		<div class="p_win_title"><a href="javascript:void();" class="pay_window_quit">[{wc:fun:lang::get_lang('关闭')}]</a><b>{wc:fun:lang::get_lang('　')} {wc:fun:lang::get_lang('物流查询')}</b></div>
-		<div class="p_win_content">			
-            	<iframe name="kuaidi100" src="http://www.kuaidi100.com/frame/app/index2.html" width="527" height="300" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>        
-		</div>
-	</div>
-</div>
+
 
 <script>
 $(function(){
@@ -113,12 +105,7 @@ $(function(){
 	$("#paywindow").css("left",width);
 	$("#paywindow").css("top",height);
 		
-	$(".pay_window_quit").click(function(){
-		$("#paywindow").hide();								 
-	});	
-	$("#wuliu_select").click(function(){
-		$("#paywindow").show();								 
-	});	
+	
 	
 	$(".wuliubtn").click(function(){
 		var uid = $(this).attr("uid");	

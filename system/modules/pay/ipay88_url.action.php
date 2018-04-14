@@ -12,14 +12,14 @@ class ipay88_url extends SystemAction {
 		$trade_no = $_POST['TransId'];			//支付宝交易号
 		$trade_status = $_POST['Status'];	//交易状态
 		
-		sleep(2);
+// 		sleep(2);
 		if($trade_status == '1') {
 		    
 		    $dingdaninfo = $this->db->GetOne("select * from `@#_member_addmoney_record` where `code` = '$out_trade_no'");
 		    if(!$dingdaninfo || $dingdaninfo['status'] == '未付款'){
 		        
 		        if(_is_mobile()){
-		            _messagemobile("支付失败",WEB_PATH . "/mobile/mobile/");
+		            _messagemobile("支付失败", WEB_PATH . ":js:");
 		        }else{
 		            _message("支付失败");
 		        }
@@ -27,7 +27,7 @@ class ipay88_url extends SystemAction {
 		        if(empty($dingdaninfo['scookies'])){
 		            
 		            if(_is_mobile()){
-		                _messagemobile("充值成功!",WEB_PATH . "/mobile/mobile/");
+		                _messagemobile("充值成功!", WEB_PATH . "/mobile/mobile/home/userbalance");
 		            }else{
 		                _message("充值成功!",WEB_PATH."/member/home/userbalance");
 		            }
@@ -83,7 +83,7 @@ class ipay88_url extends SystemAction {
 			$c_money = intval($dingdaninfo['money']);			
 			$uid = $dingdaninfo['uid'];
 			$time = time();			
-			$up_q1 = $this->db->Query("UPDATE `@#_member_addmoney_record` SET `pay_type` = 'molpay', `status` = '已付款' where `id` = '$dingdaninfo[id]' and `code` = '$dingdaninfo[code]'");
+			$up_q1 = $this->db->Query("UPDATE `@#_member_addmoney_record` SET `pay_type` = 'ipay88', `status` = '已付款' where `id` = '$dingdaninfo[id]' and `code` = '$dingdaninfo[code]'");
 			$up_q2 = $this->db->Query("UPDATE `@#_member` SET `money` = `money` + $c_money,`totalrecharge` = `totalrecharge` + $c_money where (`uid` = '$uid')");				
 			$up_q3 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', '充值', '$c_money', '$time')");
 				
@@ -91,12 +91,11 @@ class ipay88_url extends SystemAction {
 				$this->db->Autocommit_commit();			
 			}else{
 				$this->db->Autocommit_rollback();
-// 				header("location: ".WEB_PATH."/pay/ipay88_url/qiantai");
 				echo  "RECEIVEOK";
 				exit;
 			}			
 			if(empty($dingdaninfo['scookies'])){					
-// 				header("location: ".WEB_PATH."/pay/ipay88_url/qiantai");
+
 				echo  "RECEIVEOK";
 				exit;		
 			}			
@@ -108,7 +107,6 @@ class ipay88_url extends SystemAction {
 				_setcookie('Cartlist',NULL);
 				
 				echo  "RECEIVEOK";
-				//header("location: ".WEB_PATH."/pay/ipay88_url/qiantai");
 				exit;		
 			}			
 			$check = $pay->go_pay(1);

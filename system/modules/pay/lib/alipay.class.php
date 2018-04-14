@@ -191,6 +191,8 @@ class alipay {
 		 exit;
 		//header("Location: $url");	
 	}
+	
+	
 }
 
 ?>

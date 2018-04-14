@@ -294,12 +294,12 @@ class ajax extends base {
 
 
 	  $cart['num']=count($Mcartlist);    //表示现在购物车有多少条记录
-
+        
 
 
 	  echo json_encode($cart);
 
-
+        
 
 	}
 

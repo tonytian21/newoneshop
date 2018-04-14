@@ -10,6 +10,7 @@ class pay {
 	private $MoenyCount; 	//商品总金额
 	private $shops; 		//商品信息
 	private $pay_type;		//支付类型
+	
 	private $fukuan_type;	//付款类型 买商品 充值
 	private $dingdan_query = true;	//订单的	mysql_qurey 结果
 	public $pay_type_bank = false;
@@ -26,7 +27,7 @@ class pay {
 		$this->db=System::load_sys_class('model');
 		$this->db->Autocommit_start();
 		$this->members = $this->db->GetOne("SELECT * FROM `@#_member` where `uid` = '$uid' for update");
-
+		$this->c_type=$c_type;
 		if($this->pay_type_bank){
 			$pay_class = $this->pay_type_bank;
 			$this->pay_type =$this->db->GetOne("SELECT * from `@#_pay` where `pay_class` = '$pay_class' and `pay_start` = '1'");
@@ -179,10 +180,13 @@ class pay {
 
 		$pay_type = $this->pay_type;
 
-		$paydb = System::load_app_class($pay_type['pay_class'],'pay');
+	
 		$pay_type['pay_key'] = unserialize($pay_type['pay_key']);
 
 		$config=array();
+		
+		
+		
 		$config['id'] = $pay_type['pay_key']['id']['val'];			//支付合作ID
 		$config['key'] = $pay_type['pay_key']['key']['val'];		//支付KEY
 
@@ -202,11 +206,23 @@ class pay {
 		$config['pay_type_data'] = $pay_type['pay_key'];
 		$config['uid'] = $uid;
 		$config['member'] = $this->members;
-
-		$paydb->config($config);
-		$paydb->send_pay();
-
-
+		
+		
+		if(isAjax()){
+		    $email=$this->members["email"];
+		    if(empty($email)) $email=$this->members["uid"]."@1shopasia.com";
+		    $config['member']=array("email"=>$email,"username"=>$this->members["username"],"mobile"=>$this->members["mobile"]);
+		    $config["pay_class"]=$pay_type['pay_class'];
+		    unset($config["uid"]);
+// 		    unset($config["NotifyUrl"]);
+		    echo json_encode($config); //hash("sha256", );
+		    exit;
+		}else{
+		    $paydb = System::load_app_class($pay_type['pay_class'],'pay');
+		    $paydb->config($config);
+		    $paydb->send_pay();
+		}
+		
 		return true;
 	}
 

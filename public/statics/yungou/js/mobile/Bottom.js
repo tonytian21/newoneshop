@@ -77,7 +77,7 @@ function loadImgFun(c) {
         if (c == 0) {
 
             $(window).bind("scroll", g)
-
+            
         }
 
         g()

@@ -1,0 +1,62 @@
+{wc:templates "index","header"}
+
+<div class="links_exp">
+	<h3 style="border: none;"><b>{wc:fun:lang::get_lang('联系方式')}</b></h3>
+	
+	<p>
+		{wc:fun:lang::get_lang('公司名称：')}IFNT GLOBAL SDN BHD
+	</p>   
+	<p>
+	
+		{wc:fun:lang::get_lang('公司注册号码：')}1249327-M
+		
+	</p>
+	<p>
+		{wc:fun:lang::get_lang('联系电话：')}{wc:fun:_cfg('cell')}<br>
+	</p>
+	
+	<p>
+		{wc:fun:lang::get_lang('电子邮箱：')}ifntglobal@gmail.com<br>
+	</p>
+	<p>
+		{wc:fun:lang::get_lang('公司地址：')}No.95, Taman Teratai Indah, 09000 Kulim, Kedah.<br>
+	</p>
+	          
+</div>
+<script type="text/javascript">
+	$(".yu_ff").mouseover(function(){
+	  $(".h_1yyg_eject").show();
+	})
+	$(".yu_ff").mouseout(function(){
+	  $(".h_1yyg_eject").hide();
+	})
+
+		     $("#m_all_sort").hide();
+	     $(".m_menu_all").mouseenter(function(){
+			    $(".m_all_sort").show();
+	     })
+		 $(".m_menu_all").mouseleave(function(){
+			    $(".m_all_sort").hide();
+	     })
+		 $(".m_all_sort").mouseenter(function(){
+			    $(this).show();
+	     })
+		 $(".m_all_sort").mouseleave(function(){
+			    $(this).hide();
+	     })
+	     $(function(){
+	       $(window).scroll(function() {	
+	      		
+	     		if($(window).scrollTop()>=130&&$(window).scrollTop()<=560){
+	     			$(".head_nav").addClass("fixedNav");	
+	     			$("#m_all_sort").fadeOut();
+	     		}else if($(window).scrollTop()>560){
+	     			$(".head_nav").addClass("fixedNav");
+	     			$("#m_all_sort").fadeOut();
+	     	} else if($(window).scrollTop()<130){
+	     			$(".head_nav").removeClass("fixedNav");
+	     	}
+	           });
+	     });
+</script>
+{wc:templates "index","footer"}
