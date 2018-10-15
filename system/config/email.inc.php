@@ -7,7 +7,7 @@
 
 				'user' => 'wo502700156@163.com',//账号
 
-				'pass' => 'yangfeng622502',		//密码
+				'pass' => 'yangfeng!',		//密码
 
 				'big' => 'utf-8',				//发送编码
 

@@ -80,7 +80,7 @@
 
 .goodsNav li:nth-child(5n-3),
 .goodsNav li:nth-child(5n-2) {
-    width: 16%;
+    width: 19%;
 }
 
 .goodsNav li:nth-child(5n-1) {
@@ -88,7 +88,7 @@
 }
 
 .goodsNav li:nth-child(5n-5) {
-    width: 27%;
+    width: 21%;
 }
 
 .goodsNav a s,
@@ -142,7 +142,7 @@
     z-index: 20;
     margin: 0;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 10px; overflow: hidden;
 }
 
 .goodsNav li dl {
@@ -157,6 +157,7 @@
 }
 
 .goodsNav li dd {
+	height:50px!important;
     line-height: 35px!important;
     width: 33.33%;
     float: left;
@@ -394,11 +395,11 @@
 .goodsList .goodsListR h2 {
     display: block;
     color: #555;
-    line-height: 25px;
+    line-height: 20px;
     height: 45px;
     overflow: hidden;
     text-align: left;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .goodsList .goodsListR .pRate {
@@ -521,7 +522,7 @@
     float: left;
     text-align: center;
     display: inline-block;
-    font-size: 14px;
+    font-size: 10px;
     position: relative;
     overflow: hidden;
 }
@@ -536,7 +537,7 @@
 
 .pNav ul.slides li.cur {
     background: #f4f4f4;
-    font-size: 16px;
+    font-size: 12px;
     height: 35px;
 }
 
@@ -688,7 +689,7 @@
 .pDetails b {
     color: #090909;
     line-height: 20px;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .pDetails a span {
@@ -767,7 +768,7 @@
     height: 33px;
     line-height: 33px;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     border-radius: 3px;
 }
 
@@ -1002,7 +1003,7 @@ transform: rotate(135deg);
 .pCalculation h4 {
     color: #bbb;
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     display: block;
 }
 
@@ -1078,7 +1079,7 @@ transform: rotate(135deg);
     line-height: 40px;
     border-top: 1px solid #eee;
     padding: 0 6px;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .pResults p a {
@@ -1096,7 +1097,7 @@ transform: rotate(135deg);
 }
 
 .pResults p b {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .pCountdown {
@@ -1126,7 +1127,7 @@ transform: rotate(135deg);
     border-bottom: 1px solid #e7e7e7;
     color: #bbb;
     box-shadow: 1px 1px 1px #d5d5d5 inset;
-    font-size: 18px;
+    font-size: 16px;
     height: 55px;
     padding-top: 18px;
     line-height: 20px;
@@ -1196,7 +1197,7 @@ transform: rotate(135deg);
     position: relative;
     top: -3px;
     color: #bbb;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .status1 em {
@@ -1205,7 +1206,7 @@ transform: rotate(135deg);
 
 .status2 {
     text-align: center;
-    font-size: 16px;
+    font-size: 12px;
     padding: 7px 0;
 }
 
@@ -1220,7 +1221,7 @@ transform: rotate(135deg);
 }
 
 .status3 {
-    font-size: 16px;
+    font-size: 12px;
     padding: 10px 0;
     display: inline-block;
 }
@@ -1274,7 +1275,7 @@ transform: rotate(135deg);
 }
 
 .pFortunatelycode p em {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .pFortunatelycode p a {
@@ -1314,7 +1315,7 @@ transform: rotate(135deg);
 .pSurplus p {
     width: 300px;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .pSurplus span {
@@ -1336,7 +1337,7 @@ transform: rotate(135deg);
 .pSurplus em {
     font-family: Arial;
     color: #FF5152;
-    font-size: 16px;
+    font-size: 12px;
     margin: 0 5px;
 }
 
@@ -1354,7 +1355,7 @@ transform: rotate(135deg);
 .pClosed {
     height: 39px;
     line-height: 36px;
-    font-size: 18px;
+    font-size: 16px;
     color: #090909;
     text-align: center;
 }

@@ -140,7 +140,7 @@
         d.setup = function() {
             d.viewport = a('<div class="flex-viewport"></div>').appendTo(d).append(d.container);
             d.w = d.viewport.width();
-            d.container.width(d.tw + "px");
+            d.container.width((d.tw+1) + "px");
             var f = d.tw - d.w;
             if (f < 0) {
                 d.x = 0;

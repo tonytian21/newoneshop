@@ -419,6 +419,8 @@ class mobile extends base
     // 商品详细
     public function item()
     {
+        
+        
         $webname = $this->_cfg['web_name'];
         $key = lang::get_lang("商品详情");
         $mysql_model = System::load_sys_class('model');
@@ -459,13 +461,27 @@ class mobile extends base
         }
         
         foreach ($itemlist as $qitem) {
+//             if ($qitem['id'] == $itemid) {
+                
+//                 $loopqishu .= '<li class="cur"><a href="javascript:;">' .lang::get_lang('第*期',$item['qishu'])."</a><b></b></li>";
+//             } else {
+//                 $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/">' .lang::get_lang('第*期',$item['qishu']).'</a></li>';
+//             }
+            
             if ($qitem['id'] == $itemid) {
                 
-                $loopqishu .= '<li class="cur"><a href="javascript:;">' .lang::get_lang('第*期',$item['qishu'])."</a><b></b></li>";
+                $loopqishu .= '<li class="cur"><a href="javascript:;">'.lang::get_lang('第*期',  $itemlist[0]['qishu']). "</a><b></b></li>";
             } else {
-                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' .lang::get_lang('第*期',$item['qishu']).'</a></li>';
+                $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/dataserver/' . $qitem['id'] . '" >'.lang::get_lang('第*期',  $qitem['qishu'] ).'</a></li>';
             }
+            
         }
+        
+        
+      
+        
+        
+        
         /*
          * $gorecode=array();
          * if(!empty($itemlist)){
@@ -522,6 +538,8 @@ class mobile extends base
         $jssdk = new JSSDK($wechat['appid'], $wechat['appsecret']);
         
         $signPackage = $jssdk->GetSignPackage();
+        
+        
         include templates("mobile/index", "item");
     }
 
@@ -604,7 +622,14 @@ class mobile extends base
         $temp = $item;
         $temp['user'] = empty($uid['username']) ? substr($uid['mobile'], 0, 3) . '****' . substr($uid['mobile'], 7, 4) : $uid['username'];
         $temp['pic'] = G_UPLOAD_PATH . '/' . $item['thumb'];
-        echo '<div style="width:40%; float:left;"><img width="100%" src=' . $temp['pic'] . '></div><div class="txt" style="float:left"><h6>' . $temp['title'] . '</h6><div class="zj"><span style="color: #5bb6ea;">' . $temp['user'] . "</span></div></div>";
+        if($this->_cfg['route_l'] == 'en-us'){
+            echo '<div style="width:40%; float:left;"><img width="100%" src=' . $temp['pic'] . '></div><div class="txt" style="float:left"><h6>' . $temp['titleen'] . '</h6><div class="zj"><span style="color: #5bb6ea;">' . $temp['user'] . "</span></div></div>";
+        
+        }else{
+            
+            echo '<div style="width:40%; float:left;"><img width="100%" src=' . $temp['pic'] . '></div><div class="txt" style="float:left"><h6>' . $temp['title'] . '</h6><div class="zj"><span style="color: #5bb6ea;">' . $temp['user'] . "</span></div></div>";
+        }
+        
         exit();
     }
 
@@ -697,6 +722,7 @@ class mobile extends base
     // 往期商品查看
     public function dataserver()
     {
+        
         $webname = $this->_cfg['web_name'];
         $key = lang::get_lang("揭晓结果");
         $itemid = intval($this->segment(4));
@@ -728,7 +754,10 @@ class mobile extends base
         // 期数显示
         $loopqishu = '';
         if (empty($itemlist[0]['q_end_time'])) {
-            $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/item/' . $itemlist[0]['id'] . '">' . "第" . $itemlist[0]['qishu'] . "期</a><b></b></li>";
+            
+            
+           //$loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/item/' . $itemlist[0]['id'] . '">' . "第" . $itemlist[0]['qishu'] . "期</a><b></b></li>";
+            $loopqishu .= '<li><a href="' . WEB_PATH . '/mobile/mobile/item/' . $itemlist[0]['id'] . '">'   . lang::get_lang('第*期', $itemlist[0]['qishu'] ). "</a><b></b></li>";
             array_shift($itemlist);
         }
         

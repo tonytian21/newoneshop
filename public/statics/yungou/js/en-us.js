@@ -1,14 +1,14 @@
 var js_lang = {};
 js_lang['lang_curr'] = 'en-us';
 js_lang["获得者"] = " winner";
-js_lang["本期购买"] = " purchases of this batch";
+js_lang["本期购买"] = " This purchase";
 js_lang["人次"] = " Frequency";
 js_lang["幸运码"] = " Lucky Number";
 js_lang["揭晓时间"] = " Announcement Date & Time";
 js_lang["第*期"] = " Batch {0}";
 js_lang["价值"] = " Price";
 js_lang["价值："] = " Price:";
-js_lang["￥"]="RM";
+js_lang["￥"]="";
 js_lang["揭晓倒计时"] = " announcement counting down";
 js_lang["正在揭晓"] = " Current phrase announced";
 js_lang["支付方式"] = " payment method";
@@ -81,7 +81,7 @@ js_lang['充值时间'] = 'Top-up Time';
 js_lang['充值金额'] = 'Amount';
 js_lang['消费时间'] = 'Time of Purchase';
 js_lang['消费金额'] = 'Purchased Products';
-js_lang['花费'] = 'Expenditure';
+js_lang['花费'] = 'Use ';
 js_lang['正在计算,请稍后'] = 'Calculating, please wait';
 js_lang['添加失败'] = 'Adding failed, please try again';
 js_lang['添加失败，请重试'] = 'Add failed, please try again';
@@ -1209,7 +1209,26 @@ js_lang["马特鲁 Matruh"] = "Matruh";
 js_lang["图尔 Janub Sina"] = "Janub Sina";            
 js_lang["阿里什 Al `Arish"] = "Al `Arish";         
 
-js_lang["购买了商品"]="";
+js_lang["购买了商品"]="Bought the goods";
+
+js_lang["￥"]="";
+js_lang["共"]="Total";
+js_lang["件商品"]="Items";
+js_lang["合计"]="Total";
+js_lang["币"]="";
+js_lang["获得者"]="Winner";
+js_lang["获得者："]="Winner:";
+js_lang["揭晓时间"]="release date";
+js_lang["揭晓时间："]="release date:";
+js_lang["金币"]="Gold";
+js_lang["充值渠道"]="Top-up channels";
+js_lang["ipay88充值"]="ipay88 Top-up";
+js_lang["昵称不能为空哦"]="Nicknames cannot be empty.";
+js_lang["签名不能为空哦"]="The signature should not be empty.";
+js_lang["保存成功！"]="Save success!";
+js_lang["保存"]="Save";
+js_lang["正在提交"]="Is submitted";
+
 
 
 function getJsLang(){

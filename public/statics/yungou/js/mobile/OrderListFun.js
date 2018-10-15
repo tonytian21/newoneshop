@@ -63,8 +63,8 @@ $(function() {
 						
 
                         for (var l = 0; l < n; l++) {						 
-
-                            m += "<li onclick=\"location.href='"+Gobal.Webpath+"/mobile/user/buyDetail/" + o[l].shopid +'\'"><a class="fl z-Limg" href="'+Gobal.Webpath+'/mobile/mobile/item/' + o[l].shopid +'"><img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + o[l].thumb + '" border=0 alt=""/></a><div class="u-gds-r gray9"><p class="z-gds-tt"><a href="'+Gobal.Webpath+'/mobile/mobile/item/' + o[l].shopid +'" class="gray6">(' + getJsLang("第*期",o[l].qishu) + ")" + o[l].shopname + '</a></p><p>'+ getJsLang("幸运码") +'：<em class="orange">' + o[l].q_user_code + "</em></p><p style='margin:0px;'>"+getJsLang('揭晓时间')+"：" + o[l].q_end_time + "</p>";
+                        			
+                            m += "<li onclick=\"location.href='"+Gobal.Webpath+"/mobile/user/buyDetail/" + o[l].shopid +'\'"><a class="fl z-Limg" href="'+Gobal.Webpath+'/mobile/mobile/item/' + o[l].shopid +'"><img src="' + Gobal.LoadPic + '" src2="'+Gobal.imgpath+'/uploads/' + o[l].thumb + '" border=0 alt=""/></a><div class="u-gds-r gray9"><p class="z-gds-tt"><a href="'+Gobal.Webpath+'/mobile/mobile/item/' + o[l].shopid +'" class="gray6">(' + getJsLang("第*期",o[l].qishu) + ")" + o[l].titleen + '</a></p><p>'+ getJsLang("幸运码") +'：<em class="orange">' + o[l].q_user_code + "</em></p><p style='margin:0px;'>"+getJsLang('揭晓时间')+"：" + o[l].q_end_time + "</p>";
 
                             var q = parseInt(o[l].orderState);
 

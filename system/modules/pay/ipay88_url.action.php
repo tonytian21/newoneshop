@@ -85,7 +85,7 @@ class ipay88_url extends SystemAction {
 			$time = time();			
 			$up_q1 = $this->db->Query("UPDATE `@#_member_addmoney_record` SET `pay_type` = 'ipay88', `status` = '已付款' where `id` = '$dingdaninfo[id]' and `code` = '$dingdaninfo[code]'");
 			$up_q2 = $this->db->Query("UPDATE `@#_member` SET `money` = `money` + $c_money,`totalrecharge` = `totalrecharge` + $c_money where (`uid` = '$uid')");				
-			$up_q3 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', '充值', '$c_money', '$time')");
+			$up_q3 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$uid', '1', '账户', 'ipay88充值', '$c_money', '$time')");
 				
 			if($up_q1 && $up_q2 && $up_q3){
 				$this->db->Autocommit_commit();			

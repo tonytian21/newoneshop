@@ -34,7 +34,7 @@
                 <li order="50"><a href="javascript:;">{wc:fun:lang::get_lang('高价')}<b></b></a></li>
 	            <li order="60"><a href="javascript:;">{wc:fun:lang::get_lang('低价')}<b></b></a></li>
                 <li order="">
-                    <a style="text-align: center;line-height: 36px;height: 35px;padding: 0;" href="javascript:;">{wc:fun:lang::get_lang('商品分类')}<s class="arrowUp"></s></a>
+                    <a style="text-align: center;line-height: 36px;height: 35px;padding: 0;" href="javascript:;">{wc:fun:lang::get_lang('分类')}<s class="arrowUp"></s></a>
 					<dl style="display:none;">
 					<dd type="0" class="sOrange"><a href="javascript:;"><img style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;" src="{G_TEMPLATES_IMAGE}/mobile/moren.png" alt=""><span>{wc:fun:lang::get_lang('默认排序')}</span></a></dd>
 						{wc:getlist sql="select * from `@#_category` where `model`='1' order by `order` desc""}

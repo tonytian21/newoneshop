@@ -4,7 +4,8 @@ display: block;@charset "utf-8";
 	background: url(../../images/mobile/member-icon.png);
 	background-size: 40px auto;
 }
-
+.hanggao .w20{width: 40%;}
+.hanggao .w80{width: 60%;}
 
 .shareCon dd a.orangeBtn {
     display: block;
@@ -1119,11 +1120,11 @@ p.f-addressLH {
 	width: 27%;
 }
 .m-Consumption li span:nth-child(2n-1) {
-	width: 50%;
+	width: 35%;
 	text-align: center;
 }
 .m-Consumption li span:nth-child(2n-2) {
-	width: 50%;
+	width: 65%;
 	text-align: center;
 }
 .loading {
@@ -1156,6 +1157,7 @@ p.f-addressLH {
     width: 49%;
 }
 
+
 #div_consignee .input {
     border: 1px solid #BBB;
     border-radius: 3px;
@@ -1165,7 +1167,7 @@ p.f-addressLH {
     line-height: 16px;
     margin: 0px 3px;
     padding: 5px 0px 4px;
-    width: 93%;
+    width: 90%;
 }
 
 #div_consignee {

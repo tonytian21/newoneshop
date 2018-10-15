@@ -65,7 +65,7 @@ $(".tags li").on("click",function(){
                  if (h.length > 0) {
                      h.children("span").html(q)
                  }
-                 g.children("p").html(getJsLang("总共购买") + '<span class="orange arial z-user">' + r + '</span>'+getJsLang("个奖品")+'  '+getJsLang("合计金额")+'：<span id="total" class="orange arial">' + q + ".00</span> "+getJsLang("元"))
+                 g.children("p").html(getJsLang("共") + '<span class="orange arial z-user">' + r + '</span>'+getJsLang("件商品")+'  '+getJsLang("合计金额")+'：<span id="total" class="orange arial">' + q + ".00</span> "+getJsLang("币"))
              } else {
                  g.remove()
              }

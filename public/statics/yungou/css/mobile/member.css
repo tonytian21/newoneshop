@@ -4,7 +4,8 @@ display: block;@charset "utf-8";
 	background: url(../../images/mobile/member-icon.png);
 	background-size: 40px auto;
 }
-
+.hanggao .w20{width: 20%;}
+.hanggao .w80{width: 80%;}
 
 .shareCon dd a.orangeBtn {
     display: block;

@@ -7,7 +7,9 @@ js_lang['失败次数超限'] = "失败次数超限，被冻结5分钟";
 js_lang['登录失败'] = '登录失败，请重试';
 js_lang['截止揭晓时间*最后100条'] = '截止揭晓时间【{0}】最<em>后100条全站购买时间记录</em>';
 js_lang['禁止使用弱密码'] = '为保障您的账户安全，禁止使用弱密码';
-js_lang["￥"]="RM";
+js_lang["￥"]="￥";
+js_lang["元"]="RM";
+js_lang["币"]="";
 function getJsLang(){
 	if (arguments.length == 0)
         return '';

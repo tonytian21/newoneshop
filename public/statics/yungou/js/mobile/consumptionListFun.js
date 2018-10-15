@@ -58,7 +58,6 @@ $(function() {
 
                 d.show();				 
 
-               // GetJPData("http://m.1yyg.com", "getUserRecharge", w(),
 
 				 GetJPData(Gobal.Webpath, "shopajax", "getUserRecharge"+w(),
 
@@ -74,7 +73,7 @@ $(function() {
 
                             v.isCount = 0;
 
-                            B = '<li class="m-userMoneylst-tt"><span>'+getJsLang("充值时间")+'</span><span>'+getJsLang("充值金额")+'</span><span>充值渠道</span></li>'
+                            B = '<li class="m-userMoneylst-tt"><span>'+getJsLang("充值时间")+'</span><span>'+getJsLang("充值金额")+'</span><span>'+getJsLang("充值渠道")+'</span></li>'
 
                         }
 
@@ -84,7 +83,7 @@ $(function() {
 
                         for (var z = 0; z < A; z++) {
 
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>" + C[z].money +getJsLang("￥") + "</span><span>" + C[z].content + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>" + C[z].money +getJsLang("￥") + "</span><span>" + getJsLang(C[z].content) + "</span></li>"
 
                         }
 
@@ -206,7 +205,7 @@ $(function() {
 
                         for (var z = 0; z < A; z++) {
 
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>"+getJsLang("花费") + C[z].money +getJsLang("金币")+ getJsLang(C[z].content) + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>"+getJsLang("花费") + C[z].money +getJsLang("金币") +" "+ getJsLang(C[z].content) + "</span></li>"
 
                         }
 

@@ -20,7 +20,7 @@ function startTime(obj) {
         if (func)
           func.apply($el);
       }, parseInt($el.data('delay')) || 0 );
-
+      
       return;
     }
 

@@ -171,6 +171,7 @@
 }
 
 #daojishi {
+	font-size:8px!important;
     background: #f40;
     color: #fff;
     font-size: 10px;
@@ -346,7 +347,7 @@
     display: inline-block;
     height: 100%!important;
     text-align: center;
-    font-size: 14px !important;
+    font-size: 10px !important;
     line-height: 4rem !important;
     padding: 0 !important;
     margin: 0 auto!important;
@@ -422,7 +423,8 @@
 
 #divGoodsNav dl dd a {
     color: #666;
-    font-size: 14px;
+    font-size: 8px;
+	
 }
 
 #divGoodsNav dl .a1 {

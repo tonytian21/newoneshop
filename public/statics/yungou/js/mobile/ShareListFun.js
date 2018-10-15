@@ -14,13 +14,13 @@ $(function() {
             })
         };
         f.bind("click", e);
-        $("#btnShare").bind("click",
+       /* $("#btnShare").bind("click",
         function(g) {
             f.fadeToggle(1000,
             function() {
                 f.show()
             })
-        });
+        });*/
       
        
     };

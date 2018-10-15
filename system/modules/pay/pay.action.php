@@ -33,16 +33,7 @@ class pay extends admin {
 	}
 
 	public function pay_set(){
-	    
-	    
 	    /*
-	    
-	    
-	   
-	    
-	    
-	   
-	  
 	  $arr=array(
 	        "CompanyName" =>array("name"=>"公司名:","val"=>"IFNT Global Sdn Bhd"),
 	        "WebMerchantCode" =>array("name"=>"Web Merchant Code:","val"=>"M13802"),
